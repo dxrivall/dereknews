@@ -147,7 +147,7 @@ body.severe-locked{overflow:hidden}
 </div>
 
 <div id="wxBg" aria-hidden="true"></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="local" aria-selected="false"><span class="tab-ic" aria-hidden="true">📍</span><span class="tab-lb">Local</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="news" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span><span class="tab-lb">News</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -371,42 +371,103 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <p class="wxstamp" id="wxStamp">Forecast, alerts &amp; storm outlooks by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Weather data: Open-Meteo · Cicero, NY</p></div>
   </div>
 </main>
-<!-- LOCAL -->
-<main class="wrap view" id="view-local">
+<!-- NEWS -->
+<main class="wrap view" id="view-news">
 <style>
-#view-local .lnews{display:flex;flex-direction:column}
-#view-local .lnews-item{display:block;padding:13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
-#view-local .lnews-item:last-child{border-bottom:0}
-#view-local .lnews-t{display:block;font-size:16px;font-weight:600;line-height:1.35}
-#view-local .lnews-m{display:block;font-size:12px;color:var(--soft);margin-top:4px}
-#view-local .lstatus{font-size:14px;color:var(--soft);line-height:1.55;margin:6px 0;text-align:left}
-#view-local .lroad{padding:11px 2px;border-bottom:1px solid var(--border);text-align:left}
-#view-local .lroad:last-child{border-bottom:0}
-#view-local .lroad b{display:block;font-size:15px;line-height:1.35}
-#view-local .lroad span{display:block;font-size:13.5px;color:var(--soft);line-height:1.5;margin-top:3px}
-#view-local .closings-frame{display:block;width:100%;height:320px;border:1px solid var(--border);border-radius:12px;background:#fff}
+#view-news .nhero{text-align:left;padding:38px 4px 2px}
+#view-news .nhero h1{font-size:clamp(34px,8vw,46px);font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.05}
+#view-news .nhero h1 .nred{color:#b42318}
+#view-news .nsub{color:var(--soft);font-size:14.5px;line-height:1.55;margin:10px 0 0;max-width:560px}
+#view-news .nrule{height:4px;width:56px;border-radius:99px;background:#b42318;margin-top:14px}
+#view-news .ncard{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 28px rgba(20,40,50,.12);padding:24px 22px;margin-top:26px;text-align:left}
+#view-news .nhead{margin:0 0 8px}
+#view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
+#view-news .ncard h2{font-size:21px;font-weight:800;letter-spacing:-.01em;text-align:left;margin:0;line-height:1.25}
+#view-news .lnews{display:flex;flex-direction:column}
+#view-news .lnews-item{display:block;position:relative;padding:14px 26px 14px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
+#view-news .lnews-item:last-child{border-bottom:0}
+#view-news .lnews-item::after{content:"›";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--soft);opacity:.55}
+#view-news .lnews-item:active{background:rgba(127,160,175,.14);border-radius:10px}
+#view-news .lnews-t{display:block;font-size:16.5px;font-weight:650;line-height:1.38}
+#view-news .lnews-m{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--soft);margin-top:6px}
+#view-news .lstatus{font-size:14px;color:var(--soft);line-height:1.55;margin:8px 0;text-align:left}
+#view-news .lroad{padding:12px 2px;border-bottom:1px solid var(--border);text-align:left}
+#view-news .lroad:last-child{border-bottom:0}
+#view-news .lroad b{display:block;font-size:15px;line-height:1.35}
+#view-news .lroad span{display:block;font-size:13.5px;color:var(--soft);line-height:1.5;margin-top:3px}
+#view-news .closings-frame{display:block;width:100%;height:320px;border:1px solid var(--border);border-radius:16px;background:#fff}
+#view-news .btn{border-radius:999px;border:0;background:#1d2a30;color:#fff;font-weight:700;box-shadow:0 6px 16px rgba(20,40,50,.22)}
+@media(prefers-color-scheme:dark){#view-news .btn{background:#eef5f7;color:#0b1c24}}
+#view-news .ecard{overflow:hidden;padding:0}
+#view-news .ehead{background:linear-gradient(135deg,#0b2545,#16386b);color:#fff;padding:22px 22px 18px}
+#view-news .ehead .nkick{color:#ffb3ab}
+#view-news .ehead h2{color:#fff}
+#view-news .elive{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;border-radius:999px;padding:5px 11px;margin-top:12px}
+#view-news .edot{width:8px;height:8px;border-radius:50%;background:#ff5a4d;animation:npulse 1.8s ease-in-out infinite}
+@keyframes npulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){#view-news .edot{animation:none}}
+#view-news .ebody{padding:20px 22px 22px}
+#view-news .enote{font-size:13.5px;color:var(--soft);line-height:1.6;margin:0 0 14px}
+#view-news .eparty{display:flex;height:38px;border-radius:12px;overflow:hidden;margin:4px 0 6px;font-size:13px;font-weight:800;color:#fff}
+#view-news .eparty .edem{background:#2f5fd0;display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden}
+#view-news .eparty .erep{background:#cf3f38;display:flex;align-items:center;justify-content:flex-end;padding:0 12px;white-space:nowrap;overflow:hidden}
+#view-news .eparty-lab{display:flex;justify-content:space-between;font-size:12px;color:var(--soft);margin:0 0 14px}
+#view-news .erow{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)}
+#view-news .erow:last-of-type{border-bottom:0}
+#view-news .erank{font-size:13px;font-weight:800;color:var(--soft);text-align:center}
+#view-news .ename{font-size:15.5px;font-weight:650;line-height:1.3}
+#view-news .ebar{height:6px;border-radius:99px;background:rgba(127,160,175,.28);margin-top:6px;overflow:hidden}
+#view-news .ebar i{display:block;height:100%;border-radius:99px;background:#5b7a90}
+#view-news .epct{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+#view-news .esrc{font-size:12px;color:var(--soft);line-height:1.55;margin:14px 0 0}
+#view-news .esrc a{color:var(--link);font-weight:600}
+#view-news .elinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+#view-news .elinks a{flex:1 1 160px;text-align:center;text-decoration:none;font-weight:700;font-size:13.5px;padding:12px 10px;border-radius:999px;min-height:46px;border:1.5px solid var(--border);color:var(--ink);background:rgba(255,255,255,.35)}
+#view-news .isw{margin-top:18px;border:1.5px solid #2f5fd0;border-radius:18px;padding:18px;background:rgba(47,95,208,.07)}
+#view-news .isw h3{font-size:17px;margin:0 0 6px;line-height:1.3}
+#view-news .isw p{font-size:13.5px;color:var(--soft);line-height:1.6;margin:0 0 12px}
+#view-news .isw a{display:block;text-align:center;background:#2f5fd0;color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:13px 12px;border-radius:999px;min-height:48px}
 </style>
-  <div class="hero"><h1>📍 Local</h1></div>
-  <section class="card" aria-label="Local news">
-    <h2>📰 Local News</h2>
-    <div class="lnews" id="localNewsLocal"><p class="lstatus">Loading local headlines…</p></div>
+  <div class="nhero"><h1>📰 <span class="nred">News</span></h1><p class="nsub">Cicero &amp; Syracuse, national and world headlines — family-friendly, updated live.</p><div class="nrule" aria-hidden="true"></div></div>
+  <section class="ncard ecard" aria-label="2028 election outlook">
+    <div class="ehead">
+      <div class="nhead"><span class="nkick">Election 2028 · Outlook</span><h2>🇺🇸 2028 Election Outlook</h2></div>
+      <span class="elive"><span class="edot" aria-hidden="true"></span> Live market prices</span>
+    </div>
+    <div class="ebody">
+      <p class="enote">Who prediction-market traders are backing right now to win the presidency on November 7, 2028. These prices are <b>not polls and not a forecast</b> — this far out they mostly track name recognition, and the field is still forming: no major candidate has formally declared a run.</p>
+      <div id="electionOutlook"><p class="lstatus">Loading the live 2028 outlook…</p></div>
+      <div class="elinks">
+        <a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank" rel="noopener">Live market on Polymarket &rarr;</a>
+        <a href="https://2028tracker.com/odds" target="_blank" rel="noopener">2028 Tracker — all markets &rarr;</a>
+      </div>
+      <div class="isw">
+        <h3>🗳️ See how you align</h3>
+        <p>Take the free iSideWith quiz — answer the issues and see which candidates and parties match your views.</p>
+        <a href="https://www.isidewith.org/" target="_blank" rel="noopener">Take the quiz on iSideWith.org &rarr;</a>
+      </div>
+    </div>
   </section>
-  <section class="card" aria-label="National news">
-    <h2>🇺🇸 National News</h2>
-    <div class="lnews" id="localNewsNational"><p class="lstatus">Loading national headlines…</p></div>
+  <section class="ncard" aria-label="Local news">
+    <div class="nhead"><span class="nkick">Cicero &amp; Syracuse</span><h2>Local News</h2></div>
+    <div class="lnews" id="newsLocal"><p class="lstatus">Loading local headlines…</p></div>
   </section>
-  <section class="card" aria-label="Global news">
-    <h2>🌍 Global News</h2>
-    <div class="lnews" id="localNewsGlobal"><p class="lstatus">Loading global headlines…</p></div>
+  <section class="ncard" aria-label="National news">
+    <div class="nhead"><span class="nkick">United States</span><h2>National News</h2></div>
+    <div class="lnews" id="newsNational"><p class="lstatus">Loading national headlines…</p></div>
   </section>
-  <section class="card" aria-label="School closings and delays">
-    <h2>🏫 School Closings &amp; Delays</h2>
+  <section class="ncard" aria-label="Global news">
+    <div class="nhead"><span class="nkick">World</span><h2>Global News</h2></div>
+    <div class="lnews" id="newsGlobal"><p class="lstatus">Loading global headlines…</p></div>
+  </section>
+  <section class="ncard" aria-label="School closings and delays">
+    <div class="nhead"><span class="nkick">Schools</span><h2>🏫 School Closings &amp; Delays</h2></div>
     <iframe class="closings-frame" title="Live school closings and delays from CNY Central" src="https://cnycentral.com/resources/ftptransfer/wstm/closings/closings.htm" loading="lazy"></iframe>
     <a class="btn" href="https://cnycentral.com/weather/closings" target="_blank" rel="noopener">All closings on CNY Central &rarr;</a>
   </section>
-  <section class="card" aria-label="Road conditions">
-    <h2>🚗 Road Conditions — Cicero &amp; Syracuse</h2>
-    <div id="localRoads"><p class="lstatus">Checking road alerts…</p></div>
+  <section class="ncard" aria-label="Road conditions">
+    <div class="nhead"><span class="nkick">Travel</span><h2>🚗 Road Conditions — Cicero &amp; Syracuse</h2></div>
+    <div id="newsRoads"><p class="lstatus">Checking road alerts…</p></div>
     <a class="btn" href="https://511ny.org/" target="_blank" rel="noopener">Live roads &amp; cameras on 511NY &rarr;</a>
   </section>
 </main>
@@ -449,28 +510,75 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       }).join('');
     });
   }
-  render('localNewsLocal',[
+  render('newsLocal',[
     {name:'syracuse.com',url:'https://www.syracuse.com/arc/outboundfeeds/rss/?outputType=xml'},
     {name:'NewsChannel 9',url:'https://www.localsyr.com/feed/'}
   ],8,'No family-friendly local stories right now.','Couldn\u2019t load local headlines right now.');
-  render('localNewsNational',[
+  render('newsNational',[
     {name:'NPR',url:'https://feeds.npr.org/1001/rss.xml'},
     {name:'New York Times',url:'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml'}
   ],6,'No family-friendly national stories right now.','Couldn\u2019t load national headlines right now.');
-  render('localNewsGlobal',[
+  render('newsGlobal',[
     {name:'BBC News',url:'https://feeds.bbci.co.uk/news/world/rss.xml'},
     {name:'BBC News',url:'https://feeds.bbci.co.uk/news/rss.xml'}
   ],6,'No family-friendly global stories right now.','Couldn\u2019t load global headlines right now.');
   // Road conditions: live NWS alerts for the Cicero point (same verified
   // api.weather.gov endpoint the Weather tab uses) — 511NY's API needs a
   // developer key, so its live map is linked above instead of faked here.
-  var roads=document.getElementById('localRoads');
+  var roads=document.getElementById('newsRoads');
   if(roads){
     fetch('https://api.weather.gov/alerts/active?point=43.1713,-76.1250',{headers:{'Accept':'application/geo+json'}}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
       var feats=(d&&d.features)||[];
       if(!feats.length){roads.innerHTML='<p class="lstatus">No road alerts for Cicero right now.</p>';return;}
       roads.innerHTML=feats.map(function(f){var p=f.properties||{};return '<div class="lroad"><b>'+esc(p.event||'Weather alert')+'</b>'+(p.headline?'<span>'+esc(p.headline)+'</span>':'')+'</div>';}).join('');
     }).catch(function(){roads.innerHTML='<p class="lstatus">Couldn\u2019t check road alerts right now — check 511NY below.</p>';});
+  }
+  // 2028 election outlook: live from Polymarket's public Gamma API
+  // (verified Nov 12, 2026: Access-Control-Allow-Origin: * and live prices
+  // for "Presidential Election Winner 2028" + "Which party wins 2028").
+  // Kalshi's API 403s from browsers (same block as the sports odds), so it
+  // is not fetched here. Numbers render ONLY from the live response — on
+  // any failure the section shows links out instead of figures.
+  var ebox=document.getElementById('electionOutlook');
+  function topOutcomes(ev,limit){
+    var byName={};
+    ((ev&&ev.markets)||[]).forEach(function(m){
+      if(!m||m.active===false||m.closed)return;
+      var name=m.groupItemTitle||'';
+      if(!name||/^Person [A-Z]+$/.test(name))return;
+      var prices=null;
+      try{prices=JSON.parse(m.outcomePrices||'null');}catch(e){}
+      if(!prices||prices[0]==null)return;
+      var pct=parseFloat(prices[0])*100;
+      if(isNaN(pct))return;
+      var vol=parseFloat(m.volume)||0;
+      if(!byName[name]||vol>byName[name].vol)byName[name]={name:name,pct:pct,vol:vol};
+    });
+    return Object.keys(byName).map(function(k){return byName[k];}).sort(function(a,b){return b.pct-a.pct;}).slice(0,limit);
+  }
+  function gevent(slug){
+    return fetch('https://gamma-api.polymarket.com/events?slug='+slug).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d[0])||null;});
+  }
+  if(ebox){
+    Promise.all([gevent('presidential-election-winner-2028'),gevent('which-party-wins-2028-us-presidential-election')]).then(function(evs){
+      var top=topOutcomes(evs[0],6);
+      if(!top.length)throw new Error('empty');
+      var party={};
+      topOutcomes(evs[1],10).forEach(function(o){party[o.name]=o.pct;});
+      var html='';
+      if(party['Democratic']!=null&&party['Republican']!=null){
+        var dp=Math.round(party['Democratic']),rp=Math.round(party['Republican']);
+        html+='<div class="eparty" role="img" aria-label="Party to win 2028: Democratic '+dp+' percent, Republican '+rp+' percent"><div class="edem" style="width:'+party['Democratic']+'%">Democratic '+dp+'%</div><div class="erep" style="width:'+party['Republican']+'%">Republican '+rp+'%</div></div><p class="eparty-lab"><span>Chance by party</span><span>Live · Polymarket</span></p>';
+      }
+      html+=top.map(function(o,i){
+        var pct=o.pct>=10?Math.round(o.pct):Math.round(o.pct*10)/10;
+        return '<div class="erow"><span class="erank">'+(i+1)+'</span><span><span class="ename">'+esc(o.name)+'</span><span class="ebar"><i style="width:'+Math.min(100,o.pct)+'%"></i></span></span><span class="epct">'+pct+'%</span></div>';
+      }).join('');
+      html+='<p class="esrc">Market-implied chance of winning the presidency · Source: <a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank" rel="noopener">Polymarket</a> · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET · Prices move constantly.</p>';
+      ebox.innerHTML=html;
+    }).catch(function(){
+      ebox.innerHTML='<p class="lstatus">The live outlook couldn\u2019t load right now — see the current standings on Polymarket or the 2028 Tracker below.</p>';
+    });
   }
 })();
 </script>
@@ -969,8 +1077,8 @@ body.on-christmas{color-scheme:light}
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News · Cicero, NY · Weather data by Open-Meteo</footer>
 <script>
 (function(){
-  var views={home:1,weather:1,local:1,sports:1,faith:1,christmas:1};
-  var tabOrder=['home','weather','local','sports','faith','christmas'];
+  var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
+  var tabOrder=['home','weather','news','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
@@ -1057,6 +1165,7 @@ body.on-christmas{color-scheme:light}
     window.scrollTo(0,0);
   }
   function show(name,instant){
+    if(name==='local')name='news';
     if(!views[name])name='home';
     var idx=tabOrder.indexOf(name);if(idx<0)idx=0;
     if(idx===currentIdx&&!settling){if(!instant)window.scrollTo(0,0);return;}
