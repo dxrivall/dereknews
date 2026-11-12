@@ -1,0 +1,941 @@
+{
+  "updated_at": "2026-11-12T21:19:46.834268+00:00",
+  "games": [
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV12DETWAS",
+      "title": "Detroit vs Washington",
+      "teams": {
+        "Detroit": 80,
+        "Washington": 21
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV12TORPHI",
+      "title": "Toronto vs Philadelphia",
+      "teams": {
+        "Toronto": 30,
+        "Philadelphia": 70
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV12DALMIN",
+      "title": "Dallas vs Minnesota",
+      "teams": {
+        "Dallas": 34,
+        "Minnesota": 67
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV12CHAPHX",
+      "title": "Charlotte vs Phoenix",
+      "teams": {
+        "Charlotte": 34,
+        "Phoenix": 68
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13MILORL",
+      "title": "Milwaukee vs Orlando",
+      "teams": {
+        "Milwaukee": 24,
+        "Orlando": 77
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13NYKIND",
+      "title": "New York vs Indiana",
+      "teams": {
+        "New York": 72,
+        "Indiana": 30
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13ATLCHI",
+      "title": "Atlanta vs Chicago",
+      "teams": {
+        "Atlanta": 72,
+        "Chicago": 29
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13CLEMIA",
+      "title": "Cleveland vs Miami",
+      "teams": {
+        "Cleveland": 52,
+        "Miami": 51
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13MEMNOP",
+      "title": "Memphis vs New Orleans",
+      "teams": {
+        "Memphis": 62,
+        "New Orleans": 39
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13UTAHOU",
+      "title": "Utah vs Houston",
+      "teams": {
+        "Utah": 10,
+        "Houston": 91
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13GSWSAS",
+      "title": "Golden State vs San Antonio",
+      "teams": {
+        "Golden State": 16,
+        "San Antonio": 86
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13PORSAC",
+      "title": "Portland vs Sacramento",
+      "teams": {
+        "Portland": 81,
+        "Sacramento": 20
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV13OKCLAC",
+      "title": "Oklahoma City vs Los Angeles C",
+      "teams": {
+        "Oklahoma City": 78,
+        "Los Angeles C": 24
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV14DENNOP",
+      "title": "Denver vs New Orleans",
+      "teams": {
+        "Denver": 82,
+        "New Orleans": 19
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV14DALCLE",
+      "title": "Dallas vs Cleveland",
+      "teams": {
+        "Dallas": 40,
+        "Cleveland": 62
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV14BKNMEM",
+      "title": "Brooklyn vs Memphis",
+      "teams": {
+        "Brooklyn": 39,
+        "Memphis": 63
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV14CHIMIN",
+      "title": "Chicago vs Minnesota",
+      "teams": {
+        "Chicago": 16,
+        "Minnesota": 88
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV14DETMIA",
+      "title": "Detroit vs Miami",
+      "teams": {
+        "Detroit": 64,
+        "Miami": 37
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15INDPHI",
+      "title": "Indiana vs Philadelphia",
+      "teams": {
+        "Indiana": 20,
+        "Philadelphia": 81
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15LALPHX",
+      "title": "Los Angeles L vs Phoenix",
+      "teams": {
+        "Los Angeles L": 67,
+        "Phoenix": 36
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15CHALAC",
+      "title": "Charlotte vs Los Angeles C",
+      "teams": {
+        "Charlotte": 45,
+        "Los Angeles C": 57
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15SASUTA",
+      "title": "San Antonio vs Utah",
+      "teams": {
+        "San Antonio": 91,
+        "Utah": 9
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15DALBOS",
+      "title": "Dallas vs Boston",
+      "teams": {
+        "Dallas": 17,
+        "Boston": 85
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15NYKTOR",
+      "title": "New York vs Toronto",
+      "teams": {
+        "New York": 67,
+        "Toronto": 33
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15HOUWAS",
+      "title": "Houston vs Washington",
+      "teams": {
+        "Houston": 82,
+        "Washington": 18
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15ATLMIL",
+      "title": "Atlanta vs Milwaukee",
+      "teams": {
+        "Atlanta": 74,
+        "Milwaukee": 31
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV15OKCSAC",
+      "title": "Oklahoma City vs Sacramento",
+      "teams": {
+        "Oklahoma City": 83,
+        "Sacramento": 17
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV16ORLBOS",
+      "title": "Orlando vs Boston",
+      "teams": {
+        "Orlando": 43,
+        "Boston": 72
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV16GSWNOP",
+      "title": "Golden State vs New Orleans",
+      "teams": {
+        "Golden State": 44,
+        "New Orleans": 57
+      }
+    },
+    {
+      "series": "KXNBAGAME",
+      "event": "KXNBAGAME-26NOV16PORMIN",
+      "title": "Portland vs Minnesota",
+      "teams": {
+        "Portland": 52,
+        "Minnesota": 56
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV12WASNYG",
+      "title": "Washington vs New York G",
+      "teams": {
+        "New York G": 54,
+        "Washington": 47
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15NEDET",
+      "title": "New England vs Detroit",
+      "teams": {
+        "Detroit": 59,
+        "New England": 41
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15BUFNYJ",
+      "title": "Buffalo vs New York J",
+      "teams": {
+        "New York J": 21,
+        "Buffalo": 80
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15CARNO",
+      "title": "Carolina vs New Orleans",
+      "teams": {
+        "New Orleans": 56,
+        "Carolina": 45
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15HOUCLE",
+      "title": "Houston vs Cleveland",
+      "teams": {
+        "Cleveland": 34,
+        "Houston": 68
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15JACTEN",
+      "title": "Jacksonville vs Tennessee",
+      "teams": {
+        "Tennessee": 17,
+        "Jacksonville": 84
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15KCATL",
+      "title": "Kansas City vs Atlanta",
+      "teams": {
+        "Atlanta": 37,
+        "Kansas City": 63
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15MIAIND",
+      "title": "Miami vs Indianapolis",
+      "teams": {
+        "Indianapolis": 66,
+        "Miami": 35
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15MINGB",
+      "title": "Minnesota vs Green Bay",
+      "teams": {
+        "Green Bay": 60,
+        "Minnesota": 41
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15LARARI",
+      "title": "Los Angeles R vs Arizona",
+      "teams": {
+        "Arizona": 20,
+        "Los Angeles R": 81
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15SEALV",
+      "title": "Seattle vs Las Vegas",
+      "teams": {
+        "Las Vegas": 28,
+        "Seattle": 73
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15SFDAL",
+      "title": "San Francisco vs Dallas",
+      "teams": {
+        "Dallas": 35,
+        "San Francisco": 66
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV15PITCIN",
+      "title": "Pittsburgh vs Cincinnati",
+      "teams": {
+        "Cincinnati": 63,
+        "Pittsburgh": 38
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV16LACBAL",
+      "title": "Los Angeles C vs Baltimore",
+      "teams": {
+        "Baltimore": 67,
+        "Los Angeles C": 34
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV19INDHOU",
+      "title": "Indianapolis vs Houston",
+      "teams": {
+        "Houston": 81,
+        "Indianapolis": 18
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22ARIKC",
+      "title": "Arizona vs Kansas City",
+      "teams": {
+        "Kansas City": 90,
+        "Arizona": 11
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22BALCAR",
+      "title": "Baltimore vs Carolina",
+      "teams": {
+        "Carolina": 56,
+        "Baltimore": 48
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22MIABUF",
+      "title": "Miami vs Buffalo",
+      "teams": {
+        "Buffalo": 93,
+        "Miami": 9
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22NOCHI",
+      "title": "New Orleans vs Chicago",
+      "teams": {
+        "Chicago": 82,
+        "New Orleans": 19
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22PITPHI",
+      "title": "Pittsburgh vs Philadelphia",
+      "teams": {
+        "Philadelphia": 36,
+        "Pittsburgh": 68
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22TBDET",
+      "title": "Tampa Bay vs Detroit",
+      "teams": {
+        "Detroit": 61,
+        "Tampa Bay": 40
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22TENDAL",
+      "title": "Tennessee vs Dallas",
+      "teams": {
+        "Dallas": 81,
+        "Tennessee": 21
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22NYJLAC",
+      "title": "New York J vs Los Angeles C",
+      "teams": {
+        "Los Angeles C": 55,
+        "New York J": 48
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22JACNYG",
+      "title": "Jacksonville vs New York G",
+      "teams": {
+        "New York G": 32,
+        "Jacksonville": 71
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22LVDEN",
+      "title": "Las Vegas vs Denver",
+      "teams": {
+        "Denver": 81,
+        "Las Vegas": 20
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV22MINSF",
+      "title": "Minnesota vs San Francisco",
+      "teams": {
+        "San Francisco": 68,
+        "Minnesota": 33
+      }
+    },
+    {
+      "series": "KXNFLGAME",
+      "event": "KXNFLGAME-26NOV23CINWAS",
+      "title": "Cincinnati vs Washington",
+      "teams": {
+        "Washington": 36,
+        "Cincinnati": 67
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12COLOTT",
+      "title": "Colorado vs Ottawa",
+      "teams": {
+        "Ottawa": 52,
+        "Colorado": 49
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12MINTOR",
+      "title": "Minnesota vs Toronto",
+      "teams": {
+        "Toronto": 38,
+        "Minnesota": 62
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12MTLBOS",
+      "title": "Montreal vs Boston",
+      "teams": {
+        "Boston": 55,
+        "Montreal": 47
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12TBCBJ",
+      "title": "Tampa Bay vs Columbus",
+      "teams": {
+        "Columbus": 50,
+        "Tampa Bay": 50
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12WSHNJ",
+      "title": "Washington vs New Jersey",
+      "teams": {
+        "New Jersey": 60,
+        "Washington": 41
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12DETFLA",
+      "title": "Detroit vs Florida",
+      "teams": {
+        "Florida": 61,
+        "Detroit": 39
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12BUFCHI",
+      "title": "Buffalo vs Chicago",
+      "teams": {
+        "Chicago": 40,
+        "Buffalo": 60
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12WPGDAL",
+      "title": "Winnipeg vs Dallas",
+      "teams": {
+        "Dallas": 61,
+        "Winnipeg": 39
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12STLUTA",
+      "title": "St. Louis vs Utah",
+      "teams": {
+        "Utah": 46,
+        "St. Louis": 55
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV12NYILA",
+      "title": "New York I vs Los Angeles",
+      "teams": {
+        "Los Angeles": 54,
+        "New York I": 47
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV13NYRVAN",
+      "title": "New York R vs Vancouver",
+      "teams": {
+        "Vancouver": 34,
+        "New York R": 65
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV13NSHVGK",
+      "title": "Nashville vs Vegas",
+      "teams": {
+        "Vegas": 62,
+        "Nashville": 38
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14SEACAR",
+      "title": "Seattle vs Carolina",
+      "teams": {
+        "Carolina": 78,
+        "Seattle": 23
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14WPGCHI",
+      "title": "Winnipeg vs Chicago",
+      "teams": {
+        "Chicago": 41,
+        "Winnipeg": 59
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14COLMTL",
+      "title": "Colorado vs Montreal",
+      "teams": {
+        "Montreal": 47,
+        "Colorado": 53
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14DETTB",
+      "title": "Detroit vs Tampa Bay",
+      "teams": {
+        "Tampa Bay": 69,
+        "Detroit": 32
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14EDMTOR",
+      "title": "Edmonton vs Toronto",
+      "teams": {
+        "Toronto": 47,
+        "Edmonton": 56
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14FLASTL",
+      "title": "Florida vs St. Louis",
+      "teams": {
+        "St. Louis": 50,
+        "Florida": 53
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14MINBOS",
+      "title": "Minnesota vs Boston",
+      "teams": {
+        "Boston": 48,
+        "Minnesota": 54
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14NJWSH",
+      "title": "New Jersey vs Washington",
+      "teams": {
+        "Washington": 50,
+        "New Jersey": 53
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14OTTPIT",
+      "title": "Ottawa vs Pittsburgh",
+      "teams": {
+        "Pittsburgh": 50,
+        "Ottawa": 50
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14PHICBJ",
+      "title": "Philadelphia vs Columbus",
+      "teams": {
+        "Columbus": 59,
+        "Philadelphia": 42
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14BUFDAL",
+      "title": "Buffalo vs Dallas",
+      "teams": {
+        "Dallas": 58,
+        "Buffalo": 41
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14SJUTA",
+      "title": "San Jose vs Utah",
+      "teams": {
+        "Utah": 68,
+        "San Jose": 33
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14CGYLA",
+      "title": "Calgary vs Los Angeles",
+      "teams": {
+        "Los Angeles": 62,
+        "Calgary": 39
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV14NYIANA",
+      "title": "New York I vs Anaheim",
+      "teams": {
+        "Anaheim": 53,
+        "New York I": 47
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV15EDMPHI",
+      "title": "Edmonton vs Philadelphia",
+      "teams": {
+        "Philadelphia": 42,
+        "Edmonton": 57
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV15CGYANA",
+      "title": "Calgary vs Anaheim",
+      "teams": {
+        "Anaheim": 59,
+        "Calgary": 38
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV15FLADAL",
+      "title": "Florida vs Dallas",
+      "teams": {
+        "Dallas": 59,
+        "Florida": 43
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV15NSHSJ",
+      "title": "Nashville vs San Jose",
+      "teams": {
+        "San Jose": 44,
+        "Nashville": 61
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV15VANVGK",
+      "title": "Vancouver vs Vegas",
+      "teams": {
+        "Vegas": 78,
+        "Vancouver": 22
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV16MTLNYR",
+      "title": "Montreal vs New York R",
+      "teams": {
+        "New York R": 0,
+        "Montreal": 50
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV16VANUTA",
+      "title": "Vancouver vs Utah",
+      "teams": {
+        "Utah": 80,
+        "Vancouver": 18
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17BUFPHI",
+      "title": "Buffalo vs Philadelphia",
+      "teams": {
+        "Philadelphia": 46,
+        "Buffalo": 55
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17CBJNYI",
+      "title": "Columbus vs New York I",
+      "teams": {
+        "New York I": 50,
+        "Columbus": 49
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17EDMFLA",
+      "title": "Edmonton vs Florida",
+      "teams": {
+        "Florida": 0,
+        "Edmonton": 49
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17LABOS",
+      "title": "Los Angeles vs Boston",
+      "teams": {
+        "Boston": 60,
+        "Los Angeles": 0
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17OTTWPG",
+      "title": "Ottawa vs Winnipeg",
+      "teams": {
+        "Winnipeg": 0,
+        "Ottawa": 53
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17TORCHI",
+      "title": "Toronto vs Chicago",
+      "teams": {
+        "Chicago": 45,
+        "Toronto": 57
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17WSHTB",
+      "title": "Washington vs Tampa Bay",
+      "teams": {
+        "Tampa Bay": 0,
+        "Washington": 0
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17ANASTL",
+      "title": "Anaheim vs St. Louis",
+      "teams": {
+        "St. Louis": 61,
+        "Anaheim": 43
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17NSHMIN",
+      "title": "Nashville vs Minnesota",
+      "teams": {
+        "Minnesota": 67,
+        "Nashville": 0
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17CGYSJ",
+      "title": "Calgary vs San Jose",
+      "teams": {
+        "San Jose": 57,
+        "Calgary": 47
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV17DALVGK",
+      "title": "Dallas vs Vegas",
+      "teams": {
+        "Vegas": 0,
+        "Dallas": 47
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV18BOSDET",
+      "title": "Boston vs Detroit",
+      "teams": {
+        "Detroit": 0,
+        "Boston": 50
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV18MTLNJ",
+      "title": "Montreal vs New Jersey",
+      "teams": {
+        "New Jersey": 57,
+        "Montreal": 40
+      }
+    },
+    {
+      "series": "KXNHLGAME",
+      "event": "KXNHLGAME-26NOV18COLUTA",
+      "title": "Colorado vs Utah",
+      "teams": {
+        "Utah": 0,
+        "Colorado": 53
+      }
+    }
+  ]
+}
