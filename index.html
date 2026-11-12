@@ -306,6 +306,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .radar a{display:block;text-align:center;color:#fff;font-size:14px;padding:10px;text-decoration:underline}
 .day .pp{font-size:12px;color:#9fd8ff;margin-top:3px;white-space:nowrap}
 .wxmore-open{margin-top:0}
+.snowday{margin:30px auto 0;max-width:680px;text-align:center;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:24px 16px 20px;color:#fff}
+.snowday-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.92}
+.snowday-pct{font-size:clamp(88px,24vw,132px);font-weight:800;line-height:.95;letter-spacing:-.03em;margin:8px 0 4px}
+.snowday-line{font-size:14px;opacity:.92;margin:0;line-height:1.4}
 .storm-list{display:flex;flex-direction:column;gap:12px}
 .storm-card{background:rgba(255,255,255,.94);color:#1d2a30;border-radius:14px;padding:16px;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .storm-card h4{margin:0 0 6px;font-size:16px;line-height:1.3;color:#7a1710}
@@ -348,6 +352,11 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <h3 class="wx-herolabel">7-day outlook</h3>
   <div class="days" id="wxDays" aria-label="7-day forecast"></div>
   <p class="nws-line"><a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service — Official Forecast for Cicero, NY →</a></p>
+  <section class="snowday" id="snowDayWidget" aria-label="Snow day calculator">
+    <div class="snowday-label" id="snowDayLabel">Snow Day Chance</div>
+    <div class="snowday-pct" id="snowDayPct">&mdash;</div>
+    <p class="snowday-line" id="snowDayLine">Checking the live forecast&hellip;</p>
+  </section>
   <div class="wxmore-open">
   <h3 class="wxsec">📋 Today&rsquo;s Details</h3>
   <div class="wdetails" id="wxDetails" aria-label="Today's weather details"></div>
@@ -1375,10 +1384,90 @@ body.on-christmas{color-scheme:light}
     var th=wxThemeClass(code,isDay);
     var hw=document.getElementById('homeWxWidget');if(hw){hw.classList.remove('wxth-clear-day','wxth-clear-night','wxth-partly-day','wxth-partly-night','wxth-cloudy','wxth-fog','wxth-rain','wxth-snow','wxth-storm');hw.classList.add(th);}
   }
-  var url='https://api.open-meteo.com/v1/forecast?latitude=43.1713&longitude=-76.1250&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&hourly=temperature_2m,precipitation_probability,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max,wind_speed_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York&forecast_days=7';
+  // Snow Day Calculator — built in, no outside site. The percent is figured
+  // right here from the same live data this page already loads: the
+  // Open-Meteo forecast for Cicero (snowfall amount + timing, temps, wind)
+  // and any active National Weather Service winter alerts for Cicero.
+  // If the live forecast cannot load, the widget shows a dash, never a guess.
+  var snowWx=null,snowAlerts=null,snowWxFailed=false;
+  function snowHours(d,dateStr,hFrom,hTo){
+    // Sum hourly snowfall (cm) on dateStr for hours hFrom <= h < hTo.
+    if(!d||!d.hourly||!d.hourly.time||!d.hourly.snowfall)return 0;
+    var s=0;
+    for(var i=0;i<d.hourly.time.length;i++){
+      var t=d.hourly.time[i];
+      if(t.slice(0,10)!==dateStr)continue;
+      var h=parseInt(t.slice(11,13),10);
+      if(h>=hFrom&&h<hTo)s+=(d.hourly.snowfall[i]||0);
+    }
+    return s/2.54; // cm -> inches
+  }
+  function snowDayFmtIn(v){
+    if(v<0.3)return 'Less than \u00BD inch expected';
+    var r=Math.round(v*2)/2;
+    var txt=(r%1===0)?String(r.toFixed(0)):String(r);
+    return 'About '+txt+(r===1?' inch':' inches')+' expected';
+  }
+  function calcSnowDay(){
+    if(!snowWx||!snowWx.daily||!snowWx.daily.time)return null;
+    var d=snowWx,ti=-1;
+    for(var i=1;i<d.daily.time.length;i++){
+      var wd=new Date(d.daily.time[i]+'T12:00:00').getDay();
+      if(wd>=1&&wd<=5){ti=i;break;} // next school day: skip Sat/Sun
+    }
+    if(ti<0)return null;
+    var dateStr=d.daily.time[ti],prevStr=d.daily.time[ti-1];
+    var total=(d.daily.snowfall_sum&&d.daily.snowfall_sum[ti]!=null)?d.daily.snowfall_sum[ti]/2.54:snowHours(d,dateStr,0,24);
+    var overnight=snowHours(d,prevStr,18,24)+snowHours(d,dateStr,0,7);
+    var daySnow=snowHours(d,dateStr,7,16);
+    var tMin=d.daily.temperature_2m_min?d.daily.temperature_2m_min[ti]:null;
+    var tMax=d.daily.temperature_2m_max?d.daily.temperature_2m_max[ti]:null;
+    var wMax=d.daily.wind_speed_10m_max?d.daily.wind_speed_10m_max[ti]:null;
+    var gMax=(d.daily.wind_gusts_10m_max&&d.daily.wind_gusts_10m_max[ti]!=null)?d.daily.wind_gusts_10m_max[ti]:null;
+    var evts=[];
+    if(snowAlerts)snowAlerts.forEach(function(f){evts.push(((f.properties||{}).event||'').toLowerCase());});
+    function hasAlert(txt){return evts.some(function(e){return e.indexOf(txt)>-1;});}
+    var pct;
+    if(total<0.05){
+      pct=hasAlert('blizzard warning')?35:hasAlert('winter storm warning')||hasAlert('lake effect snow warning')?30:hasAlert('winter storm watch')||hasAlert('lake effect snow watch')?18:hasAlert('winter weather advisory')?10:0;
+    }else{
+      if(total<0.5)pct=5+total*10;
+      else if(total<1)pct=10+(total-0.5)*20;
+      else if(total<2)pct=20+(total-1)*18;
+      else if(total<4)pct=38+(total-2)*13;
+      else if(total<6)pct=64+(total-4)*8;
+      else if(total<9)pct=80+(total-6)*3;
+      else pct=90;
+      if(total>=0.5&&overnight>=Math.max(0.5,total*0.45))pct+=8; // snow down before the morning buses
+      else if(total>=0.5&&daySnow>=0.5)pct+=3;
+      if(tMin!=null&&tMin<=0)pct+=5;else if(tMin!=null&&tMin<=10)pct+=3;
+      if(tMax!=null&&tMax>=38&&total<1)pct-=4;
+      if((gMax!=null&&gMax>=40)||(wMax!=null&&wMax>=30))pct+=8;
+      else if((gMax!=null&&gMax>=30)||(wMax!=null&&wMax>=22))pct+=4;
+      if(hasAlert('blizzard warning'))pct=Math.max(pct+10,88);
+      else if(hasAlert('winter storm warning')||hasAlert('lake effect snow warning'))pct+=15;
+      else if(hasAlert('winter storm watch')||hasAlert('lake effect snow watch'))pct+=10;
+      else if(hasAlert('winter weather advisory'))pct+=5;
+    }
+    pct=Math.max(0,Math.min(95,Math.round(pct)));
+    var dayName=new Date(dateStr+'T12:00:00').toLocaleDateString('en-US',{weekday:'long'});
+    var line=total<0.05?'No snow expected':snowDayFmtIn(total);
+    return {pct:pct,dayName:dayName,line:line};
+  }
+  function updateSnowDay(){
+    var pctEl=document.getElementById('snowDayPct'),labEl=document.getElementById('snowDayLabel'),lineEl=document.getElementById('snowDayLine');
+    if(!pctEl)return;
+    var r=calcSnowDay();
+    if(!r){pctEl.textContent='\u2014';if(labEl)labEl.textContent='Snow Day Chance';if(lineEl)lineEl.textContent=snowWxFailed?'Live forecast unavailable':'Checking the live forecast\u2026';return;}
+    if(labEl)labEl.textContent='Snow Day Chance \u2014 '+r.dayName;
+    pctEl.textContent=r.pct+'%';
+    if(lineEl)lineEl.textContent=r.line;
+  }
+  var url='https://api.open-meteo.com/v1/forecast?latitude=43.1713&longitude=-76.1250&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&hourly=temperature_2m,precipitation_probability,weather_code,is_day,snowfall&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max,wind_speed_10m_max,snowfall_sum,wind_gusts_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York&forecast_days=7';
   function compass(deg){var dirs=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];return dirs[Math.round(((deg%360)+360)%360/22.5)%16];}
   function fmtClock(iso){if(!iso)return'—';var dt=new Date(iso);if(isNaN(dt))return'—';return dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
   fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+    snowWx=d; updateSnowDay();
     var cur=d.current, ci=info(cur.weather_code);
     document.getElementById('wxIcon').textContent=ci[0];
     document.getElementById('wxTemp').textContent=Math.round(cur.temperature_2m)+'°';
@@ -1445,7 +1534,7 @@ body.on-christmas{color-scheme:light}
     if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
     var hwm=document.getElementById('homeWxMeta');if(hwm)hwm.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° · Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);
     document.getElementById('wxStamp').textContent='Live data: Open-Meteo · Alerts: National Weather Service · Cicero, NY · Loaded '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  }).catch(function(){document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable — open the Weather tab to retry.';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';});
+  }).catch(function(){snowWxFailed=true;updateSnowDay();document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable — open the Weather tab to retry.';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';});
   // Live weather alerts — National Weather Service (api.weather.gov), Cicero point. Shown only when active.
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
@@ -1453,6 +1542,7 @@ body.on-christmas{color-scheme:light}
   function sevRank(p){var c=sevClass(p);return c==='sev-warning'?0:c==='sev-watch'?1:c==='sev-advisory'?2:3;}
   fetch('https://api.weather.gov/alerts/active?point=43.1713,-76.1250',{headers:{'Accept':'application/geo+json'}}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     var feats=(d&&d.features)||[];
+    snowAlerts=feats; updateSnowDay();
     if(!feats.length)return; // No active alerts — section stays hidden
     feats.sort(function(a,b){return sevRank(a.properties)-sevRank(b.properties);});
     var html='';
