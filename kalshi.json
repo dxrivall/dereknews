@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T21:19:46.834268+00:00",
+  "updated_at": "2026-11-12T21:37:16.201565+00:00",
   "games": [
     {
       "series": "KXNBAGAME",
@@ -16,7 +16,7 @@
       "title": "Toronto vs Philadelphia",
       "teams": {
         "Toronto": 30,
-        "Philadelphia": 70
+        "Philadelphia": 71
       }
     },
     {
@@ -34,7 +34,7 @@
       "title": "Charlotte vs Phoenix",
       "teams": {
         "Charlotte": 34,
-        "Phoenix": 68
+        "Phoenix": 67
       }
     },
     {
@@ -51,8 +51,8 @@
       "event": "KXNBAGAME-26NOV13NYKIND",
       "title": "New York vs Indiana",
       "teams": {
-        "New York": 72,
-        "Indiana": 30
+        "New York": 74,
+        "Indiana": 29
       }
     },
     {
@@ -61,7 +61,7 @@
       "title": "Atlanta vs Chicago",
       "teams": {
         "Atlanta": 72,
-        "Chicago": 29
+        "Chicago": 28
       }
     },
     {
@@ -70,7 +70,7 @@
       "title": "Cleveland vs Miami",
       "teams": {
         "Cleveland": 52,
-        "Miami": 51
+        "Miami": 49
       }
     },
     {
@@ -178,7 +178,7 @@
       "title": "Los Angeles L vs Phoenix",
       "teams": {
         "Los Angeles L": 67,
-        "Phoenix": 36
+        "Phoenix": 35
       }
     },
     {
@@ -249,8 +249,8 @@
       "event": "KXNBAGAME-26NOV16ORLBOS",
       "title": "Orlando vs Boston",
       "teams": {
-        "Orlando": 43,
-        "Boston": 72
+        "Orlando": 28,
+        "Boston": 74
       }
     },
     {
@@ -286,7 +286,7 @@
       "title": "New England vs Detroit",
       "teams": {
         "Detroit": 59,
-        "New England": 41
+        "New England": 42
       }
     },
     {
@@ -402,7 +402,7 @@
       "event": "KXNFLGAME-26NOV19INDHOU",
       "title": "Indianapolis vs Houston",
       "teams": {
-        "Houston": 81,
+        "Houston": 82,
         "Indianapolis": 18
       }
     },
@@ -430,7 +430,7 @@
       "title": "Miami vs Buffalo",
       "teams": {
         "Buffalo": 93,
-        "Miami": 9
+        "Miami": 8
       }
     },
     {
@@ -438,7 +438,7 @@
       "event": "KXNFLGAME-26NOV22NOCHI",
       "title": "New Orleans vs Chicago",
       "teams": {
-        "Chicago": 82,
+        "Chicago": 83,
         "New Orleans": 19
       }
     },
@@ -456,7 +456,7 @@
       "event": "KXNFLGAME-26NOV22TBDET",
       "title": "Tampa Bay vs Detroit",
       "teams": {
-        "Detroit": 61,
+        "Detroit": 62,
         "Tampa Bay": 40
       }
     },
@@ -492,7 +492,7 @@
       "event": "KXNFLGAME-26NOV22LVDEN",
       "title": "Las Vegas vs Denver",
       "teams": {
-        "Denver": 81,
+        "Denver": 82,
         "Las Vegas": 20
       }
     },
@@ -528,7 +528,7 @@
       "event": "KXNHLGAME-26NOV12MINTOR",
       "title": "Minnesota vs Toronto",
       "teams": {
-        "Toronto": 38,
+        "Toronto": 39,
         "Minnesota": 62
       }
     },
@@ -564,7 +564,7 @@
       "event": "KXNHLGAME-26NOV12DETFLA",
       "title": "Detroit vs Florida",
       "teams": {
-        "Florida": 61,
+        "Florida": 62,
         "Detroit": 39
       }
     },
@@ -573,7 +573,7 @@
       "event": "KXNHLGAME-26NOV12BUFCHI",
       "title": "Buffalo vs Chicago",
       "teams": {
-        "Chicago": 40,
+        "Chicago": 41,
         "Buffalo": 60
       }
     },
@@ -582,7 +582,7 @@
       "event": "KXNHLGAME-26NOV12WPGDAL",
       "title": "Winnipeg vs Dallas",
       "teams": {
-        "Dallas": 61,
+        "Dallas": 60,
         "Winnipeg": 39
       }
     },
@@ -592,7 +592,7 @@
       "title": "St. Louis vs Utah",
       "teams": {
         "Utah": 46,
-        "St. Louis": 55
+        "St. Louis": 54
       }
     },
     {
@@ -600,7 +600,7 @@
       "event": "KXNHLGAME-26NOV12NYILA",
       "title": "New York I vs Los Angeles",
       "teams": {
-        "Los Angeles": 54,
+        "Los Angeles": 53,
         "New York I": 47
       }
     },
@@ -610,7 +610,7 @@
       "title": "New York R vs Vancouver",
       "teams": {
         "Vancouver": 34,
-        "New York R": 65
+        "New York R": 67
       }
     },
     {
@@ -664,7 +664,7 @@
       "title": "Edmonton vs Toronto",
       "teams": {
         "Toronto": 47,
-        "Edmonton": 56
+        "Edmonton": 55
       }
     },
     {

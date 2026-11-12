@@ -104,8 +104,47 @@ html,body{overflow-x:hidden}
 .quick button{font:inherit;cursor:pointer;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:26px 12px;box-shadow:var(--shadow);color:var(--ink)}
 .quick .emoji{font-size:30px;display:block;margin-bottom:8px}.quick b{display:block;font-size:16px}.quick span{font-size:13px;color:var(--soft)}
 </style>
+
+<style>
+/* Featured nor'easter article + severe-weather emergency takeover */
+.featured-story{border:2px solid #b42318!important;background:#fff8f3!important}
+.featured-story .fs-kicker{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#b42318;margin:0 0 6px}
+.featured-story h2,.featured-story h3{color:#7a1710!important}
+.featured-story p{line-height:1.65;color:#334155;font-size:14.5px;margin:0 0 10px}
+.featured-story .fs-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.featured-story .fs-links a{flex:1 1 170px;text-align:center;text-decoration:none;font-weight:700;font-size:13.5px;padding:11px 10px;border-radius:999px;min-height:44px}
+.featured-story .fs-nws{background:#b42318;color:#fff}
+.featured-story .fs-usa{background:#1d2a30;color:#fff}
+#view-weather .featured-story{margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#view-weather .featured-story h3{font-size:19px;margin:0 0 8px;line-height:1.3}
+.severe-overlay{position:fixed;inset:0;z-index:9999;background:rgba(90,8,4,.96);color:#fff;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px 16px 40px}
+.severe-overlay.open{display:block}
+.severe-box{max-width:680px;margin:0 auto;background:#fff;color:#1d2a30;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.severe-head{background:#b42318;color:#fff;padding:18px 52px 18px 20px;position:relative}
+.severe-head .sev-kicker{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;opacity:.95;margin:0 0 6px}
+.severe-head h2{font-size:26px;line-height:1.2;margin:0;color:#fff;text-align:left}
+.severe-x{position:absolute;top:12px;right:12px;width:52px;height:52px;border-radius:50%;border:2px solid #fff;background:#7a1710;color:#fff;font-size:30px;line-height:1;cursor:pointer;font-weight:700}
+.severe-body{padding:18px 20px 22px;text-align:left}
+.severe-body h3{font-size:16px;margin:16px 0 6px;color:#7a1710}
+.severe-body p{font-size:15px;line-height:1.65;margin:0 0 10px;color:#334155;white-space:pre-wrap}
+.severe-body .sev-when{font-weight:700;color:#1d2a30;white-space:normal}
+.severe-body .sev-do{background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:12px 14px;color:#1d2a30;white-space:pre-wrap}
+.severe-close2{display:block;width:100%;margin-top:16px;background:#b42318;color:#fff;border:0;border-radius:999px;padding:14px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;min-height:52px}
+body.severe-locked{overflow:hidden}
+</style>
 </head>
 <body>
+<div class="severe-overlay" id="severeOverlay" role="alertdialog" aria-modal="true" aria-labelledby="severeTitle" aria-hidden="true">
+  <div class="severe-box">
+    <div class="severe-head">
+      <p class="sev-kicker">&#9888;&#65039; Emergency Weather Warning &mdash; Cicero, NY</p>
+      <h2 id="severeTitle">Severe Weather Warning</h2>
+      <button class="severe-x" id="severeClose" type="button" aria-label="Close emergency warning">&times;</button>
+    </div>
+    <div class="severe-body" id="severeBody"></div>
+  </div>
+</div>
+
 <div id="wxBg" aria-hidden="true"></div>
 <nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
 <!-- HOME -->
@@ -161,6 +200,18 @@ html,body{overflow-x:hidden}
   <div class="hero"><div class="title-wrap"><div class="garland" aria-hidden="true"><svg viewBox="0 0 600 78" role="presentation" focusable="false"><defs><g id="pt"><path d="M0 0 L-10 11 M0 0 L-3 14 M0 0 L4 14 M0 0 L11 10" stroke="#1e6b3d" stroke-width="3" stroke-linecap="round" fill="none"/><circle r="6.5" fill="#175233"/><circle cx="-4" cy="-3" r="4.5" fill="#1d6540"/><circle cx="5" cy="-2" r="4" fill="#123f27"/></g><g id="br"><circle r="3.4" fill="#c1271d"/><circle cx="7.5" cy="2" r="3" fill="#d92f24"/><circle cx="3" cy="6.5" r="2.8" fill="#a91e15"/><circle cx="-1" cy="-1" r="1" fill="#fff" opacity=".55"/></g><g id="lt"><circle r="7.5" fill="#ffd98a" opacity=".38"/><circle r="3.2" fill="#fff3b0" stroke="#ffb454" stroke-width=".8"/><circle cx="-1" cy="-1" r="1" fill="#fff"/></g><g id="orn"><path d="M0 0 V7" stroke="#3a3a3a" stroke-width="1.4"/><circle cy="14" r="6.8" fill="#b91f16" stroke="#7f130e"/><circle cx="-2.2" cy="11" r="2" fill="#fff" opacity=".65"/></g></defs><path d="M12 12 Q300 74 588 12" fill="none" stroke="#123b24" stroke-width="11" stroke-linecap="round"/><path d="M12 9 Q300 71 588 9" fill="none" stroke="#1c5a35" stroke-width="6" stroke-linecap="round" opacity=".9"/><use href="#pt" transform="translate(12 10)"/><use href="#pt" transform="translate(41 16)"/><use href="#pt" transform="translate(70 21)"/><use href="#pt" transform="translate(99 25)"/><use href="#pt" transform="translate(128 29)"/><use href="#pt" transform="translate(157 33)"/><use href="#pt" transform="translate(186 35)"/><use href="#pt" transform="translate(215 37)"/><use href="#pt" transform="translate(244 39)"/><use href="#pt" transform="translate(272 40)"/><use href="#pt" transform="translate(300 40)"/><use href="#pt" transform="translate(328 40)"/><use href="#pt" transform="translate(356 39)"/><use href="#pt" transform="translate(385 37)"/><use href="#pt" transform="translate(414 35)"/><use href="#pt" transform="translate(443 33)"/><use href="#pt" transform="translate(472 29)"/><use href="#pt" transform="translate(501 25)"/><use href="#pt" transform="translate(530 21)"/><use href="#pt" transform="translate(559 16)"/><use href="#pt" transform="translate(588 10)"/><use href="#pt" transform="translate(12 16) rotate(24)"/><use href="#pt" transform="translate(588 16) rotate(-24)"/><use href="#orn" transform="translate(150 32)"/><use href="#orn" transform="translate(300 40)"/><use href="#orn" transform="translate(450 32)"/><use href="#br" transform="translate(72 19)"/><use href="#br" transform="translate(182 31)"/><use href="#br" transform="translate(262 36)"/><use href="#br" transform="translate(378 34)"/><use href="#br" transform="translate(498 21)"/><use href="#lt" class="tw" transform="translate(40 13)"/><use href="#lt" class="tw d1" transform="translate(120 26)"/><use href="#lt" class="tw d2" transform="translate(210 34)"/><use href="#lt" class="tw" transform="translate(285 37)"/><use href="#lt" class="tw d1" transform="translate(362 36)"/><use href="#lt" class="tw d2" transform="translate(468 26)"/><use href="#lt" class="tw" transform="translate(545 13)"/></svg><div class="garland-snow" aria-hidden="true"><svg viewBox="0 0 48 48" role="presentation" focusable="false"><path d="M24 9 V1.5" stroke="#dceefb" stroke-width="1.6" stroke-linecap="round" fill="none"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#8db8d6" stroke-width="5.4"/><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#ffffff" stroke-width="2.7"/></g><circle cx="24" cy="24" r="2.5" fill="#ffffff" stroke="#8db8d6" stroke-width="1"/></svg></div></div><h1 aria-label="Derek News"><span class="ht-red">derek</span> <span class="ht-green">news</span></h1></div>
   <div class="dateline" id="todayLine">Loading date…</div></div>
   <div class="widget-stack">
+  <section class="hwidget featured-story" aria-label="Featured story: first snow of the season">
+    <p class="fs-kicker">&#10052;&#65039; Featured &middot; Thu Nov 12 &ndash; Sat Nov 14</p>
+    <div class="hwidget-head"><h2>First snow of the season: nor&rsquo;easter brings about an inch to Cicero</h2></div>
+    <p>A nor&rsquo;easter is bringing the first snow of the season to the Northeast Thu Nov 12 &ndash; Sat Nov 14. The I-95 cities &mdash; New York City, Philadelphia and Boston &mdash; will mostly see rain. The snow is for interior and upstate New York, the New England mountains and the Appalachians.</p>
+    <p>For Cicero and Onondaga County, the National Weather Service in Binghamton says snow is likely Thursday night after rain in the evening, with accumulation around 1 inch, lows in the lower 30s, north winds 5&ndash;10 mph and precipitation near 100%. Friday is mostly cloudy with a 50% chance of snow and highs around 40, Friday night brings a 50% chance of snow showers with lows in the upper 20s, and Saturday brings snow showers likely with little or no accumulation. Across the region, NWS expects mostly 0.5&ndash;2 inches Nov 12&ndash;14.</p>
+    <p><strong>This is the season&rsquo;s first snow &mdash; about an inch in Cicero, not a blizzard.</strong> No weather alerts are currently issued for Cicero.</p>
+    <div class="fs-links">
+      <a class="fs-nws" href="https://forecast.weather.gov/MapClick.php?CityName=Cicero+Center&state=NY&site=BGM&textField1=43.1789&textField2=-76.0411" target="_blank" rel="noopener">NWS forecast for Cicero &rarr;</a>
+      <a class="fs-usa" href="https://www.usatoday.com/story/news/weather/2026/11/09/noreaster-first-snow-freezing-cold-air/92689998007/" target="_blank" rel="noopener">USA Today: nor&rsquo;easter story &rarr;</a>
+    </div>
+  </section>
+
   <!-- Weather widget: live conditions + next 8 hours &amp; 3-day forecast — always current, always shown -->
   <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget">
     <div class="wxd-loc">Cicero, NY</div>
@@ -306,6 +357,17 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <a href="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" target="_blank" rel="noopener">Radar not loading? Open the full Windy radar for Cicero, NY &rarr;</a>
   </div>
   <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
+  <article class="storm-card featured-story" aria-label="Featured story: first snow of the season">
+    <p class="storm-when">Featured &middot; Thu Nov 12 &ndash; Sat Nov 14, 2026 &middot; Nor&rsquo;easter</p>
+    <h3 style="font-size:19px;margin:0 0 8px;line-height:1.3;color:#7a1710">First snow of the season: nor&rsquo;easter brings about an inch to Cicero</h3>
+    <p>A nor&rsquo;easter is bringing the first snow of the season to the Northeast Thu Nov 12 &ndash; Sat Nov 14. The I-95 cities &mdash; New York City, Philadelphia and Boston &mdash; will mostly see rain. The snow is for interior and upstate New York, the New England mountains and the Appalachians.</p>
+    <p style="margin-top:8px">For Cicero and Onondaga County, the National Weather Service in Binghamton says: Thursday night snow is likely after rain in the evening, with snow accumulation around 1 inch, lows in the lower 30s, north winds 5&ndash;10 mph and precipitation near 100%. Friday is mostly cloudy with a 50% chance of snow and highs around 40. Friday night has a 50% chance of snow showers with lows in the upper 20s. Saturday has snow showers likely with little or no accumulation. NWS probabilistic snowfall for Nov 12&ndash;14 is mostly 0.5&ndash;2 inches across the region.</p>
+    <p style="margin-top:8px"><strong>This is the season&rsquo;s first snow &mdash; about an inch in Cicero, not a blizzard.</strong> No weather alerts are currently issued for Cicero.</p>
+    <div class="fs-links">
+      <a class="fs-nws" href="https://forecast.weather.gov/MapClick.php?CityName=Cicero+Center&state=NY&site=BGM&textField1=43.1789&textField2=-76.0411" target="_blank" rel="noopener">NWS forecast for Cicero &rarr;</a>
+      <a class="fs-usa" href="https://www.usatoday.com/story/news/weather/2026/11/09/noreaster-first-snow-freezing-cold-air/92689998007/" target="_blank" rel="noopener">USA Today: nor&rsquo;easter story &rarr;</a>
+    </div>
+  </article>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
   <p class="wxstamp" id="wxStamp">Forecast, alerts &amp; storm outlooks by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Weather data: Open-Meteo · Cicero, NY</p></div>
   </div>
@@ -2019,6 +2081,82 @@ body.on-christmas{color-scheme:light}
   }
   document.querySelectorAll('[data-go="christmas"]').forEach(function(el){el.addEventListener('click',kick);});
   if(document.body.classList.contains('on-christmas'))kick();
+})();
+</script>
+
+<script>
+/* Emergency Home takeover - SEVERE NWS alerts only (Cicero, NY point).
+   Fires ONLY when api.weather.gov returns an active alert whose event
+   exactly matches the severe list below. Watches, advisories, statements
+   and routine storms (including a ~1 inch nor'easter with no alert) do
+   NOT fire it. Once the visitor X's out, that alert is remembered in
+   sessionStorage and is not shown again in this browsing session. */
+(function(){
+  var SEVERE = {
+    'winter storm warning':1,'blizzard warning':1,'ice storm warning':1,
+    'lake effect snow warning':1,'high wind warning':1,'flash flood warning':1,
+    'severe thunderstorm warning':1,'tornado warning':1
+  };
+  var MEANING = {
+    'winter storm warning':'A winter storm with heavy snow, sleet or ice is happening or about to happen, with dangerous travel conditions.',
+    'blizzard warning':'Blizzard conditions - heavy/blowing snow with strong winds and near-zero visibility - are happening or about to happen.',
+    'ice storm warning':'Damaging ice is happening or about to happen. Roads and power lines are at serious risk.',
+    'lake effect snow warning':'Heavy lake effect snow is happening or about to happen, with rapid changes in visibility and road conditions.',
+    'high wind warning':'Damaging high winds are happening or about to happen, strong enough to bring down trees and power lines.',
+    'flash flood warning':'A flash flood is happening or about to happen. Flooding can develop very quickly.',
+    'severe thunderstorm warning':'A severe thunderstorm with damaging winds and/or large hail is happening or moving into the area.',
+    'tornado warning':'A tornado has been spotted or indicated by radar. Take shelter immediately.'
+  };
+  var FALLBACK_DO = 'Stay indoors and off the roads if you can. Keep a phone charged, follow the National Weather Service for updates, and call 911 in an emergency.';
+  var overlay=document.getElementById('severeOverlay');
+  var bodyEl=document.getElementById('severeBody');
+  var titleEl=document.getElementById('severeTitle');
+  if(!overlay||!bodyEl||!titleEl) return;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
+  function dismissed(){try{return JSON.parse(sessionStorage.getItem('dn-severe-dismissed')||'[]');}catch(e){return[];}}
+  function keyFor(f){var p=f.properties||{};return String(f.id||((p.event||'')+'|'+(p.onset||p.effective||'')+'|'+(p.expires||p.ends||'')));}
+  var shownKeys=[];
+  function close(){
+    overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');
+    document.body.classList.remove('severe-locked');
+    try{var d=dismissed();shownKeys.forEach(function(k){if(d.indexOf(k)<0)d.push(k);});sessionStorage.setItem('dn-severe-dismissed',JSON.stringify(d));}catch(e){}
+  }
+  document.getElementById('severeClose').addEventListener('click',close);
+  fetch('https://api.weather.gov/alerts/active?point=43.1713,-76.1250',{headers:{'Accept':'application/geo+json'}})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(function(d){
+      var feats=((d&&d.features)||[]).filter(function(f){
+        var ev=String((f.properties&&f.properties.event)||'').trim().toLowerCase();
+        return !!SEVERE[ev];
+      });
+      var seen=dismissed();
+      feats=feats.filter(function(f){return seen.indexOf(keyFor(f))<0;});
+      if(!feats.length) return; /* No severe alert - show nothing. */
+      shownKeys=feats.map(keyFor);
+      var first=feats[0].properties||{};
+      titleEl.textContent=first.event||'Severe Weather Warning';
+      var html='';
+      feats.forEach(function(f){
+        var p=f.properties||{};
+        var evKey=String(p.event||'').trim().toLowerCase();
+        html+='<h3>'+esc(p.event||'Severe Weather Warning')+' - Cicero, NY</h3>';
+        var start=fmtT(p.effective||p.onset), end=fmtT(p.expires||p.ends);
+        if(start||end) html+='<p class="sev-when">'+(start?esc(start):'')+((start&&end)?' &rarr; ':'Until ')+esc(end)+'</p>';
+        if(p.headline) html+='<p><strong>'+esc(p.headline)+'</strong></p>';
+        html+='<h3>What it means</h3>';
+        html+='<p>'+esc(p.description||MEANING[evKey]||'A severe weather alert is in effect for Cicero, NY.')+'</p>';
+        html+='<h3>What to do</h3>';
+        html+='<p class="sev-do">'+esc(p.instruction||FALLBACK_DO)+'</p>';
+        if(p.areaDesc) html+='<p>Area: '+esc(p.areaDesc)+' &middot; Source: National Weather Service</p>';
+      });
+      html+='<button class="severe-close2" id="severeClose2" type="button">Close warning &times;</button>';
+      bodyEl.innerHTML=html;
+      var b2=document.getElementById('severeClose2'); if(b2) b2.addEventListener('click',close);
+      overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+      document.body.classList.add('severe-locked');
+      var x=document.getElementById('severeClose'); if(x) x.focus();
+    }).catch(function(){ /* Alerts unavailable - show nothing, never a false warning. */ });
 })();
 </script>
 </body>
