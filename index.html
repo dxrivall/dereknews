@@ -19,12 +19,13 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background:ra
 html{scroll-padding-bottom:120px}
 .bottomnav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:60;width:min(560px,calc(100% - 20px));background:rgba(255,255,255,.52);-webkit-backdrop-filter:blur(26px) saturate(185%);backdrop-filter:blur(26px) saturate(185%);border:1px solid rgba(255,255,255,.65);border-radius:999px;box-shadow:0 16px 38px rgba(10,25,35,.28),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(255,255,255,.18);padding:7px}
 @media(prefers-color-scheme:dark){.bottomnav{background:rgba(18,32,40,.55);border-color:rgba(255,255,255,.22);box-shadow:0 16px 38px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.22)}}
-.tab .tab-ic{font-size:21px;line-height:1}.tab .tab-lb{font-size:11px;font-weight:600;letter-spacing:.01em}
+.tab .tab-ic{font-size:19px;line-height:1}.tab .tab-lb{font-size:10px;font-weight:600;letter-spacing:.01em}
+@media(max-width:420px){.tab .tab-ic{font-size:17px}.tab .tab-lb{font-size:9.5px;letter-spacing:0}.bottomnav{padding:5px}}
 .tabs{display:flex;gap:2px;position:relative}
 .tab-pill{position:absolute;top:0;left:0;height:100%;width:0;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(10,25,35,.20),inset 0 1px 0 #fff;pointer-events:none;z-index:0;will-change:transform,width}
-.tab{position:relative;z-index:1;transition:color .25s ease;appearance:none;flex:1 1 0;border:0;background:transparent;color:#24333b;font:inherit;cursor:pointer;border-radius:999px;padding:7px 2px 6px;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.05}
+.tab{position:relative;z-index:1;transition:color .25s ease;appearance:none;flex:1 1 0;border:0;background:transparent;color:#24333b;font:inherit;cursor:pointer;border-radius:999px;padding:6px 1px 5px;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.05}
 .tab[aria-selected="true"]{background:transparent;color:#0b1c24}@media(prefers-color-scheme:dark){.tab{color:#d7e6eb}.tab[aria-selected="true"]{background:transparent;color:#0b1c24}}
-/* iOS-style pager: all five pages live on one horizontal track inside a
+/* iOS-style pager: all six pages live on one horizontal track inside a
    clipped viewport. pan-y = the browser keeps vertical scrolling and
    hands horizontal drags to the pager (direction lock). */
 html,body{overflow-x:hidden}
@@ -146,7 +147,7 @@ body.severe-locked{overflow:hidden}
 </div>
 
 <div id="wxBg" aria-hidden="true"></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="local" aria-selected="false"><span class="tab-ic" aria-hidden="true">📍</span><span class="tab-lb">Local</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -266,7 +267,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxloc{text-align:center;opacity:.95}.wxnote{text-align:center;font-size:clamp(16px,3.4vw,19px);line-height:1.5;max-width:640px;margin:14px auto 0;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .current{display:flex;align-items:center;justify-content:center;gap:clamp(18px,6vw,56px);flex-wrap:wrap;margin:46px 0 22px;text-align:center}
 .current .temp{font-size:clamp(62px,13vw,80px);font-weight:500;line-height:1}.current .desc{font-size:19px;margin-top:10px}.current .meta{font-size:14px;opacity:.9;margin-top:6px}
-.days{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin:42px 0 8px}@media(max-width:760px){.days{grid-template-columns:repeat(4,1fr)}}@media(max-width:400px){.days{grid-template-columns:repeat(3,1fr)}}
+.days{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:minmax(104px,1fr);gap:12px;margin:42px 0 8px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}.days .day{scroll-snap-align:start}
 .day{background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 6px 16px;text-align:center}.day .d{font-size:16px;font-weight:500}.day .ic{font-size:26px;margin:6px 0}.day .hi{color:#ff7a70;font-weight:700;font-size:17px}.day .lo{color:#3ce882;font-size:16px}.day.today{outline:2px solid rgba(255,255,255,.65)}
 
 .wxstamp{text-align:center;font-size:13px;opacity:.88;margin-top:22px}.wxerr{background:rgba(120,20,10,.55);border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:12px;text-align:center;margin-top:16px;display:none}
@@ -370,6 +371,110 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <p class="wxstamp" id="wxStamp">Forecast, alerts &amp; storm outlooks by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Weather data: Open-Meteo · Cicero, NY</p></div>
   </div>
 </main>
+<!-- LOCAL -->
+<main class="wrap view" id="view-local">
+<style>
+#view-local .lnews{display:flex;flex-direction:column}
+#view-local .lnews-item{display:block;padding:13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
+#view-local .lnews-item:last-child{border-bottom:0}
+#view-local .lnews-t{display:block;font-size:16px;font-weight:600;line-height:1.35}
+#view-local .lnews-m{display:block;font-size:12px;color:var(--soft);margin-top:4px}
+#view-local .lstatus{font-size:14px;color:var(--soft);line-height:1.55;margin:6px 0;text-align:left}
+#view-local .lroad{padding:11px 2px;border-bottom:1px solid var(--border);text-align:left}
+#view-local .lroad:last-child{border-bottom:0}
+#view-local .lroad b{display:block;font-size:15px;line-height:1.35}
+#view-local .lroad span{display:block;font-size:13.5px;color:var(--soft);line-height:1.5;margin-top:3px}
+#view-local .closings-frame{display:block;width:100%;height:320px;border:1px solid var(--border);border-radius:12px;background:#fff}
+</style>
+  <div class="hero"><h1>📍 Local</h1></div>
+  <section class="card" aria-label="Local news">
+    <h2>📰 Local News</h2>
+    <div class="lnews" id="localNewsLocal"><p class="lstatus">Loading local headlines…</p></div>
+  </section>
+  <section class="card" aria-label="National news">
+    <h2>🇺🇸 National News</h2>
+    <div class="lnews" id="localNewsNational"><p class="lstatus">Loading national headlines…</p></div>
+  </section>
+  <section class="card" aria-label="Global news">
+    <h2>🌍 Global News</h2>
+    <div class="lnews" id="localNewsGlobal"><p class="lstatus">Loading global headlines…</p></div>
+  </section>
+  <section class="card" aria-label="School closings and delays">
+    <h2>🏫 School Closings &amp; Delays</h2>
+    <iframe class="closings-frame" title="Live school closings and delays from CNY Central" src="https://cnycentral.com/resources/ftptransfer/wstm/closings/closings.htm" loading="lazy"></iframe>
+    <a class="btn" href="https://cnycentral.com/weather/closings" target="_blank" rel="noopener">All closings on CNY Central &rarr;</a>
+  </section>
+  <section class="card" aria-label="Road conditions">
+    <h2>🚗 Road Conditions — Cicero &amp; Syracuse</h2>
+    <div id="localRoads"><p class="lstatus">Checking road alerts…</p></div>
+    <a class="btn" href="https://511ny.org/" target="_blank" rel="noopener">Live roads &amp; cameras on 511NY &rarr;</a>
+  </section>
+</main>
+<script>
+(function(){
+  // Live headlines via rss2json (verified CORS-open from this origin):
+  // Local = syracuse.com + NewsChannel 9 (localsyr.com); National = NPR +
+  // NYT Top Stories (AP's RSS failed verification with 422, so it is not
+  // used); Global = BBC World + BBC News front page. Every section runs
+  // through the same family-friendly filter before anything renders.
+  var BAD=/\b(shooting|shootings|shot|shots|shootout|gunman|gunmen|killed|killing|killings|killer|murder|murdered|homicide|stabbing|stabbed|assault|assaulted|robbery|robberies|robbed|burglary|burglar|arrest|arrested|arrests|crime|criminal|fatal|fatally|death|deaths|died|dies|dead|deadly|overdose|overdosed|fire|fires|explosion|exploded|bomb|bombing|bombed|missile|missiles|attack|attacks|attacked|war|wars|warfare|terrorist|terrorism|hostage|hostages|kidnap|kidnapped|kidnapping|rape|raped|suicide|drowning|drowned|manslaughter|shoot|gunfire)\b/i;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function pdate(v){var d=new Date(v);if(!isNaN(d))return d;d=new Date(String(v||'').replace(' ','T')+'Z');return isNaN(d)?null:d;}
+  function strip(h){var d=document.createElement('div');d.innerHTML=String(h||'');return d.textContent||'';}
+  function ok(it){
+    if(!it||!it.title||!it.link)return false;
+    if(it.link.indexOf('/shopping/')>-1)return false;
+    var t=it.title+' '+strip(it.description||'');
+    return !BAD.test(t);
+  }
+  function feed(url){
+    return fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(url)).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d.items)||[];});
+  }
+  function render(elId,feeds,limit,emptyMsg,failMsg){
+    var el=document.getElementById(elId);if(!el)return;
+    var settled=feeds.map(function(f){
+      return feed(f.url).then(function(items){return items.map(function(it){it.__src=f.name;return it;});}).catch(function(){return null;});
+    });
+    Promise.all(settled).then(function(groups){
+      var any=false,seen={},out=[];
+      groups.forEach(function(g){if(!g)return;any=true;g.forEach(function(it){if(!ok(it))return;var k=it.link.split('?')[0];if(seen[k])return;seen[k]=1;out.push(it);});});
+      if(!any){el.innerHTML='<p class="lstatus">'+failMsg+'</p>';return;}
+      out.sort(function(a,b){var db=pdate(b.pubDate),da=pdate(a.pubDate);return (db?db:0)-(da?da:0);});
+      out=out.slice(0,limit);
+      if(!out.length){el.innerHTML='<p class="lstatus">'+emptyMsg+'</p>';return;}
+      el.innerHTML=out.map(function(it){
+        var when='';
+        try{var dt=pdate(it.pubDate);if(dt)when=' · '+dt.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});}catch(e){}
+        return '<a class="lnews-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="lnews-t">'+esc(it.title)+'</span><span class="lnews-m">'+esc(it.__src)+when+'</span></a>';
+      }).join('');
+    });
+  }
+  render('localNewsLocal',[
+    {name:'syracuse.com',url:'https://www.syracuse.com/arc/outboundfeeds/rss/?outputType=xml'},
+    {name:'NewsChannel 9',url:'https://www.localsyr.com/feed/'}
+  ],8,'No family-friendly local stories right now.','Couldn\u2019t load local headlines right now.');
+  render('localNewsNational',[
+    {name:'NPR',url:'https://feeds.npr.org/1001/rss.xml'},
+    {name:'New York Times',url:'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml'}
+  ],6,'No family-friendly national stories right now.','Couldn\u2019t load national headlines right now.');
+  render('localNewsGlobal',[
+    {name:'BBC News',url:'https://feeds.bbci.co.uk/news/world/rss.xml'},
+    {name:'BBC News',url:'https://feeds.bbci.co.uk/news/rss.xml'}
+  ],6,'No family-friendly global stories right now.','Couldn\u2019t load global headlines right now.');
+  // Road conditions: live NWS alerts for the Cicero point (same verified
+  // api.weather.gov endpoint the Weather tab uses) — 511NY's API needs a
+  // developer key, so its live map is linked above instead of faked here.
+  var roads=document.getElementById('localRoads');
+  if(roads){
+    fetch('https://api.weather.gov/alerts/active?point=43.1713,-76.1250',{headers:{'Accept':'application/geo+json'}}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+      var feats=(d&&d.features)||[];
+      if(!feats.length){roads.innerHTML='<p class="lstatus">No road alerts for Cicero right now.</p>';return;}
+      roads.innerHTML=feats.map(function(f){var p=f.properties||{};return '<div class="lroad"><b>'+esc(p.event||'Weather alert')+'</b>'+(p.headline?'<span>'+esc(p.headline)+'</span>':'')+'</div>';}).join('');
+    }).catch(function(){roads.innerHTML='<p class="lstatus">Couldn\u2019t check road alerts right now — check 511NY below.</p>';});
+  }
+})();
+</script>
+
 <!-- SPORTS -->
 <script>
 // Early logo fallback — defined before any team logo <img> so its onerror
@@ -864,14 +969,14 @@ body.on-christmas{color-scheme:light}
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News · Cicero, NY · Weather data by Open-Meteo</footer>
 <script>
 (function(){
-  var views={home:1,weather:1,sports:1,faith:1,christmas:1};
-  var tabOrder=['home','weather','sports','faith','christmas'];
+  var views={home:1,weather:1,local:1,sports:1,faith:1,christmas:1};
+  var tabOrder=['home','weather','local','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
   try{reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
   // ---- iOS-style pager -------------------------------------------------
-  // All five pages sit side-by-side on one horizontal track inside a
+  // All six pages sit side-by-side on one horizontal track inside a
   // clipped viewport. A horizontal drag moves the track with the finger
   // 1:1 (no waiting for the finger to lift), with rubber-banding past the
   // first/last page, and on release the track springs to the target page
