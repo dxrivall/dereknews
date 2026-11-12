@@ -267,7 +267,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxloc{text-align:center;opacity:.95}.wxnote{text-align:center;font-size:clamp(16px,3.4vw,19px);line-height:1.5;max-width:640px;margin:14px auto 0;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .current{display:flex;align-items:center;justify-content:center;gap:clamp(18px,6vw,56px);flex-wrap:wrap;margin:46px 0 22px;text-align:center}
 .current .temp{font-size:clamp(62px,13vw,80px);font-weight:500;line-height:1}.current .desc{font-size:19px;margin-top:10px}.current .meta{font-size:14px;opacity:.9;margin-top:6px}
-.days{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:minmax(104px,1fr);gap:12px;margin:42px 0 8px;overflow-x:auto;padding:6px 2px 14px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}.days .day{scroll-snap-align:start}
+.days{display:flex;flex-direction:row;flex-wrap:nowrap;gap:12px;margin:42px 0 8px;overflow-x:auto;overflow-y:hidden;padding:6px 2px 14px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}.days .day{flex:0 0 104px;width:104px;box-sizing:border-box;scroll-snap-align:start}
 .day{background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 6px 16px;text-align:center}.day .d{font-size:16px;font-weight:500}.day .ic{font-size:26px;margin:6px 0}.day .hi{color:#ff7a70;font-weight:700;font-size:17px}.day .lo{color:#3ce882;font-size:16px}.day.today{outline:2px solid rgba(255,255,255,.65)}
 
 .wxstamp{text-align:center;font-size:13px;opacity:.88;margin-top:22px}.wxerr{background:rgba(120,20,10,.55);border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:12px;text-align:center;margin-top:16px;display:none}
