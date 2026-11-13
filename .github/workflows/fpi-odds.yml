@@ -1,0 +1,76 @@
+# ESPN FPI playoff odds for Derek News
+# ESPN's FPI endpoint cannot be read reliably from a visitor's browser,
+# so this Action fetches it server-side and writes a slim fpi.json at the
+# repo root. The site (index.html) reads fpi.json from the same GitHub
+# Pages origin, so there is no CORS problem. FPI updates about weekly,
+# so this runs every 6 hours (and on demand) instead of every 5 minutes.
+# Upload this file to your repo at .github/workflows/fpi-odds.yml
+# and make sure GitHub Actions are enabled for the repo.
+name: FPI playoff odds
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch ESPN FPI playoff odds
+        run: python3 - <<'PY'
+          import json, urllib.request, datetime
+          url = "https://site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en"
+          req = urllib.request.Request(url, headers={"User-Agent": "derek-news-fpi/1.0"})
+          data = json.load(urllib.request.urlopen(req, timeout=30))
+          # The payload's top-level "categories" name each value slot;
+          # each team's "projections" category carries its values in the
+          # same order. Parse by name, never by display label.
+          proj_names = []
+          for c in data.get("categories", []):
+              if c.get("name") == "projections":
+                  proj_names = c.get("names", [])
+          keymap = {
+              "probmakeplayoffs": "playoff",
+              "probmakedivplayoffs": "makeDiv",
+              "probmakeconfchamp": "makeConf",
+              "probmaketitlegame": "makeSB",
+              "probwintitle": "winTitle",
+              "probwinconf": "winConf",
+              "probwindiv": "winDiv",
+          }
+          teams = []
+          for e in data.get("teams", []):
+              t = e.get("team", {})
+              rec = {"id": str(t.get("id", "")), "abbr": t.get("abbreviation", ""), "name": t.get("displayName", "")}
+              for cat in e.get("categories", []):
+                  if cat.get("name") != "projections":
+                      continue
+                  vals = cat.get("values", [])
+                  for i, nm in enumerate(proj_names):
+                      k = keymap.get(nm)
+                      if k and i < len(vals):
+                          v = vals[i]
+                          rec[k] = round(float(v) * 10) / 10 if isinstance(v, (int, float)) else None
+              if rec.get("playoff") is not None:
+                  teams.append(rec)
+          if len(teams) < 30:
+              raise SystemExit(f"FPI parse only found {len(teams)} teams - not writing a bad fpi.json")
+          out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                 "source": "ESPN FPI (fitt v3 powerindex), fetched server-side",
+                 "teams": teams}
+          with open("fpi.json", "w") as f:
+              json.dump(out, f, indent=1)
+          print(f"wrote fpi.json with {len(teams)} teams")
+          PY
+      - name: Commit if changed
+        run: |
+          git config user.name "derek-news-bot"
+          git config user.email "derek-news-bot@users.noreply.github.com"
+          git add fpi.json
+          git diff --cached --quiet || git commit -m "Update FPI playoff odds"
+          git push
