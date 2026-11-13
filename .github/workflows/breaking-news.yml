@@ -1,14 +1,18 @@
-# Breaking news detector for Derek News
-# Polls the FAA NAS Status feed (official) plus the NPR and BBC US
-# news RSS feeds every 5 minutes and writes breaking.json at the repo
-# root. An ACTIVE item is written only for a genuinely significant
-# national event: 5+ U.S. airports ground-stopped at once in the FAA
-# feed, or the same tight catastrophic headline pattern in BOTH news
-# feeds within 3 hours. Routine news never fires. Items expire 3
-# hours after the signal was last seen. The site (index.html) reads
-# breaking.json from the same GitHub Pages origin and fires the
-# full-screen takeover automatically. Fetcher source:
-# .src/fetch_breaking.py in the build workspace (embedded unchanged).
+# Breaking news detector v2 for Derek News — tiered severity
+# Polls the FAA NAS Status feed (official) plus NPR, BBC, CNN, AP
+# and Reuters every 5 minutes and writes breaking.json at the repo
+# root. v2 (Nov 13, 2026): the v1 bar was too strict and missed the
+# nationwide ground stop — v1 demanded 5+ NAS-listed U.S. stops
+# (a nationwide advisory is not listed per-airport) or the same
+# pattern in BOTH NPR and BBC (BBC never carried it). v2 fires when
+# the same tight pattern matches in ANY 2 of the 5 outlets (CNN, AP
+# and Reuters come via Google News site feeds — none has a working
+# public RSS of its own), or 5+ NAS U.S. ground stops. Items carry
+# a severity: "massive" fires the site's full-screen takeover;
+# "significant" appears only in the News tab Breaking News section.
+# A single outlet never fires. Items expire 3 hours after the
+# signal was last seen. Fetcher source: .src/fetch_breaking.py in
+# the build workspace (embedded unchanged below).
 # YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: Breaking news
 
@@ -30,44 +34,67 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Detect major breaking news (FAA + NPR + BBC)
+      - name: Detect breaking news (FAA + NPR + BBC + CNN + AP + Reuters)
         run: |
           python3 - <<'PYEOF'
-          """Conservative breaking-news detector for Derek News.
+          """Breaking-news detector v2 for Derek News — tiered severity.
 
-          Polls only authoritative / major live sources and writes breaking.json
-          at the repo root. It writes an ACTIVE item only for a genuinely
-          significant national event:
+          Polls authoritative / major live sources every 5 minutes and writes
+          breaking.json at the repo root, now with a "severity" on the item:
 
-            Signal A (official): the FAA NAS Status feed lists ground-stop
-            programs at 5+ U.S. airports at once (a nationwide-scale stop).
-            Signal B (cross-confirmed news): the SAME tight, catastrophic
-            headline pattern matches in BOTH the NPR top-news RSS and the BBC
-            US & Canada RSS, in items published within the last 3 hours.
-            Routine headlines, single-source reports, single-airport ground
-            stops and anything older than 3 hours never fire.
+            severity "massive"     -> site fires the full-screen takeover.
+            severity "significant" -> site shows it ONLY in the Breaking News
+                                      section on the News tab. No pop-up.
 
-          Items expire 3 hours after the last refresh that still sees the
-          signal; when no signal is present the file is written inactive.
-          If every source is unreachable the script exits non-zero and does
-          NOT overwrite the last breaking.json.
+          How a signal fires (v2 — the v1 bar was too strict and missed the
+          Nov 13, 2026 nationwide ground stop: the FAA NAS list never listed
+          the nationwide advisory as per-airport programs, and v1 demanded
+          the same pattern in BOTH NPR and BBC; BBC never carried it):
+
+            Signal A (official, massive): the FAA NAS Status feed lists
+            ground-stop programs at 5+ U.S. airports at once.
+            Signal B (news, tiered): the SAME tight headline pattern matches
+            in ANY 2 of 5 major outlets — NPR and BBC direct RSS, plus CNN,
+            AP and Reuters via Google News site feeds (none of those three
+            has a working public RSS of its own in 2026; CNN's own feed is
+            stale since 2023 and AP/Reuters shut theirs down — the Google
+            News feeds index their stories within minutes and every item
+            links to the outlet). A match in a single outlet never fires.
+            A still-active FAA nationwide advisory is a massive pattern in
+            its own right: the nationwide-ground-stop rule below is massive,
+            so 2 outlets reporting that advisory = massive.
+
+          Routine headlines never fire: every rule is a tight catastrophic
+          or major-event pattern, matched against headlines only, in items
+          published within the last 3 hours. Items expire 3 hours after the
+          last refresh that still sees the signal. If every source is
+          unreachable the script exits non-zero and does NOT overwrite the
+          last breaking.json.
           Embedded unchanged in .github/workflows/breaking-news.yml.
           """
           import json, re, sys, time, urllib.request, datetime
           import xml.etree.ElementTree as ET
 
-          UA = "derek-news-breaking/1.0"
+          UA = "derek-news-breaking/2.0"
           FAA_URL = "https://nasstatus.faa.gov/api/airport-status-information"
-          FEEDS = [("NPR", "https://feeds.npr.org/1001/rss.xml"),
-                   ("BBC News", "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml")]
+          FEEDS = [
+              ("NPR", "https://feeds.npr.org/1001/rss.xml"),
+              ("BBC News", "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"),
+              ("CNN", "https://news.google.com/rss/search?q=site%3Acnn.com+when%3A1d&hl=en-US&gl=US&ceid=US%3Aen"),
+              ("AP", "https://news.google.com/rss/search?q=site%3Aapnews.com+when%3A1d&hl=en-US&gl=US&ceid=US%3Aen"),
+              ("Reuters", "https://news.google.com/rss/search?q=site%3Areuters.com+when%3A1d&hl=en-US&gl=US&ceid=US%3Aen"),
+          ]
           NOW = datetime.datetime.now(datetime.timezone.utc)
+          WINDOW = 3 * 3600
 
-          # Tight catastrophic patterns. Each needs a match in BOTH news feeds.
-          RULES = [
+          # MASSIVE rules: nationwide / national-catastrophe scale. Any 2 of
+          # the 5 outlets carrying the same one = full-screen takeover.
+          MASSIVE_RULES = [
               ("nationwide-ground-stop", [
-                  r"nationwide[^.]{0,60}ground stop",
-                  r"ground stop[^.]{0,60}(nationwide|all u\.s\.|all us\b|every u\.s\.)",
+                  r"nationwide[^.]{0,60}ground ?stop",
+                  r"ground ?stop[^.]{0,60}(nationwide|all u\.s\.|all us\b|every u\.s\.|all flights)",
                   r"all (u\.s\. )?flights[^.]{0,40}ground",
+                  r"all (u\.s\. )?airports[^.]{0,40}ground ?stop",
               ]),
               ("national-emergency", [r"declares?[^.]{0,40}national emergency",
                                       r"national emergency (declared|declaration)"]),
@@ -78,7 +105,36 @@ jobs:
               ("president-attacked", [r"president[^.]{0,40}(assassinated|killed|shot)"]),
               ("nuclear-event", [r"nuclear (attack|strike|explosion|detonation)"]),
               ("martial-law", [r"martial law (declared|imposed)"]),
+              ("major-hurricane-landfall", [
+                  r"(hurricane|tropical storm)[^.]{0,50}makes landfall[^.]{0,50}(florida|texas|louisiana|carolina|gulf coast|u\.s\.)",
+                  r"category [45] hurricane[^.]{0,60}(landfall|florida|texas|louisiana|carolina|gulf coast)"]),
           ]
+
+          # SIGNIFICANT rules: big news everyone should see in the News tab,
+          # but NOT a full-screen takeover. Same any-2-of-5 confirmation.
+          SIGNIFICANT_RULES = [
+              ("hurricane-landfall", [
+                  r"(hurricane|tropical storm)[^.]{0,50}makes landfall",
+                  r"landfall[^.]{0,50}(hurricane|tropical storm)"]),
+              ("tornado-outbreak", [r"tornado (outbreak|emergency)",
+                                    r"(multiple|dozens of) tornadoes",
+                                    r"tornado[^.]{0,50}(kills|killed|deadly)"]),
+              ("major-winter-storm", [
+                  r"(blizzard|major winter storm|major snowstorm|nor'easter)[^.]{0,80}(warning|inches|feet of snow|northeast|midwest|east coast)"]),
+              ("mass-casualty", [
+                  r"(mass shooting|gunman|shooter)[^.]{0,70}(killed|dead|deaths|wounded)",
+                  r"at least \d+ (people )?(killed|dead)[^.]{0,70}(shooting|crash|collision|explosion|fire|storm|flood|derail)"]),
+              ("major-crash", [
+                  r"(plane|train|ship|ferry|bus|tanker)[^.]{0,40}(crash|collision|collides|derail)[^.]{0,90}(killed|dead|passengers in the water|rescue|missing)"]),
+              ("earthquake-6", [r"magnitude 6\.\d[^.]{0,40}earthquake",
+                                r"earthquake[^.]{0,50}magnitude 6\.\d"]),
+              ("widespread-outage", [
+                  r"(power outage|without power)[^.]{0,70}(\d[\d,\.]*\s*(million|thousand)|million)"]),
+              ("major-flooding", [
+                  r"(flash flood emergency|catastrophic flooding|historic flooding)[^.]{0,70}(texas|florida|carolina|midwest|northeast|u\.s\.|kentucky|tennessee|louisiana)"]),
+          ]
+          ALL_RULES = [(rid, pats, "massive") for rid, pats in MASSIVE_RULES] + \
+                      [(rid, pats, "significant") for rid, pats in SIGNIFICANT_RULES]
 
 
           def get(url):
@@ -98,7 +154,15 @@ jobs:
 
 
           def faa_signal():
-              """Return an item dict if 5+ U.S. airports are ground-stopped."""
+              """Massive item if 5+ U.S. airports are ground-stopped at once.
+
+              NOTE: a nationwide ATCSCC advisory (like Nov 13, 2026) does NOT
+              appear here as per-airport programs — the NAS list only showed
+              2 Canadian stops that day. That event is caught by the news
+              signal instead: the nationwide-ground-stop rule is massive and
+              NPR + CNN both carried it. This NAS check stays for the cases
+              where the stop IS listed airport-by-airport.
+              """
               try:
                   root = ET.fromstring(get(FAA_URL))
               except SystemExit:
@@ -121,6 +185,7 @@ jobs:
               reasons = sorted({s["reason"] for s in us if s["reason"]})
               item = {
                   "id": "faa-ground-stop-" + NOW.strftime("%Y-%m-%d"),
+                  "severity": "massive",
                   "title": f"FAA Ground Stops in Effect at {len(us)} U.S. Airports",
                   "what": (f"The FAA's live NAS Status feed lists ground-stop programs at "
                            f"{len(us)} U.S. airports right now ({codes}"
@@ -139,23 +204,32 @@ jobs:
               out = []
               for it in root.iter("item"):
                   title = (it.findtext("title") or "").strip()
+                  # Google News appends " - CNN" / " - AP News" / " - Reuters".
+                  title = re.sub(r"\s+-\s+(CNN|AP News|Reuters|Associated Press)\s*$", "", title)
                   link = (it.findtext("link") or "").strip()
                   desc = re.sub(r"<[^>]+>", " ", it.findtext("description") or "").strip()
+                  desc = re.sub(r"\s+-\s+(CNN|AP News|Reuters|Associated Press)\s*$", "", desc)
                   pub = None
                   pd = (it.findtext("pubDate") or "").strip()
                   if pd:
-                      try:
-                          pub = datetime.datetime.strptime(pd, "%a, %d %b %Y %H:%M:%S %z")
-                      except ValueError:
+                      for fmt in ("%a, %d %b %Y %H:%M:%S %z", "%a, %d %b %Y %H:%M:%S GMT"):
                           try:
-                              pub = datetime.datetime.strptime(pd, "%a, %d %b %Y %H:%M:%S GMT").replace(tzinfo=datetime.timezone.utc)
+                              pub = datetime.datetime.strptime(pd, fmt)
+                              if pub.tzinfo is None:
+                                  pub = pub.replace(tzinfo=datetime.timezone.utc)
+                              break
                           except ValueError:
-                              pub = None
+                              continue
                   out.append({"title": title, "link": link, "desc": desc, "pub": pub})
               return out
 
 
           def news_signal():
+              """Any-2-of-5 cross-confirmation, tiered by rule severity.
+
+              A massive match beats a significant one. One outlet alone —
+              however dramatic its headline — never fires anything.
+              """
               per_feed = []
               ok = 0
               for name, url in FEEDS:
@@ -169,30 +243,59 @@ jobs:
                       items = []
                   hits = {}
                   for it in items:
-                      if it["pub"] is None or (NOW - it["pub"]).total_seconds() > 3 * 3600 or (NOW - it["pub"]).total_seconds() < -600:
+                      if it["pub"] is None:
+                          continue
+                      age = (NOW - it["pub"]).total_seconds()
+                      if age > WINDOW or age < -600:
                           continue
                       low = it["title"].lower()
-                      for rid, pats in RULES:
+                      for rid, pats, sev in ALL_RULES:
                           if any(re.search(p, low) for p in pats):
-                              hits.setdefault(rid, it)
+                              if rid not in hits:
+                                  hits[rid] = (it, sev)
                   print(f"{name}: {len(items)} items, rule hits: {sorted(hits)}")
                   per_feed.append((name, hits))
               if ok == 0:
                   return None, False
-              if len(per_feed) < 2:
+              # Count, per rule, how many distinct outlets carried it.
+              counts = {}
+              for name, hits in per_feed:
+                  for rid, (it, sev) in hits.items():
+                      counts.setdefault(rid, {"sev": sev, "outlets": [], "item": it, "first_outlet": name})
+                      counts[rid]["outlets"].append(name)
+                      if name == "NPR":
+                          counts[rid]["item"] = it  # prefer NPR's clean link/text
+              qualified = {rid: c for rid, c in counts.items() if len(c["outlets"]) >= 2}
+              for rid, c in sorted(counts.items()):
+                  print(f"rule {rid} ({c['sev']}): {len(c['outlets'])} outlet(s): {c['outlets']}")
+              if not qualified:
                   return None, True
-              common = set(per_feed[0][1]) & set(per_feed[1][1])
-              if not common:
-                  return None, True
-              rid = sorted(common)[0]
-              it = per_feed[0][1][rid]
+              # Massive first, then most-confirmed.
+              rid = sorted(qualified, key=lambda r: (qualified[r]["sev"] != "massive",
+                                                     -len(qualified[r]["outlets"]), r))[0]
+              c = qualified[rid]
+              it, sev = c["item"], c["sev"]
+              outlets = ", ".join(c["outlets"])
+              if rid == "nationwide-ground-stop":
+                  what = ("The FAA has issued a nationwide ground stop, halting departing flights "
+                          "at U.S. airports — all airlines — until further notice. This is a "
+                          "ground stop, not emergency landings: planes already in the air keep "
+                          "flying and land normally.")
+                  means = "If you or family are flying today, expect major delays and cancellations nationwide, even at airports that look fine."
+                  do_txt = "Check with your airline before heading to the airport, and keep checking — schedules will keep changing while the stop is in effect."
+              else:
+                  what = (it["desc"][:600] if it["desc"] else it["title"])
+                  means = ("This is a major national story confirmed by multiple major outlets at the "
+                           "same time — details are still coming in.")
+                  do_txt = "Follow the linked source for live updates, and rely on official announcements for anything that affects you directly."
               item = {
                   "id": rid + "-" + NOW.strftime("%Y-%m-%d"),
+                  "severity": sev,
                   "title": it["title"],
-                  "what": (it["desc"][:600] if it["desc"] else it["title"]),
-                  "means": "This is a major national story being reported by multiple national outlets at the same time — details are still coming in.",
-                  "do": "Follow the linked source for live updates, and rely on official announcements for anything that affects you directly.",
-                  "source": "NPR and BBC News (both reporting this now)",
+                  "what": what,
+                  "means": means,
+                  "do": do_txt,
+                  "source": f"{outlets} (all reporting this now)",
                   "source_url": it["link"],
               }
               return item, True
@@ -216,12 +319,14 @@ jobs:
                   first_seen = NOW.isoformat()
                   if prev and prev.get("active") and (prev.get("item") or {}).get("id") == item["id"]:
                       first_seen = prev.get("first_seen") or first_seen
-                  out = {"active": True, "updated_at": NOW.isoformat(), "first_seen": first_seen,
-                         "expires_at": (NOW + datetime.timedelta(hours=3)).isoformat(), "item": item}
-                  print(f"ACTIVE: {item['id']} - {item['title']}")
+                  out = {"active": True, "severity": item["severity"],
+                         "updated_at": NOW.isoformat(), "first_seen": first_seen,
+                         "expires_at": (NOW + datetime.timedelta(hours=3)).isoformat(),
+                         "item": item}
+                  print(f"ACTIVE [{item['severity']}]: {item['id']} - {item['title']}")
               else:
-                  out = {"active": False, "updated_at": NOW.isoformat(), "first_seen": None,
-                         "expires_at": None, "item": None}
+                  out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
+                         "first_seen": None, "expires_at": None, "item": None}
                   print("No qualifying breaking signal - writing inactive breaking.json")
               with open("breaking.json", "w") as f:
                   json.dump(out, f, indent=1)
@@ -230,7 +335,6 @@ jobs:
 
           if __name__ == "__main__":
               sys.exit(main())
-
           PYEOF
       - name: Commit if changed
         run: |
