@@ -760,6 +760,9 @@ body.on-sports footer{color:#aebfe6!important}
 .parlay-hit .hit-lab{font-size:11.5px;color:#aebfe6;margin-top:2px;line-height:1.4}
 .parlay-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.14);margin-top:8px;overflow:hidden}
 .parlay-bar i{display:block;height:100%;border-radius:3px;background:#7ee2a8}
+.parlay-hit .hit-pay{font-size:17px;font-weight:800;color:#ffd34d;margin-top:6px;line-height:1.2}
+.parlay-hit .hit-best{display:inline-block;margin-top:6px;background:#ffd34d;color:#14213d;font-size:11.5px;font-weight:800;letter-spacing:.02em;border-radius:999px;padding:3px 10px}
+.tail-btn.best-book{border-color:#ffd34d;color:#ffd34d;font-weight:800}
 .tail-label{font-size:12px;color:#8fa3cc;margin:12px 0 0;line-height:1.45}
 .tail-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
 .tail-btn{flex:1 1 30%;text-align:center;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px 6px;border-radius:999px;min-height:38px;display:inline-flex;align-items:center;justify-content:center}
@@ -1072,19 +1075,19 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <div class="sport-panel" id="sport-betsim" hidden>
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
+  <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
+  <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
+  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. 3 per active sport plus an NFL Touchdown slip, NHL Shots on Goal &amp; Goals slips, and NBA Rebounds &amp; 3-Pointers slips · 4–6 legs each · Hit % = its legs multiplied · $10 line = estimated payout. Simulation only — not a guarantee.</p>
+  <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
+  <div id="parlayList"></div>
+  <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
+  </section>
   <section class="acard" aria-label="Bet Simulator — simulated upcoming NBA, NFL and NHL games">
   <div class="ahead"><h2>🎲 Bet Simulator</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game — moneylines from DraftKings (via ESPN), plus simulated player props from live season stats. Simulation only — not a guarantee.</p>
+  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game — moneylines from DraftKings (via ESPN), plus simulated player props from live season stats. Parlays above use today&rsquo;s games only. Simulation only — not a guarantee.</p>
   <p class="astatus" id="betSimStatus">Loading games&hellip;</p>
   <div id="betSimGames"></div>
   <p class="asrc" id="betSimStamp">Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages</p>
-  </section>
-  <section class="acard" aria-label="Parlays of the Day — 3 simulated parlays per active sport">
-  <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">3 parlays per active sport (NBA · NFL · NHL) · 4–6 legs each · Built only from the verified moneylines &amp; SIM props above. Hit % at the bottom of each parlay = its legs multiplied. Simulation only — not a guarantee.</p>
-  <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
-  <div id="parlayList"></div>
-  <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; A sport with no upcoming games gets no parlays</p>
   </section>
   </div>
 </main>
@@ -2494,6 +2497,11 @@ body.on-christmas{color-scheme:light}
   function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
   var dayFmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'});
   function etKeyPlus(n){var base=dayFmt.format(new Date());var q=base.split('-');var d=new Date(Date.UTC(+q[0],+q[1]-1,+q[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate());}
+  function etDay(iso){var d=new Date(iso);return isNaN(d)?'':dayFmt.format(d);}
+  function todayStr(){return dayFmt.format(new Date());}
+  /* Current NBA/NHL season END year for the ESPN core API (the
+     2026-27 season is year 2027): from July on it is next year. */
+  function seasonEndYear(){var q=todayStr().split('-');var y=+q[0],m=+q[1];return m>=7?y+1:y;}
   var LEAGUES=[
     {key:'nba',label:'🏀 NBA',path:'basketball/nba',days:[0,1,2],cap:14,avgMode:'perGame',cats:[['Points','Pts'],['Rebounds','Reb'],['Assists','Ast']]},
     {key:'nfl',label:'🏈 NFL',path:'football/nfl',days:[0,1,2,3,4,5,6],cap:16,avgMode:'total',cats:[['Passing Yards','Pass Yds'],['Rushing Yards','Rush Yds'],['Receiving Yards','Rec Yds']]},
@@ -2533,28 +2541,49 @@ body.on-christmas{color-scheme:light}
     return l;
   }
   function propsFromSummary(d,lg,g){
-    var out=[];
+    var out=[],all=[],tdByName={};
     var byId={};byId[g.away.id]=g.away;byId[g.home.id]=g.home;
     (d.leaders||[]).forEach(function(L){
       var tm=byId[String((L.team&&L.team.id)||'')];
       if(!tm)return;
       var taken=0,seen={};
       lg.cats.forEach(function(cat){
-        if(taken>=2)return;
         (L.leaders||[]).forEach(function(c){
-          if(taken>=2||c.displayName!==cat[0])return;
+          if(c.displayName!==cat[0])return;
           var ld=(c.leaders||[])[0];if(!ld||!ld.athlete)return;
           var nm=ld.athlete.displayName||ld.athlete.shortName||'';
           var v=parseFloat(ld.value);
           if(!nm||isNaN(v))return;
           var avg=(lg.avgMode==='perGame')?v:(tm.gp>0?v/tm.gp:null);
           if(avg==null||avg<=0)return;
+          var rec={name:nm,id:String(ld.athlete.id||''),label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10};
+          /* Uncapped per-category list — the special slips (Rebounds,
+             3s, Goals, Shots) draw from this, not the 4-prop display cap. */
+          if(!all.some(function(a){return a.name===nm&&a.label===cat[1];}))all.push(rec);
+          /* NFL anytime-TD verification: the rushing / receiving
+             leader's live display line carries his TD total
+             ("177 CAR, 847 YDS, 9 TD"). Passing TDs are NOT scorer
+             TDs, so the Passing Yards category is never used here. */
+          if(lg.key==='nfl'&&(cat[1]==='Rush Yds'||cat[1]==='Rec Yds')&&tm.gp>0){
+            var mm=String(ld.displayValue||'').match(/(\d+)\s*TD\b/);
+            if(mm){
+              var td=parseInt(mm[1],10);
+              if(td>0){
+                var cur=tdByName[nm];
+                if(cur){cur.td+=td;}
+                else tdByName[nm]={name:nm,id:rec.id,td:td,gp:tm.gp,game:g};
+              }
+            }
+          }
+          if(taken>=2)return;
           if(seen[nm+cat[1]])return;seen[nm+cat[1]]=1;
-          out.push({name:nm,label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10});
+          out.push(rec);
           taken++;
         });
       });
     });
+    g.allProps=all;
+    g.tdPlayers=Object.keys(tdByName).map(function(k){return tdByName[k];});
     return out.slice(0,4);
   }
   function loadLeague(lg){
@@ -2565,7 +2594,7 @@ body.on-christmas{color-scheme:light}
       sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=normGame(ev,lg);if(!g||!g.id||byId[g.id])return;byId[g.id]=g;order.push(g.id);});});
       var games=order.map(function(id){return byId[id];}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,lg.cap);
       return Promise.all(games.map(function(g){
-        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){g.props=propsFromSummary(d,lg,g);return g;}).catch(function(){g.props=[];return g;});
+        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){g.props=propsFromSummary(d,lg,g);return g;}).catch(function(){g.props=[];g.allProps=[];g.tdPlayers=[];return g;});
       })).then(function(){return games;});
     });
   }
@@ -2614,7 +2643,9 @@ body.on-christmas{color-scheme:light}
         if(pa!=null&&ph!=null&&(pa+ph)>0){
           var norm=pa+ph,favAway=(pa/norm)>=(ph/norm);
           var fav=favAway?g.away:g.home,favMl=favAway?g.ml.away:g.ml.home,favP=(favAway?pa:ph)/norm;
-          pool.push({kind:'ML',prob:favP,text:fav.name+' ML '+fmtML(favMl),sub:g.away.abbr+' at '+g.home.abbr+' · '+fmtWhen(g.date),key:'ml-'+g.id});
+          var kalPct=null;
+          try{if(window.__kalshiPct)kalPct=window.__kalshiPct(lg.key,{abbr:fav.abbr,name:fav.name,full:fav.name,id:fav.id},favAway?g.home:g.away);}catch(e){}
+          pool.push({kind:'ML',prob:favP,text:fav.name+' ML '+fmtML(favMl),sub:g.away.abbr+' at '+g.home.abbr+' · '+fmtWhen(g.date),key:'ml-'+g.id,dkDec:mlDec(favMl),kalDec:pctDec(kalPct)});
         }
       }
       (g.props||[]).forEach(function(pr,i){
@@ -2632,6 +2663,108 @@ body.on-christmas{color-scheme:light}
     return legs.slice(0,6);
   }
   function sig(legs){return legs.map(function(l){return l.key;}).sort().join('|');}
+  function mlDec(mlStr){var n=parseInt(mlStr,10);if(isNaN(n)||n===0)return null;return n>0?1+n/100:1+100/(-n);}
+  function pctDec(pct){if(pct==null||isNaN(pct)||pct<=0||pct>=100)return null;return 100/pct;}
+  /* $10 payout + best book. A best book is marked ONLY when every leg
+     has a verified price from two books (DraftKings via ESPN and
+     Kalshi) — then the two real combined payouts are compared. SIM
+     prop legs have no verified book price anywhere, so parlays with
+     props get a SIM-estimated payout and no best-book claim. */
+  function parlayPayout(p){
+    var allMl=p.legs.every(function(l){return l.kind==='ML';});
+    if(!allMl){
+      var dec=1;p.legs.forEach(function(l){dec*=(l.kind==='ML'&&l.dkDec)?l.dkDec:(1/l.prob);});
+      return{amount:10*dec,best:null,note:'SIM estimate — DraftKings price where a leg has one, SIM chances for prop legs. No book price is verified for SIM props, so no best book is claimed.'};
+    }
+    var dk=1,kal=1,kalOk=true;
+    p.legs.forEach(function(l){if(!l.dkDec){kalOk=false;return;}dk*=l.dkDec;if(l.kalDec)kal*=l.kalDec;else kalOk=false;});
+    if(kalOk){
+      var dkPay=10*dk,kalPay=10*kal;
+      return{amount:Math.max(dkPay,kalPay),best:dkPay>=kalPay?'DraftKings':'Kalshi',note:'Best of the verified prices — DraftKings $10 \u2192 $'+dkPay.toFixed(2)+' \u00b7 Kalshi $10 \u2192 $'+kalPay.toFixed(2)+'.'};
+    }
+    return{amount:10*dk,best:null,note:'Priced from the verified DraftKings moneylines (via ESPN). A Kalshi price could not be verified for every leg, so no best book is claimed.'};
+  }
+  function dedupeSort(legs){
+    var seen={},out=[];
+    legs.forEach(function(l){if(!l.name||seen[l.name])return;seen[l.name]=1;out.push(l);});
+    out.sort(function(a,b){return b.prob-a.prob;});
+    return out;
+  }
+  function specialFrom(pool,title){
+    if(!pool||pool.length<4)return null;
+    var legs=pool.slice(0,6);
+    var hit=legs.reduce(function(a,l){return a*l.prob;},1);
+    return{title:title,legs:legs,hit:hit};
+  }
+  function rebPool(games){
+    var legs=[];
+    games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
+      if(pr.label!=='Reb')return;
+      legs.push({kind:'Prop',name:pr.name,prob:propProb(pr.avg,pr.line),text:pr.name+' Over '+pr.line+' Reb',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' reb/gm',avg:pr.avg,line:pr.line,key:'reb-'+g.id+'-'+pr.name});
+    });});
+    return dedupeSort(legs);
+  }
+  function goalsPool(games){
+    var legs=[];
+    games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
+      if(pr.label!=='Goals')return;
+      legs.push({kind:'Prop',name:pr.name,prob:propProb(pr.avg,0.5),text:pr.name+' Over 0.5 Goals',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' goals/gm',avg:pr.avg,line:0.5,key:'goal-'+g.id+'-'+pr.name});
+    });});
+    return dedupeSort(legs);
+  }
+  function tdPool(games){
+    var legs=[];
+    games.forEach(function(g){(g.tdPlayers||[]).forEach(function(tp){
+      if(!tp.gp||tp.td<=0)return;
+      var rate=tp.td/tp.gp;
+      var prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;
+      legs.push({kind:'Prop',name:tp.name,prob:prob,text:tp.name+' — Anytime TD',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+tp.td+' TD in '+tp.gp+' games this season',avg:Math.round(rate*100)/100,key:'td-'+g.id+'-'+tp.name});
+    });});
+    return dedupeSort(legs);
+  }
+  function sogPool(games){
+    var legs=[];
+    games.forEach(function(g){(g.sogProps||[]).forEach(function(sp){
+      var line=simLine(sp.avg);
+      legs.push({kind:'Prop',name:sp.name,prob:propProb(sp.avg,line),text:sp.name+' Over '+line+' Shots on Goal',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' shots/gm',avg:sp.avg,line:line,key:'sog-'+g.id+'-'+sp.name});
+    });});
+    return dedupeSort(legs);
+  }
+  function threePool(games){
+    var legs=[];
+    games.forEach(function(g){(g.threeProps||[]).forEach(function(sp){
+      var line=simLine(sp.avg);
+      legs.push({kind:'Prop',name:sp.name,prob:propProb(sp.avg,line),text:sp.name+' Over '+line+' 3-Pointers',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' 3PM/gm',avg:sp.avg,line:line,key:'3pm-'+g.id+'-'+sp.name});
+    });});
+    return dedupeSort(legs);
+  }
+  /* Verified per-player averages that the summary leaders do not
+     carry — ESPN core season stats (CORS-open like the rest of ESPN):
+     NBA avg 3-pointers made, NHL avg shots (= shots on goal). */
+  function coreStatAvg(sportPath,league,athleteId,statName){
+    function attempt(yr){
+      return fetchJSON('https://sports.core.api.espn.com/v2/sports/'+sportPath+'/leagues/'+league+'/seasons/'+yr+'/types/2/athletes/'+athleteId+'/statistics').then(function(d){
+        var cats=((d&&d.splits&&d.splits.categories)||[]);
+        for(var i=0;i<cats.length;i++){var stats=cats[i].stats||[];for(var j=0;j<stats.length;j++){if(stats[j].name===statName){var v=parseFloat(stats[j].value);if(!isNaN(v)&&v>0)return v;}}}
+        return null;
+      }).catch(function(){return null;});
+    }
+    var yr=seasonEndYear();
+    return attempt(yr).then(function(v){return v!=null?v:attempt(yr-1);});
+  }
+  function enrichSpecials(lg,gamesToday){
+    if(lg.key==='nba'){
+      var seen={},list=[];
+      gamesToday.forEach(function(g){(g.allProps||[]).forEach(function(pr){if(pr.label==='Pts'&&pr.id&&!seen[pr.id]){seen[pr.id]=1;list.push({g:g,pr:pr});}});});
+      return Promise.all(list.slice(0,20).map(function(it){return coreStatAvg('basketball','nba',it.pr.id,'avgThreePointFieldGoalsMade').then(function(avg){if(avg!=null){(it.g.threeProps=it.g.threeProps||[]).push({name:it.pr.name,avg:Math.round(avg*10)/10});}});})).then(function(){});
+    }
+    if(lg.key==='nhl'){
+      var seen2={},list2=[];
+      gamesToday.forEach(function(g){(g.allProps||[]).forEach(function(pr){if(pr.id&&!seen2[pr.id+'-'+g.id]){seen2[pr.id+'-'+g.id]=1;list2.push({g:g,pr:pr});}});});
+      return Promise.all(list2.slice(0,16).map(function(it){return coreStatAvg('hockey','nhl',it.pr.id,'avgShots').then(function(avg){if(avg!=null){(it.g.sogProps=it.g.sogProps||[]).push({name:it.pr.name,avg:Math.round(avg*10)/10});}});})).then(function(){});
+    }
+    return Promise.resolve();
+  }
   function buildParlays(lg,games){
     var pool=buildLegPool(lg,games);
     if(pool.length<4)return[];
@@ -2656,33 +2789,65 @@ body.on-christmas{color-scheme:light}
   }
   function renderParlays(res){
     var list=document.getElementById('parlayList'),pst=document.getElementById('parlayStatus');
-    if(!list)return;
+    if(!list)return Promise.resolve();
+    var tk=todayStr();
+    var todays=LEAGUES.map(function(lg,li){
+      return (res[li]||[]).filter(function(g){return etDay(g.date)===tk;});
+    });
+    var jobs=[];
+    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).catch(function(){}));});
+    var kalJob=(window.__kalshiLoad?window.__kalshiLoad().catch(function(){}):Promise.resolve());
+    return Promise.all(jobs.concat([kalJob])).then(function(){
     var h='',any=false;
     LEAGUES.forEach(function(lg,li){
       var games=res[li]||[];
-      if(!games.length)return;
-      var parlays=buildParlays(lg,games);
+      var gamesToday=todays[li];
       h+='<p class="brk-conf">'+lg.label+' — Parlays of the Day</p>';
-      if(!parlays.length){h+='<p class="astatus">Not enough verified legs to build a 4-leg parlay for this sport today — no parlay shown.</p>';return;}
+      if(!gamesToday.length){
+        h+='<p class="astatus">No '+esc(lg.label.replace(/^[^ ]+ /,''))+' games today — no parlays today. Parlays only use today&rsquo;s games, so every parlay settles today.</p>';
+        return;
+      }
+      var parlays=buildParlays(lg,gamesToday);
+      var notes='';
+      function addSpecial(pool,title,miss){
+        var sp=specialFrom(pool,title);
+        if(sp)parlays.push(sp);else notes+='<p class="astatus">'+esc(miss)+'</p>';
+      }
+      if(lg.key==='nfl')addSpecial(tdPool(gamesToday),'Touchdown Slip','NFL Touchdown slip: not enough verified legs today — no touchdown parlay shown.');
+      if(lg.key==='nhl'){
+        addSpecial(sogPool(gamesToday),'Shots on Goal','NHL Shots on Goal slip: not enough verified legs today — no shots parlay shown.');
+        addSpecial(goalsPool(gamesToday),'Goals','NHL Goals slip: not enough verified legs today — no goals parlay shown.');
+      }
+      if(lg.key==='nba'){
+        addSpecial(rebPool(gamesToday),'Rebounds','NBA Rebounds slip: not enough verified legs today — no rebounds parlay shown.');
+        addSpecial(threePool(gamesToday),'3-Pointers','NBA 3-Pointers slip: not enough verified legs today — no 3-pointers parlay shown.');
+      }
+      if(!parlays.length){h+='<p class="astatus">Not enough verified legs to build a 4-leg parlay for this sport today — no parlay shown.</p>'+notes;return;}
       any=true;
       parlays.forEach(function(p,pi){
         var hitPct=p.hit*100;
         var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
+        var pay=parlayPayout(p);
         var copyTxt=p.legs.map(function(l){return l.text+(l.kind==='Prop'?' (SIM)':'');}).join('\n');
         h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+esc(lg.label.replace(/^[^ ]+ /,''))+' Parlay '+(pi+1)+' — '+esc(p.title)+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
         p.legs.forEach(function(l){
           h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
-        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div></div>';
-        h+='<p class="tail-label">Tail this bet — copy the legs, open your app, and add the same legs there. Lines can differ by book. Kalshi is markets / moneylines — SIM props may not be offered there.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">📋 Copy legs</button>';
-        BOOKS.forEach(function(b){h+='<a class="tail-btn" href="'+esc(b.url)+'" target="_blank" rel="noopener">Tail on '+esc(b.name)+' →</a>';});
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
+        h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
+        if(pay.best)h+='<span class="hit-best">\u2605 Best payout: '+esc(pay.best)+'</span>';
+        h+='</div>';
+        h+='<p class="tail-label">Tail this bet — copy the legs, open your app, and add the same legs there. Lines can differ by book. Kalshi is markets / moneylines — SIM props may not be offered there.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\ud83d\udccb Copy legs</button>';
+        BOOKS.forEach(function(b){var isBest=pay.best&&pay.best===b.name;h+='<a class="tail-btn'+(isBest?' best-book':'')+'" href="'+esc(b.url)+'" target="_blank" rel="noopener">Tail on '+esc(b.name)+(isBest?' \u2605 Best':'')+' \u2192</a>';});
         h+='</div></div>';
       });
+      h+=notes;
     });
     list.innerHTML=h;
-    if(pst)pst.textContent=any?'Built live from the games above — only sports with upcoming games get parlays.':'No parlays could be built from verified legs right now.';
+    if(pst)pst.textContent=any?'Built live from today&rsquo;s games only — every parlay settles today.':'No parlays could be built from verified legs in today&rsquo;s games right now.';
     var stamp=document.getElementById('parlayStamp');
-    if(stamp)stamp.innerHTML='Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Hit % = legs multiplied &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    if(stamp)stamp.innerHTML='Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Touchdown, Shots on Goal, Goals, Rebounds &amp; 3-Pointers slips from verified live player stats &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    });
   }
   var loading=false;
   function render(){
@@ -2724,7 +2889,7 @@ body.on-christmas{color-scheme:light}
         return;
       }
       if(box)box.innerHTML=h;
-      try{renderParlays(res);}catch(e){var ps1=document.getElementById('parlayStatus');if(ps1)ps1.textContent='Parlays could not be built from verified legs right now.';}
+      try{var rp=renderParlays(res);if(rp&&rp.catch)rp.catch(function(){var ps1=document.getElementById('parlayStatus');if(ps1)ps1.textContent='Parlays could not be built from verified legs right now.';});}catch(e){var ps1=document.getElementById('parlayStatus');if(ps1)ps1.textContent='Parlays could not be built from verified legs right now.';}
       if(st)st.textContent='Simulation from live ESPN schedules, DraftKings moneylines and season stats. SIM = simulated prop line from the player\u2019s live season average. Not a guarantee.';
       var stamp=document.getElementById('betSimStamp');
       if(stamp)stamp.innerHTML='Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
