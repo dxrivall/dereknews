@@ -1,21 +1,17 @@
 # Power outage data for Derek News
-# PowerOutage's live REST API needs a paid key and poweroutage.us 403s
-# servers, but the same service's public pages on poweroutage.com carry
-# the live numbers server-side. This Action parses them every 10 minutes
-# and writes a slim outages.json at the repo root. The site (index.html,
-# Weather tab) reads outages.json from the same GitHub Pages origin.
-# Nov 13 hardening: the old fetcher hard-failed whenever the county page
-# and the counties API disagreed at all (the page is CDN-cached and can
-# lag the API by a cycle), which could fail every run forever. The API
-# record is now authoritative for county totals; fetches retry with a
-# second UA; state totals can fall back to counties-API sums. On a hard
-# failure the Action exits non-zero WITHOUT overwriting the last good
-# outages.json, and the widget keeps showing those numbers with its
-# "refresh delayed" note. Full fetcher source: .src/fetch_outages.py in
-# the build workspace (kept in sync with the code below).
+# PowerOutage's live REST API needs a paid key and poweroutage.us
+# 403s servers, but the same service's public pages on
+# poweroutage.com carry the live numbers server-side. This Action
+# parses them every 10 minutes and writes a slim outages.json at
+# the repo root. The site (index.html, Weather tab) reads
+# outages.json from the same GitHub Pages origin.
+# Fetcher source: .src/fetch_outages.py in the build workspace
+# (kept in sync with the code below - it is embedded unchanged).
+# YAML fix: see kalshi-odds.yml - block scalar fetch step. GitHub
+# flagged the old file at line 37 (the ':' in the Python docstring).
 name: Power outages
 
-on:
+"on":
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
@@ -23,13 +19,19 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: power-outages
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - name: Fetch PowerOutage data for New York and Onondaga County
-        run: python3 - <<'PYEOF'
+        run: |
+          python3 - <<'PYEOF'
           """Fetch live power-outage data for Derek News from PowerOutage
           (poweroutage.com — the same service as poweroutage.us; its pages are
           fetchable server-side, while poweroutage.us itself 403s servers).
@@ -190,5 +192,19 @@ jobs:
           git config user.name "derek-news-bot"
           git config user.email "derek-news-bot@users.noreply.github.com"
           git add outages.json
-          git diff --cached --quiet || git commit -m "Update power outage data"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to outages.json; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Update power outage data"
+          branch="${GITHUB_REF_NAME:-main}"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$branch"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing on origin/$branch and retrying"
+            git fetch origin "$branch"
+            git rebase "origin/$branch" || git rebase --abort
+          done
+          git push origin "HEAD:$branch"
+

@@ -1,14 +1,15 @@
 # ESPN FPI playoff odds for Derek News
 # ESPN's FPI endpoint cannot be read reliably from a visitor's browser,
-# so this Action fetches it server-side and writes a slim fpi.json at the
-# repo root. The site (index.html) reads fpi.json from the same GitHub
-# Pages origin, so there is no CORS problem. FPI updates about weekly,
-# so this runs every 6 hours (and on demand) instead of every 5 minutes.
+# so this Action fetches it server-side and writes a slim fpi.json at
+# the repo root. The site (index.html) reads fpi.json from the same
+# GitHub Pages origin, so there is no CORS problem. FPI updates about
+# weekly, so this runs every 6 hours (and on demand).
 # Upload this file to your repo at .github/workflows/fpi-odds.yml
 # and make sure GitHub Actions are enabled for the repo.
+# YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: FPI playoff odds
 
-on:
+"on":
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
@@ -16,17 +17,34 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: fpi-odds
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - name: Fetch ESPN FPI playoff odds
-        run: python3 - <<'PY'
-          import json, urllib.request, datetime
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, datetime, time
           url = "https://site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en"
-          req = urllib.request.Request(url, headers={"User-Agent": "derek-news-fpi/1.0"})
-          data = json.load(urllib.request.urlopen(req, timeout=30))
+          def fetch_json(url, ua):
+              last = None
+              for attempt in range(3):
+                  try:
+                      req = urllib.request.Request(url, headers={"User-Agent": ua})
+                      return json.load(urllib.request.urlopen(req, timeout=30))
+                  except Exception as e:
+                      last = e
+                      print(f"fetch attempt {attempt} failed for {url}: {e}")
+                      time.sleep(5)
+              raise SystemExit(f"fetch failed after 3 attempts: {last}")
+
+          data = fetch_json(url, "derek-news-fpi/1.0")
           # The payload's top-level "categories" name each value slot;
           # each team's "projections" category carries its values in the
           # same order. Parse by name, never by display label.
@@ -72,5 +90,19 @@ jobs:
           git config user.name "derek-news-bot"
           git config user.email "derek-news-bot@users.noreply.github.com"
           git add fpi.json
-          git diff --cached --quiet || git commit -m "Update FPI playoff odds"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to fpi.json; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Update FPI playoff odds"
+          branch="${GITHUB_REF_NAME:-main}"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$branch"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing on origin/$branch and retrying"
+            git fetch origin "$branch"
+            git rebase "origin/$branch" || git rebase --abort
+          done
+          git push origin "HEAD:$branch"
+
