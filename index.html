@@ -168,7 +168,7 @@ html,body{overflow-x:hidden}
 .wxd-dlo{text-align:right;opacity:.75;font-variant-numeric:tabular-nums}
 .wxd-dhi{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
 .wxd-bar{position:relative;height:5px;border-radius:3px;background:rgba(0,0,0,.28)}
-.wxd-barfill{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#64d2ff,#30d158,#ffd60a,#ff9f0a,#ff453a)}
+.wxd-barfill{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#2f6fd0,#e5484d)}
 .wxd-note{font-size:11px;color:rgba(255,255,255,.72);margin:0;line-height:1.45;text-align:left}
 .wxd-note a{color:#fff;text-decoration:underline}
 .quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:30px}
@@ -334,6 +334,66 @@ body>.teams-overlay{z-index:2000}
 .betsport-prompt[hidden]{display:none!important}
 #sport-betsim[data-pick=""] #parlayList,#sport-betsim[data-pick=""] #betSimGames,#sport-betsim[data-pick=""] #cheatToggle{display:none!important}
 </style>
+<style>
+/* == Nov 13 fixes E: dead-centre play buttons / Christmas widget plain
+   text / homemade Christmas Radio / LIVE animated weather background == */
+.wxradio-mini-btn{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:0!important}
+.wxradio-mini-btn svg{display:block!important;margin:0!important;padding:0!important;transform:none!important}
+#view-weather .wxradio-mini-btn{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:0!important;margin:0 auto!important}
+#view-weather .wxradio-mini-btn svg{display:block!important;margin:0!important;padding:0!important;transform:none!important}
+#homeChristmasWidget .xmas-big{font-size:30px;line-height:1.25;font-weight:700}
+#homeChristmasWidget .xmas-row{display:block}
+.xmas-radio{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:14px}
+.xmas-radio-btn{appearance:none;width:68px;height:68px;min-height:68px;padding:0!important;line-height:0;border-radius:50%;border:1.5px solid #14532d;background:#fff;color:#14532d;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(11,61,32,.22)}
+.xmas-radio-btn svg{display:block;margin:0!important;padding:0!important;transform:none!important}
+.xmas-radio-status{font-size:13.5px;line-height:1.5;color:#3a4a40;margin:0;min-height:20px}
+#wxBg{overflow:hidden;background:linear-gradient(180deg,#3d5266 0%,#5d7387 55%,#7d93a7 100%)}
+#wxBg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(rgba(8,20,28,.20),rgba(8,20,28,.40));pointer-events:none}
+#wxBgCanvas{position:absolute;inset:0;z-index:3;width:100%;height:100%;display:block}
+.wxbg-sun{position:absolute;z-index:1;top:7%;right:10%;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(255,240,190,.95) 0%,rgba(255,210,100,.55) 52%,rgba(255,210,100,0) 72%);opacity:0;transition:opacity .8s ease;pointer-events:none}
+.wxbg-clouds{position:absolute;z-index:1;inset:-12% -25%;background:radial-gradient(ellipse 42% 17% at 24% 22%,rgba(255,255,255,.32),rgba(255,255,255,0) 70%),radial-gradient(ellipse 52% 19% at 72% 15%,rgba(255,255,255,.26),rgba(255,255,255,0) 70%),radial-gradient(ellipse 38% 15% at 52% 34%,rgba(225,235,245,.20),rgba(225,235,245,0) 70%);animation:wxDrift 28s ease-in-out infinite alternate;pointer-events:none}
+@keyframes wxDrift{from{transform:translateX(-3.5%)}to{transform:translateX(3.5%)}}
+#wxBg[data-mode="clear-day"]{background:linear-gradient(180deg,#2b5ea6 0%,#5b9bd9 55%,#93c2ef 100%)}
+#wxBg[data-mode="clear-day"] .wxbg-sun{opacity:1}
+#wxBg[data-mode="clear-day"] .wxbg-clouds{opacity:.45}
+#wxBg[data-mode="clear-night"]{background:linear-gradient(180deg,#05091a 0%,#14264c 55%,#2c4470 100%)}
+#wxBg[data-mode="clear-night"] .wxbg-sun{opacity:.85;background:radial-gradient(circle,rgba(235,242,255,.95) 0%,rgba(190,205,235,.45) 52%,rgba(190,205,235,0) 72%)}
+#wxBg[data-mode="clear-night"] .wxbg-clouds{opacity:.25}
+#wxBg[data-mode="partly-day"]{background:linear-gradient(180deg,#38679f 0%,#6393c6 55%,#93b6dd 100%)}
+#wxBg[data-mode="partly-day"] .wxbg-sun{opacity:.75}
+#wxBg[data-mode="partly-night"]{background:linear-gradient(180deg,#0a1428 0%,#22365c 55%,#3c547e 100%)}
+#wxBg[data-mode="partly-night"] .wxbg-clouds{opacity:.4}
+#wxBg[data-mode="cloudy"]{background:linear-gradient(180deg,#33424f 0%,#526678 55%,#71879a 100%)}
+#wxBg[data-mode="fog"]{background:linear-gradient(180deg,#55606a 0%,#76838e 55%,#99a6b0 100%)}
+#wxBg[data-mode="fog"] .wxbg-clouds{opacity:1;filter:blur(6px)}
+#wxBg[data-mode="drizzle"],#wxBg[data-mode="rain"]{background:linear-gradient(180deg,#20303f 0%,#38546d 55%,#55748f 100%)}
+#wxBg[data-mode="snow"]{background:linear-gradient(180deg,#42688f 0%,#6d97bb 55%,#97b9d6 100%)}
+#wxBg[data-mode="storm"]{background:linear-gradient(180deg,#171430 0%,#332e5c 55%,#544e85 100%)}
+#wxBg[data-phase="dawn"]{background:linear-gradient(180deg,#2e4470 0%,#7d6483 52%,#e09a63 100%)}
+#wxBg[data-phase="dusk"]{background:linear-gradient(180deg,#27355e 0%,#74597c 52%,#d98a5a 100%)}
+#wxBg[data-phase="dawn"] .wxbg-sun,#wxBg[data-phase="dusk"] .wxbg-sun{opacity:.9;top:auto;bottom:16%}
+@media(prefers-reduced-motion:reduce){.wxbg-clouds{animation:none}}
+</style>
+<style>
+/* == Nov 13 fixes F: standings Conference/Divisions toggle, NBA BPI
+   Playoffs %, MLB standings, Playoff Path == */
+.std-tog{display:flex;gap:8px}
+.std-tog button{flex:1;appearance:none;border:1.5px solid rgba(255,255,255,.45);background:rgba(0,0,0,.25);color:#fff;font:inherit;font-weight:700;font-size:14px;border-radius:999px;padding:10px;cursor:pointer;min-height:44px}
+.std-tog button[aria-selected="true"]{background:#ffd34d;border-color:#ffd34d;color:#14213d}
+.std-togcard{padding:14px 16px}
+.div-h{font-size:16px;margin:20px 0 6px;color:#fff;text-align:left}
+.div-h:first-child{margin-top:2px}
+.pp-lab{display:block;font-weight:700;font-size:14.5px;margin:12px 0 4px;text-align:left}
+.pp-sel{display:block;width:100%;margin-top:6px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.4);color:#fff;font:inherit;font-size:15.5px;font-weight:600;border-radius:12px;padding:12px;min-height:48px}
+.pp-sel option{color:#14213d}
+.pp-head{font-size:16.5px;line-height:1.5;margin:14px 0 2px;text-align:left}
+.pp-blk{margin-top:16px;text-align:left}
+.pp-blk h3{font-size:14px;margin:0 0 6px;color:#ffd34d;text-transform:uppercase;letter-spacing:.05em}
+.pp-list{margin:0;padding-left:19px}
+.pp-list li{font-size:14.5px;line-height:1.7;color:#e8eef7}
+.pp-note{font-size:13px;line-height:1.6;color:#aebfe6;margin:6px 0 0;text-align:left}
+.pp-swing{color:#ffd34d;font-weight:700}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -348,7 +408,7 @@ body>.teams-overlay{z-index:2000}
   </div>
 </div>
 
-<div id="wxBg" aria-hidden="true"></div>
+<div id="wxBg" aria-hidden="true" data-mode="cloudy"><div class="wxbg-sun"></div><div class="wxbg-clouds"></div><canvas id="wxBgCanvas"></canvas></div>
 <nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
@@ -414,6 +474,7 @@ body>.teams-overlay{z-index:2000}
     <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 8 hours"><p class="wxd-status">Loading hourly…</p></div>
     <div class="wxd-days" id="homeMiniDays" aria-label="3-day forecast"><p class="wxd-status">Loading forecast…</p></div>
     <div class="wxd-meta" id="homeWxMeta"></div>
+    <div class="wxd-foot"><span></span><button type="button" class="wxd-go" data-go="weather">Full forecast &rarr;</button></div>
   </section>
   <section class="hwidget" id="homeSportsWidget" aria-label="Sports widget">
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
@@ -443,9 +504,9 @@ body>.teams-overlay{z-index:2000}
     </div>
   </section>
   <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
-    <div class="hwidget-head"><h2>🎄 Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
-    <div class="xmas-row"><div class="xmas-big"><span id="homeXDays">—</span> <span style="font-size:22px">days</span></div><div><div style="font-weight:700">Countdown to Christmas</div><div aria-hidden="true" style="font-size:19px;margin-top:3px">🎄 🦌 ⭐ 🔔 ❄️</div></div></div>
-    <a class="santa-link" href="https://santatracker.google.com/" target="_blank" rel="noopener">🎅 Track Santa with Google →</a>
+    <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
+    <div class="xmas-row"><div class="xmas-big"><span id="homeXDays">—</span> days until Christmas</div></div>
+    <a class="santa-link" href="https://santatracker.google.com/" target="_blank" rel="noopener">Track Santa with Google →</a>
   </section>
   </div>
 </main>
@@ -607,7 +668,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   </div>
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
   <div class="wxhero-top">
-    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9 6.8v10.4c0 .8.9 1.3 1.6.9l8-5.2c.6-.4.6-1.3 0-1.7l-8-5.2C9.9 5.5 9 6 9 6.8z"/></svg></button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
+    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
     <p class="wxhero-feels" id="wxFeelsLine"></p>
     <p class="wxhero-nexthour" id="wxNextHour"></p>
     <p class="wxhero-meta" id="wxMeta"></p>
@@ -690,8 +751,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     var a=document.getElementById('wxRadioAudio'),b=document.getElementById('wxRadioBtn'),st=document.getElementById('wxRadioStatus');
     if(!a||!b)return;
     var want=false,timer=null;
-    var RP_PLAY='<svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9 6.8v10.4c0 .8.9 1.3 1.6.9l8-5.2c.6-.4.6-1.3 0-1.7l-8-5.2C9.9 5.5 9 6 9 6.8z"/></svg>';
-    var RP_PAUSE='<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 6h3v12H8zM13.5 6h3v12h-3z"/></svg>';
+    var RP_PLAY='<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg>';
+    var RP_PAUSE='<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 6.5h3.2v11H7.5zM13.3 6.5h3.2v11h-3.2z"/></svg>';
     function setBtn(){b.innerHTML=want?RP_PAUSE:RP_PLAY;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause NOAA Weather Radio — WXL31 Syracuse':'Play NOAA Weather Radio — WXL31 Syracuse');}
     function fail(){
       if(!want)return;
@@ -1018,6 +1079,23 @@ body.on-sports footer{color:#aebfe6!important}
   <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto 10px">Aaron Judge congratulated him on Instagram.</p>
   <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto">Judge himself is resting through the offseason after a follow-up with his doctor — no new procedure. He only played 66 games this year, and he will likely get more DH time in 2027.</p>
   </section>
+  <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="MLB standings view"><button type="button" role="tab" data-std="mlb:conf" aria-selected="true">League</button><button type="button" role="tab" data-std="mlb:div" aria-selected="false">Divisions</button></div></section>
+  <section class="acard" id="mlbConfCard" aria-label="MLB final standings">
+  <h2>⚾ MLB Standings — Final</h2>
+  <h3 class="div-h">American League</h3>
+  <p class="astatus" id="mlbAlStatus">Loading standings…</p>
+  <div id="mlbStandingsAL"></div>
+  <h3 class="div-h">National League</h3>
+  <p class="astatus" id="mlbNlStatus">Loading standings…</p>
+  <div id="mlbStandingsNL"></div>
+  <p class="asrc">Final standings: ESPN · Dashed line = playoff cut after 6th</p>
+  </section>
+  <section class="acard" id="mlbDivCard" hidden aria-label="MLB division standings">
+  <h2>Divisions — Final</h2>
+  <p class="astatus" id="mlbDivStatus">Loading divisions…</p>
+  <div id="mlbDivisions"></div>
+  <p class="asrc">Final standings: ESPN</p>
+  </section>
   <section class="card"><h2>⚾ Other MLB Teams</h2>
   <div class="other-grid">
     <a href="https://www.mlb.com/dbacks" target="_blank" rel="noopener">Arizona Diamondbacks &rarr;</a>
@@ -1073,17 +1151,30 @@ body.on-sports footer{color:#aebfe6!important}
   <div class="aerr" id="nbaLiveErr" hidden>Couldn&rsquo;t load games right now — check the <a href="https://www.nba.com/lakers" target="_blank" rel="noopener">Lakers</a> or <a href="https://www.nba.com/suns" target="_blank" rel="noopener">Suns</a> on NBA.com and reload.</div>
   <p class="asrc" id="nbaLiveStamp">Live data: ESPN · Lakers &amp; Suns only · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
-  <section class="acard" aria-label="Western Conference standings">
+  <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NBA standings view"><button type="button" role="tab" data-std="nba:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nba:div" aria-selected="false">Divisions</button></div></section>
+  <section class="acard" id="nbaWestCard" aria-label="Western Conference standings">
   <h2>Western Conference</h2>
   <p class="astatus" id="westStatus">Loading standings…</p>
   <div id="standingsWest"></div>
-  <p class="asrc">Standings: ESPN · <span style="color:#ffd34d">★</span> = Lakers &amp; Suns · Dashed line = playoff cut after 6th</p>
+  <p class="asrc">Standings: ESPN · Playoffs %: ESPN BPI (bpi.json) · <span style="color:#ffd34d">★</span> = Lakers &amp; Suns · Dashed line = playoff cut after 6th</p>
   </section>
-  <section class="acard" aria-label="Eastern Conference standings">
+  <section class="acard" id="nbaEastCard" aria-label="Eastern Conference standings">
   <h2>Eastern Conference</h2>
   <p class="astatus" id="eastStatus">Loading standings…</p>
   <div id="standingsEast"></div>
-  <p class="asrc">Standings: ESPN · Dashed line = playoff cut after 6th</p>
+  <p class="asrc">Standings: ESPN · Playoffs %: ESPN BPI (bpi.json) · Dashed line = playoff cut after 6th</p>
+  </section>
+  <section class="acard" id="nbaDivCard" hidden aria-label="NBA division standings">
+  <h2>Divisions</h2>
+  <p class="astatus" id="nbaDivStatus">Loading divisions…</p>
+  <div id="nbaDivisions"></div>
+  <p class="asrc">Standings: ESPN · Playoffs %: ESPN BPI (bpi.json)</p>
+  </section>
+  <section class="acard" aria-label="NBA Playoff Path">
+  <h2>🧭 Playoff Path</h2>
+  <label class="pp-lab">Pick a team<select id="ppNbaTeam" class="pp-sel" aria-label="Pick an NBA team"></select></label>
+  <div id="ppNbaOut"><p class="astatus">Loading Playoff Path…</p></div>
+  <p class="asrc">Record, seeds &amp; schedule: ESPN · Playoffs %: ESPN BPI (bpi.json) · Win targets are simple win-total math, not a simulation.</p>
   </section>
   <section class="acard"><h2>🏀 Other NBA Teams</h2>
   <div class="other-grid">
@@ -1142,23 +1233,36 @@ body.on-sports footer{color:#aebfe6!important}
   <div class="aerr" id="nflLiveErr" hidden>Couldn&rsquo;t load games right now — check your teams on <a href="https://www.nfl.com/" target="_blank" rel="noopener">NFL.com</a> and reload.</div>
   <p class="asrc" id="nflLiveStamp">Live data: ESPN &middot; Jaguars, Patriots, Saints &amp; Eagles only &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
-  <section class="acard" aria-label="AFC standings">
+  <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NFL standings view"><button type="button" role="tab" data-std="nfl:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nfl:div" aria-selected="false">Divisions</button></div></section>
+  <section class="acard" id="nflAfcCard" aria-label="AFC standings">
   <h2>American Football Conference</h2>
   <p class="astatus" id="nflAfcStatus">Loading standings…</p>
   <div id="standingsAfc"></div>
   <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI (fpi.json) &middot; <span style="color:#ffd34d">★</span> = Jaguars, Patriots, Saints &amp; Eagles &middot; Dashed line = playoff cut after 7th</p>
   </section>
-  <section class="acard" aria-label="NFC standings">
+  <section class="acard" id="nflNfcCard" aria-label="NFC standings">
   <h2>National Football Conference</h2>
   <p class="astatus" id="nflNfcStatus">Loading standings…</p>
   <div id="standingsNfc"></div>
   <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI (fpi.json) &middot; Dashed line = playoff cut after 7th</p>
+  </section>
+  <section class="acard" id="nflDivCard" hidden aria-label="NFL division standings">
+  <h2>Divisions</h2>
+  <p class="astatus" id="nflDivStatus">Loading divisions…</p>
+  <div id="nflDivisions"></div>
+  <p class="asrc">Standings: ESPN · Playoffs %: ESPN FPI (fpi.json)</p>
   </section>
   <section class="acard" aria-label="Projected playoff bracket">
   <h2>🏆 Projected Playoff Bracket</h2>
   <p class="astatus" id="nflBracketStatus">Loading projection&hellip;</p>
   <div id="nflBracket"></div>
   <p class="asrc">Seeds: ESPN standings &middot; Win chances: ESPN FPI (fpi.json) &middot; <a href="https://www.nflplayoffscenario.com/bracket" target="_blank" rel="noopener" style="color:#9fc0ff;text-decoration:underline">Full simulator &rarr;</a></p>
+  </section>
+  <section class="acard" aria-label="NFL Playoff Path">
+  <h2>🧭 Playoff Path</h2>
+  <label class="pp-lab">Pick a team<select id="ppNflTeam" class="pp-sel" aria-label="Pick an NFL team"></select></label>
+  <div id="ppNflOut"><p class="astatus">Loading Playoff Path…</p></div>
+  <p class="asrc">Record, seeds &amp; schedule: ESPN · Playoffs %: ESPN FPI (fpi.json) · Win targets are simple win-total math, not a simulation.</p>
   </section>
   <section class="acard"><h2>🏈 Other NFL Teams</h2>
   <div class="other-grid">
@@ -1434,8 +1538,6 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 .santa-btn{display:block;margin:16px auto 0;max-width:520px;background:#b42318;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 18px;border-radius:999px;border:2px solid #14532d;box-shadow:0 3px 10px rgba(0,0,0,.25);min-height:56px}
 .santa-btn:hover{background:#14532d}
 .santa-note{font-size:13px;color:#6b7a80;margin-top:12px}
-.xmas-player{margin-top:16px;border-radius:14px;overflow:hidden;background:#0b3d20}
-.xmas-player iframe{display:block;width:100%;height:230px;border:0}
 body.on-christmas footer{color:#fff!important}
 body.on-christmas{--ink:#0f2419;--soft:#24382d;--link:#0b3d20;--panel:#fff;--border:rgba(20,83,45,.4);--nav:#fff;--sky3:#fff;--green:#14532d}
 body.on-christmas .bottomnav{background:rgba(255,255,255,.72);border-color:rgba(255,255,255,.9)}
@@ -1463,10 +1565,10 @@ body.on-christmas{color-scheme:light}
     <a class="santa-btn" href="https://santatracker.google.com/" target="_blank" rel="noopener">🎅 Track Santa with Google &rarr;</a>
     
   </section>
-  <section class="santa" aria-label="iHeart Christmas radio, playing in this page" style="border-color:#14532d">
-    <div style="font-size:52px;line-height:1" aria-hidden="true">📻</div>
-    <h2 style="color:#14532d">iHeart Christmas</h2>
-    <div class="xmas-player"><iframe id="iheartPlayer" title="iHeart Christmas — live radio" src="https://www.iheart.com/live/iheart-christmas-4596/?embed=true" allow="autoplay; encrypted-media" allowfullscreen loading="eager"></iframe></div>
+  <section class="santa" aria-label="Christmas Radio, playing in this page" style="border-color:#14532d">
+    <h2 style="color:#14532d">Christmas Radio</h2>
+    <p>Christmas hits, live all season.</p>
+    <div class="xmas-radio"><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="xmas-radio-status" id="xmasRadioStatus" role="status"></p><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div>
   </section>
   <section class="card"><h2>🎁 Christmas Checklist</h2>
   <ul class="check">
@@ -1737,29 +1839,20 @@ body.on-christmas{color-scheme:light}
   // Live weather — Open-Meteo, no API key, Cicero NY (43.1713, -76.1250)
   var codes={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],56:['🌦️','Freezing drizzle'],57:['🌦️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Light showers'],81:['🌧️','Showers'],82:['🌧️','Heavy showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Thunderstorm with hail']};
   function info(c){return codes[c]||['🌡️','—'];}
-  // Weather-tab background photo — picked from the LIVE condition, updates on every load
-  var U='?w=1600&q=80&auto=format&fit=crop';
-  var wxPhotos={
-    clearDay:{src:'https://images.unsplash.com/photo-1500382017468-9049fed747ef'+U,label:'Sunny & clear'},
-    clearNight:{src:'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a'+U,label:'Clear night sky'},
-    partly:{src:'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869'+U,label:'Partly cloudy'},
-    cloudy:{src:'https://images.unsplash.com/photo-1534088568595-a066f410bcda'+U,label:'Cloudy & overcast'},
-    fog:{src:'https://images.unsplash.com/photo-1487621167305-5d248087c724'+U,label:'Foggy'},
-    drizzle:{src:'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17'+U,label:'Drizzly'},
-    rain:{src:'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0'+U,label:'Rainy'},
-    snow:{src:'https://images.unsplash.com/photo-1418985991508-e47386d96a71'+U,label:'Snowy'},
-    storm:{src:'https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28'+U,label:'Stormy'}
-  };
-  function wxPhotoFor(code,isDay){
-    if(code===0||code===1) return isDay===0?wxPhotos.clearNight:wxPhotos.clearDay;
-    if(code===2) return wxPhotos.partly;
-    if(code===3) return wxPhotos.cloudy;
-    if(code===45||code===48) return wxPhotos.fog;
-    if(code>=51&&code<=57) return wxPhotos.drizzle;
-    if(code===71||code===73||code===75||code===77||code===85||code===86) return wxPhotos.snow;
-    if(code===95||code===96||code===99) return wxPhotos.storm;
-    if((code>=61&&code<=67)||(code>=80&&code<=82)) return wxPhotos.rain;
-    return wxPhotos.cloudy;
+  // Weather-tab background — LIVE animated scene driven by the live
+  // Open-Meteo condition: falling snow, rain, drifting clouds, sun /
+  // moon glow and stars, storm flashes — canvas + CSS in-page, no
+  // video and no still photo. Sky tint shifts with the time of day.
+  function wxModeFor(code){
+    if(code===0||code===1)return 'clear';
+    if(code===2)return 'partly';
+    if(code===3)return 'cloudy';
+    if(code===45||code===48)return 'fog';
+    if(code>=51&&code<=57)return 'drizzle';
+    if(code===71||code===73||code===75||code===77||code===85||code===86)return 'snow';
+    if(code===95||code===96||code===99)return 'storm';
+    if((code>=61&&code<=67)||(code>=80&&code<=82))return 'rain';
+    return 'cloudy';
   }
   function wxThemeClass(code,isDay){
     if(code===0||code===1) return isDay===0?'wxth-clear-night':'wxth-clear-day';
@@ -1772,14 +1865,65 @@ body.on-christmas{color-scheme:light}
     if((code>=61&&code<=67)||(code>=80&&code<=82)) return 'wxth-rain';
     return 'wxth-cloudy';
   }
-  function applyWxBg(code,isDay,condText){
-    var p=wxPhotoFor(code,isDay);
+  var wxLive={mode:'cloudy',day:1,parts:[],flash:0,nextFlash:3000,started:false,reduced:false};
+  try{wxLive.reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  function wxLiveCanvas(){return document.getElementById('wxBgCanvas');}
+  function wxLiveSize(){var c=wxLiveCanvas();if(!c)return null;var d=Math.min(1.5,window.devicePixelRatio||1);c.width=Math.round(window.innerWidth*d);c.height=Math.round(window.innerHeight*d);return c;}
+  function wxLiveBuild(){
+    wxLive.parts=[];var W=window.innerWidth||360,H=window.innerHeight||640;
+    var n=0,kind='';
+    if(wxLive.mode==='snow'){n=120;kind='snow';}
+    else if(wxLive.mode==='rain'){n=130;kind='rain';}
+    else if(wxLive.mode==='storm'){n=170;kind='rain';}
+    else if(wxLive.mode==='drizzle'){n=55;kind='rain';}
+    else if(wxLive.mode==='clear'&&!wxLive.day){n=80;kind='star';}
+    for(var i=0;i<n;i++){
+      if(kind==='snow')wxLive.parts.push({x:Math.random()*W,y:Math.random()*H,r:.8+Math.random()*2.2,v:.35+Math.random()*.85,ph:Math.random()*6.28,sw:.3+Math.random()*.9});
+      else if(kind==='rain')wxLive.parts.push({x:Math.random()*(W+80)-40,y:Math.random()*H,l:9+Math.random()*9,v:8.5+Math.random()*5.5});
+      else if(kind==='star')wxLive.parts.push({x:Math.random()*W,y:Math.random()*H*.75,r:.5+Math.random()*1.1,ph:Math.random()*6.28});
+    }
+    wxLive.kind=kind;
+  }
+  function wxLiveDraw(ts){
+    var c=wxLiveCanvas();if(!c)return;
+    var ctx=c.getContext('2d');if(!ctx)return;
+    var d=Math.min(1.5,window.devicePixelRatio||1),W=c.width,H=c.height;
+    ctx.clearRect(0,0,W,H);
+    var tsec=ts/1000,i,p;
+    if(wxLive.kind==='snow'){
+      ctx.fillStyle='rgba(255,255,255,.92)';
+      for(i=0;i<wxLive.parts.length;i++){p=wxLive.parts[i];p.y+=p.v*d;p.x+=Math.sin(tsec*1.2+p.ph)*p.sw*.4*d;if(p.y>H+6){p.y=-6;p.x=Math.random()*W;}ctx.beginPath();ctx.arc(p.x,p.y,p.r*d,0,6.283);ctx.fill();}
+    }else if(wxLive.kind==='rain'){
+      ctx.strokeStyle=wxLive.mode==='storm'?'rgba(190,215,245,.65)':'rgba(180,210,240,.55)';ctx.lineWidth=Math.max(1,d);ctx.beginPath();
+      var sl=wxLive.mode==='drizzle'?.35:1;
+      for(i=0;i<wxLive.parts.length;i++){p=wxLive.parts[i];p.y+=p.v*d;p.x-=2*d;if(p.y>H+20){p.y=-20;p.x=Math.random()*(W+80);}ctx.moveTo(p.x,p.y);ctx.lineTo(p.x-p.l*.22*d,p.y+p.l*d*sl+4);}
+      ctx.stroke();
+      if(wxLive.mode==='storm'){
+        if(ts>wxLive.nextFlash){wxLive.flash=.28;wxLive.nextFlash=ts+2600+Math.random()*4200;}
+        if(wxLive.flash>.01){ctx.fillStyle='rgba(235,240,255,'+wxLive.flash+')';ctx.fillRect(0,0,W,H);wxLive.flash*=.86;}
+      }
+    }else if(wxLive.kind==='star'){
+      for(i=0;i<wxLive.parts.length;i++){p=wxLive.parts[i];var a=.35+.65*Math.abs(Math.sin(tsec*.8+p.ph));ctx.fillStyle='rgba(255,255,255,'+a.toFixed(2)+')';ctx.beginPath();ctx.arc(p.x,p.y,p.r*d,0,6.283);ctx.fill();}
+    }
+  }
+  function wxLiveTick(ts){
+    requestAnimationFrame(wxLiveTick);
+    if(document.hidden||!document.body.classList.contains('on-weather'))return;
+    wxLiveDraw(ts||0);
+  }
+  function wxLiveStart(){if(wxLive.started)return;wxLive.started=true;wxLiveSize();wxLiveBuild();if(wxLive.reduced){wxLiveDraw(600);return;}requestAnimationFrame(wxLiveTick);}
+  window.addEventListener('resize',function(){wxLiveSize();});
+  function applyWxBg(code,isDay,condText,timeIso){
     var bg=document.getElementById('wxBg');
-    var pre=new Image(); pre.src=p.src;
-    if(bg) bg.style.backgroundImage='linear-gradient(rgba(10,22,28,.38),rgba(10,22,28,.52)),url("'+p.src+'")';
-// Home widget ONLY gets the Apple-style condition-tinted gradient. The Weather tab
-    // keeps the live-condition photo on #wxBg (set just above) — no gradient
-    // or card design is ever applied to wxHero.
+    var base=wxModeFor(code);
+    var full=(base==='clear'||base==='partly')?base+(isDay?'-day':'-night'):base;
+    var hr=null;
+    if(timeIso&&String(timeIso).length>=13)hr=parseInt(String(timeIso).slice(11,13),10);
+    if(hr==null||isNaN(hr))hr=new Date().getHours();
+    var phase='';
+    if(isDay&&(base==='clear'||base==='partly')){if(hr>=6&&hr<9)phase='dawn';else if(hr>=16&&hr<19)phase='dusk';}
+    if(bg){bg.style.backgroundImage='';bg.style.background='';bg.setAttribute('data-mode',full);if(phase)bg.setAttribute('data-phase',phase);else bg.removeAttribute('data-phase');}
+    wxLive.mode=base;wxLive.day=isDay?1:0;wxLiveSize();wxLiveBuild();wxLiveStart();
     var th=wxThemeClass(code,isDay);
     var hw=document.getElementById('homeWxWidget');if(hw){hw.classList.remove('wxth-clear-day','wxth-clear-night','wxth-partly-day','wxth-partly-night','wxth-cloudy','wxth-fog','wxth-rain','wxth-snow','wxth-storm');hw.classList.add(th);}
   }
@@ -1968,6 +2112,10 @@ body.on-christmas{color-scheme:light}
   var url='https://api.open-meteo.com/v1/forecast?latitude='+__wxLoc.lat+'&longitude='+__wxLoc.lon+'&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&hourly=temperature_2m,precipitation_probability,weather_code,is_day,snowfall,relative_humidity_2m,apparent_temperature,precipitation,rain,wind_speed_10m,wind_gusts_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max,wind_speed_10m_max,snowfall_sum,wind_gusts_10m_max,precipitation_sum,rain_sum,apparent_temperature_max,apparent_temperature_min,wind_direction_10m_dominant&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone='+(__wxLoc.live?'auto':'America%2FNew_York')+'&forecast_days=7';
   function compass(deg){var dirs=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];return dirs[Math.round(((deg%360)+360)%360/22.5)%16];}
   function fmtClock(iso){if(!iso)return'—';var dt=new Date(iso);if(isNaN(dt))return'—';return dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
+  /* Temperature colour — cold is blue, warm is red (Apple-style anchors,
+     interpolated): a day's range bar runs from its low's colour to its
+     high's colour, so the gradient reflects the actual temperatures. */
+  function wxTempColor(f){var A=[[0,222],[32,200],[50,160],[65,95],[75,55],[85,25],[95,0]];if(f<=A[0][0])return 'hsl('+A[0][1]+',85%,55%)';for(var i=1;i<A.length;i++){if(f<=A[i][0]){var p=(f-A[i-1][0])/(A[i][0]-A[i-1][0]);var h=A[i-1][1]+(A[i][1]-A[i-1][1])*p;return 'hsl('+Math.round(h)+',85%,55%)';}}return 'hsl(0,85%,55%)';}
   fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     snowWx=d; wxData=d; updateSnowDay(); 
     var cur=d.current, ci=info(cur.weather_code);
@@ -2021,7 +2169,7 @@ body.on-christmas{color-scheme:light}
       }
     }
     var __nh=document.getElementById('wxNextHour');var __nhHome=document.getElementById('homeNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';if(__nhHome)__nhHome.textContent=__nh.textContent;}
-    applyWxBg(cur.weather_code,cur.is_day,ci[1]);
+    applyWxBg(cur.weather_code,cur.is_day,ci[1],cur.time);
     document.getElementById('stripIcon').textContent=ci[0];
     document.getElementById('stripTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('stripCond').textContent=ci[1];
@@ -2036,7 +2184,7 @@ body.on-christmas{color-scheme:light}
     });
     document.getElementById('wxDays').innerHTML=html;
     var hmd=document.getElementById('homeMiniDays');
-    if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
+    if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColor(mdLo)+','+wxTempColor(mdHi)+')"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
     var hwm=document.getElementById('homeWxMeta');if(hwm)hwm.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° · Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);
     document.getElementById('wxStamp').textContent='Live data: Open-Meteo · Alerts: National Weather Service · '+__wxLoc.label+' · Loaded '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   }).catch(function(){snowWxFailed=true;updateSnowDay();document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable — open the Weather tab to retry.';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
@@ -2278,32 +2426,52 @@ body.on-christmas{color-scheme:light}
   }
   function statMap(e){var m={};(e.stats||[]).forEach(function(s){m[s.name]=s;});return m;}
   function fmtPct(s){if(!s)return'';var v=s.displayValue||'';if(v.charAt(0)==='0'&&v.charAt(1)==='.')v=v.slice(1);return v;}
-  function renderConf(entries){
-    entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th></tr></thead><tbody>';
+  function renderConf(entries,divMode){
+    if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
+    else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th><th>Playoffs %</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var apiLogo=(t.logos&&t.logos.length)?t.logos[0].href:'';
       var logoHtml=logoImg(t.id,'s',apiLogo);
       var gb=(m.gamesBehind||{}).displayValue||'';
       if(gb!==''&&parseFloat(gb)===0)gb='-';
-      var seed=(m.playoffSeed||{}).displayValue||String(i+1);
+      var seed=divMode?String(i+1):((m.playoffSeed||{}).displayValue||String(i+1));
       if(t.id)recMap[String(t.id)]=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'');
-      var hl=TEAM_IDS[String(t.id||'')]?' class="hl'+(i===5?' cut':'')+'"':(i===5?' class="cut"':'');
-      h+='<tr'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
+      var hl=divMode?(TEAM_IDS[String(t.id||'')]?' class="hl"':''):(TEAM_IDS[String(t.id||'')]?' class="hl'+(i===5?' cut':'')+'"':(i===5?' class="cut"':''));
+      h+='<tr'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td><td class="fpi">'+nbaPlayoffCell(t)+'</td></tr>';
     });
     return h+'</tbody></table>';
   }
+  /* -- ESPN BPI playoff chances: same pattern as NFL FPI -- bpi.json is
+     refreshed server-side by the BPI GitHub Action; fallback reads the
+     BPI endpoint directly and parses by category NAME. A team whose %
+     cannot be read shows a dash, never a guess. -- */
+  var BPI_BY_ID={},BPI_BY_ABBR={};
+  var NBA_CONF={west:null,east:null},NBA_DIVS=null;
+  function bpiNum(v){if(v==null)return null;var n=parseFloat(v);if(isNaN(n)||n<0||n>100)return null;return Math.round(n*10)/10;}
+  function bpiIngest(list){BPI_BY_ID={};BPI_BY_ABBR={};(list||[]).forEach(function(r){if(!r)return;var rec={playoff:bpiNum(r.playoff),winDiv:bpiNum(r.winDiv),top6:bpiNum(r.top6),playIn:bpiNum(r.playIn)};if(rec.playoff==null)return;if(r.id)BPI_BY_ID[String(r.id)]=rec;if(r.abbr)BPI_BY_ABBR[String(r.abbr).toUpperCase()]=rec;});}
+  function parseBpiNames(d){var pn=[];((d&&d.categories)||[]).forEach(function(c){if(c&&c.name==='projections')pn=c.names||[];});var KM={probmakeplayoffs:'playoff',probwindiv:'winDiv',top6seed:'top6',playinchance:'playIn'};var out=[];((d&&d.teams)||[]).forEach(function(e){var tm=(e&&e.team)||{};var rec={id:String(tm.id||''),abbr:tm.abbreviation||''};((e&&e.categories)||[]).forEach(function(cat){if(!cat||cat.name!=='projections')return;var vals=cat.values||[];pn.forEach(function(nm,i){var k=KM[nm];if(k)rec[k]=(i<vals.length)?vals[i]:null;});});if(rec.playoff!=null)out.push(rec);});return out;}
+  function bpiFor(t){if(!t)return null;return BPI_BY_ID[String(t.id||'')]||BPI_BY_ABBR[String(t.abbreviation||'').toUpperCase()]||null;}
+  function nbaPlayoffCell(t){var r=bpiFor(t);if(!r||r.playoff==null)return '&mdash;';var x=Math.round(r.playoff*10)/10;return (x%1===0?String(Math.round(x)):String(x))+'%';}
+  function drawNbaStandings(){[['west','standingsWest','westStatus'],['east','standingsEast','eastStatus']].forEach(function(cfg){var entries=NBA_CONF[cfg[0]];if(!entries)return;var box=document.getElementById(cfg[1]);var st=document.getElementById(cfg[2]);if(box){box.innerHTML=renderConf(entries);if(st)st.textContent='';}});}
+  function drawNbaDivisions(){var box=document.getElementById('nbaDivisions');var st=document.getElementById('nbaDivStatus');if(!box||!NBA_DIVS)return;box.innerHTML=NBA_DIVS.map(function(dv){return '<h3 class="div-h">'+esc(dv.name)+'</h3>'+renderConf(dv.entries,true);}).join('');if(st)st.textContent='';}
+  function loadBpi(){fetch('bpi.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){bpiIngest((d&&d.teams)||[]);drawNbaStandings();drawNbaDivisions();}).catch(function(){fetchJSON('https://site.web.api.espn.com/apis/fitt/v3/sports/basketball/nba/powerindex?region=us&lang=en').then(function(d){bpiIngest(parseBpiNames(d));drawNbaStandings();drawNbaDivisions();}).catch(function(){});});}
+  function loadNbaDivisions(){fetchJSON('https://site.api.espn.com/apis/v2/sports/basketball/nba/standings?level=3').then(function(d){var out=[];(d.children||[]).forEach(function(ch){(ch.children||[]).forEach(function(dv){var ents=(dv.standings&&dv.standings.entries)||[];if(ents.length)out.push({name:dv.name||'',entries:ents});});});if(out.length){NBA_DIVS=out;drawNbaDivisions();}else{var st=document.getElementById('nbaDivStatus');if(st)st.textContent='Divisions unavailable right now.';}}).catch(function(){var st=document.getElementById('nbaDivStatus');if(st)st.textContent='Couldn\u2019t load divisions right now \u2014 reload to try again.';});}
+  document.querySelectorAll('[data-std^="nba:"]').forEach(function(b){b.addEventListener('click',function(){var mode=b.getAttribute('data-std').split(':')[1];document.querySelectorAll('[data-std^="nba:"]').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});var wc=document.getElementById('nbaWestCard'),ec=document.getElementById('nbaEastCard'),dc=document.getElementById('nbaDivCard');if(wc)wc.hidden=(mode==='div');if(ec)ec.hidden=(mode==='div');if(dc)dc.hidden=(mode!=='div');});});
   function loadStandings(){
     fetchJSON('https://site.api.espn.com/apis/v2/sports/basketball/nba/standings').then(function(d){
       (d.children||[]).forEach(function(ch){
         var entries=(ch.standings&&ch.standings.entries)||[];
+        if(!entries.length)return;
         var isWest=(ch.name||'').indexOf('Western')>-1;
-        var box=document.getElementById(isWest?'standingsWest':'standingsEast');
+        NBA_CONF[isWest?'west':'east']=entries;
         var st=document.getElementById(isWest?'westStatus':'eastStatus');
-        if(box&&entries.length){box.innerHTML=renderConf(entries);if(st)st.textContent='';}
-        else if(st){st.textContent='Standings unavailable right now.';}
+        if(st&&!NBA_CONF[isWest?'west':'east'])st.textContent='Standings unavailable right now.';
       });
+      if(!NBA_CONF.west){var sw=document.getElementById('westStatus');if(sw)sw.textContent='Standings unavailable right now.';}
+      if(!NBA_CONF.east){var se=document.getElementById('eastStatus');if(se)se.textContent='Standings unavailable right now.';}
+      drawNbaStandings();
       renderDay();
     }).catch(function(){
       ['westStatus','eastStatus'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='Couldn\u2019t load standings right now — reload to try again.';});
@@ -2311,6 +2479,8 @@ body.on-christmas{color-scheme:light}
   }
   loadGames();
   loadStandings();
+  loadBpi();
+  loadNbaDivisions();
   setInterval(loadGames,60000);
 })();
 
@@ -2457,17 +2627,18 @@ body.on-christmas{color-scheme:light}
   }
   var NFL_ENTRIES={afc:null,nfc:null};
   var NFL_SEEDS={afc:[],nfc:[]};
-  function renderNflConf(entries,confKey){
-    entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});
+  function renderNflConf(entries,confKey,divMode){
+    if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
+    else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
     var seeds=[];
     var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th><th>Playoffs %</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
-      var seed=sv(m,'playoffSeed')||String(i+1);
+      var seed=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
       var seedN=parseInt(seed,10)||(i+1);
-      if(seedN>=1&&seedN<=7)seeds.push({seed:seedN,id:String(t.id||''),abbr:t.abbreviation||'',name:t.name||t.shortDisplayName||''});
+      if(!divMode&&seedN>=1&&seedN<=7)seeds.push({seed:seedN,id:String(t.id||''),abbr:t.abbreviation||'',name:t.name||t.shortDisplayName||''});
       if(t.id)nflBoard.recMap[String(t.id)]=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'');
-      var hl=NFL_FAVS[String(t.id||'')]?' class="hl'+(i===6?' cut':'')+'"':(i===6?' class="cut"':'');
+      var hl=divMode?(NFL_FAVS[String(t.id||'')]?' class="hl"':''):(NFL_FAVS[String(t.id||'')]?' class="hl'+(i===6?' cut':'')+'"':(i===6?' class="cut"':''));
       h+='<tr'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td class="fpi">'+playoffPctCell(t)+'</td></tr>';
     });
     seeds.sort(function(a,b){return a.seed-b.seed;});
@@ -2536,12 +2707,12 @@ body.on-christmas{color-scheme:light}
     fetch('fpi.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
       fpiIngest((d&&d.teams)||[]);
       if(!fpiOk)throw new Error('fpi.json empty');
-      drawNflStandings();
+      drawNflStandings();drawNflDivisions();
       renderBracket();
     }).catch(function(){
       fetchJSON('https://site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en').then(function(d){
         fpiIngest(parseFpiNames(d));
-        drawNflStandings();
+        drawNflStandings();drawNflDivisions();
         renderBracket();
       }).catch(function(){fpiOk=false;renderBracket();});
     });
@@ -2627,6 +2798,10 @@ body.on-christmas{color-scheme:light}
     box.innerHTML=h;
   }
 
+  var NFL_DIVS=null;
+  function drawNflDivisions(){var box=document.getElementById('nflDivisions');var st=document.getElementById('nflDivStatus');if(!box||!NFL_DIVS)return;box.innerHTML=NFL_DIVS.map(function(dv){return '<h3 class="div-h">'+esc(dv.name)+'</h3>'+renderNflConf(dv.entries,null,true);}).join('');if(st)st.textContent='';}
+  function loadNflDivisions(){fetchJSON('https://site.api.espn.com/apis/v2/sports/football/nfl/standings?level=3').then(function(d){var out=[];(d.children||[]).forEach(function(ch){(ch.children||[]).forEach(function(dv){var ents=(dv.standings&&dv.standings.entries)||[];if(ents.length)out.push({name:dv.name||'',entries:ents});});});if(out.length){NFL_DIVS=out;drawNflDivisions();}else{var st=document.getElementById('nflDivStatus');if(st)st.textContent='Divisions unavailable right now.';}}).catch(function(){var st=document.getElementById('nflDivStatus');if(st)st.textContent='Couldn\u2019t load divisions right now \u2014 reload to try again.';});}
+  document.querySelectorAll('[data-std^="nfl:"]').forEach(function(b){b.addEventListener('click',function(){var mode=b.getAttribute('data-std').split(':')[1];document.querySelectorAll('[data-std^="nfl:"]').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});var ac=document.getElementById('nflAfcCard'),nc=document.getElementById('nflNfcCard'),dc=document.getElementById('nflDivCard');if(ac)ac.hidden=(mode==='div');if(nc)nc.hidden=(mode==='div');if(dc)dc.hidden=(mode!=='div');});});
   function loadNflStandings(){
     fetchJSON('https://site.api.espn.com/apis/v2/sports/football/nfl/standings').then(function(d){
       (d.children||[]).forEach(function(ch){
@@ -2637,7 +2812,7 @@ body.on-christmas{color-scheme:light}
       });
       if(!NFL_ENTRIES.afc){var s1=document.getElementById('nflAfcStatus');if(s1)s1.textContent='Standings unavailable right now.';}
       if(!NFL_ENTRIES.nfc){var s2=document.getElementById('nflNfcStatus');if(s2)s2.textContent='Standings unavailable right now.';}
-      drawNflStandings();
+      drawNflStandings();drawNflDivisions();
       renderBracket();
       nflBoard.renderDay();
     }).catch(function(){
@@ -2703,6 +2878,7 @@ body.on-christmas{color-scheme:light}
 
   loadNflGames();
   loadNflStandings();
+  loadNflDivisions();
   loadFpi();
   loadNhlGames();
   loadNhlStandings();
@@ -3626,23 +3802,34 @@ body.on-christmas{color-scheme:light}
 })();
 </script>
 <script>
-/* Christmas radio: start the embedded iHeart Christmas player as soon
-   as the Christmas tab is opened — no trip to iHeart needed. */
+/* Christmas Radio: homemade player for the iHeart Christmas stream
+   (station 4596, direct AAC feed) — no iHeart embed. Opening the
+   Christmas tab tries to start it; if the browser blocks autoplay,
+   the play button starts it instead. */
 (function(){
-  var started=false;
-  function kick(){
-    if(started)return;
-    var f=document.getElementById('iheartPlayer');
-    if(!f)return;
-    started=true;
-    f.src='https://www.iheart.com/live/iheart-christmas-4596/?embed=true&autoplay=1';
+  var a=document.getElementById('xmasRadioAudio'),b=document.getElementById('xmasRadioBtn'),st=document.getElementById('xmasRadioStatus');
+  if(!a||!b)return;
+  var XP='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg>';
+  var XQ='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 6.5h3.2v11H7.5zM13.3 6.5h3.2v11h-3.2z"/></svg>';
+  var want=false,timer=null,kicked=false;
+  function setBtn(){b.innerHTML=want?XQ:XP;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause Christmas Radio':'Play Christmas Radio');}
+  function fail(auto){
+    if(!want)return; want=false; if(timer){clearTimeout(timer);timer=null;}
+    try{a.pause();}catch(e){} setBtn();
+    if(st)st.textContent=auto?'Tap play to start Christmas Radio.':"Couldn't start the radio \u2014 tap to try again.";
   }
-  if(window.MutationObserver){
-    var mo=new MutationObserver(function(){
-      if(document.body.classList.contains('on-christmas')){kick();mo.disconnect();}
-    });
-    mo.observe(document.body,{attributes:true,attributeFilter:['class']});
+  a.addEventListener('playing',function(){if(timer){clearTimeout(timer);timer=null;} if(st)st.textContent='Live \u2014 Christmas Radio';});
+  a.addEventListener('error',function(){fail(false);});
+  function start(auto){
+    if(want)return; want=true; setBtn(); if(st)st.textContent='Connecting\u2026';
+    if(timer)clearTimeout(timer);
+    timer=setTimeout(function(){if(want&&a.readyState<2)fail(auto);},15000);
+    var pr=a.play(); if(pr&&pr.catch)pr.catch(function(){fail(auto);});
   }
+  function stop(){want=false; if(timer){clearTimeout(timer);timer=null;} try{a.pause();}catch(e){} setBtn(); if(st)st.textContent='Paused.';}
+  b.addEventListener('click',function(){want?stop():start(false);});
+  function kick(){if(kicked)return; kicked=true; start(true);}
+  if(window.MutationObserver){var mo=new MutationObserver(function(){if(document.body.classList.contains('on-christmas'))kick();}); mo.observe(document.body,{attributes:true,attributeFilter:['class']});}
   document.querySelectorAll('[data-go="christmas"]').forEach(function(el){el.addEventListener('click',kick);});
   if(document.body.classList.contains('on-christmas'))kick();
 })();
@@ -4163,6 +4350,142 @@ body.on-christmas{color-scheme:light}
     new MutationObserver(apply).observe(box,{childList:true});
   });
   apply();
+})();
+</script>
+<script>
+/* MLB standings (final) — ESPN, with League / Divisions toggle.
+   Logos from the ESPN abbreviation slug; a missing logo hides itself. */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+  function statMap(e){var m={};(e.stats||[]).forEach(function(s){m[s.name]=s;});return m;}
+  function sv(m,k){var s=m[k];return s?(s.displayValue!=null?s.displayValue:''):'';}
+  function fmtPct(s){if(!s)return'';var v=s.displayValue||'';if(v.charAt(0)==='0'&&v.charAt(1)==='.')v=v.slice(1);return v;}
+  var FAVS=(window.__dnTeams?window.__dnTeams.favs('mlb'):{});
+  var CONF={al:null,nl:null},DIVS=null;
+  function render(entries,divMode){
+    if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
+    else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th></tr></thead><tbody>';
+    entries.forEach(function(e,i){
+      var m=statMap(e),t=e.team||{};
+      var gb=sv(m,'gamesBehind');if(gb!==''&&parseFloat(gb)===0)gb='-';
+      var rank=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
+      var hl=divMode?(FAVS[String(t.id||'')]?' class="hl"':''):(FAVS[String(t.id||'')]?' class="hl'+(i===5?' cut':'')+'"':(i===5?' class="cut"':''));
+      var logo=t.abbreviation?'<img src="https://a.espncdn.com/i/teamlogos/mlb/500/'+esc(String(t.abbreviation).toLowerCase())+'.png" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'';
+      h+='<tr'+hl+'><td class="rank">'+esc(rank)+'</td><td class="team">'+logo+esc(t.name||t.shortDisplayName||'')+(FAVS[String(t.id||'')]?' <span class="star">\u2605</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
+    });
+    return h+'</tbody></table>';
+  }
+  function drawConf(){[['al','mlbStandingsAL','mlbAlStatus'],['nl','mlbStandingsNL','mlbNlStatus']].forEach(function(c){var es=CONF[c[0]];if(!es)return;var b=document.getElementById(c[1]);var s=document.getElementById(c[2]);if(b){b.innerHTML=render(es);if(s)s.textContent='';}});}
+  function drawDivs(){var b=document.getElementById('mlbDivisions');var s=document.getElementById('mlbDivStatus');if(!b||!DIVS)return;b.innerHTML=DIVS.map(function(dv){return '<h3 class="div-h">'+esc(dv.name)+'</h3>'+render(dv.entries,true);}).join('');if(s)s.textContent='';}
+  fetchJSON('https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings').then(function(d){(d.children||[]).forEach(function(ch){var es=(ch.standings&&ch.standings.entries)||[];if(!es.length)return;CONF[(ch.name||'').indexOf('American')>-1?'al':'nl']=es;});if(!CONF.al){var s=document.getElementById('mlbAlStatus');if(s)s.textContent='Standings unavailable right now.';}if(!CONF.nl){var s2=document.getElementById('mlbNlStatus');if(s2)s2.textContent='Standings unavailable right now.';}drawConf();}).catch(function(){['mlbAlStatus','mlbNlStatus'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent='Couldn\u2019t load standings right now \u2014 reload to try again.';});});
+  fetchJSON('https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings?level=3').then(function(d){var out=[];(d.children||[]).forEach(function(ch){(ch.children||[]).forEach(function(dv){var es=(dv.standings&&dv.standings.entries)||[];if(es.length)out.push({name:dv.name||'',entries:es});});});if(out.length){DIVS=out;drawDivs();}else{var s=document.getElementById('mlbDivStatus');if(s)s.textContent='Divisions unavailable right now.';}}).catch(function(){var s=document.getElementById('mlbDivStatus');if(s)s.textContent='Couldn\u2019t load divisions right now \u2014 reload to try again.';});
+  document.querySelectorAll('[data-std^="mlb:"]').forEach(function(b){b.addEventListener('click',function(){var mode=b.getAttribute('data-std').split(':')[1];document.querySelectorAll('[data-std^="mlb:"]').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});var cc=document.getElementById('mlbConfCard'),dc=document.getElementById('mlbDivCard');if(cc)cc.hidden=(mode==='div');if(dc)dc.hidden=(mode!=='div');});});
+})();
+</script>
+<script>
+/* Playoff Path -- pick a team, get its live path: record + seed, playoff
+   odds (FPI/BPI file), division picture, remaining schedule with swing
+   games marked, the win-total math to the cut line, head-to-head results
+   vs the teams around it, and who to root against (with their next game).
+   Everything comes from live ESPN standings + schedules; anything that
+   cannot load says so instead of guessing. */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+  function statMap(e){var m={};(e.stats||[]).forEach(function(s){m[s.name]=s;});return m;}
+  function num(m,k){var s=m[k];if(!s)return null;var v=parseFloat(s.value!=null?s.value:s.displayValue);return isNaN(v)?null:v;}
+  function disp(m,k){var s=m[k];return s?(s.displayValue!=null?s.displayValue:''):'';}
+  function fmtPct(v){if(v==null)return '\u2014';var x=Math.round(v*10)/10;return (x%1===0?String(Math.round(x)):String(x))+'%';}
+  function fmtDate(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'})+' \u00b7 '+d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'});}
+  var CFG={
+    nfl:{path:'football/nfl',cut:7,sel:'ppNflTeam',out:'ppNflOut',oddsFile:'fpi.json',oddsName:'ESPN FPI',def:'JAX',playIn:0},
+    nba:{path:'basketball/nba',cut:6,sel:'ppNbaTeam',out:'ppNbaOut',oddsFile:'bpi.json',oddsName:'ESPN BPI',def:'LAL',playIn:10}
+  };
+  Object.keys(CFG).forEach(function(key){
+    var C=CFG[key];
+    var S={teams:{},order:[],odds:{},sched:{}};
+    var selEl=document.getElementById(C.sel),outEl=document.getElementById(C.out);
+    if(!selEl||!outEl)return;
+    function recOf(e){var m=statMap(e);var w=num(m,'wins')||0,l=num(m,'losses')||0,ti=num(m,'ties')||0;return{w:w,l:l,t:ti,pct:num(m,'winPercent')||0,seed:num(m,'playoffSeed'),gb:disp(m,'gamesBehind'),txt:w+'-'+l+(ti?('-'+ti):'')};}
+    function sched(id){if(S.sched[id])return S.sched[id];S.sched[id]=fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+C.path+'/teams/'+id+'/schedule').then(function(d){return (d&&d.events)||[];}).catch(function(){return null;});return S.sched[id];}
+    function evInfo(ev,myId){var comp=(ev.competitions||[])[0];if(!comp)return null;var st=(comp.status&&comp.status.type)||{};var mine=null,opp=null;(comp.competitors||[]).forEach(function(c){var tid=String((c.team||{}).id||'');if(tid===String(myId))mine=c;else opp=c;});if(!mine||!opp)return null;return{date:ev.date,state:st.state||'',home:mine.homeAway==='home',opp:opp.team||{},myScore:(mine.score||{}).displayValue||'',oppScore:(opp.score||{}).displayValue||'',win:!!mine.winner};}
+    function render(id){
+      var T=S.teams[id];if(!T)return;
+      var conf=S.confs[T.conf]||[];
+      var r=T.rec;
+      var h='<p class="pp-head"><b>'+esc(T.name)+'</b> \u2014 '+esc(r.txt)+' \u00b7 #'+esc(String(r.seed||'?'))+' in the '+esc(T.confShort)+' \u00b7 Playoffs: <b>'+fmtPct(S.odds[id])+'</b> ('+C.oddsName+')</p>';
+      var cutE=conf[C.cut-1],cutR=cutE?recOf(cutE.entry):null;
+      var status='';
+      if(r.seed&&r.seed<=C.cut){status='Currently IN the playoffs \u2014 seed '+r.seed+' of '+C.cut+'.';}
+      else if(C.playIn&&r.seed&&r.seed<=C.playIn){status='Currently in the play-in (seeds 7\u201310) \u2014 a top-6 seed skips it.';}
+      else if(cutR){var gb=((cutR.w-r.w)+(r.l-cutR.l))/2;status='Currently OUT \u2014 '+gb+' game'+(gb===1?'':'s')+' behind the #'+C.cut+' seed, the '+esc(cutE.name)+' ('+esc(cutR.txt)+').';}
+      if(status)h+='<p class="pp-note" style="font-size:14.5px;color:#e8eef7">'+esc(status)+'</p>';
+      if(T.div){h+='<p class="pp-note">Division: '+esc(T.div.name)+' \u2014 '+(T.div.rank===1?'leading it.':(esc(T.div.gb)+' games behind the '+esc(T.div.leader)+'.'))+'</p>';}
+      h+='<div class="pp-blk" id="'+C.out+'Path"><h3>The path</h3><p class="pp-note">Loading remaining schedule\u2026</p></div>';
+      h+='<div class="pp-blk" id="'+C.out+'Root"><h3>Root against</h3><p class="pp-note">Loading\u2026</p></div>';
+      outEl.innerHTML=h;
+      Promise.all([sched(id)]).then(function(res){
+        if(selEl.value!==String(id))return;
+        var evs=res[0];var blk=document.getElementById(C.out+'Path');if(!blk)return;
+        if(!evs){blk.innerHTML='<h3>The path</h3><p class="pp-note">Remaining schedule couldn\u2019t load right now \u2014 reload to try again.</p>';return;}
+        var infos=evs.map(function(ev){return evInfo(ev,id);}).filter(Boolean);
+        var rem=infos.filter(function(x){return x.state==='pre';}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
+        var played=infos.filter(function(x){return x.state==='post';});
+        var R=rem.length,maxW=r.w+R;
+        var lines=[];
+        if(cutR&&r.seed&&r.seed>C.cut){var need=Math.max(0,cutR.w-r.w+1);if(need<=R)lines.push(esc(T.name)+' needs at least <b>'+need+' more win'+(need===1?'':'s')+'</b> to pass the '+esc(cutE.name)+'\u2019s current win total ('+cutR.w+') \u2014 with '+R+' games left, that means finishing at least '+need+'\u2013'+(R-need)+' the rest of the way.');else lines.push('Even winning out ('+maxW+' wins) can\u2019t pass the '+esc(cutE.name)+'\u2019s current win total ('+cutR.w+') \u2014 '+esc(T.name)+' also needs the teams ahead of it to lose.');}
+        else if(r.seed&&r.seed<=C.cut){var below=conf[C.cut];if(below){var br=recOf(below.entry);var theirNeed=Math.max(0,r.w-br.w+1);lines.push('First team out: the '+esc(below.name)+' ('+esc(br.txt)+'). They pass '+esc(T.name)+'\u2019s current win total with '+theirNeed+' more win'+(theirNeed===1?'':'s')+' \u2014 every '+esc(T.name)+' win pushes that number up.');}}
+        if(C.playIn&&r.seed&&r.seed>C.cut&&r.seed<=C.playIn){var t6=conf[C.cut-1];if(t6){var t6r=recOf(t6.entry);var need6=Math.max(0,t6r.w-r.w+1);lines.push('For a direct playoff spot (top 6): '+need6+' more win'+(need6===1?'':'s')+' passes the '+esc(t6.name)+'\u2019s current win total ('+t6r.w+').');}}
+        var html='<h3>The path</h3>';
+        if(lines.length)html+='<p class="pp-note" style="font-size:14.5px;color:#e8eef7">'+lines.join('<br>')+'</p><p class="pp-note">Simple win-total math from the live standings \u2014 tiebreakers can change it.</p>';
+        html+='<p class="pp-note" style="margin-top:10px"><b style="color:#fff">Remaining schedule ('+R+')</b></p><ul class="pp-list">';
+        rem.forEach(function(g){var o=S.teams[String(g.opp.id||'')];var tag='';if(o&&o.conf===T.conf){var near=o.rec.seed&&r.seed&&Math.abs(o.rec.seed-r.seed)<=3;var sameDiv=T.div&&o.div&&T.div.name===o.div.name;if(near||sameDiv||(o.rec.seed&&Math.abs(o.rec.seed-C.cut)<=1))tag=' <span class="pp-swing">Swing game</span>';}html+='<li>'+esc(fmtDate(g.date))+' \u2014 '+(g.home?'vs ':'at ')+esc(g.opp.displayName||g.opp.shortDisplayName||g.opp.name||'')+(o&&o.conf===T.conf?' (#'+o.rec.seed+', '+esc(o.rec.txt)+')':'')+tag+'</li>';});
+        html+='</ul>';
+        var h2h=played.filter(function(g){var o=S.teams[String(g.opp.id||'')];return o&&o.conf===T.conf&&o.rec.seed&&r.seed&&Math.abs(o.rec.seed-r.seed)<=3;});
+        if(h2h.length){html+='<p class="pp-note" style="margin-top:10px"><b style="color:#fff">Tiebreaker watch \u2014 already played the teams around them:</b></p><ul class="pp-list">'+h2h.map(function(g){return '<li>'+(g.win?'Beat':'Lost to')+' '+esc(g.opp.displayName||g.opp.name||'')+' '+esc(g.myScore)+'\u2013'+esc(g.oppScore)+'</li>';}).join('')+'</ul>';}
+        blk.innerHTML=html;
+        renderRoot(id,T,conf,r);
+      });
+    }
+    function renderRoot(id,T,conf,r){
+      var blk=document.getElementById(C.out+'Root');if(!blk)return;
+      var idx=conf.findIndex(function(x){return x.id===String(id);});
+      var rivals=[];
+      for(var i=Math.max(0,idx-3);i<idx;i++)rivals.push(conf[i]);
+      if(r.seed&&r.seed<=C.cut){for(var j=idx+1;j<Math.min(conf.length,idx+3);j++)rivals.push(conf[j]);}
+      if(!rivals.length){blk.innerHTML='<h3>Root against</h3><p class="pp-note">No teams close enough to matter right now.</p>';return;}
+      Promise.all(rivals.map(function(rv){return sched(rv.id);})).then(function(schs){
+        if(selEl.value!==String(id))return;
+        var items=rivals.map(function(rv,i){
+          var evs=schs[i];var nxt=null;
+          if(evs){var infos=evs.map(function(ev){return evInfo(ev,rv.id);}).filter(Boolean).filter(function(x){return x.state==='pre';}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});nxt=infos[0]||null;}
+          return '<li><b>'+esc(rv.name)+'</b> (#'+rv.rec.seed+', '+esc(rv.rec.txt)+')'+(nxt?(' \u2014 next: '+(nxt.home?'vs ':'at ')+esc(nxt.opp.displayName||nxt.opp.name||'')+', '+esc(fmtDate(nxt.date))):' \u2014 next game couldn\u2019t load')+'</li>';
+        });
+        blk.innerHTML='<h3>Root against</h3><ul class="pp-list">'+items.join('')+'</ul><p class="pp-note">The teams closest to '+esc(T.name)+' in the '+esc(T.confShort)+' race \u2014 their losses help most.</p>';
+      });
+    }
+    selEl.addEventListener('change',function(){render(selEl.value);});
+    var pOdds=fetch(C.oddsFile,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){(d.teams||[]).forEach(function(x){if(x&&x.playoff!=null)S.odds[String(x.id||'')]=parseFloat(x.playoff);});}).catch(function(){return fetchJSON('https://site.web.api.espn.com/apis/fitt/v3/sports/'+C.path+'/powerindex?region=us&lang=en').then(function(d){var pn=[];(d.categories||[]).forEach(function(c){if(c.name==='projections')pn=c.names||[];});var ix=pn.indexOf('probmakeplayoffs');if(ix<0)return;(d.teams||[]).forEach(function(e){(e.categories||[]).forEach(function(cat){if(cat.name==='projections'&&cat.values&&cat.values[ix]!=null)S.odds[String((e.team||{}).id||'')]=parseFloat(cat.values[ix]);});});}).catch(function(){});});
+    Promise.all([fetchJSON('https://site.api.espn.com/apis/v2/sports/'+C.path+'/standings'),fetchJSON('https://site.api.espn.com/apis/v2/sports/'+C.path+'/standings?level=3').catch(function(){return null;}),pOdds]).then(function(res){
+      var d=res[0],d3=res[1];
+      S.confs={};
+      (d.children||[]).forEach(function(ch){
+        var cname=ch.name||'';var short=cname.replace(' Conference','').replace('American Football','AFC').replace('National Football','NFC');
+        var list=((ch.standings&&ch.standings.entries)||[]).map(function(e){var t=e.team||{};return{id:String(t.id||''),name:t.displayName||t.name||'',abbr:t.abbreviation||'',entry:e,rec:recOf(e),conf:cname,confShort:short};});
+        list.sort(function(a,b){return (a.rec.seed||99)-(b.rec.seed||99);});
+        S.confs[cname]=list;
+        list.forEach(function(x){x.confList=list;S.teams[x.id]=x;S.order.push(x);});
+      });
+      if(d3){(d3.children||[]).forEach(function(ch){(ch.children||[]).forEach(function(dv){var ents=((dv.standings&&dv.standings.entries)||[]).slice();ents.sort(function(a,b){var ra=recOf(a),rb=recOf(b);return rb.pct-ra.pct||rb.w-ra.w;});ents.forEach(function(e,i){var tid=String((e.team||{}).id||'');var T=S.teams[tid];if(T)T.div={name:dv.name||'',rank:i+1,gb:disp(statMap(e),'gamesBehind'),leader:((ents[0]||{}).team||{}).displayName||''};});});});}
+      if(!S.order.length){outEl.innerHTML='<p class="astatus">Playoff Path unavailable right now \u2014 the live standings couldn\u2019t load.</p>';return;}
+      selEl.innerHTML=S.order.map(function(x){return '<option value="'+esc(x.id)+'"'+(x.abbr===C.def?' selected':'')+'>'+esc(x.name)+'</option>';}).join('');
+      var start=S.order.filter(function(x){return x.abbr===C.def;})[0]||S.order[0];
+      selEl.value=start.id;
+      render(start.id);
+    }).catch(function(){outEl.innerHTML='<p class="astatus">Playoff Path unavailable right now \u2014 the live standings couldn\u2019t load.</p>';});
+  });
 })();
 </script>
 </body>
