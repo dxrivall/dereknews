@@ -727,6 +727,25 @@ body.on-sports footer{color:#aebfe6!important}
 .bsim-prop b{color:#fff}
 .bsim-prop .sim{color:#ffd34d;font-size:10.5px;font-weight:800;letter-spacing:.04em}
 .bsim-prop .avg{color:#8fa3cc;font-size:12px}
+.parlay-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:13px 12px;margin-top:12px;text-align:left}
+.parlay-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.parlay-title{font-size:15.5px;font-weight:700;color:#fff;line-height:1.3}
+.parlay-count{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#ffd34d;white-space:nowrap}
+.parlay-leg{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.09);font-size:13.5px;line-height:1.4;color:#dbe6ff}
+.parlay-leg:first-of-type{border-top:0}
+.parlay-leg b{color:#fff}
+.parlay-leg .p-sub{display:block;font-size:11.5px;color:#8fa3cc;margin-top:1px}
+.parlay-leg .p-prob{color:#7ee2a8;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.parlay-leg .sim{color:#ffd34d;font-size:10px;font-weight:800;letter-spacing:.04em}
+.parlay-hit{margin-top:10px;background:rgba(126,226,168,.10);border:1px solid rgba(126,226,168,.35);border-radius:12px;padding:10px 12px;text-align:center}
+.parlay-hit .hit-pct{font-size:20px;font-weight:800;color:#fff;line-height:1.1}
+.parlay-hit .hit-lab{font-size:11.5px;color:#aebfe6;margin-top:2px;line-height:1.4}
+.parlay-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.14);margin-top:8px;overflow:hidden}
+.parlay-bar i{display:block;height:100%;border-radius:3px;background:#7ee2a8}
+.tail-label{font-size:12px;color:#8fa3cc;margin:12px 0 0;line-height:1.45}
+.tail-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.tail-btn{flex:1 1 30%;text-align:center;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px 6px;border-radius:999px;min-height:38px;display:inline-flex;align-items:center;justify-content:center}
+.copy-legs-btn{flex:1 1 100%;background:#2f5fd0;border-color:#2f5fd0;cursor:pointer;font:inherit}
 .other-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:480px){.other-grid{grid-template-columns:1fr}}.other-grid a{display:block;padding:13px 14px;text-decoration:none;font-size:15px;line-height:1.35}#view-sports .team-btn{display:block;text-align:center;text-decoration:none;padding:15px 16px;margin-top:14px;font-size:16px;font-weight:600}#view-sports .back-btn{display:inline-block;font:inherit;font-size:15px;font-weight:600;padding:11px 18px;border-radius:999px;cursor:pointer;margin:28px 0 2px}
 @media(max-width:420px){.stable td.team{max-width:104px}.stable td,.stable th{padding-left:3px;padding-right:3px;font-size:15px}.agame{grid-template-columns:minmax(54px,1fr) 34px minmax(78px,auto) 34px minmax(54px,1fr)}.acenter .at{font-size:15px}}
 </style>
@@ -1041,6 +1060,13 @@ body.on-sports footer{color:#aebfe6!important}
   <p class="astatus" id="betSimStatus">Loading games&hellip;</p>
   <div id="betSimGames"></div>
   <p class="asrc" id="betSimStamp">Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages</p>
+  </section>
+  <section class="acard" aria-label="Parlays of the Day — 3 simulated parlays per active sport">
+  <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
+  <p class="astatus" style="color:#fff">3 parlays per active sport (NBA · NFL · NHL) · 4–6 legs each · Built only from the verified moneylines &amp; SIM props above. Hit % at the bottom of each parlay = its legs multiplied. Simulation only — not a guarantee.</p>
+  <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
+  <div id="parlayList"></div>
+  <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; A sport with no upcoming games gets no parlays</p>
   </section>
   </div>
 </main>
@@ -2537,6 +2563,109 @@ body.on-christmas{color-scheme:light}
     var n=parseInt(mlStr,10);if(isNaN(n))return esc(mlStr);
     return (n>0?'+':'−')+Math.abs(n);
   }
+  /* ---- Parlays of the Day ----
+     Legs come ONLY from the games loaded above for the Bet Simulator:
+     (1) the favorite moneyline of a game, with its probability taken
+     from the DraftKings line in the ESPN feed (the two implied %s
+     normalised so they sum to 100%), and (2) a SIM prop Over, with its
+     probability estimated from the player's verified live season
+     average — a normal-distribution estimate centred on that average
+     (spread depends on the size of the average). No leg is added if
+     its line / average could not be verified. A parlay's hit % is the
+     product of its legs' probabilities. Simulation only. */
+  var BOOKS=[
+    {name:'DraftKings',url:'https://sportsbook.draftkings.com/sportsbook?adposition&device=m&feedItemId&gad_campaignid=24001654452&gad_source=5&keyword&matchtype&medium=Google&network=Google_Adwords&utm_AdGroupId=200993846879&utm_adCampaignId=24001654452&utm_adGroupName&utm_campaignName&utm_creativeId=830382205118'},
+    {name:'FanDuel',url:'https://www.fanduel.com/?app_name=DFS'},
+    {name:'Kalshi',url:'https://kalshi.com/nba/standings/west'},
+    {name:'Caesars',url:'https://www.caesars.com/sportsbook-and-casino/welcome'}
+  ];
+  function erf(x){var s=x<0?-1:1;x=Math.abs(x);var t=1/(1+0.3275911*x);var y=1-((((1.061405429*t-1.453152027)*t+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return s*y;}
+  function normCdf(z){return 0.5*(1+erf(z/Math.SQRT2));}
+  function propProb(avg,line){
+    var sd;
+    if(avg>20)sd=avg*0.38;else if(avg>5)sd=avg*0.42;else sd=Math.max(0.55,avg*0.65);
+    var p=1-normCdf((line-avg)/sd);
+    if(p<0.30)p=0.30;if(p>0.78)p=0.78;
+    return p;
+  }
+  function buildLegPool(lg,games){
+    var pool=[];
+    games.forEach(function(g){
+      if(g.ml){
+        var pa=implied(g.ml.away),ph=implied(g.ml.home);
+        if(pa!=null&&ph!=null&&(pa+ph)>0){
+          var norm=pa+ph,favAway=(pa/norm)>=(ph/norm);
+          var fav=favAway?g.away:g.home,favMl=favAway?g.ml.away:g.ml.home,favP=(favAway?pa:ph)/norm;
+          pool.push({kind:'ML',prob:favP,text:fav.name+' ML '+fmtML(favMl),sub:g.away.abbr+' at '+g.home.abbr+' · '+fmtWhen(g.date),key:'ml-'+g.id});
+        }
+      }
+      (g.props||[]).forEach(function(pr,i){
+        pool.push({kind:'Prop',prob:propProb(pr.avg,pr.line),text:pr.name+' Over '+pr.line+' '+pr.label,sub:g.away.abbr+' at '+g.home.abbr+' · avg '+pr.avg+'/gm',avg:pr.avg,line:pr.line,key:'prop-'+g.id+'-'+i+'-'+pr.name});
+      });
+    });
+    var seen={},out=[];
+    pool.forEach(function(l){if(seen[l.key])return;seen[l.key]=1;out.push(l);});
+    out.sort(function(a,b){return b.prob-a.prob;});
+    return out;
+  }
+  function fillLegs(legs,pool,target){
+    var used={};legs.forEach(function(l){used[l.key]=1;});
+    for(var i=0;i<pool.length&&legs.length<target;i++){if(!used[pool[i].key]){legs.push(pool[i]);used[pool[i].key]=1;}}
+    return legs.slice(0,6);
+  }
+  function sig(legs){return legs.map(function(l){return l.key;}).sort().join('|');}
+  function buildParlays(lg,games){
+    var pool=buildLegPool(lg,games);
+    if(pool.length<4)return[];
+    var ml=pool.filter(function(l){return l.kind==='ML';});
+    var props=pool.filter(function(l){return l.kind==='Prop';});
+    var p1=[];
+    [ml[0],props[0],ml[1],props[1]].forEach(function(l){if(l)p1.push(l);});
+    p1=fillLegs(p1,pool,4);
+    var p2=fillLegs(props.slice(0,5),pool,props.length>=4?5:4);
+    if(sig(p2)===sig(p1))p2=fillLegs(pool.slice(1),pool,5);
+    var p3target=pool.length>=6?6:(pool.length>=5?5:4);
+    var p3=pool.slice(0,p3target);
+    if(sig(p3)===sig(p1)||sig(p3)===sig(p2)){
+      var alt=pool.slice(1,1+p3target);
+      if(alt.length>=4&&sig(alt)!==sig(p1)&&sig(alt)!==sig(p2))p3=alt;
+    }
+    var defs=[{title:'Favorites Mix',legs:p1},{title:'Star Props',legs:p2},{title:'Best Chances',legs:p3}];
+    return defs.filter(function(d){return d.legs.length>=4&&d.legs.length<=6;}).map(function(d){
+      var hit=d.legs.reduce(function(a,l){return a*l.prob;},1);
+      return{title:d.title,legs:d.legs,hit:hit};
+    });
+  }
+  function renderParlays(res){
+    var list=document.getElementById('parlayList'),pst=document.getElementById('parlayStatus');
+    if(!list)return;
+    var h='',any=false;
+    LEAGUES.forEach(function(lg,li){
+      var games=res[li]||[];
+      if(!games.length)return;
+      var parlays=buildParlays(lg,games);
+      h+='<p class="brk-conf">'+lg.label+' — Parlays of the Day</p>';
+      if(!parlays.length){h+='<p class="astatus">Not enough verified legs to build a 4-leg parlay for this sport today — no parlay shown.</p>';return;}
+      any=true;
+      parlays.forEach(function(p,pi){
+        var hitPct=p.hit*100;
+        var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
+        var copyTxt=p.legs.map(function(l){return l.text+(l.kind==='Prop'?' (SIM)':'');}).join('\n');
+        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+esc(lg.label.replace(/^[^ ]+ /,''))+' Parlay '+(pi+1)+' — '+esc(p.title)+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
+        p.legs.forEach(function(l){
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+        });
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div></div>';
+        h+='<p class="tail-label">Tail this bet — copy the legs, open your app, and add the same legs there. Lines can differ by book. Kalshi is markets / moneylines — SIM props may not be offered there.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">📋 Copy legs</button>';
+        BOOKS.forEach(function(b){h+='<a class="tail-btn" href="'+esc(b.url)+'" target="_blank" rel="noopener">Tail on '+esc(b.name)+' →</a>';});
+        h+='</div></div>';
+      });
+    });
+    list.innerHTML=h;
+    if(pst)pst.textContent=any?'Built live from the games above — only sports with upcoming games get parlays.':'No parlays could be built from verified legs right now.';
+    var stamp=document.getElementById('parlayStamp');
+    if(stamp)stamp.innerHTML='Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Hit % = legs multiplied &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+  }
   var loading=false;
   function render(){
     if(loading)return;loading=true;
@@ -2572,19 +2701,32 @@ body.on-christmas{color-scheme:light}
       if(!anyGames){
         if(st)st.textContent='No upcoming games could be loaded right now.';
         if(box)box.innerHTML='';
+        var pl0=document.getElementById('parlayList');if(pl0)pl0.innerHTML='';
+        var ps0=document.getElementById('parlayStatus');if(ps0)ps0.textContent='No parlays today \u2014 no active games could be loaded.';
         return;
       }
       if(box)box.innerHTML=h;
+      try{renderParlays(res);}catch(e){var ps1=document.getElementById('parlayStatus');if(ps1)ps1.textContent='Parlays could not be built from verified legs right now.';}
       if(st)st.textContent='Simulation from live ESPN schedules, DraftKings moneylines and season stats. SIM = simulated prop line from the player\u2019s live season average. Not a guarantee.';
       var stamp=document.getElementById('betSimStamp');
       if(stamp)stamp.innerHTML='Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
     }).catch(function(){
       loading=false;
+      var pst2=document.getElementById('parlayStatus');if(pst2)pst2.textContent='Parlays could not load right now \u2014 reopen the panel to try again.';
       var st2=document.getElementById('betSimStatus');
       if(st2)st2.textContent='The simulation could not load right now — reopen the panel to try again.';
     });
   }
   document.querySelectorAll('#view-sports [data-sport="betsim"]').forEach(function(b){b.addEventListener('click',function(){render();});});
+  var parlayListEl=document.getElementById('parlayList');
+  if(parlayListEl)parlayListEl.addEventListener('click',function(ev){
+    var btn=ev.target&&ev.target.closest?ev.target.closest('.copy-legs-btn'):null;
+    if(!btn)return;
+    var txt=btn.getAttribute('data-copy')||'';
+    function done(){var o=btn.textContent;btn.textContent='\u2713 Copied legs';setTimeout(function(){btn.textContent=o;},1600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){done();});}
+    else{try{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}catch(e){}done();}
+  });
   render();
 })();
 </script>
