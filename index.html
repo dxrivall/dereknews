@@ -394,6 +394,37 @@ body>.teams-overlay{z-index:2000}
 .pp-note{font-size:13px;line-height:1.6;color:#aebfe6;margin:6px 0 0;text-align:left}
 .pp-swing{color:#ffd34d;font-weight:700}
 </style>
+<style>
+/* == Nov 13 fixes G: Home weather widget a bit bigger again (not
+   full-screen), evenly laid out — hero temp and condition vertically
+   centred against each other, even spacing through hourly/days; the
+   next-hour precip chance now rides on the Feels like | H | L line
+   (see the weather loader) instead of floating alone under the
+   condition icon == */
+#homeWxWidget{padding:16px 18px 14px;border-radius:22px}
+#homeWxWidget .wxd-loc{font-size:17px}
+#homeWxWidget .wxd-heromain{margin-top:6px;gap:14px;align-items:center}
+#homeWxWidget .wxd-temp{font-size:clamp(54px,14vw,62px)}
+#homeWxWidget .wxd-herocond{padding-top:0}
+#homeWxWidget .wxd-herocond .ic{font-size:36px}
+#homeWxWidget .wxd-herocond .cd{font-size:15px;margin-top:3px}
+#homeWxWidget .wxd-feelsline{font-size:13.5px;margin:8px 0 0;line-height:1.4}
+#homeWxWidget .wxd-precip60{margin-top:8px;font-size:12px;padding:6px 10px;border-radius:10px}
+#homeWxWidget .wxd-hourly{margin-top:9px;padding:6px 2px 5px}
+#homeWxWidget .wxd-h .t{font-size:11.5px}
+#homeWxWidget .wxd-h .i{font-size:17px;margin:3px 0 2px}
+#homeWxWidget .wxd-h .tp{font-size:14px}
+#homeWxWidget .wxd-days{margin-top:5px}
+#homeWxWidget .wxd-day{padding:3.5px 0;font-size:14px}
+#homeWxWidget .wxd-meta{font-size:11.5px;margin-top:5px}
+#homeWxWidget .wxd-foot{margin-top:10px}
+</style>
+<style>
+/* == Nov 13 fixes H: BREAKING NEWS takeover (manual flag, NOT weather) —
+   sits above the severe-weather takeover if both ever fire == */
+.breaking-overlay{z-index:10001}
+.breaking-overlay .severe-head{background:#7a1710}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -405,6 +436,24 @@ body>.teams-overlay{z-index:2000}
       <button class="severe-x" id="severeClose" type="button" aria-label="Close emergency warning">&times;</button>
     </div>
     <div class="severe-body" id="severeBody"></div>
+  </div>
+</div>
+
+<div class="severe-overlay breaking-overlay" id="breakingOverlay" role="alertdialog" aria-modal="true" aria-labelledby="breakingTitle" aria-hidden="true">
+  <div class="severe-box">
+    <div class="severe-head">
+      <p class="sev-kicker">&#128680; Breaking News &mdash; Nationwide</p>
+      <h2 id="breakingTitle">FAA Orders Nationwide Ground Stop &mdash; All U.S. Departures Halted</h2>
+      <button class="severe-x" id="breakingClose" type="button" aria-label="Close breaking news">&times;</button>
+    </div>
+    <div class="severe-body">
+      <p><strong>What happened:</strong> The FAA issued a nationwide ground stop on Friday afternoon, November 13, 2026, at around 3:54 PM Eastern, halting all departing flights at U.S. airports &mdash; all airlines. Planes are being held on the ground. This is a ground stop, not emergency landings.</p>
+      <p><strong>Why:</strong> Transportation Secretary Sean Duffy said the cause is a communications issue affecting all Air Route Traffic Control Centers. The FAA advisory cited &ldquo;extraordinary circumstances and for reasons of safety.&rdquo;</p>
+      <p><strong>The impact:</strong> More than 7,800 flights were delayed or cancelled as of 4:45 PM Eastern.</p>
+      <p><strong>When will flights resume?</strong> The FAA has not said when flights will resume. The advisory ran until around 11 PM Eastern.</p>
+      <p class="sev-do"><strong>Flying today?</strong> Check with your airline before going to the airport &mdash; do not head to the airport until your airline confirms your flight is departing.</p>
+      <button class="severe-close2" id="breakingClose2" type="button">Got it &mdash; close</button>
+    </div>
   </div>
 </div>
 
@@ -1403,7 +1452,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
   <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. <b>Edge Parlay:</b> 2–3 legs whose model % beats the book&rsquo;s price, built to actually hit. <b>🎰 Lotto Bet of the Day:</b> one longshot per sport. Plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
+  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. <b>Edge Parlay:</b> 2–3 legs whose model % beats the book&rsquo;s price, built to actually hit. <b>🎰 Lotto Bet of the Day:</b> one longshot per sport. <b>🔥 Streak Lotto:</b> one slip per sport where every leg hit its line in 6/6 of its last 6 games (checked from live game logs) — past form, not a guarantee. Plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
   <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
   <div id="parlayList"></div>
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
@@ -2168,7 +2217,9 @@ body.on-christmas{color-scheme:light}
         wHour.innerHTML=heroCards.map(function(c){return c.html;}).join('');
       }
     }
-    var __nh=document.getElementById('wxNextHour');var __nhHome=document.getElementById('homeNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';if(__nhHome)__nhHome.textContent=__nh.textContent;}
+    var __nh=document.getElementById('wxNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';/* Home widget: the next-hour chance rides on the Feels like | H | L line
+   (homeWxFeelsLine, set above) instead of floating on its own under
+   the condition icon. */if(__pp!=null){var __hf3=document.getElementById('homeWxFeelsLine');if(__hf3&&__hf3.textContent&&__hf3.textContent.indexOf('Next hour')<0)__hf3.textContent+=' \u00b7 Next hour '+__kind+' chance '+Math.round(__pp)+'%';}}
     applyWxBg(cur.weather_code,cur.is_day,ci[1],cur.time);
     document.getElementById('stripIcon').textContent=ci[0];
     document.getElementById('stripTemp').textContent=Math.round(cur.temperature_2m)+'°';
@@ -3101,6 +3152,103 @@ body.on-christmas{color-scheme:light}
       return{avg:Math.round(avg*10)/10,sd:sd,n:vals.length};
     }).catch(function(){return null;});
   }
+  /* ---- Streak Lotto — 100% hit rate over the last 6 games -----------
+     One extra slip per sport where EVERY leg hit the same prop line in
+     ALL 6 of the player's last 6 games, checked from the live ESPN
+     gamelog (current regular season, most recent 6 games by date).
+     Example shape: "Stephen Curry Over 4.5 3-Pointers — hit in 6/6
+     last games · last 6: 5, 4, 6, 5, 4, 5". Lines are the same SIM
+     lines the other slips use. A 6/6 streak is past form, NOT a
+     guarantee — the slip is labeled that way, and its hit % is still
+     the model's per-leg chances multiplied, never 100%. If no player
+     in a sport has a 6/6 streak today, no slip is forced. */
+  var streakCache={};
+  var STREAK_STATS={
+    nba:{'Pts':{labels:['PTS'],names:['points']},'Reb':{labels:['REB'],names:['rebounds','totalRebounds']},'Ast':{labels:['AST'],names:['assists']},'3PM':{labels:['3PT'],names:['threePointFieldGoalsMade']}},
+    nhl:{'Goals':{labels:['G'],names:['goals']},'Assists':{labels:['A'],names:['assists']},'Points':{labels:['PTS'],names:['points']},'SOG':{labels:['S'],names:['shots','shotsOnGoal']}},
+    nfl:{'Pass Yds':{names:['passingYards']},'Rush Yds':{names:['rushingYards']},'Rec Yds':{names:['receivingYards']},'TD':{names:['rushingTouchdowns','receivingTouchdowns'],sum:true}}
+  };
+  function gamelogLast6(lg,athleteId){
+    var key=lg.key+'-s6-'+athleteId;
+    if(streakCache[key])return streakCache[key];
+    var parts=lg.path.split('/');
+    var pr=fetchJSON('https://site.api.espn.com/apis/common/v3/sports/'+parts[0]+'/'+parts[1]+'/athletes/'+athleteId+'/gamelog').then(function(d){
+      if(!d)return null;
+      var sts=d.seasonTypes||[],st=null;
+      for(var i=0;i<sts.length;i++){if(/regular/i.test(sts[i].displayName||'')){st=sts[i];break;}}
+      if(!st)st=sts[0];
+      if(!st)return null;
+      var evMap=d.events||{},seen={},evs=[];
+      (st.categories||[]).forEach(function(cat){(cat.events||[]).forEach(function(e){var id=String(e.eventId||'');if(!id||seen[id])return;seen[id]=1;evs.push(e);});});
+      evs.sort(function(a,b){var da=(evMap[String(a.eventId)]||{}).gameDate||'',db=(evMap[String(b.eventId)]||{}).gameDate||'';return db<da?-1:(db>da?1:0);});
+      if(evs.length<6)return null;
+      var last6=evs.slice(0,6),labels=d.labels||[],names=d.names||[];
+      function parseVal(raw){if(raw==null)return null;var v=parseFloat(String(raw).replace(/,/g,'').split('-')[0]);return isNaN(v)?null:v;}
+      function series(def){
+        if(def.sum){
+          var idxs=(def.names||[]).map(function(nm){return names.indexOf(nm);}).filter(function(x){return x>=0;});
+          if(!idxs.length)return null;
+          return last6.map(function(e){var t=0;idxs.forEach(function(ix){var v=parseVal(e.stats&&e.stats[ix]);if(v!=null)t+=v;});return t;});
+        }
+        var ix=-1,ci;
+        var nc=def.names||[];for(ci=0;ci<nc.length;ci++){ix=names.indexOf(nc[ci]);if(ix>=0)break;ix=-1;}
+        if(ix<0){var lc=def.labels||[];for(ci=0;ci<lc.length;ci++){ix=labels.indexOf(lc[ci]);if(ix>=0)break;ix=-1;}}
+        if(ix<0)return null;
+        var out=[];
+        for(var k=0;k<last6.length;k++){var v=parseVal(last6[k].stats&&last6[k].stats[ix]);if(v==null)return null;out.push(v);}
+        return out;
+      }
+      var defs=STREAK_STATS[lg.key]||{},res={};
+      Object.keys(defs).forEach(function(k){var sv=series(defs[k]);if(sv&&sv.length===6)res[k]=sv;});
+      return Object.keys(res).length?res:null;
+    }).catch(function(){return null;});
+    streakCache[key]=pr;return pr;
+  }
+  function enrichStreaks(lg,games){
+    if(!STREAK_STATS[lg.key])return Promise.resolve();
+    var cands=[],seen={};
+    function addCand(g,id,name,statKey,line,avg,text){
+      if(!id||!statKey||line==null)return;
+      var k=String(id)+'-'+statKey;if(seen[k])return;seen[k]=1;
+      cands.push({g:g,id:String(id),name:name,statKey:statKey,line:line,avg:avg,text:text,key:'streak-'+g.id+'-'+id+'-'+statKey});
+    }
+    games.forEach(function(g){
+      (g.allProps||[]).forEach(function(pr){
+        if(lg.key==='nba'&&(pr.label==='Pts'||pr.label==='Reb'||pr.label==='Ast'))addCand(g,pr.id,pr.name,pr.label,pr.line,pr.avg,pr.name+' Over '+pr.line+' '+pr.label);
+        if(lg.key==='nfl'&&(pr.label==='Pass Yds'||pr.label==='Rush Yds'||pr.label==='Rec Yds'))addCand(g,pr.id,pr.name,pr.label,pr.line,pr.avg,pr.name+' Over '+pr.line+' '+pr.label);
+        if(lg.key==='nhl'){
+          if(pr.label==='Goals')addCand(g,pr.id,pr.name,'Goals',0.5,pr.avg,pr.name+' Over 0.5 Goals');
+          if(pr.label==='Assists')addCand(g,pr.id,pr.name,'Assists',0.5,pr.avg,pr.name+' Over 0.5 Assists');
+          if(pr.label==='Points')addCand(g,pr.id,pr.name,'Points',pr.line,pr.avg,pr.name+' Over '+pr.line+' Points');
+        }
+      });
+      if(lg.key==='nba')(g.threeProps||[]).forEach(function(sp){var line=simLine(sp.avg);addCand(g,sp.id,sp.name,'3PM',line,sp.avg,sp.name+' Over '+line+' 3-Pointers');});
+      if(lg.key==='nhl')(g.sogProps||[]).forEach(function(sp){var line=simLine(sp.avg);addCand(g,sp.id,sp.name,'SOG',line,sp.avg,sp.name+' Over '+line+' Shots on Goal');});
+      if(lg.key==='nfl')(g.tdPlayers||[]).forEach(function(tp){addCand(g,tp.id,tp.name,'TD',0.5,tp.gp?tp.td/tp.gp:0,tp.name+' \u2014 Anytime TD');});
+    });
+    return Promise.all(cands.slice(0,28).map(function(c){
+      return gamelogLast6(lg,c.id).then(function(res){
+        if(!res)return;var vals=res[c.statKey];if(!vals||vals.length<6)return;
+        if(!vals.every(function(v){return v>c.line;}))return;
+        var avg6=vals.reduce(function(a,b){return a+b;},0)/6;
+        var sd6=Math.sqrt(vals.reduce(function(a,b){return a+(b-avg6)*(b-avg6);},0)/6);
+        var prob;
+        if(c.statKey==='TD'){var rate=c.avg||0;prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;}
+        else prob=modelPropProb({avg:c.avg,line:c.line,l5:{avg:avg6,sd:sd6}}).prob;
+        (c.g.streakLegs=c.g.streakLegs||[]).push({kind:'Prop',name:c.name,prob:prob,text:c.text,sub:c.g.away.abbr+' at '+c.g.home.abbr+' \u00b7 \ud83d\udd25 hit in 6/6 last games \u00b7 last 6: '+vals.join(', '),avg:c.avg,line:c.line,key:c.key,gameId:c.g.id,streak:true});
+      });
+    })).then(function(){});
+  }
+  function buildStreakParlay(lg,games){
+    var legs=[];
+    games.forEach(function(g){(g.streakLegs||[]).forEach(function(l){legs.push(l);});});
+    legs=dedupeSort(legs);
+    if(!legs.length)return{parlay:null,found:0};
+    if(legs.length===1)return{parlay:null,found:1,one:legs[0]};
+    var picked=legs.slice(0,5);
+    var hit=picked.reduce(function(a,l){return a*l.prob;},1);
+    return{parlay:{title:'Streak Lotto',legs:picked,hit:hit,streak:true},found:legs.length};
+  }
   function modelPropProb(pr){
     var line=(pr.line!=null?pr.line:0.5);
     var effAvg=pr.avg,sd=null,usedL5=false;
@@ -3317,7 +3465,7 @@ body.on-christmas{color-scheme:light}
       return (res[li]||[]).filter(function(g){return etDay(g.date)===tk;});
     });
     var jobs=[];
-    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).catch(function(){}));jobs.push(enrichModel(lg,todays[li]).catch(function(){}));});
+    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).then(function(){return enrichStreaks(lg,todays[li]);}).catch(function(){}));jobs.push(enrichModel(lg,todays[li]).catch(function(){}));});
     var kalJob=(window.__kalshiLoad?window.__kalshiLoad().catch(function(){}):Promise.resolve());
     return Promise.all(jobs.concat([kalJob])).then(function(){
     var h='',any=false;
@@ -3331,6 +3479,10 @@ body.on-christmas{color-scheme:light}
       }
       var parlays=buildParlays(lg,gamesToday);
       var notes='';
+      var streakRes=buildStreakParlay(lg,gamesToday);
+      if(streakRes.parlay)parlays.push(streakRes.parlay);
+      else if(streakRes.found===1&&streakRes.one)notes+='<p class="astatus">\ud83d\udd25 Streak Lotto: only one 6/6 streak today \u2014 '+esc(streakRes.one.text)+' hit this line in all 6 of his last 6 games, but one leg is not a lotto, so no slip was built.</p>';
+      else notes+='<p class="astatus">\ud83d\udd25 Streak Lotto: no player in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games has hit the same prop line in all 6 of their last 6 games \u2014 no streak lotto today. It only runs on a real 6/6 streak.</p>';
       function addSpecial(pool,title,miss){
         var sp=specialFrom(pool,title);
         if(sp)parlays.push(sp);else notes+='<p class="astatus">'+esc(miss)+'</p>';
@@ -3351,17 +3503,18 @@ body.on-christmas{color-scheme:light}
         var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
         var pay=parlayPayout(p);
         var leagueName=lg.label.replace(/^[^ ]+ /,'');
-        var betTitle=p.lotto?'Lotto Bet of the Day':(p.edge?'Edge Parlay':(p.title||'Parlay'));
+        var betTitle=p.streak?'Streak Lotto (hit in 6/6 last games)':(p.lotto?'Lotto Bet of the Day':(p.edge?'Edge Parlay':(p.title||'Parlay')));
         var copyTxt=leagueName+' Parlay — '+betTitle+' (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+(l.kind==='Prop'?' (SIM)':'')+' — '+l.sub;}).join('\n')+'\nCombined odds: '+fmtOdds(pay.amount/10)+' · Stake: $10 → Payout: $'+pay.amount.toFixed(2)+' · Model hit chance: '+hitTxt+'%';
         var pbTxt='@Playbook '+leagueName+' parlay: '+p.legs.map(function(l){return l.text;}).join('; ');
-        var titleTxt=p.lotto?('🎰 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Lotto Bet of the Day'):(esc(lg.label.replace(/^[^ ]+ /,''))+' '+(p.edge?'Edge Parlay':'Parlay '+(pi+1)+' — '+esc(p.title)));
+        var titleTxt=p.streak?('\ud83d\udd25 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Streak Lotto \u2014 6/6 Last 6 Games'):(p.lotto?('🎰 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Lotto Bet of the Day'):(esc(lg.label.replace(/^[^ ]+ /,''))+' '+(p.edge?'Edge Parlay':'Parlay '+(pi+1)+' — '+esc(p.title))));
         h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+titleTxt+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
         p.legs.forEach(function(l){
-          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+((l.edge!=null&&l.edge>=0.02)?' <span class="sim" style="color:#7ee2a8">+'+Math.round(l.edge*100)+'% EDGE</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+(l.streak?' <span class="sim" style="color:#ffb347">6/6 STREAK</span>':'')+((l.edge!=null&&l.edge>=0.02)?' <span class="sim" style="color:#7ee2a8">+'+Math.round(l.edge*100)+'% EDGE</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
         h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
         h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+(pay.amount>10?' ('+fmtOdds(pay.amount/10)+')':'')+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
         if(pay.best)h+='<span class="hit-best">\u2605 Best payout: '+esc(pay.best)+'</span>';
+        if(p.streak)h+='<div class="hit-lab">\ud83d\udd25 Streak Lotto \u2014 every leg above hit this exact line in all 6 of its last 6 games (100% over the last 6). That is past form, not a guarantee: a 6/6 streak can end tonight, and the hit % above is still the model\u2019s per-leg chances multiplied \u2014 not 100%.</div>';
         h+='</div>';
         h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> — that copies the bet as a backup and opens X with it pre-filled for @Playbook. Playbook replies with a pre-loaded slip link for your book (DraftKings, FanDuel &amp; more), where you pick your app and place it. Lines can differ by book; SIM props may not be offered everywhere.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\ud83d\udccb Copy this bet</button>';
         h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
@@ -3372,7 +3525,7 @@ body.on-christmas{color-scheme:light}
     list.innerHTML=h;
     if(pst)pst.textContent=any?'Built live from today\u2019s games only — every parlay settles today.':'No parlays could be built from verified legs in today\u2019s games right now.';
     var stamp=document.getElementById('parlayStamp');
-    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries from the game summary; props blend each player&rsquo;s last 5 game logs with their season average &middot; Edge = model % minus the book price &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries from the game summary; props blend each player&rsquo;s last 5 game logs with their season average &middot; Edge = model % minus the book price &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Streak Lotto legs verified from live ESPN game logs (hit in 6/6 last games) &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
     });
   }
   var loading=false;
@@ -4486,6 +4639,33 @@ body.on-christmas{color-scheme:light}
       render(start.id);
     }).catch(function(){outEl.innerHTML='<p class="astatus">Playoff Path unavailable right now \u2014 the live standings couldn\u2019t load.</p>';});
   });
+})();
+</script>
+<script>
+/* BREAKING NEWS takeover — MANUAL flag, NOT tied to weather / NWS alerts.
+   ============================================================
+   TO TURN THIS OFF when the ground stop lifts, change
+   BREAKING_NEWS_ON to false below and push — the pop-up is gone.
+   ============================================================
+   Shows full-screen on load, must be X'd out, and once dismissed it
+   does not show again in the same browsing session. */
+(function(){
+  var BREAKING_NEWS_ON = true;   /* <-- turn off here */
+  var STORY_ID = 'faa-nationwide-ground-stop-2026-11-13';
+  if(!BREAKING_NEWS_ON) return;
+  var overlay=document.getElementById('breakingOverlay');
+  if(!overlay) return;
+  try{ if(sessionStorage.getItem('dn-breaking-dismissed')===STORY_ID) return; }catch(e){}
+  function close(){
+    overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');
+    var wx=document.getElementById('severeOverlay');
+    if(!(wx&&wx.classList.contains('open')))document.body.classList.remove('severe-locked');
+    try{ sessionStorage.setItem('dn-breaking-dismissed',STORY_ID); }catch(e){}
+  }
+  var b1=document.getElementById('breakingClose'); if(b1)b1.addEventListener('click',close);
+  var b2=document.getElementById('breakingClose2'); if(b2)b2.addEventListener('click',close);
+  overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+  document.body.classList.add('severe-locked');
 })();
 </script>
 </body>
