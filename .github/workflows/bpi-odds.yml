@@ -1,0 +1,68 @@
+# ESPN BPI playoff odds for Derek News
+# Same pattern as fpi-odds.yml: ESPN's BPI endpoint cannot be read reliably
+# from a visitor's browser, so this Action fetches it server-side and writes
+# a slim bpi.json at the repo root. The site (index.html) reads bpi.json from
+# the same GitHub Pages origin, so there is no CORS problem. Runs every 6
+# hours (and on demand). Upload to .github/workflows/bpi-odds.yml in the repo.
+name: BPI playoff odds
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch ESPN BPI playoff odds
+        run: python3 - <<'PY'
+          import json, urllib.request, datetime
+          url = "https://site.web.api.espn.com/apis/fitt/v3/sports/basketball/nba/powerindex?region=us&lang=en"
+          req = urllib.request.Request(url, headers={"User-Agent": "derek-news-bpi/1.0"})
+          data = json.load(urllib.request.urlopen(req, timeout=30))
+          proj_names = []
+          for c in data.get("categories", []):
+              if c.get("name") == "projections":
+                  proj_names = c.get("names", [])
+          keymap = {
+              "probmakeplayoffs": "playoff",
+              "probwindiv": "winDiv",
+              "top6seed": "top6",
+              "playinchance": "playIn",
+          }
+          teams = []
+          for e in data.get("teams", []):
+              t = e.get("team", {})
+              rec = {"id": str(t.get("id", "")), "abbr": t.get("abbreviation", ""), "name": t.get("displayName", "")}
+              for cat in e.get("categories", []):
+                  if cat.get("name") != "projections":
+                      continue
+                  vals = cat.get("values", [])
+                  for i, nm in enumerate(proj_names):
+                      k = keymap.get(nm)
+                      if k and i < len(vals):
+                          v = vals[i]
+                          rec[k] = round(float(v) * 10) / 10 if isinstance(v, (int, float)) else None
+              if rec.get("playoff") is not None:
+                  teams.append(rec)
+          if len(teams) < 28:
+              raise SystemExit(f"BPI parse only found {len(teams)} teams - not writing a bad bpi.json")
+          out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                 "source": "ESPN BPI (fitt v3 powerindex), fetched server-side",
+                 "teams": teams}
+          with open("bpi.json", "w") as f:
+              json.dump(out, f, indent=1)
+          print(f"wrote bpi.json with {len(teams)} teams")
+          PY
+      - name: Commit if changed
+        run: |
+          git config user.name "derek-news-bot"
+          git config user.email "derek-news-bot@users.noreply.github.com"
+          git add bpi.json
+          git diff --cached --quiet || git commit -m "Update BPI playoff odds"
+          git push

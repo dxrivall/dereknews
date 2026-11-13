@@ -1,16 +1,18 @@
 # Power outage data for Derek News
-# PowerOutage's live REST API needs a paid key and poweroutage.us blocks
+# PowerOutage's live REST API needs a paid key and poweroutage.us 403s
 # servers, but the same service's public pages on poweroutage.com carry
 # the live numbers server-side. This Action parses them every 10 minutes
-# (the source itself refreshes about every 10 minutes) and writes a slim
-# outages.json at the repo root. The site (index.html, Weather tab) reads
-# outages.json from the same GitHub Pages origin — no embed of their
-# website, no ads, no login chrome. If the parse fails or the two
-# Onondaga sources disagree, the Action fails WITHOUT overwriting the
-# last good outages.json, and the site shows its honest "couldn't load"
-# state once that file goes stale.
-# Upload this file to your repo at .github/workflows/power-outages.yml
-# and make sure GitHub Actions are enabled for the repo.
+# and writes a slim outages.json at the repo root. The site (index.html,
+# Weather tab) reads outages.json from the same GitHub Pages origin.
+# Nov 13 hardening: the old fetcher hard-failed whenever the county page
+# and the counties API disagreed at all (the page is CDN-cached and can
+# lag the API by a cycle), which could fail every run forever. The API
+# record is now authoritative for county totals; fetches retry with a
+# second UA; state totals can fall back to counties-API sums. On a hard
+# failure the Action exits non-zero WITHOUT overwriting the last good
+# outages.json, and the widget keeps showing those numbers with its
+# "refresh delayed" note. Full fetcher source: .src/fetch_outages.py in
+# the build workspace (kept in sync with the code below).
 name: Power outages
 
 on:
@@ -27,20 +29,70 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Fetch PowerOutage data for New York and Onondaga County
-        run: python3 - <<'PY'
-          import json, re, urllib.request, datetime
-          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 derek-news-outages/1.0"}
+        run: python3 - <<'PYEOF'
+          """Fetch live power-outage data for Derek News from PowerOutage
+          (poweroutage.com — the same service as poweroutage.us; its pages are
+          fetchable server-side, while poweroutage.us itself 403s servers).
+
+          Hardened Nov 13 after outages.json went stale:
+          - The old fetcher hard-failed whenever the county PAGE and the counties
+            API disagreed by any amount. The page is CDN-cached and can lag the
+            API by a refresh cycle, so that exact-equality check could fail every
+            run forever. The API record is now authoritative for county totals;
+            the county page only supplies the per-utility breakdown, and if the
+            page lags or fails, the file is still written (utilities may be []).
+          - Every request is retried with a second plain-browser UA.
+          - If the state summary block fails to parse, state totals fall back to
+            summing the counties API (labelled in the output source note).
+          - Verbose prints: every URL's status/byte count lands in the Action log.
+          Still: if the state page itself cannot be parsed AND the counties API
+          is unreachable, exit non-zero and do NOT overwrite the last good file.
+          """
+          import json, re, sys, time, urllib.request, datetime
+
+          UAS = [
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+              "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15",
+          ]
           BASE = "https://poweroutage.com"
+
+
           def get(url):
-              req = urllib.request.Request(url, headers=UA)
-              return urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
+              last = None
+              for attempt, ua in enumerate(UAS):
+                  try:
+                      req = urllib.request.Request(url, headers={
+                          "User-Agent": ua,
+                          "Accept": "text/html,application/json,*/*",
+                          "Accept-Language": "en-US,en;q=0.9",
+                      })
+                      with urllib.request.urlopen(req, timeout=30) as r:
+                          body = r.read().decode("utf-8", "ignore")
+                      print(f"GET {url} -> {r.status}, {len(body)} bytes (UA {attempt})")
+                      return body
+                  except Exception as e:
+                      last = e
+                      print(f"GET {url} attempt {attempt} failed: {e}")
+                      time.sleep(3)
+              raise SystemExit(f"fetch failed for {url}: {last}")
+
+
           def num(s):
-              return int(s.replace(",", "").strip())
+              return int(str(s).replace(",", "").strip())
+
+
           def pct(out, tracked):
               return round(out * 10000 / tracked) / 100 if tracked else None
+
+
           def parse_utils(html):
-              rows = re.findall(r'<a href="/area/utility/\d+">([^<]+)</a></div><div[^>]*>([\d,]+)</div><div[^>]*>([\d,]+)</div>', html)
-              return [{"name": n.strip(), "tracked": num(t), "out": num(o), "pct": pct(num(o), num(t))} for n, t, o in rows]
+              rows = re.findall(
+                  r'<a href="/area/utility/\d+">([^<]+)</a></div>'
+                  r'<div[^>]*>([\d,]+)</div><div[^>]*>([\d,]+)</div>', html)
+              return [{"name": n.strip(), "tracked": num(t), "out": num(o),
+                       "pct": pct(num(o), num(t))} for n, t, o in rows]
+
+
           def parse_summary(html):
               tr = re.search(r'Customers Tracked:</strong>\s*<br\s*/>\s*<span>([\d,]+)</span>', html)
               ou = re.search(r'Customers Out:</strong>\s*<br\s*/>\s*<span>([\d,]+)</span>', html)
@@ -59,33 +111,80 @@ jobs:
                       updated = None
               t, o = num(tr.group(1)), num(ou.group(1))
               return {"tracked": t, "out": o, "pct": pct(o, t), "source_updated": updated}
-          state_html = get(BASE + "/area/state/new%20york")
-          state = parse_summary(state_html)
-          state_utils = parse_utils(state_html)
-          if not state or state["tracked"] < 1000000 or len(state_utils) < 5:
-              raise SystemExit("state page parse failed - not writing outages.json")
-          m = re.search(r'counties\?key=(\d+)', state_html)
-          key = m.group(1) if m else "4759028374"
-          counties = json.loads(get(BASE + "/api/web/counties?key=" + key + "&countryid=us&statename=New%20York"))
-          ono = next((r for r in counties.get("WebCountyRecord", []) if r.get("CountyName") == "Onondaga"), None)
-          if not ono:
-              raise SystemExit("Onondaga not in counties API - not writing outages.json")
-          county_html = get(BASE + "/area/county/" + str(ono["CountyId"]))
-          county = parse_summary(county_html)
-          county_utils = parse_utils(county_html)
-          if not county or not county_utils:
-              raise SystemExit("county page parse failed - not writing outages.json")
-          if county["out"] != ono["OutageCount"] or county["tracked"] != ono["CustomerCount"]:
-              raise SystemExit("Onondaga county page / API mismatch - not writing outages.json")
-          state_utils.sort(key=lambda u: -u["out"])
-          out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                 "source": "PowerOutage (poweroutage.us / poweroutage.com), fetched server-side",
-                 "state": dict(state, name="New York", utilities=state_utils),
-                 "county": dict(county, name="Onondaga County", utilities=county_utils)}
-          with open("outages.json", "w") as f:
-              json.dump(out, f, indent=1)
-          print(f"wrote outages.json: NY out={state['out']}/{state['tracked']}, Onondaga out={county['out']}/{county['tracked']}")
-          PY
+
+
+          def main():
+              state_html = get(BASE + "/area/state/new%20york")
+              state = parse_summary(state_html)
+              state_utils = parse_utils(state_html)
+
+              m = re.search(r'counties\?key=(\d+)', state_html)
+              key = m.group(1) if m else "4759028374"
+              counties = None
+              try:
+                  counties = json.loads(get(BASE + "/api/web/counties?key=" + key +
+                                            "&countryid=us&statename=New%20York"))
+              except SystemExit:
+                  counties = None
+              records = (counties or {}).get("WebCountyRecord", [])
+              ono = next((r for r in records if r.get("CountyName") == "Onondaga"), None)
+
+              notes = []
+              if not state:
+                  if records:
+                      t = sum(int(r.get("CustomerCount") or 0) for r in records)
+                      o = sum(int(r.get("OutageCount") or 0) for r in records)
+                      state = {"tracked": t, "out": o, "pct": pct(o, t), "source_updated": None}
+                      notes.append("state totals summed from counties API (summary block unparseable)")
+                      print("state summary parse failed; fell back to counties API sums:", state)
+                  else:
+                      raise SystemExit("state page parse failed and no counties API - not writing outages.json")
+              if state["tracked"] < 1000000:
+                  raise SystemExit("state tracked implausibly small - not writing outages.json")
+              if len(state_utils) < 5:
+                  print(f"WARNING: only {len(state_utils)} state utilities parsed")
+              if not ono:
+                  raise SystemExit("Onondaga not in counties API - not writing outages.json")
+
+              # County totals: the API record is authoritative (the county page can
+              # lag a cycle behind it). The page only supplies the utility split.
+              county = {"tracked": int(ono.get("CustomerCount") or 0),
+                        "out": int(ono.get("OutageCount") or 0),
+                        "source_updated": None}
+              county["pct"] = pct(county["out"], county["tracked"])
+              county_utils = []
+              try:
+                  county_html = get(BASE + "/area/county/" + str(ono["CountyId"]))
+                  cs = parse_summary(county_html)
+                  if cs and cs.get("source_updated"):
+                      county["source_updated"] = cs["source_updated"]
+                  county_utils = parse_utils(county_html)
+                  if cs and (cs["out"] != county["out"] or cs["tracked"] != county["tracked"]):
+                      print(f"NOTE: county page (out={cs['out']}, tracked={cs['tracked']}) "
+                            f"lags API (out={county['out']}, tracked={county['tracked']}); using API totals")
+              except SystemExit as e:
+                  print(f"WARNING: county page unavailable ({e}); writing API totals without utility split")
+
+              if state.get("source_updated") is None and county.get("source_updated"):
+                  state["source_updated"] = county["source_updated"]
+
+              state_utils.sort(key=lambda u: -u["out"])
+              out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                     "source": "PowerOutage (poweroutage.com), fetched server-side" +
+                               ((" — " + "; ".join(notes)) if notes else ""),
+                     "state": dict(state, name="New York", utilities=state_utils),
+                     "county": dict(county, name="Onondaga County", utilities=county_utils)}
+              with open("outages.json", "w") as f:
+                  json.dump(out, f, indent=1)
+              print(f"wrote outages.json: NY out={state['out']}/{state['tracked']}, "
+                    f"Onondaga out={county['out']}/{county['tracked']}, "
+                    f"county utilities={len(county_utils)}, state utilities={len(state_utils)}")
+              return 0
+
+
+          if __name__ == "__main__":
+              sys.exit(main())
+          PYEOF
       - name: Commit if changed
         run: |
           git config user.name "derek-news-bot"
