@@ -419,16 +419,16 @@ body>.teams-overlay{z-index:2000}
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
     <p class="hw-status" id="homeSportsEmpty" hidden>No games coming up for your teams.</p>
     <div id="homeSecYankees" hidden>
-    <div class="hw-sec">⚾ Yankees</div>
-    <div id="homeYankees"><p class="hw-status">Checking Yankees…</p></div>
+    <div class="hw-sec">⚾ Baseball</div>
+    <div id="homeYankees"><p class="hw-status">Checking Baseball…</p></div>
     </div>
     <div id="homeSecNba" hidden>
-    <div class="hw-sec">🏀 Lakers &amp; Suns</div>
-    <div id="homeNbaGames"><p class="hw-status">Loading Lakers &amp; Suns games…</p></div>
+    <div class="hw-sec">🏀 Basketball</div>
+    <div id="homeNbaGames"><p class="hw-status">Loading Basketball games…</p></div>
     </div>
     <div id="homeSecNfl" hidden>
-    <div class="hw-sec">🏈 Jaguars · Patriots · Saints · Eagles</div>
-    <div id="homeNflGames"><p class="hw-status">Loading football games…</p></div>
+    <div class="hw-sec">🏈 Football</div>
+    <div id="homeNflGames"><p class="hw-status">Loading Football games…</p></div>
     </div>
   </section>
   <!-- Faith widget: today's verse + this week's Mass — timely every day, always shown -->
@@ -4121,7 +4121,8 @@ body.on-christmas{color-scheme:light}
   function secHead(secId,emoji,lg,fallback){
     var sec=document.getElementById(secId); if(!sec)return;
     var h=sec.querySelector('.hw-sec'); if(!h)return;
-    var ns=T.names(lg); h.textContent=emoji+' '+(ns.length?ns.join(' & '):fallback);
+    /* Home Sports widget: headings are just the sport name — never list the picked teams here. */
+    h.textContent=emoji+' '+fallback;
   }
   secHead('homeSecYankees','\u26BE','mlb','Baseball');
   secHead('homeSecNba','\uD83C\uDFC0','nba','Basketball');
