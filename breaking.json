@@ -1,7 +1,17 @@
 {
- "active": false,
- "updated_at": "2026-11-13T22:34:42.810375+00:00",
- "first_seen": null,
- "expires_at": null,
- "item": null
+ "active": true,
+ "severity": "massive",
+ "updated_at": "2026-11-13T22:45:31.985852+00:00",
+ "first_seen": "2026-11-13T22:45:31.985852+00:00",
+ "expires_at": "2026-11-14T01:45:31.985852+00:00",
+ "item": {
+  "id": "nationwide-ground-stop-2026-11-13",
+  "severity": "massive",
+  "title": "FAA issues nationwide ground stop for all U.S. airports",
+  "what": "The FAA has issued a nationwide ground stop, halting departing flights at U.S. airports \u2014 all airlines \u2014 until further notice. This is a ground stop, not emergency landings: planes already in the air keep flying and land normally.",
+  "means": "If you or family are flying today, expect major delays and cancellations nationwide, even at airports that look fine.",
+  "do": "Check with your airline before heading to the airport, and keep checking \u2014 schedules will keep changing while the stop is in effect.",
+  "source": "NPR, CNN (all reporting this now)",
+  "source_url": "https://www.npr.org/2026/11/13/nx-s1-6040403/faa-nationwide-groundstop-airports"
+ }
 }

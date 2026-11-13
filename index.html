@@ -4981,8 +4981,13 @@ body.on-christmas{color-scheme:light}
    - The News tab's Breaking News section and the automatic
      full-screen takeover are fed by breaking.json, refreshed
      every 5 minutes by the "Breaking news" GitHub Action
-     (FAA NAS Status + NPR + BBC cross-confirmation — only major
-     national events ever go active; items expire in 3 hours).
+     (FAA NAS Status + any 2 of NPR / BBC / CNN / AP / Reuters
+     carrying the same tight major-event pattern; items expire
+     in 3 hours). TIERED SEVERITY (v2): severity "massive"
+     (nationwide ground stop, national emergency, major
+     disaster) fires this full-screen takeover; severity
+     "significant" appears ONLY in the Breaking News section
+     on the News tab — it never pops up.
    - The manual BREAKING_NEWS_ON takeover above stays as Derek's
      override and is mirrored in the section while it is on.
    - Local severe weather keeps firing from live NWS alerts via
@@ -5008,7 +5013,11 @@ body.on-christmas{color-scheme:light}
   }
   function autoItemHTML(d){
     var it=d.item;
-    var h='<span class="brk-live">Live now</span><p class="brk-title">'+esc(it.title)+'</p>';
+    var sev=it.severity||d.severity||'massive';
+    var badge=(sev==='significant')
+      ?'<span class="brk-live" style="background:#2563eb">Developing</span>'
+      :'<span class="brk-live">Live now</span>';
+    var h=badge+'<p class="brk-title">'+esc(it.title)+'</p>';
     if(it.what)h+='<p class="brk-fact"><strong>What happened:</strong> '+esc(it.what)+'</p>';
     if(it.means)h+='<p class="brk-fact"><strong>What it means:</strong> '+esc(it.means)+'</p>';
     if(it.do)h+='<p class="brk-fact"><strong>What to do:</strong> '+esc(it.do)+'</p>';
@@ -5045,6 +5054,12 @@ body.on-christmas{color-scheme:light}
   }
   function maybeTakeover(d){
     var it=freshItem(d);if(!it||!autoOverlay)return;
+    /* Tiered severity (v2): only "massive" gets the full-screen
+       takeover. "significant" items live in the News tab's Breaking
+       News section only — no pop-up. A missing severity (pre-v2
+       breaking.json) counts as massive, as before. */
+    var sev=it.severity||d.severity||'massive';
+    if(sev!=='massive')return;
     if(window.__dnManualBreaking&&window.__dnManualBreaking.id===it.id)return; /* manual pop-up already covers it */
     try{if(sessionStorage.getItem('dn-auto-breaking-dismissed')===it.id)return;}catch(e){}
     setTimeout(function(){
