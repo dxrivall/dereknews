@@ -13,13 +13,30 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Derek News">
-<!-- Push notifications (OneSignal). Derek: paste your real OneSignal App ID
-     below where it says YOUR-ONESIGNAL-APP-ID, then upload this file plus
-     OneSignalSDKWorker.js and OneSignalSDKUpdaterWorker.js to the repo root.
-     Until a real App ID is pasted in, the SDK stays off and nothing prompts.
-     Once live, visitors get OneSignal's standard slide-down prompt, once,
-     dismissible — it never blocks the site. Send notifications to all
-     subscribers from the OneSignal dashboard/app. -->
+<!-- Push notifications (OneSignal) — Custom Code setup, App ID
+     cc53b67c-be8a-4e1c-86fa-7c7abc08f663.
+     SUBPATH FIX (Nov 13, 2026): this site lives at
+     https://dxrivall.github.io/dereknews/ — NOT at the domain root.
+     OneSignal's SDK defaults to https://dxrivall.github.io/OneSignalSDKWorker.js
+     (domain root), which 404s, so registration failed and ZERO
+     subscriptions ever registered even after Allow. The worker files
+     actually live at /dereknews/OneSignalSDKWorker.js (+ Updater).
+     Per OneSignal's service-worker docs for Custom Code in a
+     subdirectory, init MUST set BOTH:
+       serviceWorkerPath: "dereknews/OneSignalSDKWorker.js"
+         (relative from site root, no leading slash)
+       serviceWorkerParam: { scope: "/dereknews/" }
+         (scope must be at/below the folder hosting the worker file)
+     Do not remove either line or subscriptions break again.
+     In the OneSignal dashboard the app's Site URL must be the origin
+     https://dxrivall.github.io (Custom Code uses the init values
+     above, not the dashboard's "Customize service worker paths"
+     fields — those are Typical Site only).
+     Prompt: slide-down, first page view, ~3s — dismissible, never
+     blocks the site. iOS: prompt only registers from the installed
+     Home Screen app (iOS 16.4+), not from a Safari tab.
+     Send notifications to all subscribers from the OneSignal
+     dashboard/app. -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
 window.OneSignalDeferred=window.OneSignalDeferred||[];
@@ -29,9 +46,10 @@ window.OneSignalDeferred=window.OneSignalDeferred||[];
   window.OneSignalDeferred.push(async function(OneSignal){
     await OneSignal.init({
       appId:ONESIGNAL_APP_ID,
-      serviceWorkerPath:"OneSignalSDKWorker.js",
+      serviceWorkerPath:"dereknews/OneSignalSDKWorker.js",
+      serviceWorkerParam:{scope:"/dereknews/"},
       notifyButton:{enable:false},
-      promptOptions:{slidedown:{prompts:[{type:"push",autoPrompt:true,delay:{pageViews:2,timeDelay:15}}]}}
+      promptOptions:{slidedown:{prompts:[{type:"push",autoPrompt:true,delay:{pageViews:1,timeDelay:3}}]}}
     });
   });
 })();
