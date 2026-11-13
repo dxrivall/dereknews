@@ -93,9 +93,7 @@ html,body{overflow-x:hidden}
 .pager-track{display:flex;flex-direction:row;align-items:flex-start;width:100%;will-change:transform}
 .pager-track>.view{display:block;flex:0 0 100%;width:100%;max-width:none;margin:0;min-width:0;visibility:hidden}
 .pager-track>.view.pg-on{visibility:visible}
-/* NEWS TEMPORARILY DISABLED — hidden, not removed (see tabOrder note) */
-#view-news{display:none!important}
-.bottomnav .tab[data-go="news"]{display:none!important}
+/* NEWS RE-ENABLED (Nov 13) — tab + bottom-bar button restored, 6 tabs (see tabOrder) */
 .pager-track.pg-settling{transition:transform .38s cubic-bezier(.32,.72,0,1)}
 .pager-viewport.pg-settling{transition:height .38s cubic-bezier(.32,.72,0,1)}
 .tab-pill.pg-settling{transition:transform .38s cubic-bezier(.32,.72,0,1),width .38s cubic-bezier(.32,.72,0,1)}
@@ -444,6 +442,30 @@ body>.teams-overlay{z-index:2000}
 .severe-overlay .severe-head{padding-top:20px}
 .severe-overlay .severe-x{top:14px;right:14px}
 </style>
+<style>
+/* == Nov 13 fixes J: Weather hero location BAR (place name + drop-down,
+   no corner pin — it crowded the Weather Radio play button) + News back ==
+   The bar sits in normal flow at the very top of the Weather hero, centred,
+   showing the current place name (id wxLocLabel, set by the location
+   script at the end of the page, same id as before). Tapping it toggles
+   the drop-down (#wxLocPop) directly underneath it: "Use my location",
+   "Back to Cicero, NY" (only when another place is set — the existing
+   end-of-page location script controls its hidden state), a status line,
+   and the type-a-city-or-ZIP box (wxLocInput / wxLocGo, unchanged ids).
+   The Weather Radio play button under the condition word is untouched,
+   and the Home widget keeps its own pin-style controls — this is
+   Weather-hero only. The old .wx-pin element is removed from the hero
+   markup; the rule below is a belt-and-braces hide if it ever returns. */
+#view-weather .wx-pin{display:none!important}
+.wx-locbar-wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin:-16px auto 4px;z-index:8}
+.wx-locbar{appearance:none;display:inline-flex;align-items:center;gap:8px;max-width:100%;background:rgba(6,18,26,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.55);color:#fff;font:inherit;font-size:18px;font-weight:600;line-height:1.2;border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.28);text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.wx-locbar .dn-loc-ic{flex:none;opacity:.95}
+.wx-locbar .wxloc{font-size:18px;font-weight:600;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.wx-locbar-chev{flex:none;font-size:15px;line-height:1;transition:transform .2s ease;opacity:.95}
+.wx-locbar[aria-expanded="true"] .wx-locbar-chev{transform:rotate(180deg)}
+#view-weather .wx-locpop{position:absolute;top:calc(100% + 8px);left:50%;right:auto;transform:translateX(-50%);width:min(320px,calc(100vw - 48px));max-width:320px;z-index:9;text-align:left}
+@media(max-width:380px){.wx-locbar{font-size:17px;padding:9px 14px}}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -477,7 +499,7 @@ body>.teams-overlay{z-index:2000}
 </div>
 
 <div id="wxBg" aria-hidden="true" data-mode="cloudy"><div class="wxbg-sun"></div><div class="wxbg-clouds"></div><canvas id="wxBgCanvas"></canvas></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span></button><button class="tab" role="tab" data-go="news" aria-label="News" title="News" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -722,14 +744,15 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 @media(max-width:380px){.snowday.slim{gap:14px;padding:14px}}
 </style>
   <div class="wxhero" id="wxHero">
-  <button type="button" class="wx-pin" id="wxPin" aria-label="Location — tap to see or change it" aria-expanded="false" title="Location"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg></button>
+  <div class="wx-locbar-wrap">
+  <button type="button" class="wx-locbar" id="wxLocBar" aria-label="Location — tap to change it" aria-expanded="false" aria-controls="wxLocPop" title="Location"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg><span class="wxloc" id="wxLocLabel">Cicero, NY</span><span class="wx-locbar-chev" aria-hidden="true">▾</span></button>
   <div class="wx-locpop" id="wxLocPop" hidden>
-  <p class="wxloc" id="wxLocLabel">Cicero, NY</p>
   <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="wxUseLoc"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg> Use my location</button><button type="button" class="wxloc-btn" id="wxUseCicero" hidden>&larr; Back to Cicero, NY</button></div>
   <p class="wxloc-status" id="wxLocStatus" role="status"></p>
-  <div class="wx-locmanual"><input type="text" id="wxLocInput" placeholder="Or type a city or ZIP" aria-label="Type a city or ZIP code" autocomplete="off"><button type="button" id="wxLocGo">Set</button></div>
+  <div class="wx-locmanual"><input type="text" id="wxLocInput" placeholder="Type a city or ZIP" aria-label="Type a city or ZIP code" autocomplete="off"><button type="button" id="wxLocGo">Set</button></div>
   </div>
-  <script>(function(){var p=document.getElementById('wxPin'),pop=document.getElementById('wxLocPop');if(!p||!pop)return;try{if(window.__dnLoc&&window.__dnLoc.get().live)p.classList.add('on');}catch(e){}p.addEventListener('click',function(){var open=pop.hidden;pop.hidden=!open;p.setAttribute('aria-expanded',open?'true':'false');});})();</script>
+  </div>
+  <script>(function(){var p=document.getElementById('wxLocBar'),pop=document.getElementById('wxLocPop');if(!p||!pop)return;function close(){pop.hidden=true;p.setAttribute('aria-expanded','false');}p.addEventListener('click',function(e){e.stopPropagation();var open=pop.hidden;if(open){pop.hidden=false;p.setAttribute('aria-expanded','true');}else{close();}});pop.addEventListener('click',function(e){e.stopPropagation();});document.addEventListener('click',function(){if(!pop.hidden)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});})();</script>
   <div class="wxalerts" id="wxAlerts" hidden role="alert" aria-live="polite">
     <div class="wxalerts-head"><span aria-hidden="true">⚠️</span><span>Weather Alerts — Cicero, NY</span><span class="count" id="wxAlertsCount"></span></div>
     <div id="wxAlertsList"></div>
@@ -1651,13 +1674,12 @@ body.on-christmas{color-scheme:light}
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News · Cicero, NY · Weather data by Open-Meteo</footer>
 <script>
 (function(){
-  var views={home:1,weather:1,sports:1,faith:1,christmas:1};
-  /* NEWS TEMPORARILY DISABLED (Derek, Nov 13): the News view markup, its
-     scripts and its bottom-bar button are all still in this file — it is
-     only left out of tabOrder below and hidden by the .news-disabled CSS,
-     so removing 'news' from that CSS + adding 'news' back to tabOrder
-     brings it straight back. */
-  var tabOrder=['home','weather','sports','faith','christmas'];
+  var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
+  /* NEWS RE-ENABLED (Derek, Nov 13): 6 tabs in order — Home, Weather,
+     News, Sports, Faith, Christmas. The slides, the bottom-bar buttons
+     (filtered + sorted by this same list) and the selection pill are
+     all derived from tabOrder, so pager and pill stay in sync. */
+  var tabOrder=['home','weather','news','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
