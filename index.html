@@ -25,7 +25,7 @@ html{scroll-padding-bottom:120px}
 .tab-pill{position:absolute;top:0;left:0;height:100%;width:0;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(10,25,35,.20),inset 0 1px 0 #fff;pointer-events:none;z-index:0;will-change:transform,width}
 .tab{position:relative;z-index:1;transition:color .25s ease;appearance:none;flex:1 1 0;border:0;background:transparent;color:#24333b;font:inherit;cursor:pointer;border-radius:999px;padding:6px 1px 5px;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.05}
 .tab[aria-selected="true"]{background:transparent;color:#0b1c24}@media(prefers-color-scheme:dark){.tab{color:#d7e6eb}.tab[aria-selected="true"]{background:transparent;color:#0b1c24}}
-/* iOS-style pager: all five pages live on one horizontal track inside a
+/* iOS-style pager: all six pages live on one horizontal track inside a
    clipped viewport. pan-y = the browser keeps vertical scrolling and
    hands horizontal drags to the pager (direction lock). */
 html,body{overflow-x:hidden}
@@ -133,6 +133,18 @@ html,body{overflow-x:hidden}
 .severe-close2{display:block;width:100%;margin-top:16px;background:#b42318;color:#fff;border:0;border-radius:999px;padding:14px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;min-height:52px}
 body.severe-locked{overflow:hidden}
 </style>
+<style>
+.wxd-precip60{margin-top:10px;font-size:13.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:10px;padding:8px 12px;text-align:left;line-height:1.45}
+#view-weather .wx-precip60{max-width:680px;margin:14px auto 0;background:rgba(8,20,28,.5);border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 14px;color:#fff;font-size:14.5px;font-weight:600;text-align:center;line-height:1.45}
+.wxradio{background:rgba(8,20,28,.5);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:16px;max-width:680px;margin:0 auto;text-align:left;color:#fff}
+.wxradio-station{font-size:16px;margin:0 0 4px}
+.wxradio-sub{font-size:13.5px;line-height:1.55;opacity:.92;margin:0 0 12px}
+.wxradio-links{display:flex;gap:10px;flex-wrap:wrap}
+.wxradio-listen{flex:1 1 220px;text-align:center;background:#b42318;color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:13px 12px;border-radius:999px;min-height:48px}
+.wxradio-alt{flex:1 1 220px;text-align:center;background:rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:13px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.4);min-height:48px}
+.sev-list{margin:0 0 10px;padding-left:20px;color:#334155;font-size:15px;line-height:1.6;text-align:left}
+.sev-list li{margin:4px 0}
+</style>
 </head>
 <body>
 <div class="severe-overlay" id="severeOverlay" role="alertdialog" aria-modal="true" aria-labelledby="severeTitle" aria-hidden="true">
@@ -147,7 +159,7 @@ body.severe-locked{overflow:hidden}
 </div>
 
 <div id="wxBg" aria-hidden="true"></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="news" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span><span class="tab-lb">News</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -201,15 +213,6 @@ body.severe-locked{overflow:hidden}
   <div class="hero"><div class="title-wrap"><div class="garland" aria-hidden="true"><svg viewBox="0 0 600 78" role="presentation" focusable="false"><defs><g id="pt"><path d="M0 0 L-10 11 M0 0 L-3 14 M0 0 L4 14 M0 0 L11 10" stroke="#1e6b3d" stroke-width="3" stroke-linecap="round" fill="none"/><circle r="6.5" fill="#175233"/><circle cx="-4" cy="-3" r="4.5" fill="#1d6540"/><circle cx="5" cy="-2" r="4" fill="#123f27"/></g><g id="br"><circle r="3.4" fill="#c1271d"/><circle cx="7.5" cy="2" r="3" fill="#d92f24"/><circle cx="3" cy="6.5" r="2.8" fill="#a91e15"/><circle cx="-1" cy="-1" r="1" fill="#fff" opacity=".55"/></g><g id="lt"><circle r="7.5" fill="#ffd98a" opacity=".38"/><circle r="3.2" fill="#fff3b0" stroke="#ffb454" stroke-width=".8"/><circle cx="-1" cy="-1" r="1" fill="#fff"/></g><g id="orn"><path d="M0 0 V7" stroke="#3a3a3a" stroke-width="1.4"/><circle cy="14" r="6.8" fill="#b91f16" stroke="#7f130e"/><circle cx="-2.2" cy="11" r="2" fill="#fff" opacity=".65"/></g></defs><path d="M12 12 Q300 74 588 12" fill="none" stroke="#123b24" stroke-width="11" stroke-linecap="round"/><path d="M12 9 Q300 71 588 9" fill="none" stroke="#1c5a35" stroke-width="6" stroke-linecap="round" opacity=".9"/><use href="#pt" transform="translate(12 10)"/><use href="#pt" transform="translate(41 16)"/><use href="#pt" transform="translate(70 21)"/><use href="#pt" transform="translate(99 25)"/><use href="#pt" transform="translate(128 29)"/><use href="#pt" transform="translate(157 33)"/><use href="#pt" transform="translate(186 35)"/><use href="#pt" transform="translate(215 37)"/><use href="#pt" transform="translate(244 39)"/><use href="#pt" transform="translate(272 40)"/><use href="#pt" transform="translate(300 40)"/><use href="#pt" transform="translate(328 40)"/><use href="#pt" transform="translate(356 39)"/><use href="#pt" transform="translate(385 37)"/><use href="#pt" transform="translate(414 35)"/><use href="#pt" transform="translate(443 33)"/><use href="#pt" transform="translate(472 29)"/><use href="#pt" transform="translate(501 25)"/><use href="#pt" transform="translate(530 21)"/><use href="#pt" transform="translate(559 16)"/><use href="#pt" transform="translate(588 10)"/><use href="#pt" transform="translate(12 16) rotate(24)"/><use href="#pt" transform="translate(588 16) rotate(-24)"/><use href="#orn" transform="translate(150 32)"/><use href="#orn" transform="translate(300 40)"/><use href="#orn" transform="translate(450 32)"/><use href="#br" transform="translate(72 19)"/><use href="#br" transform="translate(182 31)"/><use href="#br" transform="translate(262 36)"/><use href="#br" transform="translate(378 34)"/><use href="#br" transform="translate(498 21)"/><use href="#lt" class="tw" transform="translate(40 13)"/><use href="#lt" class="tw d1" transform="translate(120 26)"/><use href="#lt" class="tw d2" transform="translate(210 34)"/><use href="#lt" class="tw" transform="translate(285 37)"/><use href="#lt" class="tw d1" transform="translate(362 36)"/><use href="#lt" class="tw d2" transform="translate(468 26)"/><use href="#lt" class="tw" transform="translate(545 13)"/></svg><div class="garland-snow" aria-hidden="true"><svg viewBox="0 0 48 48" role="presentation" focusable="false"><path d="M24 9 V1.5" stroke="#dceefb" stroke-width="1.6" stroke-linecap="round" fill="none"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#8db8d6" stroke-width="5.4"/><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#ffffff" stroke-width="2.7"/></g><circle cx="24" cy="24" r="2.5" fill="#ffffff" stroke="#8db8d6" stroke-width="1"/></svg></div></div><h1 aria-label="Derek News"><span class="ht-red">derek</span> <span class="ht-green">news</span></h1></div>
   <div class="dateline" id="todayLine">Loading date…</div></div>
   <div class="widget-stack">
-  <section class="hwidget featured-story" aria-label="Featured story: first snow of the season">
-    <p class="fs-kicker">&#10052;&#65039; Featured &middot; Thu Nov 12 &ndash; Sat Nov 14</p>
-    <div class="hwidget-head"><h2>First snow of the season: nor&rsquo;easter brings about an inch to Cicero</h2></div>
-    <p>First snow of the season &mdash; a nor&rsquo;easter, Thu Nov 12 &ndash; Sat Nov 14. About 1 inch total expected in Cicero.</p>
-    <div class="fs-links">
-      <a class="fs-nws" href="https://forecast.weather.gov/MapClick.php?CityName=Cicero+Center&state=NY&site=BGM&textField1=43.1789&textField2=-76.0411" target="_blank" rel="noopener">NWS forecast for Cicero &rarr;</a>
-      <a class="fs-usa" href="https://www.usatoday.com/story/news/weather/2026/11/09/noreaster-first-snow-freezing-cold-air/92689998007/" target="_blank" rel="noopener">USA Today: nor&rsquo;easter story &rarr;</a>
-    </div>
-  </section>
 
   <!-- Weather widget: live conditions + next 8 hours &amp; 3-day forecast — always current, always shown -->
   <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget">
@@ -218,6 +221,7 @@ body.severe-locked{overflow:hidden}
     <div class="wxd-cond"><span id="stripIcon" aria-hidden="true">🌡️</span> <span id="stripCond">Loading live weather…</span></div>
     <div><span class="wxd-hl" id="homeWxHL"></span></div>
     <div class="wxd-meta" id="homeWxMeta"></div>
+    <div class="wxd-precip60" id="homePrecip60" aria-label="Precipitation in the next 60 minutes">Next 60 min: —</div>
     <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 8 hours"><p class="wxd-status">Loading hourly…</p></div>
     <div class="wxd-days" id="homeMiniDays" aria-label="3-day forecast"><p class="wxd-status">Loading forecast…</p></div>
     <div class="wxd-foot"><p class="wxd-note">Forecast &amp; alerts by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Live data: Open-Meteo</p><button class="wxd-go" data-go="weather">Full forecast →</button></div>
@@ -346,6 +350,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
   <div class="current"><div><div class="temp" id="wxTemp">—°</div><div class="desc"><span id="wxIcon" aria-hidden="true">🌡️</span> <span id="wxDesc">Loading live weather…</span></div><div class="hl" id="wxHL"></div><div class="meta" id="wxMeta"></div></div></div>
   <div class="wxerr" id="wxError">Live weather could not load. Check your connection and reload — no old forecast is shown in its place.</div>
+  <p class="wx-precip60" id="wxPrecip60" aria-label="Precipitation in the next 60 minutes">Next 60 min: —</p>
   <h3 class="wx-herolabel">Next 24 hours</h3>
   <div class="wx-hero-hourly" id="wxHeroHourly" aria-label="Hourly forecast for the next 24 hours"><p style="margin:2px;font-size:14px;opacity:.9">Loading hourly…</p></div>
   <h3 class="wx-herolabel">7-day outlook</h3>
@@ -367,20 +372,80 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <iframe id="wxRadar" title="Live weather radar for Cicero, NY (Windy)" src="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" loading="lazy" allowfullscreen></iframe>
     <a href="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" target="_blank" rel="noopener">Radar not loading? Open the full Windy radar for Cicero, NY &rarr;</a>
   </div>
-  <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
-  <article class="storm-card featured-story" aria-label="Featured story: first snow of the season">
-    <p class="storm-when">Featured &middot; Thu Nov 12 &ndash; Sat Nov 14, 2026 &middot; Nor&rsquo;easter</p>
-    <h3 style="font-size:19px;margin:0 0 8px;line-height:1.3;color:#7a1710">First snow of the season: nor&rsquo;easter brings about an inch to Cicero</h3>
-    <p>First snow of the season &mdash; a nor&rsquo;easter, Thu Nov 12 &ndash; Sat Nov 14. About 1 inch total expected in Cicero.</p>
-    <div class="fs-links">
-      <a class="fs-nws" href="https://forecast.weather.gov/MapClick.php?CityName=Cicero+Center&state=NY&site=BGM&textField1=43.1789&textField2=-76.0411" target="_blank" rel="noopener">NWS forecast for Cicero &rarr;</a>
-      <a class="fs-usa" href="https://www.usatoday.com/story/news/weather/2026/11/09/noreaster-first-snow-freezing-cold-air/92689998007/" target="_blank" rel="noopener">USA Today: nor&rsquo;easter story &rarr;</a>
+  <h3 class="wxsec">📻 NOAA Weather Radio — Cicero, NY</h3>
+  <section class="wxradio" aria-label="NOAA Weather Radio for Cicero, New York">
+    <p class="wxradio-station"><b>WXL31 Syracuse · 162.550 MHz</b></p>
+    <p class="wxradio-sub">The live NOAA Weather Radio broadcast for Cicero &amp; Central New York — forecasts, watches &amp; warnings from the National Weather Service, 24 hours a day.</p>
+    <div class="wxradio-links">
+      <a class="wxradio-listen" href="https://www.broadcastify.com/listen/feed/39277" target="_blank" rel="noopener">▶ Listen live — WXL31 Syracuse</a>
+      <a class="wxradio-alt" href="https://wxradio.org/NY-Syracuse-WXL31" target="_blank" rel="noopener">Station page — NOAA Weather Radio →</a>
     </div>
-  </article>
+  </section>
+  <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
   <p class="wxstamp" id="wxStamp">Forecast, alerts &amp; storm outlooks by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Weather data: Open-Meteo · Cicero, NY</p>
   </div>
   </div>
+</main>
+<!-- NEWS -->
+<main class="wrap view" id="view-news">
+<style>
+#view-news .nhero{text-align:left;padding:38px 4px 2px}
+#view-news .nhero h1{font-size:clamp(34px,8vw,46px);font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.05}
+#view-news .nhero h1 .nred{color:#b42318}
+#view-news .nrule{height:4px;width:56px;border-radius:99px;background:#b42318;margin-top:14px}
+#view-news .ncard{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 28px rgba(20,40,50,.12);padding:24px 22px;margin-top:26px;text-align:left}
+#view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
+#view-news .ncard h2{font-size:21px;font-weight:800;letter-spacing:-.01em;text-align:left;margin:0 0 6px;line-height:1.25}
+#view-news .lstatus{color:var(--soft);font-size:14px;line-height:1.55;margin:8px 0}
+#view-news .lnews{display:flex;flex-direction:column}
+#view-news .lnews-item{display:block;position:relative;padding:13px 24px 13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
+#view-news .lnews-item:last-child{border-bottom:0}
+#view-news .lnews-item::after{content:"›";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--soft);opacity:.55}
+#view-news .lnews-t{display:block;font-size:15.5px;font-weight:650;line-height:1.4}
+#view-news .lnews-m{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
+#view-news .eparty{display:flex;height:44px;border-radius:12px;overflow:hidden;margin-top:14px;font-size:13.5px;font-weight:800;color:#fff}
+#view-news .edem{background:#2563eb;display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden}
+#view-news .erep{background:#dc2626;display:flex;align-items:center;justify-content:flex-end;padding:0 12px;white-space:nowrap;overflow:hidden}
+#view-news .eparty-lab{display:flex;justify-content:space-between;font-size:12px;color:var(--soft);margin:6px 2px 4px}
+#view-news .erow{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;padding:9px 2px;border-bottom:1px solid var(--border)}
+#view-news .erow:last-of-type{border-bottom:0}
+#view-news .erank{font-weight:800;color:var(--soft);text-align:center}
+#view-news .ename{display:block;font-size:15px;font-weight:650}
+#view-news .ebar{display:block;height:6px;border-radius:99px;background:rgba(127,160,175,.25);margin-top:5px;overflow:hidden}
+#view-news .ebar i{display:block;height:100%;background:#b42318;border-radius:99px}
+#view-news .epct{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums}
+#view-news .esrc{font-size:12px;color:var(--soft);line-height:1.55;margin:12px 0 0}
+#view-news .esrc a{color:var(--link)}
+#view-news .ntool{display:block;border:1.5px solid var(--border);border-radius:18px;padding:16px 18px;margin-top:14px;color:var(--ink);text-decoration:none;background:rgba(255,255,255,.35)}
+#view-news .ntool b{display:block;font-size:16.5px;margin-bottom:3px}
+#view-news .ntool span{font-size:13.5px;color:var(--soft);line-height:1.5}
+</style>
+  <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
+  <section class="ncard" aria-label="Weather stories">
+    <span class="nkick">News · Weather</span><h2>🌦️ Weather Stories</h2>
+    <p class="lstatus" id="newsWxStatus">Loading weather stories…</p>
+    <div class="lnews" id="newsWxList"></div>
+  </section>
+  <section class="ncard" aria-label="Sports stories about your teams">
+    <span class="nkick">News · Sports</span><h2>🏟️ Your Teams</h2>
+    <p class="lstatus" id="newsSportsStatus">Loading sports stories…</p>
+    <div class="lnews" id="newsSportsList"></div>
+  </section>
+  <section class="ncard" aria-label="Politics headlines">
+    <span class="nkick">News · Politics</span><h2>🗳️ Politics Headlines</h2>
+    <p class="lstatus" id="newsPolStatus">Loading politics headlines…</p>
+    <div class="lnews" id="newsPolList"></div>
+  </section>
+  <section class="ncard" aria-label="2028 election outlook">
+    <span class="nkick">Politics · Election 2028</span><h2>🇺🇸 2028 Election Outlook</h2>
+    <div id="electionOutlook"><p class="lstatus">Loading the live 2028 outlook…</p></div>
+  </section>
+  <section class="ncard" aria-label="Electoral map and alignment tools">
+    <span class="nkick">Politics · Tools</span><h2>🗺️ Map &amp; Your Alignment</h2>
+    <a class="ntool" href="https://www.270towin.com/" target="_blank" rel="noopener"><b>270toWin →</b><span>The 2028 electoral outlook — build your own map to 270 electoral votes.</span></a>
+    <a class="ntool" href="https://www.isidewith.com/" target="_blank" rel="noopener"><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates.</span></a>
+  </section>
 </main>
 <!-- SPORTS -->
 <script>
@@ -876,14 +941,14 @@ body.on-christmas{color-scheme:light}
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News · Cicero, NY · Weather data by Open-Meteo</footer>
 <script>
 (function(){
-  var views={home:1,weather:1,sports:1,faith:1,christmas:1};
-  var tabOrder=['home','weather','sports','faith','christmas'];
+  var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
+  var tabOrder=['home','weather','news','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
   try{reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
   // ---- iOS-style pager -------------------------------------------------
-  // All five pages sit side-by-side on one horizontal track inside a
+  // All six pages sit side-by-side on one horizontal track inside a
   // clipped viewport. A horizontal drag moves the track with the finger
   // 1:1 (no waiting for the finger to lift), with rubber-banding past the
   // first/last page, and on release the track springs to the target page
@@ -2069,7 +2134,7 @@ body.on-christmas{color-scheme:light}
      for both teams — it is never shown twice, and neither team gets a
      second game from that section. */
   function relevant(all,windowDays,cap,favIds){
-    var tk=todayKey(),yk=ydayKey();
+    var tk=todayKey();
     function favIn(g){
       if(!favIds)return [];
       return g.teams.filter(function(t){return favIds[t.id];}).map(function(t){return t.id;});
@@ -2083,9 +2148,20 @@ body.on-christmas{color-scheme:light}
     var live=all.filter(function(g){return g.state==='in';}).sort(byDate);
     var today=all.filter(function(g){return g.state!=='in'&&etKey(g.date)===tk;}).sort(byDate);
     var upcoming=all.filter(function(g){var da=daysAway(etKey(g.date));return g.state==='pre'&&da>=1&&da<=windowDays;}).sort(byDate);
-    var yfin=all.filter(function(g){return g.state==='post'&&etKey(g.date)===yk;}).sort(byDate);
+    /* A final counts while it is under 24 hours old, judged from when
+       the game ENDED — ESPN reports the start time, so the end is the
+       start plus a typical game length (~3h). A late-night final (e.g.
+       Suns, ended ~11 PM) stays up all the next day instead of
+       vanishing at midnight, and it outranks a game days away. */
+    function recentFinal(g){
+      if(g.state!=='post')return false;
+      var start=new Date(g.date).getTime();if(isNaN(start))return false;
+      var age=Date.now()-(start+3*3600000);
+      return age>=-3600000&&age<24*3600000;
+    }
+    var recent=all.filter(recentFinal).sort(byDate);
     var pick=[],seen={},covered={};
-    [live,today,upcoming,yfin].forEach(function(list){list.forEach(function(g){
+    [live,today,recent,upcoming].forEach(function(list){list.forEach(function(g){
       if(pick.length>=cap||!g.id||seen[g.id])return;
       var fav=favIn(g);
       /* Skip if any followed team in this game already has its one game. */
@@ -2165,7 +2241,8 @@ body.on-christmas{color-scheme:light}
 </script>
 <script>
 /* Sports TODAY widget — Sports tab ONLY (Home widget rules unchanged).
-   Today only (Eastern), favorite teams only: Yankees (in season),
+   Today (Eastern) plus any final that ended less than 24 hours ago,
+   favorite teams only: Yankees (in season),
    Lakers, Suns, Jaguars, Patriots, Saints, Eagles.
    A live game becomes a live scoreboard row — score, period/quarter and
    clock, LIVE badge — refreshing every 60 seconds. A Suns game today is
@@ -2212,45 +2289,66 @@ body.on-christmas{color-scheme:light}
     var html;
     if(g.link)html='<a class="agame" href="'+esc(g.link)+'" target="_blank" rel="noopener">'+inner+'</a>';
     else html='<div class="agame">'+inner+'</div>';
-    if(featured)return '<div class="stoday-featured"><p class="stoday-tag">⭐ Featured — Suns today</p>'+html+'</div>';
+    if(featured)return '<div class="stoday-featured"><p class="stoday-tag">⭐ Featured — Suns '+(g.state==='post'?'final':'today')+'</p>'+html+'</div>';
     return html;
   }
   function isSuns(g){return g.league==='nba'&&g.teams.some(function(t){return t.id==='21';});}
+  function ydayKey(){var t=new Date();t.setDate(t.getDate()-1);return dayFmt.format(t);}
+  /* A final stays listed while it is under 24 hours old, judged from
+     when the game ENDED: ESPN reports the start time, so the end is
+     estimated as start + a typical game length for the league. A game
+     that ended around 11 PM therefore stays visible all the next day. */
+  var DUR_H={nba:2.5,nfl:3.25,mlb:3};
+  function recentFinal(g){
+    if(g.state!=='post')return false;
+    var start=new Date(g.date).getTime();if(isNaN(start))return false;
+    var age=Date.now()-(start+(DUR_H[g.league]||3)*3600000);
+    return age>=-3600000&&age<24*3600000;
+  }
   var loading=false;
   function loadToday(){
     if(loading)return;loading=true;
-    var tk=todayKey(),dp=tk.replace(/-/g,'');
+    var tk=todayKey(),dp=tk.replace(/-/g,''),yp=ydayKey().replace(/-/g,'');
     var dEl=document.getElementById('sportsTodayDate');
     if(dEl)dEl.textContent=new Date().toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'});
     var urls=[
       ['nba','https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates='+dp],
+      ['nba','https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates='+yp],
       ['nfl','https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard'],
-      ['mlb','https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates='+dp]
+      ['nfl','https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates='+yp],
+      ['mlb','https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates='+dp],
+      ['mlb','https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates='+yp]
     ];
     var kP=(window.__kalshiLoad?window.__kalshiLoad():Promise.resolve(null)).then(function(){return{league:'kalshi',d:null};}).catch(function(){return{league:'kalshi',d:null};});
     Promise.all(urls.map(function(p){return fetchJSON(p[1]).then(function(d){return{league:p[0],d:d};}).catch(function(){return{league:p[0],d:null};});}).concat([kP])).then(function(res){
       loading=false;
       var st=document.getElementById('sportsTodayStatus'),fBox=document.getElementById('sportsTodayFeatured'),box=document.getElementById('sportsTodayGames');
       if(!box)return;
-      if(res.every(function(r){return !r.d;})){if(st)st.textContent='Couldn\u2019t load today\u2019s games right now — open a sport below for live scores.';return;}
+      if(res.every(function(r){return !r.d;})){if(st)st.textContent='Couldn’t load today’s games right now — open a sport below for live scores.';return;}
       var seen={},all=[];
       res.forEach(function(r){((r.d&&r.d.events)||[]).forEach(function(ev){
         var g=norm(ev,r.league);if(!g||!g.id)return;
-        if(etKey(g.date)!==tk)return; /* today only */
+        var isToday=etKey(g.date)===tk;
+        if(!isToday&&!recentFinal(g))return; /* today, or a final under 24h old */
         var fav=FAVS[g.league];
         if(fav&&!g.teams.some(function(t){return fav[t.id];}))return;
         var k=g.league+':'+g.id;if(seen[k])return;seen[k]=1;all.push(g);
       });});
+      function rank(g){
+        if(g.state==='in')return 0;
+        if(etKey(g.date)===tk)return 1;
+        return 2; /* recent final from last night */
+      }
       all.sort(function(a,b){
-        var sa=a.state==='in'?0:1,sb=b.state==='in'?0:1;if(sa!==sb)return sa-sb;
+        var ra=rank(a),rb=rank(b);if(ra!==rb)return ra-rb;
         return new Date(a.date)-new Date(b.date);
       });
-      var suns=all.filter(isSuns)[0]||null;
+      var suns=all.filter(function(g){return isSuns(g)&&etKey(g.date)===tk;})[0]||all.filter(isSuns)[0]||null;
       var rest=all.filter(function(g){return g!==suns;});
       if(fBox)fBox.innerHTML=suns?row(suns,true):'';
       box.innerHTML=rest.map(function(g){return row(g,false);}).join('');
       if(st)st.textContent=all.length?'':'No games today.';
-    }).catch(function(){loading=false;var st=document.getElementById('sportsTodayStatus');if(st)st.textContent='Couldn\u2019t load today\u2019s games right now — open a sport below for live scores.';});
+    }).catch(function(){loading=false;var st=document.getElementById('sportsTodayStatus');if(st)st.textContent='Couldn’t load today’s games right now — open a sport below for live scores.';});
   }
   loadToday();
   setInterval(loadToday,60000);
@@ -2276,6 +2374,203 @@ body.on-christmas{color-scheme:light}
   }
   document.querySelectorAll('[data-go="christmas"]').forEach(function(el){el.addEventListener('click',kick);});
   if(document.body.classList.contains('on-christmas'))kick();
+})();
+</script>
+
+<script>
+/* News tab — relevant stories only (weather, followed teams, politics),
+   plus the live Polymarket 2028 outlook. Every number and headline comes
+   from a live response in the visitor's browser; on failure each section
+   shows an honest line instead of invented content. Filler (how-to-watch,
+   streaming guides, listicles, horoscopes, deals, gossip) and violent /
+   bad news are filtered out. */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+  var FILLER=[/how to watch/i,/where to watch/i,/live stream/i,/streaming guide/i,/what channel/i,/start time/i,/tv channel/i,/odds:/i,/best bets/i,/betting/i,/fantasy/i,/draftkings/i,/fanduel/i,/horoscope/i,/astrology/i,/zodiac/i,/\bquiz\b/i,/recipe/i,/\bdeals?\b/i,/% off/i,/gift guide/i,/shopping/i,/celebrity/i,/kardashian/i,/the bachelor/i,/spoilers/i,/power rankings/i,/ranked:/i,/every .* ranked/i,/look:/i];
+  var BAD=[/murder/i,/shooting/i,/shot (dead|and)/i,/stabbing/i,/\bkilled\b/i,/\bkilling\b/i,/massacre/i,/hostage/i,/bombing/i,/terrorist/i,/suicide/i,/overdose/i,/\brape\b/i,/child abuse/i,/deadly (crash|fire)/i,/\bfatal\b/i,/death toll/i,/war crimes/i,/executed/i,/ Amber Alert/i];
+  function okStory(title,desc){
+    var t=String(title||'')+' '+String(desc||'');
+    for(var i=0;i<FILLER.length;i++)if(FILLER[i].test(t))return false;
+    for(var j=0;j<BAD.length;j++)if(BAD[j].test(t))return false;
+    return true;
+  }
+  function ago(iso){
+    var d=new Date(iso);if(isNaN(d))return'';
+    var mins=Math.max(1,Math.round((Date.now()-d.getTime())/60000));
+    if(mins<60)return mins+'m ago';
+    var hrs=Math.round(mins/60);if(hrs<24)return hrs+'h ago';
+    return Math.round(hrs/24)+'d ago';
+  }
+  function row(title,source,when,url){
+    if(!url)return'';
+    return '<a class="lnews-item" href="'+esc(url)+'" target="_blank" rel="noopener"><span class="lnews-t">'+esc(title)+'</span><span class="lnews-m">'+esc(source)+(when?' · '+esc(when):'')+'</span></a>';
+  }
+  function render(listId,statusId,rows,emptyText,errText){
+    var st=document.getElementById(statusId),box=document.getElementById(listId);
+    if(!box)return;
+    if(rows==null){if(st)st.textContent=errText;return;}
+    if(st)st.textContent=rows.length?'':emptyText;
+    box.innerHTML=rows.join('');
+  }
+  function rssItems(query){
+    var feed='https://news.google.com/rss/search?q='+encodeURIComponent(query)+'&hl=en-US&gl=US&ceid=US:en';
+    return fetchJSON('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed)).then(function(d){
+      if(!d||d.status!=='ok')throw new Error('rss');
+      return d.items||[];
+    });
+  }
+  function splitTitle(t){
+    var i=String(t||'').lastIndexOf(' - ');
+    if(i>12)return{title:t.slice(0,i),source:t.slice(i+3)};
+    return{title:String(t||''),source:'Google News'};
+  }
+  function rssSection(query,listId,statusId,cap,emptyText,errText){
+    rssItems(query).then(function(items){
+      var seen={},out=[];
+      items.forEach(function(it){
+        if(out.length>=cap)return;
+        var s=splitTitle(it.title);
+        if(!s.title||seen[s.title])return;
+        if(!okStory(s.title,it.description))return;
+        seen[s.title]=1;
+        out.push(row(s.title,s.source,ago(it.pubDate),it.link));
+      });
+      render(listId,statusId,out,emptyText,errText);
+    }).catch(function(){render(listId,statusId,null,emptyText,errText);});
+  }
+  rssSection('weather storm forecast New York','newsWxList','newsWxStatus',4,'No weather stories right now.','Couldn\u2019t load weather stories right now.');
+  rssSection('2028 presidential election','newsPolList','newsPolStatus',4,'No politics headlines right now.','Couldn\u2019t load politics headlines right now.');
+  /* Sports stories: ESPN league news, kept only when the headline or
+     summary is about a followed team (Yankees, Lakers, Suns, Jaguars,
+     Patriots, Saints, Eagles). */
+  var TEAM_RE=/yankees|lakers|\bsuns\b|jaguars|patriots|\bsaints\b|\beagles\b/i;
+  var newsUrls=[
+    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=20',
+    'https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=20',
+    'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/news?limit=12'
+  ];
+  Promise.all(newsUrls.map(function(u){return fetchJSON(u).catch(function(){return null;});})).then(function(res){
+    if(res.every(function(d){return !d;})){render('newsSportsList','newsSportsStatus',null,'','Couldn\u2019t load sports stories right now.');return;}
+    var seen={},arts=[];
+    res.forEach(function(d){
+      ((d&&d.articles)||[]).forEach(function(a){
+        var title=a.headline||'';
+        if(!title||seen[title])return;
+        if(!TEAM_RE.test(title+' '+(a.description||'')))return;
+        if(!okStory(title,a.description))return;
+        var link=(a.links&&a.links.web&&a.links.web.href)||'';
+        if(!link)return;
+        seen[title]=1;
+        arts.push({title:title,when:ago(a.published),ts:new Date(a.published).getTime()||0,link:link});
+      });
+    });
+    arts.sort(function(a,b){return b.ts-a.ts;});
+    render('newsSportsList','newsSportsStatus',arts.slice(0,5).map(function(a){return row(a.title,'ESPN',a.when,a.link);}),'No stories about your teams right now.','Couldn\u2019t load sports stories right now.');
+  });
+  /* 2028 outlook: live from Polymarket's public Gamma API (CORS *).
+     Numbers render only from the live response. */
+  var ebox=document.getElementById('electionOutlook');
+  function topOutcomes(ev,limit){
+    var byName={};
+    ((ev&&ev.markets)||[]).forEach(function(m){
+      if(!m||m.active===false||m.closed)return;
+      var name=m.groupItemTitle||'';
+      if(!name||/^Person [A-Z]+$/.test(name)||/^Party [A-Z]$/.test(name))return;
+      var prices=null;
+      try{prices=JSON.parse(m.outcomePrices||'null');}catch(e){}
+      if(!prices||prices[0]==null)return;
+      var pct=parseFloat(prices[0])*100;
+      if(isNaN(pct))return;
+      var vol=parseFloat(m.volume)||0;
+      if(!byName[name]||vol>byName[name].vol)byName[name]={name:name,pct:pct,vol:vol};
+    });
+    return Object.keys(byName).map(function(k){return byName[k];}).sort(function(a,b){return b.pct-a.pct;}).slice(0,limit);
+  }
+  function gevent(slug){
+    return fetch('https://gamma-api.polymarket.com/events?slug='+slug).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d[0])||null;});
+  }
+  if(ebox){
+    Promise.all([gevent('presidential-election-winner-2028'),gevent('which-party-wins-2028-us-presidential-election')]).then(function(evs){
+      var top=topOutcomes(evs[0],6);
+      if(!top.length)throw new Error('empty');
+      var party={};
+      topOutcomes(evs[1],10).forEach(function(o){party[o.name]=o.pct;});
+      var html='';
+      if(party['Democratic']!=null&&party['Republican']!=null){
+        var dp=Math.round(party['Democratic']),rp=Math.round(party['Republican']);
+        html+='<div class="eparty" role="img" aria-label="Party to win 2028: Democratic '+dp+' percent, Republican '+rp+' percent"><div class="edem" style="width:'+party['Democratic']+'%">Democratic '+dp+'%</div><div class="erep" style="width:'+party['Republican']+'%">Republican '+rp+'%</div></div><p class="eparty-lab"><span>Chance by party</span><span>Live · Polymarket</span></p>';
+      }
+      html+=top.map(function(o,i){
+        var pct=o.pct>=10?Math.round(o.pct):Math.round(o.pct*10)/10;
+        return '<div class="erow"><span class="erank">'+(i+1)+'</span><span><span class="ename">'+esc(o.name)+'</span><span class="ebar"><i style="width:'+Math.min(100,o.pct)+'%"></i></span></span><span class="epct">'+pct+'%</span></div>';
+      }).join('');
+      html+='<p class="esrc">Market-implied chance of winning the presidency — market odds, not a poll. Source: <a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank" rel="noopener">Polymarket</a> · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET · Prices move constantly.</p>';
+      ebox.innerHTML=html;
+    }).catch(function(){
+      ebox.innerHTML='<p class="lstatus">The live outlook couldn\u2019t load right now — see the current standings on <a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank" rel="noopener">Polymarket</a>.</p>';
+    });
+  }
+})();
+</script>
+
+<script>
+/* 60-minute precipitation outlook — Home widget + Weather tab.
+   Live Open-Meteo minutely_15 nowcast for Cicero, NY. Says what is
+   expected in the next 60 minutes (type, intensity, start/stop) from
+   the live data only; if the data cannot load it shows a dash. */
+(function(){
+  var home=document.getElementById('homePrecip60'),wx=document.getElementById('wxPrecip60');
+  if(!home&&!wx)return;
+  function setAll(t){if(home)home.textContent=t;if(wx)wx.textContent=t;}
+  function etNowStr(){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+      var m={};parts.forEach(function(p){m[p.type]=p.value;});
+      return m.year+'-'+m.month+'-'+m.day+'T'+m.hour+':'+m.minute;
+    }catch(e){return '';}
+  }
+  var url='https://api.open-meteo.com/v1/forecast?latitude=43.1713&longitude=-76.1250&minutely_15=precipitation,rain,snowfall,weather_code&timezone=America%2FNew_York&forecast_days=2';
+  fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+    var m15=(d&&d.minutely_15)||null;
+    if(!m15||!m15.time||!m15.precipitation)throw new Error('nodata');
+    var now=etNowStr(),start=-1,i;
+    for(i=0;i<m15.time.length;i++){if(m15.time[i]<=now)start=i;else break;}
+    if(start<0)start=0;
+    var idx=[];
+    for(i=0;i<4;i++){if(start+i<m15.time.length)idx.push(start+i);}
+    if(!idx.length)throw new Error('nodata');
+    function amt(x){var v=m15.precipitation[x];return v==null?0:v;}
+    function kind(x){
+      var r=m15.rain?m15.rain[x]||0:0,s=m15.snowfall?m15.snowfall[x]||0:0;
+      if(s>0&&r>0)return 'Rain & snow';
+      if(s>0)return 'Snow';
+      if(r>0)return 'Rain';
+      var c=m15.weather_code?m15.weather_code[x]:0;
+      if((c>=71&&c<=77)||c===85||c===86)return 'Snow';
+      if((c>=51&&c<=67)||(c>=80&&c<=82)||c>=95)return 'Rain';
+      return 'Precipitation';
+    }
+    function intens(x){
+      var rate=amt(x)*4;
+      if(rate<0.5)return 'very light';
+      if(rate<2.5)return 'light';
+      if(rate<7.6)return 'moderate';
+      return 'heavy';
+    }
+    var wet=idx.map(function(x){return amt(x)>0;});
+    if(!wet.some(function(w){return w;})){setAll('No precipitation expected in the next hour');return;}
+    var firstWet=wet.indexOf(true);
+    var label=kind(idx[firstWet]),inten=intens(idx[firstWet]),msg;
+    if(wet[0]){
+      var stopAt=-1;
+      for(i=1;i<wet.length;i++){if(!wet[i]){stopAt=i;break;}}
+      msg=label+' now ('+inten+')'+(stopAt>0?' — stopping in about '+(stopAt*15)+' min':' — continuing through the next hour');
+    }else{
+      msg=label+' starting in about '+(firstWet*15)+' min ('+inten+')';
+    }
+    setAll('Next 60 min: '+msg);
+  }).catch(function(){setAll('Next 60 min: —');});
 })();
 </script>
 
@@ -2311,6 +2606,50 @@ body.on-christmas{color-scheme:light}
   function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
   function dismissed(){try{return JSON.parse(sessionStorage.getItem('dn-severe-dismissed')||'[]');}catch(e){return[];}}
   function keyFor(f){var p=f.properties||{};return String(f.id||((p.event||'')+'|'+(p.onset||p.effective||'')+'|'+(p.expires||p.ends||'')));}
+  var PREP = {
+    'winter storm warning':'Stay off the roads if you can. Charge phones, keep flashlights and blankets handy, check on neighbors, and have food and water for a day in case the power goes out.',
+    'blizzard warning':'Stay indoors and off the roads — travel can be impossible. Charge phones, keep flashlights and blankets handy, and check on neighbors when it is safe.',
+    'ice storm warning':'Stay off roads and sidewalks if you can — ice brings down trees and power lines. Charge phones, keep flashlights handy, never touch a downed line, and be ready for power outages.',
+    'lake effect snow warning':'Be ready for conditions to change fast — heavy bands can drop visibility to near zero. Slow down or stay off the roads, charge phones, and keep an eye on the latest alerts.',
+    'high wind warning':'Bring in or secure anything outside that can blow away, stay away from windows during the strongest gusts, never touch downed power lines, and be ready for power outages.',
+    'flash flood warning':'Never drive or walk through flooded roads — turn around. Move to higher ground if water is rising, and keep phones charged for alerts.',
+    'severe thunderstorm warning':'Go indoors and stay away from windows until the storm passes. Bring in or secure loose outdoor items, charge phones, and be ready for power outages.',
+    'tornado warning':'Take shelter now in the lowest level of a sturdy building, in a small interior room away from windows. Protect your head, keep a phone charged for updates, and do not go outside or drive through the storm.'
+  };
+  /* "What this storm is expected to bring": sentences pulled from the
+     live NWS headline/description that state amounts or hazards (snow,
+     inches, wind/gusts, ice, rain, flooding). Nothing is invented — if
+     the alert states no amounts, the headline itself is shown. */
+  function cleanSent(s){
+    s=String(s||'').replace(/\s+/g,' ').trim();
+    s=s.replace(/^\.*\s*/,'').replace(/^(WHAT|WHERE|WHEN|IMPACTS?|ADDITIONAL DETAILS|PRECAUTIONARY\/PREPAREDNESS ACTIONS)\b\s*\.*\s*/i,'');
+    return s;
+  }
+  function extractBring(p){
+    var text=((p.headline||'')+' '+(p.description||'')).replace(/\*/g,' ');
+    var raw=text.match(/[^.!?]+[.!?]+/g)||[];
+    var keys=/(snow|inch|accumulation|wind|gust|ice|icing|rain|flood|hail|tornado|visibilit|blizzard|power outage|storm total|feet|water)/i;
+    var out=[],seen={};
+    raw.forEach(function(s){
+      if(out.length>=4)return;
+      var c=cleanSent(s);
+      if(c.length<12||c.length>260)return;
+      if(!keys.test(c))return;
+      var k=c.toLowerCase();
+      if(seen[k])return;seen[k]=1;
+      out.push(c);
+    });
+    return out;
+  }
+  function bringHtml(p){
+    var items=extractBring(p);
+    if(!items.length){
+      var fb=cleanSent(p.headline||'');
+      if(fb)return '<p>'+esc(fb)+'</p>';
+      return '<p>The National Weather Service alert does not list specific amounts — see the full alert on weather.gov.</p>';
+    }
+    return '<ul class="sev-list">'+items.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>';
+  }
   var shownKeys=[];
   function close(){
     overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');
@@ -2318,6 +2657,34 @@ body.on-christmas{color-scheme:light}
     try{var d=dismissed();shownKeys.forEach(function(k){if(d.indexOf(k)<0)d.push(k);});sessionStorage.setItem('dn-severe-dismissed',JSON.stringify(d));}catch(e){}
   }
   document.getElementById('severeClose').addEventListener('click',close);
+  /* TEST MODE — only when the URL has ?test=tornado. Shows a clearly
+     labeled TEST tornado warning so the takeover can be previewed. It
+     never appears on a normal visit and is never a live NWS alert. */
+  var isTestTornado=false;
+  try{isTestTornado=new URLSearchParams(location.search).get('test')==='tornado';}catch(e){}
+  if(isTestTornado){
+    shownKeys=['TEST-TORNADO-WARNING'];
+    var kick=overlay.querySelector('.sev-kicker');
+    if(kick)kick.textContent='🧪 TEST — NOT A REAL ALERT — TEST';
+    titleEl.textContent='TEST Tornado Warning — Cicero, NY';
+    var tStart=new Date(),tEnd=new Date(Date.now()+60*60000),thtml='';
+    thtml+='<p class="sev-when">'+esc(fmtT(tStart.toISOString()))+' → '+esc(fmtT(tEnd.toISOString()))+'</p>';
+    thtml+='<p><strong>TEST: A radar-indicated tornado warning is in effect for Cicero, NY. This is only a test of the emergency pop-up.</strong></p>';
+    thtml+='<h3>What it means</h3>';
+    thtml+='<p>'+esc(MEANING['tornado warning'])+'</p>';
+    thtml+='<h3>What this storm is expected to bring</h3>';
+    thtml+='<ul class="sev-list"><li>Hail up to 0.5 inch</li><li>Damaging winds up to 60 mph</li><li>A radar-indicated tornado — a tornado may form or already be occurring</li></ul>';
+    thtml+='<h3>How to prepare</h3>';
+    thtml+='<p class="sev-do">Take shelter indoors now — go to the lowest level of a sturdy building, in a small interior room (basement, bathroom, or closet) away from windows. Protect your head, keep your phone charged for updates, and do not go outside or try to drive through the storm.</p>';
+    thtml+='<p>Area: Cicero, NY · Source: TEST — not a live National Weather Service alert</p>';
+    thtml+='<button class="severe-close2" id="severeClose2" type="button">Close warning &times;</button>';
+    bodyEl.innerHTML=thtml;
+    var tb2=document.getElementById('severeClose2');if(tb2)tb2.addEventListener('click',close);
+    overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+    document.body.classList.add('severe-locked');
+    var tx=document.getElementById('severeClose');if(tx)tx.focus();
+    return;
+  }
   fetch('https://api.weather.gov/alerts/active?point=43.1713,-76.1250',{headers:{'Accept':'application/geo+json'}})
     .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
     .then(function(d){
@@ -2340,9 +2707,11 @@ body.on-christmas{color-scheme:light}
         if(start||end) html+='<p class="sev-when">'+(start?esc(start):'')+((start&&end)?' &rarr; ':'Until ')+esc(end)+'</p>';
         if(p.headline) html+='<p><strong>'+esc(p.headline)+'</strong></p>';
         html+='<h3>What it means</h3>';
-        html+='<p>'+esc(p.description||MEANING[evKey]||'A severe weather alert is in effect for Cicero, NY.')+'</p>';
-        html+='<h3>What to do</h3>';
-        html+='<p class="sev-do">'+esc(p.instruction||FALLBACK_DO)+'</p>';
+        html+='<p>'+esc(MEANING[evKey]||'A severe weather alert is in effect for Cicero, NY.')+'</p>';
+        html+='<h3>What this storm is expected to bring</h3>';
+        html+=bringHtml(p);
+        html+='<h3>How to prepare</h3>';
+        html+='<p class="sev-do">'+esc(p.instruction||PREP[evKey]||FALLBACK_DO)+'</p>';
         if(p.areaDesc) html+='<p>Area: '+esc(p.areaDesc)+' &middot; Source: National Weather Service</p>';
       });
       html+='<button class="severe-close2" id="severeClose2" type="button">Close warning &times;</button>';
