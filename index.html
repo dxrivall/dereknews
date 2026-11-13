@@ -880,7 +880,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <div class="snowday-text"><div class="snowday-label" id="snowDayLabel">Snow Day Chance</div><p class="snowday-line" id="snowDayLine">Checking the live forecast&hellip;</p>
     <p class="snowday-delay" id="snowDayDelay"></p>
   </div></section>
-  <h3 class="wxsec">⚡ Power Outages — Cicero &amp; New York</h3>
+  <!-- Power Outages: Cicero-exclusive (see the script below the widget).
+       The outage feed is NY-only (Onondaga County / New York State via
+       outages.json, refreshed by a GitHub Action), so the heading and
+       widget are hidden completely — no placeholder — whenever the
+       visitor's weather location is not Cicero. -->
+  <h3 class="wxsec" id="outageHeading">⚡ Power Outages — Cicero &amp; New York</h3>
   <section class="outage" id="outageWidget" aria-label="Power outages for Onondaga County and New York">
     <p class="outage-status" id="outageStatus">Loading live outage data…</p>
     <div id="outageBody"></div>
@@ -889,6 +894,26 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   </section>
 <script>
   (function(){
+    /* Cicero-exclusive: this widget's data is Onondaga County / New
+       York State only (outages.json is NY-only, refreshed by a GitHub
+       Action — there is no outage feed for other searched locations).
+       When the visitor's location is not Cicero — they used "Use my
+       location" elsewhere or typed another city/ZIP — hide the heading
+       and widget entirely (no wrong-location data, no empty placeholder)
+       and skip the fetch. Cicero mode = the default location (no saved
+       place), or a saved place at Cicero's coordinates (e.g. they typed
+       Cicero or their GPS fix is actually in Cicero) — the same 0.08°
+       near-Cicero check the location controls at the end of the page
+       use. Every location change reloads the page, so this is decided
+       fresh on every load. */
+    var loc=(window.__dnLoc?window.__dnLoc.get():null);
+    var nearCicero=!!loc&&Math.abs((+loc.lat||0)-43.1713)<0.08&&Math.abs((+loc.lon||0)+76.1250)<0.08;
+    var isCicero=!loc||!loc.live||nearCicero;
+    if(!isCicero){
+      var oh=document.getElementById('outageHeading');if(oh){oh.hidden=true;oh.style.display='none';}
+      var ow=document.getElementById('outageWidget');if(ow){ow.hidden=true;ow.style.display='none';}
+      return;
+    }
     var statusEl=document.getElementById('outageStatus'),bodyEl=document.getElementById('outageBody');
     if(!statusEl||!bodyEl)return;
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
