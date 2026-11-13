@@ -6,6 +6,36 @@
 <title>Derek News</title>
 <meta name="description" content="Derek News — live weather for Cicero, NY, sports, faith, and Christmas.">
 <link rel="icon" href="data:,">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a1a3f">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Derek News">
+<!-- Push notifications (OneSignal). Derek: paste your real OneSignal App ID
+     below where it says YOUR-ONESIGNAL-APP-ID, then upload this file plus
+     OneSignalSDKWorker.js and OneSignalSDKUpdaterWorker.js to the repo root.
+     Until a real App ID is pasted in, the SDK stays off and nothing prompts.
+     Once live, visitors get OneSignal's standard slide-down prompt, once,
+     dismissible — it never blocks the site. Send notifications to all
+     subscribers from the OneSignal dashboard/app. -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+window.OneSignalDeferred=window.OneSignalDeferred||[];
+(function(){
+  var ONESIGNAL_APP_ID="YOUR-ONESIGNAL-APP-ID"; /* <-- paste the real OneSignal App ID here */
+  if(ONESIGNAL_APP_ID==="YOUR-ONESIGNAL-APP-ID")return;
+  window.OneSignalDeferred.push(async function(OneSignal){
+    await OneSignal.init({
+      appId:ONESIGNAL_APP_ID,
+      serviceWorkerPath:"OneSignalSDKWorker.js",
+      notifyButton:{enable:false},
+      promptOptions:{slidedown:{prompts:[{type:"push",autoPrompt:true,delay:{pageViews:2,timeDelay:15}}]}}
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -353,7 +383,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
   <div class="current"><div><div class="temp" id="wxTemp">—°</div><div class="desc"><span id="wxIcon" aria-hidden="true">🌡️</span> <span id="wxDesc">Loading live weather…</span></div><div class="hl" id="wxHL"></div><div class="meta" id="wxMeta"></div></div></div>
   <div class="wxerr" id="wxError">Live weather could not load. Check your connection and reload — no old forecast is shown in its place.</div>
-  <p style="text-align:center;margin:14px 0 0"><button id="dnTestPopBtn" type="button" onclick="if(window.__dnShowTest)window.__dnShowTest();" style="background:rgba(8,20,28,.55);color:#fff;border:1.5px solid rgba(255,255,255,.85);border-radius:999px;padding:11px 18px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;min-height:46px">🧪 Test the emergency pop-up</button></p>
+  
   <p class="wx-precip60" id="wxPrecip60" aria-label="Precipitation in the next 60 minutes">Next 60 min: —</p>
   <h3 class="wx-herolabel">Next 24 hours</h3>
   <div class="wx-hero-hourly" id="wxHeroHourly" aria-label="Hourly forecast for the next 24 hours"><p style="margin:2px;font-size:14px;opacity:.9">Loading hourly…</p></div>
@@ -483,6 +513,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <a class="ntool" href="https://www.270towin.com/" target="_blank" rel="noopener"><b>270toWin →</b><span>The 2028 electoral outlook — build your own map to 270 electoral votes.</span></a>
     <a class="ntool" href="https://www.isidewith.com/" target="_blank" rel="noopener"><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates.</span></a>
   </section>
+  <section class="ncard" aria-label="Live power outage map for New York from poweroutage.us">
+    <span class="nkick">News · Power</span><h2>⚡ Power Outages — New York</h2>
+    <p class="lstatus">Live outage map for New York (Cicero is in Onondaga County) from poweroutage.us.</p>
+    <iframe title="Live power outage map for New York — poweroutage.us" src="https://poweroutage.us/area/state/new%20york?mod=article_inline" loading="lazy" style="display:block;width:100%;height:440px;border:1px solid var(--border);border-radius:16px;background:#fff"></iframe>
+    <a class="ntool" href="https://poweroutage.us/area/state/new%20york?mod=article_inline" target="_blank" rel="noopener"><b>Open the full map on poweroutage.us →</b><span>If the live map above doesn’t load, open it directly on poweroutage.us.</span></a>
+  </section>
 </main>
 <!-- SPORTS -->
 <script>
@@ -602,6 +638,40 @@ body.on-sports footer{color:#aebfe6!important}
 .bsim-pick{font-size:14px;margin-top:4px;color:#fff}
 .bsim-props{font-size:13.5px;line-height:1.55;margin-top:5px;color:#dbe6ff}
 .bsim-props b{color:#fff}
+.brk-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.brk-flex{display:flex;gap:10px;min-width:660px}
+.brk-col{flex:1 1 0;min-width:122px;display:flex;flex-direction:column;gap:8px}
+.brk-colh{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#8fa3cc;margin:0 0 2px;text-align:left}
+.brk-conflab{font-size:11px;font-weight:800;letter-spacing:.06em;color:#ffd34d;margin:4px 0 0;text-align:left}
+.brk-match{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:7px 8px}
+.brk-match.tbd{opacity:.55}
+.brk-trow{display:flex;align-items:center;gap:6px;padding:3px 0;font-size:13px;line-height:1.3;color:#aebfe6;text-align:left}
+.brk-trow.win{color:#fff;font-weight:700}
+.brk-trow img{width:24px;height:24px;max-width:24px;object-fit:contain;object-position:center;flex:none;margin:0;display:block;background:transparent;border:0}
+.brk-trow .tlogo-fb{width:24px;height:24px;font-size:8px;margin:0;flex:none}
+.brk-seed{color:#8fa3cc;font-size:11px;width:14px;flex:none;font-variant-numeric:tabular-nums}
+.brk-tname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brk-adv{margin-left:auto;color:#7ee2a8;font-weight:800;flex:none}
+.brk-bye2{background:rgba(255,211,77,.08);border:1px dashed rgba(255,211,77,.4);border-radius:12px;padding:7px 8px}
+.brk-champ{background:rgba(255,211,77,.12);border:1.5px solid rgba(255,211,77,.65);border-radius:14px;padding:10px 8px;text-align:center}
+.brk-champ .brk-trow{justify-content:center;font-size:14px}
+.brk-champ img{width:30px;height:30px;max-width:30px;object-fit:contain;flex:none;margin:0;display:block}
+.brk-champ .tlogo-fb{width:30px;height:30px;font-size:9px;margin:0}
+.brk-champlab{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#ffd34d;margin:0 0 4px}
+#nflBracket img{max-width:30px}
+.bsim-game2{border-top:1px solid rgba(255,255,255,.14);padding:11px 2px;text-align:left}
+.bsim-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.bsim-teams{font-size:15px;font-weight:650;color:#fff;line-height:1.35}
+.bsim-when{font-size:12px;color:#8fa3cc;white-space:nowrap}
+.bsim-mlrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.bsim-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:999px;padding:4px 10px;font-size:12.5px;color:#dbe6ff;font-variant-numeric:tabular-nums}
+.bsim-chip b{color:#fff}
+.bsim-chip.fav{border-color:rgba(126,226,168,.55);color:#7ee2a8}
+.bsim-props2{margin-top:7px;display:flex;flex-direction:column;gap:3px}
+.bsim-prop{font-size:13px;line-height:1.45;color:#dbe6ff;margin:0}
+.bsim-prop b{color:#fff}
+.bsim-prop .sim{color:#ffd34d;font-size:10.5px;font-weight:800;letter-spacing:.04em}
+.bsim-prop .avg{color:#8fa3cc;font-size:12px}
 .other-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:480px){.other-grid{grid-template-columns:1fr}}.other-grid a{display:block;padding:13px 14px;text-decoration:none;font-size:15px;line-height:1.35}#view-sports .team-btn{display:block;text-align:center;text-decoration:none;padding:15px 16px;margin-top:14px;font-size:16px;font-weight:600}#view-sports .back-btn{display:inline-block;font:inherit;font-size:15px;font-weight:600;padding:11px 18px;border-radius:999px;cursor:pointer;margin:28px 0 2px}
 @media(max-width:420px){.stable td.team{max-width:104px}.stable td,.stable th{padding-left:3px;padding-right:3px;font-size:15px}.agame{grid-template-columns:minmax(54px,1fr) 34px minmax(78px,auto) 34px minmax(54px,1fr)}.acenter .at{font-size:15px}}
 </style>
@@ -764,19 +834,19 @@ body.on-sports footer{color:#aebfe6!important}
   <h2>American Football Conference</h2>
   <p class="astatus" id="nflAfcStatus">Loading standings…</p>
   <div id="standingsAfc"></div>
-  <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI &middot; <span style="color:#ffd34d">★</span> = Jaguars, Patriots, Saints &amp; Eagles &middot; Dashed line = playoff cut after 7th</p>
+  <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI (fpi.json) &middot; <span style="color:#ffd34d">★</span> = Jaguars, Patriots, Saints &amp; Eagles &middot; Dashed line = playoff cut after 7th</p>
   </section>
   <section class="acard" aria-label="NFC standings">
   <h2>National Football Conference</h2>
   <p class="astatus" id="nflNfcStatus">Loading standings…</p>
   <div id="standingsNfc"></div>
-  <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI &middot; Dashed line = playoff cut after 7th</p>
+  <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI (fpi.json) &middot; Dashed line = playoff cut after 7th</p>
   </section>
   <section class="acard" aria-label="Projected playoff bracket">
   <h2>🏆 Projected Playoff Bracket</h2>
   <p class="astatus" id="nflBracketStatus">Loading projection&hellip;</p>
   <div id="nflBracket"></div>
-  <p class="asrc">Seeds: live ESPN standings &middot; Each round advanced by the higher ESPN FPI chance to reach that round &middot; Super Bowl winner: higher FPI chance to win the Super Bowl &middot; Rebuilt live from ESPN FPI on every visit &middot; <a href="https://www.nflplayoffscenario.com/bracket" target="_blank" rel="noopener" style="color:#9fc0ff;text-decoration:underline">Full live simulator &rarr;</a></p>
+  <p class="asrc">Seeds: ESPN standings &middot; Win chances: ESPN FPI (fpi.json) &middot; <a href="https://www.nflplayoffscenario.com/bracket" target="_blank" rel="noopener" style="color:#9fc0ff;text-decoration:underline">Full simulator &rarr;</a></p>
   </section>
   <section class="acard"><h2>🏈 Other NFL Teams</h2>
   <div class="other-grid">
@@ -912,10 +982,10 @@ body.on-sports footer{color:#aebfe6!important}
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
   <section class="acard" aria-label="Bet Simulator — simulated upcoming NBA, NFL and NHL games">
   <div class="ahead"><h2>🎲 Bet Simulator</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game, simulated from the live ESPN schedule and the live Kalshi moneyline %. This is a simulation only — it is not a guarantee of any result.</p>
+  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game — moneylines from DraftKings (via ESPN), plus simulated player props from live season stats. Simulation only — not a guarantee.</p>
   <p class="astatus" id="betSimStatus">Loading games&hellip;</p>
   <div id="betSimGames"></div>
-  <p class="asrc" id="betSimStamp">Games: ESPN &middot; Moneyline %: Kalshi (kalshi.json, refreshed every 5 minutes) &middot; A dash means Kalshi has no verified line for that team in that game &middot; Player props are shown only when a live ESPN game feed verifies the player, the stat and the line — otherwise they are not shown.</p>
+  <p class="asrc" id="betSimStamp">Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages</p>
   </section>
   </div>
 </main>
@@ -2081,88 +2151,40 @@ body.on-christmas{color-scheme:light}
     });
   }
 
-  /* ---- ESPN FPI (live in the visitor's browser): playoff % + the
-     round-by-round chances the projected bracket advances on.
-     Endpoint documented by SportsDataverse for ESPN's fitt v3 API:
-     site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex
-     (site.api.espn.com host tried as fallback). The payload zips
-     category labels to per-team totals; parsing is by label text, and
-     any value that cannot be read this way stays null -> the UI shows
-     a dash for that team, never a guessed number. ---- */
+  /* ---- ESPN FPI playoff chances: read from fpi.json, a same-origin
+     file refreshed SERVER-SIDE by the FPI GitHub Action (browsers cannot
+     reliably read the FPI endpoint, and the old label-based parser
+     misread it anyway). Fallback: fetch the FPI endpoint directly and
+     parse by category NAME (probmakeplayoffs etc.) — never by display
+     label. A team whose % cannot be read shows a dash, never a guess. ---- */
   var FPI_BY_ID={}, FPI_BY_ABBR={}, fpiOk=false;
-  function fpiPctNum(v){
-    if(v==null)return null;
-    if(typeof v==='string'){v=v.replace('%','').replace(',','').trim();if(v===''||v==='-'||v==='--')return null;v=parseFloat(v);}
-    if(typeof v!=='number'||isNaN(v))return null;
-    if(v>0&&v<1)v=v*100; /* 0-1 probability form */
-    if(v<0||v>100)return null;
-    return Math.round(v*10)/10;
-  }
-  function fpiClassify(raw){
-    var s0=String(raw||'').toLowerCase();
-    if(/bpi|fpi|rank|seed|talent|draft|trend/.test(s0))return null;
-    var c=s0.replace(/[^a-z0-9]+/g,'');
-    if(!c)return null;
-    if(c.indexOf('wintitle')>-1||c.indexOf('winsuperbowl')>-1||c.indexOf('winchampionship')>-1||c==='probwintitle')return 'winTitle';
-    if(c.indexOf('winsb')>-1&&c.indexOf('prob')===0)return 'winTitle';
-    if(c.indexOf('maketitle')>-1||c.indexOf('makesuper')>-1||c.indexOf('reachsuper')>-1||c.indexOf('titlegame')>-1)return 'makeSB';
-    if(c.indexOf('makeplayoff')>-1||c.indexOf('reachplayoff')>-1||c==='playoff'||c==='probmakeplayoffs')return 'playoff';
-    if(c.indexOf('winconf')>-1)return 'winConf';
-    if(c.indexOf('confchamp')>-1||c.indexOf('makeconf')>-1||c.indexOf('reachconf')>-1)return 'makeConf';
-    if(c.indexOf('confsemi')>-1||c.indexOf('divisional')>-1||c.indexOf('makediv')>-1)return 'makeDiv';
-    return null;
-  }
-  function parseFpi(d){
-    var byId={},byAbbr={};
-    if(!d||typeof d!=='object')return{byId:byId,byAbbr:byAbbr};
-    var gLabels=[];
-    (function collect(node,depth){
-      if(!node||depth>3)return;
-      if(Array.isArray(node)){node.forEach(function(n){collect(n,depth+1);});return;}
-      if(typeof node==='object'){
-        if(Array.isArray(node.labels))node.labels.forEach(function(l){if(typeof l==='string')gLabels.push(l);});
-        if(Array.isArray(node.categories))node.categories.forEach(function(c){collect(c,depth+1);});
-      }
-    })(d,0);
-    var teamsArr=d.teams||d.entries||d.teamList||[];
-    if(!Array.isArray(teamsArr))return{byId:byId,byAbbr:byAbbr};
-    teamsArr.forEach(function(e){
-      if(!e||typeof e!=='object')return;
-      var t=e.team||e;
-      var id=String((t&&t.id)||e.id||'');
-      var abbr=String((t&&(t.abbreviation||t.abbr))||e.abbreviation||'').toUpperCase();
-      var rec={};
-      function put(k,v){if(k&&rec[k]==null&&v!=null)rec[k]=v;}
-      function scanStats(list){
-        if(!Array.isArray(list))return;
-        list.forEach(function(st){
-          if(!st||typeof st!=='object')return;
-          var k=fpiClassify(st.name||st.label||st.displayName||st.shortDisplayName||'');
-          put(k,fpiPctNum(st.value!=null?st.value:(st.displayValue!=null?st.displayValue:st.total)));
-        });
-      }
-      scanStats(e.stats);scanStats(e.statistics);
-      var flatT=[],flatL=[];
-      (Array.isArray(e.categories)?e.categories:[]).forEach(function(cat){
-        if(!cat||typeof cat!=='object')return;
-        scanStats(cat.stats);scanStats(cat.statistics);
-        var labs=(Array.isArray(cat.labels)&&cat.labels.length)?cat.labels:(Array.isArray(cat.names)?cat.names:null);
-        var tots=cat.totals||cat.values;
-        if(Array.isArray(tots))tots.forEach(function(tv,ti){
-          flatT.push(tv);
-          flatL.push(labs&&labs[ti]!=null?String(labs[ti]):(gLabels[flatL.length]||''));
-        });
-      });
-      flatT.forEach(function(tv,ti){put(fpiClassify(flatL[ti]),fpiPctNum(tv));});
-      [e,t].forEach(function(src){
-        if(!src||typeof src!=='object')return;
-        Object.keys(src).forEach(function(key){put(fpiClassify(key),fpiPctNum(src[key]));});
-      });
+  function fpiNum(v){if(v==null)return null;var n=parseFloat(v);if(isNaN(n)||n<0||n>100)return null;return Math.round(n*10)/10;}
+  function fpiIngest(list){
+    FPI_BY_ID={};FPI_BY_ABBR={};
+    (list||[]).forEach(function(r){
+      if(!r)return;
+      var rec={playoff:fpiNum(r.playoff),makeDiv:fpiNum(r.makeDiv),makeConf:fpiNum(r.makeConf),makeSB:fpiNum(r.makeSB),winTitle:fpiNum(r.winTitle),winConf:fpiNum(r.winConf),winDiv:fpiNum(r.winDiv)};
       if(rec.playoff==null&&rec.winTitle==null)return;
-      if(id)byId[id]=rec;
-      if(abbr)byAbbr[abbr]=rec;
+      if(r.id)FPI_BY_ID[String(r.id)]=rec;
+      if(r.abbr)FPI_BY_ABBR[String(r.abbr).toUpperCase()]=rec;
     });
-    return{byId:byId,byAbbr:byAbbr};
+    fpiOk=Object.keys(FPI_BY_ID).length>0||Object.keys(FPI_BY_ABBR).length>0;
+  }
+  function parseFpiNames(d){
+    var projNames=[];
+    ((d&&d.categories)||[]).forEach(function(c){if(c&&c.name==='projections')projNames=c.names||[];});
+    var KM={probmakeplayoffs:'playoff',probmakedivplayoffs:'makeDiv',probmakeconfchamp:'makeConf',probmaketitlegame:'makeSB',probwintitle:'winTitle',probwinconf:'winConf',probwindiv:'winDiv'};
+    var out=[];
+    ((d&&d.teams)||[]).forEach(function(e){
+      var tm=(e&&e.team)||{};var rec={id:String(tm.id||''),abbr:tm.abbreviation||''};
+      ((e&&e.categories)||[]).forEach(function(cat){
+        if(!cat||cat.name!=='projections')return;
+        var vals=cat.values||[];
+        projNames.forEach(function(nm,i){var k=KM[nm];if(k)rec[k]=(i<vals.length)?vals[i]:null;});
+      });
+      if(rec.playoff!=null)out.push(rec);
+    });
+    return out;
   }
   function fpiFor(t){
     if(!t)return null;
@@ -2179,29 +2201,29 @@ body.on-christmas{color-scheme:light}
     return fmtFpiPct(r.playoff);
   }
   function loadFpi(){
-    var urls=['https://site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en',
-              'https://site.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en'];
-    var i=0;
-    (function next(){
-      if(i>=urls.length){fpiOk=false;renderBracket();return;}
-      fetchJSON(urls[i++]).then(function(d){
-        var parsed=parseFpi(d);
-        if(!Object.keys(parsed.byId).length&&!Object.keys(parsed.byAbbr).length){next();return;}
-        FPI_BY_ID=parsed.byId;FPI_BY_ABBR=parsed.byAbbr;fpiOk=true;
+    fetch('fpi.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+      fpiIngest((d&&d.teams)||[]);
+      if(!fpiOk)throw new Error('fpi.json empty');
+      drawNflStandings();
+      renderBracket();
+    }).catch(function(){
+      fetchJSON('https://site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en').then(function(d){
+        fpiIngest(parseFpiNames(d));
         drawNflStandings();
         renderBracket();
-      }).catch(next);
-    })();
+      }).catch(function(){fpiOk=false;renderBracket();});
+    });
   }
-  /* ---- Projected playoff bracket: seeds are the live ESPN standings
-     seeds; each matchup advances the team with the higher FPI chance
-     to reach the NEXT round (Divisional / Conference Championship /
-     Super Bowl), and the Super Bowl winner is the finalist with the
-     higher FPI chance to win the Super Bowl. If FPI could not be
-     verified live, only the seeded Wild Card matchups are shown and
-     no winner is projected. ---- */
-  function brkTeam(t){return '#'+t.seed+' '+logoImg('nfl',t.abbr,'s')+esc(t.name);}
+  /* ---- Projected playoff bracket (visual): seeds are the live ESPN
+     standings seeds; each matchup advances the team with the higher FPI
+     chance to reach the NEXT round (from fpi.json). Columns run Wild
+     Card -> Divisional -> Conference Championship -> Super Bowl ->
+     Champion. All logos are small fixed-size (24px, 30px for the
+     champion) via the .brk- CSS — never full-width. If FPI is
+     unavailable, only the seeded Wild Card matchups are shown and no
+     winner is projected. ---- */
   function advTeam(a,b,key){
+    if(!a)return b;if(!b)return a;
     var ra=fpiFor(a),rb=fpiFor(b);
     function val(r){if(!r)return null;if(r[key]!=null)return r[key];if(r.playoff!=null)return r.playoff;if(r.winTitle!=null)return r.winTitle;return null;}
     var va=val(ra),vb=val(rb);
@@ -2211,7 +2233,7 @@ body.on-christmas{color-scheme:light}
     return va>=vb?a:b;
   }
   function confBracket(seeds){
-    var bySeed={};seeds.forEach(function(t){bySeed[t.seed]=t;});
+    var bySeed={};seeds.forEach(function(x){bySeed[x.seed]=x;});
     var wc=[[bySeed[2],bySeed[7]],[bySeed[3],bySeed[6]],[bySeed[4],bySeed[5]]];
     var wcW=wc.map(function(pr){return advTeam(pr[0],pr[1],'makeDiv');});
     var rem=wcW.slice().sort(function(x,y){return y.seed-x.seed;});
@@ -2219,56 +2241,57 @@ body.on-christmas{color-scheme:light}
     var divW=div.map(function(pr){return advTeam(pr[0],pr[1],'makeConf');});
     var conf=[[divW[0],divW[1]]];
     var champ=advTeam(divW[0],divW[1],'makeSB');
-    return{bye:bySeed[1],wc:wc,div:div,conf:conf,champ:champ};
+    return{bye:bySeed[1],wc:wc,wcW:wcW,div:div,divW:divW,conf:conf,champ:champ};
   }
-  function brkConfHtml(label,B,simulated){
-    var h='<p class="brk-conf">'+label+'</p>';
-    h+='<p class="brk-bye">Bye: '+brkTeam(B.bye)+'</p>';
-    function round(title,games,winners){
-      var out='<p class="brk-round">'+title+'</p>';
-      games.forEach(function(pr,i){
-        out+='<p class="brk-game">'+brkTeam(pr[0])+' vs '+brkTeam(pr[1]);
-        if(simulated)out+=' &rarr; <span class="brk-win">'+esc(winners[i].name)+'</span>';
-        out+='</p>';
-      });
-      return out;
-    }
-    var wcW=simulated?B.wc.map(function(pr){return advTeam(pr[0],pr[1],'makeDiv');}):[];
-    var divW=simulated?B.div.map(function(pr){return advTeam(pr[0],pr[1],'makeConf');}):[];
-    h+=round('Wild Card',B.wc,wcW);
-    if(simulated){
-      h+=round('Divisional',B.div,divW);
-      h+='<p class="brk-round">Conference Championship</p>';
-      h+='<p class="brk-game">'+brkTeam(B.conf[0][0])+' vs '+brkTeam(B.conf[0][1])+' &rarr; <span class="brk-win">'+esc(B.champ.name)+'</span></p>';
-    }
-    return h;
+  function brkRow(x,isWin){
+    if(!x)return '<div class="brk-trow"><span class="brk-seed">–</span><span class="brk-tname">TBD</span></div>';
+    return '<div class="brk-trow'+(isWin?' win':'')+'"><span class="brk-seed">'+x.seed+'</span>'+logoImg('nfl',x.abbr,'s')+'<span class="brk-tname">'+esc(x.name)+'</span>'+(isWin?'<span class="brk-adv">›</span>':'')+'</div>';
+  }
+  function brkMatch(pr,winner){
+    if(!pr)return '<div class="brk-match tbd">'+brkRow(null,false)+brkRow(null,false)+'</div>';
+    return '<div class="brk-match">'+brkRow(pr[0],!!winner&&winner===pr[0])+brkRow(pr[1],!!winner&&winner===pr[1])+'</div>';
+  }
+  function brkBye(x){
+    if(!x)return '';
+    return '<div class="brk-bye2">'+brkRow(x,false)+'</div>';
   }
   function renderBracket(){
     var box=document.getElementById('nflBracket');if(!box)return;
     var st=document.getElementById('nflBracketStatus');
     var afc=NFL_SEEDS.afc,nfc=NFL_SEEDS.nfc;
     if(!afc||afc.length<7||!nfc||nfc.length<7){
-      if(st)st.textContent='Projected bracket unavailable right now \u2014 the live standings could not load.';
+      if(st)st.textContent='Projected bracket unavailable right now — the live standings could not load.';
       box.innerHTML='';
       return;
     }
     function seedOnly(seeds){
-      var bySeed={};seeds.forEach(function(t){bySeed[t.seed]=t;});
-      return{bye:bySeed[1],wc:[[bySeed[2],bySeed[7]],[bySeed[3],bySeed[6]],[bySeed[4],bySeed[5]]],div:[],conf:[],champ:null};
+      var bySeed={};seeds.forEach(function(x){bySeed[x.seed]=x;});
+      return{bye:bySeed[1],wc:[[bySeed[2],bySeed[7]],[bySeed[3],bySeed[6]],[bySeed[4],bySeed[5]]],wcW:[null,null,null],div:[null,null],divW:[null,null],conf:[null],champ:null};
     }
-    if(!fpiOk){
-      if(st)st.textContent='Seeded from the live ESPN standings. The simulated rounds use ESPN FPI chances, which could not be verified live right now \u2014 no winners are projected. Use the full live simulator linked below.';
-      box.innerHTML=brkConfHtml('AFC',seedOnly(afc),false)+brkConfHtml('NFC',seedOnly(nfc),false);
-      return;
+    var sim=fpiOk;
+    var A=sim?confBracket(afc):seedOnly(afc);
+    var N=sim?confBracket(nfc):seedOnly(nfc);
+    if(st)st.textContent=sim?'':'Seeded from the live ESPN standings. FPI chances are unavailable right now, so no winners are projected.';
+    function col(title,afcHtml,nfcHtml){
+      return '<div class="brk-col"><p class="brk-colh">'+title+'</p><p class="brk-conflab">AFC</p>'+afcHtml+'<p class="brk-conflab">NFC</p>'+nfcHtml+'</div>';
     }
-    if(st)st.textContent='';
-    var A=confBracket(afc),N=confBracket(nfc);
-    var h=brkConfHtml('AFC',A,true)+brkConfHtml('NFC',N,true);
-    var sbW=advTeam(A.champ,N.champ,'winTitle');
-    var wr=fpiFor(sbW);
-    h+='<p class="brk-conf">Super Bowl</p>';
-    h+='<p class="brk-game">'+brkTeam(A.champ)+' vs '+brkTeam(N.champ)+'</p>';
-    h+='<p class="brk-game">Simulated winner: <span class="brk-win">'+esc(sbW.name)+'</span>'+(wr&&wr.winTitle!=null?' &middot; FPI chance to win the Super Bowl: '+fmtFpiPct(wr.winTitle):'')+'</p>';
+    function confGames(B,games,winners){
+      return games.map(function(pr,i){return brkMatch(pr,sim?winners[i]:null);}).join('');
+    }
+    var wcHtmlA=brkBye(A.bye)+confGames(A,A.wc,A.wcW);
+    var wcHtmlN=brkBye(N.bye)+confGames(N,N.wc,N.wcW);
+    var divHtmlA=confGames(A,A.div,A.divW), divHtmlN=confGames(N,N.div,N.divW);
+    var ccHtmlA=brkMatch(A.conf[0],sim?A.champ:null), ccHtmlN=brkMatch(N.conf[0],sim?N.champ:null);
+    var sbW=sim?advTeam(A.champ,N.champ,'winTitle'):null;
+    var sbHtml=brkMatch(sim?[A.champ,N.champ]:null,sbW);
+    var champHtml=sim?('<div class="brk-champ"><p class="brk-champlab">🏆 Projected Champion</p>'+brkRow(sbW,true)+'</div>'):'<div class="brk-match tbd">'+brkRow(null,false)+'</div>';
+    var h='<div class="brk-scroll"><div class="brk-flex">'
+      +col('Wild Card',wcHtmlA,wcHtmlN)
+      +col('Divisional',divHtmlA,divHtmlN)
+      +col('Conf. Champ',ccHtmlA,ccHtmlN)
+      +col('Super Bowl','',sbHtml)
+      +'<div class="brk-col"><p class="brk-colh">Champion</p>'+champHtml+'</div>'
+      +'</div></div>';
     box.innerHTML=h;
   }
 
@@ -2356,131 +2379,137 @@ body.on-christmas{color-scheme:light}
 </script>
 <script>
 /* Bet Simulator — every upcoming NBA / NFL / NHL game from the live
-   ESPN scoreboards (all teams), simulated from the live Kalshi
-   moneyline % in kalshi.json (window.__kalshiPct, the same helper the
-   rest of the site uses). No Kalshi match = a dash, never a guessed %.
-   Player props: each game's ESPN summary feed is scanned for a real
-   prop market (athlete + stat + line, inside a prop market object);
-   only verified lines are shown — if none verify, none are shown.
-   This is a simulation from live data, not a guarantee. */
+   ESPN scoreboards. Moneylines: DraftKings lines carried in the ESPN
+   scoreboard feed itself (competitions[].odds[].moneyline) — a
+   different source from Kalshi. (Kalshi showed dashes here because the
+   repo's kalshi.json snapshot goes stale: the site discards Kalshi data
+   older than 30 minutes, so every % came back null.)
+   Player props: SIMULATED lines built from verified live ESPN season
+   stats — each game's ESPN summary "leaders" (the team's top player in
+   each category, with his season average / total). The sim line is the
+   .5 line nearest the player's per-game average. Labeled SIM — this is
+   a simulation from live data, not a guarantee, and not a sportsbook
+   prop line. */
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
   var dayFmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'});
   function etKeyPlus(n){var base=dayFmt.format(new Date());var q=base.split('-');var d=new Date(Date.UTC(+q[0],+q[1]-1,+q[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate());}
   var LEAGUES=[
-    {key:'nba',label:'\uD83C\uDFC0 NBA',path:'basketball/nba',days:[0,1,2,3],propRe:/points|rebounds|assists/i,propCap:10},
-    {key:'nfl',label:'\uD83C\uDFC8 NFL',path:'football/nfl',days:[-1,0,1,2,3,4,5,6],propRe:/passing|pass yards|rushing|receiving|receptions/i,propCap:16},
-    {key:'nhl',label:'\uD83C\uDFD2 NHL',path:'hockey/nhl',days:[0,1,2,3],propRe:/goals|assists|shots/i,propCap:10}
+    {key:'nba',label:'🏀 NBA',path:'basketball/nba',days:[0,1,2],cap:14,avgMode:'perGame',cats:[['Points','Pts'],['Rebounds','Reb'],['Assists','Ast']]},
+    {key:'nfl',label:'🏈 NFL',path:'football/nfl',days:[0,1,2,3,4,5,6],cap:16,avgMode:'total',cats:[['Passing Yards','Pass Yds'],['Rushing Yards','Rush Yds'],['Receiving Yards','Rec Yds']]},
+    {key:'nhl',label:'🏒 NHL',path:'hockey/nhl',days:[0,1,2],cap:14,avgMode:'total',cats:[['Goals','Goals'],['Assists','Assists'],['Points','Points']]}
   ];
-  function normGame(ev,key){
+  function teamGP(rec){
+    if(!rec)return 0;
+    var nums=String(rec).split(/[^0-9]+/).filter(function(x){return x!=='';}).map(function(x){return parseInt(x,10);});
+    if(!nums.length)return 0;
+    return nums.reduce(function(a,b){return a+b;},0);
+  }
+  function normGame(ev,lg){
     var comp=(ev.competitions||[])[0];if(!comp)return null;
     var st=(comp.status&&comp.status.type)||{};
     if(st.state!=='pre')return null;
     var teams=(comp.competitors||[]).map(function(c){
-      var t=c.team||{};
-      return{id:String(t.id||''),abbr:t.abbreviation||'',name:t.shortDisplayName||t.displayName||'',full:t.displayName||'',homeAway:c.homeAway||''};
+      var tm=c.team||{};
+      var rec=(c.records&&c.records[0]&&c.records[0].summary)||'';
+      return{id:String(tm.id||''),abbr:tm.abbreviation||'',name:tm.shortDisplayName||tm.displayName||'',homeAway:c.homeAway||'',gp:teamGP(rec)};
     });
     if(teams.length<2)return null;
-    var away=teams.filter(function(t){return t.homeAway==='away';})[0]||teams[0];
-    var home=teams.filter(function(t){return t.homeAway==='home';})[0]||teams[1];
-    return{id:String(ev.id||''),date:ev.date||comp.date||'',key:key,away:away,home:home,props:null};
-  }
-  function athleteName(node){
-    var a=node.athlete||node.player||null;
-    if(a&&typeof a==='object')return a.displayName||a.name||a.shortName||'';
-    if(typeof node.playerName==='string')return node.playerName;
-    return '';
-  }
-  function statLabel(node){
-    var cand=[node.name,node.displayName,node.statType,node.market,node.description,node.label];
-    for(var i=0;i<cand.length;i++){if(typeof cand[i]==='string'&&cand[i])return cand[i];}
-    if(node.type&&typeof node.type==='object')return node.type.name||node.type.displayName||'';
-    if(typeof node.type==='string')return node.type;
-    return '';
-  }
-  function lineVal(node){
-    var keys=['line','overUnder','total','handicap','projection','projected'];
-    for(var i=0;i<keys.length;i++){
-      var v=node[keys[i]];
-      if(typeof v==='number'&&!isNaN(v))return v;
-      if(typeof v==='string'&&v.trim()!==''&&!isNaN(parseFloat(v)))return parseFloat(v);
+    var away=teams.filter(function(x){return x.homeAway==='away';})[0]||teams[0];
+    var home=teams.filter(function(x){return x.homeAway==='home';})[0]||teams[1];
+    var ml=null;
+    var odds=(comp.odds||[])[0];
+    if(odds&&odds.moneyline){
+      var ho=odds.moneyline.home&&odds.moneyline.home.close&&odds.moneyline.home.close.odds;
+      var ao=odds.moneyline.away&&odds.moneyline.away.close&&odds.moneyline.away.close.odds;
+      if(ho!=null&&ao!=null)ml={home:String(ho),away:String(ao)};
     }
-    return null;
+    return{id:String(ev.id||''),date:ev.date||comp.date||'',away:away,home:home,ml:ml,props:[]};
   }
-  function scanProps(node,lg,out,inProp,depth){
-    if(!node||depth>9||out.length>=4)return;
-    if(Array.isArray(node)){for(var i=0;i<node.length&&out.length<4;i++)scanProps(node[i],lg,out,inProp,depth+1);return;}
-    if(typeof node!=='object')return;
-    var keys=Object.keys(node);
-    var propHere=inProp;
-    for(var j=0;j<keys.length;j++){if(/prop/i.test(keys[j])){propHere=true;break;}}
-    if(!propHere){
-      var sl0=statLabel(node);
-      if(/prop/i.test(sl0))propHere=true;
-      if(node.overOdds!=null||node.underOdds!=null)propHere=true;
-    }
-    if(propHere){
-      var nm=athleteName(node),sl=statLabel(node),lv=lineVal(node);
-      if(nm&&sl&&lg.propRe.test(sl)&&!/moneyline|spread|total points scored by the team/i.test(sl)&&lv!=null&&lv>0&&lv<=1000){
-        var rec={name:nm,stat:sl,line:lv};
-        var dup=out.some(function(o){return o.name===rec.name&&o.stat===rec.stat&&o.line===rec.line;});
-        if(!dup)out.push(rec);
-        if(out.length>=4)return;
-      }
-    }
-    for(var k=0;k<keys.length&&out.length<4;k++)scanProps(node[keys[k]],lg,out,propHere,depth+1);
+  function simLine(avg){
+    var l=Math.round(avg*2)/2;
+    if(l%1===0)l-=0.5;
+    if(l<0.5)l=0.5;
+    return l;
+  }
+  function propsFromSummary(d,lg,g){
+    var out=[];
+    var byId={};byId[g.away.id]=g.away;byId[g.home.id]=g.home;
+    (d.leaders||[]).forEach(function(L){
+      var tm=byId[String((L.team&&L.team.id)||'')];
+      if(!tm)return;
+      var taken=0,seen={};
+      lg.cats.forEach(function(cat){
+        if(taken>=2)return;
+        (L.leaders||[]).forEach(function(c){
+          if(taken>=2||c.displayName!==cat[0])return;
+          var ld=(c.leaders||[])[0];if(!ld||!ld.athlete)return;
+          var nm=ld.athlete.displayName||ld.athlete.shortName||'';
+          var v=parseFloat(ld.value);
+          if(!nm||isNaN(v))return;
+          var avg=(lg.avgMode==='perGame')?v:(tm.gp>0?v/tm.gp:null);
+          if(avg==null||avg<=0)return;
+          if(seen[nm+cat[1]])return;seen[nm+cat[1]]=1;
+          out.push({name:nm,label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10});
+          taken++;
+        });
+      });
+    });
+    return out.slice(0,4);
   }
   function loadLeague(lg){
     var urls=lg.days.map(function(n){return 'https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/scoreboard?dates='+etKeyPlus(n);});
     if(lg.key==='nfl')urls.unshift('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/scoreboard');
     return Promise.all(urls.map(function(u){return fetchJSON(u).catch(function(){return null;});})).then(function(sbs){
       var byId={},order=[];
-      sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=normGame(ev,lg.key);if(!g||!g.id||byId[g.id])return;byId[g.id]=g;order.push(g.id);});});
-      var games=order.map(function(id){return byId[id];}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-      var capped=games.slice(0,lg.propCap);
-      return Promise.all(capped.map(function(g){
-        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){
-          var out=[];scanProps(d,lg,out,false,0);g.props=out;return g;
-        }).catch(function(){g.props=[];return g;});
+      sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=normGame(ev,lg);if(!g||!g.id||byId[g.id])return;byId[g.id]=g;order.push(g.id);});});
+      var games=order.map(function(id){return byId[id];}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,lg.cap);
+      return Promise.all(games.map(function(g){
+        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){g.props=propsFromSummary(d,lg,g);return g;}).catch(function(){g.props=[];return g;});
       })).then(function(){return games;});
     });
   }
   function fmtWhen(iso){
     var d=new Date(iso);if(isNaN(d))return'';
-    return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'})+' \u00B7 '+d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'})+' ET';
+    return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'})+' · '+d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'})+' ET';
   }
-  var loading=false,loadedOnce=false;
+  function implied(mlStr){
+    var n=parseInt(mlStr,10);if(isNaN(n)||n===0)return null;
+    return n<0?((-n)/((-n)+100))*100:(100/(n+100))*100;
+  }
+  function fmtML(mlStr){
+    var n=parseInt(mlStr,10);if(isNaN(n))return esc(mlStr);
+    return (n>0?'+':'−')+Math.abs(n);
+  }
+  var loading=false;
   function render(){
     if(loading)return;loading=true;
     var st=document.getElementById('betSimStatus'),box=document.getElementById('betSimGames');
-    if(st)st.textContent='Simulating games from live data\u2026';
-    var kP=(window.__kalshiLoad?window.__kalshiLoad():Promise.resolve(null)).catch(function(){return null;});
-    Promise.all(LEAGUES.map(loadLeague).concat([kP])).then(function(res){
-      loading=false;loadedOnce=true;
-      var anyGames=false,anyProps=false;
-      var h='';
+    if(st)st.textContent='Simulating games from live data…';
+    Promise.all(LEAGUES.map(loadLeague)).then(function(res){
+      loading=false;
+      var anyGames=false,h='';
       LEAGUES.forEach(function(lg,li){
         var games=res[li]||[];
         if(!games.length)return;
         anyGames=true;
         h+='<p class="brk-conf">'+lg.label+'</p>';
         games.forEach(function(g){
-          var pa=window.__kalshiPct?window.__kalshiPct(lg.key,g.away,g.home):null;
-          var ph=window.__kalshiPct?window.__kalshiPct(lg.key,g.home,g.away):null;
-          h+='<div class="bsim-game">';
-          h+='<p class="bsim-match">'+esc(g.away.name)+' at '+esc(g.home.name)+'</p>';
-          h+='<p class="bsim-sub">'+esc(fmtWhen(g.date))+'</p>';
-          h+='<p class="bsim-ml">Moneyline (Kalshi): '+esc(g.away.abbr)+' '+(pa==null?'&mdash;':pa+'%')+' \u00B7 '+esc(g.home.abbr)+' '+(ph==null?'&mdash;':ph+'%')+'</p>';
-          if(pa!=null&&ph!=null){
-            var fav=pa>=ph?g.away:g.home,fp=pa>=ph?pa:ph;
-            h+='<p class="bsim-pick">Simulated favorite: <b>'+esc(fav.name)+'</b> (Kalshi '+fp+'%)</p>';
-          }else{
-            h+='<p class="bsim-pick">Simulated favorite: &mdash; (no verified Kalshi line for this game)</p>';
+          h+='<div class="bsim-game2">';
+          h+='<div class="bsim-top"><span class="bsim-teams">'+esc(g.away.name)+' at '+esc(g.home.name)+'</span><span class="bsim-when">'+esc(fmtWhen(g.date))+'</span></div>';
+          if(g.ml){
+            var pa=implied(g.ml.away),ph=implied(g.ml.home);
+            h+='<div class="bsim-mlrow"><span class="bsim-chip">'+esc(g.away.abbr)+' ML <b>'+fmtML(g.ml.away)+'</b></span><span class="bsim-chip">'+esc(g.home.abbr)+' ML <b>'+fmtML(g.ml.home)+'</b></span>';
+            if(pa!=null&&ph!=null){
+              var norm=pa+ph,favIsAway=(pa/norm)>=(ph/norm);
+              var fav=favIsAway?g.away:g.home,fp=Math.round((favIsAway?pa:ph)/norm*100);
+              h+='<span class="bsim-chip fav">Sim lean: '+esc(fav.name)+' '+fp+'%</span>';
+            }
+            h+='</div>';
           }
           if(g.props&&g.props.length){
-            anyProps=true;
-            h+='<p class="bsim-props"><b>Player props (verified live):</b><br>'+g.props.map(function(pr){return esc(pr.name)+' \u2014 '+esc(pr.stat)+' line '+esc(String(pr.line));}).join('<br>')+'</p>';
+            h+='<div class="bsim-props2">'+g.props.map(function(pr){return '<p class="bsim-prop"><b>'+esc(pr.name)+'</b> — '+esc(pr.label)+' <b>'+esc(String(pr.line))+'</b> <span class="sim">SIM</span> <span class="avg">avg '+esc(String(pr.avg))+'/gm</span></p>';}).join('')+'</div>';
           }
           h+='</div>';
         });
@@ -2491,13 +2520,13 @@ body.on-christmas{color-scheme:light}
         return;
       }
       if(box)box.innerHTML=h;
-      if(st)st.textContent=anyProps?'Simulation run from live ESPN schedules, live Kalshi moneylines and verified live prop lines. Not a guarantee.':'Simulation run from live ESPN schedules and live Kalshi moneylines. No player prop lines could be verified live for these games, so none are shown. Not a guarantee.';
+      if(st)st.textContent='Simulation from live ESPN schedules, DraftKings moneylines and season stats. SIM = simulated prop line from the player\u2019s live season average. Not a guarantee.';
       var stamp=document.getElementById('betSimStamp');
-      if(stamp)stamp.innerHTML='Games: ESPN \u00B7 Moneyline %: Kalshi (kalshi.json, refreshed every 5 minutes) \u00B7 A dash means Kalshi has no verified line for that team in that game \u00B7 Player props are shown only when a live ESPN game feed verifies the player, the stat and the line \u2014 otherwise they are not shown \u00B7 Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+      if(stamp)stamp.innerHTML='Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
     }).catch(function(){
       loading=false;
       var st2=document.getElementById('betSimStatus');
-      if(st2)st2.textContent='The simulation could not load right now \u2014 reopen the panel to try again.';
+      if(st2)st2.textContent='The simulation could not load right now — reopen the panel to try again.';
     });
   }
   document.querySelectorAll('#view-sports [data-sport="betsim"]').forEach(function(b){b.addEventListener('click',function(){render();});});
