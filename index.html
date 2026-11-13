@@ -46,6 +46,18 @@ window.OneSignalDeferred=window.OneSignalDeferred||[];
 body{font-family:Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--sky1),var(--sky2) 45%,var(--sky3));min-height:100vh}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 28% at 18% 12%,rgba(255,255,255,.35),transparent 70%),radial-gradient(ellipse 55% 24% at 82% 30%,rgba(255,255,255,.28),transparent 70%)}
 .wrap{position:relative;max-width:760px;margin:0 auto;padding:0 20px 128px}
+/* Safe-area top — standalone (Home Screen) PWA fix: with viewport-fit=cover
+   and a black-translucent status bar, page content extends under the
+   status bar / notch / Dynamic Island, which clipped the top of every
+   tab (Home garland + title, Sports heading, etc.). Every tab is a
+   .wrap slide inside the pager, so adding the device's top safe-area
+   inset as extra top padding on .wrap starts every tab below the
+   status bar with its original hero spacing preserved as breathing
+   room. In a normal browser tab env(safe-area-inset-top) is 0, so
+   the look there is unchanged. The pager sizes its viewport from
+   each slide's offsetHeight, which includes this padding, so no
+   bottom clipping is introduced. */
+.pager-track>.view,.wrap{padding-top:0;padding-top:env(safe-area-inset-top,0px)}
 html{scroll-padding-bottom:120px}
 .bottomnav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:60;width:min(560px,calc(100% - 20px));background:rgba(255,255,255,.52);-webkit-backdrop-filter:blur(26px) saturate(185%);backdrop-filter:blur(26px) saturate(185%);border:1px solid rgba(255,255,255,.65);border-radius:999px;box-shadow:0 16px 38px rgba(10,25,35,.28),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(255,255,255,.18);padding:7px}
 @media(prefers-color-scheme:dark){.bottomnav{background:rgba(18,32,40,.55);border-color:rgba(255,255,255,.22);box-shadow:0 16px 38px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.22)}}
