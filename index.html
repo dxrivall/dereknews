@@ -1169,6 +1169,38 @@ body.on-sports footer{color:#aebfe6!important}
 .copy-legs-btn{flex:1 1 100%;background:#2f5fd0;border-color:#2f5fd0;cursor:pointer;font:inherit}
 .other-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:480px){.other-grid{grid-template-columns:1fr}}.other-grid a{display:block;padding:13px 14px;text-decoration:none;font-size:15px;line-height:1.35}#view-sports .team-btn{display:block;text-align:center;text-decoration:none;padding:15px 16px;margin-top:14px;font-size:16px;font-weight:600}#view-sports .back-btn{display:inline-block;font:inherit;font-size:15px;font-weight:600;padding:11px 18px;border-radius:999px;cursor:pointer;margin:28px 0 2px}
 @media(max-width:420px){.stable td.team{max-width:104px}.stable td,.stable th{padding-left:3px;padding-right:3px;font-size:15px}.agame{grid-template-columns:minmax(54px,1fr) 34px minmax(78px,auto) 34px minmax(54px,1fr)}.acenter .at{font-size:15px}}
+
+/* ===== Sports MAIN PAGE refresh (Nov 13) — visual only.
+   Every rule is scoped to #sportsHome (plus the hero while the main
+   page is showing, via :has), so the sport sub-pages and the Bet
+   Simulator keep their exact existing look and behaviour. ===== */
+#view-sports:has(>#sportsHome:not([hidden])) .hero{padding-top:46px}
+#view-sports:has(>#sportsHome:not([hidden])) .hero h1{font-size:clamp(40px,9.5vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1.02;text-shadow:0 4px 22px rgba(0,0,10,.45)}
+#view-sports:has(>#sportsHome:not([hidden])) .hero::after{content:"";display:block;width:72px;height:4px;border-radius:2px;margin-top:16px;background:linear-gradient(90deg,#ffd34d,#ff7a6e 55%,#7ee2a8)}
+#view-sports:has(>#sportsHome:not([hidden])) .sette-btn{background:rgba(255,211,77,.14);border-color:rgba(255,211,77,.55);color:#ffd34d;padding:8px 15px;box-shadow:0 6px 18px rgba(0,0,10,.3)}
+#sportsHome .stoday{position:relative;overflow:hidden;background:linear-gradient(165deg,rgba(47,95,208,.55),rgba(8,22,54,.88) 58%);border:1px solid rgba(255,255,255,.2);border-radius:28px;padding:26px 20px 20px;margin-top:22px;box-shadow:0 20px 46px rgba(0,0,10,.48),inset 0 1px 0 rgba(255,255,255,.22)}
+#sportsHome .stoday::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#ffd34d,#ff7a6e 45%,#7ee2a8 80%,#4da3ff)}
+#sportsHome .stoday .ahead{margin-bottom:14px}
+#sportsHome .stoday .ahead h2{font-size:26px;font-weight:800;letter-spacing:-.01em}
+#sportsHome .stoday .league-pill{background:rgba(255,211,77,.15);border:1px solid rgba(255,211,77,.55);color:#ffd34d;box-shadow:none}
+#sportsHome .quick{grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+#sportsHome .quick::before{content:"Browse Sports";grid-column:1/-1;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ffd34d;margin-bottom:-2px}
+#sportsHome .quick button{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-height:124px;padding:18px 16px 16px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.19);box-shadow:0 14px 32px rgba(0,0,10,.38),inset 0 1px 0 rgba(255,255,255,.18);transition:transform .12s ease}
+#sportsHome .quick button:active{transform:scale(.965)}
+#sportsHome .quick button .emoji{font-size:29px;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:17px;margin-bottom:11px;line-height:1}
+#sportsHome .quick button b{font-size:17.5px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+#sportsHome .quick button::after{content:"\203A";position:absolute;top:14px;right:16px;font-size:24px;font-weight:700;line-height:1;color:rgba(255,255,255,.5)}
+#sportsHome .quick button:nth-child(1) .emoji{background:rgba(255,122,110,.2);border-color:rgba(255,122,110,.4)}
+#sportsHome .quick button:nth-child(2) .emoji{background:rgba(245,154,0,.22);border-color:rgba(245,154,0,.45)}
+#sportsHome .quick button:nth-child(3) .emoji{background:rgba(126,226,168,.18);border-color:rgba(126,226,168,.4)}
+#sportsHome .quick button:nth-child(4) .emoji{background:rgba(125,211,252,.2);border-color:rgba(125,211,252,.42)}
+#sportsHome .quick button:nth-child(5) .emoji{background:rgba(255,100,100,.2);border-color:rgba(255,100,100,.42)}
+#sportsHome .quick button:nth-child(6) .emoji{background:rgba(196,141,255,.2);border-color:rgba(196,141,255,.42)}
+#sportsHome .quick button:nth-child(7){grid-column:1/-1;flex-direction:row;align-items:center;gap:14px;min-height:86px;padding:16px 18px;background:linear-gradient(120deg,rgba(255,211,77,.24),rgba(255,122,110,.14) 60%,rgba(255,255,255,.05));border-color:rgba(255,211,77,.55)}
+#sportsHome .quick button:nth-child(7) .emoji{margin-bottom:0;background:rgba(255,211,77,.22);border-color:rgba(255,211,77,.5)}
+#sportsHome .quick button:nth-child(7) b{font-size:19px}
+#sportsHome .quick button:nth-child(7)::after{top:50%;transform:translateY(-50%)}
+@media(max-width:380px){#sportsHome .quick button{min-height:112px;padding:15px 13px}#sportsHome .quick button b{font-size:16px}}
 </style>
   <div class="hero"><h1>🏟️ Sports</h1><button type="button" class="sette-btn" id="setTeamsBtn">⚙️ Set Teams</button></div>
   <div class="teams-overlay" id="teamsPicker" hidden role="dialog" aria-modal="true" aria-label="Choose your favorite teams">
@@ -1568,6 +1600,24 @@ body.on-sports footer{color:#aebfe6!important}
 .fe-hdo{display:inline-block;margin-top:6px;background:#b42318;color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px}
 .fe-when{flex:none;font-weight:700;font-size:14px;color:#7c2d12;background:#fdeeda;border:1px solid rgba(180,120,40,.35);border-radius:999px;padding:7px 11px;white-space:nowrap}
 @media(prefers-color-scheme:dark){.fe-when{color:#ffd98a;background:rgba(0,0,0,.3)}}
+
+/* ===== Faith church background (Nov 13) — static stained-glass /
+   warm church treatment, no live photo, no auto-update. Cards keep a
+   solid warm panel on top of it so every section stays readable. ===== */
+body.on-faith{background:radial-gradient(ellipse 95% 40% at 50% -6%,rgba(255,198,92,.6),transparent 62%),repeating-linear-gradient(90deg,rgba(255,216,150,.055) 0 2px,transparent 2px 118px),linear-gradient(180deg,#40220f 0%,#5f2f16 26%,#38202a 58%,#1e130e 100%);color:#fff7e8}
+body.on-faith::before{background:radial-gradient(ellipse 48% 30% at 16% 9%,rgba(255,172,64,.36),transparent 70%),radial-gradient(ellipse 48% 30% at 84% 15%,rgba(164,62,92,.32),transparent 70%),radial-gradient(ellipse 62% 34% at 50% 48%,rgba(72,92,168,.22),transparent 70%)}
+body.on-faith .bottomnav{background:rgba(46,27,15,.55);border-color:rgba(255,220,150,.38);box-shadow:0 16px 38px rgba(10,2,0,.5),inset 0 1px 0 rgba(255,230,170,.3)}
+body.on-faith .tab{color:#f3ddba!important;background:transparent!important}
+body.on-faith .tab[aria-selected="true"]{background:#ffd98a!important;color:#3a1f16!important}
+body.on-faith footer{color:#e8cf9f!important}
+#view-faith{--ink:#33200f;--soft:#5f4630;--link:#8a4b12;--panel:rgba(255,250,238,.96);--border:rgba(122,72,20,.3);--shadow:0 16px 38px rgba(10,4,0,.4)}
+@media(prefers-color-scheme:dark){#view-faith{--ink:#f8ecd4;--soft:#e6cfa3;--link:#ffd98a;--panel:rgba(36,23,13,.95);--border:rgba(255,205,120,.3)}}
+#view-faith .hero{padding-top:46px}
+#view-faith .hero h1{color:#fff7e8;font-weight:700;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+#view-faith .hero::after{content:"";display:block;width:68px;height:3.5px;border-radius:2px;margin:15px auto 0;background:linear-gradient(90deg,#ffd34d,#e8a33d 55%,#b42318)}
+#view-faith .mass,#view-faith .votd,#view-faith .faith-events{border-radius:24px}
+#view-faith .fe-event{background:rgba(180,120,40,.09)}
+@media(prefers-color-scheme:dark){#view-faith .fe-event{background:rgba(255,205,120,.07)}}
 </style>
   <div class="hero"><h1>🙏 Faith</h1></div>
 <section class="votd" aria-label="Daily Bible verse from YouVersion">
@@ -1847,6 +1897,7 @@ body.on-christmas{color-scheme:light}
     document.body.classList.toggle('on-christmas',currentTab==='christmas');
     document.body.classList.toggle('on-weather',currentTab==='weather');
     document.body.classList.toggle('on-sports',currentTab==='sports');
+    document.body.classList.toggle('on-faith',currentTab==='faith');
     tabEls.forEach(function(t,i){t.setAttribute('aria-selected',i===idx?'true':'false');});
     try{history.replaceState(null,'',location.pathname+location.search+'#'+currentTab);}catch(e){}
   }
