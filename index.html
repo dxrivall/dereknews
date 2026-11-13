@@ -540,6 +540,14 @@ body>.teams-overlay{z-index:2000}
 <main class="wrap view active" id="view-home">
 <style>
 #view-home .wxalerts{margin:28px auto 0;max-width:680px;text-align:left;box-shadow:var(--shadow);border-radius:10px}
+#view-home .nscsd-note{margin:14px auto 0;max-width:680px;text-align:left;background:#fff;border:2px solid #b42318;border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+#view-home .nscsd-note[hidden]{display:none}
+#view-home .nscsd-head{background:#b42318;color:#fff;font-weight:700;font-size:17px;padding:12px 16px;display:flex;align-items:center;gap:8px;line-height:1.3}
+#view-home .nscsd-body{padding:12px 16px 14px;color:#1d2a30}
+#view-home .nscsd-status{font-size:17px;font-weight:800;margin:0;line-height:1.35}
+#view-home .nscsd-detail{font-size:14px;line-height:1.55;margin:6px 0 0}
+#view-home .nscsd-src{font-size:12px;color:#64748b;margin:8px 0 0}
+#view-home .nscsd-src a{color:#0b46d6;text-decoration:underline}
 #view-home .wxalerts-err{margin:14px auto 0;max-width:680px;background:#fff;color:#7a1710;border:1px solid #b42318;border-radius:8px;padding:10px 12px;text-align:center;font-size:13px;line-height:1.5;display:none}
 #view-home .wxalerts-err a{color:#0b46d6;text-decoration:underline}
 .widget-stack{display:flex;flex-direction:column;gap:18px;margin-top:26px}
@@ -586,6 +594,44 @@ body>.teams-overlay{z-index:2000}
     <div id="homeAlertsList"></div>
   </div>
   <div class="wxalerts-err" id="homeAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener">weather.gov</a> for the latest.</div>
+  <!-- NSCSD school note: stays completely hidden unless CNY Central is
+       reporting a closure or delay for the North Syracuse Central School
+       District (Cicero's district), and only in Cicero mode. -->
+  <div class="nscsd-note" id="homeNscsdNote" hidden role="alert" aria-live="polite">
+    <div class="nscsd-head"><span aria-hidden="true">🏫</span><span>North Syracuse Schools — Closing / Delay</span></div>
+    <div class="nscsd-body"><div id="homeNscsdList"></div>
+    <p class="nscsd-src">School closings &amp; delays: <a href="https://cnycentral.com" target="_blank" rel="noopener">CNY Central</a><span id="homeNscsdWhen"></span></p></div>
+  </div>
+  <script>
+  (function(){
+    var note=document.getElementById('homeNscsdNote'),list=document.getElementById('homeNscsdList'),when=document.getElementById('homeNscsdWhen');
+    if(!note||!list)return;
+    // Cicero mode only: any saved/switched location turns this off.
+    var loc=(window.__dnLoc?window.__dnLoc.get():null);
+    if(!loc||loc.live)return;
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function isNscsd(name){return String(name||'').toLowerCase().indexOf('north syracuse')>-1;}
+    function isClosureOrDelay(it){
+      var s=(String(it&&it.status||'')+' '+String(it&&it.detail||'')).toLowerCase();
+      return /clos|delay|remote|virtual|early dismiss|dismiss|cancel/.test(s);
+    }
+    fetch('closings.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+      if(!d||!Array.isArray(d.closings)||!d.updated_at)throw new Error('bad closings.json');
+      var age=Date.now()-new Date(d.updated_at).getTime();
+      if(!(age>-300000&&age<=43200000))throw new Error('stale closings.json');
+      var mine=d.closings.filter(function(it){return it&&isNscsd(it.name)&&isClosureOrDelay(it);});
+      if(!mine.length)return; // No NSCSD closure/delay — note stays invisible
+      var html='';
+      mine.forEach(function(it){
+        html+='<p class="nscsd-status">'+esc(it.status||'Schedule change')+'</p>';
+        if(it.detail&&it.detail!==it.status)html+='<p class="nscsd-detail">'+esc(it.detail)+'</p>';
+      });
+      list.innerHTML=html;
+      if(when)when.textContent=' · Updated '+new Date(d.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+      note.hidden=false;
+    }).catch(function(){/* No usable closings data — note stays invisible */});
+  })();
+  </script>
   <div class="hero"><div class="title-wrap"><div class="garland" aria-hidden="true"><svg viewBox="0 0 600 78" role="presentation" focusable="false"><defs><g id="pt"><path d="M0 0 L-10 11 M0 0 L-3 14 M0 0 L4 14 M0 0 L11 10" stroke="#1e6b3d" stroke-width="3" stroke-linecap="round" fill="none"/><circle r="6.5" fill="#175233"/><circle cx="-4" cy="-3" r="4.5" fill="#1d6540"/><circle cx="5" cy="-2" r="4" fill="#123f27"/></g><g id="br"><circle r="3.4" fill="#c1271d"/><circle cx="7.5" cy="2" r="3" fill="#d92f24"/><circle cx="3" cy="6.5" r="2.8" fill="#a91e15"/><circle cx="-1" cy="-1" r="1" fill="#fff" opacity=".55"/></g><g id="lt"><circle r="7.5" fill="#ffd98a" opacity=".38"/><circle r="3.2" fill="#fff3b0" stroke="#ffb454" stroke-width=".8"/><circle cx="-1" cy="-1" r="1" fill="#fff"/></g><g id="orn"><path d="M0 0 V7" stroke="#3a3a3a" stroke-width="1.4"/><circle cy="14" r="6.8" fill="#b91f16" stroke="#7f130e"/><circle cx="-2.2" cy="11" r="2" fill="#fff" opacity=".65"/></g></defs><path d="M12 12 Q300 74 588 12" fill="none" stroke="#123b24" stroke-width="11" stroke-linecap="round"/><path d="M12 9 Q300 71 588 9" fill="none" stroke="#1c5a35" stroke-width="6" stroke-linecap="round" opacity=".9"/><use href="#pt" transform="translate(12 10)"/><use href="#pt" transform="translate(41 16)"/><use href="#pt" transform="translate(70 21)"/><use href="#pt" transform="translate(99 25)"/><use href="#pt" transform="translate(128 29)"/><use href="#pt" transform="translate(157 33)"/><use href="#pt" transform="translate(186 35)"/><use href="#pt" transform="translate(215 37)"/><use href="#pt" transform="translate(244 39)"/><use href="#pt" transform="translate(272 40)"/><use href="#pt" transform="translate(300 40)"/><use href="#pt" transform="translate(328 40)"/><use href="#pt" transform="translate(356 39)"/><use href="#pt" transform="translate(385 37)"/><use href="#pt" transform="translate(414 35)"/><use href="#pt" transform="translate(443 33)"/><use href="#pt" transform="translate(472 29)"/><use href="#pt" transform="translate(501 25)"/><use href="#pt" transform="translate(530 21)"/><use href="#pt" transform="translate(559 16)"/><use href="#pt" transform="translate(588 10)"/><use href="#pt" transform="translate(12 16) rotate(24)"/><use href="#pt" transform="translate(588 16) rotate(-24)"/><use href="#orn" transform="translate(150 32)"/><use href="#orn" transform="translate(300 40)"/><use href="#orn" transform="translate(450 32)"/><use href="#br" transform="translate(72 19)"/><use href="#br" transform="translate(182 31)"/><use href="#br" transform="translate(262 36)"/><use href="#br" transform="translate(378 34)"/><use href="#br" transform="translate(498 21)"/><use href="#lt" class="tw" transform="translate(40 13)"/><use href="#lt" class="tw d1" transform="translate(120 26)"/><use href="#lt" class="tw d2" transform="translate(210 34)"/><use href="#lt" class="tw" transform="translate(285 37)"/><use href="#lt" class="tw d1" transform="translate(362 36)"/><use href="#lt" class="tw d2" transform="translate(468 26)"/><use href="#lt" class="tw" transform="translate(545 13)"/></svg><div class="garland-snow" aria-hidden="true"><svg viewBox="0 0 48 48" role="presentation" focusable="false"><path d="M24 9 V1.5" stroke="#dceefb" stroke-width="1.6" stroke-linecap="round" fill="none"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#8db8d6" stroke-width="5.4"/><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#ffffff" stroke-width="2.7"/></g><circle cx="24" cy="24" r="2.5" fill="#ffffff" stroke="#8db8d6" stroke-width="1"/></svg></div></div><h1 aria-label="Derek News"><span class="ht-red">derek</span> <span class="ht-green">news</span></h1></div>
   <div class="dateline" id="todayLine">Loading date…</div></div>
   <div class="widget-stack">
@@ -688,7 +734,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .day .pp{font-size:12px;color:#9fd8ff;margin-top:3px;white-space:nowrap}
 .wxmore-open{margin-top:0}
 .wxdetails-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;background:none;border:0;padding:0;margin:38px 0 16px;cursor:pointer;font:inherit;color:#fff;text-align:left;-webkit-tap-highlight-color:transparent}.wxdetails-toggle .wxsec{margin:0}.wxdetails-chev{flex:none;font-size:20px;line-height:1;transition:transform .25s ease;text-shadow:0 1px 4px rgba(0,0,0,.6)}.wxdetails-toggle[aria-expanded="true"] .wxdetails-chev{transform:rotate(180deg)}.wxdetails-panel[hidden]{display:none}.wxdetails-panel .wdetails{margin-top:2px}
-.wxday-detail{position:relative;display:block;width:100%;max-width:680px;margin:14px auto 4px;background:rgba(6,18,26,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:18px 16px 16px;color:#fff;text-align:left;box-sizing:border-box;overflow:hidden}.wxday-detail[hidden]{display:none}.wdd-head{display:flex;align-items:flex-start;gap:12px}.wdd-head .wdd-ic{font-size:38px;line-height:1;flex:none}.wdd-title{font-size:20px;font-weight:700;line-height:1.2;margin:0}.wdd-sub{font-size:14px;opacity:.92;margin:3px 0 0;line-height:1.4}.wdd-x{margin-left:auto;flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.14);color:#fff;font-size:22px;line-height:1;cursor:pointer;font:inherit}.wdd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}@media(max-width:380px){.wdd-grid{grid-template-columns:1fr}}.wdd-tile{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:11px 12px;min-width:0}.wdd-tile .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;opacity:.85}.wdd-tile .v{font-size:17px;font-weight:700;margin-top:3px;line-height:1.25;overflow-wrap:break-word}.wdd-tile .u{font-size:12px;opacity:.85;margin-top:2px;line-height:1.35}.wdd-hours-h{font-size:14px;font-weight:700;margin:16px 0 8px}.wdd-hours{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;max-width:100%}.wdd-hour{flex:0 0 64px;width:64px;box-sizing:border-box;scroll-snap-align:start;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:9px 4px;text-align:center;overflow:hidden}.wdd-hour .h{font-size:11px;font-weight:700;white-space:nowrap}.wdd-hour .i{font-size:19px;margin:3px 0 2px}.wdd-hour .t{font-size:14px;font-weight:700}.wdd-hour .pp{font-size:11px;color:#9fd8ff;margin-top:2px;white-space:nowrap}.snowday-dialrow{display:flex;justify-content:center;margin:10px 0 2px}.snowday-dial{position:relative;width:min(40vw,128px);height:min(40vw,128px);flex:none}.snowday-dial svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}.snowday-dial .ring-bg{fill:none;stroke:rgba(255,255,255,.22);stroke-width:13}.snowday-dial .ring-fg{fill:none;stroke:url(#snowDialGrad);stroke-width:13;stroke-linecap:round;transition:stroke-dashoffset .8s ease}.snowday-delay{font-size:13px;opacity:.94;margin:8px 0 0;line-height:1.45}.wdet .wdet-ic{display:flex;justify-content:center;align-items:center;margin:4px 0 5px;line-height:1}.wdet .wdet-ic .moon-glyph{font-size:28px;line-height:1}.sun-ic{display:block;width:30px;height:30px}.wdet .sun-ic{width:34px;height:34px}.wx-hero-hourly .hour .ic{display:flex;align-items:center;justify-content:center;min-height:30px}.snowday{margin:26px auto 0;width:min(80vw,300px);max-width:300px;aspect-ratio:1/1;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:16px 14px;color:#fff;overflow:hidden}
+.wxday-detail{position:relative;display:block;width:100%;max-width:680px;margin:14px auto 4px;background:rgba(6,18,26,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:18px 16px 16px;color:#fff;text-align:left;box-sizing:border-box;overflow:hidden}.wxday-detail[hidden]{display:none}.wdd-head{display:flex;align-items:flex-start;gap:12px}.wdd-head .wdd-ic{font-size:38px;line-height:1;flex:none}.wdd-title{font-size:20px;font-weight:700;line-height:1.2;margin:0}.wdd-sub{font-size:14px;opacity:.92;margin:3px 0 0;line-height:1.4}.wdd-x{margin-left:auto;flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.14);color:#fff;font-size:22px;line-height:1;cursor:pointer;font:inherit}.wdd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}@media(max-width:380px){.wdd-grid{grid-template-columns:1fr}}.wdd-tile{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:11px 12px;min-width:0}.wdd-tile .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;opacity:.85}.wdd-tile .v{font-size:17px;font-weight:700;margin-top:3px;line-height:1.25;overflow-wrap:break-word}.wdd-tile .u{font-size:12px;opacity:.85;margin-top:2px;line-height:1.35}.wdd-hours-h{font-size:14px;font-weight:700;margin:16px 0 8px}.wdd-hours{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;max-width:100%}.wdd-hour{flex:0 0 64px;width:64px;box-sizing:border-box;scroll-snap-align:start;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:9px 4px;text-align:center;overflow:hidden}.wdd-hour .h{font-size:11px;font-weight:700;white-space:nowrap}.wdd-hour .i{font-size:19px;margin:3px 0 2px}.wdd-hour .t{font-size:14px;font-weight:700}.wdd-hour .pp{font-size:11px;color:#9fd8ff;margin-top:2px;white-space:nowrap}.snowday-dialrow{display:flex;justify-content:center;margin:10px 0 2px}.snowday-dial{position:relative;width:min(40vw,128px);height:min(40vw,128px);flex:none}.snowday-dial svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}.snowday-dial .ring-bg{fill:none;stroke:rgba(255,255,255,.22);stroke-width:13}.snowday-dial .ring-fg{fill:none;stroke:url(#snowDialGrad);stroke-width:13;stroke-linecap:round;transition:stroke-dashoffset .8s ease}.snowday-delay{font-size:13px;opacity:.94;margin:8px 0 0;line-height:1.45}.wdet .wdet-ic{display:flex;justify-content:center;align-items:center;margin:4px 0 5px;line-height:1}.wdet .wdet-ic .moon-glyph{font-size:28px;line-height:1}.sun-ic{display:block;width:30px;height:30px}.wdet .sun-ic{width:34px;height:34px}.wx-hero-hourly .hour .ic{display:flex;align-items:center;justify-content:center;min-height:30px}.snowday[hidden]{display:none!important}
+.snowday{margin:26px auto 0;width:min(80vw,300px);max-width:300px;aspect-ratio:1/1;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:16px 14px;color:#fff;overflow:hidden}
 .snowday-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.92}
 .snowday-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(34px,10vw,46px);font-weight:800;line-height:1;letter-spacing:-.02em;margin:0;text-align:center}
 .snowday-line{font-size:14px;opacity:.92;margin:0;line-height:1.4}
@@ -2398,6 +2445,45 @@ body.on-christmas{color-scheme:light}
   }
   var __wxLoc=(window.__dnLoc?window.__dnLoc.get():{lat:43.1713,lon:-76.1250,label:'Cicero, NY',live:false});
   var url='https://api.open-meteo.com/v1/forecast?latitude='+__wxLoc.lat+'&longitude='+__wxLoc.lon+'&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&hourly=temperature_2m,precipitation_probability,weather_code,is_day,snowfall,relative_humidity_2m,apparent_temperature,precipitation,rain,wind_speed_10m,wind_gusts_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max,wind_speed_10m_max,snowfall_sum,wind_gusts_10m_max,precipitation_sum,rain_sum,apparent_temperature_max,apparent_temperature_min,wind_direction_10m_dominant&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone='+(__wxLoc.live?'auto':'America%2FNew_York')+'&forecast_days=7';
+  /* Snow Day Calculator visibility — decided fresh on every load from the
+     LIVE extended (16-day) Open-Meteo forecast for the visitor's actual
+     location. No city list, no manual switch:
+     - Snow in the extended forecast -> snow climate / snow season: show.
+     - No snow coming and nights consistently above freezing -> hide. In
+       core winter (Dec-Feb) the bar is much higher (nearly every night
+       well above freezing AND warm days), so only a genuinely warm
+       climate (Florida / Arizona / Southern California type weather)
+       hides then; a brief warm spell in a snowy place does not.
+     - Outside core winter, no snow + essentially every night above
+       freezing means snow season is over (or has not started): hide.
+       Because this re-checks the live forecast on every load, the
+       calculator comes back on its own when cold / snow return.
+     - If the extended forecast cannot load, the widget is left as-is —
+       it is never hidden on missing data. */
+  function snowSeasonShow(d){
+    if(!d||!d.daily||!d.daily.time||!d.daily.temperature_2m_min||!d.daily.temperature_2m_max)return true;
+    var n=d.daily.time.length;
+    if(n<7)return true;
+    var snowTotal=0,i,v,above32=0,above40=0,lowSum=0,highSum=0;
+    for(i=0;i<n;i++){
+      if(d.daily.snowfall_sum&&d.daily.snowfall_sum[i]!=null)snowTotal+=d.daily.snowfall_sum[i];
+      v=d.daily.temperature_2m_min[i];if(v==null)return true;
+      lowSum+=v;if(v>32)above32++;if(v>40)above40++;
+      v=d.daily.temperature_2m_max[i];if(v==null)return true;
+      highSum+=v;
+    }
+    if(snowTotal>=0.2)return true; // snow (cm) expected in the next 16 days
+    var month=parseInt(String(d.daily.time[0]).slice(5,7),10);
+    if(month===12||month===1||month===2){
+      return !(above40>=Math.ceil(n*0.85)&&(lowSum/n)>=45&&(highSum/n)>=58);
+    }
+    return !(above32>=Math.ceil(n*0.9));
+  }
+  /* end snowSeasonShow */
+  fetch('https://api.open-meteo.com/v1/forecast?latitude='+__wxLoc.lat+'&longitude='+__wxLoc.lon+'&daily=temperature_2m_max,temperature_2m_min,snowfall_sum&temperature_unit=fahrenheit&timezone='+(__wxLoc.live?'auto':'America%2FNew_York')+'&forecast_days=16').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+    var w=document.getElementById('snowDayWidget');
+    if(w&&!snowSeasonShow(d))w.hidden=true;
+  }).catch(function(){/* Extended forecast unavailable — leave the widget as-is */});
   function compass(deg){var dirs=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];return dirs[Math.round(((deg%360)+360)%360/22.5)%16];}
   function fmtClock(iso){if(!iso)return'—';var dt=new Date(iso);if(isNaN(dt))return'—';return dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
   /* Temperature colour — cold is blue, warm is red (Apple-style anchors,
