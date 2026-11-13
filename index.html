@@ -93,6 +93,9 @@ html,body{overflow-x:hidden}
 .pager-track{display:flex;flex-direction:row;align-items:flex-start;width:100%;will-change:transform}
 .pager-track>.view{display:block;flex:0 0 100%;width:100%;max-width:none;margin:0;min-width:0;visibility:hidden}
 .pager-track>.view.pg-on{visibility:visible}
+/* NEWS TEMPORARILY DISABLED — hidden, not removed (see tabOrder note) */
+#view-news{display:none!important}
+.bottomnav .tab[data-go="news"]{display:none!important}
 .pager-track.pg-settling{transition:transform .38s cubic-bezier(.32,.72,0,1)}
 .pager-viewport.pg-settling{transition:height .38s cubic-bezier(.32,.72,0,1)}
 .tab-pill.pg-settling{transition:transform .38s cubic-bezier(.32,.72,0,1),width .38s cubic-bezier(.32,.72,0,1)}
@@ -132,16 +135,23 @@ html,body{overflow-x:hidden}
 .wx-dn.wxth-snow{background:linear-gradient(180deg,#4a7296 0%,#6f97b8 52%,#93b6d4 100%)}
 .wx-dn.wxth-storm{background:linear-gradient(180deg,#1f1c38 0%,#38345e 52%,#5a5488 100%)}
 /* Apple Weather components — Home weather widget only */
-#homeWxWidget{color:#fff;border:0;border-radius:26px;padding:18px 16px 12px;box-shadow:0 12px 32px rgba(25,55,100,.38);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Roboto,Arial,sans-serif;text-align:center;overflow:hidden;text-shadow:0 1px 4px rgba(0,30,60,.18)}
+#homeWxWidget{color:#fff;border:0;border-radius:22px;padding:12px 14px 10px;box-shadow:0 12px 32px rgba(25,55,100,.38);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Roboto,Arial,sans-serif;text-align:center;overflow:hidden;text-shadow:0 1px 4px rgba(0,30,60,.18)}
 .wxd-go{flex:none;background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.38);color:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-.wxd-loc{font-size:27px;font-weight:500;line-height:1.15;letter-spacing:.01em}
-.wxd-temp{font-size:clamp(68px,18vw,84px);font-weight:200;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:1px}
+.wxd-loc{font-size:19px;font-weight:500;line-height:1.15;letter-spacing:.01em}
+.wxd-temp{font-size:clamp(56px,15vw,68px);font-weight:200;line-height:.95;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.wxd-heromain{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;text-align:left;margin-top:2px}
+.wxd-herocond{text-align:center;padding-top:8px;flex:none}
+.wxd-herocond .ic{font-size:38px;line-height:1}
+.wxd-herocond .cd{font-size:16px;font-weight:300;margin-top:5px}
+.wxd-feelsline{font-size:14.5px;font-weight:300;text-align:left;margin:7px 0 0;line-height:1.35}
+.wxd-nexthour{font-size:14.5px;font-weight:300;text-align:left;margin:3px 0 0;line-height:1.35}
+.wxd-nexthour:empty{display:none}
 .wxd-cond{font-size:17px;font-weight:500;margin-top:1px;opacity:.96}
 .wxd-hl{display:inline-block;font-size:15px;font-weight:500;margin-top:2px}
 .wxd-hl:empty{display:none}
 .wxhero .hl:empty{display:none}
 .wxd-meta{font-size:12px;opacity:.78;margin-top:4px;line-height:1.4;font-weight:400}
-.wxd-hourly{display:flex;gap:4px;overflow-x:auto;padding:8px 2px 7px;margin-top:12px;border-top:1px solid rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.38);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.wxd-hourly{display:flex;gap:4px;overflow-x:auto;padding:6px 2px 5px;margin-top:9px;border-top:1px solid rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.38);-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .wxd-hourly::-webkit-scrollbar{display:none}
 .wxd-h{flex:0 0 auto;min-width:46px;text-align:center;color:#fff;background:transparent;border:0;padding:1px 3px}
 .wxd-h .t{font-size:12px;font-weight:600;white-space:nowrap;opacity:.95}
@@ -150,7 +160,7 @@ html,body{overflow-x:hidden}
 .wxd-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px}
 .wxd-days{display:flex;flex-direction:column;margin-top:4px;text-align:left}
 .wxd-status{font-size:14px;opacity:.85;margin:4px 0}
-.wxd-day{display:grid;grid-template-columns:minmax(70px,1.15fr) minmax(40px,.7fr) 30px minmax(52px,1.3fr) 30px;align-items:center;column-gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.22);font-size:15px;color:#fff}
+.wxd-day{display:grid;grid-template-columns:minmax(70px,1.15fr) minmax(40px,.7fr) 30px minmax(52px,1.3fr) 30px;align-items:center;column-gap:8px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.22);font-size:15px;color:#fff}
 .wxd-day:last-child{border-bottom:0}
 .wxd-dname{font-weight:500;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wxd-dic{font-size:16px;display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1.1}
@@ -194,7 +204,7 @@ html,body{overflow-x:hidden}
 body.severe-locked{overflow:hidden}
 </style>
 <style>
-.wxd-precip60{margin-top:10px;font-size:13.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:10px;padding:8px 12px;text-align:left;line-height:1.45}
+.wxd-precip60{margin-top:8px;font-size:12.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:10px;padding:6px 10px;text-align:left;line-height:1.4}
 #view-weather .wx-precip60{max-width:680px;margin:14px auto 0;background:rgba(8,20,28,.5);border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 14px;color:#fff;font-size:14.5px;font-weight:600;text-align:center;line-height:1.45}
 .wxradio{background:rgba(8,20,28,.5);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:16px;max-width:680px;margin:0 auto;text-align:left;color:#fff}
 .wxradio-station{font-size:16px;margin:0 0 4px}
@@ -306,10 +316,10 @@ window.__dnTeams=(function(){
 
   <!-- Weather widget: live conditions + next 8 hours &amp; 3-day forecast — always current, always shown -->
   <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget">
-    <div class="wxd-locrow"><div class="wxd-loc" id="homeLocLabel">Cicero, NY</div><button type="button" class="wxd-locbtn" id="homeUseLoc">📍 Use my location</button><button type="button" class="wxd-locbtn" id="homeUseCicero" hidden>← Cicero, NY</button><span class="wxd-locstatus" id="homeLocStatus" role="status"></span></div>
-    <div class="wxd-temp" id="stripTemp">—°</div>
-    <div class="wxd-cond"><span id="stripIcon" aria-hidden="true">🌡️</span> <span id="stripCond">Loading live weather…</span></div>
-    <div><span class="wxd-hl" id="homeWxHL"></span></div>
+    <div class="wxd-locrow"><div class="wxd-loc" id="homeLocLabel">Cicero, NY</div><button type="button" class="wxd-locbtn" id="homeUseLoc">📍 Use my location</button><button type="button" class="wxd-locbtn" id="homeUseCicero" hidden>← Cicero, NY</button><span class="wxd-locstatus" id="homeLocStatus" role="status"></span><div class="wx-locmanual"><input type="text" id="homeLocInput" placeholder="Or type a city or ZIP" aria-label="Type a city or ZIP code" autocomplete="off"><button type="button" id="homeLocGo">Set</button></div></div>
+    <div class="wxd-heromain"><div class="wxd-temp" id="stripTemp">&mdash;&deg;</div><div class="wxd-herocond"><div class="ic" id="stripIcon" aria-hidden="true">🌡️</div><div class="cd" id="stripCond">Loading live weather&hellip;</div></div></div>
+    <p class="wxd-feelsline" id="homeWxFeelsLine"></p>
+    <p class="wxd-nexthour" id="homeNextHour"></p>
     <div class="wxd-meta" id="homeWxMeta"></div>
     <div class="wxd-precip60" id="homePrecip60" aria-label="Precipitation in the next 60 minutes">Next 60 min: —</div>
     <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 8 hours"><p class="wxd-status">Loading hourly…</p></div>
@@ -458,6 +468,23 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxd-locbtn{appearance:none;border:1px solid rgba(255,255,255,.75);background:rgba(255,255,255,.16);color:#fff;font:inherit;font-size:12px;font-weight:700;border-radius:999px;padding:6px 11px;cursor:pointer;min-height:32px}
 .wxd-locstatus{font-size:11.5px;opacity:.92;width:100%;line-height:1.4}
 .wxhero-main{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:30px 0 4px;text-align:left}
+.wxhero{position:relative}
+.wx-pin{position:absolute;top:10px;right:2px;width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.8);background:rgba(0,0,0,.35);color:#fff;font-size:19px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
+.wx-pin.on{background:#b42318;border-color:#fff}
+.wx-locpop{position:absolute;top:58px;right:2px;z-index:6;background:rgba(6,18,26,.92);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:12px 14px;max-width:260px;text-align:left}
+.wx-locpop[hidden]{display:none}
+.wx-locpop .wxloc{font-size:16px;font-weight:600;text-align:left}
+.wx-locpop .wxloc-controls{justify-content:flex-start;margin-top:8px}
+.wx-locpop .wxloc-status{text-align:left}
+.wx-locmanual{display:flex;gap:6px;margin-top:10px}
+.wx-locmanual input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.14);color:#fff;font:inherit;font-size:13.5px;border-radius:999px;padding:8px 12px;min-height:38px}
+.wx-locmanual input::placeholder{color:rgba(255,255,255,.75)}
+.wx-locmanual button{flex:none;border:1.5px solid rgba(255,255,255,.85);background:#b42318;color:#fff;font:inherit;font-size:13.5px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:38px}
+#homeWxWidget .wx-locmanual{margin-top:8px}
+.wxradio-mini{margin-top:10px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.wxradio-mini-btn{appearance:none;border:1.5px solid rgba(255,255,255,.85);background:rgba(0,0,0,.35);color:#fff;font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:7px 14px;cursor:pointer;min-height:36px;white-space:nowrap}
+.wxradio-mini-status{font-size:11.5px;opacity:.92;margin:0;line-height:1.35;text-align:center;max-width:150px}
+.wxradio-mini-status:empty{display:none}
 .wxhero-main .temp{font-size:clamp(96px,30vw,148px);font-weight:200;line-height:.95;letter-spacing:-.02em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.45)}
 .wxhero-cond{text-align:center;padding-top:16px;flex:none}
 .wxhero-icon{font-size:clamp(50px,14vw,70px);line-height:1}
@@ -466,19 +493,30 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxhero-nexthour{font-size:clamp(17px,4.6vw,21px);font-weight:300;text-align:left;margin:5px 0 0;color:#fff;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.55)}
 .wxhero-nexthour:empty{display:none}
 .wxhero-meta{font-size:14px;font-weight:300;opacity:.92;text-align:left;margin:8px 0 0;color:#fff}
-.severe-day .snowday-dial .ring-fg{stroke:url(#severeDialGrad)}
+.wxpair{display:block;margin:0}
+.snowday.slim{width:100%;max-width:680px;margin:26px auto 0;aspect-ratio:auto;flex-direction:row;justify-content:flex-start;text-align:left;gap:20px;padding:16px 20px;border-radius:18px}
+.snowday.slim .snowday-dialrow{margin:0;flex:none}
+.snowday.slim .snowday-dial{width:min(38vw,168px);height:min(38vw,168px)}
+.snowday.slim .snowday-pct{font-size:clamp(40px,11vw,54px)}
+.snowday.slim .snowday-text{min-width:0}
+@media(max-width:380px){.snowday.slim{gap:14px;padding:14px}}
 </style>
   <div class="wxhero" id="wxHero">
+  <button type="button" class="wx-pin" id="wxPin" aria-label="Location — tap to see or change it" aria-expanded="false" title="Location">📍</button>
+  <div class="wx-locpop" id="wxLocPop" hidden>
   <p class="wxloc" id="wxLocLabel">Cicero, NY</p>
-  <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="wxUseLoc">📍 Use my location</button><button type="button" class="wxloc-btn" id="wxUseCicero" hidden>← Back to Cicero, NY</button></div>
+  <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="wxUseLoc">📍 Use my location</button><button type="button" class="wxloc-btn" id="wxUseCicero" hidden>&larr; Back to Cicero, NY</button></div>
   <p class="wxloc-status" id="wxLocStatus" role="status"></p>
+  <div class="wx-locmanual"><input type="text" id="wxLocInput" placeholder="Or type a city or ZIP" aria-label="Type a city or ZIP code" autocomplete="off"><button type="button" id="wxLocGo">Set</button></div>
+  </div>
+  <script>(function(){var p=document.getElementById('wxPin'),pop=document.getElementById('wxLocPop');if(!p||!pop)return;try{if(window.__dnLoc&&window.__dnLoc.get().live)p.classList.add('on');}catch(e){}p.addEventListener('click',function(){var open=pop.hidden;pop.hidden=!open;p.setAttribute('aria-expanded',open?'true':'false');});})();</script>
   <div class="wxalerts" id="wxAlerts" hidden role="alert" aria-live="polite">
     <div class="wxalerts-head"><span aria-hidden="true">⚠️</span><span>Weather Alerts — Cicero, NY</span><span class="count" id="wxAlertsCount"></span></div>
     <div id="wxAlertsList"></div>
   </div>
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
   <div class="wxhero-top">
-    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div></div></div>
+    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false">▶ Weather Radio</button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
     <p class="wxhero-feels" id="wxFeelsLine"></p>
     <p class="wxhero-nexthour" id="wxNextHour"></p>
     <p class="wxhero-meta" id="wxMeta"></p>
@@ -511,31 +549,18 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     });
   })();
   </script>
-    <div class="wxpair">
-  <div class="wxpair-left">
-<section class="snowday" id="snowDayWidget" aria-label="Snow day calculator">
-    <div class="snowday-label" id="snowDayLabel">Snow Day Chance</div>
+  <section class="snowday slim" id="snowDayWidget" aria-label="Snow day calculator">
     <div class="snowday-dialrow"><div class="snowday-dial" id="snowDayDial"><svg viewBox="0 0 200 200" role="presentation" aria-hidden="true"><defs><linearGradient id="snowDialGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="55%" stop-color="#a5f3fc"/><stop offset="100%" stop-color="#ffffff"/></linearGradient></defs><circle class="ring-bg" cx="100" cy="100" r="88"></circle><circle class="ring-fg" id="snowDayDialRing" cx="100" cy="100" r="88" stroke-dasharray="552.9" stroke-dashoffset="552.9"></circle></svg><div class="snowday-pct" id="snowDayPct">&mdash;</div></div></div>
-    <p class="snowday-line" id="snowDayLine">Checking the live forecast&hellip;</p>
+    <div class="snowday-text"><div class="snowday-label" id="snowDayLabel">Snow Day Chance</div><p class="snowday-line" id="snowDayLine">Checking the live forecast&hellip;</p>
     <p class="snowday-delay" id="snowDayDelay"></p>
-  </section>
-    <section class="snowday severe-day" id="severeWidget" aria-label="Severe storm outlook for the next 7 days">
-    <div class="snowday-label" id="severeLabel">Severe Outlook — Next 7 Days</div>
-    <div class="snowday-dialrow"><div class="snowday-dial" id="severeDial"><svg viewBox="0 0 200 200" role="presentation" aria-hidden="true"><defs><linearGradient id="severeDialGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="55%" stop-color="#f97316"/><stop offset="100%" stop-color="#ef4444"/></linearGradient></defs><circle class="ring-bg" cx="100" cy="100" r="88"></circle><circle class="ring-fg" id="severeDialRing" cx="100" cy="100" r="88" stroke-dasharray="552.9" stroke-dashoffset="552.9"></circle></svg><div class="snowday-pct" id="severePct">&mdash;</div></div></div>
-    <p class="snowday-line" id="severeLine">Checking the live outlook&hellip;</p>
-    <p class="snowday-delay" id="severeSub"></p>
-  </section>
-  </div>
-  <div class="wxpair-right">
-<h3 class="wxsec">⚡ Power Outages — Cicero &amp; New York</h3>
+  </div></section>
+  <h3 class="wxsec">⚡ Power Outages — Cicero &amp; New York</h3>
   <section class="outage" id="outageWidget" aria-label="Power outages for Onondaga County and New York">
     <p class="outage-status" id="outageStatus">Loading live outage data…</p>
     <div id="outageBody"></div>
     <a class="outage-link" href="https://poweroutage.us/area/state/new%20york?mod=article_inline" target="_blank" rel="noopener">Full map on poweroutage.us →</a>
     <p class="outage-src">Outage data: PowerOutage (poweroutage.us) · Homemade widget — no embed, no ads.</p>
   </section>
-    </div>
-  </div>
 <script>
   (function(){
     var statusEl=document.getElementById('outageStatus'),bodyEl=document.getElementById('outageBody');
@@ -557,42 +582,34 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     fetch('outages.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
       if(!d||!d.state||!d.county||!d.updated_at)throw new Error('bad outages.json');
       var age=Date.now()-new Date(d.updated_at).getTime();
-      if(!(age>-300000&&age<=1800000))throw new Error('stale outages.json');
+      if(!(age>-300000&&age<=86400000))throw new Error('stale outages.json');
       var html=block('Onondaga County — Cicero',d.county,0)+block('New York State',d.state,5);
       if(!html)throw new Error('empty outages.json');
       bodyEl.innerHTML=html;
       var when=d.county.source_updated||d.updated_at;
-      statusEl.textContent='Live · Source updated '+new Date(when).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+      statusEl.textContent=(age<=1800000?'Live · Source updated ':'Last updated ')+new Date(when).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'+(age<=1800000?'':' — refresh delayed, showing the last good numbers');
     }).catch(fail);
   })();
   </script>
   <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
   <p class="nws-line"><a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service — Official Forecast for Cicero, NY →</a></p>
-  <h3 class="wxsec">📻 NOAA Weather Radio — Cicero, NY</h3>
-  <section class="wxradio" aria-label="NOAA Weather Radio for Cicero, New York">
-    <p class="wxradio-station"><b>WXL31 Syracuse · 162.550 MHz</b></p>
-    <p class="wxradio-sub">The live NOAA Weather Radio broadcast for Cicero &amp; Central New York — forecasts, watches &amp; warnings from the National Weather Service, 24 hours a day.</p>
-    <button class="wxradio-play" id="wxRadioBtn" type="button" aria-pressed="false">▶ Play — WXL31 Syracuse</button>
-    <p class="wxradio-status" id="wxRadioStatus" role="status"></p>
-    <audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio>
-  </section>
   <script>
   (function(){
     var a=document.getElementById('wxRadioAudio'),b=document.getElementById('wxRadioBtn'),st=document.getElementById('wxRadioStatus');
     if(!a||!b)return;
     var want=false,timer=null;
-    function setBtn(){b.textContent=want?'⏸ Pause — WXL31 Syracuse':'▶ Play — WXL31 Syracuse';b.setAttribute('aria-pressed',want?'true':'false');}
+    function setBtn(){b.textContent=want?'⏸ Radio':'▶ Weather Radio';b.setAttribute('aria-pressed',want?'true':'false');}
     function fail(){
       if(!want)return;
       want=false;if(timer){clearTimeout(timer);timer=null;}
       try{a.pause();}catch(e){}
       setBtn();
-      if(st)st.textContent="Couldn't start the radio stream — tap Play to try again.";
+      if(st)st.textContent="Couldn't start the radio — tap to try again.";
     }
     a.addEventListener('playing',function(){
       if(timer){clearTimeout(timer);timer=null;}
-      if(st)st.textContent='Live now — WXL31 Syracuse · 162.550 MHz';
+      if(st)st.textContent='Live — WXL31 Syracuse · 162.550 MHz';
     });
     a.addEventListener('error',fail);
     b.addEventListener('click',function(){
@@ -893,7 +910,7 @@ body.on-sports footer{color:#aebfe6!important}
     <button type="button" data-sport="hockey"><span class="emoji">🏒</span><b>Hockey</b></button>
     <button type="button" data-sport="ufc"><span class="emoji">👊</span><b>UFC</b></button>
     <button type="button" data-sport="boxing"><span class="emoji">🥊</span><b>Boxing</b></button>
-    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Bet Simulator</b></button>
+    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays &amp; Cheat Sheet</b></button>
   </div>
   </div>
   <div class="sport-panel" id="sport-baseball" hidden>
@@ -1184,16 +1201,17 @@ body.on-sports footer{color:#aebfe6!important}
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
   <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
   <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. 3 per active sport plus an NFL Touchdown slip, NHL Shots on Goal &amp; Goals slips, and NBA Rebounds &amp; 3-Pointers slips · 4–6 legs each · Hit % = its legs multiplied · $10 line = estimated payout. Simulation only — not a guarantee.</p>
+  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. <b>Edge Parlay:</b> 2–3 legs whose model % beats the book&rsquo;s price, built to actually hit. <b>🎰 Lotto Bet of the Day:</b> one longshot per sport. Plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
   <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
   <div id="parlayList"></div>
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
   </section>
   <section class="acard" aria-label="Bet Simulator — simulated upcoming NBA, NFL and NHL games">
-  <div class="ahead"><h2>🎲 Bet Simulator</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game — moneylines from DraftKings (via ESPN), plus simulated player props from live season stats. Parlays above use today&rsquo;s games only. Simulation only — not a guarantee.</p>
+  <div class="ahead"><h2>📋 Cheat Sheet</h2><span class="league-pill">SIMULATION</span></div>
+  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game — moneylines from DraftKings (via ESPN), plus simulated player props. Collapsed so the parlays stay on top — tap below to expand the full list.</p>
   <p class="astatus" id="betSimStatus">Loading games&hellip;</p>
-  <div id="betSimGames"></div>
+  <button type="button" class="cheatsheet-toggle" id="cheatToggle" aria-expanded="false" aria-controls="betSimGames" style="display:block;width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font:inherit;font-weight:700;font-size:14.5px;border-radius:12px;padding:12px;cursor:pointer;min-height:48px">Show the full odds list ▾</button>
+  <div id="betSimGames" hidden></div>
   <p class="asrc" id="betSimStamp">Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages</p>
   </section>
   </div>
@@ -1366,7 +1384,12 @@ body.on-christmas{color-scheme:light}
 <script>
 (function(){
   var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
-  var tabOrder=['home','weather','news','sports','faith','christmas'];
+  /* NEWS TEMPORARILY DISABLED (Derek, Nov 13): the News view markup, its
+     scripts and its bottom-bar button are all still in this file — it is
+     only left out of tabOrder below and hidden by the .news-disabled CSS,
+     so removing 'news' from that CSS + adding 'news' back to tabOrder
+     brings it straight back. */
+  var tabOrder=['home','weather','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
@@ -1748,59 +1771,6 @@ body.on-christmas{color-scheme:light}
     if(ring)ring.style.strokeDashoffset=String((552.9*(1-r.pct/100)).toFixed(1));
     if(delayEl)delayEl.textContent='Chance of a delay: '+(r.delayPct!=null?r.delayPct+'%':'\u2014');
   }
-  // ---- Severe Outlook (next 7 days) — same ring design as Snow Day.
-  // Calculated in-page from the live Open-Meteo forecast + active NWS
-  // alerts + the NWS Hazardous Weather Outlook text. If none of that
-  // live data loads, the widget shows a dash, never a guessed percent.
-  var severeAlertsFailed=false;
-  function calcSevere(){
-    var haveWx=!!(snowWx&&snowWx.daily&&snowWx.daily.time), haveAl=Array.isArray(snowAlerts), hwo=window.__dnHWOText||'';
-    if(!haveWx&&!haveAl&&!hwo)return null;
-    var pct=0, driver='No severe storms in the live outlook for the next 7 days', bestDay='';
-    if(haveAl)snowAlerts.forEach(function(f){
-      var e=(((f.properties||{}).event)||'').toLowerCase(), v=0;
-      if(e.indexOf('tornado warning')>-1)v=90; else if(e.indexOf('severe thunderstorm warning')>-1)v=85;
-      else if(e.indexOf('flash flood warning')>-1)v=70; else if(e.indexOf('tornado watch')>-1)v=65;
-      else if(e.indexOf('severe thunderstorm watch')>-1)v=60; else if(e.indexOf('high wind warning')>-1)v=55;
-      else if(e.indexOf('winter storm warning')>-1||e.indexOf('blizzard warning')>-1||e.indexOf('ice storm warning')>-1)v=50;
-      else if(e.indexOf('watch')>-1)v=35; else if(e.indexOf('warning')>-1)v=40;
-      if(v>pct){pct=v;driver='Driven by an active alert: '+((f.properties||{}).event||'Weather alert');}
-    });
-    if(haveWx){
-      var d=snowWx, tstormDays=0;
-      for(var i=0;i<Math.min(7,d.daily.time.length);i++){
-        var code=d.daily.weather_code?d.daily.weather_code[i]:0;
-        var pp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[i]!=null)?d.daily.precipitation_probability_max[i]:null;
-        var gust=(d.daily.wind_gusts_10m_max&&d.daily.wind_gusts_10m_max[i]!=null)?d.daily.wind_gusts_10m_max[i]:null;
-        var v=0;
-        if(code===96||code===99)v=60; else if(code===95)v=45;
-        else if(pp!=null&&pp>=70&&gust!=null&&gust>=45)v=35;
-        else if(pp!=null&&pp>=50&&gust!=null&&gust>=35)v=22;
-        else if(code===65||code===82)v=25;
-        if(code===95||code===96||code===99)tstormDays++;
-        if(v>pct){pct=v;bestDay=new Date(d.daily.time[i]+'T12:00:00').toLocaleDateString('en-US',{weekday:'long'});driver='Highest risk looks like '+bestDay+' in the live forecast';}
-      }
-      if(tstormDays>=2)pct=Math.min(95,pct+10);
-    }
-    if(hwo){
-      var hw=hwo.toLowerCase(), hv=0;
-      if(hw.indexOf('tornado')>-1)hv=50; else if(hw.indexOf('severe thunderstorm')>-1)hv=40;
-      else if(hw.indexOf('damaging wind')>-1||hw.indexOf('large hail')>-1)hv=35;
-      if(hv>pct){pct=hv;driver='The National Weather Service hazardous outlook mentions severe weather this week';}
-    }
-    return {pct:Math.max(0,Math.min(95,Math.round(pct))),driver:driver};
-  }
-  function updateSevere(){
-    var pctEl=document.getElementById('severePct'),lineEl=document.getElementById('severeLine'),ring=document.getElementById('severeDialRing'),subEl=document.getElementById('severeSub');
-    if(!pctEl)return;
-    var r=calcSevere();
-    if(!r){pctEl.textContent='\u2014';if(lineEl)lineEl.textContent=(snowWxFailed&&severeAlertsFailed)?'Live outlook unavailable':'Checking the live outlook\u2026';if(ring)ring.style.strokeDashoffset='552.9';if(subEl)subEl.textContent='';return;}
-    pctEl.textContent=r.pct+'%';
-    if(lineEl)lineEl.textContent=r.driver;
-    if(ring)ring.style.strokeDashoffset=String((552.9*(1-r.pct/100)).toFixed(1));
-    if(subEl)subEl.textContent='Chance of a severe storm in the next 7 days';
-  }
-  window.__dnSevereUpdate=updateSevere;
   // ---- Tappable 7-day detail (Weather tab only) ----
   var wxData=null, wxOpenDay=-1, wxDragDist=0, wxDragX=null, wxDragY=null;
   function fmtAmtIn(v){if(v==null||isNaN(v))return '\u2014';if(v<0.005)return '0 in';var r=Math.round(v*100)/100;return (r%1===0?r.toFixed(0):String(r))+' in';}
@@ -1901,13 +1871,13 @@ body.on-christmas{color-scheme:light}
   function compass(deg){var dirs=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];return dirs[Math.round(((deg%360)+360)%360/22.5)%16];}
   function fmtClock(iso){if(!iso)return'—';var dt=new Date(iso);if(isNaN(dt))return'—';return dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
   fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-    snowWx=d; wxData=d; updateSnowDay(); updateSevere();
+    snowWx=d; wxData=d; updateSnowDay(); 
     var cur=d.current, ci=info(cur.weather_code);
     document.getElementById('wxIcon').textContent=ci[0];
     document.getElementById('wxTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('wxDesc').textContent=ci[1];
     document.getElementById('wxMeta').textContent='Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);var __fl=document.getElementById('wxFeelsLine');if(__fl)__fl.textContent='Feels like '+Math.round(cur.apparent_temperature)+'°';
-    if(d.daily&&d.daily.temperature_2m_max&&d.daily.temperature_2m_max[0]!=null){var hlTxt='H:'+Math.round(d.daily.temperature_2m_max[0])+'°   L:'+Math.round(d.daily.temperature_2m_min[0])+'°';var hlA=document.getElementById('homeWxHL');if(hlA)hlA.textContent=hlTxt;var hlB=document.getElementById('wxHL');if(hlB)hlB.textContent=hlTxt;var __fl2=document.getElementById('wxFeelsLine');if(__fl2)__fl2.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° | H '+Math.round(d.daily.temperature_2m_max[0])+'° | L '+Math.round(d.daily.temperature_2m_min[0])+'°';}
+    if(d.daily&&d.daily.temperature_2m_max&&d.daily.temperature_2m_max[0]!=null){var hlTxt='H:'+Math.round(d.daily.temperature_2m_max[0])+'°   L:'+Math.round(d.daily.temperature_2m_min[0])+'°';var hlA=document.getElementById('homeWxHL');if(hlA)hlA.textContent=hlTxt;var hlB=document.getElementById('wxHL');if(hlB)hlB.textContent=hlTxt;var __fl2=document.getElementById('wxFeelsLine');var __hf=document.getElementById('homeWxFeelsLine');if(__hf)__hf.textContent='Feels like '+Math.round(cur.apparent_temperature)+'\u00B0 | H '+Math.round(d.daily.temperature_2m_max[0])+'\u00B0 | L '+Math.round(d.daily.temperature_2m_min[0])+'\u00B0';if(__fl2)__fl2.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° | H '+Math.round(d.daily.temperature_2m_max[0])+'° | L '+Math.round(d.daily.temperature_2m_min[0])+'°';}
     // Today's Details grid
     var det='';
     function tile(l,v,s){det+='<div class="wdet"><div class="wl">'+l+'</div><div class="wv">'+v+'</div>'+(s?'<div class="ws">'+s+'</div>':'')+'</div>';}
@@ -1952,7 +1922,7 @@ body.on-christmas{color-scheme:light}
         wHour.innerHTML=heroCards.map(function(c){return c.html;}).join('');
       }
     }
-    var __nh=document.getElementById('wxNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';}
+    var __nh=document.getElementById('wxNextHour');var __nhHome=document.getElementById('homeNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';if(__nhHome)__nhHome.textContent=__nh.textContent;}
     applyWxBg(cur.weather_code,cur.is_day,ci[1]);
     document.getElementById('stripIcon').textContent=ci[0];
     document.getElementById('stripTemp').textContent=Math.round(cur.temperature_2m)+'°';
@@ -1971,7 +1941,7 @@ body.on-christmas{color-scheme:light}
     if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
     var hwm=document.getElementById('homeWxMeta');if(hwm)hwm.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° · Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);
     document.getElementById('wxStamp').textContent='Live data: Open-Meteo · Alerts: National Weather Service · '+__wxLoc.label+' · Loaded '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  }).catch(function(){snowWxFailed=true;updateSnowDay();updateSevere();document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable — open the Weather tab to retry.';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
+  }).catch(function(){snowWxFailed=true;updateSnowDay();document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable — open the Weather tab to retry.';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
   // Live weather alerts — National Weather Service (api.weather.gov), Cicero point. Shown only when active.
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
@@ -1979,7 +1949,7 @@ body.on-christmas{color-scheme:light}
   function sevRank(p){var c=sevClass(p);return c==='sev-warning'?0:c==='sev-watch'?1:c==='sev-advisory'?2:3;}
   fetch('https://api.weather.gov/alerts/active?point='+(window.__dnLocPoint||'43.1713,-76.1250'),{headers:{'Accept':'application/geo+json'}}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     var feats=(d&&d.features)||[];
-    snowAlerts=feats; updateSnowDay(); updateSevere();
+    snowAlerts=feats; updateSnowDay(); 
     if(!feats.length)return; // No active alerts — section stays hidden
     feats.sort(function(a,b){return sevRank(a.properties)-sevRank(b.properties);});
     var html='';
@@ -2005,7 +1975,7 @@ body.on-christmas{color-scheme:light}
     if(hl) hl.innerHTML=html;
     if(hc) hc.textContent=feats.length+(feats.length===1?' active':' active');
     if(ha) ha.hidden=false;
-  }).catch(function(){severeAlertsFailed=true;updateSevere();var e=document.getElementById('wxAlertsErr');if(e)e.style.display='block';var he=document.getElementById('homeAlertsErr');if(he)he.style.display='block';});
+  }).catch(function(){severeAlertsFailed=true;var e=document.getElementById('wxAlertsErr');if(e)e.style.display='block';var he=document.getElementById('homeAlertsErr');if(he)he.style.display='block';});
 })();
 </script>
 <script>
@@ -2745,6 +2715,17 @@ body.on-christmas{color-scheme:light}
         });
       });
     });
+    var inj={};
+    (d.injuries||[]).forEach(function(gr){
+      var tid=String((gr.team&&gr.team.id)||''); if(!tid)return;
+      var names=[];
+      (gr.injuries||[]).forEach(function(x){
+        var st=String(x.status||'');
+        if(/out|doubtful/i.test(st))names.push(((x.athlete&&x.athlete.displayName)||'')+(st?' ('+st+')':''));
+      });
+      inj[tid]=names;
+    });
+    g.injuriesByTeam=inj;
     g.allProps=all;
     g.tdPlayers=Object.keys(tdByName).map(function(k){return tdByName[k];});
     return out.slice(0,4);
@@ -2784,10 +2765,10 @@ body.on-christmas{color-scheme:light}
      its line / average could not be verified. A parlay's hit % is the
      product of its legs' probabilities. Simulation only. */
   var BOOKS=[
-    {name:'DraftKings',url:'https://sportsbook.draftkings.com/sportsbook?adposition&device=m&feedItemId&gad_campaignid=24001654452&gad_source=5&keyword&matchtype&medium=Google&network=Google_Adwords&utm_AdGroupId=200993846879&utm_adCampaignId=24001654452&utm_adGroupName&utm_campaignName&utm_creativeId=830382205118'},
-    {name:'FanDuel',url:'https://www.fanduel.com/?app_name=DFS'},
-    {name:'Kalshi',url:'https://kalshi.com/nba/standings/west'},
-    {name:'Caesars',url:'https://www.caesars.com/sportsbook-and-casino/welcome'}
+    {name:'DraftKings',url:'https://sportsbook.draftkings.com/'},
+    {name:'FanDuel',url:'https://sportsbook.fanduel.com/'},
+    {name:'Kalshi',url:'https://kalshi.com/'},
+    {name:'Caesars',url:'https://www.caesars.com/sportsbook-and-casino'}
   ];
   function erf(x){var s=x<0?-1:1;x=Math.abs(x);var t=1/(1+0.3275911*x);var y=1-((((1.061405429*t-1.453152027)*t+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return s*y;}
   function normCdf(z){return 0.5*(1+erf(z/Math.SQRT2));}
@@ -2798,26 +2779,121 @@ body.on-christmas{color-scheme:light}
     if(p<0.30)p=0.30;if(p>0.78)p=0.78;
     return p;
   }
+  /* ---- Detailed model (Nov 13 rework) -------------------------------
+     Legs are no longer priced off season averages alone:
+     - Team form: each team's last 5 completed games (win %, average
+       margin), its home / away win split, and rest days since its last
+       game — all from the live ESPN team schedule.
+     - Injuries: players listed Out / Doubtful in the game's own ESPN
+       summary count against their team.
+     - Player form: for NBA / NHL props, the player's last 5 game logs
+       (live ESPN gamelog) are blended 55/45 with the season average,
+       and the spread comes from those 5 games when available.
+     - Moneyline model % = the book's de-vigged % adjusted by form,
+       home/away, rest and injuries. EDGE = model % minus the book's
+       de-vigged % (for props, minus the standard -110 price of 52.4%).
+       Only legs with real edge headline the Edge Parlay — no more
+       6-leg all-chalk slips that pay +330 and still lose. Model
+       estimates only — not a guarantee. */
+  var formCache={};
+  function teamForm(lg,teamId){
+    var key=lg.key+'-'+teamId;
+    if(formCache[key])return formCache[key];
+    var p=fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/teams/'+teamId+'/schedule').then(function(d){
+      var evs=((d&&d.events)||[]).filter(function(e){var c=(e.competitions||[])[0];var st=c&&c.status&&c.status.type;return st&&st.completed;});
+      evs.sort(function(a,b){return new Date(b.date)-new Date(a.date);});
+      function line(e){var c=(e.competitions||[])[0];var mine=null,opp=null,ha='';(c.competitors||[]).forEach(function(x){if(String(x.team.id)===String(teamId)){mine=x;ha=x.homeAway;}else opp=x;});if(!mine||!opp||!mine.score||!opp.score)return null;var ms=parseFloat(mine.score.value),os=parseFloat(opp.score.value);if(isNaN(ms)||isNaN(os))return null;return{won:ms>os,margin:ms-os,ha:ha,date:e.date};}
+      var last=[],all=[];
+      evs.forEach(function(e){var L=line(e);if(L)all.push(L);});
+      last=all.slice(0,5);
+      function pct(arr){if(!arr.length)return null;return arr.filter(function(x){return x.won;}).length/arr.length;}
+      var hw=all.filter(function(x){return x.ha==='home';}),aw=all.filter(function(x){return x.ha==='away';});
+      return{n:last.length,winPct:pct(last),margin:last.length?last.reduce(function(a,x){return a+x.margin;},0)/last.length:0,homePct:pct(hw),awayPct:pct(aw),restDays:all.length?Math.max(0,Math.round((Date.now()-new Date(all[0].date).getTime())/86400000)):null};
+    }).catch(function(){return null;});
+    formCache[key]=p;return p;
+  }
+  var GLMAP={nba:{'Pts':'PTS','Reb':'REB','Ast':'AST','3PM':'3PT'},nhl:{'Goals':'G','Assists':'A','Points':'PTS','SOG':'S'}};
+  function gamelogRecent(lg,athleteId,label){
+    var glm=GLMAP[lg.key]||{};var gl=glm[label];if(!gl||!athleteId)return Promise.resolve(null);
+    var parts=lg.path.split('/');
+    return fetchJSON('https://site.api.espn.com/apis/common/v3/sports/'+parts[0]+'/'+parts[1]+'/athletes/'+athleteId+'/gamelog').then(function(d){
+      var labels=(d&&d.labels)||[];var idx=labels.indexOf(gl);if(idx<0)return null;
+      var st0=((d.seasonTypes||[])[0])||{};var cat=((st0.categories||[])[0])||{};
+      var evs=cat.events||[];var vals=[];
+      for(var i=0;i<evs.length&&vals.length<5;i++){var raw=evs[i].stats&&evs[i].stats[idx];if(raw==null)continue;var v=parseFloat(String(raw).split('-')[0]);if(!isNaN(v))vals.push(v);}
+      if(vals.length<3)return null;
+      var avg=vals.reduce(function(a,b){return a+b;},0)/vals.length;
+      var sd=Math.sqrt(vals.reduce(function(a,b){return a+(b-avg)*(b-avg);},0)/vals.length);
+      return{avg:Math.round(avg*10)/10,sd:sd,n:vals.length};
+    }).catch(function(){return null;});
+  }
+  function modelPropProb(pr){
+    var line=(pr.line!=null?pr.line:0.5);
+    var effAvg=pr.avg,sd=null,usedL5=false;
+    var baseSd;if(pr.avg>20)baseSd=pr.avg*0.38;else if(pr.avg>5)baseSd=pr.avg*0.42;else baseSd=Math.max(0.55,pr.avg*0.65);
+    if(pr.l5&&pr.l5.avg!=null){effAvg=0.55*pr.l5.avg+0.45*pr.avg;usedL5=true;if(pr.l5.sd>0)sd=Math.max(baseSd*0.5,Math.min(baseSd*1.1,pr.l5.sd));}
+    if(sd==null)sd=baseSd;
+    var p=1-normCdf((line-effAvg)/sd);
+    if(p<0.22)p=0.22;if(p>0.85)p=0.85;
+    return{prob:p,effAvg:Math.round(effAvg*10)/10,usedL5:usedL5};
+  }
+  function mlModel(g,side){
+    var pa=implied(g.ml.away),ph=implied(g.ml.home);if(pa==null||ph==null)return null;
+    var norm=pa+ph;var devig=(side==='away'?pa:ph)/norm;
+    var mine=side==='away'?g.away:g.home,opp=side==='away'?g.home:g.away;
+    var mf=side==='away'?g.formAway:g.formHome,of=side==='away'?g.formHome:g.formAway;
+    var adj=0,why=[];
+    if(mf&&of&&mf.winPct!=null&&of.winPct!=null){var fd=(mf.winPct-of.winPct)*0.10;adj+=fd;if(Math.abs(fd)>=0.015)why.push('last-5 form '+Math.round(mf.winPct*100)+'% vs '+Math.round(of.winPct*100)+'%');}
+    if(mf&&of){var md=Math.max(-0.03,Math.min(0.03,(mf.margin-of.margin)*0.004));adj+=md;}
+    if(mf&&of){var split=(side==='home'?mf.homePct:mf.awayPct),osplit=(side==='home'?of.awayPct:of.homePct);if(split!=null&&osplit!=null){var sd2=(split-osplit)*0.05;adj+=sd2;if(Math.abs(sd2)>=0.015)why.push((side==='home'?'home':'away')+' split '+Math.round(split*100)+'% vs '+Math.round(osplit*100)+'%');}}
+    if(mf&&of&&mf.restDays!=null&&of.restDays!=null){if(mf.restDays<=1&&of.restDays>=2){adj-=0.02;why.push('back-to-back');}else if(mf.restDays>=3&&of.restDays<=1){adj+=0.015;why.push('rest edge '+mf.restDays+'d vs '+of.restDays+'d');}}
+    var myOut=((g.injuriesByTeam||{})[mine.id]||[]).length,oppOut=((g.injuriesByTeam||{})[opp.id]||[]).length;
+    if(myOut||oppOut){var ia=Math.max(-0.045,Math.min(0.045,(oppOut-myOut)*0.015));adj+=ia;if(oppOut)why.push(opp.abbr+' missing '+oppOut+' (out/doubtful)');if(myOut)why.push(mine.abbr+' missing '+myOut+' (out/doubtful)');}
+    var prob=Math.max(0.05,Math.min(0.95,devig+adj));
+    return{prob:prob,devig:devig,edge:prob-devig,why:why};
+  }
+  function enrichModel(lg,games){
+    var jobs=[];
+    games.forEach(function(g){
+      jobs.push(teamForm(lg,g.away.id).then(function(f){g.formAway=f;}));
+      jobs.push(teamForm(lg,g.home.id).then(function(f){g.formHome=f;}));
+    });
+    if(lg.key==='nba'||lg.key==='nhl'){
+      var seen={},cands=[];
+      games.forEach(function(g){
+        (g.allProps||[]).forEach(function(pr){var k=pr.id+'-'+pr.label;if(pr.id&&!seen[k]){seen[k]=1;cands.push(pr);}});
+        (g.threeProps||[]).forEach(function(sp){var k2=sp.id+'-3PM';if(sp.id&&!seen[k2]){seen[k2]=1;cands.push({id:sp.id,label:'3PM',_t:sp});}});
+        (g.sogProps||[]).forEach(function(sp){var k3=sp.id+'-SOG';if(sp.id&&!seen[k3]){seen[k3]=1;cands.push({id:sp.id,label:'SOG',_t:sp});}});
+      });
+      cands.slice(0,18).forEach(function(pr){
+        jobs.push(gamelogRecent(lg,pr.id,pr.label).then(function(l5){if(l5){if(pr._t)pr._t.l5=l5;else pr.l5=l5;}}));
+      });
+    }
+    return Promise.all(jobs).catch(function(){});
+  }
   function buildLegPool(lg,games){
     var pool=[];
     games.forEach(function(g){
       if(g.ml){
-        var pa=implied(g.ml.away),ph=implied(g.ml.home);
-        if(pa!=null&&ph!=null&&(pa+ph)>0){
-          var norm=pa+ph,favAway=(pa/norm)>=(ph/norm);
-          var fav=favAway?g.away:g.home,favMl=favAway?g.ml.away:g.ml.home,favP=(favAway?pa:ph)/norm;
+        ['away','home'].forEach(function(side){
+          var mm=mlModel(g,side);if(!mm)return;
+          var tm=side==='away'?g.away:g.home,opp=side==='away'?g.home:g.away,mlStr=side==='away'?g.ml.away:g.ml.home;
           var kalPct=null;
-          try{if(window.__kalshiPct)kalPct=window.__kalshiPct(lg.key,{abbr:fav.abbr,name:fav.name,full:fav.name,id:fav.id},favAway?g.home:g.away);}catch(e){}
-          pool.push({kind:'ML',prob:favP,text:fav.name+' ML '+fmtML(favMl),sub:g.away.abbr+' at '+g.home.abbr+' · '+fmtWhen(g.date),key:'ml-'+g.id,dkDec:mlDec(favMl),kalDec:pctDec(kalPct)});
-        }
+          try{if(window.__kalshiPct)kalPct=window.__kalshiPct(lg.key,{abbr:tm.abbr,name:tm.name,full:tm.name,id:tm.id},{abbr:opp.abbr,name:opp.name,full:opp.name,id:opp.id});}catch(e){}
+          pool.push({kind:'ML',prob:mm.prob,edge:mm.edge,text:tm.name+' ML '+fmtML(mlStr),sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+fmtWhen(g.date)+(mm.why.length?' \u00b7 '+mm.why.join(' \u00b7 '):''),key:'ml-'+g.id+'-'+side,dkDec:mlDec(mlStr),kalDec:pctDec(kalPct),gameId:g.id});
+        });
       }
-      (g.props||[]).forEach(function(pr,i){
-        pool.push({kind:'Prop',prob:propProb(pr.avg,pr.line),text:pr.name+' Over '+pr.line+' '+pr.label,sub:g.away.abbr+' at '+g.home.abbr+' · avg '+pr.avg+'/gm',avg:pr.avg,line:pr.line,key:'prop-'+g.id+'-'+i+'-'+pr.name});
+      var props=(g.allProps&&g.allProps.length)?g.allProps:(g.props||[]);
+      var seenPr={};
+      props.forEach(function(pr,i){
+        var kk=pr.name+'-'+pr.label;if(seenPr[kk])return;seenPr[kk]=1;
+        var mp=modelPropProb(pr);
+        pool.push({kind:'Prop',prob:mp.prob,edge:mp.prob-0.524,text:pr.name+' Over '+pr.line+' '+pr.label,sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+(mp.usedL5?('last-5 avg '+(pr.l5?pr.l5.avg:'')+' \u00b7 blended '+mp.effAvg+'/gm'):('season avg '+pr.avg+'/gm')),avg:pr.avg,line:pr.line,key:'prop-'+g.id+'-'+i+'-'+pr.name+'-'+pr.label,gameId:g.id,name:pr.name});
       });
     });
     var seen={},out=[];
     pool.forEach(function(l){if(seen[l.key])return;seen[l.key]=1;out.push(l);});
-    out.sort(function(a,b){return b.prob-a.prob;});
+    out.sort(function(a,b){return (b.edge-a.edge)||(b.prob-a.prob);});
     return out;
   }
   function fillLegs(legs,pool,target){
@@ -2826,6 +2902,7 @@ body.on-christmas{color-scheme:light}
     return legs.slice(0,6);
   }
   function sig(legs){return legs.map(function(l){return l.key;}).sort().join('|');}
+  function fmtOdds(dec){if(!dec||dec<=1)return'';return dec>=2?('+'+Math.round((dec-1)*100)):('−'+Math.round(100/(dec-1)));}
   function mlDec(mlStr){var n=parseInt(mlStr,10);if(isNaN(n)||n===0)return null;return n>0?1+n/100:1+100/(-n);}
   function pctDec(pct){if(pct==null||isNaN(pct)||pct<=0||pct>=100)return null;return 100/pct;}
   /* $10 payout + best book. A best book is marked ONLY when every leg
@@ -2863,7 +2940,7 @@ body.on-christmas{color-scheme:light}
     var legs=[];
     games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
       if(pr.label!=='Reb')return;
-      legs.push({kind:'Prop',name:pr.name,prob:propProb(pr.avg,pr.line),text:pr.name+' Over '+pr.line+' Reb',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' reb/gm',avg:pr.avg,line:pr.line,key:'reb-'+g.id+'-'+pr.name});
+      legs.push({kind:'Prop',name:pr.name,prob:modelPropProb(pr).prob,text:pr.name+' Over '+pr.line+' Reb',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' reb/gm',avg:pr.avg,line:pr.line,key:'reb-'+g.id+'-'+pr.name});
     });});
     return dedupeSort(legs);
   }
@@ -2871,7 +2948,7 @@ body.on-christmas{color-scheme:light}
     var legs=[];
     games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
       if(pr.label!=='Goals')return;
-      legs.push({kind:'Prop',name:pr.name,prob:propProb(pr.avg,0.5),text:pr.name+' Over 0.5 Goals',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' goals/gm',avg:pr.avg,line:0.5,key:'goal-'+g.id+'-'+pr.name});
+      legs.push({kind:'Prop',name:pr.name,prob:modelPropProb({avg:pr.avg,line:0.5,l5:pr.l5}).prob,text:pr.name+' Over 0.5 Goals',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' goals/gm',avg:pr.avg,line:0.5,key:'goal-'+g.id+'-'+pr.name});
     });});
     return dedupeSort(legs);
   }
@@ -2889,7 +2966,7 @@ body.on-christmas{color-scheme:light}
     var legs=[];
     games.forEach(function(g){(g.sogProps||[]).forEach(function(sp){
       var line=simLine(sp.avg);
-      legs.push({kind:'Prop',name:sp.name,prob:propProb(sp.avg,line),text:sp.name+' Over '+line+' Shots on Goal',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' shots/gm',avg:sp.avg,line:line,key:'sog-'+g.id+'-'+sp.name});
+      legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5}).prob,text:sp.name+' Over '+line+' Shots on Goal',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' shots/gm',avg:sp.avg,line:line,key:'sog-'+g.id+'-'+sp.name});
     });});
     return dedupeSort(legs);
   }
@@ -2897,7 +2974,7 @@ body.on-christmas{color-scheme:light}
     var legs=[];
     games.forEach(function(g){(g.threeProps||[]).forEach(function(sp){
       var line=simLine(sp.avg);
-      legs.push({kind:'Prop',name:sp.name,prob:propProb(sp.avg,line),text:sp.name+' Over '+line+' 3-Pointers',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' 3PM/gm',avg:sp.avg,line:line,key:'3pm-'+g.id+'-'+sp.name});
+      legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5}).prob,text:sp.name+' Over '+line+' 3-Pointers',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' 3PM/gm',avg:sp.avg,line:line,key:'3pm-'+g.id+'-'+sp.name});
     });});
     return dedupeSort(legs);
   }
@@ -2919,36 +2996,44 @@ body.on-christmas{color-scheme:light}
     if(lg.key==='nba'){
       var seen={},list=[];
       gamesToday.forEach(function(g){(g.allProps||[]).forEach(function(pr){if(pr.label==='Pts'&&pr.id&&!seen[pr.id]){seen[pr.id]=1;list.push({g:g,pr:pr});}});});
-      return Promise.all(list.slice(0,20).map(function(it){return coreStatAvg('basketball','nba',it.pr.id,'avgThreePointFieldGoalsMade').then(function(avg){if(avg!=null){(it.g.threeProps=it.g.threeProps||[]).push({name:it.pr.name,avg:Math.round(avg*10)/10});}});})).then(function(){});
+      return Promise.all(list.slice(0,20).map(function(it){return coreStatAvg('basketball','nba',it.pr.id,'avgThreePointFieldGoalsMade').then(function(avg){if(avg!=null){(it.g.threeProps=it.g.threeProps||[]).push({name:it.pr.name,id:it.pr.id,avg:Math.round(avg*10)/10});}});})).then(function(){});
     }
     if(lg.key==='nhl'){
       var seen2={},list2=[];
       gamesToday.forEach(function(g){(g.allProps||[]).forEach(function(pr){if(pr.id&&!seen2[pr.id+'-'+g.id]){seen2[pr.id+'-'+g.id]=1;list2.push({g:g,pr:pr});}});});
-      return Promise.all(list2.slice(0,16).map(function(it){return coreStatAvg('hockey','nhl',it.pr.id,'avgShots').then(function(avg){if(avg!=null){(it.g.sogProps=it.g.sogProps||[]).push({name:it.pr.name,avg:Math.round(avg*10)/10});}});})).then(function(){});
+      return Promise.all(list2.slice(0,16).map(function(it){return coreStatAvg('hockey','nhl',it.pr.id,'avgShots').then(function(avg){if(avg!=null){(it.g.sogProps=it.g.sogProps||[]).push({name:it.pr.name,id:it.pr.id,avg:Math.round(avg*10)/10});}});})).then(function(){});
     }
     return Promise.resolve();
   }
   function buildParlays(lg,games){
     var pool=buildLegPool(lg,games);
-    if(pool.length<4)return[];
-    var ml=pool.filter(function(l){return l.kind==='ML';});
-    var props=pool.filter(function(l){return l.kind==='Prop';});
-    var p1=[];
-    [ml[0],props[0],ml[1],props[1]].forEach(function(l){if(l)p1.push(l);});
-    p1=fillLegs(p1,pool,4);
-    var p2=fillLegs(props.slice(0,5),pool,props.length>=4?5:4);
-    if(sig(p2)===sig(p1))p2=fillLegs(pool.slice(1),pool,5);
-    var p3target=pool.length>=6?6:(pool.length>=5?5:4);
-    var p3=pool.slice(0,p3target);
-    if(sig(p3)===sig(p1)||sig(p3)===sig(p2)){
-      var alt=pool.slice(1,1+p3target);
-      if(alt.length>=4&&sig(alt)!==sig(p1)&&sig(alt)!==sig(p2))p3=alt;
-    }
-    var defs=[{title:'Favorites Mix',legs:p1},{title:'Star Props',legs:p2},{title:'Best Chances',legs:p3}];
-    return defs.filter(function(d){return d.legs.length>=4&&d.legs.length<=6;}).map(function(d){
-      var hit=d.legs.reduce(function(a,l){return a*l.prob;},1);
-      return{title:d.title,legs:d.legs,hit:hit};
+    if(pool.length<2)return[];
+    function prod(ls){return ls.reduce(function(a,l){return a*l.prob;},1);}
+    var out=[];
+    /* Edge Parlay — only legs whose model % beats the book's price by
+       2+ points, 2-3 legs, trimmed so the combined chance stays real
+       (aim ~20%+). No edge, no parlay — never padded with chalk. */
+    var edgeLegs=pool.filter(function(l){return l.edge>=0.02&&l.prob>=0.50;});
+    var picked=[],gameCount={};
+    edgeLegs.forEach(function(l){
+      if(picked.length>=3)return;
+      if(gameCount[l.gameId]&&picked.length>=2)return;
+      picked.push(l);gameCount[l.gameId]=(gameCount[l.gameId]||0)+1;
     });
+    while(picked.length>2&&prod(picked)<0.15)picked.pop();
+    if(picked.length>=2&&prod(picked)>=0.10)out.push({title:'Edge Parlay',legs:picked,hit:prod(picked),edge:true});
+    /* Lotto Bet of the Day — one longshot per sport: plus-money
+       underdogs + live longshot props, 4-5 legs, big payout, honest
+       low hit %. */
+    var dogs=pool.filter(function(l){return l.kind==='ML'&&l.dkDec&&l.dkDec>=2.0;}).sort(function(a,b){return b.prob-a.prob;});
+    var longProps=pool.filter(function(l){return l.kind==='Prop'&&l.prob>=0.26&&l.prob<=0.50;});
+    var lotto=[],di=0,pi2=0,seenK={};
+    while(lotto.length<5&&(di<dogs.length||pi2<longProps.length)){
+      if(di<dogs.length){var d1=dogs[di++];if(!seenK[d1.key]){seenK[d1.key]=1;lotto.push(d1);}}
+      if(lotto.length<5&&pi2<longProps.length){var p1=longProps[pi2++];if(!seenK[p1.key]){seenK[p1.key]=1;lotto.push(p1);}}
+    }
+    if(lotto.length>=4)out.push({title:'Lotto Bet of the Day',legs:lotto,hit:prod(lotto),lotto:true});
+    return out;
   }
   function renderParlays(res){
     var list=document.getElementById('parlayList'),pst=document.getElementById('parlayStatus');
@@ -2958,7 +3043,7 @@ body.on-christmas{color-scheme:light}
       return (res[li]||[]).filter(function(g){return etDay(g.date)===tk;});
     });
     var jobs=[];
-    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).catch(function(){}));});
+    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).catch(function(){}));jobs.push(enrichModel(lg,todays[li]).catch(function(){}));});
     var kalJob=(window.__kalshiLoad?window.__kalshiLoad().catch(function(){}):Promise.resolve());
     return Promise.all(jobs.concat([kalJob])).then(function(){
     var h='',any=false;
@@ -2985,19 +3070,20 @@ body.on-christmas{color-scheme:light}
         addSpecial(rebPool(gamesToday),'Rebounds','NBA Rebounds slip: not enough verified legs today — no rebounds parlay shown.');
         addSpecial(threePool(gamesToday),'3-Pointers','NBA 3-Pointers slip: not enough verified legs today — no 3-pointers parlay shown.');
       }
-      if(!parlays.length){h+='<p class="astatus">Not enough verified legs to build a 4-leg parlay for this sport today — no parlay shown.</p>'+notes;return;}
+      if(!parlays.length){h+='<p class="astatus">No real edge found in today&rsquo;s games for this sport — no parlay forced. The Edge Parlay only runs when the model beats the book&rsquo;s price.</p>'+notes;return;}
       any=true;
       parlays.forEach(function(p,pi){
         var hitPct=p.hit*100;
         var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
         var pay=parlayPayout(p);
         var copyTxt=p.legs.map(function(l){return l.text+(l.kind==='Prop'?' (SIM)':'');}).join('\n');
-        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+esc(lg.label.replace(/^[^ ]+ /,''))+' Parlay '+(pi+1)+' — '+esc(p.title)+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
+        var titleTxt=p.lotto?('🎰 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Lotto Bet of the Day'):(esc(lg.label.replace(/^[^ ]+ /,''))+' '+(p.edge?'Edge Parlay':'Parlay '+(pi+1)+' — '+esc(p.title)));
+        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+titleTxt+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
         p.legs.forEach(function(l){
-          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+((l.edge!=null&&l.edge>=0.02)?' <span class="sim" style="color:#7ee2a8">+'+Math.round(l.edge*100)+'% EDGE</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
         h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
-        h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
+        h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+(pay.amount>10?' ('+fmtOdds(pay.amount/10)+')':'')+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
         if(pay.best)h+='<span class="hit-best">\u2605 Best payout: '+esc(pay.best)+'</span>';
         h+='</div>';
         h+='<p class="tail-label">Tail this bet — copy the legs, open your app, and add the same legs there. Lines can differ by book. Kalshi is markets / moneylines — SIM props may not be offered there.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\ud83d\udccb Copy legs</button>';
@@ -3007,9 +3093,9 @@ body.on-christmas{color-scheme:light}
       h+=notes;
     });
     list.innerHTML=h;
-    if(pst)pst.textContent=any?'Built live from today&rsquo;s games only — every parlay settles today.':'No parlays could be built from verified legs in today&rsquo;s games right now.';
+    if(pst)pst.textContent=any?'Built live from today\u2019s games only — every parlay settles today.':'No parlays could be built from verified legs in today\u2019s games right now.';
     var stamp=document.getElementById('parlayStamp');
-    if(stamp)stamp.innerHTML='Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Touchdown, Shots on Goal, Goals, Rebounds &amp; 3-Pointers slips from verified live player stats &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries from the game summary; props blend each player&rsquo;s last 5 game logs with their season average &middot; Edge = model % minus the book price &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
     });
   }
   var loading=false;
@@ -3064,8 +3150,12 @@ body.on-christmas{color-scheme:light}
     });
   }
   document.querySelectorAll('#view-sports [data-sport="betsim"]').forEach(function(b){b.addEventListener('click',function(){render();});});
+  var cheatBtn=document.getElementById('cheatToggle'),cheatBox=document.getElementById('betSimGames');
+  if(cheatBtn&&cheatBox)cheatBtn.addEventListener('click',function(){var open=cheatBox.hidden;cheatBox.hidden=!open;cheatBtn.setAttribute('aria-expanded',open?'true':'false');cheatBtn.textContent=open?'Hide the full odds list ▴':'Show the full odds list ▾';});
   var parlayListEl=document.getElementById('parlayList');
   if(parlayListEl)parlayListEl.addEventListener('click',function(ev){
+    var tl=ev.target&&ev.target.closest?ev.target.closest('a.tail-btn'):null;
+    if(tl){ev.preventDefault();var w=window.open(tl.href,'_blank','noopener');if(!w)location.href=tl.href;return;}
     var btn=ev.target&&ev.target.closest?ev.target.closest('.copy-legs-btn'):null;
     if(!btn)return;
     var txt=btn.getAttribute('data-copy')||'';
@@ -3138,7 +3228,7 @@ body.on-christmas{color-scheme:light}
         var hl=p.headline||p.description||'';
         stories.push({title:p.event+' — '+__sLoc.label,when:'Big storm alert \u00b7 NWS',body:shortBody(hl)});
       });
-      window.__dnHWOText=(hwo&&hwo.productText)||'';if(window.__dnSevereUpdate)window.__dnSevereUpdate();var hs=parseHWO(hwo&&hwo.productText);if(hs)stories.push(hs);
+      window.__dnHWOText=(hwo&&hwo.productText)||'';var hs=parseHWO(hwo&&hwo.productText);if(hs)stories.push(hs);
       render(stories.slice(0,3));
     }).catch(function(){
       var wx=document.getElementById('wxStormStories');
@@ -3820,8 +3910,9 @@ body.on-christmas{color-scheme:light}
   if(radar&&L.live)radar.src='https://embed.windy.com/embed2.html?lat='+L.lat+'&lon='+L.lon+'&zoom=7&level=surface&overlay=radar&product=ecmwf';
   function status(msg){setTxt('wxLocStatus',msg);setTxt('homeLocStatus',msg);}
   if(L.live)status('Showing your location — saved on this device only.');
+  var ALLOW_HELP='Location is blocked for this site. To allow it on iPhone: Settings \u2192 Privacy & Security \u2192 Location Services \u2192 Safari Websites \u2192 While Using the App \u2014 then reopen Derek News and tap Use my location again. Or skip GPS: type your city or ZIP in the box here and tap Set.';
   function useLoc(){
-    if(!navigator.geolocation){status('Location is not available on this device — showing Cicero, NY.');return;}
+    if(!navigator.geolocation){status(ALLOW_HELP);return;}
     status('Finding your location\u2026');
     navigator.geolocation.getCurrentPosition(function(pos){
       var lat=+pos.coords.latitude.toFixed(4), lon=+pos.coords.longitude.toFixed(4);
@@ -3834,8 +3925,33 @@ body.on-christmas{color-scheme:light}
           var label=city?(city+(code?', '+code:'')):(d.principalSubdivision||'Your location');
           done(label||'Your location');
         }).catch(function(){done('Your location');});
-    },function(){status('Location not allowed — showing Cicero, NY. Allow location in your browser settings to use yours.');},{timeout:12000,maximumAge:600000});
+    },function(err){
+      if(err&&err.code===1)status(ALLOW_HELP);
+      else status('Couldn\u2019t get your location this time \u2014 try again, or type your city or ZIP in the box here and tap Set.');
+    },{timeout:12000,maximumAge:600000});
   }
+  /* Manual fallback — no browser permission needed. The typed place is
+     geocoded (Open-Meteo, free, no key), saved exactly like a GPS fix,
+     and the page reloads onto that place's weather. */
+  function setManual(q){
+    q=String(q||'').trim();
+    if(!q){status('Type a city or ZIP first, then tap Set.');return;}
+    status('Finding \u201c'+q+'\u201d\u2026');
+    fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(q)+'&count=1&language=en&format=json')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var hit=(d&&d.results&&d.results[0])||null;
+        if(!hit||!isFinite(hit.latitude)||!isFinite(hit.longitude))throw new Error('no result');
+        var label=hit.name+(hit.admin1?', '+hit.admin1:'');
+        window.__dnLoc.save({lat:+hit.latitude.toFixed(4),lon:+hit.longitude.toFixed(4),label:label});
+        location.reload();
+      })
+      .catch(function(){status('Couldn\u2019t find \u201c'+q+'\u201d \u2014 check the spelling, or try the ZIP code.');});
+  }
+  [['wxLocGo','wxLocInput'],['homeLocGo','homeLocInput']].forEach(function(pair){
+    var b=document.getElementById(pair[0]),inp=document.getElementById(pair[1]);
+    if(b&&inp){b.addEventListener('click',function(){setManual(inp.value);});inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();setManual(inp.value);}});}
+  });
   function useCicero(){window.__dnLoc.clear();location.reload();}
   [['wxUseLoc',useLoc],['wxUseCicero',useCicero],['homeUseLoc',useLoc],['homeUseCicero',useCicero]].forEach(function(pair){
     var b=document.getElementById(pair[0]);if(b)b.addEventListener('click',pair[1]);
