@@ -969,7 +969,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .nhero h1 .nred{color:#b42318}
 #view-news .nrule{height:4px;width:56px;border-radius:99px;background:#b42318;margin-top:14px}
 #view-news .ncard{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 28px rgba(20,40,50,.12);padding:24px 22px;margin-top:14px;text-align:left}
-#view-news .news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:12px}
+#view-news .news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:12px;align-items:start}
 #view-news .news-grid .ncard{margin-top:0;padding:15px 14px;border-radius:20px;min-width:0}
 #view-news .news-grid .ncard h2{font-size:16.5px}
 #view-news .news-grid .nkick{font-size:10px}
@@ -4506,7 +4506,7 @@ body.on-christmas{color-scheme:light}
       render(listId,statusId,out,emptyText,errText,visibleCount);
     }).catch(function(){render(listId,statusId,null,emptyText,errText);});
   }
-  /* Weather Stories — exactly 2 up top: 1 nationwide + 1 CNY.
+  /* Weather Stories — exactly 3 up top: 1 nationwide + 1 CNY + 1 more.
      Extra weather headlines live only behind the View more drop-down. */
   function weatherSection(){
     var emptyText='No weather stories right now.',errText='Couldn\u2019t load weather stories right now.';
@@ -4514,7 +4514,7 @@ body.on-christmas{color-scheme:light}
       rssItems('US weather storm forecast nationwide').catch(function(){return null;}),
       rssItems('Central New York Syracuse weather storm forecast').catch(function(){return null;})
     ]).then(function(lists){
-      if(!lists[0]&&!lists[1]){render('newsWxList','newsWxStatus',null,emptyText,errText,2);return;}
+      if(!lists[0]&&!lists[1]){render('newsWxList','newsWxStatus',null,emptyText,errText,3);return;}
       function clean(items){
         var out=[];
         (items||[]).forEach(function(it){
@@ -4538,10 +4538,10 @@ body.on-christmas{color-scheme:light}
       rest.forEach(function(a){seen[a.title]=1;});
       var uniqRest=[],rseen={};
       rest.forEach(function(a){if(!rseen[a.title]){rseen[a.title]=1;uniqRest.push(a);}});
-      while(top.length<2&&uniqRest.length)top.push(uniqRest.shift());
+      while(top.length<3&&uniqRest.length)top.push(uniqRest.shift());
       var all=top.concat(uniqRest).slice(0,10);
-      render('newsWxList','newsWxStatus',all.map(function(a){return row(a.title,a.source,a.when,a.link);}),emptyText,errText,2);
-    }).catch(function(){render('newsWxList','newsWxStatus',null,emptyText,errText,2);});
+      render('newsWxList','newsWxStatus',all.map(function(a){return row(a.title,a.source,a.when,a.link);}),emptyText,errText,3);
+    }).catch(function(){render('newsWxList','newsWxStatus',null,emptyText,errText,3);});
   }
   /* Politics — NO bias. Whitelist: straight-news wires only (AP,
      Reuters, UPI). CNN, Fox and every other outlet are excluded from
@@ -4572,7 +4572,7 @@ body.on-christmas{color-scheme:light}
     return LOCAL_OK.test(src);
   }
   weatherSection();
-  rssSectionMulti(['Syracuse news site:localsyr.com','Syracuse news site:cnycentral.com','Central New York news site:localsyr.com OR site:cnycentral.com'],'newsLocalList','newsLocalStatus',10,'No local stories right now.','Couldn\u2019t load local news right now.',localKeep,4);
+  rssSectionMulti(['Syracuse news site:localsyr.com','Syracuse news site:cnycentral.com','Central New York news site:localsyr.com OR site:cnycentral.com'],'newsLocalList','newsLocalStatus',10,'No local stories right now.','Couldn\u2019t load local news right now.',localKeep,3);
   /* Nationwide — US national news under the same no-bias rules as
      politics: AP / Reuters / wires only, partisan quote pieces out. */
   rssSectionMulti(['US news United States site:apnews.com','United States news site:reuters.com','America news site:apnews.com OR site:reuters.com'],'newsNatList','newsNatStatus',10,'No straight-news nationwide stories right now.','Couldn\u2019t load nationwide headlines right now.',polKeep,4);
