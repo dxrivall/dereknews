@@ -586,7 +586,7 @@ body>.teams-overlay{z-index:2000}
   <section class="hwidget faith-widget" aria-label="Faith widget">
     <div class="hwidget-head"><h2>🙏 Faith — Time With God</h2><button class="hw-go" data-go="faith">Go to Faith →</button></div>
     <div class="faith-hero"><div class="faith-sun" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#7c2d12" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="14" r="4.5" fill="#fff7e0"/><path d="M12 3v3M4.9 7.9l2.1 2.1M19.1 7.9L17 10M3 14h3M18 14h3M5 20h14"/></svg></div><p class="faith-verse-line">Start the day with God — today&rsquo;s verse, this week&rsquo;s Mass, and a quiet minute of prayer.</p></div>
-    <button type="button" class="faith-prayer-toggle" id="homePrayerToggle" aria-expanded="false" aria-controls="homePrayer">🙏 Today&rsquo;s Prayer — tap to read</button>
+    <button type="button" class="faith-prayer-toggle" id="homePrayerToggle" aria-expanded="false" aria-controls="homePrayer">🙏 Daily Prayer — tap to read</button>
     <div class="faith-prayer" id="homePrayer" hidden><p>God, protect my family, bless our health, help the poor, help the sick, grant rest for those who passed, and help everyone else in need.</p></div>
     <div class="faith-links">
       <a class="faith-mass" href="https://www.youtube.com/channel/UCv0TUu1tuIdVqRLFwGlos4A" target="_blank" rel="noopener">▶ Weekly Mass</a>
@@ -1494,7 +1494,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
   <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. <b>Edge Parlay:</b> 2–3 legs whose model % beats the book&rsquo;s price, built to actually hit. <b>🎰 Lotto Bet of the Day:</b> one longshot per sport. <b>🔥 Streak Lotto:</b> one slip per sport where every leg hit its line in 6/6 of its last 6 games (checked from live game logs) — past form, not a guarantee. Plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
+  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. <b>Edge Parlay:</b> 2–3 legs whose model % beats the book&rsquo;s price, built to actually hit. <b>🎰 Lotto Bet of the Day:</b> one longshot per sport. <b>🔥 Streak Lotto:</b> one slip per sport where every leg hit in 6/6 of its last 6 games &mdash; each leg&rsquo;s line is that player&rsquo;s lowest game in the last 6 (their 6-game minimum), so 1+ threes or 4+ rebounds counts if they hit it in all 6 (checked from live game logs) — past form, not a guarantee. Plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
   <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
   <div id="parlayList"></div>
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
@@ -1518,6 +1518,16 @@ body.on-sports footer{color:#aebfe6!important}
 .mass-btn{display:block;margin:20px auto 0;max-width:520px;background:#b42318;color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 18px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.22);min-height:54px}
 .votd-btn{display:block;margin:20px auto 0;max-width:520px;background:#1d2a30;color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 18px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.22);min-height:54px}
 .faith-note{font-size:13px;color:var(--soft);margin-top:12px!important}
+#view-faith .faith-events{margin-top:34px;background:var(--panel);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:30px 24px;text-align:center}
+#view-faith .faith-events h2{margin:0 0 8px;font-size:clamp(22px,5vw,28px)}
+#view-faith .faith-events>p{line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto}
+.fe-event{display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;max-width:600px;margin:10px auto 0;background:rgba(127,127,127,.08);border:1px solid var(--border);border-radius:14px;padding:12px 14px}
+.fe-event-main{min-width:0}
+.fe-event-name{font-weight:700;font-size:16px;line-height:1.35}
+.fe-event-date{color:var(--soft);font-size:14px;margin-top:2px;line-height:1.45}
+.fe-hdo{display:inline-block;margin-top:6px;background:#b42318;color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px}
+.fe-when{flex:none;font-weight:700;font-size:14px;color:#7c2d12;background:#fdeeda;border:1px solid rgba(180,120,40,.35);border-radius:999px;padding:7px 11px;white-space:nowrap}
+@media(prefers-color-scheme:dark){.fe-when{color:#ffd98a;background:rgba(0,0,0,.3)}}
 </style>
   <div class="hero"><h1>🙏 Faith</h1></div>
 <section class="votd" aria-label="Daily Bible verse from YouVersion">
@@ -1601,16 +1611,82 @@ body.on-sports footer{color:#aebfe6!important}
       load();
     })();
     </script>
-    <section class="card"><h2 style="color:var(--green);font-style:italic">Time With God</h2>
-  <p style="text-align:center;line-height:1.7;color:var(--soft);max-width:640px;margin:0 auto;font-size:17px">God, protect my family, bless our health, help the poor, help the sick, grant rest for those who passed, and help everyone else in need. When the day comes may we all be able to rejoice with you in Heaven.</p>
-  <p style="text-align:center;color:var(--soft);font-size:17px">Amen.</p>
-  </section>
-  <section class="mass" aria-label="Heart of the Nation weekly Mass on YouTube">
+    <section class="mass" aria-label="Heart of the Nation weekly Mass on YouTube">
     <div style="font-size:46px;line-height:1" aria-hidden="true">⛪</div>
     <h2>Weekly Mass — Heart of the Nation</h2>
     <p>Watch this week&rsquo;s Catholic Mass from Heart of the Nation on YouTube.</p>
     <a class="mass-btn" href="https://www.youtube.com/channel/UCv0TUu1tuIdVqRLFwGlos4A" target="_blank" rel="noopener">▶ Watch the Weekly Mass on YouTube &rarr;</a>
     </section>
+  <section class="faith-events" aria-label="Upcoming religious events">
+    <div style="font-size:46px;line-height:1" aria-hidden="true">🗓️</div>
+    <h2>Upcoming Religious Events</h2>
+    <p>Major Catholic holy days and feasts coming up, soonest first. Dates checked against the USCCB Liturgical Calendar for the Dioceses of the United States of America.</p>
+    <div id="faithEventsList"><p class="faith-note">Loading upcoming events&hellip;</p></div>
+    <p class="faith-note">Holy Day of Obligation = Catholics are required to attend Mass that day (in addition to Sundays). Ascension is a holy day on Thu, May 6, 2027 in the New York province, which includes the Diocese of Syracuse &mdash; in many other U.S. dioceses it is observed on Sun, May 9, 2027 instead.</p>
+  </section>
+  <script>
+  /* Upcoming Religious Events — verified fixed dates for the
+     2026-27 liturgical year (USCCB Liturgical Calendar for the
+     Dioceses of the United States of America, 2027):
+       Christ the King Sun Nov 22, 2026; Advent begins Sun Nov 29,
+       2026; Immaculate Conception Tue Dec 8, 2026; Christmas Fri
+       Dec 25, 2026; Mary, Mother of God Fri Jan 1, 2027; Epiphany
+       observed Sun Jan 3, 2027 in the U.S.; Ash Wednesday Wed
+       Feb 10, 2027 (Lent begins); Palm Sunday Sun Mar 21, 2027;
+       Holy Thursday Mar 25; Good Friday Mar 26; Easter Sun Mar 28,
+       2027; Ascension Thu May 6, 2027; Pentecost Sun May 16, 2027;
+       Corpus Christi observed Sun May 30, 2027 in the U.S.;
+       Assumption Sun Aug 15, 2027; All Saints Mon Nov 1, 2027;
+       Advent begins Sun Nov 28, 2027; Christmas Sat Dec 25, 2027.
+     Days-until is worked out live from the Eastern date, past
+     events drop off, and the list stays soonest-first — no
+     hard-coded day counts that go stale. */
+  (function(){
+    var box=document.getElementById('faithEventsList');if(!box)return;
+    var EV=[
+      {d:'2026-11-22',name:'Christ the King',note:'Last Sunday of the liturgical year'},
+      {d:'2026-11-29',name:'First Sunday of Advent',note:'Advent begins \u2014 the new liturgical year starts'},
+      {d:'2026-12-08',name:'Immaculate Conception',note:'Patronal feast of the United States',hdo:true},
+      {d:'2026-12-25',name:'Christmas \u2014 The Nativity of the Lord',hdo:true},
+      {d:'2027-01-01',name:'Mary, Mother of God',hdo:true},
+      {d:'2027-01-03',name:'Epiphany of the Lord',note:'Observed on Sunday in the U.S. (traditional date Jan 6)'},
+      {d:'2027-02-10',name:'Ash Wednesday',note:'Lent begins \u2014 a day of fasting and abstinence'},
+      {d:'2027-03-21',name:'Palm Sunday',note:'Holy Week begins'},
+      {d:'2027-03-25',name:'Holy Thursday',note:'Mass of the Lord\u2019s Supper'},
+      {d:'2027-03-26',name:'Good Friday',note:'A day of fasting and abstinence'},
+      {d:'2027-03-28',name:'Easter Sunday',note:'The Resurrection of the Lord'},
+      {d:'2027-05-06',name:'Ascension of the Lord',note:'In many other U.S. dioceses it is observed on Sun, May 9, 2027 instead',hdo:true},
+      {d:'2027-05-16',name:'Pentecost Sunday',note:'The birthday of the Church'},
+      {d:'2027-05-30',name:'Corpus Christi',note:'The Most Holy Body and Blood of Christ \u2014 observed on Sunday in the U.S.'},
+      {d:'2027-08-15',name:'Assumption of Mary',note:'Falls on a Sunday in 2027',hdo:true},
+      {d:'2027-11-01',name:'All Saints Day',note:'A holy day of obligation in the U.S. \u2014 in 2027 it falls on a Monday, so the obligation to attend Mass is lifted in the U.S. that year'},
+      {d:'2027-11-02',name:'All Souls Day',note:'Praying for all the faithful departed'},
+      {d:'2027-11-28',name:'First Sunday of Advent',note:'Advent begins'},
+      {d:'2027-12-08',name:'Immaculate Conception',note:'Patronal feast of the United States',hdo:true},
+      {d:'2027-12-25',name:'Christmas \u2014 The Nativity of the Lord',hdo:true}
+    ];
+    var WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var MO=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    function parts(iso){var q=iso.split('-');return{y:+q[0],m:+q[1],d:+q[2]};}
+    function dayNum(iso){var q=parts(iso);return Date.UTC(q.y,q.m-1,q.d)/86400000;}
+    function fmt(iso){var q=parts(iso);var dt=new Date(Date.UTC(q.y,q.m-1,q.d));return WD[dt.getUTCDay()]+', '+MO[q.m-1]+' '+q.d+', '+q.y;}
+    var fmtET=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'});
+    function render(){
+      var today=fmtET.format(new Date());
+      var tNum=dayNum(today);
+      var up=EV.map(function(e){return{e:e,days:dayNum(e.d)-tNum};}).filter(function(x){return x.days>=0;}).sort(function(a,b){return a.days-b.days;}).slice(0,10);
+      if(!up.length){box.innerHTML='<p class="faith-note">No upcoming events are listed right now \u2014 check back soon.</p>';return;}
+      box.innerHTML=up.map(function(x){
+        var e=x.e;
+        var when=x.days===0?'Today':(x.days===1?'Tomorrow':('in '+x.days+' days'));
+        return '<div class="fe-event"><div class="fe-event-main"><div class="fe-event-name">'+e.name+'</div><div class="fe-event-date">'+fmt(e.d)+(e.note?' \u00b7 '+e.note:'')+'</div>'+(e.hdo?'<span class="fe-hdo">Holy Day of Obligation</span>':'')+'</div><span class="fe-when">'+when+'</span></div>';
+      }).join('');
+    }
+    render();
+    setInterval(render,60000);
+    document.addEventListener('visibilitychange',function(){if(!document.hidden)render();});
+  })();
+  </script>
 </main>
 <!-- CHRISTMAS -->
 <main class="wrap view" id="view-christmas">
@@ -3194,15 +3270,31 @@ body.on-christmas{color-scheme:light}
     }).catch(function(){return null;});
   }
   /* ---- Streak Lotto — 100% hit rate over the last 6 games -----------
-     One extra slip per sport where EVERY leg hit the same prop line in
-     ALL 6 of the player's last 6 games, checked from the live ESPN
-     gamelog (current regular season, most recent 6 games by date).
-     Example shape: "Stephen Curry Over 4.5 3-Pointers — hit in 6/6
-     last games · last 6: 5, 4, 6, 5, 4, 5". Lines are the same SIM
-     lines the other slips use. A 6/6 streak is past form, NOT a
-     guarantee — the slip is labeled that way, and its hit % is still
-     the model's per-leg chances multiplied, never 100%. If no player
-     in a sport has a 6/6 streak today, no slip is forced. */
+     One extra slip per sport where EVERY leg hit in ALL 6 of the
+     player's last 6 games, checked from the live ESPN gamelog
+     (current regular season, most recent 6 games by date).
+     THE LINE IS THE PLAYER'S 6-GAME MINIMUM — not the SIM line near
+     his season average. For each player + stat, the streak line is
+     the HIGHEST line he actually hit in all 6 games, i.e. the
+     minimum value across those 6 games, shown as "N+":
+       last-6 threes   2, 1, 3, 2, 1, 2  ->  "1+ 3-Pointers in 6/6"
+       last-6 rebounds 7, 5, 6, 4, 8, 5  ->  "4+ Rebounds in 6/6"
+     Testing only the average-based line missed all of these (a
+     rebounder averaging 6 needed 6+ every night). Low lines are
+     tested too — 1+ threes, 4+ rebounds, etc. — and the highest
+     line that still hit 6/6 is the one used. A minimum of 0 (or
+     below the per-stat floor in STREAK_META) is NOT a streak:
+     "0+ goals" would be true of everyone. Legs are ranked by how
+     meaningful the line is — its size relative to the player's
+     last-6 average (streakScore), then its model edge — so a
+     20+ points streak outranks a 1+ three, and each leg shows its
+     line and its actual last-6 values. Same minimum method for
+     NFL yards / TDs and NHL goals / assists / points / shots.
+     A 6/6 streak is past form, NOT a guarantee — the slip is
+     labeled that way, and its hit % is still the model's per-leg
+     chances multiplied, never 100%. "No streak" should now be
+     rare: it only happens when no player in today's games clears
+     even the low floor in all 6 of his last 6 games. */
   var streakCache={};
   var STREAK_STATS={
     nba:{'Pts':{labels:['PTS'],names:['points']},'Reb':{labels:['REB'],names:['rebounds','totalRebounds']},'Ast':{labels:['AST'],names:['assists']},'3PM':{labels:['3PT'],names:['threePointFieldGoalsMade']}},
@@ -3245,45 +3337,88 @@ body.on-christmas{color-scheme:light}
     }).catch(function(){return null;});
     streakCache[key]=pr;return pr;
   }
+  /* Per-stat display label + lowest meaningful "N+" floor. The
+     floor stops trivial streaks (0+ anything, 1+ shot) from
+     counting, while still letting real low lines through:
+     1+ threes and 4+ rebounds are the examples that must show. */
+  var STREAK_META={
+    nba:{'Pts':{label:'Points',floor:5},'Reb':{label:'Rebounds',floor:3},'Ast':{label:'Assists',floor:2},'3PM':{label:'3-Pointers',floor:1}},
+    nhl:{'Goals':{label:'Goals',floor:1},'Assists':{label:'Assists',floor:1},'Points':{label:'Points',floor:1},'SOG':{label:'Shots on Goal',floor:2}},
+    nfl:{'Pass Yds':{label:'Pass Yds',floor:100,yards:true},'Rush Yds':{label:'Rush Yds',floor:20,yards:true},'Rec Yds':{label:'Rec Yds',floor:20,yards:true},'TD':{label:'TDs',floor:1}}
+  };
   function enrichStreaks(lg,games){
-    if(!STREAK_STATS[lg.key])return Promise.resolve();
-    var cands=[],seen={};
-    function addCand(g,id,name,statKey,line,avg,text){
-      if(!id||!statKey||line==null)return;
-      var k=String(id)+'-'+statKey;if(seen[k])return;seen[k]=1;
-      cands.push({g:g,id:String(id),name:name,statKey:statKey,line:line,avg:avg,text:text,key:'streak-'+g.id+'-'+id+'-'+statKey});
+    if(!STREAK_STATS[lg.key]||!STREAK_META[lg.key])return Promise.resolve();
+    /* One entry per PLAYER (not per stat): one gamelog fetch gives
+       every stat for that player, so every stat is tested against
+       its own 6-game minimum from the same last-6 series. */
+    var players={},order=[];
+    function addPlayer(g,id,name,statKey,avg){
+      if(!id||!name)return;
+      var pid=String(id);
+      if(!players[pid]){players[pid]={g:g,id:pid,name:name,avgs:{}};order.push(players[pid]);}
+      if(statKey&&avg!=null&&!isNaN(avg)&&players[pid].avgs[statKey]==null)players[pid].avgs[statKey]=avg;
     }
     games.forEach(function(g){
       (g.allProps||[]).forEach(function(pr){
-        if(lg.key==='nba'&&(pr.label==='Pts'||pr.label==='Reb'||pr.label==='Ast'))addCand(g,pr.id,pr.name,pr.label,pr.line,pr.avg,pr.name+' Over '+pr.line+' '+pr.label);
-        if(lg.key==='nfl'&&(pr.label==='Pass Yds'||pr.label==='Rush Yds'||pr.label==='Rec Yds'))addCand(g,pr.id,pr.name,pr.label,pr.line,pr.avg,pr.name+' Over '+pr.line+' '+pr.label);
-        if(lg.key==='nhl'){
-          if(pr.label==='Goals')addCand(g,pr.id,pr.name,'Goals',0.5,pr.avg,pr.name+' Over 0.5 Goals');
-          if(pr.label==='Assists')addCand(g,pr.id,pr.name,'Assists',0.5,pr.avg,pr.name+' Over 0.5 Assists');
-          if(pr.label==='Points')addCand(g,pr.id,pr.name,'Points',pr.line,pr.avg,pr.name+' Over '+pr.line+' Points');
-        }
+        if(lg.key==='nba'&&(pr.label==='Pts'||pr.label==='Reb'||pr.label==='Ast'))addPlayer(g,pr.id,pr.name,pr.label,pr.avg);
+        if(lg.key==='nfl'&&(pr.label==='Pass Yds'||pr.label==='Rush Yds'||pr.label==='Rec Yds'))addPlayer(g,pr.id,pr.name,pr.label,pr.avg);
+        if(lg.key==='nhl'&&(pr.label==='Goals'||pr.label==='Assists'||pr.label==='Points'))addPlayer(g,pr.id,pr.name,pr.label,pr.avg);
       });
-      if(lg.key==='nba')(g.threeProps||[]).forEach(function(sp){var line=simLine(sp.avg);addCand(g,sp.id,sp.name,'3PM',line,sp.avg,sp.name+' Over '+line+' 3-Pointers');});
-      if(lg.key==='nhl')(g.sogProps||[]).forEach(function(sp){var line=simLine(sp.avg);addCand(g,sp.id,sp.name,'SOG',line,sp.avg,sp.name+' Over '+line+' Shots on Goal');});
-      if(lg.key==='nfl')(g.tdPlayers||[]).forEach(function(tp){addCand(g,tp.id,tp.name,'TD',0.5,tp.gp?tp.td/tp.gp:0,tp.name+' \u2014 Anytime TD');});
+      if(lg.key==='nba')(g.threeProps||[]).forEach(function(sp){addPlayer(g,sp.id,sp.name,'3PM',sp.avg);});
+      if(lg.key==='nhl')(g.sogProps||[]).forEach(function(sp){addPlayer(g,sp.id,sp.name,'SOG',sp.avg);});
+      if(lg.key==='nfl')(g.tdPlayers||[]).forEach(function(tp){addPlayer(g,tp.id,tp.name,'TD',tp.gp?tp.td/tp.gp:null);});
     });
-    return Promise.all(cands.slice(0,28).map(function(c){
-      return gamelogLast6(lg,c.id).then(function(res){
-        if(!res)return;var vals=res[c.statKey];if(!vals||vals.length<6)return;
-        if(!vals.every(function(v){return v>c.line;}))return;
-        var avg6=vals.reduce(function(a,b){return a+b;},0)/6;
-        var sd6=Math.sqrt(vals.reduce(function(a,b){return a+(b-avg6)*(b-avg6);},0)/6);
-        var prob;
-        if(c.statKey==='TD'){var rate=c.avg||0;prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;}
-        else prob=modelPropProb({avg:c.avg,line:c.line,l5:{avg:avg6,sd:sd6}}).prob;
-        (c.g.streakLegs=c.g.streakLegs||[]).push({kind:'Prop',name:c.name,prob:prob,text:c.text,sub:c.g.away.abbr+' at '+c.g.home.abbr+' \u00b7 \ud83d\udd25 hit in 6/6 last games \u00b7 last 6: '+vals.join(', '),avg:c.avg,line:c.line,key:c.key,gameId:c.g.id,streak:true});
+    return Promise.all(order.slice(0,40).map(function(pl){
+      return gamelogLast6(lg,pl.id).then(function(res){
+        if(!res)return;
+        Object.keys(STREAK_META[lg.key]).forEach(function(statKey){
+          var vals=res[statKey];if(!vals||vals.length<6)return;
+          vals=vals.slice(0,6);
+          var meta=STREAK_META[lg.key][statKey];
+          /* Highest line hit in ALL 6 = the 6-game minimum. For
+             counting stats / yards the "N+" line is floor(min):
+             min 1 three -> "1+", min 4 rebounds -> "4+",
+             min 185 pass yards -> "185+". */
+          var minVal=Math.min.apply(null,vals);
+          var threshold=Math.floor(minVal);
+          if(!(threshold>=meta.floor))return;
+          var probLine=threshold-0.5;
+          var avg6=vals.reduce(function(a,b){return a+b;},0)/6;
+          var sd6=Math.sqrt(vals.reduce(function(a,b){return a+(b-avg6)*(b-avg6);},0)/6);
+          var avgSeason=(pl.avgs[statKey]!=null?pl.avgs[statKey]:null);
+          var effAvg=(avgSeason!=null?avgSeason:avg6);
+          var prob;
+          if(statKey==='TD'){var rate=Math.max(effAvg||0,avg6||0);prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;}
+          else prob=modelPropProb({avg:effAvg,line:probLine,l5:{avg:avg6,sd:sd6}}).prob;
+          /* Meaningfulness: how big the streak line is next to what
+             the player actually averaged over those 6 games. A line
+             at 90% of his last-6 average is a real streak; a line at
+             20% of it is not, even though both hit 6/6. */
+          var streakScore=avg6>0?(threshold/avg6):0;
+          var text=pl.name+' '+threshold+'+ '+meta.label;
+          (pl.g.streakLegs=pl.g.streakLegs||[]).push({kind:'Prop',name:pl.name,prob:prob,text:text,sub:pl.g.away.abbr+' at '+pl.g.home.abbr+' \u00b7 \ud83d\udd25 hit in 6/6 last games \u00b7 '+threshold+'+ in every game \u00b7 last 6: '+vals.join(', '),avg:effAvg,line:probLine,streakLine:threshold,streakMin:minVal,streakScore:streakScore,edge:prob-0.524,key:'streak-'+pl.g.id+'-'+pl.id+'-'+statKey,gameId:pl.g.id,streak:true});
+        });
       });
     })).then(function(){});
   }
   function buildStreakParlay(lg,games){
     var legs=[];
     games.forEach(function(g){(g.streakLegs||[]).forEach(function(l){legs.push(l);});});
-    legs=dedupeSort(legs);
+    /* Rank by meaningfulness first (streakScore = streak line /
+       last-6 average), then by model edge, then by hit chance —
+       NOT by hit chance alone, which would just float the lowest,
+       easiest lines to the top. */
+    legs.sort(function(a,b){
+      var sa=(a.streakScore!=null?a.streakScore:0),sb=(b.streakScore!=null?b.streakScore:0);
+      if(sb!==sa)return sb-sa;
+      var ea=(a.edge!=null?a.edge:0),eb=(b.edge!=null?b.edge:0);
+      if(eb!==ea)return eb-ea;
+      return b.prob-a.prob;
+    });
+    /* One leg per player — his most meaningful streak stat. */
+    var seen={},deduped=[];
+    legs.forEach(function(l){if(!l.name||seen[l.name])return;seen[l.name]=1;deduped.push(l);});
+    legs=deduped;
     if(!legs.length)return{parlay:null,found:0};
     if(legs.length===1)return{parlay:null,found:1,one:legs[0]};
     var picked=legs.slice(0,5);
@@ -3523,7 +3658,7 @@ body.on-christmas{color-scheme:light}
       var streakRes=buildStreakParlay(lg,gamesToday);
       if(streakRes.parlay)parlays.push(streakRes.parlay);
       else if(streakRes.found===1&&streakRes.one)notes+='<p class="astatus">\ud83d\udd25 Streak Lotto: only one 6/6 streak today \u2014 '+esc(streakRes.one.text)+' hit this line in all 6 of his last 6 games, but one leg is not a lotto, so no slip was built.</p>';
-      else notes+='<p class="astatus">\ud83d\udd25 Streak Lotto: no player in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games has hit the same prop line in all 6 of their last 6 games \u2014 no streak lotto today. It only runs on a real 6/6 streak.</p>';
+      else notes+='<p class="astatus">\ud83d\udd25 Streak Lotto: no player in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games has a 6/6 streak even at the lowest line from their last 6 games (their 6-game minimum \u2014 e.g. 1+ threes or 4+ rebounds) \u2014 no streak lotto today. It only runs on a real 6/6 streak.</p>';
       function addSpecial(pool,title,miss){
         var sp=specialFrom(pool,title);
         if(sp)parlays.push(sp);else notes+='<p class="astatus">'+esc(miss)+'</p>';
@@ -3555,7 +3690,7 @@ body.on-christmas{color-scheme:light}
         h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
         h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+(pay.amount>10?' ('+fmtOdds(pay.amount/10)+')':'')+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
         if(pay.best)h+='<span class="hit-best">\u2605 Best payout: '+esc(pay.best)+'</span>';
-        if(p.streak)h+='<div class="hit-lab">\ud83d\udd25 Streak Lotto \u2014 every leg above hit this exact line in all 6 of its last 6 games (100% over the last 6). That is past form, not a guarantee: a 6/6 streak can end tonight, and the hit % above is still the model\u2019s per-leg chances multiplied \u2014 not 100%.</div>';
+        if(p.streak)h+='<div class="hit-lab">\ud83d\udd25 Streak Lotto \u2014 every leg above hit its line in all 6 of its last 6 games (100% over the last 6) \u2014 each line is that player\u2019s lowest game in the last 6, so it is the highest line he hit every single game. That is past form, not a guarantee: a 6/6 streak can end tonight, and the hit % above is still the model\u2019s per-leg chances multiplied \u2014 not 100%.</div>';
         h+='</div>';
         h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> — that copies the bet as a backup and opens X with it pre-filled for @Playbook. Playbook replies with a pre-loaded slip link for your book (DraftKings, FanDuel &amp; more), where you pick your app and place it. Lines can differ by book; SIM props may not be offered everywhere.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\ud83d\udccb Copy this bet</button>';
         h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
@@ -3566,7 +3701,7 @@ body.on-christmas{color-scheme:light}
     list.innerHTML=h;
     if(pst)pst.textContent=any?'Built live from today\u2019s games only — every parlay settles today.':'No parlays could be built from verified legs in today\u2019s games right now.';
     var stamp=document.getElementById('parlayStamp');
-    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries from the game summary; props blend each player&rsquo;s last 5 game logs with their season average &middot; Edge = model % minus the book price &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Streak Lotto legs verified from live ESPN game logs (hit in 6/6 last games) &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries from the game summary; props blend each player&rsquo;s last 5 game logs with their season average &middot; Edge = model % minus the book price &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Streak Lotto legs verified from live ESPN game logs (hit in 6/6 last games; line = each player\u2019s 6-game minimum, shown as N+) &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
     });
   }
   var loading=false;
@@ -4511,14 +4646,14 @@ body.on-christmas{color-scheme:light}
 })();
 </script>
 <script>
-/* Nov 13 fixes D — Faith prayer toggle + Bet sport picker filter.
+/* Nov 13 fixes D — Faith Daily Prayer toggle (Home widget only) + Bet sport picker filter.
    The parlays / cheat sheet renderers rebuild #parlayList and
    #betSimGames as flat blocks headed by a .brk-conf league heading;
    this filter shows only the picked league's block in each list and
    re-applies whenever the renderers replace the content. */
 (function(){
   var pt=document.getElementById('homePrayerToggle'),pp=document.getElementById('homePrayer');
-  if(pt&&pp)pt.addEventListener('click',function(){var open=pp.hidden;pp.hidden=!open;pt.setAttribute('aria-expanded',open?'true':'false');pt.textContent=open?'🙏 Today\u2019s Prayer — tap to close':'🙏 Today\u2019s Prayer — tap to read';});
+  if(pt&&pp)pt.addEventListener('click',function(){var open=pp.hidden;pp.hidden=!open;pt.setAttribute('aria-expanded',open?'true':'false');pt.textContent=open?'🙏 Daily Prayer — tap to close':'🙏 Daily Prayer — tap to read';});
   var panel=document.getElementById('sport-betsim'); if(!panel)return;
   var prompt=document.getElementById('betSportPrompt');
   function leagueOf(txt){txt=String(txt||'').toUpperCase();if(txt.indexOf('NBA')>-1)return 'nba';if(txt.indexOf('NFL')>-1)return 'nfl';if(txt.indexOf('NHL')>-1)return 'nhl';return null;}
