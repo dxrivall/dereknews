@@ -385,6 +385,18 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wx-hero-hourly .hour:first-child{margin-left:0;padding-left:10px}
 .wx-hero-hourly .hour.sun{background:rgba(255,166,35,.20);border-color:rgba(255,205,110,.65)}
 .wx-hero-hourly .hour.sun .ht{font-size:14px;white-space:nowrap}
+.outage{background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:18px 16px;color:#fff;text-align:left}
+.outage-status{font-size:13px;opacity:.9;margin:0;line-height:1.5}
+.outage-block{padding:14px 0 4px;margin-top:14px;border-top:1px solid rgba(255,255,255,.18)}
+.outage-name{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin:0}
+.outage-big{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 2px;font-variant-numeric:tabular-nums}
+.outage-big small{font-size:15px;font-weight:600;opacity:.9}
+.outage-sub{font-size:13px;opacity:.9;margin:0 0 6px}
+.outage-u{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:7px 0;border-top:1px solid rgba(255,255,255,.12)}
+.outage-u span{opacity:.92}
+.outage-u b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.outage-link{display:inline-block;margin-top:14px;color:#fff;font-size:13.5px;font-weight:700;text-decoration:underline}
+.outage-src{font-size:12px;opacity:.85;margin:10px 0 0;line-height:1.5}
 </style>
   <div class="wxhero" id="wxHero">
   <p class="wxloc">Cicero, NY</p>
@@ -462,6 +474,43 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   </script>
   <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
+  <h3 class="wxsec">⚡ Power Outages — Cicero &amp; New York</h3>
+  <section class="outage" id="outageWidget" aria-label="Power outages for Onondaga County and New York">
+    <p class="outage-status" id="outageStatus">Loading live outage data…</p>
+    <div id="outageBody"></div>
+    <a class="outage-link" href="https://poweroutage.us/area/state/new%20york?mod=article_inline" target="_blank" rel="noopener">Full map on poweroutage.us →</a>
+    <p class="outage-src">Outage data: PowerOutage (poweroutage.us) · Homemade widget — no embed, no ads.</p>
+  </section>
+  <script>
+  (function(){
+    var statusEl=document.getElementById('outageStatus'),bodyEl=document.getElementById('outageBody');
+    if(!statusEl||!bodyEl)return;
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function fmt(n){return (typeof n==='number'&&isFinite(n))?n.toLocaleString('en-US'):'—';}
+    function pctFmt(u){if(!u||typeof u.pct!=='number')return '—';if(u.pct===0&&u.out>0)return '<0.01%';return u.pct.toFixed(2)+'%';}
+    function block(label,d,limit){
+      if(!d||typeof d.out!=='number'||typeof d.tracked!=='number')return '';
+      var h='<div class="outage-block"><p class="outage-name">'+esc(label)+'</p>';
+      h+='<p class="outage-big">'+fmt(d.out)+' <small>customers out</small></p>';
+      h+='<p class="outage-sub">of '+fmt(d.tracked)+' tracked · '+pctFmt(d)+' out</p>';
+      var us=(d.utilities||[]).slice().sort(function(a,b){return (b.out||0)-(a.out||0);});
+      if(limit)us=us.slice(0,limit);
+      us.forEach(function(u){h+='<div class="outage-u"><span>'+esc(u.name)+'</span><b>'+fmt(u.out)+' out · '+pctFmt(u)+'</b></div>';});
+      return h+'</div>';
+    }
+    function fail(){statusEl.textContent="Couldn't load live outage data right now — no numbers are shown instead of guessing.";bodyEl.innerHTML='';}
+    fetch('outages.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+      if(!d||!d.state||!d.county||!d.updated_at)throw new Error('bad outages.json');
+      var age=Date.now()-new Date(d.updated_at).getTime();
+      if(!(age>-300000&&age<=1800000))throw new Error('stale outages.json');
+      var html=block('Onondaga County — Cicero',d.county,0)+block('New York State',d.state,5);
+      if(!html)throw new Error('empty outages.json');
+      bodyEl.innerHTML=html;
+      var when=d.county.source_updated||d.updated_at;
+      statusEl.textContent='Live · Source updated '+new Date(when).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+    }).catch(fail);
+  })();
+  </script>
   <p class="wxstamp" id="wxStamp">Forecast, alerts &amp; storm outlooks by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Weather data: Open-Meteo · Cicero, NY</p>
   </div>
   </div>
@@ -524,12 +573,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <span class="nkick">Politics · Tools</span><h2>🗺️ Map &amp; Your Alignment</h2>
     <a class="ntool" href="https://www.270towin.com/" target="_blank" rel="noopener"><b>270toWin →</b><span>The 2028 electoral outlook — build your own map to 270 electoral votes.</span></a>
     <a class="ntool" href="https://www.isidewith.com/" target="_blank" rel="noopener"><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates.</span></a>
-  </section>
-  <section class="ncard" aria-label="Live power outage map for New York from poweroutage.us">
-    <span class="nkick">News · Power</span><h2>⚡ Power Outages — New York</h2>
-    <p class="lstatus">Live outage map for New York (Cicero is in Onondaga County) from poweroutage.us.</p>
-    <iframe title="Live power outage map for New York — poweroutage.us" src="https://poweroutage.us/area/state/new%20york?mod=article_inline" loading="lazy" style="display:block;width:100%;height:440px;border:1px solid var(--border);border-radius:16px;background:#fff"></iframe>
-    <a class="ntool" href="https://poweroutage.us/area/state/new%20york?mod=article_inline" target="_blank" rel="noopener"><b>Open the full map on poweroutage.us →</b><span>If the live map above doesn’t load, open it directly on poweroutage.us.</span></a>
   </section>
 </main>
 <!-- SPORTS -->

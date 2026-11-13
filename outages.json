@@ -1,0 +1,124 @@
+{
+ "updated_at": "2026-11-13T20:03:37.673475+00:00",
+ "source": "PowerOutage (poweroutage.us / poweroutage.com), fetched server-side",
+ "state": {
+  "tracked": 8384120,
+  "out": 21168,
+  "pct": 0.25,
+  "source_updated": "2026-11-13T19:54:24+00:00",
+  "name": "New York",
+  "utilities": [
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919248,
+    "out": 11424,
+    "pct": 1.24
+   },
+   {
+    "name": "Otsego Electric Coop",
+    "tracked": 5163,
+    "out": 4445,
+    "pct": 86.09
+   },
+   {
+    "name": "National Grid",
+    "tracked": 1698909,
+    "out": 3223,
+    "pct": 0.19
+   },
+   {
+    "name": "Delaware County Electric Coop",
+    "tracked": 5335,
+    "out": 1572,
+    "pct": 29.47
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315411,
+    "out": 187,
+    "pct": 0.06
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 134,
+    "pct": 0.01
+   },
+   {
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 132,
+    "pct": 0.0
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 51,
+    "pct": 0.02
+   },
+   {
+    "name": "FirstEnergy",
+    "tracked": 3816,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392005,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6714,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Sussex REC",
+    "tracked": 202,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Tri-County Rural Electric Coop",
+    "tracked": 59,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Warren Electric Coop",
+    "tracked": 8696,
+    "out": 0,
+    "pct": 0.0
+   }
+  ]
+ },
+ "county": {
+  "tracked": 212640,
+  "out": 1,
+  "pct": 0.0,
+  "source_updated": "2026-11-13T19:54:23+00:00",
+  "name": "Onondaga County",
+  "utilities": [
+   {
+    "name": "National Grid",
+    "tracked": 204486,
+    "out": 1,
+    "pct": 0.0
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 8153,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 1,
+    "out": 0,
+    "pct": 0.0
+   }
+  ]
+ }
+}
