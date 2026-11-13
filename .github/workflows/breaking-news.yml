@@ -1,0 +1,254 @@
+# Breaking news detector for Derek News
+# Polls the FAA NAS Status feed (official) plus the NPR and BBC US
+# news RSS feeds every 5 minutes and writes breaking.json at the repo
+# root. An ACTIVE item is written only for a genuinely significant
+# national event: 5+ U.S. airports ground-stopped at once in the FAA
+# feed, or the same tight catastrophic headline pattern in BOTH news
+# feeds within 3 hours. Routine news never fires. Items expire 3
+# hours after the signal was last seen. The site (index.html) reads
+# breaking.json from the same GitHub Pages origin and fires the
+# full-screen takeover automatically. Fetcher source:
+# .src/fetch_breaking.py in the build workspace (embedded unchanged).
+# YAML fix: see kalshi-odds.yml - block scalar fetch step.
+name: Breaking news
+
+"on":
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: breaking-news
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect major breaking news (FAA + NPR + BBC)
+        run: |
+          python3 - <<'PYEOF'
+          """Conservative breaking-news detector for Derek News.
+
+          Polls only authoritative / major live sources and writes breaking.json
+          at the repo root. It writes an ACTIVE item only for a genuinely
+          significant national event:
+
+            Signal A (official): the FAA NAS Status feed lists ground-stop
+            programs at 5+ U.S. airports at once (a nationwide-scale stop).
+            Signal B (cross-confirmed news): the SAME tight, catastrophic
+            headline pattern matches in BOTH the NPR top-news RSS and the BBC
+            US & Canada RSS, in items published within the last 3 hours.
+            Routine headlines, single-source reports, single-airport ground
+            stops and anything older than 3 hours never fire.
+
+          Items expire 3 hours after the last refresh that still sees the
+          signal; when no signal is present the file is written inactive.
+          If every source is unreachable the script exits non-zero and does
+          NOT overwrite the last breaking.json.
+          Embedded unchanged in .github/workflows/breaking-news.yml.
+          """
+          import json, re, sys, time, urllib.request, datetime
+          import xml.etree.ElementTree as ET
+
+          UA = "derek-news-breaking/1.0"
+          FAA_URL = "https://nasstatus.faa.gov/api/airport-status-information"
+          FEEDS = [("NPR", "https://feeds.npr.org/1001/rss.xml"),
+                   ("BBC News", "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml")]
+          NOW = datetime.datetime.now(datetime.timezone.utc)
+
+          # Tight catastrophic patterns. Each needs a match in BOTH news feeds.
+          RULES = [
+              ("nationwide-ground-stop", [
+                  r"nationwide[^.]{0,60}ground stop",
+                  r"ground stop[^.]{0,60}(nationwide|all u\.s\.|all us\b|every u\.s\.)",
+                  r"all (u\.s\. )?flights[^.]{0,40}ground",
+              ]),
+              ("national-emergency", [r"declares?[^.]{0,40}national emergency",
+                                      r"national emergency (declared|declaration)"]),
+              ("major-earthquake", [r"magnitude [789]\.\d[^.]{0,40}earthquake",
+                                    r"earthquake[^.]{0,50}magnitude [789]\.\d"]),
+              ("tsunami-warning-us", [r"tsunami warning[^.]{0,60}(california|oregon|washington|hawaii|alaska|west coast|u\.s\.)"]),
+              ("terror-attack-us", [r"(terrorist|terror) attack[^.]{0,60}(u\.s\.|american|new york|washington|los angeles|chicago)"]),
+              ("president-attacked", [r"president[^.]{0,40}(assassinated|killed|shot)"]),
+              ("nuclear-event", [r"nuclear (attack|strike|explosion|detonation)"]),
+              ("martial-law", [r"martial law (declared|imposed)"]),
+          ]
+
+
+          def get(url):
+              last = None
+              for attempt in range(3):
+                  try:
+                      req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+                      with urllib.request.urlopen(req, timeout=30) as r:
+                          body = r.read()
+                      print(f"GET {url} -> {r.status}, {len(body)} bytes")
+                      return body
+                  except Exception as e:
+                      last = e
+                      print(f"GET {url} attempt {attempt} failed: {e}")
+                      time.sleep(5)
+              raise SystemExit(f"fetch failed for {url}: {last}")
+
+
+          def faa_signal():
+              """Return an item dict if 5+ U.S. airports are ground-stopped."""
+              try:
+                  root = ET.fromstring(get(FAA_URL))
+              except SystemExit:
+                  return None, False
+              except Exception as e:
+                  print(f"FAA parse failed: {e}")
+                  return None, True
+              stops = []
+              for prog in root.iter("Program"):
+                  arpt = (prog.findtext("ARPT") or "").strip()
+                  if arpt:
+                      stops.append({"arpt": arpt,
+                                    "reason": (prog.findtext("Reason") or "").strip(),
+                                    "end": (prog.findtext("End_Time") or "").strip()})
+              us = [s for s in stops if not s["arpt"].startswith("Y")]
+              print(f"FAA ground-stop programs: {len(stops)} total, {len(us)} U.S.")
+              if len(us) < 5:
+                  return None, True
+              codes = ", ".join(s["arpt"] for s in us[:12])
+              reasons = sorted({s["reason"] for s in us if s["reason"]})
+              item = {
+                  "id": "faa-ground-stop-" + NOW.strftime("%Y-%m-%d"),
+                  "title": f"FAA Ground Stops in Effect at {len(us)} U.S. Airports",
+                  "what": (f"The FAA's live NAS Status feed lists ground-stop programs at "
+                           f"{len(us)} U.S. airports right now ({codes}"
+                           + (", and more" if len(us) > 12 else "") + ")."
+                           + (f" Reasons given: {', '.join(reasons)}." if reasons else "")),
+                  "means": "Departures to those airports are being held on the ground, so delays and cancellations can ripple across the country.",
+                  "do": "Flying today? Check with your airline before heading to the airport, and expect delays even if your airport is not listed.",
+                  "source": "FAA NAS Status (official live feed)",
+                  "source_url": FAA_URL,
+              }
+              return item, True
+
+
+          def feed_items(url):
+              root = ET.fromstring(get(url))
+              out = []
+              for it in root.iter("item"):
+                  title = (it.findtext("title") or "").strip()
+                  link = (it.findtext("link") or "").strip()
+                  desc = re.sub(r"<[^>]+>", " ", it.findtext("description") or "").strip()
+                  pub = None
+                  pd = (it.findtext("pubDate") or "").strip()
+                  if pd:
+                      try:
+                          pub = datetime.datetime.strptime(pd, "%a, %d %b %Y %H:%M:%S %z")
+                      except ValueError:
+                          try:
+                              pub = datetime.datetime.strptime(pd, "%a, %d %b %Y %H:%M:%S GMT").replace(tzinfo=datetime.timezone.utc)
+                          except ValueError:
+                              pub = None
+                  out.append({"title": title, "link": link, "desc": desc, "pub": pub})
+              return out
+
+
+          def news_signal():
+              per_feed = []
+              ok = 0
+              for name, url in FEEDS:
+                  try:
+                      items = feed_items(url)
+                      ok += 1
+                  except SystemExit:
+                      items = []
+                  except Exception as e:
+                      print(f"{name} parse failed: {e}")
+                      items = []
+                  hits = {}
+                  for it in items:
+                      if it["pub"] is None or (NOW - it["pub"]).total_seconds() > 3 * 3600 or (NOW - it["pub"]).total_seconds() < -600:
+                          continue
+                      low = it["title"].lower()
+                      for rid, pats in RULES:
+                          if any(re.search(p, low) for p in pats):
+                              hits.setdefault(rid, it)
+                  print(f"{name}: {len(items)} items, rule hits: {sorted(hits)}")
+                  per_feed.append((name, hits))
+              if ok == 0:
+                  return None, False
+              if len(per_feed) < 2:
+                  return None, True
+              common = set(per_feed[0][1]) & set(per_feed[1][1])
+              if not common:
+                  return None, True
+              rid = sorted(common)[0]
+              it = per_feed[0][1][rid]
+              item = {
+                  "id": rid + "-" + NOW.strftime("%Y-%m-%d"),
+                  "title": it["title"],
+                  "what": (it["desc"][:600] if it["desc"] else it["title"]),
+                  "means": "This is a major national story being reported by multiple national outlets at the same time — details are still coming in.",
+                  "do": "Follow the linked source for live updates, and rely on official announcements for anything that affects you directly.",
+                  "source": "NPR and BBC News (both reporting this now)",
+                  "source_url": it["link"],
+              }
+              return item, True
+
+
+          def main():
+              item, faa_ok = faa_signal()
+              reachable = faa_ok
+              if item is None:
+                  item, news_ok = news_signal()
+                  reachable = reachable or news_ok
+              if not reachable:
+                  raise SystemExit("all breaking sources unreachable - not writing breaking.json")
+              prev = None
+              try:
+                  with open("breaking.json") as f:
+                      prev = json.load(f)
+              except Exception:
+                  prev = None
+              if item is not None:
+                  first_seen = NOW.isoformat()
+                  if prev and prev.get("active") and (prev.get("item") or {}).get("id") == item["id"]:
+                      first_seen = prev.get("first_seen") or first_seen
+                  out = {"active": True, "updated_at": NOW.isoformat(), "first_seen": first_seen,
+                         "expires_at": (NOW + datetime.timedelta(hours=3)).isoformat(), "item": item}
+                  print(f"ACTIVE: {item['id']} - {item['title']}")
+              else:
+                  out = {"active": False, "updated_at": NOW.isoformat(), "first_seen": None,
+                         "expires_at": None, "item": None}
+                  print("No qualifying breaking signal - writing inactive breaking.json")
+              with open("breaking.json", "w") as f:
+                  json.dump(out, f, indent=1)
+              return 0
+
+
+          if __name__ == "__main__":
+              sys.exit(main())
+
+          PYEOF
+      - name: Commit if changed
+        run: |
+          git config user.name "derek-news-bot"
+          git config user.email "derek-news-bot@users.noreply.github.com"
+          git add breaking.json
+          if git diff --cached --quiet; then
+            echo "No changes to breaking.json; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Update breaking news feed"
+          branch="${GITHUB_REF_NAME:-main}"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$branch"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing on origin/$branch and retrying"
+            git fetch origin "$branch"
+            git rebase "origin/$branch" || git rebase --abort
+          done
+          git push origin "HEAD:$branch"
