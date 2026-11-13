@@ -466,6 +466,20 @@ body>.teams-overlay{z-index:2000}
 #view-weather .wx-locpop{position:absolute;top:calc(100% + 8px);left:50%;right:auto;transform:translateX(-50%);width:min(320px,calc(100vw - 48px));max-width:320px;z-index:9;text-align:left}
 @media(max-width:380px){.wx-locbar{font-size:17px;padding:9px 14px}}
 </style>
+<style>
+/* == Nov 13: automatic breaking-news + civic pop-ups ==
+   Auto-breaking sits above the manual breaking overlay; the civic
+   (date-driven) overlay sits below both emergency takeovers. */
+.auto-breaking-overlay{z-index:10002}
+.civic-overlay{z-index:10000}
+.civic-overlay .severe-head{background:#1d4ed8}
+#breakingSection{border:2px solid #b42318}
+#breakingSection .brk-live{display:inline-block;background:#b42318;color:#fff;font-weight:800;font-size:11px;letter-spacing:.06em;border-radius:999px;padding:3px 9px;margin-bottom:6px}
+#breakingSection .brk-title{font-size:19px;font-weight:800;line-height:1.3;margin:2px 0 6px}
+#breakingSection .brk-fact{font-size:14.5px;line-height:1.55;margin:6px 0}
+#breakingSection .brk-src{font-size:12.5px;color:var(--soft);margin-top:8px}
+#breakingSection .brk-calm{font-size:15px;line-height:1.55;margin:6px 0}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -495,6 +509,28 @@ body>.teams-overlay{z-index:2000}
       <p class="sev-do"><strong>Flying today?</strong> Check with your airline before going to the airport &mdash; do not head to the airport until your airline confirms your flight is departing.</p>
       <button class="severe-close2" id="breakingClose2" type="button">Got it &mdash; close</button>
     </div>
+  </div>
+</div>
+
+<div class="severe-overlay breaking-overlay auto-breaking-overlay" id="autoBreakingOverlay" role="alertdialog" aria-modal="true" aria-labelledby="autoBreakingTitle" aria-hidden="true">
+  <div class="severe-box">
+    <div class="severe-head">
+      <p class="sev-kicker" id="autoBreakingKicker">&#128680; Breaking News</p>
+      <h2 id="autoBreakingTitle">Breaking News</h2>
+      <button class="severe-x" id="autoBreakingClose" type="button" aria-label="Close breaking news">&times;</button>
+    </div>
+    <div class="severe-body" id="autoBreakingBody"></div>
+  </div>
+</div>
+
+<div class="severe-overlay civic-overlay" id="civicOverlay" role="alertdialog" aria-modal="true" aria-labelledby="civicTitle" aria-hidden="true">
+  <div class="severe-box">
+    <div class="severe-head">
+      <p class="sev-kicker" id="civicKicker">&#128499;&#65039; Today</p>
+      <h2 id="civicTitle">Today</h2>
+      <button class="severe-x" id="civicClose" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="severe-body" id="civicBody"></div>
   </div>
 </div>
 
@@ -913,6 +949,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .ntool span{font-size:13.5px;color:var(--soft);line-height:1.5}
 </style>
   <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
+  <section class="ncard" id="breakingSection" aria-label="Breaking news">
+    <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
+    <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
+  </section>
   <section class="ncard" aria-label="Weather stories">
     <span class="nkick">News · Weather</span><h2>🌦️ Weather Stories</h2>
     <p class="lstatus" id="newsWxStatus">Loading weather stories…</p>
@@ -3603,6 +3643,41 @@ body.on-christmas{color-scheme:light}
     }
     return Promise.resolve();
   }
+  function legDec(l){return (l.kind==='ML'&&l.dkDec)?l.dkDec:(1/l.prob);}
+  /* Extreme Lotto — one longshot per sport with a REAL chance:
+     6-8 legs from the same verified model pool, each leg roughly
+     50-70% on its own, chosen for value (book price vs model %) so
+     the combined payout honestly reaches 100x-400x while the
+     combined hit chance stays around 1-3%. If no combination can
+     honestly do that today, no slip is built — never forced. */
+  function buildExtremeLotto(pool){
+    var cand=pool.filter(function(l){return l.prob>=0.48&&l.prob<=0.72;});
+    if(cand.length<6)return null;
+    function val(l){return legDec(l)*l.prob;}
+    var orders=[
+      cand.slice().sort(function(a,b){return (val(b)-val(a))||(b.prob-a.prob);}),
+      cand.slice().sort(function(a,b){return ((b.edge||0)-(a.edge||0))||(val(b)-val(a));}),
+      cand.slice().sort(function(a,b){return b.prob-a.prob;})
+    ];
+    function attempt(sorted){
+      var legs=[],usedName={},perGame={};
+      for(var i=0;i<sorted.length&&legs.length<8;i++){
+        var l=sorted[i];
+        if(l.name&&usedName[l.name])continue;
+        if(l.gameId&&(perGame[l.gameId]||0)>=2)continue;
+        legs.push(l);if(l.name)usedName[l.name]=1;if(l.gameId)perGame[l.gameId]=(perGame[l.gameId]||0)+1;
+        if(legs.length>=6){
+          var hit=legs.reduce(function(a,x){return a*x.prob;},1);
+          var mult=parlayPayout({legs:legs}).amount/10;
+          if(hit>=0.007&&hit<=0.035&&mult>=100&&mult<=420)return{title:'Extreme Lotto',legs:legs.slice(),hit:hit,extreme:true};
+          if(mult>420||hit<0.007){legs.pop();if(l.name)delete usedName[l.name];if(l.gameId)perGame[l.gameId]--;}
+        }
+      }
+      return null;
+    }
+    for(var o=0;o<orders.length;o++){var r=attempt(orders[o]);if(r)return r;}
+    return null;
+  }
   function buildParlays(lg,games){
     var pool=buildLegPool(lg,games);
     if(pool.length<2)return[];
@@ -3631,6 +3706,8 @@ body.on-christmas{color-scheme:light}
       if(lotto.length<5&&pi2<longProps.length){var p1=longProps[pi2++];if(!seenK[p1.key]){seenK[p1.key]=1;lotto.push(p1);}}
     }
     if(lotto.length>=4)out.push({title:'Lotto Bet of the Day',legs:lotto,hit:prod(lotto),lotto:true});
+    var extreme=buildExtremeLotto(pool);
+    if(extreme)out.push(extreme);
     return out;
   }
   function renderParlays(res){
@@ -3679,16 +3756,17 @@ body.on-christmas{color-scheme:light}
         var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
         var pay=parlayPayout(p);
         var leagueName=lg.label.replace(/^[^ ]+ /,'');
-        var betTitle=p.streak?'Streak Lotto (hit in 6/6 last games)':(p.lotto?'Lotto Bet of the Day':(p.edge?'Edge Parlay':(p.title||'Parlay')));
-        var copyTxt=leagueName+' Parlay — '+betTitle+' (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+(l.kind==='Prop'?' (SIM)':'')+' — '+l.sub;}).join('\n')+'\nCombined odds: '+fmtOdds(pay.amount/10)+' · Stake: $10 → Payout: $'+pay.amount.toFixed(2)+' · Model hit chance: '+hitTxt+'%';
+        var betTitle=p.streak?'Streak Lotto (hit in 6/6 last games)':(p.extreme?'Extreme Lotto':(p.lotto?'Lotto Bet of the Day':(p.edge?'Edge Parlay':(p.title||'Parlay'))));
+        var copyTxt=leagueName+' Parlay — '+betTitle+' (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+(l.kind==='Prop'?' (SIM)':'')+' — '+l.sub;}).join('\n')+'\nCombined odds: '+fmtOdds(pay.amount/10)+' · Stake: $10 → Payout: $'+pay.amount.toFixed(2)+(p.extreme?(' · Stake: $25 → Payout: $'+(pay.amount*2.5).toFixed(2)):'')+' · Model hit chance: '+hitTxt+'%';
         var pbTxt='@Playbook '+leagueName+' parlay: '+p.legs.map(function(l){return l.text;}).join('; ');
-        var titleTxt=p.streak?('\ud83d\udd25 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Streak Lotto \u2014 6/6 Last 6 Games'):(p.lotto?('🎰 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Lotto Bet of the Day'):(esc(lg.label.replace(/^[^ ]+ /,''))+' '+(p.edge?'Edge Parlay':'Parlay '+(pi+1)+' — '+esc(p.title))));
+        var titleTxt=p.streak?('\ud83d\udd25 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Streak Lotto \u2014 6/6 Last 6 Games'):(p.extreme?('\ud83d\ude80 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Extreme Lotto \u2014 Longshot With a Real Chance'):(p.lotto?('🎰 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Lotto Bet of the Day'):(esc(lg.label.replace(/^[^ ]+ /,''))+' '+(p.edge?'Edge Parlay':'Parlay '+(pi+1)+' — '+esc(p.title)))));
         h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+titleTxt+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
         p.legs.forEach(function(l){
           h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+(l.streak?' <span class="sim" style="color:#ffb347">6/6 STREAK</span>':'')+((l.edge!=null&&l.edge>=0.02)?' <span class="sim" style="color:#7ee2a8">+'+Math.round(l.edge*100)+'% EDGE</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
         h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
         h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+(pay.amount>10?' ('+fmtOdds(pay.amount/10)+')':'')+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
+        if(p.extreme)h+='<div class="hit-pay">$25 \u2192 $'+(pay.amount*2.5).toFixed(2)+'</div><div class="hit-lab">\ud83d\ude80 Extreme Lotto \u2014 a longshot with a real chance, not a guaranteed thing. Go light on this: small stakes only.</div>';
         if(pay.best)h+='<span class="hit-best">\u2605 Best payout: '+esc(pay.best)+'</span>';
         if(p.streak)h+='<div class="hit-lab">\ud83d\udd25 Streak Lotto \u2014 every leg above hit its line in all 6 of its last 6 games (100% over the last 6) \u2014 each line is that player\u2019s lowest game in the last 6, so it is the highest line he hit every single game. That is past form, not a guarantee: a 6/6 streak can end tonight, and the hit % above is still the model\u2019s per-leg chances multiplied \u2014 not 100%.</div>';
         h+='</div>';
@@ -3696,6 +3774,7 @@ body.on-christmas{color-scheme:light}
         h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
         h+='</div></div>';
       });
+      if(!parlays.some(function(p){return p.extreme;}))notes+='<p class="astatus">\ud83d\ude80 Extreme Lotto: no combination in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games could honestly reach about 100x with a real chance (around 1\u20133%) from real model legs \u2014 no extreme slip today instead of forcing one.</p>';
       h+=notes;
     });
     list.innerHTML=h;
@@ -4826,7 +4905,8 @@ body.on-christmas{color-scheme:light}
    Shows full-screen on load, must be X'd out, and once dismissed it
    does not show again in the same browsing session. */
 (function(){
-  var BREAKING_NEWS_ON = true;   /* <-- turn off here */
+  var BREAKING_NEWS_ON = false;   /* RETIRED Nov 13: the manual ground-stop takeover is off. The automatic breaking.json feed now owns takeovers — if it detects the nationwide ground stop as still active it fires on its own; flipping this flag is no longer needed. */
+  window.__dnManualBreaking = BREAKING_NEWS_ON ? {id:'faa-nationwide-ground-stop-2026-11-13'} : null;
   var STORY_ID = 'faa-nationwide-ground-stop-2026-11-13';
   if(!BREAKING_NEWS_ON) return;
   var overlay=document.getElementById('breakingOverlay');
@@ -4842,6 +4922,147 @@ body.on-christmas{color-scheme:light}
   var b2=document.getElementById('breakingClose2'); if(b2)b2.addEventListener('click',close);
   overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
   document.body.classList.add('severe-locked');
+})();
+</script>
+<script>
+/* ============================================================
+   AUTOMATIC BREAKING NEWS + DATE-DRIVEN POP-UPS (Nov 13)
+   - The News tab's Breaking News section and the automatic
+     full-screen takeover are fed by breaking.json, refreshed
+     every 5 minutes by the "Breaking news" GitHub Action
+     (FAA NAS Status + NPR + BBC cross-confirmation — only major
+     national events ever go active; items expire in 3 hours).
+   - The manual BREAKING_NEWS_ON takeover above stays as Derek's
+     override and is mirrored in the section while it is on.
+   - Local severe weather keeps firing from live NWS alerts via
+     the severe-weather script — unchanged, and it is never
+     stacked under these pop-ups.
+   - DATE_POPUPS is the extensible list of date-driven pop-ups:
+     add another entry with a when() test the same way.
+   ============================================================ */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function anyOverlayOpen(){var a=document.getElementById('severeOverlay'),b=document.getElementById('breakingOverlay');return !!((a&&a.classList.contains('open'))||(b&&b.classList.contains('open')));}
+  function fmtTime(iso){try{var d=new Date(iso);if(isNaN(d))return '';return d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+
+  /* ---------- Breaking News section (News tab) ---------- */
+  var secBody=document.getElementById('breakingSectionBody');
+  function manualItemHTML(){
+    var titleEl=document.getElementById('breakingTitle');
+    if(!window.__dnManualBreaking||!titleEl)return '';
+    return '<span class="brk-live">Live now</span><p class="brk-title">'+esc(titleEl.textContent)+'</p>'
+      +'<p class="brk-fact">The FAA issued a nationwide ground stop on Friday afternoon, November 13, 2026, halting all departing flights at U.S. airports. The cause, per Transportation Secretary Sean Duffy, is a communications issue at Air Route Traffic Control Centers. More than 7,800 flights were delayed or cancelled as of 4:45 PM Eastern.</p>'
+      +'<p class="brk-fact"><strong>Flying today?</strong> Check with your airline before going to the airport.</p>'
+      +'<p class="brk-src">Source: FAA advisory, reported by national outlets · November 13, 2026</p>';
+  }
+  function autoItemHTML(d){
+    var it=d.item;
+    var h='<span class="brk-live">Live now</span><p class="brk-title">'+esc(it.title)+'</p>';
+    if(it.what)h+='<p class="brk-fact"><strong>What happened:</strong> '+esc(it.what)+'</p>';
+    if(it.means)h+='<p class="brk-fact"><strong>What it means:</strong> '+esc(it.means)+'</p>';
+    if(it.do)h+='<p class="brk-fact"><strong>What to do:</strong> '+esc(it.do)+'</p>';
+    var src=esc(it.source||'Verified reports');var when=fmtTime(d.first_seen||d.updated_at);
+    h+='<p class="brk-src">Source: '+(it.source_url?('<a href="'+esc(it.source_url)+'" target="_blank" rel="noopener">'+src+'</a>'):src)+(when?(' · First reported '+esc(when)):'')+'</p>';
+    return h;
+  }
+  function freshItem(d){
+    if(!d||d.active!==true||!d.item||!d.item.id||!d.item.title)return null;
+    var now=Date.now();
+    if(d.expires_at){var ex=Date.parse(d.expires_at);if(!isNaN(ex)&&ex<now)return null;}
+    if(d.updated_at){var up=Date.parse(d.updated_at);if(!isNaN(up)&&now-up>6*3600*1000)return null;}
+    return d.item;
+  }
+  function renderSection(d){
+    if(!secBody)return;
+    var parts=[];
+    var it=freshItem(d);
+    if(it&&!(window.__dnManualBreaking&&window.__dnManualBreaking.id===it.id))parts.push(autoItemHTML(d));
+    var man=manualItemHTML();if(man)parts.push(man);
+    if(parts.length){secBody.innerHTML=parts.join('<hr style="border:0;border-top:1px solid var(--border);margin:14px 0">');return;}
+    secBody.innerHTML='<p class="brk-calm">✅ Nothing breaking right now — and that&rsquo;s good news. When something big happens, the verified facts will show up here right away.</p>';
+  }
+
+  /* ---------- Automatic takeover from breaking.json ---------- */
+  var autoOverlay=document.getElementById('autoBreakingOverlay');
+  function closeAuto(){
+    if(!autoOverlay)return;
+    autoOverlay.classList.remove('open');autoOverlay.setAttribute('aria-hidden','true');
+    if(!anyOverlayOpen())document.body.classList.remove('severe-locked');
+  }
+  if(autoOverlay){
+    var ac=document.getElementById('autoBreakingClose');if(ac)ac.addEventListener('click',closeAuto);
+  }
+  function maybeTakeover(d){
+    var it=freshItem(d);if(!it||!autoOverlay)return;
+    if(window.__dnManualBreaking&&window.__dnManualBreaking.id===it.id)return; /* manual pop-up already covers it */
+    try{if(sessionStorage.getItem('dn-auto-breaking-dismissed')===it.id)return;}catch(e){}
+    setTimeout(function(){
+      if(anyOverlayOpen()||autoOverlay.classList.contains('open'))return;
+      var body=document.getElementById('autoBreakingBody');if(!body)return;
+      document.getElementById('autoBreakingTitle').textContent=it.title;
+      var h='';
+      if(it.what)h+='<p><strong>What happened:</strong> '+esc(it.what)+'</p>';
+      if(it.means)h+='<p><strong>What it means for you:</strong> '+esc(it.means)+'</p>';
+      if(it.do)h+='<p class="sev-do"><strong>What to do:</strong> '+esc(it.do)+'</p>';
+      var when=fmtTime(d.first_seen||d.updated_at);
+      h+='<p class="brk-src" style="color:#5a6b72;font-size:12.5px">Source: '+esc(it.source||'Verified reports')+(when?(' · '+esc(when)):'')+'</p>';
+      h+='<button class="severe-close2" id="autoBreakingClose2" type="button">Got it — close</button>';
+      body.innerHTML=h;
+      var c2=document.getElementById('autoBreakingClose2');if(c2)c2.addEventListener('click',closeAuto);
+      var closeBtn=document.getElementById('autoBreakingClose');
+      if(closeBtn)closeBtn.onclick=function(){try{sessionStorage.setItem('dn-auto-breaking-dismissed',it.id);}catch(e){}closeAuto();};
+      if(c2)c2.addEventListener('click',function(){try{sessionStorage.setItem('dn-auto-breaking-dismissed',it.id);}catch(e){}});
+      autoOverlay.classList.add('open');autoOverlay.setAttribute('aria-hidden','false');
+      document.body.classList.add('severe-locked');
+    },900);
+  }
+  if(secBody||autoOverlay){
+    fetch('breaking.json?ts='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad');return r.json();}).then(function(d){renderSection(d);maybeTakeover(d);}).catch(function(){renderSection(null);});
+  }
+
+  /* ---------- Date-driven pop-ups (extensible) ---------- */
+  function electionDayFor(year){
+    var nov1=new Date(year,10,1);
+    var firstMonday=1+((1-nov1.getDay())+7)%7; /* date of the first Monday in November */
+    return new Date(year,10,firstMonday+1);    /* the Tuesday right after it */
+  }
+  var DATE_POPUPS=[
+    {id:'election-day',
+     when:function(d){var e=electionDayFor(d.getFullYear());return d.getFullYear()===e.getFullYear()&&d.getMonth()===e.getMonth()&&d.getDate()===e.getDate();},
+     kicker:'\ud83d\uddf3\ufe0f Election Day — Today',
+     title:'VOTE! It\u2019s Election Day \ud83d\uddf3\ufe0f',
+     body:'<p><strong>Today is Election Day</strong> — polls are open today, and your vote helps decide who represents you and your community.</p>'
+       +'<p><strong>Why it matters:</strong> it is not just the top of the ticket. Local and national offices on today&rsquo;s ballot shape schools, roads, taxes, public safety and the services your town uses every day — and local races are often decided by a handful of votes.</p>'
+       +'<p class="sev-do"><strong>Before you go:</strong> check your polling place and its hours with your state or county election office, or at <strong>vote.gov</strong>, and bring any ID your state asks for. If you are in line when polls close, stay in line — you can still vote.</p>'}
+  ];
+  window.__dnDatePopups={electionDayFor:electionDayFor,list:DATE_POPUPS};
+  var civicOverlay=document.getElementById('civicOverlay');
+  function closeCivic(){if(!civicOverlay)return;civicOverlay.classList.remove('open');civicOverlay.setAttribute('aria-hidden','true');if(!anyOverlayOpen()&&!(autoOverlay&&autoOverlay.classList.contains('open')))document.body.classList.remove('severe-locked');}
+  if(civicOverlay){
+    var cc=document.getElementById('civicClose');if(cc)cc.addEventListener('click',closeCivic);
+    var testVote=false;try{testVote=(window.__dnTest==='vote');}catch(e){}
+    var nowD=new Date();
+    var hit=null;
+    for(var i=0;i<DATE_POPUPS.length;i++){try{if(DATE_POPUPS[i].when(nowD)){hit=DATE_POPUPS[i];break;}}catch(e){}}
+    if(!hit&&testVote)hit=DATE_POPUPS[0];
+    if(hit){
+      var key='dn-civic-dismissed-'+hit.id+'-'+nowD.getFullYear()+'-'+(nowD.getMonth()+1)+'-'+nowD.getDate();
+      var seen=false;try{seen=sessionStorage.getItem(key)==='1';}catch(e){}
+      if(!seen||testVote){
+        setTimeout(function(){
+          if(anyOverlayOpen()||(autoOverlay&&autoOverlay.classList.contains('open'))||civicOverlay.classList.contains('open'))return;
+          document.getElementById('civicKicker').textContent=hit.kicker;
+          document.getElementById('civicTitle').textContent=hit.title;
+          var body=document.getElementById('civicBody');
+          body.innerHTML=hit.body+'<button class="severe-close2" id="civicClose2" type="button">Got it — close</button>';
+          var c2=document.getElementById('civicClose2');if(c2)c2.addEventListener('click',function(){try{sessionStorage.setItem(key,'1');}catch(e){}closeCivic();});
+          var cx=document.getElementById('civicClose');if(cx)cx.onclick=function(){try{sessionStorage.setItem(key,'1');}catch(e){}closeCivic();};
+          civicOverlay.classList.add('open');civicOverlay.setAttribute('aria-hidden','false');
+          document.body.classList.add('severe-locked');
+        },1600);
+      }
+    }
+  }
 })();
 </script>
 </body>
