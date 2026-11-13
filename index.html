@@ -244,6 +244,52 @@ window.__dnTeams=(function(){
     clear:function(){try{localStorage.removeItem('dn-my-teams-v1');}catch(e){}}};
 })();
 </script>
+<style>
+/* == Nov 13 fixes C: compact Home widget / Apple radio + location icons /
+   icons-only sleek bottom bar / Teams sheet on <body> == */
+#homeWxWidget{padding:8px 12px;border-radius:18px}
+#homeWxWidget .wxd-loc{font-size:15px}
+#homeWxWidget .wxd-locbtn{min-height:26px;padding:3px 9px;font-size:11px;display:inline-flex;align-items:center;gap:5px}
+#homeWxWidget .wxd-locstatus{font-size:11px}
+#homeWxWidget .wxd-locstatus:empty{display:none}
+#homeWxWidget .wxd-heromain{margin-top:0;gap:8px}
+#homeWxWidget .wxd-temp{font-size:clamp(40px,11vw,48px)}
+#homeWxWidget .wxd-herocond{padding-top:3px}
+#homeWxWidget .wxd-herocond .ic{font-size:26px}
+#homeWxWidget .wxd-herocond .cd{font-size:13px;margin-top:2px}
+#homeWxWidget .wxd-feelsline{font-size:12.5px;margin:3px 0 0;line-height:1.3}
+#homeWxWidget .wxd-precip60{margin-top:5px;font-size:11.5px;padding:4px 8px;border-radius:8px}
+#homeWxWidget .wxd-hourly{margin-top:6px;padding:4px 2px 3px;gap:2px}
+#homeWxWidget .wxd-h{min-width:38px;padding:0 2px}
+#homeWxWidget .wxd-h .t{font-size:11px}
+#homeWxWidget .wxd-h .i{font-size:15px;margin:2px 0 1px}
+#homeWxWidget .wxd-h .tp{font-size:13px}
+#homeWxWidget .wxd-days{margin-top:2px}
+#homeWxWidget .wxd-day{padding:2px 0;font-size:13px;column-gap:6px}
+#homeWxWidget .wxd-dname{font-size:13px}
+#homeWxWidget .wxd-dic{font-size:13px}
+#homeWxWidget .wxd-pp{font-size:10px}
+#homeWxWidget .wxd-bar{height:4px}
+#homeWxWidget .wxd-meta{font-size:11px;margin-top:3px}
+#homeWxWidget .wxd-meta:empty{display:none}
+#homeWxWidget .wxd-status{font-size:12px;margin:2px 0}
+.widget-stack{gap:14px;margin-top:18px}
+.dn-loc-ic{flex:none;vertical-align:-2px}
+.wx-pin .dn-loc-ic{vertical-align:0}
+.wxloc-btn{display:inline-flex;align-items:center;gap:6px}
+.wxradio-mini{margin-top:8px;align-items:center}
+.wxradio-mini-btn{appearance:none;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;border:1.5px solid rgba(255,255,255,.9);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.wxradio-mini-btn svg{display:block;margin-left:2px}
+.wxradio-mini-btn[aria-pressed="true"] svg{margin-left:0}
+.wxradio-mini-status{max-width:190px}
+.bottomnav{width:min(440px,calc(100% - 28px));padding:4px;bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.42);-webkit-backdrop-filter:blur(30px) saturate(190%);backdrop-filter:blur(30px) saturate(190%);border-color:rgba(255,255,255,.55);box-shadow:0 10px 28px rgba(10,25,35,.22),inset 0 1px 0 rgba(255,255,255,.7)}
+@media(prefers-color-scheme:dark){.bottomnav{background:rgba(18,32,40,.45);border-color:rgba(255,255,255,.18)}}
+.bottomnav .tabs{gap:0}
+.bottomnav .tab{min-height:42px;padding:8px 1px;gap:0}
+.bottomnav .tab .tab-ic{font-size:20px}
+.bottomnav .tab-lb{display:none!important}
+body>.teams-overlay{z-index:2000}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -259,7 +305,7 @@ window.__dnTeams=(function(){
 </div>
 
 <div id="wxBg" aria-hidden="true"></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="tab-lb">Home</span></button><button class="tab" role="tab" data-go="weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="tab-lb">Weather</span></button><button class="tab" role="tab" data-go="news" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span><span class="tab-lb">News</span></button><button class="tab" role="tab" data-go="sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="tab-lb">Sports</span></button><button class="tab" role="tab" data-go="faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="tab-lb">Faith</span></button><button class="tab" role="tab" data-go="christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="tab-lb">Christmas</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -316,15 +362,14 @@ window.__dnTeams=(function(){
 
   <!-- Weather widget: live conditions + next 8 hours &amp; 3-day forecast — always current, always shown -->
   <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget">
-    <div class="wxd-locrow"><div class="wxd-loc" id="homeLocLabel">Cicero, NY</div><button type="button" class="wxd-locbtn" id="homeUseLoc">📍 Use my location</button><button type="button" class="wxd-locbtn" id="homeUseCicero" hidden>← Cicero, NY</button><span class="wxd-locstatus" id="homeLocStatus" role="status"></span><div class="wx-locmanual"><input type="text" id="homeLocInput" placeholder="Or type a city or ZIP" aria-label="Type a city or ZIP code" autocomplete="off"><button type="button" id="homeLocGo">Set</button></div></div>
+    <div class="wxd-locrow"><div class="wxd-loc" id="homeLocLabel">Cicero, NY</div><button type="button" class="wxd-locbtn" id="homeUseLoc"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg> Use my location</button><button type="button" class="wxd-locbtn" id="homeUseCicero" hidden>&larr; Cicero, NY</button></div>
+    <span class="wxd-locstatus" id="homeLocStatus" role="status"></span>
     <div class="wxd-heromain"><div class="wxd-temp" id="stripTemp">&mdash;&deg;</div><div class="wxd-herocond"><div class="ic" id="stripIcon" aria-hidden="true">🌡️</div><div class="cd" id="stripCond">Loading live weather&hellip;</div></div></div>
     <p class="wxd-feelsline" id="homeWxFeelsLine"></p>
-    <p class="wxd-nexthour" id="homeNextHour"></p>
-    <div class="wxd-meta" id="homeWxMeta"></div>
     <div class="wxd-precip60" id="homePrecip60" aria-label="Precipitation in the next 60 minutes">Next 60 min: —</div>
     <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 8 hours"><p class="wxd-status">Loading hourly…</p></div>
     <div class="wxd-days" id="homeMiniDays" aria-label="3-day forecast"><p class="wxd-status">Loading forecast…</p></div>
-    <div class="wxd-foot"><p class="wxd-note">Forecast &amp; alerts by the <a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service</a> · Live data: Open-Meteo</p><button class="wxd-go" data-go="weather">Full forecast →</button></div>
+    <div class="wxd-meta" id="homeWxMeta"></div>
   </section>
   <section class="hwidget" id="homeSportsWidget" aria-label="Sports widget">
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
@@ -502,10 +547,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 @media(max-width:380px){.snowday.slim{gap:14px;padding:14px}}
 </style>
   <div class="wxhero" id="wxHero">
-  <button type="button" class="wx-pin" id="wxPin" aria-label="Location — tap to see or change it" aria-expanded="false" title="Location">📍</button>
+  <button type="button" class="wx-pin" id="wxPin" aria-label="Location — tap to see or change it" aria-expanded="false" title="Location"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg></button>
   <div class="wx-locpop" id="wxLocPop" hidden>
   <p class="wxloc" id="wxLocLabel">Cicero, NY</p>
-  <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="wxUseLoc">📍 Use my location</button><button type="button" class="wxloc-btn" id="wxUseCicero" hidden>&larr; Back to Cicero, NY</button></div>
+  <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="wxUseLoc"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg> Use my location</button><button type="button" class="wxloc-btn" id="wxUseCicero" hidden>&larr; Back to Cicero, NY</button></div>
   <p class="wxloc-status" id="wxLocStatus" role="status"></p>
   <div class="wx-locmanual"><input type="text" id="wxLocInput" placeholder="Or type a city or ZIP" aria-label="Type a city or ZIP code" autocomplete="off"><button type="button" id="wxLocGo">Set</button></div>
   </div>
@@ -516,7 +561,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   </div>
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
   <div class="wxhero-top">
-    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false">▶ Weather Radio</button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
+    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9 6.8v10.4c0 .8.9 1.3 1.6.9l8-5.2c.6-.4.6-1.3 0-1.7l-8-5.2C9.9 5.5 9 6 9 6.8z"/></svg></button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
     <p class="wxhero-feels" id="wxFeelsLine"></p>
     <p class="wxhero-nexthour" id="wxNextHour"></p>
     <p class="wxhero-meta" id="wxMeta"></p>
@@ -599,7 +644,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     var a=document.getElementById('wxRadioAudio'),b=document.getElementById('wxRadioBtn'),st=document.getElementById('wxRadioStatus');
     if(!a||!b)return;
     var want=false,timer=null;
-    function setBtn(){b.textContent=want?'⏸ Radio':'▶ Weather Radio';b.setAttribute('aria-pressed',want?'true':'false');}
+    var RP_PLAY='<svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9 6.8v10.4c0 .8.9 1.3 1.6.9l8-5.2c.6-.4.6-1.3 0-1.7l-8-5.2C9.9 5.5 9 6 9 6.8z"/></svg>';
+    var RP_PAUSE='<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 6h3v12H8zM13.5 6h3v12h-3z"/></svg>';
+    function setBtn(){b.innerHTML=want?RP_PAUSE:RP_PLAY;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause NOAA Weather Radio — WXL31 Syracuse':'Play NOAA Weather Radio — WXL31 Syracuse');}
     function fail(){
       if(!want)return;
       want=false;if(timer){clearTimeout(timer);timer=null;}
@@ -1383,7 +1430,7 @@ body.on-christmas{color-scheme:light}
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News · Cicero, NY · Weather data by Open-Meteo</footer>
 <script>
 (function(){
-  var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
+  var views={home:1,weather:1,sports:1,faith:1,christmas:1};
   /* NEWS TEMPORARILY DISABLED (Derek, Nov 13): the News view markup, its
      scripts and its bottom-bar button are all still in this file — it is
      only left out of tabOrder below and hidden by the .news-disabled CSS,
@@ -1411,7 +1458,7 @@ body.on-christmas{color-scheme:light}
   slides[0].parentNode.insertBefore(pagerViewport,slides[0]);
   slides.forEach(function(s){pagerTrack.appendChild(s);});
   var tabsEl=document.querySelector('.bottomnav .tabs');
-  var tabEls=Array.prototype.slice.call(document.querySelectorAll('.bottomnav .tab'));
+  var tabEls=Array.prototype.slice.call(document.querySelectorAll('.bottomnav .tab')).filter(function(t){return tabOrder.indexOf(t.getAttribute('data-go'))>=0;});
   tabEls.sort(function(a,b){return tabOrder.indexOf(a.getAttribute('data-go'))-tabOrder.indexOf(b.getAttribute('data-go'));});
   var pill=document.getElementById('tabPill');
   var settling=false,settleTimer=null,dragging=false,curX=0;
@@ -1616,7 +1663,7 @@ body.on-christmas{color-scheme:light}
   }
   // Initial page: from the URL hash when it names a tab, else Home.
   var initIdx=0;
-  if(location.hash&&views[location.hash.slice(1)])initIdx=tabOrder.indexOf(location.hash.slice(1));
+  if(location.hash){var __hi=tabOrder.indexOf(location.hash.slice(1));if(__hi>=0)initIdx=__hi;}
   finalize(initIdx);
   requestAnimationFrame(function(){finalize(currentIdx);});
   window.addEventListener('load',function(){finalize(currentIdx);});
@@ -1635,7 +1682,7 @@ body.on-christmas{color-scheme:light}
   // off Home entirely; the full Christmas tab is always there.
   var hxW=document.getElementById('homeChristmasWidget');
   if(hxW){var xRelevant=(now.toDateString()===xmas.toDateString())||days<=60;hxW.style.display=xRelevant?'':'none';}
-  if(location.hash && views[location.hash.slice(1)]) show(location.hash.slice(1));
+  if(location.hash && tabOrder.indexOf(location.hash.slice(1))>=0) show(location.hash.slice(1));
   // Live weather — Open-Meteo, no API key, Cicero NY (43.1713, -76.1250)
   var codes={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],56:['🌦️','Freezing drizzle'],57:['🌦️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Light showers'],81:['🌧️','Showers'],82:['🌧️','Heavy showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Thunderstorm with hail']};
   function info(c){return codes[c]||['🌡️','—'];}
@@ -3960,7 +4007,15 @@ body.on-christmas{color-scheme:light}
   var T=window.__dnTeams; if(!T)return;
   var overlay=document.getElementById('teamsPicker'), leaguesEl=document.getElementById('teamsLeagues');
   var openBtn=document.getElementById('setTeamsBtn');
-  if(!overlay||!leaguesEl||!openBtn)return;
+  if(!overlay||!leaguesEl)return;
+  /* The picker lived inside the Sports slide, which the pager moves into a
+     transformed track inside an overflow:hidden viewport. A position:fixed
+     sheet in there is positioned against the track (not the screen) and is
+     clipped by the viewport, so tapping Set Teams appeared to do nothing.
+     Move the sheet to <body>, where fixed positioning works. */
+  if(overlay.parentNode!==document.body)document.body.appendChild(overlay);
+  if(!openBtn){var __hero=document.querySelector('#view-sports .hero');if(__hero){openBtn=document.createElement('button');openBtn.type='button';openBtn.className='sette-btn';openBtn.id='setTeamsBtn';openBtn.textContent='\u2699\uFE0F Set Teams';__hero.appendChild(openBtn);}}
+  if(!openBtn)return;
   var LGNAMES={mlb:'\u26BE MLB',nba:'\uD83C\uDFC0 NBA',nfl:'\uD83C\uDFC8 NFL',nhl:'\uD83C\uDFD2 NHL'};
   var draft=null;
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -3985,9 +4040,10 @@ body.on-christmas{color-scheme:light}
     draft={mlb:T.ids('mlb'),nba:T.ids('nba'),nfl:T.ids('nfl'),nhl:T.ids('nhl')};
     renderPicker(); overlay.hidden=false;
   });
-  document.getElementById('teamsCancel').addEventListener('click',function(){overlay.hidden=true;});
+  var cancelBtn=document.getElementById('teamsCancel'); if(cancelBtn)cancelBtn.addEventListener('click',function(){overlay.hidden=true;});
   overlay.addEventListener('click',function(e){if(e.target===overlay)overlay.hidden=true;});
-  document.getElementById('teamsSave').addEventListener('click',function(){T.save(draft);location.reload();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!overlay.hidden)overlay.hidden=true;});
+  var saveBtn=document.getElementById('teamsSave'); if(saveBtn)saveBtn.addEventListener('click',function(){if(draft)T.save(draft);location.reload();});
   var resetBtn=document.getElementById('teamsReset');
   if(resetBtn)resetBtn.addEventListener('click',function(){T.clear();location.reload();});
   /* Favorite-team cards on the Basketball / Football pages + Home headings */
