@@ -921,7 +921,20 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .nhero h1{font-size:clamp(34px,8vw,46px);font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.05}
 #view-news .nhero h1 .nred{color:#b42318}
 #view-news .nrule{height:4px;width:56px;border-radius:99px;background:#b42318;margin-top:14px}
-#view-news .ncard{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 28px rgba(20,40,50,.12);padding:24px 22px;margin-top:26px;text-align:left}
+#view-news .ncard{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 28px rgba(20,40,50,.12);padding:24px 22px;margin-top:14px;text-align:left}
+#view-news .news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:12px}
+#view-news .news-grid .ncard{margin-top:0;padding:15px 14px;border-radius:20px;min-width:0}
+#view-news .news-grid .ncard h2{font-size:16.5px}
+#view-news .news-grid .nkick{font-size:10px}
+#view-news .news-grid .lnews-t{font-size:13.8px;line-height:1.35}
+#view-news .news-grid .lnews-m{font-size:11.5px}
+#view-news .news-grid .lnews-item{padding:10px 16px 10px 1px}
+#view-news .news-grid .nmore-toggle{font-size:13px;padding:10px 1px 2px;min-height:38px}
+#view-news .news-grid .nnote{font-size:12px}
+#view-news .ncard-span{grid-column:1/-1}
+@media(max-width:420px){#view-news .news-grid{gap:10px}#view-news .news-grid .ncard{padding:13px 11px}#view-news .news-grid .ncard h2{font-size:15.5px}}
+#view-news .brk-toggle{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:11px 2px 2px;cursor:pointer;min-height:40px}
+#view-news .brk-toggle:active{opacity:.7}
 #view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
 #view-news .ncard h2{font-size:21px;font-weight:800;letter-spacing:-.01em;text-align:left;margin:0 0 6px;line-height:1.25}
 #view-news .lstatus{color:var(--soft);font-size:14px;line-height:1.55;margin:8px 0}
@@ -961,6 +974,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
     <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
   </section>
+  <div class="news-grid">
   <section class="ncard" aria-label="Weather stories">
     <span class="nkick">News · Weather</span><h2>🌦️ Weather Stories</h2>
     <p class="lstatus" id="newsWxStatus">Loading weather stories…</p>
@@ -971,17 +985,24 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <p class="lstatus" id="newsLocalStatus">Loading local news…</p>
     <div class="lnews" id="newsLocalList"></div>
   </section>
-  <section class="ncard" aria-label="Sports stories from ESPN">
+  <section class="ncard" aria-label="Nationwide US news headlines">
+    <span class="nkick">News · Nationwide · No Bias</span><h2>🇺🇸 Nationwide</h2>
+    <p class="nnote">Straight news only — AP, Reuters &amp; wires. No opinion and no partisan quote pieces.</p>
+    <p class="lstatus" id="newsNatStatus">Loading nationwide headlines…</p>
+    <div class="lnews" id="newsNatList"></div>
+  </section>
+  <section class="ncard" aria-label="Global world news headlines">
+    <span class="nkick">News · Global · No Bias</span><h2>🌍 Global</h2>
+    <p class="nnote">Straight news only — AP, Reuters &amp; wires. No opinion and no partisan quote pieces.</p>
+    <p class="lstatus" id="newsGlobalStatus">Loading global headlines…</p>
+    <div class="lnews" id="newsGlobalList"></div>
+  </section>
+  <section class="ncard ncard-span" aria-label="Sports stories from ESPN">
     <span class="nkick">News · Sports</span><h2>🏟️ Sports</h2>
     <p class="lstatus" id="newsSportsStatus">Loading sports stories…</p>
     <div class="lnews" id="newsSportsList"></div>
   </section>
-  <section class="ncard" aria-label="Politics headlines">
-    <span class="nkick">News · Politics · No Bias</span><h2>🗳️ Politics</h2>
-    <p class="nnote">Straight news only — AP, Reuters &amp; wires. No opinion and no partisan quote pieces.</p>
-    <p class="lstatus" id="newsPolStatus">Loading politics headlines…</p>
-    <div class="lnews" id="newsPolList"></div>
-  </section>
+  </div>
   <section class="ncard" aria-label="2028 election outlook">
     <span class="nkick">Politics · Election 2028</span><h2>🇺🇸 2028 Election Outlook</h2>
     <div id="electionOutlook"><p class="lstatus">Loading the live 2028 outlook…</p></div>
@@ -4305,10 +4326,11 @@ body.on-christmas{color-scheme:light}
 </script>
 
 <script>
-/* News tab — tight sections only (a few stories each): breaking (top,
-   unchanged), weather, local (LocalSYR + CNY Central only), sports
-   (streamlined from ESPN), and politics (NO bias — AP / Reuters /
-   wires only, partisan quote pieces filtered out),
+/* News tab — compact widget grid (a few stories each): breaking (top,
+   summary + Read more drop-down), weather + local side by side,
+   nationwide + global side by side (both NO bias — AP / Reuters /
+   wires only, partisan quote pieces filtered out), sports (streamlined
+   from ESPN) spanning the grid,
    plus the live Polymarket 2028 outlook. Every number and headline comes
    from a live response in the visitor's browser; on failure each section
    shows an honest line instead of invented content. Filler (how-to-watch,
@@ -4465,7 +4487,11 @@ body.on-christmas{color-scheme:light}
   }
   weatherSection();
   rssSectionMulti(['Syracuse news site:localsyr.com','Syracuse news site:cnycentral.com','Central New York news site:localsyr.com OR site:cnycentral.com'],'newsLocalList','newsLocalStatus',10,'No local stories right now.','Couldn\u2019t load local news right now.',localKeep,4);
-  rssSectionMulti(['politics Congress policy site:apnews.com','politics Congress policy site:reuters.com','US government policy site:apnews.com OR site:reuters.com'],'newsPolList','newsPolStatus',10,'No straight-news politics stories right now.','Couldn\u2019t load politics headlines right now.',polKeep,4);
+  /* Nationwide — US national news under the same no-bias rules as
+     politics: AP / Reuters / wires only, partisan quote pieces out. */
+  rssSectionMulti(['US news United States site:apnews.com','United States news site:reuters.com','America news site:apnews.com OR site:reuters.com'],'newsNatList','newsNatStatus',10,'No straight-news nationwide stories right now.','Couldn\u2019t load nationwide headlines right now.',polKeep,4);
+  /* Global — world news, identical unbiased whitelist + filter. */
+  rssSectionMulti(['world news site:apnews.com','world news site:reuters.com','international news site:apnews.com OR site:reuters.com'],'newsGlobalList','newsGlobalStatus',10,'No straight-news global stories right now.','Couldn\u2019t load global headlines right now.',polKeep,4);
   /* Sports: streamlined straight from ESPN league news — top stories
      across NBA / NFL / MLB, newest first, just a few. No team filter. */
   var newsUrls=[
@@ -5112,9 +5138,13 @@ body.on-christmas{color-scheme:light}
     var titleEl=document.getElementById('breakingTitle');
     if(!window.__dnManualBreaking||!titleEl)return '';
     return '<span class="brk-live">Live now</span><p class="brk-title">'+esc(titleEl.textContent)+'</p>'
+      +'<p class="brk-fact">All departing flights at U.S. airports are halted under an FAA nationwide ground stop.</p>'
+      +'<div class="brk-more" hidden>'
       +'<p class="brk-fact">The FAA issued a nationwide ground stop on Friday afternoon, November 13, 2026, halting all departing flights at U.S. airports. The cause, per Transportation Secretary Sean Duffy, is a communications issue at Air Route Traffic Control Centers. More than 7,800 flights were delayed or cancelled as of 4:45 PM Eastern.</p>'
       +'<p class="brk-fact"><strong>Flying today?</strong> Check with your airline before going to the airport.</p>'
-      +'<p class="brk-src">Source: FAA advisory, reported by national outlets · November 13, 2026</p>';
+      +'<p class="brk-src">Source: FAA advisory, reported by national outlets · November 13, 2026</p>'
+      +'</div>'
+      +'<button type="button" class="brk-toggle" aria-expanded="false">Read more \u25be</button>';
   }
   function autoItemHTML(d){
     var it=d.item;
@@ -5123,11 +5153,17 @@ body.on-christmas{color-scheme:light}
       ?'<span class="brk-live" style="background:#2563eb">Developing</span>'
       :'<span class="brk-live">Live now</span>';
     var h=badge+'<p class="brk-title">'+esc(it.title)+'</p>';
-    if(it.what)h+='<p class="brk-fact"><strong>What happened:</strong> '+esc(it.what)+'</p>';
-    if(it.means)h+='<p class="brk-fact"><strong>What it means:</strong> '+esc(it.means)+'</p>';
-    if(it.do)h+='<p class="brk-fact"><strong>What to do:</strong> '+esc(it.do)+'</p>';
+    /* Summary up top (one or two lines); the full read sits behind
+       the Read more drop-down. */
+    var summary=it.what||it.means||'';
+    if(summary)h+='<p class="brk-fact">'+esc(summary)+'</p>';
+    var full='';
+    if(it.what&&it.means)full+='<p class="brk-fact"><strong>What it means:</strong> '+esc(it.means)+'</p>';
+    if(it.do)full+='<p class="brk-fact"><strong>What to do:</strong> '+esc(it.do)+'</p>';
     var src=esc(it.source||'Verified reports');var when=fmtTime(d.first_seen||d.updated_at);
-    h+='<p class="brk-src">Source: '+(it.source_url?('<a href="'+esc(it.source_url)+'" target="_blank" rel="noopener">'+src+'</a>'):src)+(when?(' · First reported '+esc(when)):'')+'</p>';
+    full+='<p class="brk-src">Source: '+(it.source_url?('<a href="'+esc(it.source_url)+'" target="_blank" rel="noopener">'+src+'</a>'):src)+(when?(' · First reported '+esc(when)):'')+'</p>';
+    if(it.means||it.do)h+='<div class="brk-more" hidden>'+full+'</div><button type="button" class="brk-toggle" aria-expanded="false">Read more \u25be</button>';
+    else h+=full;
     return h;
   }
   function freshItem(d){
@@ -5143,7 +5179,18 @@ body.on-christmas{color-scheme:light}
     var it=freshItem(d);
     if(it&&!(window.__dnManualBreaking&&window.__dnManualBreaking.id===it.id))parts.push(autoItemHTML(d));
     var man=manualItemHTML();if(man)parts.push(man);
-    if(parts.length){secBody.innerHTML=parts.join('<hr style="border:0;border-top:1px solid var(--border);margin:14px 0">');return;}
+    if(parts.length){secBody.innerHTML=parts.join('<hr style="border:0;border-top:1px solid var(--border);margin:14px 0">');
+      secBody.querySelectorAll('.brk-toggle').forEach(function(btn){
+        var more=btn.previousElementSibling;
+        if(!more||!more.classList.contains('brk-more'))return;
+        btn.addEventListener('click',function(){
+          var open=more.hidden;
+          more.hidden=!open;
+          btn.setAttribute('aria-expanded',open?'true':'false');
+          btn.textContent=open?'Show less \u25b4':'Read more \u25be';
+        });
+      });
+      return;}
     secBody.innerHTML='<p class="brk-calm">✅ Nothing breaking right now — and that&rsquo;s good news. When something big happens, the verified facts will show up here right away.</p>';
   }
 
