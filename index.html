@@ -947,6 +947,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .ntool{display:block;border:1.5px solid var(--border);border-radius:18px;padding:16px 18px;margin-top:14px;color:var(--ink);text-decoration:none;background:rgba(255,255,255,.35)}
 #view-news .ntool b{display:block;font-size:16.5px;margin-bottom:3px}
 #view-news .ntool span{font-size:13.5px;color:var(--soft);line-height:1.5}
+#view-news .nnote{font-size:13px;color:var(--soft);line-height:1.5;margin:2px 0 4px}
+#view-news .isw{display:block;border-top:1px solid var(--border);margin-top:18px;padding-top:16px;color:var(--ink);text-decoration:none;text-align:left}
+#view-news .isw-kick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
+#view-news .isw b{display:block;font-size:17px;font-weight:800;margin:0 0 3px}
+#view-news .isw span{font-size:13.5px;color:var(--soft);line-height:1.5}
+#view-news .isw:active{opacity:.75}
 </style>
   <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
   <section class="ncard" id="breakingSection" aria-label="Breaking news">
@@ -958,24 +964,26 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <p class="lstatus" id="newsWxStatus">Loading weather stories…</p>
     <div class="lnews" id="newsWxList"></div>
   </section>
-  <section class="ncard" aria-label="Sports stories about your teams">
-    <span class="nkick">News · Sports</span><h2>🏟️ Your Teams</h2>
+  <section class="ncard" aria-label="Local news from LocalSYR and CNY Central">
+    <span class="nkick">News · Local · Syracuse &amp; CNY</span><h2>📍 Local News</h2>
+    <p class="lstatus" id="newsLocalStatus">Loading local news…</p>
+    <div class="lnews" id="newsLocalList"></div>
+  </section>
+  <section class="ncard" aria-label="Sports stories from ESPN">
+    <span class="nkick">News · Sports</span><h2>🏟️ Sports</h2>
     <p class="lstatus" id="newsSportsStatus">Loading sports stories…</p>
     <div class="lnews" id="newsSportsList"></div>
   </section>
   <section class="ncard" aria-label="Politics headlines">
-    <span class="nkick">News · Politics</span><h2>🗳️ Politics Headlines</h2>
+    <span class="nkick">News · Politics · No Bias</span><h2>🗳️ Politics</h2>
+    <p class="nnote">Straight news only — AP, Reuters &amp; wires. No opinion and no partisan quote pieces.</p>
     <p class="lstatus" id="newsPolStatus">Loading politics headlines…</p>
     <div class="lnews" id="newsPolList"></div>
   </section>
   <section class="ncard" aria-label="2028 election outlook">
     <span class="nkick">Politics · Election 2028</span><h2>🇺🇸 2028 Election Outlook</h2>
     <div id="electionOutlook"><p class="lstatus">Loading the live 2028 outlook…</p></div>
-  </section>
-  <section class="ncard" aria-label="Electoral map and alignment tools">
-    <span class="nkick">Politics · Tools</span><h2>🗺️ Map &amp; Your Alignment</h2>
-    <a class="ntool" href="https://www.270towin.com/" target="_blank" rel="noopener"><b>270toWin →</b><span>The 2028 electoral outlook — build your own map to 270 electoral votes.</span></a>
-    <a class="ntool" href="https://www.isidewith.com/" target="_blank" rel="noopener"><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates.</span></a>
+    <a class="isw" href="https://www.isidewith.com/" target="_blank" rel="noopener"><span class="isw-kick">Politics · Your Alignment</span><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates — right under the live outlook above.</span></a>
   </section>
 </main>
 <!-- SPORTS -->
@@ -4295,7 +4303,10 @@ body.on-christmas{color-scheme:light}
 </script>
 
 <script>
-/* News tab — relevant stories only (weather, followed teams, politics),
+/* News tab — tight sections only (a few stories each): breaking (top,
+   unchanged), weather, local (LocalSYR + CNY Central only), sports
+   (streamlined from ESPN), and politics (NO bias — AP / Reuters /
+   wires only, partisan quote pieces filtered out),
    plus the live Polymarket 2028 outlook. Every number and headline comes
    from a live response in the visitor's browser; on failure each section
    shows an honest line instead of invented content. Filler (how-to-watch,
@@ -4342,7 +4353,7 @@ body.on-christmas{color-scheme:light}
     if(i>12)return{title:t.slice(0,i),source:t.slice(i+3)};
     return{title:String(t||''),source:'Google News'};
   }
-  function rssSection(query,listId,statusId,cap,emptyText,errText){
+  function rssSection(query,listId,statusId,cap,emptyText,errText,keep){
     rssItems(query).then(function(items){
       var seen={},out=[];
       items.forEach(function(it){
@@ -4350,22 +4361,69 @@ body.on-christmas{color-scheme:light}
         var s=splitTitle(it.title);
         if(!s.title||seen[s.title])return;
         if(!okStory(s.title,it.description))return;
+        if(keep&&!keep(s,it))return;
         seen[s.title]=1;
         out.push(row(s.title,s.source,ago(it.pubDate),it.link));
       });
       render(listId,statusId,out,emptyText,errText);
     }).catch(function(){render(listId,statusId,null,emptyText,errText);});
   }
+  function rssSectionMulti(queries,listId,statusId,cap,emptyText,errText,keep){
+    Promise.all(queries.map(function(q){return rssItems(q).catch(function(){return null;});})).then(function(lists){
+      if(lists.every(function(x){return !x;})){render(listId,statusId,null,emptyText,errText);return;}
+      var all=[];
+      lists.forEach(function(items){(items||[]).forEach(function(it){all.push(it);});});
+      all.sort(function(a,b){return (new Date(b.pubDate).getTime()||0)-(new Date(a.pubDate).getTime()||0);});
+      var seen={},out=[];
+      all.forEach(function(it){
+        if(out.length>=cap)return;
+        var sp=splitTitle(it.title);
+        if(!sp.title||seen[sp.title])return;
+        if(!okStory(sp.title,it.description))return;
+        if(keep&&!keep(sp,it))return;
+        seen[sp.title]=1;
+        out.push(row(sp.title,sp.source,ago(it.pubDate),it.link));
+      });
+      render(listId,statusId,out,emptyText,errText);
+    }).catch(function(){render(listId,statusId,null,emptyText,errText);});
+  }
+  /* Politics — NO bias. Whitelist: straight-news wires only (AP,
+     Reuters, UPI). CNN, Fox and every other outlet are excluded from
+     THIS section by the whitelist (breaking news elsewhere is
+     unaffected). Partisan quote pieces are filtered out: any headline
+     built around a politician saying / blasting / slamming / vowing
+     something is dropped, Ground News-style — straight facts only. */
+  var POL_OK=/reuters|associated press|ap news|(^|\s)ap(\s|$)|united press|\bupi\b/i;
+  var POL_BLOCK=/cnn|fox|msnbc|newsmax|breitbart|daily wire|huffpost|huffington/i;
+  var HE_SAID=[
+    /\b(trump|vance|harris|kamala|biden|walz|newsom|desantis|pelosi|schumer|mcconnell|jeffries|ocasio|aoc|musk)\b[^.!?]{0,70}\b(said|says|saying|claims?|claimed|blasts?|blasted|slams?|slammed|attacks?|attacked|rips?|ripped|mocks?|mocked|warns?|warned|vows?|vowed|touts?|touted|defends?|defended|calls out|hits back|fires back|claps back)\b/i,
+    /\b(said|says|saying)\b[^.!?]{0,50}\b(trump|vance|harris|kamala|biden|walz)\b/i,
+    /\b(opinion|commentary|editorial|analysis:)\b/i
+  ];
+  function polKeep(sp,it){
+    var src=String(sp.source||'');
+    if(POL_BLOCK.test(src))return false;
+    if(!POL_OK.test(src))return false;
+    var t=String(sp.title||'')+' '+String((it&&it.description)||'');
+    for(var i=0;i<HE_SAID.length;i++)if(HE_SAID[i].test(t))return false;
+    return true;
+  }
+  /* Local — LocalSYR and CNY Central ONLY. */
+  var LOCAL_OK=/localsyr|local syr|wsyr|news\s?channel 9|cny\s?central|wstm|wtvh/i;
+  function localKeep(sp,it){
+    var src=String(sp.source||''),link=String((it&&it.link)||'');
+    if(/localsyr\.com|cnycentral\.com/i.test(link))return true;
+    return LOCAL_OK.test(src);
+  }
   rssSection('weather storm forecast New York','newsWxList','newsWxStatus',4,'No weather stories right now.','Couldn\u2019t load weather stories right now.');
-  rssSection('2028 presidential election','newsPolList','newsPolStatus',4,'No politics headlines right now.','Couldn\u2019t load politics headlines right now.');
-  /* Sports stories: ESPN league news, kept only when the headline or
-     summary is about a followed team (Yankees, Lakers, Suns, Jaguars,
-     Patriots, Saints, Eagles). */
-  var TEAM_RE=/yankees|lakers|\bsuns\b|jaguars|patriots|\bsaints\b|\beagles\b/i;
+  rssSectionMulti(['Syracuse news site:localsyr.com','Syracuse news site:cnycentral.com','Central New York news site:localsyr.com OR site:cnycentral.com'],'newsLocalList','newsLocalStatus',4,'No local stories right now.','Couldn\u2019t load local news right now.',localKeep);
+  rssSectionMulti(['politics Congress policy site:apnews.com','politics Congress policy site:reuters.com','US government policy site:apnews.com OR site:reuters.com'],'newsPolList','newsPolStatus',4,'No straight-news politics stories right now.','Couldn\u2019t load politics headlines right now.',polKeep);
+  /* Sports: streamlined straight from ESPN league news — top stories
+     across NBA / NFL / MLB, newest first, just a few. No team filter. */
   var newsUrls=[
-    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=20',
-    'https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=20',
-    'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/news?limit=12'
+    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=15',
+    'https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=15',
+    'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/news?limit=10'
   ];
   Promise.all(newsUrls.map(function(u){return fetchJSON(u).catch(function(){return null;});})).then(function(res){
     if(res.every(function(d){return !d;})){render('newsSportsList','newsSportsStatus',null,'','Couldn\u2019t load sports stories right now.');return;}
@@ -4374,7 +4432,6 @@ body.on-christmas{color-scheme:light}
       ((d&&d.articles)||[]).forEach(function(a){
         var title=a.headline||'';
         if(!title||seen[title])return;
-        if(!TEAM_RE.test(title+' '+(a.description||'')))return;
         if(!okStory(title,a.description))return;
         var link=(a.links&&a.links.web&&a.links.web.href)||'';
         if(!link)return;
@@ -4383,7 +4440,7 @@ body.on-christmas{color-scheme:light}
       });
     });
     arts.sort(function(a,b){return b.ts-a.ts;});
-    render('newsSportsList','newsSportsStatus',arts.slice(0,5).map(function(a){return row(a.title,'ESPN',a.when,a.link);}),'No stories about your teams right now.','Couldn\u2019t load sports stories right now.');
+    render('newsSportsList','newsSportsStatus',arts.slice(0,4).map(function(a){return row(a.title,'ESPN',a.when,a.link);}),'No sports stories right now.','Couldn\u2019t load sports stories right now.');
   });
   /* 2028 outlook: live from Polymarket's public Gamma API (CORS *).
      Numbers render only from the live response. */
