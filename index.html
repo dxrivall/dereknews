@@ -931,6 +931,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .lnews-item::after{content:"›";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--soft);opacity:.55}
 #view-news .lnews-t{display:block;font-size:15.5px;font-weight:650;line-height:1.4}
 #view-news .lnews-m{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
+#view-news .nmore-toggle{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:13px 2px 4px;cursor:pointer;min-height:44px}
+#view-news .nmore-toggle:active{opacity:.7}
 #view-news .eparty{display:flex;height:44px;border-radius:12px;overflow:hidden;margin-top:14px;font-size:13.5px;font-weight:800;color:#fff}
 #view-news .edem{background:#2563eb;display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden}
 #view-news .erep{background:#dc2626;display:flex;align-items:center;justify-content:flex-end;padding:0 12px;white-space:nowrap;overflow:hidden}
@@ -4334,12 +4336,21 @@ body.on-christmas{color-scheme:light}
     if(!url)return'';
     return '<a class="lnews-item" href="'+esc(url)+'" target="_blank" rel="noopener"><span class="lnews-t">'+esc(title)+'</span><span class="lnews-m">'+esc(source)+(when?' · '+esc(when):'')+'</span></a>';
   }
-  function render(listId,statusId,rows,emptyText,errText){
+  function render(listId,statusId,rows,emptyText,errText,visibleCount){
     var st=document.getElementById(statusId),box=document.getElementById(listId);
     if(!box)return;
     if(rows==null){if(st)st.textContent=errText;return;}
     if(st)st.textContent=rows.length?'':emptyText;
-    box.innerHTML=rows.join('');
+    var vis=(typeof visibleCount==='number'&&visibleCount>=0)?visibleCount:rows.length;
+    if(!rows.length||rows.length<=vis){box.innerHTML=rows.join('');return;}
+    box.innerHTML=rows.slice(0,vis).join('')+'<div class="nmore" hidden>'+rows.slice(vis).join('')+'</div><button type="button" class="nmore-toggle" aria-expanded="false">View more headlines \u25be</button>';
+    var btn=box.querySelector('.nmore-toggle'),more=box.querySelector('.nmore');
+    if(btn&&more)btn.addEventListener('click',function(){
+      var open=more.hidden;
+      more.hidden=!open;
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      btn.textContent=open?'View fewer headlines \u25b4':'View more headlines \u25be';
+    });
   }
   function rssItems(query){
     var feed='https://news.google.com/rss/search?q='+encodeURIComponent(query)+'&hl=en-US&gl=US&ceid=US:en';
@@ -4353,7 +4364,7 @@ body.on-christmas{color-scheme:light}
     if(i>12)return{title:t.slice(0,i),source:t.slice(i+3)};
     return{title:String(t||''),source:'Google News'};
   }
-  function rssSection(query,listId,statusId,cap,emptyText,errText,keep){
+  function rssSection(query,listId,statusId,cap,emptyText,errText,keep,visibleCount){
     rssItems(query).then(function(items){
       var seen={},out=[];
       items.forEach(function(it){
@@ -4365,10 +4376,10 @@ body.on-christmas{color-scheme:light}
         seen[s.title]=1;
         out.push(row(s.title,s.source,ago(it.pubDate),it.link));
       });
-      render(listId,statusId,out,emptyText,errText);
+      render(listId,statusId,out,emptyText,errText,visibleCount);
     }).catch(function(){render(listId,statusId,null,emptyText,errText);});
   }
-  function rssSectionMulti(queries,listId,statusId,cap,emptyText,errText,keep){
+  function rssSectionMulti(queries,listId,statusId,cap,emptyText,errText,keep,visibleCount){
     Promise.all(queries.map(function(q){return rssItems(q).catch(function(){return null;});})).then(function(lists){
       if(lists.every(function(x){return !x;})){render(listId,statusId,null,emptyText,errText);return;}
       var all=[];
@@ -4384,8 +4395,45 @@ body.on-christmas{color-scheme:light}
         seen[sp.title]=1;
         out.push(row(sp.title,sp.source,ago(it.pubDate),it.link));
       });
-      render(listId,statusId,out,emptyText,errText);
+      render(listId,statusId,out,emptyText,errText,visibleCount);
     }).catch(function(){render(listId,statusId,null,emptyText,errText);});
+  }
+  /* Weather Stories — exactly 2 up top: 1 nationwide + 1 CNY.
+     Extra weather headlines live only behind the View more drop-down. */
+  function weatherSection(){
+    var emptyText='No weather stories right now.',errText='Couldn\u2019t load weather stories right now.';
+    Promise.all([
+      rssItems('US weather storm forecast nationwide').catch(function(){return null;}),
+      rssItems('Central New York Syracuse weather storm forecast').catch(function(){return null;})
+    ]).then(function(lists){
+      if(!lists[0]&&!lists[1]){render('newsWxList','newsWxStatus',null,emptyText,errText,2);return;}
+      function clean(items){
+        var out=[];
+        (items||[]).forEach(function(it){
+          var sp=splitTitle(it.title);
+          if(!sp.title)return;
+          if(!okStory(sp.title,it.description))return;
+          out.push({title:sp.title,source:sp.source,when:ago(it.pubDate),ts:new Date(it.pubDate).getTime()||0,link:it.link});
+        });
+        return out;
+      }
+      var nat=clean(lists[0]),cny=clean(lists[1]);
+      var seen={},top=[];
+      function take(list){
+        for(var i=0;i<list.length;i++){if(!seen[list[i].title]){seen[list[i].title]=1;return list[i];}}
+        return null;
+      }
+      var firstNat=take(nat),firstCny=take(cny);
+      if(firstNat)top.push(firstNat);
+      if(firstCny)top.push(firstCny);
+      var rest=nat.concat(cny).filter(function(a){return !seen[a.title];}).sort(function(a,b){return b.ts-a.ts;});
+      rest.forEach(function(a){seen[a.title]=1;});
+      var uniqRest=[],rseen={};
+      rest.forEach(function(a){if(!rseen[a.title]){rseen[a.title]=1;uniqRest.push(a);}});
+      while(top.length<2&&uniqRest.length)top.push(uniqRest.shift());
+      var all=top.concat(uniqRest).slice(0,10);
+      render('newsWxList','newsWxStatus',all.map(function(a){return row(a.title,a.source,a.when,a.link);}),emptyText,errText,2);
+    }).catch(function(){render('newsWxList','newsWxStatus',null,emptyText,errText,2);});
   }
   /* Politics — NO bias. Whitelist: straight-news wires only (AP,
      Reuters, UPI). CNN, Fox and every other outlet are excluded from
@@ -4415,9 +4463,9 @@ body.on-christmas{color-scheme:light}
     if(/localsyr\.com|cnycentral\.com/i.test(link))return true;
     return LOCAL_OK.test(src);
   }
-  rssSection('weather storm forecast New York','newsWxList','newsWxStatus',4,'No weather stories right now.','Couldn\u2019t load weather stories right now.');
-  rssSectionMulti(['Syracuse news site:localsyr.com','Syracuse news site:cnycentral.com','Central New York news site:localsyr.com OR site:cnycentral.com'],'newsLocalList','newsLocalStatus',4,'No local stories right now.','Couldn\u2019t load local news right now.',localKeep);
-  rssSectionMulti(['politics Congress policy site:apnews.com','politics Congress policy site:reuters.com','US government policy site:apnews.com OR site:reuters.com'],'newsPolList','newsPolStatus',4,'No straight-news politics stories right now.','Couldn\u2019t load politics headlines right now.',polKeep);
+  weatherSection();
+  rssSectionMulti(['Syracuse news site:localsyr.com','Syracuse news site:cnycentral.com','Central New York news site:localsyr.com OR site:cnycentral.com'],'newsLocalList','newsLocalStatus',10,'No local stories right now.','Couldn\u2019t load local news right now.',localKeep,4);
+  rssSectionMulti(['politics Congress policy site:apnews.com','politics Congress policy site:reuters.com','US government policy site:apnews.com OR site:reuters.com'],'newsPolList','newsPolStatus',10,'No straight-news politics stories right now.','Couldn\u2019t load politics headlines right now.',polKeep,4);
   /* Sports: streamlined straight from ESPN league news — top stories
      across NBA / NFL / MLB, newest first, just a few. No team filter. */
   var newsUrls=[
@@ -4440,7 +4488,7 @@ body.on-christmas{color-scheme:light}
       });
     });
     arts.sort(function(a,b){return b.ts-a.ts;});
-    render('newsSportsList','newsSportsStatus',arts.slice(0,4).map(function(a){return row(a.title,'ESPN',a.when,a.link);}),'No sports stories right now.','Couldn\u2019t load sports stories right now.');
+    render('newsSportsList','newsSportsStatus',arts.slice(0,12).map(function(a){return row(a.title,'ESPN',a.when,a.link);}),'No sports stories right now.','Couldn\u2019t load sports stories right now.',4);
   });
   /* 2028 outlook: live from Polymarket's public Gamma API (CORS *).
      Numbers render only from the live response. */
