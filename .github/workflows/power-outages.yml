@@ -1,0 +1,95 @@
+# Power outage data for Derek News
+# PowerOutage's live REST API needs a paid key and poweroutage.us blocks
+# servers, but the same service's public pages on poweroutage.com carry
+# the live numbers server-side. This Action parses them every 10 minutes
+# (the source itself refreshes about every 10 minutes) and writes a slim
+# outages.json at the repo root. The site (index.html, Weather tab) reads
+# outages.json from the same GitHub Pages origin — no embed of their
+# website, no ads, no login chrome. If the parse fails or the two
+# Onondaga sources disagree, the Action fails WITHOUT overwriting the
+# last good outages.json, and the site shows its honest "couldn't load"
+# state once that file goes stale.
+# Upload this file to your repo at .github/workflows/power-outages.yml
+# and make sure GitHub Actions are enabled for the repo.
+name: Power outages
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch PowerOutage data for New York and Onondaga County
+        run: python3 - <<'PY'
+          import json, re, urllib.request, datetime
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 derek-news-outages/1.0"}
+          BASE = "https://poweroutage.com"
+          def get(url):
+              req = urllib.request.Request(url, headers=UA)
+              return urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
+          def num(s):
+              return int(s.replace(",", "").strip())
+          def pct(out, tracked):
+              return round(out * 10000 / tracked) / 100 if tracked else None
+          def parse_utils(html):
+              rows = re.findall(r'<a href="/area/utility/\d+">([^<]+)</a></div><div[^>]*>([\d,]+)</div><div[^>]*>([\d,]+)</div>', html)
+              return [{"name": n.strip(), "tracked": num(t), "out": num(o), "pct": pct(num(o), num(t))} for n, t, o in rows]
+          def parse_summary(html):
+              tr = re.search(r'Customers Tracked:</strong>\s*<br\s*/>\s*<span>([\d,]+)</span>', html)
+              ou = re.search(r'Customers Out:</strong>\s*<br\s*/>\s*<span>([\d,]+)</span>', html)
+              if not tr:
+                  tr = re.search(r'<b>Customers Tracked</b></div>\s*<div[^>]*>([\d,]+)</div>', html)
+                  ou = re.search(r'<b>Customers Out</b></div>\s*<div[^>]*>([\d,]+)</div>', html)
+              lu = re.search(r'class="datetime">([^<]+)</item>', html)
+              if not (tr and ou):
+                  return None
+              updated = None
+              if lu:
+                  try:
+                      dt = datetime.datetime.strptime(lu.group(1).strip(), "%m/%d/%Y %I:%M:%S %p GMT")
+                      updated = dt.replace(tzinfo=datetime.timezone.utc).isoformat()
+                  except ValueError:
+                      updated = None
+              t, o = num(tr.group(1)), num(ou.group(1))
+              return {"tracked": t, "out": o, "pct": pct(o, t), "source_updated": updated}
+          state_html = get(BASE + "/area/state/new%20york")
+          state = parse_summary(state_html)
+          state_utils = parse_utils(state_html)
+          if not state or state["tracked"] < 1000000 or len(state_utils) < 5:
+              raise SystemExit("state page parse failed - not writing outages.json")
+          m = re.search(r'counties\?key=(\d+)', state_html)
+          key = m.group(1) if m else "4759028374"
+          counties = json.loads(get(BASE + "/api/web/counties?key=" + key + "&countryid=us&statename=New%20York"))
+          ono = next((r for r in counties.get("WebCountyRecord", []) if r.get("CountyName") == "Onondaga"), None)
+          if not ono:
+              raise SystemExit("Onondaga not in counties API - not writing outages.json")
+          county_html = get(BASE + "/area/county/" + str(ono["CountyId"]))
+          county = parse_summary(county_html)
+          county_utils = parse_utils(county_html)
+          if not county or not county_utils:
+              raise SystemExit("county page parse failed - not writing outages.json")
+          if county["out"] != ono["OutageCount"] or county["tracked"] != ono["CustomerCount"]:
+              raise SystemExit("Onondaga county page / API mismatch - not writing outages.json")
+          state_utils.sort(key=lambda u: -u["out"])
+          out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                 "source": "PowerOutage (poweroutage.us / poweroutage.com), fetched server-side",
+                 "state": dict(state, name="New York", utilities=state_utils),
+                 "county": dict(county, name="Onondaga County", utilities=county_utils)}
+          with open("outages.json", "w") as f:
+              json.dump(out, f, indent=1)
+          print(f"wrote outages.json: NY out={state['out']}/{state['tracked']}, Onondaga out={county['out']}/{county['tracked']}")
+          PY
+      - name: Commit if changed
+        run: |
+          git config user.name "derek-news-bot"
+          git config user.email "derek-news-bot@users.noreply.github.com"
+          git add outages.json
+          git diff --cached --quiet || git commit -m "Update power outage data"
+          git push
