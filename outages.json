@@ -1,30 +1,30 @@
 {
- "updated_at": "2026-11-13T23:57:20.860900+00:00",
+ "updated_at": "2026-11-14T00:33:36.925887+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
-  "tracked": 8384120,
-  "out": 18139,
-  "pct": 0.22,
-  "source_updated": "2026-11-13T23:54:01+00:00",
+  "tracked": 8384170,
+  "out": 16396,
+  "pct": 0.2,
+  "source_updated": "2026-11-14T00:23:59+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
-    "tracked": 919248,
-    "out": 8609,
-    "pct": 0.94
+    "tracked": 919258,
+    "out": 8442,
+    "pct": 0.92
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
-    "out": 4410,
-    "pct": 85.42
+    "out": 4433,
+    "pct": 85.86
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 3352,
-    "pct": 0.2
+    "out": 1866,
+    "pct": 0.11
    },
    {
     "name": "Delaware County Electric Coop",
@@ -33,16 +33,10 @@
     "pct": 27.42
    },
    {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 124,
-    "pct": 0.0
-   },
-   {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315411,
-    "out": 102,
-    "pct": 0.03
+    "out": 71,
+    "pct": 0.02
    },
    {
     "name": "Orange & Rockland Utilities Inc",
@@ -51,14 +45,20 @@
     "pct": 0.02
    },
    {
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 48,
+    "pct": 0.0
+   },
+   {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 18,
+    "out": 12,
     "pct": 0.0
    },
    {
     "name": "Rochester Gas & Electric Corp",
-    "tracked": 392005,
+    "tracked": 392045,
     "out": 8,
     "pct": 0.0
    },
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 0,
-  "source_updated": "2026-11-13T23:53:59+00:00",
+  "out": 1,
+  "source_updated": "2026-11-14T00:23:57+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 0,
+    "out": 1,
     "pct": 0.0
    },
    {
