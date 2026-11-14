@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-11-14T11:07:05.195767+00:00",
+ "updated_at": "2026-11-14T11:40:25.921049+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384170,
-  "out": 13602,
+  "out": 13334,
   "pct": 0.16,
-  "source_updated": "2026-11-14T11:03:46+00:00",
+  "source_updated": "2026-11-14T11:33:47+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919258,
-    "out": 7664,
-    "pct": 0.83
+    "out": 7420,
+    "pct": 0.81
    },
    {
     "name": "Otsego Electric Coop",
@@ -23,8 +23,8 @@
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
-    "out": 1245,
-    "pct": 23.34
+    "out": 1221,
+    "pct": 22.89
    },
    {
     "name": "National Grid",
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 56,
-  "source_updated": "2026-11-14T11:03:44+00:00",
+  "source_updated": "2026-11-14T11:33:45+00:00",
   "pct": 0.03,
   "name": "Onondaga County",
   "utilities": [
