@@ -11,7 +11,10 @@
 # a severity: "massive" fires the site's full-screen takeover;
 # "significant" appears only in the News tab Breaking News section.
 # A single outlet never fires. Items expire 3 hours after the
-# signal was last seen. Fetcher source: .src/fetch_breaking.py in
+# signal was last seen, then stay in breaking.json for a 6-hour
+# grace period marked expired (site lists them as EXPIRED in the
+# Breaking News section only - no takeover) and are dropped
+# completely after that. Fetcher source: .src/fetch_breaking.py in
 # the build workspace (embedded unchanged below).
 # YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: Breaking news
@@ -67,7 +70,13 @@ jobs:
           Routine headlines never fire: every rule is a tight catastrophic
           or major-event pattern, matched against headlines only, in items
           published within the last 3 hours. Items expire 3 hours after the
-          last refresh that still sees the signal. If every source is
+          last refresh that still sees the signal. When an item stops being
+          active it is kept for a 6-hour grace period as expired (active:
+          False, expired: True, expired_at = when it stopped being active,
+          grace_until = expired_at + 6 hours, item preserved) so the site
+          can list it in the Breaking News section marked EXPIRED - it
+          never fires the takeover while expired - and it is dropped
+          completely once grace_until passes. If every source is
           unreachable the script exits non-zero and does NOT overwrite the
           last breaking.json.
           Embedded unchanged in .github/workflows/breaking-news.yml.
@@ -317,7 +326,7 @@ jobs:
                   prev = None
               if item is not None:
                   first_seen = NOW.isoformat()
-                  if prev and prev.get("active") and (prev.get("item") or {}).get("id") == item["id"]:
+                  if prev and (prev.get("item") or {}).get("id") == item["id"]:
                       first_seen = prev.get("first_seen") or first_seen
                   out = {"active": True, "severity": item["severity"],
                          "updated_at": NOW.isoformat(), "first_seen": first_seen,
@@ -325,9 +334,36 @@ jobs:
                          "item": item}
                   print(f"ACTIVE [{item['severity']}]: {item['id']} - {item['title']}")
               else:
-                  out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
-                         "first_seen": None, "expires_at": None, "item": None}
-                  print("No qualifying breaking signal - writing inactive breaking.json")
+                  prev_item = (prev.get("item") if prev else None) or {}
+                  if prev_item.get("id") and prev_item.get("title"):
+                      if prev.get("expired") and prev.get("grace_until"):
+                          expired_at = prev.get("expired_at") or NOW.isoformat()
+                          grace_until = prev["grace_until"]
+                          try:
+                              grace_dt = datetime.datetime.fromisoformat(grace_until)
+                          except ValueError:
+                              grace_dt = NOW
+                      else:
+                          expired_at = NOW.isoformat()
+                          grace_dt = NOW + datetime.timedelta(hours=6)
+                          grace_until = grace_dt.isoformat()
+                      if NOW < grace_dt:
+                          out = {"active": False, "expired": True,
+                                 "severity": prev.get("severity") or prev_item.get("severity"),
+                                 "updated_at": NOW.isoformat(),
+                                 "first_seen": prev.get("first_seen"),
+                                 "expires_at": prev.get("expires_at"),
+                                 "expired_at": expired_at, "grace_until": grace_until,
+                                 "item": prev_item}
+                          print(f"EXPIRED (grace until {grace_until}): {prev_item['id']} - {prev_item['title']}")
+                      else:
+                          out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
+                                 "first_seen": None, "expires_at": None, "item": None}
+                          print("Expired item past its 6-hour grace - writing inactive breaking.json")
+                  else:
+                      out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
+                             "first_seen": None, "expires_at": None, "item": None}
+                      print("No qualifying breaking signal - writing inactive breaking.json")
               with open("breaking.json", "w") as f:
                   json.dump(out, f, indent=1)
               return 0
