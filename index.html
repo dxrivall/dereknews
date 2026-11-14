@@ -331,8 +331,6 @@ body>.teams-overlay{z-index:2000}
 #homeThanksgivingWidget>*{position:relative;z-index:1}
 #homeThanksgivingWidget .tg-big{color:#92400e;font-size:30px;line-height:1.25;font-weight:700}
 @media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-big{color:#fcd9a0}}
-#homeThanksgivingWidget .tg-sub{color:#7c4a12;font-size:14.5px;line-height:1.5;margin:8px 0 0}
-@media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-sub{color:#e8c795}}
 .betsport-picker{margin:0 0 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px;color:#fff}
 .betsport-pick-label{font-weight:800;font-size:15px;margin:0 0 10px}
 .betsport-btns{display:flex;gap:8px;flex-wrap:wrap}
@@ -689,8 +687,7 @@ body>.teams-overlay{z-index:2000}
   </section>
   <section class="hwidget" id="homeThanksgivingWidget" aria-label="Thanksgiving widget">
     <div class="hwidget-head"><h2>🦃 Thanksgiving</h2></div>
-    <div class="tg-row"><div class="tg-big"><span id="homeTGDays">—</span> days until Thanksgiving</div></div>
-    <p class="tg-sub" id="homeTGLine">Counting down to Thanksgiving Day 🍂</p>
+    <div class="tg-row"><div class="tg-big" id="homeTGBig"><span id="homeTGDays">—</span> days until Thanksgiving</div></div>
   </section>
   <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
     <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
@@ -2235,8 +2232,8 @@ body.on-christmas{color-scheme:light}
   if(now>new Date(tgYear,10,tgiving.getDate())&&now.toDateString()!==tgiving.toDateString()){tgYear+=1;tgiving=thanksgivingFor(tgYear);}
   var tgDays=Math.ceil((new Date(tgiving.getFullYear(),10,tgiving.getDate())-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
   var tgIsDay=(now.toDateString()===tgiving.toDateString());
-  var tgD=document.getElementById('homeTGDays');if(tgD)tgD.textContent=tgIsDay?'0':tgDays;
-  var tgL=document.getElementById('homeTGLine');if(tgL)tgL.textContent=tgIsDay?'Happy Thanksgiving! 🦃 Today is the day.':'Until Thanksgiving Day — '+tgiving.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+' 🍂';
+  var tgD=document.getElementById('homeTGDays');if(tgD)tgD.textContent=tgDays;
+  var tgBig=document.getElementById('homeTGBig');if(tgBig&&tgIsDay)tgBig.textContent='HAPPY THANKSGIVING!';
   var tgW=document.getElementById('homeThanksgivingWidget');
   if(tgW){var tgRelevant=tgIsDay||tgDays<=60;tgW.style.display=tgRelevant?'':'none';}
   if(location.hash && tabOrder.indexOf(location.hash.slice(1))>=0) show(location.hash.slice(1));
