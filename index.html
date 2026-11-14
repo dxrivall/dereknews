@@ -497,6 +497,10 @@ body>.teams-overlay{z-index:2000}
 #breakingSection .brk-calm{font-size:15px;line-height:1.55;margin:6px 0}
 .brk-active{font-size:13px;font-weight:700;color:#166534;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.45);border-radius:10px;padding:8px 11px;line-height:1.45;margin:8px 0}
 .severe-body .brk-active{color:#14532d}
+#breakingSection .brk-expired-badge{background:#6b7280}
+#breakingSection.is-expired{border-color:#6b7280}
+#breakingSection .brk-expired .brk-title{color:var(--soft)}
+.brk-expired-note{font-size:13px;font-weight:700;color:#4b5563;background:rgba(107,114,128,.14);border:1px solid rgba(107,114,128,.4);border-radius:10px;padding:8px 11px;line-height:1.45;margin:8px 0}
 </style>
 </head>
 <body>
@@ -1709,7 +1713,7 @@ body.on-sports footer{color:#aebfe6!important}
   </style>
   <section class="acard" id="liveParlaySection" hidden aria-label="Live Parlay — live pace projections from games in progress">
   <div class="ahead"><h2>🔴 Live Parlay</h2><span class="league-pill" style="background:#b42318"><span class="live-pulse" aria-hidden="true"></span> LIVE</span></div>
-  <p class="astatus" style="color:#fff">Built from games happening <b>right now</b> — each leg reads the player&rsquo;s stats so far in the live box score and his pace with the time left, then suggests the next line that pace supports (for example, 3 threes already in the 2nd quarter &rarr; the 4+ threes line). <b>Live pace projection — not a guarantee:</b> pace can change fast, and the hit % is still the legs multiplied together, same as the other slips. This section only appears while games are live.</p>
+  <p class="astatus" style="color:#fff">Built from games happening <b>right now</b> — each leg reads the player&rsquo;s stats so far in the live box score and his pace with the time left, then suggests the next line that pace supports (for example, 3 threes already in the 2nd quarter &rarr; the 4+ threes line). <b>Live pace projection — not a guarantee:</b> pace can change fast, and the hit % is still the legs multiplied together, same as the other slips. This section only appears while games are live. When enough live props qualify, a second <b>Riskier Live Parlay</b> appears under it &mdash; 4&ndash;5 players, <b>all props, no moneylines</b>, on higher lines off the same live pace, so it pays more and hits less often. Still a live pace projection &mdash; not a guarantee.</p>
   <div id="liveParlayList"></div>
   <p class="astatus" id="liveParlayStamp" style="font-size:12px"></p>
   </section>
@@ -4159,7 +4163,14 @@ body.on-christmas{color-scheme:light}
    raw pace number). This is a live pace projection from live
    data — NOT a guarantee, and legs vanish as games end. The
    whole section stays hidden when nothing is in progress or no
-   player is on a qualifying pace — no empty state. */
+   player is on a qualifying pace — no empty state.
+   Riskier slip: a second builder re-runs the SAME pace math with
+   a higher line (past the conservative suggestion, capped well
+   inside the pace projection) and a lower per-leg chance band
+   (34–68%). It needs 4–5 distinct players, ALL player props —
+   this code never creates a moneyline / team leg — and it is
+   dropped entirely if the combined chance falls below 1.5%
+   (a lottery ticket) or fewer than 4 players qualify. */
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
@@ -4245,7 +4256,7 @@ body.on-christmas{color-scheme:light}
     });
     return out;
   }
-  function suggestLegs(lg,game,players,clk){
+  function suggestLegs(lg,game,players,clk,risky){
     var legs=[];
     if(clk.frac<0.20||clk.frac>0.92)return legs;
     (STATS[lg.key]||[]).forEach(function(cfg){
@@ -4258,14 +4269,22 @@ body.on-christmas{color-scheme:light}
         var cap=Math.floor((cur+cfg.step)/cfg.bucket)*cfg.bucket;
         if(sugg>cap)sugg=cap;
         if(sugg<=cur)sugg=cur+cfg.bucket;
-        if(sugg<=cur||sugg>proj*1.02)return;
+        if(risky){
+          var safeSugg=sugg;
+          sugg=Math.floor((proj*0.96)/cfg.bucket)*cfg.bucket;
+          var rCap=Math.floor((cur+cfg.step*1.75)/cfg.bucket)*cfg.bucket;
+          if(sugg>rCap)sugg=rCap;
+          if(sugg<=safeSugg)sugg=safeSugg+cfg.bucket;
+        }
+        if(sugg<=cur||sugg>proj*(risky?1.08:1.02))return;
         var rem=proj-cur;
         var sd=Math.max(Math.sqrt(Math.max(rem,1))*1.5,proj*cfg.sdFrac,cfg.bucket);
         var prob=1-normCdf((sugg-0.5-proj)/sd);
         if(prob>0.93)prob=0.93;
-        if(prob<0.57)return;
+        if(risky){if(prob<0.34||prob>0.68)return;}
+        else if(prob<0.57)return;
         var projTxt=proj>=20?String(Math.round(proj)):(String(Math.round(proj*10)/10).replace(/\.0$/,''));
-        legs.push({name:p.name,text:p.name+' '+sugg+'+ '+cfg.line,prob:Math.round(prob*100)/100,curTxt:'Has '+cur+' '+cfg.unit+' now',why:'On pace for ~'+projTxt+' '+cfg.unit+' · '+Math.round(clk.remain)+' min left in regulation',clock:clk.clock,gameId:game.id,gameTxt:game.away+' at '+game.home,key:'live-'+game.id+'-'+p.name+'-'+cfg.k});
+        legs.push({name:p.name,text:p.name+' '+sugg+'+ '+cfg.line,prob:Math.round(prob*100)/100,curTxt:'Has '+cur+' '+cfg.unit+' now',why:'On pace for ~'+projTxt+' '+cfg.unit+' · '+Math.round(clk.remain)+' min left in regulation',clock:clk.clock,gameId:game.id,gameTxt:game.away+' at '+game.home,key:(risky?'live-risky-':'live-')+game.id+'-'+p.name+'-'+cfg.k});
       });
     });
     return legs;
@@ -4287,8 +4306,8 @@ body.on-christmas{color-scheme:light}
         live.push({id:id,away:aAbbr,home:hAbbr,clk:gameClock(lg,st)});
       });});
       return Promise.all(live.map(function(g){
-        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){return suggestLegs(lg,g,parseBox(d,lg),g.clk);}).catch(function(){return[];});
-      })).then(function(perGame){var all=[];perGame.forEach(function(ls){all=all.concat(ls);});return all;});
+        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){var pl=parseBox(d,lg);return{safe:suggestLegs(lg,g,pl,g.clk,false),risky:suggestLegs(lg,g,pl,g.clk,true)};}).catch(function(){return{safe:[],risky:[]};});
+      })).then(function(perGame){var all=[],allR=[];perGame.forEach(function(ls){all=all.concat(ls.safe||[]);allR=allR.concat(ls.risky||[]);});return{safe:all,risky:allR};});
     });
   }
   function buildLiveParlay(legs){
@@ -4304,17 +4323,31 @@ body.on-christmas{color-scheme:light}
     var hit=picked.reduce(function(a,l){return a*l.prob;},1);
     return{legs:picked,hit:hit};
   }
-  var lastByLeague={};
+  function buildLiveRiskyParlay(legs){
+    var sorted=(legs||[]).slice().sort(function(a,b){return b.prob-a.prob;});
+    var picked=[],usedName={},perGame={};
+    sorted.forEach(function(l){
+      if(picked.length>=5)return;
+      if(usedName[l.name])return;
+      if((perGame[l.gameId]||0)>=5)return;
+      if(l.prob<0.34||l.prob>0.68)return;
+      usedName[l.name]=1;perGame[l.gameId]=(perGame[l.gameId]||0)+1;picked.push(l);
+    });
+    if(picked.length<4)return null;
+    var hit=picked.reduce(function(a,l){return a*l.prob;},1);
+    if(picked.length===5&&hit<0.03){picked=picked.slice(0,4);hit=picked.reduce(function(a,l){return a*l.prob;},1);}
+    if(picked.length<4||hit<0.015)return null;
+    return{legs:picked,hit:hit};
+  }
+  var lastByLeague={},lastByLeagueRisky={};
   function applyPick(){
     var sec=document.getElementById('liveParlaySection');if(!sec)return;
     var panel=document.getElementById('sport-betsim');
     var pick=panel?panel.getAttribute('data-pick')||'':'';
     var anyVisible=false;
     LEAGUES.forEach(function(lg){
-      var arr=lastByLeague[lg.key];
-      var has=!!(arr&&arr.length);
       var blk=sec.querySelector('[data-liveleague="'+lg.key+'"]');
-      if(blk){var show=has&&(!pick||pick===lg.key);blk.style.display=show?'':'none';if(show)anyVisible=true;}
+      if(blk){var hasCard=!!blk.querySelector('.parlay-card');var show=hasCard&&(!pick||pick===lg.key);blk.style.display=show?'':'none';if(show)anyVisible=true;}
     });
     sec.hidden=!anyVisible;
   }
@@ -4342,6 +4375,25 @@ body.on-christmas{color-scheme:light}
         h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook →</a>';
         h+='</div></div>';
       }
+      var legsR=lastByLeagueRisky[lg.key]||[];
+      var pr=buildLiveRiskyParlay(legsR);
+      if(pr){
+        h+='<p class="brk-conf">'+lg.label+' \u2014 Riskier Live Parlay \u00b7 All Props</p>';
+        var hitPctR=pr.hit*100;var hitTxtR=hitPctR>=10?hitPctR.toFixed(1):hitPctR.toFixed(2);
+        var decR=1;pr.legs.forEach(function(l){decR*=(1/l.prob);});var amountR=10*decR;
+        var leagueNameR=lg.label.replace(/^[^ ]+ /,'');
+        var copyTxtR=leagueNameR+' Riskier Live Parlay \u2014 All Props, Live Pace Projection (Derek News Bet Simulator)\n'+pr.legs.map(function(l,i){return (i+1)+'. '+l.text+' \u2014 '+l.curTxt+'; '+l.why+' ('+l.gameTxt+(l.clock?' \u00b7 '+l.clock:'')+')';}).join('\n')+'\nCombined odds: '+fmtOdds(decR)+' \u00b7 Stake: $10 \u2192 Payout: $'+amountR.toFixed(2)+' \u00b7 Model hit chance: '+hitTxtR+'% \u00b7 All player props \u2014 no moneylines \u00b7 Live pace projection \u2014 not a guarantee';
+        var pbTxtR='@Playbook '+leagueNameR+' riskier live parlay (all props): '+pr.legs.map(function(l){return l.text;}).join('; ');
+        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">\u26a0\ufe0f '+esc(leagueNameR)+' Riskier Live Parlay \u2014 All Props</span><span class="parlay-count">'+pr.legs.length+' legs \u00b7 LIVE \u00b7 NO MONEYLINES</span></div>';
+        pr.legs.forEach(function(l){
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">LIVE</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span><span class="live-why">'+esc(l.why)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+        });
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxtR)+'% chance to hit</div><div class="hit-lab">Riskier live pace projection \u2014 higher lines off the same live pace, so this hits less often than the main Live Parlay. All player props, no moneylines. Legs multiplied together from current stats and time left. Pace can change fast; not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPctR)).toFixed(1)+'%"></i></div>';
+        h+='<div class="hit-pay">$10 \u2192 $'+amountR.toFixed(2)+(amountR>10?' ('+fmtOdds(decR)+')':'')+'</div><div class="hit-lab">SIM estimate from the live pace chances \u2014 no book price is verified for live pace props, so no best book is claimed.</div></div>';
+        h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> \u2014 that copies the bet as a backup and opens X with it pre-filled for @Playbook. Lines can differ by book.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxtR)+'">\ud83d\udccb Copy this bet</button>';
+        h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxtR)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxtR)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
+        h+='</div></div>';
+      }
       h+='</div>';
     });
     list.innerHTML=h;
@@ -4353,8 +4405,8 @@ body.on-christmas{color-scheme:light}
   function renderLive(){
     if(liveLoading)return;liveLoading=true;
     Promise.all(LEAGUES.map(loadLiveLeague)).then(function(res){
-      liveLoading=false;lastByLeague={};
-      LEAGUES.forEach(function(lg,li){lastByLeague[lg.key]=res[li]||[];});
+      liveLoading=false;lastByLeague={};lastByLeagueRisky={};
+      LEAGUES.forEach(function(lg,li){var r=res[li]||{};lastByLeague[lg.key]=r.safe||[];lastByLeagueRisky[lg.key]=r.risky||[];});
       draw();
     }).catch(function(){liveLoading=false;});
   }
@@ -5680,7 +5732,9 @@ body.on-christmas{color-scheme:light}
      every 5 minutes by the "Breaking news" GitHub Action
      (FAA NAS Status + any 2 of NPR / BBC / CNN / AP / Reuters
      carrying the same tight major-event pattern; items expire
-     in 3 hours). TIERED SEVERITY (v2): severity "massive"
+     in 3 hours, then stay in the section for a 6-hour grace
+     period marked EXPIRED \u2014 never as a takeover \u2014 and are
+     dropped completely after that). TIERED SEVERITY (v2): severity "massive"
      (nationwide ground stop, national emergency, major
      disaster) fires this full-screen takeover; severity
      "significant" appears ONLY in the Breaking News section
@@ -5708,6 +5762,30 @@ body.on-christmas{color-scheme:light}
     return '<p class="brk-active">\uD83D\uDFE2 Still active — last confirmed '+(when?esc(when)+' ET':'just now')+' · Sources: '+src+'</p>';
   }
 
+  /* Expired grace period: an item that has stopped being active
+     stays listed here for 6 more hours, marked Expired \u2014 it is a
+     record only and NEVER fires the takeover (maybeTakeover uses
+     freshItem only, which expired items fail). The grace window
+     comes from breaking.json's grace_until when the feed provides
+     it, else from expires_at + 6 hours. After the window the item
+     is not rendered at all. */
+  function expiredStatusHTML(d){
+    var it=(d&&d.item)||{};
+    var when=fmtTime(d.expired_at||d.expires_at||d.updated_at);
+    var src=esc(it.source||'Verified reports');
+    return '<p class="brk-expired-note">Expired \u2014 no longer active'+(when?(' \u00b7 Ended '+esc(when)):'')+' \u00b7 Sources: '+src+'</p>';
+  }
+  function expiredItem(d){
+    if(!d||!d.item||!d.item.id||!d.item.title)return null;
+    if(freshItem(d))return null;
+    var now=Date.now(),graceEnd=NaN;
+    if(d.grace_until)graceEnd=Date.parse(d.grace_until);
+    if(isNaN(graceEnd)&&d.expires_at){var ex=Date.parse(d.expires_at);if(!isNaN(ex))graceEnd=ex+6*3600*1000;}
+    if(isNaN(graceEnd)&&d.active===false&&d.updated_at){var up2=Date.parse(d.updated_at);if(!isNaN(up2))graceEnd=up2+6*3600*1000;}
+    if(isNaN(graceEnd)||now>graceEnd)return null;
+    return d.item;
+  }
+
   /* ---------- Breaking News section (News tab) ---------- */
   var secBody=document.getElementById('breakingSectionBody');
   function manualItemHTML(){
@@ -5722,13 +5800,15 @@ body.on-christmas{color-scheme:light}
       +'</div>'
       +'<button type="button" class="brk-toggle" aria-expanded="false">Read more \u25be</button>';
   }
-  function autoItemHTML(d){
+  function autoItemHTML(d,expired){
     var it=d.item;
     var sev=it.severity||d.severity||'massive';
-    var badge=(sev==='significant')
+    var badge=expired
+      ?'<span class="brk-live brk-expired-badge">Expired</span>'
+      :((sev==='significant')
       ?'<span class="brk-live" style="background:#2563eb">Developing</span>'
-      :'<span class="brk-live">Live now</span>';
-    var h=badge+'<p class="brk-title">'+esc(it.title)+'</p>'+stillActiveHTML(d);
+      :'<span class="brk-live">Live now</span>');
+    var h=badge+'<p class="brk-title">'+esc(it.title)+'</p>'+(expired?expiredStatusHTML(d):stillActiveHTML(d));
     /* Summary up top (one or two lines); the full read sits behind
        the Read more drop-down. */
     var summary=it.what||it.means||'';
@@ -5740,7 +5820,7 @@ body.on-christmas{color-scheme:light}
     full+='<p class="brk-src">Source: '+(it.source_url?('<a href="'+esc(it.source_url)+'" target="_blank" rel="noopener">'+src+'</a>'):src)+(when?(' · First reported '+esc(when)):'')+'</p>';
     if(it.means||it.do)h+='<div class="brk-more" hidden>'+full+'</div><button type="button" class="brk-toggle" aria-expanded="false">Read more \u25be</button>';
     else h+=full;
-    return h;
+    return expired?('<div class="brk-expired">'+h+'</div>'):h;
   }
   function freshItem(d){
     if(!d||d.active!==true||!d.item||!d.item.id||!d.item.title)return null;
@@ -5753,7 +5833,10 @@ body.on-christmas{color-scheme:light}
     if(!secBody)return;
     var parts=[];
     var it=freshItem(d);
-    if(it&&!(window.__dnManualBreaking&&window.__dnManualBreaking.id===it.id))parts.push(autoItemHTML(d));
+    if(it&&!(window.__dnManualBreaking&&window.__dnManualBreaking.id===it.id))parts.push(autoItemHTML(d,false));
+    var expIt=expiredItem(d);
+    if(expIt&&!(window.__dnManualBreaking&&window.__dnManualBreaking.id===expIt.id))parts.push(autoItemHTML(d,true));
+    var secEl=document.getElementById('breakingSection');if(secEl)secEl.classList.toggle('is-expired',!!expIt&&!it);
     var man=manualItemHTML();if(man)parts.push(man);
     if(parts.length){secBody.innerHTML=parts.join('<hr style="border:0;border-top:1px solid var(--border);margin:14px 0">');
       secBody.querySelectorAll('.brk-toggle').forEach(function(btn){
@@ -5781,6 +5864,8 @@ body.on-christmas{color-scheme:light}
     var ac=document.getElementById('autoBreakingClose');if(ac)ac.addEventListener('click',closeAuto);
   }
   function maybeTakeover(d){
+    /* Expired-grace items never reach the takeover: freshItem is
+       null for them (not active, or past expires_at). */
     var it=freshItem(d);if(!it||!autoOverlay)return;
     /* Tiered severity (v2): only "massive" gets the full-screen
        takeover. "significant" items live in the News tab's Breaking
