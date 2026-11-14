@@ -82,6 +82,14 @@ html{scroll-padding-bottom:120px}
 .tab .tab-ic{font-size:19px;line-height:1}.tab .tab-lb{font-size:10px;font-weight:600;letter-spacing:.01em}
 @media(max-width:420px){.tab .tab-ic{font-size:17px}.tab .tab-lb{font-size:9.5px;letter-spacing:0}.bottomnav{padding:5px}}
 .tabs{display:flex;gap:2px;position:relative}
+/* Red live/new indicator dots (added Nov 13) */
+.dn-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 2px rgba(255,255,255,.92),0 1px 4px rgba(0,0,0,.35);display:none;pointer-events:none;z-index:4}
+.dn-dot.on{display:block}
+.tab .dn-dot{top:2px;right:calc(50% - 19px)}
+#view-sports .quick button .dn-dot{top:-5px;right:-5px;width:11px;height:11px}
+.betsport-btn{position:relative}
+.betsport-btn .dn-dot{top:-4px;right:6px}
+
 .tab-pill{position:absolute;top:0;left:0;height:100%;width:0;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px rgba(10,25,35,.20),inset 0 1px 0 #fff;pointer-events:none;z-index:0;will-change:transform,width}
 .tab{position:relative;z-index:1;transition:color .25s ease;appearance:none;flex:1 1 0;border:0;background:transparent;color:#24333b;font:inherit;cursor:pointer;border-radius:999px;padding:6px 1px 5px;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.05}
 .tab[aria-selected="true"]{background:transparent;color:#0b1c24}@media(prefers-color-scheme:dark){.tab{color:#d7e6eb}.tab[aria-selected="true"]{background:transparent;color:#0b1c24}}
@@ -545,7 +553,7 @@ body>.teams-overlay{z-index:2000}
 </div>
 
 <div id="wxBg" aria-hidden="true" data-mode="cloudy"><div class="wxbg-sun"></div><div class="wxbg-clouds"></div><canvas id="wxBgCanvas"></canvas></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span></button><button class="tab" role="tab" data-go="news" aria-label="News" title="News" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="dn-dot" data-navdot="home" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="dn-dot" data-navdot="weather" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="news" aria-label="News" title="News" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span><span class="dn-dot" data-navdot="news" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="dn-dot" data-navdot="sports" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="dn-dot" data-navdot="faith" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="dn-dot" data-navdot="christmas" aria-hidden="true"></span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -1338,13 +1346,13 @@ body.on-sports footer{color:#aebfe6!important}
     <p class="kalshi-credit">Moneyline %: Kalshi</p>
   </section>
   <div class="quick">
-    <button type="button" data-sport="baseball"><span class="emoji">⚾</span><b>Baseball</b></button>
-    <button type="button" data-sport="basketball"><span class="emoji">🏀</span><b>Basketball</b></button>
-    <button type="button" data-sport="football"><span class="emoji">🏈</span><b>Football</b></button>
-    <button type="button" data-sport="hockey"><span class="emoji">🏒</span><b>Hockey</b></button>
-    <button type="button" data-sport="ufc"><span class="emoji">👊</span><b>UFC</b></button>
-    <button type="button" data-sport="boxing"><span class="emoji">🥊</span><b>Boxing</b></button>
-    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays &amp; Cheat Sheet</b></button>
+    <button type="button" data-sport="baseball"><span class="emoji">⚾</span><b>Baseball</b><span class="dn-dot" data-sportdot="baseball" aria-hidden="true"></span></button>
+    <button type="button" data-sport="basketball"><span class="emoji">🏀</span><b>Basketball</b><span class="dn-dot" data-sportdot="basketball" aria-hidden="true"></span></button>
+    <button type="button" data-sport="football"><span class="emoji">🏈</span><b>Football</b><span class="dn-dot" data-sportdot="football" aria-hidden="true"></span></button>
+    <button type="button" data-sport="hockey"><span class="emoji">🏒</span><b>Hockey</b><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
+    <button type="button" data-sport="ufc"><span class="emoji">👊</span><b>UFC</b><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
+    <button type="button" data-sport="boxing"><span class="emoji">🥊</span><b>Boxing</b><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
+    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays &amp; Cheat Sheet</b><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
   </div>
   </div>
   <div class="sport-panel" id="sport-baseball" hidden>
@@ -1690,7 +1698,7 @@ body.on-sports footer{color:#aebfe6!important}
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
   <div class="betsport-picker" role="group" aria-label="Pick a sport">
     <p class="betsport-pick-label">🎟️ Pick a sport first</p>
-    <div class="betsport-btns"><button type="button" class="betsport-btn" data-betsport="nba" aria-pressed="false">🏀 NBA</button><button type="button" class="betsport-btn" data-betsport="nfl" aria-pressed="false">🏈 NFL</button><button type="button" class="betsport-btn" data-betsport="nhl" aria-pressed="false">🏒 NHL</button></div>
+    <div class="betsport-btns"><button type="button" class="betsport-btn" data-betsport="nba" aria-pressed="false">🏀 NBA<span class="dn-dot" data-betdot="nba" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nfl" aria-pressed="false">🏈 NFL<span class="dn-dot" data-betdot="nfl" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nhl" aria-pressed="false">🏒 NHL<span class="dn-dot" data-betdot="nhl" aria-hidden="true"></span></button></div>
     <p class="betsport-prompt" id="betSportPrompt">Pick a sport above — you&rsquo;ll only see that sport&rsquo;s Parlays of the Day and Cheat Sheet, not everything at once.</p>
   </div>
   <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
@@ -5607,6 +5615,124 @@ body.on-christmas{color-scheme:light}
       }
     }
   }
+})();
+</script>
+
+<script>
+/* Red live/new dots — driven by live data, clear on view (Nov 13).
+   Sports: ESPN scoreboard state "in" per league. Weather: active NWS
+   alerts for the visitor's location. Home: active breaking.json item or
+   an NSCSD closing/delay. News: headline signature vs. last seen (stored
+   per visitor). Faith: a new day = a new verse. Christmas: final-week /
+   Christmas Day milestone, once per day until opened. */
+(function(){
+  var LS='dn-dots-seen-v1';
+  function load(){try{return JSON.parse(localStorage.getItem(LS)||'{}')||{};}catch(e){return{};}}
+  function save(s){try{localStorage.setItem(LS,JSON.stringify(s));}catch(e){}}
+  var seen=load();
+  var nav={home:false,weather:false,news:false,sports:false,faith:false,christmas:false};
+  var sport={baseball:false,basketball:false,football:false,hockey:false,ufc:false,boxing:false,betsim:false};
+  var bet={nba:false,nfl:false,nhl:false};
+  function activeTab(){var el=document.querySelector('.bottomnav .tab[aria-selected="true"]');return el?el.getAttribute('data-go'):'home';}
+  function render(){
+    var act=activeTab();
+    document.querySelectorAll('[data-navdot]').forEach(function(d){var k=d.getAttribute('data-navdot');d.classList.toggle('on',!!nav[k]&&act!==k);});
+    document.querySelectorAll('[data-sportdot]').forEach(function(d){d.classList.toggle('on',!!sport[d.getAttribute('data-sportdot')]);});
+    document.querySelectorAll('[data-betdot]').forEach(function(d){d.classList.toggle('on',!!bet[d.getAttribute('data-betdot')]);});
+  }
+  function markSeen(tab){
+    if(tab==='news'){var sig=newsSig();if(sig){seen.newsSig=sig;save(seen);}nav.news=false;}
+    if(tab==='faith'){seen.faithDay=dayStr(new Date());save(seen);nav.faith=false;}
+    if(tab==='christmas'){seen.xmasDay=dayStr(new Date());save(seen);nav.christmas=false;}
+    if(tab==='weather'){nav.weather=false;}
+    if(tab==='home'){nav.home=false;}
+    render();
+  }
+  function dayStr(d){return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+  function fj(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;});}
+  function anyLive(d){
+    if(!d||!d.events)return false;
+    for(var i=0;i<d.events.length;i++){var ev=d.events[i];var comps=ev.competitions||[];for(var j=0;j<comps.length;j++){var st=comps[j].status&&comps[j].status.type;if(st&&st.state==='in')return true;}}
+    return false;
+  }
+  var API='https://site.api.espn.com/apis/site/v2/sports/';
+  function checkSports(){
+    var jobs=[
+      ['basketball',API+'basketball/nba/scoreboard'],
+      ['football',API+'football/nfl/scoreboard'],
+      ['hockey',API+'hockey/nhl/scoreboard'],
+      ['baseball',API+'baseball/mlb/scoreboard'],
+      ['ufc',API+'mma/ufc/scoreboard'],
+      ['boxing',API+'boxing/scoreboard']
+    ];
+    var done=0;
+    jobs.forEach(function(job){
+      fj(job[1]).then(function(d){
+        sport[job[0]]=anyLive(d);
+        if(job[0]==='basketball')bet.nba=sport.basketball;
+        if(job[0]==='football')bet.nfl=sport.football;
+        if(job[0]==='hockey')bet.nhl=sport.hockey;
+        done++;
+        if(done===jobs.length){
+          var par=document.getElementById('parlayList');
+          sport.betsim=!!(bet.nba||bet.nfl||bet.nhl||(par&&par.children.length>0));
+          nav.sports=!!(sport.baseball||sport.basketball||sport.football||sport.hockey||sport.ufc||sport.boxing||sport.betsim);
+          render();
+        }
+      });
+    });
+  }
+  function checkWeatherHome(){
+    var loc={lat:43.1713,lon:-76.1250};
+    try{if(window.__dnLoc){var g=window.__dnLoc.get();if(g&&isFinite(g.lat)&&isFinite(g.lon))loc=g;}}catch(e){}
+    fj('https://api.weather.gov/alerts/active?point='+loc.lat+','+loc.lon).then(function(d){
+      var on=!!(d&&d.features&&d.features.length);
+      if(activeTab()!=='weather')nav.weather=on;
+      render();
+    });
+    fj('breaking.json').then(function(d){
+      var on=!!(d&&d.active&&d.item);
+      fj('closings.json').then(function(c){
+        var closed=!!(c&&c.closings&&c.closings.length);
+        if(activeTab()!=='home')nav.home=!!(on||closed||nav.weather);
+        render();
+      });
+    });
+  }
+  function newsSig(){
+    var ids=['newsLocalList','newsNatList','newsGlobalList','newsWxList','newsSportsList'],out=[];
+    ids.forEach(function(id){var el=document.getElementById(id);if(!el)return;var links=el.querySelectorAll('a');for(var i=0;i<links.length&&i<3;i++){var s=(links[i].textContent||'').trim();if(s)out.push(s);}});
+    return out.length?out.join('|'):'';
+  }
+  function checkNews(){
+    var sig=newsSig();if(!sig)return;
+    if(!seen.newsSig){seen.newsSig=sig;save(seen);return;}
+    if(activeTab()==='news'){seen.newsSig=sig;save(seen);nav.news=false;}
+    else nav.news=(sig!==seen.newsSig);
+    render();
+  }
+  function checkFaithXmas(){
+    var now=new Date(),today=dayStr(now);
+    if(activeTab()==='faith'){seen.faithDay=today;save(seen);nav.faith=false;}
+    else nav.faith=!!(seen.faithDay&&seen.faithDay!==today);
+    if(!seen.faithDay){seen.faithDay=today;save(seen);nav.faith=false;}
+    var xmas=new Date(now.getFullYear(),11,25);
+    if(now>new Date(now.getFullYear(),11,26))xmas=new Date(now.getFullYear()+1,11,25);
+    var days=Math.ceil((xmas-now)/864e5);
+    var milestone=(days<=7);
+    if(activeTab()==='christmas'){seen.xmasDay=today;save(seen);nav.christmas=false;}
+    else nav.christmas=!!(milestone&&seen.xmasDay!==today);
+    render();
+  }
+  document.querySelectorAll('.bottomnav .tab').forEach(function(b){b.addEventListener('click',function(){setTimeout(function(){markSeen(b.getAttribute('data-go'));},450);});});
+  setInterval(function(){var act=activeTab();if(nav[act])markSeen(act);render();},1200);
+  checkSports();checkWeatherHome();checkFaithXmas();
+  setTimeout(checkNews,6000);setTimeout(checkNews,20000);
+  setInterval(checkSports,120000);
+  setInterval(checkWeatherHome,300000);
+  setInterval(checkNews,120000);
+  setInterval(checkFaithXmas,60000);
+  render();
 })();
 </script>
 </body>
