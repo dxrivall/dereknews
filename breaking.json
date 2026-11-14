@@ -1,8 +1,17 @@
 {
- "active": false,
- "severity": null,
- "updated_at": "2026-11-14T19:29:29.962515+00:00",
- "first_seen": null,
- "expires_at": null,
- "item": null
+ "active": true,
+ "severity": "massive",
+ "updated_at": "2026-11-14T20:10:20.714894+00:00",
+ "first_seen": "2026-11-14T20:10:20.714894+00:00",
+ "expires_at": "2026-11-14T23:10:20.714894+00:00",
+ "item": {
+  "id": "nationwide-ground-stop-2026-11-14",
+  "severity": "massive",
+  "title": "Bands performing mid-flight get caught up in the nationwide ground stop effect",
+  "what": "The FAA has issued a nationwide ground stop, halting departing flights at U.S. airports \u2014 all airlines \u2014 until further notice. This is a ground stop, not emergency landings: planes already in the air keep flying and land normally.",
+  "means": "If you or family are flying today, expect major delays and cancellations nationwide, even at airports that look fine.",
+  "do": "Check with your airline before heading to the airport, and keep checking \u2014 schedules will keep changing while the stop is in effect.",
+  "source": "CNN, AP (all reporting this now)",
+  "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWDFQclZ6NWZUNmpyRUZWRDZhbDYyZ28yVERKRFdvWEhQUWRkbHFid0JKQzc0NndOMlZmM29vOXVZMHFrMXZlckVlQlVuOHY3cEpJam5EQ1RHdHJBS1lzVDZIZTRoQVBDZl9pX1FBT1NqZFJqeGdIZUpDUkJYcGc3Wnk2bE9LRVEtMTlFVWRYLTA3c3k1dEQ5RU5HdWtZUk1DMDYxSS1xOFA?oc=5"
+ }
 }
