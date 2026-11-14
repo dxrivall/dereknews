@@ -691,7 +691,7 @@ body>.teams-overlay{z-index:2000}
   </section>
   <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
     <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
-    <div class="xmas-row"><div class="xmas-big"><span id="homeXDays">—</span> days until Christmas</div></div>
+    <div class="xmas-row"><div class="xmas-big" id="homeXBig"><span id="homeXDays">—</span> days until Christmas</div></div>
     <a class="santa-link" href="https://santatracker.google.com/" target="_blank" rel="noopener">Track Santa with Google →</a>
   </section>
   </div>
@@ -1594,7 +1594,7 @@ body.on-sports footer{color:#aebfe6!important}
   <section class="acard" aria-label="Hockey — all NHL scores">
   <div class="ahead"><h2>🏒 Hockey</h2><span class="league-pill"><img src="https://a.espncdn.com/i/teamlogos/leagues/500/nhl.png" alt="" loading="eager" onerror="this.style.display='none'"> NHL</span></div>
   </section>
-  <section class="acard" aria-label="NHL games — Yesterday, Today, Upcoming">
+  <section class="acard" aria-label="NHL games — all teams, favorites first — Yesterday, Today, Upcoming">
   <div class="daytabs" role="tablist" aria-label="Choose day">
     <button type="button" role="tab" data-nhl-day="yesterday" aria-selected="false">Yesterday</button>
     <button type="button" role="tab" data-nhl-day="today" aria-selected="true">Today</button>
@@ -1604,7 +1604,7 @@ body.on-sports footer{color:#aebfe6!important}
   <div id="nhlGames"></div>
   <p class="kalshi-credit">Moneyline %: Kalshi</p>
   <div class="aerr" id="nhlLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.nhl.com/" target="_blank" rel="noopener">NHL.com</a> and reload.</div>
-  <p class="asrc" id="nhlLiveStamp">Live data: ESPN &middot; All NHL teams &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
+  <p class="asrc" id="nhlLiveStamp">Live data: ESPN &middot; All NHL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard" aria-label="Eastern Conference standings">
   <h2>Eastern Conference</h2>
@@ -2216,6 +2216,8 @@ body.on-christmas{color-scheme:light}
   document.getElementById('xDays').textContent=(now.toDateString()===xmas.toDateString())?'0':days;
   document.getElementById('xLine').textContent=(now.toDateString()===xmas.toDateString())?'Merry Christmas! 🎄 Today is the day.':'Until Christmas Day — '+xmas.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+'.';
   var hxD=document.getElementById('homeXDays');if(hxD)hxD.textContent=document.getElementById('xDays').textContent;
+  var xIsDay=(now.toDateString()===xmas.toDateString());
+  var hxBig=document.getElementById('homeXBig');if(hxBig&&xIsDay)hxBig.textContent='Merry Christmas!';
   var hxL=document.getElementById('homeXLine');if(hxL)hxL.textContent=document.getElementById('xLine').textContent;
   // Relevance filter: the Home Christmas widget only shows in the run-up to
   // Christmas (within 60 days, or on the day itself). Months away it stays
@@ -2774,6 +2776,22 @@ body.on-christmas{color-scheme:light}
   function keyPlus(baseKey,n){var p=baseKey.split('-');var d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+'-'+z(d.getUTCMonth()+1)+'-'+z(d.getUTCDate());}
   /* Scoreboard order: favorites pinned first, then live games, then by start time. */
   function favFirstSort(list){return list.sort(function(a,b){var fa=involves(a)?0:1,fb=involves(b)?0:1;if(fa!==fb)return fa-fb;var sa=a.state==='in'?0:(a.state==='pre'?1:2),sb=b.state==='in'?0:(b.state==='pre'?1:2);if(sa!==sb)return sa-sb;return new Date(a.date)-new Date(b.date);});}
+  /* Favorites: only ONE upcoming game per favorite team — the
+     earliest one (the list is already favorites-first, by date).
+     Extra upcoming games for the same favorite are dropped so they
+     don't stack up before the other teams' games load; games with
+     no favorite in them are never limited. A game between two
+     favorites counts for both teams. */
+  function oneUpcomingPerFav(list){
+    var seen={};
+    return list.filter(function(g){
+      var favIds=g.teams.filter(function(t){return !!TEAM_IDS[t.id];}).map(function(t){return t.id;});
+      if(!favIds.length)return true;
+      if(favIds.some(function(id){return seen[id];}))return false;
+      favIds.forEach(function(id){seen[id]=1;});
+      return true;
+    });
+  }
   function timeStr(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'});}
   function dateStr(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'});}
   function norm(ev){
@@ -2814,7 +2832,7 @@ body.on-christmas{color-scheme:light}
     var center='',sub='';
     if(g.state==='in'){center='<span class="live">● LIVE</span>';sub=esc(g.detail||'Live')+(g.displayClock?' · '+esc(g.displayClock):'');}
     else if(g.state==='post'){center='Final';sub=esc(dateStr(g.date));}
-    else{center=esc(timeStr(g.date));sub=g.spread?esc(g.spread):(bucket==='upcoming'?esc(dateStr(g.date)):esc(g.venue||''));}
+    else{center=esc(timeStr(g.date));sub=esc(dateStr(g.date))+(g.spread?' · '+esc(g.spread):'');}
     var inner=teamCell(away,home)+sideVal(away,g)+'<div class="acenter"><div class="at">'+center+'</div>'+(sub?'<div class="as">'+sub+'</div>':'')+'</div>'+sideVal(home,g)+teamCell(home,away);
     if(g.link)return '<a class="agame" href="'+esc(g.link)+'" target="_blank" rel="noopener" aria-label="'+esc((away.full||away.name)+' at '+(home.full||home.name))+'">'+inner+'</a>';
     return '<div class="agame">'+inner+'</div>';
@@ -2859,7 +2877,7 @@ body.on-christmas{color-scheme:light}
       var tk=todayKey(),yk=ydayKey();
       buckets.yesterday=favFirstSort(all.filter(function(g){return etKey(g.date)===yk;}));
       buckets.today=favFirstSort(all.filter(function(g){return etKey(g.date)===tk;}));
-      buckets.upcoming=favFirstSort(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk&&etKey(g.date)<=keyPlus(tk,6);}));
+      buckets.upcoming=oneUpcomingPerFav(favFirstSort(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk&&etKey(g.date)<=keyPlus(tk,6);})));
       var errEl=document.getElementById('nbaLiveErr');
       if(!all.length){if(errEl)errEl.hidden=false;var st=document.getElementById('nbaLiveStatus');if(st)st.textContent='';return;}
       if(errEl)errEl.hidden=true;
@@ -2997,15 +3015,15 @@ body.on-christmas{color-scheme:light}
       var away=g.teams.filter(function(t){return t.homeAway==='away';})[0]||g.teams[0]||{};
       var home=g.teams.filter(function(t){return t.homeAway==='home';})[0]||g.teams[1]||{};
       var center='',sub='';
-      var notToday=etKey(g.date)!==todayKey();
-      if(g.state==='in'){center='<span class="live">● LIVE</span>';sub=esc(g.detail||'Live')+(g.displayClock?' · '+esc(g.displayClock):'')+((cfg.showDateUnderTime&&notToday)?' · '+esc(dateStr(g.date)):'');}
+      if(g.state==='in'){center='<span class="live">● LIVE</span>';sub=esc(g.detail||'Live')+(g.displayClock?' · '+esc(g.displayClock):'');}
       else if(g.state==='post'){center='Final';sub=esc(dateStr(g.date));}
-      else if(cfg.showDateUnderTime&&notToday){
-        /* NFL, not today: time on top, DATE directly under it — even
-           when a spread exists (the spread follows the date). */
+      else{
+        /* Every sport, every tab: an upcoming game shows its time on
+           top and its DATE directly under it — even when a spread
+           exists (the spread follows the date) and even when the
+           game is today. */
         center=esc(timeStr(g.date));sub=esc(dateStr(g.date))+(g.spread?' · '+esc(g.spread):'');
       }
-      else{center=esc(timeStr(g.date));sub=g.spread?esc(g.spread):(bucket==='upcoming'?esc(dateStr(g.date)):esc(g.venue||''));}
       var inner=teamCell(away,home)+sideVal(away,g)+'<div class="acenter"><div class="at">'+center+'</div>'+(sub?'<div class="as">'+sub+'</div>':'')+'</div>'+sideVal(home,g)+teamCell(home,away);
       if(g.link)return '<a class="agame" href="'+esc(g.link)+'" target="_blank" rel="noopener" aria-label="'+esc((away.full||away.name)+' at '+(home.full||home.name))+'">'+inner+'</a>';
       return '<div class="agame">'+inner+'</div>';
@@ -3014,6 +3032,22 @@ body.on-christmas{color-scheme:light}
     function favRank(g){return g.teams.some(function(t){return !!cfg.favs[t.id];})?0:1;}
     function stateRank(g){return g.state==='in'?0:(g.state==='pre'?1:2);}
     function sortGames(list){return list.sort(function(a,b){var d=favRank(a)-favRank(b);if(d)return d;d=stateRank(a)-stateRank(b);if(d)return d;return new Date(a.date)-new Date(b.date);});}
+    /* Favorites: only ONE upcoming game per favorite team — the
+       earliest one (the list is already favorites-first, by date).
+       Extra upcoming games for the same favorite are dropped so they
+       don't stack up before the other teams' games load; games with
+       no favorite in them are never limited. A game between two
+       favorites counts for both teams. */
+    function oneUpcomingPerFav(list){
+      var seen={};
+      return list.filter(function(g){
+        var favIds=g.teams.filter(function(t){return !!cfg.favs[t.id];}).map(function(t){return t.id;});
+        if(!favIds.length)return true;
+        if(favIds.some(function(id){return seen[id];}))return false;
+        favIds.forEach(function(id){seen[id]=1;});
+        return true;
+      });
+    }
     function renderDay(){
       document.querySelectorAll('#view-sports [data-'+cfg.prefix+'-day]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-'+cfg.prefix+'-day')===curDay?'true':'false');});
       var box=document.getElementById(cfg.gamesId);if(!box)return;
@@ -3029,7 +3063,7 @@ body.on-christmas{color-scheme:light}
         var tk=todayKey(),yk=keyPlus(tk,-1);
         buckets.yesterday=sortGames(all.filter(function(g){return etKey(g.date)===yk;}));
         buckets.today=sortGames(all.filter(function(g){return etKey(g.date)===tk;}));
-        buckets.upcoming=sortGames(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk;})).slice(0,cfg.upcomingMax||8);
+        buckets.upcoming=oneUpcomingPerFav(sortGames(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk;}))).slice(0,cfg.upcomingMax||8);
         renderDay();
       }};
   }
@@ -3291,7 +3325,7 @@ body.on-christmas{color-scheme:light}
       if(errEl)errEl.hidden=true;
       nhlBoard.fill(all);
       var stamp=document.getElementById('nhlLiveStamp');
-      if(stamp)stamp.textContent='Live data: ESPN · All NHL teams · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+      if(stamp)stamp.textContent='Live data: ESPN · All NHL teams · Your favorites first · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     }).catch(function(){nhlLoading=false;var e=document.getElementById('nhlLiveErr');if(e)e.hidden=false;});
   }
   function renderNhlConf(entries){
@@ -5190,7 +5224,7 @@ body.on-christmas{color-scheme:light}
     var center='',sub='';
     if(g.state==='in'){center='<span class="live">● LIVE</span>';sub=esc(g.detail||'Live')+(g.displayClock?' · '+esc(g.displayClock):'');}
     else if(g.state==='post'){center='Final';sub=esc(dateStr(g.date));}
-    else{center=esc(timeStr(g.date));sub=g.spread?esc(g.spread):(bucket==='upcoming'?esc(dateStr(g.date)):esc(g.venue||''));}
+    else{center=esc(timeStr(g.date));sub=esc(dateStr(g.date))+(g.spread?' · '+esc(g.spread):'');}
     var inner=teamCell(away,home)+sideVal(away,g)+'<div class="acenter"><div class="at">'+center+'</div>'+(sub?'<div class="as">'+sub+'</div>':'')+'</div>'+sideVal(home,g)+teamCell(home,away);
     if(g.link)return '<a class="agame" href="'+esc(g.link)+'" target="_blank" rel="noopener" aria-label="'+esc((away.full||away.name)+' at '+(home.full||home.name))+'">'+inner+'</a>';
     return '<div class="agame">'+inner+'</div>';
@@ -5198,6 +5232,22 @@ body.on-christmas{color-scheme:light}
   function isFav(g){return g.teams.some(function(t){return !!FAVS[t.id];});}
   function stateRank(g){return g.state==='in'?0:(g.state==='pre'?1:2);}
   function sortGames(list){return list.sort(function(a,b){var d=(isFav(a)?0:1)-(isFav(b)?0:1);if(d)return d;d=stateRank(a)-stateRank(b);if(d)return d;return new Date(a.date)-new Date(b.date);});}
+  /* Favorites: only ONE upcoming game per favorite team — the
+     earliest one (the list is already favorites-first, by date).
+     Extra upcoming games for the same favorite are dropped so they
+     don't stack up before the other teams' games load; games with
+     no favorite in them are never limited. A game between two
+     favorites counts for both teams. */
+  function oneUpcomingPerFav(list){
+    var seen={};
+    return list.filter(function(g){
+      var favIds=g.teams.filter(function(t){return !!FAVS[t.id];}).map(function(t){return t.id;});
+      if(!favIds.length)return true;
+      if(favIds.some(function(id){return seen[id];}))return false;
+      favIds.forEach(function(id){seen[id]=1;});
+      return true;
+    });
+  }
   var buckets={yesterday:[],today:[],upcoming:[]};
   var curDay='today';
   var emptyMsg={yesterday:'No MLB games yesterday.',today:'No MLB games today — tap Upcoming for the next games.',upcoming:'No upcoming MLB games found right now.'};
@@ -5230,7 +5280,7 @@ body.on-christmas{color-scheme:light}
       var yk=keyPlus(tk,-1),upEnd=keyPlus(tk,6);
       buckets.yesterday=sortGames(all.filter(function(g){return etKey(g.date)===yk;}));
       buckets.today=sortGames(all.filter(function(g){return etKey(g.date)===tk;}));
-      buckets.upcoming=sortGames(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk&&etKey(g.date)<=upEnd;}));
+      buckets.upcoming=oneUpcomingPerFav(sortGames(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk&&etKey(g.date)<=upEnd;})));
       renderDay();
       var stamp=document.getElementById('mlbLiveStamp');
       if(stamp)stamp.textContent='Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
