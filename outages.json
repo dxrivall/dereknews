@@ -1,47 +1,47 @@
 {
- "updated_at": "2026-11-14T19:27:12.172147+00:00",
+ "updated_at": "2026-11-14T20:00:24.801215+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384170,
-  "out": 9747,
-  "pct": 0.12,
-  "source_updated": "2026-11-14T19:23:51+00:00",
+  "out": 9336,
+  "pct": 0.11,
+  "source_updated": "2026-11-14T19:54:01+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919258,
-    "out": 4775,
-    "pct": 0.52
+    "out": 4514,
+    "pct": 0.49
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
-    "out": 4205,
-    "pct": 81.44
+    "out": 4207,
+    "pct": 81.48
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 318,
+    "out": 331,
     "pct": 0.02
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
-    "out": 255,
-    "pct": 4.78
+    "out": 210,
+    "pct": 3.94
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 159,
-    "pct": 0.01
+    "out": 46,
+    "pct": 0.0
    },
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315411,
-    "out": 14,
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 9,
     "pct": 0.0
    },
    {
@@ -51,15 +51,15 @@
     "pct": 0.0
    },
    {
-    "name": "Con Edison",
-    "tracked": 3626606,
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315411,
     "out": 7,
     "pct": 0.0
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 6,
+    "out": 4,
     "pct": 0.0
    },
    {
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 104,
-  "source_updated": "2026-11-14T19:23:49+00:00",
+  "out": 107,
+  "source_updated": "2026-11-14T19:53:59+00:00",
   "pct": 0.05,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 104,
+    "out": 107,
     "pct": 0.05
    },
    {
