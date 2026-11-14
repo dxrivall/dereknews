@@ -1,47 +1,47 @@
 {
- "updated_at": "2026-11-14T18:47:07.627949+00:00",
+ "updated_at": "2026-11-14T19:27:12.172147+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384170,
-  "out": 10460,
+  "out": 9747,
   "pct": 0.12,
-  "source_updated": "2026-11-14T18:43:54+00:00",
+  "source_updated": "2026-11-14T19:23:51+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919258,
-    "out": 5263,
-    "pct": 0.57
+    "out": 4775,
+    "pct": 0.52
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
-    "out": 4351,
-    "pct": 84.27
+    "out": 4205,
+    "pct": 81.44
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 416,
+    "out": 318,
     "pct": 0.02
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
-    "out": 288,
-    "pct": 5.4
+    "out": 255,
+    "pct": 4.78
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 120,
+    "out": 159,
     "pct": 0.01
    },
    {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 9,
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315411,
+    "out": 14,
     "pct": 0.0
    },
    {
@@ -51,15 +51,15 @@
     "pct": 0.0
    },
    {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 4,
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 7,
     "pct": 0.0
    },
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315411,
-    "out": 1,
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 6,
     "pct": 0.0
    },
    {
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 105,
-  "source_updated": "2026-11-14T18:43:52+00:00",
+  "out": 104,
+  "source_updated": "2026-11-14T19:23:49+00:00",
   "pct": 0.05,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 105,
+    "out": 104,
     "pct": 0.05
    },
    {
