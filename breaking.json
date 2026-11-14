@@ -1,9 +1,12 @@
 {
- "active": true,
+ "active": false,
+ "expired": true,
  "severity": "massive",
- "updated_at": "2026-11-14T06:11:13.021182+00:00",
+ "updated_at": "2026-11-14T07:15:21.158723+00:00",
  "first_seen": "2026-11-14T02:40:20.373160+00:00",
  "expires_at": "2026-11-14T09:11:13.021182+00:00",
+ "expired_at": "2026-11-14T07:15:21.158723+00:00",
+ "grace_until": "2026-11-14T13:15:21.158723+00:00",
  "item": {
   "id": "nationwide-ground-stop-2026-11-14",
   "severity": "massive",
