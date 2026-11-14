@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-11-14T18:09:41.817226+00:00",
+ "updated_at": "2026-11-14T18:47:07.627949+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384170,
-  "out": 11490,
-  "pct": 0.14,
-  "source_updated": "2026-11-14T18:04:00+00:00",
+  "out": 10460,
+  "pct": 0.12,
+  "source_updated": "2026-11-14T18:43:54+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919258,
-    "out": 6552,
-    "pct": 0.71
+    "out": 5263,
+    "pct": 0.57
    },
    {
     "name": "Otsego Electric Coop",
@@ -21,33 +21,27 @@
     "pct": 84.27
    },
    {
-    "name": "Delaware County Electric Coop",
-    "tracked": 5335,
-    "out": 273,
-    "pct": 5.12
-   },
-   {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 221,
-    "pct": 0.01
-   },
-   {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315411,
-    "out": 57,
+    "out": 416,
     "pct": 0.02
    },
    {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 13,
-    "pct": 0.0
+    "name": "Delaware County Electric Coop",
+    "tracked": 5335,
+    "out": 288,
+    "pct": 5.4
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 11,
+    "out": 120,
+    "pct": 0.01
+   },
+   {
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 9,
     "pct": 0.0
    },
    {
@@ -60,6 +54,12 @@
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
     "out": 4,
+    "pct": 0.0
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315411,
+    "out": 1,
     "pct": 0.0
    },
    {
@@ -96,16 +96,16 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 8,
-  "source_updated": "2026-11-14T18:03:58+00:00",
-  "pct": 0.0,
+  "out": 105,
+  "source_updated": "2026-11-14T18:43:52+00:00",
+  "pct": 0.05,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 8,
-    "pct": 0.0
+    "out": 105,
+    "pct": 0.05
    },
    {
     "name": "New York State Electric & Gas",
