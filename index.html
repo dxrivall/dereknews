@@ -323,6 +323,16 @@ body>.teams-overlay{z-index:2000}
 #homeChristmasWidget .xmas-big{color:#b42318}
 @media(prefers-color-scheme:dark){#homeChristmasWidget .xmas-big{color:#ff9d94}}
 #homeChristmasWidget .santa-link{background:#14532d;border-color:#b42318}
+/* == Thanksgiving Home widget — warm autumn treatment, same widget
+   family as Christmas; shown only in its 60-day window (JS below). == */
+#homeThanksgivingWidget{background:linear-gradient(160deg,#fdf6ec 0%,#fbeed3 45%,#f6e0bd 100%);border:2px solid #b45309;overflow:hidden;position:relative}
+@media(prefers-color-scheme:dark){#homeThanksgivingWidget{background:linear-gradient(160deg,#3a2410 0%,#33200e 45%,#261705 100%);border-color:#d97706}}
+#homeThanksgivingWidget::before{content:"";position:absolute;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#b45309 0 26px,#92400e 26px 52px,#d97706 52px 78px);opacity:.9}
+#homeThanksgivingWidget>*{position:relative;z-index:1}
+#homeThanksgivingWidget .tg-big{color:#92400e;font-size:30px;line-height:1.25;font-weight:700}
+@media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-big{color:#fcd9a0}}
+#homeThanksgivingWidget .tg-sub{color:#7c4a12;font-size:14.5px;line-height:1.5;margin:8px 0 0}
+@media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-sub{color:#e8c795}}
 .betsport-picker{margin:0 0 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px;color:#fff}
 .betsport-pick-label{font-weight:800;font-size:15px;margin:0 0 10px}
 .betsport-btns{display:flex;gap:8px;flex-wrap:wrap}
@@ -479,6 +489,8 @@ body>.teams-overlay{z-index:2000}
 #breakingSection .brk-fact{font-size:14.5px;line-height:1.55;margin:6px 0}
 #breakingSection .brk-src{font-size:12.5px;color:var(--soft);margin-top:8px}
 #breakingSection .brk-calm{font-size:15px;line-height:1.55;margin:6px 0}
+.brk-active{font-size:13px;font-weight:700;color:#166534;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.45);border-radius:10px;padding:8px 11px;line-height:1.45;margin:8px 0}
+.severe-body .brk-active{color:#14532d}
 </style>
 </head>
 <body>
@@ -674,6 +686,11 @@ body>.teams-overlay{z-index:2000}
       <a class="faith-mass" href="https://www.youtube.com/channel/UCv0TUu1tuIdVqRLFwGlos4A" target="_blank" rel="noopener">▶ Weekly Mass</a>
       <a class="faith-votd" href="https://www.bible.com/verse-of-the-day" target="_blank" rel="noopener">📖 Today&rsquo;s Verse</a>
     </div>
+  </section>
+  <section class="hwidget" id="homeThanksgivingWidget" aria-label="Thanksgiving widget">
+    <div class="hwidget-head"><h2>🦃 Thanksgiving</h2></div>
+    <div class="tg-row"><div class="tg-big"><span id="homeTGDays">—</span> days until Thanksgiving</div></div>
+    <p class="tg-sub" id="homeTGLine">Counting down to Thanksgiving Day 🍂</p>
   </section>
   <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
     <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
@@ -1345,6 +1362,18 @@ body.on-sports footer{color:#aebfe6!important}
   <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto 10px">Aaron Judge congratulated him on Instagram.</p>
   <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto">Judge himself is resting through the offseason after a follow-up with his doctor — no new procedure. He only played 66 games this year, and he will likely get more DH time in 2027.</p>
   </section>
+  <section class="acard" aria-label="MLB games — all teams, favorites first — Yesterday, Today, Upcoming">
+  <div class="daytabs" role="tablist" aria-label="Choose day">
+    <button type="button" role="tab" data-mlb-day="yesterday" aria-selected="false">Yesterday</button>
+    <button type="button" role="tab" data-mlb-day="today" aria-selected="true">Today</button>
+    <button type="button" role="tab" data-mlb-day="upcoming" aria-selected="false">Upcoming</button>
+  </div>
+  <p class="astatus" id="mlbLiveStatus">Loading games…</p>
+  <div id="mlbGames"></div>
+  <p class="kalshi-credit">Moneyline %: Kalshi</p>
+  <div class="aerr" id="mlbLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.mlb.com/" target="_blank" rel="noopener">MLB.com</a> and reload.</div>
+  <p class="asrc" id="mlbLiveStamp">Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
+  </section>
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="MLB standings view"><button type="button" role="tab" data-std="mlb:conf" aria-selected="true">League</button><button type="button" role="tab" data-std="mlb:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="mlbConfCard" aria-label="MLB final standings">
   <h2>⚾ MLB Standings — Final</h2>
@@ -1405,7 +1434,7 @@ body.on-sports footer{color:#aebfe6!important}
     <a class="fav" href="https://www.nba.com/suns" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nba/500/phx.png" alt="Phoenix Suns logo" width="64" height="64" loading="eager" data-abbr="PHX" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>Phoenix Suns</b><span><span class="star">★</span> Favorite</span></a>
   </div>
   </section>
-  <section class="acard" aria-label="Lakers and Suns games — Yesterday, Today, Upcoming">
+  <section class="acard" aria-label="NBA games — all teams, favorites first — Yesterday, Today, Upcoming">
   <div class="daytabs" role="tablist" aria-label="Choose day">
     <button type="button" role="tab" data-day="yesterday" aria-selected="false">Yesterday</button>
     <button type="button" role="tab" data-day="today" aria-selected="true">Today</button>
@@ -1415,7 +1444,7 @@ body.on-sports footer{color:#aebfe6!important}
   <div id="appleGames"></div>
   <p class="kalshi-credit">Moneyline %: Kalshi</p>
   <div class="aerr" id="nbaLiveErr" hidden>Couldn&rsquo;t load games right now — check the <a href="https://www.nba.com/lakers" target="_blank" rel="noopener">Lakers</a> or <a href="https://www.nba.com/suns" target="_blank" rel="noopener">Suns</a> on NBA.com and reload.</div>
-  <p class="asrc" id="nbaLiveStamp">Live data: ESPN · Lakers &amp; Suns only · Times in Eastern · Auto-refreshes every 60 seconds</p>
+  <p class="asrc" id="nbaLiveStamp">Live data: ESPN · All NBA teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NBA standings view"><button type="button" role="tab" data-std="nba:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nba:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="nbaWestCard" aria-label="Western Conference standings">
@@ -1487,7 +1516,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <p class="astatus" id="nflWeekLabel" style="font-weight:700;color:#fff">Loading week…</p>
   </section>
-  <section class="acard" aria-label="Jaguars, Patriots, Saints and Eagles games — Yesterday, Today, Upcoming">
+  <section class="acard" aria-label="NFL games — all teams, favorites first — Yesterday, Today, Upcoming">
   <div class="daytabs" role="tablist" aria-label="Choose day">
     <button type="button" role="tab" data-nfl-day="yesterday" aria-selected="false">Yesterday</button>
     <button type="button" role="tab" data-nfl-day="today" aria-selected="true">Today</button>
@@ -1497,7 +1526,7 @@ body.on-sports footer{color:#aebfe6!important}
   <div id="nflGames"></div>
   <p class="kalshi-credit">Moneyline %: Kalshi</p>
   <div class="aerr" id="nflLiveErr" hidden>Couldn&rsquo;t load games right now — check your teams on <a href="https://www.nfl.com/" target="_blank" rel="noopener">NFL.com</a> and reload.</div>
-  <p class="asrc" id="nflLiveStamp">Live data: ESPN &middot; Jaguars, Patriots, Saints &amp; Eagles only &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
+  <p class="asrc" id="nflLiveStamp">Live data: ESPN &middot; All NFL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NFL standings view"><button type="button" role="tab" data-std="nfl:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nfl:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="nflAfcCard" aria-label="AFC standings">
@@ -1940,7 +1969,7 @@ body.on-christmas{color-scheme:light}
     <li>Check the Google Santa Tracker on Christmas Eve</li>
   </ul></section>
   </main>
-<footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News · Cicero, NY · Weather data by Open-Meteo</footer>
+<footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News<div style="font-size:11.5px;opacity:.65;margin-top:5px">Last updated <span id="footerUpdated"></span></div></footer>
 <script>
 (function(){
   var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
@@ -2182,6 +2211,7 @@ body.on-christmas{color-scheme:light}
   window.addEventListener('load',function(){finalize(currentIdx);});
   var now=new Date();
   document.getElementById('todayLine').textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  var fuEl=document.getElementById('footerUpdated');if(fuEl){var lmD=new Date(document.lastModified);if(!isNaN(lmD))fuEl.textContent=lmD.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
   // Christmas countdown — Dec 25, rolls to next year after Christmas Day
   var year=now.getFullYear(); var xmas=new Date(year,11,25);
   if(now>xmas && now.toDateString()!==xmas.toDateString()){year+=1;xmas=new Date(year,11,25);}
@@ -2195,6 +2225,20 @@ body.on-christmas{color-scheme:light}
   // off Home entirely; the full Christmas tab is always there.
   var hxW=document.getElementById('homeChristmasWidget');
   if(hxW){var xRelevant=(now.toDateString()===xmas.toDateString())||days<=60;hxW.style.display=xRelevant?'':'none';}
+  // Thanksgiving countdown — the fourth Thursday of November, computed
+  // in-page (2026: Thu Nov 26) and rolling to next year on its own once
+  // the day passes. The Home widget follows the Christmas rule: it only
+  // shows within 60 days of Thanksgiving, or on the day itself, and
+  // disappears on its own the rest of the year. No Thanksgiving tab.
+  function thanksgivingFor(yr){var n1=new Date(yr,10,1);var firstThu=1+((4-n1.getDay())+7)%7;return new Date(yr,10,firstThu+21);}
+  var tgYear=now.getFullYear();var tgiving=thanksgivingFor(tgYear);
+  if(now>new Date(tgYear,10,tgiving.getDate())&&now.toDateString()!==tgiving.toDateString()){tgYear+=1;tgiving=thanksgivingFor(tgYear);}
+  var tgDays=Math.ceil((new Date(tgiving.getFullYear(),10,tgiving.getDate())-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+  var tgIsDay=(now.toDateString()===tgiving.toDateString());
+  var tgD=document.getElementById('homeTGDays');if(tgD)tgD.textContent=tgIsDay?'0':tgDays;
+  var tgL=document.getElementById('homeTGLine');if(tgL)tgL.textContent=tgIsDay?'Happy Thanksgiving! 🦃 Today is the day.':'Until Thanksgiving Day — '+tgiving.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+' 🍂';
+  var tgW=document.getElementById('homeThanksgivingWidget');
+  if(tgW){var tgRelevant=tgIsDay||tgDays<=60;tgW.style.display=tgRelevant?'':'none';}
   if(location.hash && tabOrder.indexOf(location.hash.slice(1))>=0) show(location.hash.slice(1));
   // Live weather — Open-Meteo, no API key, Cicero NY (43.1713, -76.1250)
   var codes={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],56:['🌦️','Freezing drizzle'],57:['🌦️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Light showers'],81:['🌧️','Showers'],82:['🌧️','Heavy showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Thunderstorm with hail']};
@@ -2695,7 +2739,7 @@ body.on-christmas{color-scheme:light}
 </script>
 <script>
 (function(){
-  var TEAM_IDS={'13':1,'21':1};
+  var TEAM_IDS=(window.__dnTeams?window.__dnTeams.favs('nba'):{'13':1,'21':1}); /* favorites for pinning/stars: My Teams picks, Derek's defaults (Lakers & Suns) otherwise */
   // Canonical logo slug per ESPN team id — verified for all 30 teams.
   // Logos are ALWAYS built from the team id, never taken from a feed's
   // logo/logos field (scoreboard uses a different variant than schedule
@@ -2730,6 +2774,9 @@ body.on-christmas{color-scheme:light}
   function etKey(iso){var d=new Date(iso);return isNaN(d)?'':dayFmt.format(d);}
   function todayKey(){return dayFmt.format(new Date());}
   function ydayKey(){var t=new Date();t.setDate(t.getDate()-1);return dayFmt.format(t);}
+  function keyPlus(baseKey,n){var p=baseKey.split('-');var d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+'-'+z(d.getUTCMonth()+1)+'-'+z(d.getUTCDate());}
+  /* Scoreboard order: favorites pinned first, then live games, then by start time. */
+  function favFirstSort(list){return list.sort(function(a,b){var fa=involves(a)?0:1,fb=involves(b)?0:1;if(fa!==fb)return fa-fb;var sa=a.state==='in'?0:(a.state==='pre'?1:2),sb=b.state==='in'?0:(b.state==='pre'?1:2);if(sa!==sb)return sa-sb;return new Date(a.date)-new Date(b.date);});}
   function timeStr(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'});}
   function dateStr(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'});}
   function norm(ev){
@@ -2777,7 +2824,7 @@ body.on-christmas{color-scheme:light}
   }
   var buckets={yesterday:[],today:[],upcoming:[]};
   var curDay='today';
-  var emptyMsg={yesterday:'No Lakers or Suns game yesterday.',today:'No Lakers or Suns game today — tap Upcoming for their next games.',upcoming:'No upcoming Lakers or Suns games found right now.'};
+  var emptyMsg={yesterday:'No NBA games yesterday.',today:'No NBA games today — tap Upcoming for the next games.',upcoming:'No upcoming NBA games found right now.'};
   function renderDay(){
     document.querySelectorAll('#view-sports [data-day]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-day')===curDay?'true':'false');});
     var list=buckets[curDay]||[];
@@ -2799,30 +2846,30 @@ body.on-christmas{color-scheme:light}
       function add(g){if(!g||!g.id)return;if(!byId[g.id])order.push(g.id);byId[g.id]=g;}
       res.forEach(function(d){((d&&d.events)||[]).forEach(function(ev){add(norm(ev));});});
       var tk0=todayKey();
-      var upDates={};
-      order.map(function(id){return byId[id];}).filter(function(g){return g.state==='pre'&&etKey(g.date)>tk0;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,6).forEach(function(g){upDates[etKey(g.date).replace(/-/g,'')]=1;});
+      /* ALL teams: pull the league scoreboard for yesterday, today and
+         the next 6 days — not just the favorites' schedules. */
       var dateParams={};dateParams[ydayKey().replace(/-/g,'')]=1;dateParams[tk0.replace(/-/g,'')]=1;
-      Object.keys(upDates).forEach(function(k){dateParams[k]=1;});
+      for(var di=1;di<=6;di++){dateParams[keyPlus(tk0,di).replace(/-/g,'')]=1;}
       var sbPs=Object.keys(dateParams).map(function(dp){return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates='+dp).catch(function(){return null;});});
       return Promise.all(sbPs).then(function(sbs){
-        sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=norm(ev);if(g&&involves(g))add(g);});});
+        sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=norm(ev);if(g)add(g);});});
         return {byId:byId,order:order};
       });
     }).then(function(ctx){
       loading=false;
       var byId=ctx.byId,order=ctx.order;
-      var all=order.map(function(id){return byId[id];}).filter(involves);
+      var all=order.map(function(id){return byId[id];}); /* every team — favorites are pinned by favFirstSort, never filtered */
       var tk=todayKey(),yk=ydayKey();
-      buckets.yesterday=all.filter(function(g){return etKey(g.date)===yk;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-      buckets.today=all.filter(function(g){return etKey(g.date)===tk;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-      buckets.upcoming=all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,6);
+      buckets.yesterday=favFirstSort(all.filter(function(g){return etKey(g.date)===yk;}));
+      buckets.today=favFirstSort(all.filter(function(g){return etKey(g.date)===tk;}));
+      buckets.upcoming=favFirstSort(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk&&etKey(g.date)<=keyPlus(tk,6);}));
       var errEl=document.getElementById('nbaLiveErr');
       if(!all.length){if(errEl)errEl.hidden=false;var st=document.getElementById('nbaLiveStatus');if(st)st.textContent='';return;}
       if(errEl)errEl.hidden=true;
       if(!buckets.today.length&&buckets.upcoming.length&&curDay==='today'){/* keep Today selected, honest empty state */}
       renderDay();
       var stamp=document.getElementById('nbaLiveStamp');
-      if(stamp)stamp.textContent='Live data: ESPN · Lakers & Suns only · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+      if(stamp)stamp.textContent='Live data: ESPN · All NBA teams · Your favorites first · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     }).catch(function(){loading=false;var e=document.getElementById('nbaLiveErr');if(e)e.hidden=false;});
   }
   function statMap(e){var m={};(e.stats||[]).forEach(function(s){m[s.name]=s;});return m;}
@@ -2900,7 +2947,7 @@ body.on-christmas{color-scheme:light}
 })();
 </script>
 <script>
-/* NFL (favorites: Jaguars, Patriots, Saints, Eagles) + NHL (all teams, no favorites).
+/* NFL + NHL — ALL teams on both scoreboards; favorites (NFL: Jaguars, Patriots, Saints, Eagles by default; NHL: any My Teams picks) are pinned first by the board sort, never used as a filter.
    Same Apple Sports pattern as the NBA module: logos built from the ESPN
    abbreviation slug, never from a feed logo field; badge fallback on error. */
 (function(){
@@ -2966,6 +3013,10 @@ body.on-christmas{color-scheme:light}
       if(g.link)return '<a class="agame" href="'+esc(g.link)+'" target="_blank" rel="noopener" aria-label="'+esc((away.full||away.name)+' at '+(home.full||home.name))+'">'+inner+'</a>';
       return '<div class="agame">'+inner+'</div>';
     }
+    /* Scoreboard order: favorites pinned first, then live games, then by start time. */
+    function favRank(g){return g.teams.some(function(t){return !!cfg.favs[t.id];})?0:1;}
+    function stateRank(g){return g.state==='in'?0:(g.state==='pre'?1:2);}
+    function sortGames(list){return list.sort(function(a,b){var d=favRank(a)-favRank(b);if(d)return d;d=stateRank(a)-stateRank(b);if(d)return d;return new Date(a.date)-new Date(b.date);});}
     function renderDay(){
       document.querySelectorAll('#view-sports [data-'+cfg.prefix+'-day]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-'+cfg.prefix+'-day')===curDay?'true':'false');});
       var box=document.getElementById(cfg.gamesId);if(!box)return;
@@ -2979,9 +3030,9 @@ body.on-christmas{color-scheme:light}
     return {buckets:buckets,recMap:recMap,renderDay:renderDay,
       fill:function(all){
         var tk=todayKey(),yk=keyPlus(tk,-1);
-        buckets.yesterday=all.filter(function(g){return etKey(g.date)===yk;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-        buckets.today=all.filter(function(g){return etKey(g.date)===tk;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-        buckets.upcoming=all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,cfg.upcomingMax||8);
+        buckets.yesterday=sortGames(all.filter(function(g){return etKey(g.date)===yk;}));
+        buckets.today=sortGames(all.filter(function(g){return etKey(g.date)===tk;}));
+        buckets.upcoming=sortGames(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk;})).slice(0,cfg.upcomingMax||8);
         renderDay();
       }};
   }
@@ -2991,10 +3042,10 @@ body.on-christmas{color-scheme:light}
 
   /* ---------------- NFL ---------------- */
   var NFL_FAVS=(window.__dnTeams?window.__dnTeams.favs('nfl'):{'30':1,'17':1,'18':1,'21':1});
-  var nflBoard=makeBoard({league:'nfl',prefix:'nfl',favs:NFL_FAVS,gamesId:'nflGames',statusId:'nflLiveStatus',upcomingMax:8,showDateUnderTime:true,
-    emptyMsg:{yesterday:'No game for your teams yesterday.',today:'No game for your teams today — tap Upcoming for their next games.',upcoming:'No upcoming games for your teams found right now.'}});
+  var nflBoard=makeBoard({league:'nfl',prefix:'nfl',favs:NFL_FAVS,gamesId:'nflGames',statusId:'nflLiveStatus',upcomingMax:32,showDateUnderTime:true,
+    emptyMsg:{yesterday:'No NFL games yesterday.',today:'No NFL games today — tap Upcoming for the next games.',upcoming:'No upcoming NFL games found right now.'}});
   var nflLoading=false;
-  function nflInvolves(g){return g&&g.teams.some(function(t){return !!NFL_FAVS[t.id];});}
+  /* All NFL teams are included — NFL_FAVS only pins favorites to the top (board sort + stars). */
   function loadNflGames(){
     if(nflLoading)return;nflLoading=true;
     var schedPs=Object.keys(NFL_FAVS).map(function(id){return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/'+id+'/schedule').catch(function(){return null;});});
@@ -3007,23 +3058,23 @@ body.on-christmas{color-scheme:light}
       if(wl)wl.textContent=wk?('Week '+wk+' · 2026 NFL season'):'NFL · 2026 season';
       var byId={},order=[];
       function add(g){if(!g||!g.id)return;if(!byId[g.id])order.push(g.id);byId[g.id]=g;}
-      res.slice(0,4).forEach(function(d){((d&&d.events)||[]).forEach(function(ev){add(norm(ev,'nfl'));});});
-      if(curSb)((curSb&&curSb.events)||[]).forEach(function(ev){var g=norm(ev,'nfl');if(g&&nflInvolves(g))add(g);});
+      res.slice(0,schedPs.length).forEach(function(d){((d&&d.events)||[]).forEach(function(ev){add(norm(ev,'nfl'));});});
+      if(curSb)((curSb&&curSb.events)||[]).forEach(function(ev){var g=norm(ev,'nfl');if(g)add(g);});
       var weekPs=[];
       if(wk){[wk-1,wk+1].forEach(function(w){if(w>=1&&w<=18)weekPs.push(fetchJSON('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week='+w+'&seasontype=2').catch(function(){return null;}));});}
       return Promise.all(weekPs).then(function(sbs){
-        sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=norm(ev,'nfl');if(g&&nflInvolves(g))add(g);});});
+        sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=norm(ev,'nfl');if(g)add(g);});});
         return {byId:byId,order:order};
       });
     }).then(function(ctx){
       nflLoading=false;
-      var all=ctx.order.map(function(id){return ctx.byId[id];}).filter(nflInvolves);
+      var all=ctx.order.map(function(id){return ctx.byId[id];}); /* every NFL team */
       var errEl=document.getElementById('nflLiveErr');
       if(!all.length){if(errEl)errEl.hidden=false;var st=document.getElementById('nflLiveStatus');if(st)st.textContent='';return;}
       if(errEl)errEl.hidden=true;
       nflBoard.fill(all);
       var stamp=document.getElementById('nflLiveStamp');
-      if(stamp)stamp.textContent='Live data: ESPN · Your teams only · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+      if(stamp)stamp.textContent='Live data: ESPN · All NFL teams · Your favorites first · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     }).catch(function(){nflLoading=false;var e=document.getElementById('nflLiveErr');if(e)e.hidden=false;});
   }
   var NFL_ENTRIES={afc:null,nfc:null};
@@ -3223,7 +3274,7 @@ body.on-christmas{color-scheme:light}
   }
 
   /* ---------------- NHL ---------------- */
-  var nhlBoard=makeBoard({league:'nhl',prefix:'nhl',favs:(window.__dnTeams?window.__dnTeams.favs('nhl'):{}),gamesId:'nhlGames',statusId:'nhlLiveStatus',upcomingMax:12,
+  var nhlBoard=makeBoard({league:'nhl',prefix:'nhl',favs:(window.__dnTeams?window.__dnTeams.favs('nhl'):{}),gamesId:'nhlGames',statusId:'nhlLiveStatus',upcomingMax:48,showDateUnderTime:true,
     emptyMsg:{yesterday:'No NHL games yesterday.',today:'No NHL games today — tap Upcoming for the next games.',upcoming:'No upcoming NHL games found right now.'}});
   var nhlLoading=false;
   function loadNhlGames(){
@@ -3237,7 +3288,7 @@ body.on-christmas{color-scheme:light}
       var byId={},order=[];
       sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=norm(ev,'nhl');if(!g||!g.id)return;if(!byId[g.id])order.push(g.id);byId[g.id]=g;});});
       var all=order.map(function(id){return byId[id];});
-      var __nhlFavs=(window.__dnTeams?window.__dnTeams.favs('nhl'):{});if(Object.keys(__nhlFavs).length)all=all.filter(function(g){return g.teams.some(function(tm){return __nhlFavs[tm.id];});});
+      /* All NHL teams stay in — the board sort pins any picked favorites first; picks no longer filter the list. */
       var errEl=document.getElementById('nhlLiveErr');
       if(!all.length){if(errEl)errEl.hidden=false;var st=document.getElementById('nhlLiveStatus');if(st)st.textContent='';return;}
       if(errEl)errEl.hidden=true;
@@ -4867,6 +4918,7 @@ body.on-christmas{color-scheme:light}
         html+='<h3>'+esc(p.event||'Severe Weather Warning')+' - '+(window.__dnLoc?window.__dnLoc.get().label:'Cicero, NY')+'</h3>';
         var start=fmtT(p.effective||p.onset), end=fmtT(p.expires||p.ends);
         if(start||end) html+='<p class="sev-when">'+(start?esc(start):'')+((start&&end)?' &rarr; ':'Until ')+esc(end)+'</p>';
+        html+='<p class="brk-active">\uD83D\uDFE2 Still active — this National Weather Service alert is in effect'+(end?(' until '+esc(end)):'')+' · Source: National Weather Service</p>';
         if(p.headline) html+='<p><strong>'+esc(p.headline)+'</strong></p>';
         html+='<h3>What it means</h3>';
         html+='<p>'+esc(MEANING[evKey]||'A severe weather alert is in effect for Cicero, NY.')+'</p>';
@@ -5086,6 +5138,112 @@ body.on-christmas{color-scheme:light}
 })();
 </script>
 <script>
+/* MLB scoreboard — ALL teams (ESPN league scoreboard), favorites first.
+   Added with the all-teams scoreboard update: the Baseball page used to
+   have standings only. Yesterday / Today / Upcoming tabs like the other
+   sport pages; live games first inside each favorite group; the Yankees
+   (or the visitor's My Teams MLB picks) are pinned on top. In the
+   off-season every bucket is honestly empty — no invented games. */
+(function(){
+  var FAVS=(window.__dnTeams?window.__dnTeams.favs('mlb'):{'10':1});
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+  var dayFmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'});
+  function etKey(iso){var d=new Date(iso);return isNaN(d)?'':dayFmt.format(d);}
+  function todayKey(){return dayFmt.format(new Date());}
+  function keyPlus(baseKey,n){var p=baseKey.split('-');var d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+'-'+z(d.getUTCMonth()+1)+'-'+z(d.getUTCDate());}
+  function timeStr(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'});}
+  function dateStr(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'});}
+  function norm(ev){
+    var comp=(ev.competitions||[])[0];if(!comp)return null;
+    var st=(comp.status&&comp.status.type)||{};
+    var spread='';
+    if(comp.odds&&comp.odds.length){spread=comp.odds[0].details||comp.odds[0].summary||'';}
+    var teams=(comp.competitors||[]).map(function(c){
+      var s=c.score,sv=null;
+      if(s!=null){sv=(typeof s==='object')?(s.displayValue||(s.value!=null?String(Math.round(s.value)):'')):String(s);}
+      var rec='';if(c.records&&c.records.length)rec=c.records[0].summary||'';
+      var t=c.team||{};
+      var logo=t.logo||'';if(!logo&&t.logos&&t.logos.length)logo=t.logos[0].href||'';
+      return{id:String(t.id||''),abbr:t.abbreviation||'',name:t.shortDisplayName||t.name||'',full:t.displayName||'',logo:logo,score:sv,winner:!!c.winner,homeAway:c.homeAway||'',record:rec};
+    });
+    var link='';(ev.links||[]).forEach(function(l){if(!link&&l.href&&l.href.indexOf('https://www.espn.com/mlb/game/')===0)link=l.href;});
+    return{id:String(ev.id||''),date:ev.date||comp.date||'',state:st.state||'',detail:st.detail||st.shortDetail||'',displayClock:(comp.status&&comp.status.displayClock)||'',venue:(comp.venue&&comp.venue.fullName)||'',teams:teams,link:link,spread:spread};
+  }
+  function logoHtml(t){
+    var ab=esc(t.abbr||'MLB');
+    if(t.logo)return '<img src="'+esc(t.logo)+'" data-abbr="'+ab+'" data-league="mlb" data-size="g" alt="'+ab+' logo" loading="eager" decoding="async" onerror="window.__logoErr&&__logoErr(this)">';
+    if(t.abbr)return '<img src="https://a.espncdn.com/i/teamlogos/mlb/500/'+esc(String(t.abbr).toLowerCase())+'.png" data-abbr="'+ab+'" data-league="mlb" data-size="g" alt="'+ab+' logo" loading="eager" decoding="async" onerror="window.__logoErr&&__logoErr(this)">';
+    return '<span class="tlogo-fb g">MLB</span>';
+  }
+  function teamCell(t,opp){
+    var h='<div class="ateam">'+logoHtml(t);
+    h+='<span class="an">'+esc(t.name)+(FAVS[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
+    if(window.__kalshiLine&&opp)h+=window.__kalshiLine('mlb',t,opp);
+    h+='</div>';
+    return h;
+  }
+  function sideVal(t,g){
+    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score">'+esc(t.score)+'</div>';
+    return '<div class="aside">'+esc(t.record||'')+'</div>';
+  }
+  function gameRow(g,bucket){
+    var away=g.teams.filter(function(t){return t.homeAway==='away';})[0]||g.teams[0]||{};
+    var home=g.teams.filter(function(t){return t.homeAway==='home';})[0]||g.teams[1]||{};
+    var center='',sub='';
+    if(g.state==='in'){center='<span class="live">● LIVE</span>';sub=esc(g.detail||'Live')+(g.displayClock?' · '+esc(g.displayClock):'');}
+    else if(g.state==='post'){center='Final';sub=esc(dateStr(g.date));}
+    else{center=esc(timeStr(g.date));sub=g.spread?esc(g.spread):(bucket==='upcoming'?esc(dateStr(g.date)):esc(g.venue||''));}
+    var inner=teamCell(away,home)+sideVal(away,g)+'<div class="acenter"><div class="at">'+center+'</div>'+(sub?'<div class="as">'+sub+'</div>':'')+'</div>'+sideVal(home,g)+teamCell(home,away);
+    if(g.link)return '<a class="agame" href="'+esc(g.link)+'" target="_blank" rel="noopener" aria-label="'+esc((away.full||away.name)+' at '+(home.full||home.name))+'">'+inner+'</a>';
+    return '<div class="agame">'+inner+'</div>';
+  }
+  function isFav(g){return g.teams.some(function(t){return !!FAVS[t.id];});}
+  function stateRank(g){return g.state==='in'?0:(g.state==='pre'?1:2);}
+  function sortGames(list){return list.sort(function(a,b){var d=(isFav(a)?0:1)-(isFav(b)?0:1);if(d)return d;d=stateRank(a)-stateRank(b);if(d)return d;return new Date(a.date)-new Date(b.date);});}
+  var buckets={yesterday:[],today:[],upcoming:[]};
+  var curDay='today';
+  var emptyMsg={yesterday:'No MLB games yesterday.',today:'No MLB games today — tap Upcoming for the next games.',upcoming:'No upcoming MLB games found right now.'};
+  function renderDay(){
+    document.querySelectorAll('#view-sports [data-mlb-day]').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-mlb-day')===curDay?'true':'false');});
+    var box=document.getElementById('mlbGames');if(!box)return;
+    var st=document.getElementById('mlbLiveStatus');
+    var list=buckets[curDay]||[];
+    if(list.length)box.innerHTML=list.map(function(g){return gameRow(g,curDay);}).join('');
+    else box.innerHTML='<p class="anone">'+emptyMsg[curDay]+'</p>';
+    if(st)st.textContent='';
+  }
+  document.querySelectorAll('#view-sports [data-mlb-day]').forEach(function(b){b.addEventListener('click',function(){curDay=b.getAttribute('data-mlb-day');renderDay();});});
+  var loading=false;
+  function loadGames(){
+    if(loading)return;loading=true;
+    var tk=todayKey();
+    var keys=[keyPlus(tk,-1),tk,keyPlus(tk,1),keyPlus(tk,2),keyPlus(tk,3),keyPlus(tk,4),keyPlus(tk,5),keyPlus(tk,6)];
+    var ps=keys.map(function(k){return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates='+k.replace(/-/g,'')).catch(function(){return null;});});
+    var kP=(window.__kalshiLoad?window.__kalshiLoad():Promise.resolve(null)).catch(function(){return null;});
+    Promise.all(ps.concat([kP])).then(function(sbs){
+      loading=false;
+      var anyOk=sbs.slice(0,keys.length).some(function(sb){return !!sb;});
+      var byId={},order=[];
+      sbs.slice(0,keys.length).forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){var g=norm(ev);if(!g||!g.id)return;if(!byId[g.id])order.push(g.id);byId[g.id]=g;});});
+      var errEl=document.getElementById('mlbLiveErr');
+      if(!anyOk){if(errEl)errEl.hidden=false;return;}
+      if(errEl)errEl.hidden=true;
+      var all=order.map(function(id){return byId[id];});
+      var yk=keyPlus(tk,-1),upEnd=keyPlus(tk,6);
+      buckets.yesterday=sortGames(all.filter(function(g){return etKey(g.date)===yk;}));
+      buckets.today=sortGames(all.filter(function(g){return etKey(g.date)===tk;}));
+      buckets.upcoming=sortGames(all.filter(function(g){return g.state==='pre'&&etKey(g.date)>tk&&etKey(g.date)<=upEnd;}));
+      renderDay();
+      var stamp=document.getElementById('mlbLiveStamp');
+      if(stamp)stamp.textContent='Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+    }).catch(function(){loading=false;var e=document.getElementById('mlbLiveErr');if(e)e.hidden=false;});
+  }
+  loadGames();
+  setInterval(loadGames,60000);
+})();
+</script>
+<script>
 /* Playoff Path -- pick a team, get its live path: record + seed, playoff
    odds (FPI/BPI file), division picture, remaining schedule with swing
    games marked, the win-total math to the cut line, head-to-head results
@@ -5242,6 +5400,16 @@ body.on-christmas{color-scheme:light}
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function anyOverlayOpen(){var a=document.getElementById('severeOverlay'),b=document.getElementById('breakingOverlay');return !!((a&&a.classList.contains('open'))||(b&&b.classList.contains('open')));}
   function fmtTime(iso){try{var d=new Date(iso);if(isNaN(d))return '';return d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+  /* Still-active status — read live from breaking.json on every load:
+     the confirmation time is the feed's own updated_at (the Action
+     re-checks every 5 minutes while an item is live) and the sources
+     are the item's own source field. Nothing here is hard-coded. */
+  function stillActiveHTML(d){
+    var it=(d&&d.item)||{};
+    var when='';try{var ud=new Date(d&&d.updated_at);if(!isNaN(ud))when=ud.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}catch(e){}
+    var src=esc(it.source||'Verified reports');
+    return '<p class="brk-active">\uD83D\uDFE2 Still active — last confirmed '+(when?esc(when)+' ET':'just now')+' · Sources: '+src+'</p>';
+  }
 
   /* ---------- Breaking News section (News tab) ---------- */
   var secBody=document.getElementById('breakingSectionBody');
@@ -5263,7 +5431,7 @@ body.on-christmas{color-scheme:light}
     var badge=(sev==='significant')
       ?'<span class="brk-live" style="background:#2563eb">Developing</span>'
       :'<span class="brk-live">Live now</span>';
-    var h=badge+'<p class="brk-title">'+esc(it.title)+'</p>';
+    var h=badge+'<p class="brk-title">'+esc(it.title)+'</p>'+stillActiveHTML(d);
     /* Summary up top (one or two lines); the full read sits behind
        the Read more drop-down. */
     var summary=it.what||it.means||'';
@@ -5329,7 +5497,7 @@ body.on-christmas{color-scheme:light}
       if(anyOverlayOpen()||autoOverlay.classList.contains('open'))return;
       var body=document.getElementById('autoBreakingBody');if(!body)return;
       document.getElementById('autoBreakingTitle').textContent=it.title;
-      var h='';
+      var h=stillActiveHTML(d);
       if(it.what)h+='<p><strong>What happened:</strong> '+esc(it.what)+'</p>';
       if(it.means)h+='<p><strong>What it means for you:</strong> '+esc(it.means)+'</p>';
       if(it.do)h+='<p class="sev-do"><strong>What to do:</strong> '+esc(it.do)+'</p>';
