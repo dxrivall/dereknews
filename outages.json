@@ -1,30 +1,42 @@
 {
- "updated_at": "2026-11-14T13:14:20.469111+00:00",
+ "updated_at": "2026-11-14T13:58:44.025414+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384170,
-  "out": 12305,
-  "pct": 0.15,
-  "source_updated": "2026-11-14T13:03:49+00:00",
+  "out": 13384,
+  "pct": 0.16,
+  "source_updated": "2026-11-14T13:53:52+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919258,
-    "out": 7431,
+    "out": 7448,
     "pct": 0.81
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
-    "out": 4316,
-    "pct": 83.59
+    "out": 4377,
+    "pct": 84.78
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 282,
-    "pct": 0.02
+    "out": 475,
+    "pct": 0.03
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392045,
+    "out": 419,
+    "pct": 0.11
+   },
+   {
+    "name": "Delaware County Electric Coop",
+    "tracked": 5335,
+    "out": 286,
+    "pct": 5.36
    },
    {
     "name": "Orange & Rockland Utilities Inc",
@@ -35,31 +47,19 @@
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315411,
-    "out": 52,
-    "pct": 0.02
+    "out": 165,
+    "pct": 0.05
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 19,
-    "pct": 0.0
-   },
-   {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392045,
-    "out": 8,
+    "out": 16,
     "pct": 0.0
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "Delaware County Electric Coop",
-    "tracked": 5335,
-    "out": 0,
+    "out": 1,
     "pct": 0.0
    },
    {
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 56,
-  "source_updated": "2026-11-14T13:03:48+00:00",
+  "out": 59,
+  "source_updated": "2026-11-14T13:53:50+00:00",
   "pct": 0.03,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 56,
+    "out": 59,
     "pct": 0.03
    },
    {
