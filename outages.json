@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-15T07:41:48.065104+00:00",
+ "updated_at": "2026-11-15T08:30:08.135783+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 5374,
+  "out": 5063,
   "pct": 0.06,
-  "source_updated": "2026-11-15T07:33:48+00:00",
+  "source_updated": "2026-11-15T08:23:44+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -17,20 +17,20 @@
    {
     "name": "New York State Electric & Gas",
     "tracked": 919169,
-    "out": 923,
+    "out": 953,
     "pct": 0.1
-   },
-   {
-    "name": "Steuben Rural Electric Coop",
-    "tracked": 6714,
-    "out": 361,
-    "pct": 5.38
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
     "out": 153,
     "pct": 2.87
+   },
+   {
+    "name": "National Grid",
+    "tracked": 1698909,
+    "out": 28,
+    "pct": 0.0
    },
    {
     "name": "Tri-County Rural Electric Coop",
@@ -45,12 +45,6 @@
     "pct": 0.0
    },
    {
-    "name": "National Grid",
-    "tracked": 1698909,
-    "out": 7,
-    "pct": 0.0
-   },
-   {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
     "out": 4,
@@ -59,7 +53,7 @@
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 2,
+    "out": 1,
     "pct": 0.0
    },
    {
@@ -81,6 +75,12 @@
     "pct": 0.0
    },
    {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6714,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Sussex REC",
     "tracked": 202,
     "out": 0,
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 3,
-  "source_updated": "2026-11-15T07:33:46+00:00",
+  "source_updated": "2026-11-15T08:23:42+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
