@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-15T10:04:33.489416+00:00",
+ "updated_at": "2026-11-15T10:43:30.788498+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 5099,
+  "out": 5107,
   "pct": 0.06,
-  "source_updated": "2026-11-15T09:54:17+00:00",
+  "source_updated": "2026-11-15T10:34:20+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -29,7 +29,7 @@
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 30,
+    "out": 36,
     "pct": 0.0
    },
    {
@@ -41,7 +41,7 @@
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 1,
+    "out": 3,
     "pct": 0.0
    },
    {
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 0,
-  "source_updated": "2026-11-15T09:54:16+00:00",
+  "out": 1,
+  "source_updated": "2026-11-15T10:34:18+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 0,
+    "out": 1,
     "pct": 0.0
    },
    {
