@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-15T09:19:52.327893+00:00",
+ "updated_at": "2026-11-15T10:04:33.489416+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 5115,
+  "out": 5099,
   "pct": 0.06,
-  "source_updated": "2026-11-15T09:14:38+00:00",
+  "source_updated": "2026-11-15T09:54:17+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -17,7 +17,7 @@
    {
     "name": "New York State Electric & Gas",
     "tracked": 919169,
-    "out": 1004,
+    "out": 1002,
     "pct": 0.11
    },
    {
@@ -29,14 +29,8 @@
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 29,
+    "out": 30,
     "pct": 0.0
-   },
-   {
-    "name": "Tri-County Rural Electric Coop",
-    "tracked": 59,
-    "out": 12,
-    "pct": 20.34
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -47,7 +41,7 @@
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 4,
+    "out": 1,
     "pct": 0.0
    },
    {
@@ -87,6 +81,12 @@
     "pct": 0.0
    },
    {
+    "name": "Tri-County Rural Electric Coop",
+    "tracked": 59,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Warren Electric Coop",
     "tracked": 8696,
     "out": 0,
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 0,
-  "source_updated": "2026-11-15T09:14:36+00:00",
+  "source_updated": "2026-11-15T09:54:16+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
