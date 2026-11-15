@@ -1,8 +1,17 @@
 {
- "active": false,
- "severity": null,
- "updated_at": "2026-11-15T15:57:46.919960+00:00",
- "first_seen": null,
- "expires_at": null,
- "item": null
+ "active": true,
+ "severity": "massive",
+ "updated_at": "2026-11-15T16:37:23.754655+00:00",
+ "first_seen": "2026-11-15T16:37:23.754655+00:00",
+ "expires_at": "2026-11-15T19:37:23.754655+00:00",
+ "item": {
+  "id": "nationwide-ground-stop-2026-11-15",
+  "severity": "massive",
+  "title": "Bash presses Secretary Duffy: Didn't Americans deserve to hear from President Trump during nationwide ground stop?",
+  "what": "The FAA has issued a nationwide ground stop, halting departing flights at U.S. airports \u2014 all airlines \u2014 until further notice. This is a ground stop, not emergency landings: planes already in the air keep flying and land normally.",
+  "means": "If you or family are flying today, expect major delays and cancellations nationwide, even at airports that look fine.",
+  "do": "Check with your airline before heading to the airport, and keep checking \u2014 schedules will keep changing while the stop is in effect.",
+  "source": "CNN, AP (all reporting this now)",
+  "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1wZnVBT1hZVDBqUTdxYkRFQXJJZjZlS2hUWHhPakU3bjhZM0QteXRDTG9QTURtX0VvUEtGdkh6cjhyd0dSZkJrYTFFSndvSEx0aGJEOVh3TFFEcTIzakdkSnMwNGlxdllvQ2ZVQWhNQmJ2M2phRUswLXNHRUE?oc=5"
+ }
 }
