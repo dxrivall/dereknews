@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-15T05:39:12.855910+00:00",
+ "updated_at": "2026-11-15T06:30:14.684471+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 5135,
-  "pct": 0.06,
-  "source_updated": "2026-11-15T05:33:41+00:00",
+  "out": 5987,
+  "pct": 0.07,
+  "source_updated": "2026-11-15T06:23:56+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -17,8 +17,8 @@
    {
     "name": "New York State Electric & Gas",
     "tracked": 919169,
-    "out": 1042,
-    "pct": 0.11
+    "out": 1893,
+    "pct": 0.21
    },
    {
     "name": "Delaware County Electric Coop",
@@ -41,18 +41,18 @@
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 7,
-    "pct": 0.0
-   },
-   {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 2,
+    "out": 6,
     "pct": 0.0
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
+    "out": 4,
+    "pct": 0.0
+   },
+   {
+    "name": "Con Edison",
+    "tracked": 3626606,
     "out": 2,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 3,
-  "source_updated": "2026-11-15T05:33:39+00:00",
+  "source_updated": "2026-11-15T06:23:55+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
