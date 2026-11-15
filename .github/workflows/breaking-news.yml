@@ -16,6 +16,11 @@
 # Breaking News section only - no takeover) and are dropped
 # completely after that. Fetcher source: .src/fetch_breaking.py in
 # the build workspace (embedded unchanged below).
+# v2.1 (Nov 15, 2026): selectivity — opinion/talk-show/question/
+# look-back/"event is over" headlines never count toward a signal,
+# and a rule whose item expired cannot re-fire for 7 days
+# (cooldowns recorded in breaking.json). An expired item whose
+# headline is not straight news gets no grace listing at all.
 # YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: Breaking news
 
@@ -80,6 +85,22 @@ jobs:
           unreachable the script exits non-zero and does NOT overwrite the
           last breaking.json.
           Embedded unchanged in .github/workflows/breaking-news.yml.
+
+          v2.1 selectivity (Nov 15, 2026): a Sunday talk-show segment re-fired
+          the Nov 13 ground stop two days after it cleared ("Bash presses
+          Secretary Duffy: Didn't Americans deserve to hear from President
+          Trump during nationwide ground stop?") — partisan commentary about
+          a cleared event, shown as breaking news. Two guards added:
+          (1) HEADLINE_OK: a headline only counts if it reads like straight
+          news of something happening NOW. Question headlines, talk-show
+          sparring, opinion/analysis, look-backs, and "the event is over"
+          headlines (lifted/ended/resumed) never count.
+          (2) COOLDOWN: once a rule's item expires, that rule cannot fire
+          again for 7 days (kept in breaking.json "cooldowns", carried
+          forward on every write). Follow-up coverage of the old event
+          never re-fires; a genuinely new event a week later still can.
+          An expired item whose headline fails HEADLINE_OK gets no grace
+          listing at all — it is dropped outright.
           """
           import json, re, sys, time, urllib.request, datetime
           import xml.etree.ElementTree as ET
@@ -95,6 +116,58 @@ jobs:
           ]
           NOW = datetime.datetime.now(datetime.timezone.utc)
           WINDOW = 3 * 3600
+          COOLDOWN_DAYS = 7
+
+          # v2.1: headlines that must never count toward a breaking signal, even
+          # if they match a rule pattern. Matched against the lowercased title.
+          BAD_HEADLINE = [
+              # question headlines ("Didn't Americans deserve to hear...?")
+              r"\?\s*$",
+              # talk-show sparring / pundit verbs
+              r"\b(presses|grills?|grilled|slams?|blasts?|rips?|torches|confronts?|fires back|pushes back|calls out|hits back|claps back|mocks?|taunts?)\b",
+              # opinion / analysis pieces
+              r"\b(opinion|analysis|editorial|commentary|op-ed)\b",
+              # look-backs and aftermath pieces about an event that already happened
+              r"\b(aftermath|what happened|days after|days later|a week later|looks? back|revisits?|in the wake of|recap|timeline|how it (happened|unfolded))\b",
+              # the event is OVER — lifts / ends / resumptions are not a new fire
+              r"\b(lift(s|ed|ing)?|ends?|ended|resumes?|resumed|cleared|reopens?|reopened|back to normal)\b[^.]{0,40}(ground ?stop|stop|flights|airports)",
+              r"(ground ?stop|stop)[^.]{0,30}\b(ends?|ended|lifted|is over)\b",
+              r"(ground ?stop)[^.]{0,20}\bover\b(\s*(as|and|,|$))",
+              r"\b(flights|airports)\b[^.]{0,20}\b(resume[sd]?|resuming|reopen[sed]?|back to normal)\b",
+          ]
+
+
+          def headline_ok(title):
+              """True only if the headline reads like straight news of an event
+              happening now — never opinion, talk-show sparring, a question, a
+              look-back, or a report that the event is over."""
+              low = (title or "").lower()
+              return not any(re.search(p, low) for p in BAD_HEADLINE)
+
+
+          def parse_ts(s):
+              try:
+                  dt = datetime.datetime.fromisoformat(s)
+                  if dt.tzinfo is None:
+                      dt = dt.replace(tzinfo=datetime.timezone.utc)
+                  return dt
+              except Exception:
+                  return None
+
+
+          def prune_cooldowns(cd):
+              """Keep only cooldown entries younger than COOLDOWN_DAYS."""
+              out = {}
+              for rid, ts in (cd or {}).items():
+                  dt = parse_ts(ts)
+                  if dt and (NOW - dt).total_seconds() < COOLDOWN_DAYS * 86400:
+                      out[rid] = ts
+              return out
+
+
+          def rule_of(item_id):
+              """Item ids are '<rule>-YYYY-MM-DD'; recover the rule."""
+              return item_id[:-11] if len(item_id) > 11 else item_id
 
           # MASSIVE rules: nationwide / national-catastrophe scale. Any 2 of
           # the 5 outlets carrying the same one = full-screen takeover.
@@ -260,6 +333,9 @@ jobs:
                       low = it["title"].lower()
                       for rid, pats, sev in ALL_RULES:
                           if any(re.search(p, low) for p in pats):
+                              if not headline_ok(it["title"]):
+                                  print(f"{name}: rule {rid} matched but headline is not straight news, skipping: {it['title'][:100]}")
+                                  continue
                               if rid not in hits:
                                   hits[rid] = (it, sev)
                   print(f"{name}: {len(items)} items, rule hits: {sorted(hits)}")
@@ -313,8 +389,10 @@ jobs:
           def main():
               item, faa_ok = faa_signal()
               reachable = faa_ok
+              from_news = False
               if item is None:
                   item, news_ok = news_signal()
+                  from_news = item is not None
                   reachable = reachable or news_ok
               if not reachable:
                   raise SystemExit("all breaking sources unreachable - not writing breaking.json")
@@ -324,6 +402,16 @@ jobs:
                       prev = json.load(f)
               except Exception:
                   prev = None
+              cooldowns = prune_cooldowns((prev or {}).get("cooldowns"))
+              if item is not None and from_news:
+                  # v2.1: a news-signal rule that expired recently cannot re-fire
+                  # on follow-up coverage of the same event. (The official FAA
+                  # live feed is exempt: 5+ real stops right now is current fact.)
+                  rid = rule_of(item["id"])
+                  cd_dt = parse_ts(cooldowns.get(rid)) if cooldowns.get(rid) else None
+                  if cd_dt and (NOW - cd_dt).total_seconds() < COOLDOWN_DAYS * 86400:
+                      print(f"SUPPRESSED [{rid}]: in 7-day cooldown since {cooldowns[rid]} - follow-up coverage, not a new event")
+                      item = None
               if item is not None:
                   first_seen = NOW.isoformat()
                   if prev and (prev.get("item") or {}).get("id") == item["id"]:
@@ -331,38 +419,52 @@ jobs:
                   out = {"active": True, "severity": item["severity"],
                          "updated_at": NOW.isoformat(), "first_seen": first_seen,
                          "expires_at": (NOW + datetime.timedelta(hours=3)).isoformat(),
-                         "item": item}
+                         "item": item, "cooldowns": cooldowns}
                   print(f"ACTIVE [{item['severity']}]: {item['id']} - {item['title']}")
               else:
                   prev_item = (prev.get("item") if prev else None) or {}
                   if prev_item.get("id") and prev_item.get("title"):
-                      if prev.get("expired") and prev.get("grace_until"):
-                          expired_at = prev.get("expired_at") or NOW.isoformat()
-                          grace_until = prev["grace_until"]
-                          try:
-                              grace_dt = datetime.datetime.fromisoformat(grace_until)
-                          except ValueError:
-                              grace_dt = NOW
-                      else:
-                          expired_at = NOW.isoformat()
-                          grace_dt = NOW + datetime.timedelta(hours=6)
-                          grace_until = grace_dt.isoformat()
-                      if NOW < grace_dt:
-                          out = {"active": False, "expired": True,
-                                 "severity": prev.get("severity") or prev_item.get("severity"),
-                                 "updated_at": NOW.isoformat(),
-                                 "first_seen": prev.get("first_seen"),
-                                 "expires_at": prev.get("expires_at"),
-                                 "expired_at": expired_at, "grace_until": grace_until,
-                                 "item": prev_item}
-                          print(f"EXPIRED (grace until {grace_until}): {prev_item['id']} - {prev_item['title']}")
-                      else:
+                      # v2.1: an opinion/commentary headline never earns a grace
+                      # listing — drop it outright instead of showing it EXPIRED.
+                      if not headline_ok(prev_item.get("title") or ""):
                           out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
-                                 "first_seen": None, "expires_at": None, "item": None}
-                          print("Expired item past its 6-hour grace - writing inactive breaking.json")
+                                 "first_seen": None, "expires_at": None, "item": None,
+                                 "cooldowns": cooldowns}
+                          print(f"DROPPED (not straight news, no grace): {prev_item['id']} - {prev_item['title']}")
+                      else:
+                          if prev.get("expired") and prev.get("grace_until"):
+                              expired_at = prev.get("expired_at") or NOW.isoformat()
+                              grace_until = prev["grace_until"]
+                              try:
+                                  grace_dt = datetime.datetime.fromisoformat(grace_until)
+                              except ValueError:
+                                  grace_dt = NOW
+                          else:
+                              # active -> expired transition: start the 7-day
+                              # re-fire cooldown for this rule now.
+                              expired_at = NOW.isoformat()
+                              grace_dt = NOW + datetime.timedelta(hours=6)
+                              grace_until = grace_dt.isoformat()
+                              rid = rule_of(prev_item["id"])
+                              cooldowns[rid] = prev.get("first_seen") or expired_at
+                          if NOW < grace_dt:
+                              out = {"active": False, "expired": True,
+                                     "severity": prev.get("severity") or prev_item.get("severity"),
+                                     "updated_at": NOW.isoformat(),
+                                     "first_seen": prev.get("first_seen"),
+                                     "expires_at": prev.get("expires_at"),
+                                     "expired_at": expired_at, "grace_until": grace_until,
+                                     "item": prev_item, "cooldowns": cooldowns}
+                              print(f"EXPIRED (grace until {grace_until}): {prev_item['id']} - {prev_item['title']}")
+                          else:
+                              out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
+                                     "first_seen": None, "expires_at": None, "item": None,
+                                     "cooldowns": cooldowns}
+                              print("Expired item past its 6-hour grace - writing inactive breaking.json")
                   else:
                       out = {"active": False, "severity": None, "updated_at": NOW.isoformat(),
-                             "first_seen": None, "expires_at": None, "item": None}
+                             "first_seen": None, "expires_at": None, "item": None,
+                             "cooldowns": cooldowns}
                       print("No qualifying breaking signal - writing inactive breaking.json")
               with open("breaking.json", "w") as f:
                   json.dump(out, f, indent=1)
@@ -392,3 +494,4 @@ jobs:
             git rebase "origin/$branch" || git rebase --abort
           done
           git push origin "HEAD:$branch"
+
