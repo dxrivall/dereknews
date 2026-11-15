@@ -1,20 +1,8 @@
 {
  "active": false,
- "expired": true,
- "severity": "massive",
- "updated_at": "2026-11-15T12:07:15.017445+00:00",
- "first_seen": "2026-11-15T04:24:40.019977+00:00",
- "expires_at": "2026-11-15T08:21:54.579711+00:00",
- "expired_at": "2026-11-15T06:16:17.253372+00:00",
- "grace_until": "2026-11-15T12:16:17.253372+00:00",
- "item": {
-  "id": "nationwide-ground-stop-2026-11-15",
-  "severity": "massive",
-  "title": "Student pilot forced to land amid nationwide ground stop",
-  "what": "The FAA has issued a nationwide ground stop, halting departing flights at U.S. airports \u2014 all airlines \u2014 until further notice. This is a ground stop, not emergency landings: planes already in the air keep flying and land normally.",
-  "means": "If you or family are flying today, expect major delays and cancellations nationwide, even at airports that look fine.",
-  "do": "Check with your airline before heading to the airport, and keep checking \u2014 schedules will keep changing while the stop is in effect.",
-  "source": "CNN, AP (all reporting this now)",
-  "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTVRyNnRyX1NQa215dTVZdS1OR1lLVlRjM2tiTkh4MXVoWjJJVjhXbVlYQllkbUZLd2pnWnBNSFp6WTJTT3pYWmEyaExXc2MtOUpfRlhLbk5mYUlFXzVOY2lpZnpwM1YwRW50S2tsQWt0SHVqVklaOTRwakt6RHJrbFZSUzB0NnU4Q3Q4V0pubDFTWnQzZnl1YlE0NnJsenpqa1pzV0JrLUpzM0t4TVprUkZrWQ?oc=5"
- }
+ "severity": null,
+ "updated_at": "2026-11-15T12:57:17.760563+00:00",
+ "first_seen": null,
+ "expires_at": null,
+ "item": null
 }
