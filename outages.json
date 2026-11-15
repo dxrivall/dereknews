@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-15T15:39:21.003333+00:00",
+ "updated_at": "2026-11-15T16:16:50.586054+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 5453,
-  "pct": 0.07,
-  "source_updated": "2026-11-15T15:34:47+00:00",
+  "out": 4889,
+  "pct": 0.06,
+  "source_updated": "2026-11-15T16:13:50+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -17,32 +17,20 @@
    {
     "name": "New York State Electric & Gas",
     "tracked": 919169,
-    "out": 624,
-    "pct": 0.07
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 526,
-    "pct": 0.05
+    "out": 550,
+    "pct": 0.06
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
-    "out": 110,
-    "pct": 2.06
+    "out": 212,
+    "pct": 3.97
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315411,
-    "out": 92,
+    "out": 93,
     "pct": 0.03
-   },
-   {
-    "name": "National Grid",
-    "tracked": 1698909,
-    "out": 85,
-    "pct": 0.01
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -57,9 +45,21 @@
     "pct": 0.02
    },
    {
+    "name": "National Grid",
+    "tracked": 1698909,
+    "out": 16,
+    "pct": 0.0
+   },
+   {
     "name": "Con Edison",
     "tracked": 3626606,
     "out": 5,
+    "pct": 0.0
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 2,
     "pct": 0.0
    },
    {
@@ -96,22 +96,22 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 50,
-  "source_updated": "2026-11-15T15:34:45+00:00",
-  "pct": 0.02,
+  "out": 24,
+  "source_updated": "2026-11-15T16:13:49+00:00",
+  "pct": 0.01,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 50,
-    "pct": 0.02
+    "out": 0,
+    "pct": 0.0
    },
    {
     "name": "New York State Electric & Gas",
     "tracked": 8153,
-    "out": 0,
-    "pct": 0.0
+    "out": 24,
+    "pct": 0.29
    },
    {
     "name": "Rochester Gas & Electric Corp",
