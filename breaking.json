@@ -1,20 +1,17 @@
 {
- "active": false,
- "expired": true,
+ "active": true,
  "severity": "massive",
- "updated_at": "2026-11-15T03:25:29.146086+00:00",
- "first_seen": "2026-11-14T20:10:20.714894+00:00",
- "expires_at": "2026-11-15T01:00:23.091299+00:00",
- "expired_at": "2026-11-14T22:37:42.704813+00:00",
- "grace_until": "2026-11-15T04:37:42.704813+00:00",
+ "updated_at": "2026-11-15T04:24:40.019977+00:00",
+ "first_seen": "2026-11-15T04:24:40.019977+00:00",
+ "expires_at": "2026-11-15T07:24:40.019977+00:00",
  "item": {
-  "id": "nationwide-ground-stop-2026-11-14",
+  "id": "nationwide-ground-stop-2026-11-15",
   "severity": "massive",
-  "title": "What we know about the cause of the nationwide FAA ground stop",
+  "title": "Student pilot forced to land amid nationwide ground stop",
   "what": "The FAA has issued a nationwide ground stop, halting departing flights at U.S. airports \u2014 all airlines \u2014 until further notice. This is a ground stop, not emergency landings: planes already in the air keep flying and land normally.",
   "means": "If you or family are flying today, expect major delays and cancellations nationwide, even at airports that look fine.",
   "do": "Check with your airline before heading to the airport, and keep checking \u2014 schedules will keep changing while the stop is in effect.",
   "source": "CNN, AP (all reporting this now)",
-  "source_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5rZWdfank0eHF1WGZYVEtPVlF2ZVZIRDlicFBrdTVPblphdnJJOXQ1YWRicHdGZFpWT3ZmWkozelMtMXF3YXdBMkhMVzJCalhmMVBORWNCSG45dkNJWnhmWjUyWnVvZ1lRMVYwcmlHY3VXNG5JTjl3?oc=5"
+  "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTVRyNnRyX1NQa215dTVZdS1OR1lLVlRjM2tiTkh4MXVoWjJJVjhXbVlYQllkbUZLd2pnWnBNSFp6WTJTT3pYWmEyaExXc2MtOUpfRlhLbk5mYUlFXzVOY2lpZnpwM1YwRW50S2tsQWt0SHVqVklaOTRwakt6RHJrbFZSUzB0NnU4Q3Q4V0pubDFTWnQzZnl1YlE0NnJsenpqa1pzV0JrLUpzM0t4TVprUkZrWQ?oc=5"
  }
 }
