@@ -1,65 +1,65 @@
 {
- "updated_at": "2026-11-15T20:24:13.175680+00:00",
+ "updated_at": "2026-11-15T21:00:09.903288+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 4613,
+  "out": 4642,
   "pct": 0.06,
-  "source_updated": "2026-11-15T20:14:07+00:00",
+  "source_updated": "2026-11-15T20:53:55+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
-    "out": 3297,
-    "pct": 63.86
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919169,
-    "out": 474,
-    "pct": 0.05
+    "out": 3296,
+    "pct": 63.84
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 419,
+    "out": 417,
     "pct": 0.02
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919169,
+    "out": 402,
+    "pct": 0.04
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 172,
+    "pct": 0.01
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315411,
-    "out": 201,
-    "pct": 0.06
+    "out": 144,
+    "pct": 0.05
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
-    "out": 102,
-    "pct": 1.91
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 62,
-    "pct": 0.03
+    "out": 101,
+    "pct": 1.89
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392028,
-    "out": 39,
+    "out": 68,
+    "pct": 0.02
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 31,
     "pct": 0.01
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 10,
-    "pct": 0.0
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 9,
+    "out": 11,
     "pct": 0.0
    },
    {
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 57,
-  "source_updated": "2026-11-15T20:14:06+00:00",
+  "source_updated": "2026-11-15T20:53:54+00:00",
   "pct": 0.03,
   "name": "Onondaga County",
   "utilities": [
