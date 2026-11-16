@@ -130,16 +130,32 @@ html,body{overflow-x:hidden}
 .wx-strip .big{font-size:34px;font-weight:500;line-height:1}.wx-strip .cond{font-size:14px;color:var(--soft)}
 .wx-strip .go{margin-left:auto;background:#005dab;color:#fff;text-decoration:none;font-weight:500;font-size:14px;padding:11px 16px;border-radius:6px;min-height:44px;display:inline-flex;align-items:center;border:0;cursor:pointer;font:inherit}
 @media(max-width:480px){.wx-strip .go{margin-left:0;width:100%;justify-content:center}}
-/* Apple Weather themes — condition-tinted gradients (Home weather widget ONLY — the Weather tab uses the live-condition photo background, never this gradient) */
-.wx-dn.wxth-clear-day{background:linear-gradient(180deg,#2f62a8 0%,#4a90d9 48%,#7ab3ec 100%)}
-.wx-dn.wxth-clear-night{background:linear-gradient(180deg,#060b1f 0%,#16234a 55%,#2e4470 100%)}
-.wx-dn.wxth-partly-day{background:linear-gradient(180deg,#3a6fb5 0%,#5f97d6 52%,#8fb8e8 100%)}
-.wx-dn.wxth-partly-night{background:linear-gradient(180deg,#0a1226 0%,#1e3054 55%,#3a4f78 100%)}
-.wx-dn.wxth-cloudy{background:linear-gradient(180deg,#4a5d71 0%,#687d92 52%,#8a9cae 100%)}
-.wx-dn.wxth-fog{background:linear-gradient(180deg,#5a6672 0%,#7a8794 52%,#9aa7b1 100%)}
-.wx-dn.wxth-rain{background:linear-gradient(180deg,#273849 0%,#3d5a74 52%,#5a7a99 100%)}
-.wx-dn.wxth-snow{background:linear-gradient(180deg,#4a7296 0%,#6f97b8 52%,#93b6d4 100%)}
-.wx-dn.wxth-storm{background:linear-gradient(180deg,#1f1c38 0%,#38345e 52%,#5a5488 100%)}
+/* Apple Weather themes — condition + sun-up/sun-down gradients (Home
+   weather widget ONLY — the Weather tab uses its own live animated
+   background, never this gradient). EVERY condition has a day and a
+   night version (Nov 16 evening, Derek: "make the widget change based
+   on condition + sun up or down. Rn its clear so it should just be
+   darker"): after sunset the widget goes properly dark for clear,
+   partly cloudy, overcast, fog, rain, snow and storm alike. Clear
+   night is near-black navy with a star field and a faint moon glow;
+   partly night keeps a few faint stars. The class is chosen by
+   wxThemeClass() from the live Open-Meteo code + wxIsDayNow(), which
+   resolves day/night from that feed's actual sunrise/sunset. */
+.wx-dn.wxth-clear-day{background:radial-gradient(ellipse 85% 55% at 85% -10%,rgba(255,224,130,.45),rgba(255,224,130,0) 70%),linear-gradient(180deg,#2e63b8 0%,#4a90d9 48%,#7ab0e8 100%)}
+.wx-dn.wxth-clear-night{background:radial-gradient(1.6px 1.6px at 14% 20%,rgba(255,255,255,.95),rgba(255,255,255,0) 100%),radial-gradient(1.3px 1.3px at 32% 62%,rgba(255,255,255,.75),rgba(255,255,255,0) 100%),radial-gradient(1.8px 1.8px at 55% 14%,rgba(255,255,255,.9),rgba(255,255,255,0) 100%),radial-gradient(1.2px 1.2px at 68% 44%,rgba(255,255,255,.7),rgba(255,255,255,0) 100%),radial-gradient(1.5px 1.5px at 88% 66%,rgba(255,255,255,.8),rgba(255,255,255,0) 100%),radial-gradient(1.2px 1.2px at 8% 78%,rgba(255,255,255,.65),rgba(255,255,255,0) 100%),radial-gradient(1.4px 1.4px at 44% 84%,rgba(255,255,255,.6),rgba(255,255,255,0) 100%),radial-gradient(ellipse 90% 55% at 82% -10%,rgba(190,205,255,.20),rgba(190,205,255,0) 70%),linear-gradient(180deg,#01030d 0%,#060b1f 52%,#111d3d 100%)}
+.wx-dn.wxth-partly-day{background:radial-gradient(ellipse 85% 55% at 85% -10%,rgba(255,224,130,.32),rgba(255,224,130,0) 70%),linear-gradient(180deg,#35649e 0%,#5b8cc4 52%,#8fb4de 100%)}
+.wx-dn.wxth-partly-night{background:radial-gradient(1.4px 1.4px at 20% 24%,rgba(255,255,255,.8),rgba(255,255,255,0) 100%),radial-gradient(1.2px 1.2px at 62% 16%,rgba(255,255,255,.65),rgba(255,255,255,0) 100%),radial-gradient(1.3px 1.3px at 84% 52%,rgba(255,255,255,.6),rgba(255,255,255,0) 100%),linear-gradient(180deg,#050a18 0%,#0e1b36 55%,#22345c 100%)}
+.wx-dn.wxth-cloudy-day{background:linear-gradient(180deg,#54687e 0%,#71869c 52%,#93a6b8 100%)}
+.wx-dn.wxth-cloudy-night{background:linear-gradient(180deg,#0b1220 0%,#1b2739 55%,#2e4059 100%)}
+.wx-dn.wxth-fog-day{background:linear-gradient(180deg,#66727e 0%,#87939e 52%,#a7b1ba 100%)}
+.wx-dn.wxth-fog-night{background:linear-gradient(180deg,#0d1420 0%,#212d3d 55%,#37485e 100%)}
+.wx-dn.wxth-rain-day{background:linear-gradient(180deg,#22374e 0%,#35536f 52%,#52708e 100%)}
+.wx-dn.wxth-rain-night{background:linear-gradient(180deg,#04070f 0%,#0d1828 55%,#1d3049 100%)}
+.wx-dn.wxth-snow-day{background:linear-gradient(180deg,#4e7ca6 0%,#749cc0 52%,#a3c2dc 100%)}
+.wx-dn.wxth-snow-night{background:linear-gradient(180deg,#0a1526 0%,#1d3350 55%,#33507a 100%)}
+.wx-dn.wxth-storm-day{background:linear-gradient(180deg,#232038 0%,#3b3660 52%,#5b5590 100%)}
+.wx-dn.wxth-storm-night{background:linear-gradient(180deg,#030309 0%,#0c0a1e 55%,#1e1a3d 100%)}
+#homeWxWidget[class*="-night"]{box-shadow:0 14px 34px rgba(2,6,20,.55);border:1px solid rgba(255,255,255,.14)}
 /* Apple Weather components — Home weather widget only */
 #homeWxWidget{color:#fff;border:0;border-radius:22px;padding:12px 14px 10px;box-shadow:0 12px 32px rgba(25,55,100,.38);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Roboto,Arial,sans-serif;text-align:center;overflow:hidden;text-shadow:0 1px 4px rgba(0,30,60,.18)}
 .wxd-go{flex:none;background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.38);color:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
@@ -589,9 +605,9 @@ body>.teams-overlay{z-index:2000}
    under the hourly row — the separate weekly summary card that used
    to carry that button is gone. */
 #homeWxWidget .wxd-topicon{line-height:0}
-#homeWxWidget .wxd-topicon svg{width:36px;height:36px;display:block;filter:drop-shadow(0 2px 5px rgba(0,30,60,.25))}
+#homeWxWidget .wxd-topicon svg{width:40px;height:40px;display:block;filter:drop-shadow(0 2px 5px rgba(0,30,60,.25))}
 #homeWxWidget .wxd-h .i{line-height:0;display:flex;justify-content:center}
-#homeWxWidget .wxd-h .i svg{width:27px;height:27px;display:block;filter:drop-shadow(0 1px 3px rgba(0,30,60,.22))}
+#homeWxWidget .wxd-h .i svg{width:28px;height:28px;display:block;filter:drop-shadow(0 1px 3px rgba(0,30,60,.22))}
 #homeWxWidget .wxd-fullbtn{appearance:none;display:block;width:100%;margin-top:14px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(10px) saturate(160%);backdrop-filter:blur(10px) saturate(160%);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;text-shadow:0 1px 3px rgba(0,30,60,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
 #homeWxWidget .wxd-fullbtn:active{background:rgba(255,255,255,.34)}
 </style>
@@ -760,7 +776,8 @@ body>.teams-overlay{z-index:2000}
        huge temp with condition word + H/L on the right, then ONE row of
        6 hours (hour / icon / temp). Nothing else. Whole card taps
        through to the Weather tab. Same live Open-Meteo data as before. -->
-  <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget — tap for the full forecast" data-go="weather" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+  <section class="hwidget wx-dn wxth-cloudy-day" id="homeWxWidget" aria-label="Weather widget — tap for the full forecast" data-go="weather" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="wxgSun" gradientUnits="userSpaceOnUse" x1="0" y1="4" x2="0" y2="44"><stop offset="0" stop-color="#FFE45C"/><stop offset="0.55" stop-color="#FFCC02"/><stop offset="1" stop-color="#FF9500"/></linearGradient><linearGradient id="wxgMoon" gradientUnits="userSpaceOnUse" x1="0" y1="4" x2="0" y2="44"><stop offset="0" stop-color="#FFF8D6"/><stop offset="1" stop-color="#FFD60A"/></linearGradient><linearGradient id="wxgCloud" gradientUnits="userSpaceOnUse" x1="0" y1="6" x2="0" y2="42"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D7DEE9"/></linearGradient><linearGradient id="wxgCloudBack" gradientUnits="userSpaceOnUse" x1="0" y1="2" x2="0" y2="38"><stop offset="0" stop-color="#C3CFDE"/><stop offset="1" stop-color="#93A5BB"/></linearGradient><linearGradient id="wxgCloudDark" gradientUnits="userSpaceOnUse" x1="0" y1="6" x2="0" y2="42"><stop offset="0" stop-color="#A7B3C4"/><stop offset="1" stop-color="#66748A"/></linearGradient><linearGradient id="wxgDrop" gradientUnits="userSpaceOnUse" x1="0" y1="28" x2="0" y2="48"><stop offset="0" stop-color="#8FD8FF"/><stop offset="1" stop-color="#0A84FF"/></linearGradient><linearGradient id="wxgBolt" gradientUnits="userSpaceOnUse" x1="0" y1="24" x2="0" y2="48"><stop offset="0" stop-color="#FFE45C"/><stop offset="1" stop-color="#FF9F0A"/></linearGradient></defs></svg>
     <div class="wxd-toprow"><button type="button" class="wxd-loc home-locpill" id="homeLocBar" aria-label="Location — tap to change it" aria-expanded="false" aria-controls="homeLocPop" title="Location — tap to change it"><span id="homeLocLabel">Cicero, NY</span><svg class="dn-loc-ic" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg><span class="home-locchev" aria-hidden="true">▾</span></button><div class="wxd-topicon" id="stripIcon" aria-hidden="true">🌡️</div></div>
     <div class="home-locpop" id="homeLocPop" hidden>
     <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="homeUseLoc"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg> Use my location</button><button type="button" class="wxloc-btn" id="homeUseCicero" hidden>&larr; Back to Cicero, NY</button></div>
@@ -2398,32 +2415,89 @@ body.on-christmas{color-scheme:light}
      and night. Daily rows keep the plain day icon on purpose: a
      daily code summarises the whole day. */
   /* Apple Weather-style icons — Home widget ONLY (Derek, Nov 16:
-     "use icons similar to apples"). Inline SVGs in Apple's flat
-     colour language: golden sun, pale crescent moon, white-grey
-     cloud, blue rain drops, snowflakes, yellow lightning bolt.
-     wxAppleIcon(code, isDay) returns the SVG markup; the label still
-     comes from infoAt, so wording and the after-sunset moon rule are
-     unchanged. The Weather tab keeps its emoji icons. */
+     "use icons similar to apples", then "the weather widget icons
+     are ugly modernize them"). Modern set: smooth single-silhouette
+     clouds shaded by shared userSpace gradients (the defs block sits
+     inside #homeWxWidget), a gradient sun with short rounded rays, a
+     true crescent moon with a star sparkle, gradient rain drops,
+     six-spoke snowflakes and a gradient bolt — SF Symbols / Apple
+     Weather language, no outlines or emoji. wxAppleIcon(code, isDay)
+     returns the SVG markup; the label still comes from infoAt, so
+     wording and the after-sunset moon rule are unchanged. The
+     Weather tab keeps its emoji icons. */
   function wxSvgWrap(inner){return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">'+inner+'</svg>';}
-  function wxSunSvg(x,y,r){var s='<g stroke="#FF9500" stroke-width="2.6" stroke-linecap="round">';var pts=[[0,-1.55],[1.1,-1.1],[1.55,0],[1.1,1.1],[0,1.55],[-1.1,1.1],[-1.55,0],[-1.1,-1.1]];for(var i=0;i<pts.length;i++){s+='<line x1="'+(x+pts[i][0]*r*1.18).toFixed(1)+'" y1="'+(y+pts[i][1]*r*1.18).toFixed(1)+'" x2="'+(x+pts[i][0]*r*1.52).toFixed(1)+'" y2="'+(y+pts[i][1]*r*1.52).toFixed(1)+'"/>';}return s+'</g><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#FFCC02" stroke="#FF9500" stroke-width="1.6"/>';}
-  function wxMoonSvg(x,y,r){return '<path d="M '+(x+r*0.95)+' '+(y-r*0.85)+' A '+r+' '+r+' 0 1 0 '+(x+r*0.95)+' '+(y+r*0.85)+' A '+(r*0.78)+' '+(r*0.78)+' 0 1 1 '+(x+r*0.95)+' '+(y-r*0.85)+' Z" fill="#FFE98A" stroke="#F5C542" stroke-width="1.4" stroke-linejoin="round"/><circle cx="'+(x+r*0.55)+'" cy="'+(y-r*0.55)+'" r="1.5" fill="#FFF3B0"/>';}
-  function wxCloudSvg(cx,cy,s,front,back){var p='<path d="M '+(cx-11*s)+' '+(cy+7*s)+' a '+(7*s)+' '+(7*s)+' 0 0 1 '+ (1.5*s)+' '+( -13.5*s)+' a '+(8.5*s)+' '+(8.5*s)+' 0 0 1 '+(16*s)+' '+(2.5*s)+' a '+(6*s)+' '+(6*s)+' 0 0 1 '+( -1*s)+' '+(11*s)+' Z" fill="BACK"/>';var out='';if(back)out+=p.replace('BACK',back);return out+p.replace('BACK',front);}
-  function wxDropsSvg(cx,cy,n,heavy){var s='';for(var i=0;i<n;i++){var dx=cx+(i-(n-1)/2)*8;s+='<line x1="'+dx+'" y1="'+cy+'" x2="'+(dx-2.5)+'" y2="'+(cy+(heavy?9:7))+'" stroke="#64D2FF" stroke-width="3" stroke-linecap="round"/>';}return s;}
-  function wxFlakeAt(x,y){return '<g stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"><line x1="'+(x-3.2)+'" y1="'+y+'" x2="'+(x+3.2)+'" y2="'+y+'"/><line x1="'+(x-1.6)+'" y1="'+(y-2.8)+'" x2="'+(x+1.6)+'" y2="'+(y+2.8)+'"/><line x1="'+(x+1.6)+'" y1="'+(y-2.8)+'" x2="'+(x-1.6)+'" y2="'+(y+2.8)+'"/></g>';}
-  function wxFlakesSvg(cx,cy){var s='';[-8,0,8].forEach(function(dx){s+=wxFlakeAt(cx+dx,cy);});return s;}
+  function wxSunAt(x,y,r){
+    var s='<g stroke="#FFB340" stroke-width="3" stroke-linecap="round">';
+    var pts=[[0,-1],[1,-1],[1,0],[1,1],[0,1],[-1,1],[-1,0],[-1,-1]];
+    for(var i=0;i<pts.length;i++){
+      var ux=pts[i][0],uy=pts[i][1];
+      if(ux!==0&&uy!==0){ux*=0.7071;uy*=0.7071;}
+      s+='<line x1="'+(x+ux*(r+2.6)).toFixed(1)+'" y1="'+(y+uy*(r+2.6)).toFixed(1)+'" x2="'+(x+ux*(r+6.2)).toFixed(1)+'" y2="'+(y+uy*(r+6.2)).toFixed(1)+'"/>';
+    }
+    return s+'</g><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="url(#wxgSun)"/>';
+  }
+  function wxMoonAt(x,y,r){
+    var dx=(r*0.574).toFixed(1),dy=(r*0.819).toFixed(1),ri=(r*0.82).toFixed(1);
+    var top=(x+ +dx)+','+(y- +dy),bot=(x+ +dx)+','+(y+ +dy);
+    return '<path d="M '+top+' A '+r+' '+r+' 0 1 0 '+bot+' A '+ri+' '+ri+' 0 1 1 '+top+' Z" fill="url(#wxgMoon)"/>';
+  }
+  function wxSparkle(x,y,s){
+    return '<path d="M '+x+' '+(y-s)+' C '+(x+s*0.16)+' '+(y-s*0.16)+' '+(x+s*0.16)+' '+(y-s*0.16)+' '+(x+s)+' '+y+' C '+(x+s*0.16)+' '+(y+s*0.16)+' '+(x+s*0.16)+' '+(y+s*0.16)+' '+x+' '+(y+s)+' C '+(x-s*0.16)+' '+(y+s*0.16)+' '+(x-s*0.16)+' '+(y+s*0.16)+' '+(x-s)+' '+y+' C '+(x-s*0.16)+' '+(y-s*0.16)+' '+(x-s*0.16)+' '+(y-s*0.16)+' '+x+' '+(y-s)+' Z" fill="#FFF6C9"/>';
+  }
+  function wxCloudShapes(){
+    return '<circle cx="16.5" cy="27.5" r="6.2"/><circle cx="25.5" cy="21" r="8.6"/><circle cx="34" cy="27" r="6.4"/><rect x="10.5" y="26" width="29" height="9" rx="4.5"/>';
+  }
+  function wxCloud(tx,ty,s,fill,back){
+    var out='';
+    if(back)out+='<g transform="translate('+(tx-5)+' '+(ty-5)+') scale('+(s*0.92)+')" fill="'+back+'">'+wxCloudShapes()+'</g>';
+    return out+'<g transform="translate('+tx+' '+ty+') scale('+s+')" fill="'+fill+'">'+wxCloudShapes()+'</g>';
+  }
+  function wxDrops(cx,cy,n,heavy){
+    var s='';var len=heavy?9:7.5;
+    for(var i=0;i<n;i++){
+      var dx=cx+(i-(n-1)/2)*8.5;
+      s+='<line x1="'+dx+'" y1="'+cy+'" x2="'+(dx-2.6)+'" y2="'+(cy+len)+'" stroke="url(#wxgDrop)" stroke-width="3.2" stroke-linecap="round"/>';
+    }
+    return s;
+  }
+  function wxFlakeAt(x,y){
+    var s='<g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round">';
+    var a=[[3.4,0],[1.7,2.94],[-1.7,2.94]];
+    for(var i=0;i<3;i++){s+='<line x1="'+(x-a[i][0])+'" y1="'+(y-a[i][1])+'" x2="'+(x+a[i][0])+'" y2="'+(y+a[i][1])+'"/>';}
+    return s+'</g>';
+  }
+  function wxFlakes(cx,cy,n){
+    var s='';for(var i=0;i<n;i++){s+=wxFlakeAt(cx+(i-(n-1)/2)*9,cy);}return s;
+  }
   function wxAppleIcon(c,isDay){
     var night=(isDay===0||isDay===false);
-    if(c===0||c===1){return night?wxSvgWrap(wxMoonSvg(22,22,13)):wxSvgWrap(wxSunSvg(24,24,10));}
-    if(c===2){return night?wxSvgWrap(wxMoonSvg(17,15,8)+wxCloudSvg(27,29,1.05,'#F2F2F7','#C7C7CC')):wxSvgWrap(wxSunSvg(16,15,7.5)+wxCloudSvg(27,29,1.05,'#F2F2F7','#D1D1D6'));}
-    if(c===3){return wxSvgWrap(wxCloudSvg(21,17,0.95,'#D1D1D6','')+wxCloudSvg(27,28,1.05,'#F2F2F7',''));}
-    if(c===45||c===48){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#E5E5EA','')+'<g stroke="#AEAEB2" stroke-width="2.6" stroke-linecap="round"><line x1="14" y1="35" x2="34" y2="35"/><line x1="18" y1="41" x2="30" y2="41"/></g>');}
-    if(c>=51&&c<=57){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxDropsSvg(24,33,2,false));}
-    if(c===71||c===73||c===85||c===86){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxFlakesSvg(24,36));}
-    if(c===75||c===77){return wxSvgWrap(wxCloudSvg(24,18,1.1,'#F2F2F7','#D1D1D6')+wxFlakesSvg(24,35)+wxFlakesSvg(24,42));}
-    if(c===95||c===96||c===99){var hail=(c===96||c===99)?'<circle cx="15" cy="38" r="2.2" fill="#F2F2F7"/><circle cx="33" cy="38" r="2.2" fill="#F2F2F7"/>':'';return wxSvgWrap(wxCloudSvg(24,18,1.05,'#E5E5EA','#C7C7CC')+'<path d="M 26 27 L 19 39 h 5 L 21.5 47 L 31 34 h -5.5 L 29 27 Z" fill="#FFD60A" stroke="#FF9500" stroke-width="1.2" stroke-linejoin="round"/>'+hail);}
-    if(c===66||c===67){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxDropsSvg(24,32,2,false)+wxFlakeAt(24,42));}
-    if((c>=61&&c<=65)||(c>=80&&c<=82)){var heavy=(c===65||c===82);return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxDropsSvg(24,33,heavy?3:3,heavy));}
-    return wxSvgWrap(wxCloudSvg(24,24,1.1,'#F2F2F7','#D1D1D6'));
+    var CL='url(#wxgCloud)',CB='url(#wxgCloudBack)',CD='url(#wxgCloudDark)';
+    if(c===0||c===1){
+      return night?wxSvgWrap(wxMoonAt(22,23,13.5)+wxSparkle(37,10,4.6))
+                  :wxSvgWrap(wxSunAt(24,24,9));
+    }
+    if(c===2){
+      return night?wxSvgWrap(wxMoonAt(15.5,14.5,8)+wxSparkle(38,8,3.4)+wxCloud(5,8,0.94,CL))
+                  :wxSvgWrap(wxSunAt(16,15,6.4)+wxCloud(5,8,0.94,CL));
+    }
+    if(c===3){return wxSvgWrap(wxCloud(1,4,0.97,CL,CB));}
+    if(c===45||c===48){
+      return wxSvgWrap(wxCloud(0,-4,1,CL)+'<g stroke="#DCE3EE" stroke-width="3" stroke-linecap="round" opacity="0.9"><line x1="13" y1="38.5" x2="35" y2="38.5"/><line x1="17" y1="44" x2="31" y2="44"/></g>');
+    }
+    if(c>=51&&c<=57){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxDrops(24,35,2,false));}
+    if(c===71||c===85){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxFlakes(24,38,3));}
+    if(c===73||c===86){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxFlakes(24,38,3)+wxFlakeAt(19.5,45)+wxFlakeAt(28.5,45));}
+    if(c===75||c===77){return wxSvgWrap(wxCloud(0,-6,1,CD,CB)+wxFlakes(24,37,3)+wxFlakeAt(19.5,44)+wxFlakeAt(28.5,44));}
+    if(c===95||c===96||c===99){
+      var hail=(c===96||c===99)?'<circle cx="12.5" cy="41" r="2.3" fill="#EAF6FF"/><circle cx="36" cy="41" r="2.3" fill="#EAF6FF"/>':'';
+      return wxSvgWrap(wxCloud(0,-6,1,CD,CB)+'<path d="M 26.5 27 L 18.5 39.5 h 5.2 L 20.8 47 L 31.5 34.5 h -5.8 L 29.5 27 Z" fill="url(#wxgBolt)"/>'+hail);
+    }
+    if(c===66||c===67){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxDrops(20,35,2,false)+wxFlakeAt(29,39));}
+    if((c>=61&&c<=65)||(c>=80&&c<=82)){
+      var heavy=(c===65||c===82);
+      return wxSvgWrap(wxCloud(0,-5,1,heavy?CD:CL,CB)+wxDrops(24,35,3,heavy));
+    }
+    return wxSvgWrap(wxCloud(0,2,1,CL,CB));
   }
   function infoApple(c,isDay){var base=infoAt(c,isDay);return [wxAppleIcon(c,isDay?1:0),base[1]];}
   function infoAt(c,isDay){if(!isDay){if(c===0)return ['🌙','Clear sky'];if(c===1)return ['🌙','Mainly clear'];if(c===2)return ['🌙☁️','Partly cloudy'];}return info(c);}
@@ -2453,16 +2527,32 @@ body.on-christmas{color-scheme:light}
     if((code>=61&&code<=67)||(code>=80&&code<=82))return 'rain';
     return 'cloudy';
   }
+  /* Sun up or down for the CURRENT conditions (Nov 16 evening,
+     Derek: clear after dark "should just be darker"). The feed's own
+     sunrise/sunset for today decide whenever they are present —
+     that is the actual sun, not a flag that can disagree with it —
+     and is_day is the fallback, normalised to 1 / 0 either way. */
+  function wxIsDayNow(cur,daily){
+    if(cur&&cur.time&&daily&&daily.sunrise&&daily.sunrise[0]&&daily.sunset&&daily.sunset[0]){
+      var t=String(cur.time).slice(0,16);
+      return (t>=String(daily.sunrise[0]).slice(0,16)&&t<String(daily.sunset[0]).slice(0,16))?1:0;
+    }
+    if(cur&&cur.is_day!=null)return cur.is_day?1:0;
+    return 1;
+  }
+  /* Home widget theme: condition x day/night — every condition has
+     both versions, so the widget darkens after sunset no matter
+     what the sky is doing. */
   function wxThemeClass(code,isDay){
-    if(code===0||code===1) return isDay===0?'wxth-clear-night':'wxth-clear-day';
-    if(code===2) return isDay===0?'wxth-partly-night':'wxth-partly-day';
-    if(code===3) return 'wxth-cloudy';
-    if(code===45||code===48) return 'wxth-fog';
-    if(code>=51&&code<=57) return 'wxth-rain';
-    if(code===71||code===73||code===75||code===77||code===85||code===86) return 'wxth-snow';
-    if(code===95||code===96||code===99) return 'wxth-storm';
-    if((code>=61&&code<=67)||(code>=80&&code<=82)) return 'wxth-rain';
-    return 'wxth-cloudy';
+    var dn=(isDay===0||isDay===false)?'night':'day';
+    if(code===0||code===1) return 'wxth-clear-'+dn;
+    if(code===2) return 'wxth-partly-'+dn;
+    if(code===3) return 'wxth-cloudy-'+dn;
+    if(code===45||code===48) return 'wxth-fog-'+dn;
+    if(code===71||code===73||code===75||code===77||code===85||code===86) return 'wxth-snow-'+dn;
+    if(code===95||code===96||code===99) return 'wxth-storm-'+dn;
+    if((code>=51&&code<=67)||(code>=80&&code<=82)) return 'wxth-rain-'+dn;
+    return 'wxth-cloudy-'+dn;
   }
   var wxLive={mode:'cloudy',day:1,parts:[],flash:0,nextFlash:3000,started:false,reduced:false};
   try{wxLive.reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
@@ -2524,7 +2614,7 @@ body.on-christmas{color-scheme:light}
     if(bg){bg.style.backgroundImage='';bg.style.background='';bg.setAttribute('data-mode',full);if(phase)bg.setAttribute('data-phase',phase);else bg.removeAttribute('data-phase');}
     wxLive.mode=base;wxLive.day=isDay?1:0;wxLiveSize();wxLiveBuild();wxLiveStart();
     var th=wxThemeClass(code,isDay);
-    var hw=document.getElementById('homeWxWidget');if(hw){hw.classList.remove('wxth-clear-day','wxth-clear-night','wxth-partly-day','wxth-partly-night','wxth-cloudy','wxth-fog','wxth-rain','wxth-snow','wxth-storm');hw.classList.add(th);}
+    var hw=document.getElementById('homeWxWidget');if(hw){hw.classList.remove('wxth-clear-day','wxth-clear-night','wxth-partly-day','wxth-partly-night','wxth-cloudy-day','wxth-cloudy-night','wxth-fog-day','wxth-fog-night','wxth-rain-day','wxth-rain-night','wxth-snow-day','wxth-snow-night','wxth-storm-day','wxth-storm-night','wxth-cloudy','wxth-fog','wxth-rain','wxth-snow','wxth-storm');hw.classList.add(th);}
   }
   // Snow Day Calculator — built in, no outside site. The percent is figured
   // right here from the same live data this page already loads: the
@@ -2803,7 +2893,7 @@ body.on-christmas{color-scheme:light}
   }
   fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     snowWx=d; wxData=d; updateSnowDay(); 
-    var cur=d.current, ci=infoAt(cur.weather_code,(cur.is_day!=null?cur.is_day:((d.daily&&d.daily.sunrise&&d.daily.sunset&&cur.time)?((String(cur.time).slice(0,16)>=String(d.daily.sunrise[0]).slice(0,16)&&String(cur.time).slice(0,16)<String(d.daily.sunset[0]).slice(0,16))?1:0):1)));
+    var cur=d.current, dayNow=wxIsDayNow(cur,d.daily), ci=infoAt(cur.weather_code,dayNow);
     document.getElementById('wxIcon').textContent=ci[0];
     document.getElementById('wxTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('wxDesc').textContent=ci[1];
@@ -2856,8 +2946,8 @@ body.on-christmas{color-scheme:light}
     var __nh=document.getElementById('wxNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';/* Home widget: the next-hour chance rides on the Feels like | H | L line
    (homeWxFeelsLine, set above) instead of floating on its own under
    the condition icon. */if(__pp!=null){var __hf3=document.getElementById('homeWxFeelsLine');if(__hf3&&__hf3.textContent&&__hf3.textContent.indexOf('Next hour')<0)__hf3.textContent+=' \u00b7 Next hour '+__kind+' chance '+Math.round(__pp)+'%';}}
-    applyWxBg(cur.weather_code,cur.is_day,ci[1],cur.time);
-    document.getElementById('stripIcon').innerHTML=wxAppleIcon(cur.weather_code,(cur.is_day!=null?cur.is_day:((d.daily&&d.daily.sunrise&&d.daily.sunset&&cur.time)?((String(cur.time).slice(0,16)>=String(d.daily.sunrise[0]).slice(0,16)&&String(cur.time).slice(0,16)<String(d.daily.sunset[0]).slice(0,16))?1:0):1)));
+    applyWxBg(cur.weather_code,dayNow,ci[1],cur.time);
+    document.getElementById('stripIcon').innerHTML=wxAppleIcon(cur.weather_code,dayNow);
     document.getElementById('stripTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('stripCond').textContent=ci[1];
     var html='';
