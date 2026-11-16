@@ -598,16 +598,17 @@ body>.teams-overlay{z-index:2000}
 <style>
 /* == Nov 16 (evening): Home widget Apple-style icons + Full forecast
    button; Home weekly-summary (trend) card removed ==
-   Icons are inline SVGs drawn like Apple Weather (flat colour sun /
-   moon, white-grey cloud, blue rain, snowflakes, yellow bolt) instead
-   of emoji. They are sized here because SVG does not follow the old
-   emoji font-size. The Full forecast pill sits inside the widget,
-   under the hourly row — the separate weekly summary card that used
-   to carry that button is gone. */
+   Icons are inline SVGs drawn like the iOS Apple Weather widget in
+   Derek's screenshot: FLAT WHITE silhouettes only — white sun, moon,
+   cloud, rain, snow and bolt; no colour, no gradients, no shadows.
+   They are sized here because SVG does not follow the old emoji
+   font-size. The Full forecast pill sits inside the widget, under
+   the hourly row — the separate weekly summary card that used to
+   carry that button is gone. */
 #homeWxWidget .wxd-topicon{line-height:0}
-#homeWxWidget .wxd-topicon svg{width:40px;height:40px;display:block;filter:drop-shadow(0 2px 5px rgba(0,30,60,.25))}
+#homeWxWidget .wxd-topicon svg{width:40px;height:40px;display:block}
 #homeWxWidget .wxd-h .i{line-height:0;display:flex;justify-content:center}
-#homeWxWidget .wxd-h .i svg{width:28px;height:28px;display:block;filter:drop-shadow(0 1px 3px rgba(0,30,60,.22))}
+#homeWxWidget .wxd-h .i svg{width:28px;height:28px;display:block}
 #homeWxWidget .wxd-fullbtn{appearance:none;display:block;width:100%;margin-top:14px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(10px) saturate(160%);backdrop-filter:blur(10px) saturate(160%);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;text-shadow:0 1px 3px rgba(0,30,60,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
 #homeWxWidget .wxd-fullbtn:active{background:rgba(255,255,255,.34)}
 </style>
@@ -777,7 +778,6 @@ body>.teams-overlay{z-index:2000}
        6 hours (hour / icon / temp). Nothing else. Whole card taps
        through to the Weather tab. Same live Open-Meteo data as before. -->
   <section class="hwidget wx-dn wxth-cloudy-day" id="homeWxWidget" aria-label="Weather widget — tap for the full forecast" data-go="weather" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="wxgSun" gradientUnits="userSpaceOnUse" x1="0" y1="4" x2="0" y2="44"><stop offset="0" stop-color="#FFE45C"/><stop offset="0.55" stop-color="#FFCC02"/><stop offset="1" stop-color="#FF9500"/></linearGradient><linearGradient id="wxgMoon" gradientUnits="userSpaceOnUse" x1="0" y1="4" x2="0" y2="44"><stop offset="0" stop-color="#FFF8D6"/><stop offset="1" stop-color="#FFD60A"/></linearGradient><linearGradient id="wxgCloud" gradientUnits="userSpaceOnUse" x1="0" y1="6" x2="0" y2="42"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D7DEE9"/></linearGradient><linearGradient id="wxgCloudBack" gradientUnits="userSpaceOnUse" x1="0" y1="2" x2="0" y2="38"><stop offset="0" stop-color="#C3CFDE"/><stop offset="1" stop-color="#93A5BB"/></linearGradient><linearGradient id="wxgCloudDark" gradientUnits="userSpaceOnUse" x1="0" y1="6" x2="0" y2="42"><stop offset="0" stop-color="#A7B3C4"/><stop offset="1" stop-color="#66748A"/></linearGradient><linearGradient id="wxgDrop" gradientUnits="userSpaceOnUse" x1="0" y1="28" x2="0" y2="48"><stop offset="0" stop-color="#8FD8FF"/><stop offset="1" stop-color="#0A84FF"/></linearGradient><linearGradient id="wxgBolt" gradientUnits="userSpaceOnUse" x1="0" y1="24" x2="0" y2="48"><stop offset="0" stop-color="#FFE45C"/><stop offset="1" stop-color="#FF9F0A"/></linearGradient></defs></svg>
     <div class="wxd-toprow"><button type="button" class="wxd-loc home-locpill" id="homeLocBar" aria-label="Location — tap to change it" aria-expanded="false" aria-controls="homeLocPop" title="Location — tap to change it"><span id="homeLocLabel">Cicero, NY</span><svg class="dn-loc-ic" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg><span class="home-locchev" aria-hidden="true">▾</span></button><div class="wxd-topicon" id="stripIcon" aria-hidden="true">🌡️</div></div>
     <div class="home-locpop" id="homeLocPop" hidden>
     <div class="wxloc-controls"><button type="button" class="wxloc-btn" id="homeUseLoc"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg> Use my location</button><button type="button" class="wxloc-btn" id="homeUseCicero" hidden>&larr; Back to Cicero, NY</button></div>
@@ -1206,11 +1206,52 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .isw b{display:block;font-size:17px;font-weight:800;margin:0 0 3px}
 #view-news .isw span{font-size:13.5px;color:var(--soft);line-height:1.5}
 #view-news .isw:active{opacity:.75}
+#view-news .et-clock{display:flex;gap:16px;align-items:center;margin-top:10px}
+#view-news .et-clock-big{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+#view-news .et-clock-num{font-size:64px;font-weight:800;letter-spacing:-.03em;line-height:.95;color:#b42318;font-variant-numeric:tabular-nums}
+#view-news .et-clock-unit{font-size:13px;font-weight:800;line-height:1.25;text-transform:uppercase;letter-spacing:.04em}
+#view-news .et-clock-lab{font-size:15px;font-weight:800;margin:0 0 3px;line-height:1.3}
+#view-news .et-clock-sub{font-size:12.5px;color:var(--soft);line-height:1.5;margin:0}
+#view-news .et-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+#view-news .et-chip{font-size:12px;font-weight:700;border:1px solid var(--border);border-radius:999px;padding:5px 10px;color:var(--soft)}
+#view-news .et-chip.now{color:#b42318;border-color:#b42318}
+#view-news .et-status{font-size:13.5px;line-height:1.5;border-radius:14px;padding:11px 13px;margin:14px 0 2px;background:rgba(127,160,175,.14)}
+#view-news .et-status.is-calm{background:rgba(21,128,61,.13)}
+#view-news .et-status.is-alert{background:rgba(180,35,24,.13)}
+#view-news .et-h{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin:18px 0 2px}
+#view-news .etrow{display:grid;grid-template-columns:86px 1fr auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none}
+#view-news .etrow:last-child{border-bottom:0}
+#view-news .etrow:active{opacity:.7}
+#view-news .et-tag{font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:4px 7px;text-align:center;white-space:nowrap}
+#view-news .et-tag.war{color:#b42318;border:1.5px solid #b42318}
+#view-news .et-tag.peace{color:#15803d;border:1.5px solid #15803d}
+#view-news .et-q{display:block;font-size:14.5px;font-weight:650;line-height:1.35}
+#view-news .ebar i.war{background:#b42318}
+#view-news .ebar i.peace{background:#15803d}
+#view-news .et-right{text-align:right}
+#view-news .et-move{display:block;font-size:11px;font-weight:700;color:var(--soft);margin-top:3px;white-space:nowrap}
+@media (max-width:520px){#view-news .et-clock{flex-direction:column;align-items:flex-start;gap:8px}#view-news .etrow{grid-template-columns:74px 1fr auto}}
 </style>
   <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
   <section class="ncard" id="breakingSection" aria-label="Breaking news">
     <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
     <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
+  </section>
+  <section class="ncard" id="emergencyTracker" aria-label="Emergency tracker: how close we are to war or a catastrophic event">
+    <span class="nkick">News &middot; Emergency Tracker</span><h2>&#9201;&#65039; Emergency Tracker</h2>
+    <p class="nnote">How close are we to war or a catastrophe? There is no official live meter &mdash; anything showing a live % would be made up. So this pairs the experts&rsquo; yearly gauge with live market odds that actually move every day.</p>
+    <div class="et-clock">
+      <div class="et-clock-big"><span class="et-clock-num">85</span><span class="et-clock-unit">seconds<br>to midnight</span></div>
+      <div>
+        <p class="et-clock-lab">Doomsday Clock &mdash; the closest it has ever been</p>
+        <p class="et-clock-sub">Set January 27, 2026 by the Bulletin of the Atomic Scientists, whose experts weigh nuclear weapons, climate, biological threats and disruptive tech. They reset it once a year &mdash; it is an expert judgment, not a live countdown and not a probability.</p>
+      </div>
+    </div>
+    <div class="et-chips" aria-label="Doomsday Clock recent settings"><span class="et-chip">2023 &middot; 90 sec</span><span class="et-chip">2025 &middot; 89 sec</span><span class="et-chip now">2026 &middot; 85 sec &mdash; closest ever</span><span class="et-chip">Furthest ever &middot; 17 min (1991)</span></div>
+    <p class="et-status" id="etLiveStatus">Checking the live breaking feed&hellip;</p>
+    <h3 class="et-h">Live war &amp; peace odds &middot; Polymarket</h3>
+    <div id="etMarkets"><p class="lstatus">Loading live odds&hellip;</p></div>
+    <p class="esrc">Clock: <a href="https://thebulletin.org/doomsday-clock/2026-statement/" target="_blank" rel="noopener">Bulletin of the Atomic Scientists &mdash; 2026 statement</a> &middot; Odds: Polymarket, tapped rows open the live market. Market-implied chances, not predictions &mdash; prices move constantly. <span id="etUpdated"></span></p>
   </section>
   <div class="news-grid">
   <section class="ncard" aria-label="Weather stories">
@@ -1247,6 +1288,84 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <a class="isw" href="https://www.isidewith.com/" target="_blank" rel="noopener"><span class="isw-kick">Politics · Your Alignment</span><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates — right under the live outlook above.</span></a>
   </section>
 </main>
+<script>
+/* Emergency Tracker (News tab) — live status from the site's own
+   breaking.json, live war/peace odds from Polymarket's public Gamma
+   API (same pattern as the 2028 outlook). Numbers render ONLY from
+   live responses; the Doomsday Clock figure is the Bulletin's static
+   yearly setting, credited in the card. Slugs verified live
+   2026-11-16. If a fetch fails, an honest fallback shows — never a
+   guessed number. */
+(function(){
+  var statusEl=document.getElementById('etLiveStatus');
+  var box=document.getElementById('etMarkets');
+  if(!statusEl&&!box)return;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  if(statusEl){
+    fetch('breaking.json?ts='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad');return r.json();}).then(function(d){
+      var it=(d&&d.active===true&&d.item&&d.item.title)?d.item:null;
+      if(it&&d.expires_at){var ex=Date.parse(d.expires_at);if(!isNaN(ex)&&ex<Date.now())it=null;}
+      if(it){
+        statusEl.className='et-status is-alert';
+        statusEl.innerHTML='\uD83D\uDD34 <strong>Breaking right now:</strong> '+esc(it.title)+' \u2014 full details in Breaking News above.';
+      }else{
+        statusEl.className='et-status is-calm';
+        statusEl.innerHTML='\uD83D\uDFE2 <strong>Right now:</strong> no major breaking event on the live feed. The odds below are background tension, not something happening this minute.';
+      }
+    }).catch(function(){
+      statusEl.className='et-status';
+      statusEl.textContent='Live breaking feed couldn\u2019t load \u2014 see Breaking News above for the latest.';
+    });
+  }
+  var WATCH=[
+    {slug:'will-the-us-invade-iran-before-2027',label:'U.S. invades Iran before 2027',kind:'war',pick:null},
+    {slug:'us-x-iran-effective-ceasefire-begins-by-2-week-pause-20261108',label:'U.S. \u00d7 Iran ceasefire (2-week pause) by Dec 31',kind:'peace',pick:'December 31'},
+    {slug:'russia-x-ukraine-ceasefire-by',label:'Russia \u00d7 Ukraine ceasefire by Dec 31, 2026',kind:'peace',pick:'December 31'},
+    {slug:'will-china-invade-taiwan-before-2027',label:'China invades Taiwan by end of 2026',kind:'war',pick:null},
+    {slug:'us-iran-final-nuclear-deal-by-20260621201254412',label:'U.S.\u2013Iran final nuclear deal by Dec 31',kind:'peace',pick:'December 31'}
+  ];
+  function gevent(slug){
+    return fetch('https://gamma-api.polymarket.com/events?slug='+slug).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d[0])||null;});
+  }
+  function pickPrice(ev,pick){
+    var ms=(ev&&ev.markets)||[],m=null,i;
+    for(i=0;i<ms.length;i++){
+      if(ms[i].closed)continue;
+      if(!pick){m=ms[i];break;}
+      if(ms[i].groupItemTitle===pick){m=ms[i];break;}
+    }
+    if(!m)return null;
+    var prices=null;
+    try{prices=JSON.parse(m.outcomePrices||'null');}catch(e){}
+    if(!prices||prices[0]==null)return null;
+    var pct=parseFloat(prices[0])*100;
+    if(isNaN(pct))return null;
+    return {pct:pct,day:(typeof m.oneDayPriceChange==='number'?m.oneDayPriceChange*100:null)};
+  }
+  if(box){
+    Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
+      var rows=[];
+      evs.forEach(function(ev,i){
+        var w=WATCH[i],r=ev?pickPrice(ev,w.pick):null;
+        if(!r)return;
+        var pct=r.pct>=10?Math.round(r.pct):Math.round(r.pct*10)/10;
+        var move='';
+        if(r.day!=null&&Math.abs(r.day)>=0.5){
+          var up=r.day>0;
+          move='<span class="et-move">'+(up?'\u25B2':'\u25BC')+' '+Math.abs(Math.round(r.day*10)/10)+' pts today</span>';
+        }
+        rows.push('<a class="etrow" href="https://polymarket.com/event/'+w.slug+'" target="_blank" rel="noopener"><span class="et-tag '+w.kind+'">'+(w.kind==='war'?'War risk':'Peace signal')+'</span><span><span class="et-q">'+esc(w.label)+'</span><span class="ebar"><i class="'+w.kind+'" style="width:'+Math.min(100,Math.max(2,r.pct))+'%"></i></span></span><span class="et-right"><span class="epct">'+pct+'%</span>'+move+'</span></a>');
+      });
+      if(!rows.length)throw new Error('empty');
+      box.innerHTML=rows.join('');
+      var u=document.getElementById('etUpdated');
+      if(u)u.textContent='Odds updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET.';
+    }).catch(function(){
+      box.innerHTML='<p class="lstatus">Live odds couldn\u2019t load right now \u2014 see them on <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027" target="_blank" rel="noopener">Polymarket</a>.</p>';
+    });
+  }
+})();
+</script>
 <!-- SPORTS -->
 <script>
 // Early logo fallback — defined before any team logo <img> so its onerror
@@ -2414,49 +2533,47 @@ body.on-christmas{color-scheme:light}
      other condition (cloud, rain, snow, storm) reads the same day
      and night. Daily rows keep the plain day icon on purpose: a
      daily code summarises the whole day. */
-  /* Apple Weather-style icons — Home widget ONLY (Derek, Nov 16:
-     "use icons similar to apples", then "the weather widget icons
-     are ugly modernize them"). Modern set: smooth single-silhouette
-     clouds shaded by shared userSpace gradients (the defs block sits
-     inside #homeWxWidget), a gradient sun with short rounded rays, a
-     true crescent moon with a star sparkle, gradient rain drops,
-     six-spoke snowflakes and a gradient bolt — SF Symbols / Apple
-     Weather language, no outlines or emoji. wxAppleIcon(code, isDay)
-     returns the SVG markup; the label still comes from infoAt, so
-     wording and the after-sunset moon rule are unchanged. The
-     Weather tab keeps its emoji icons. */
+  /* Apple Weather icons — Home widget ONLY. Derek (Nov 16, late)
+     sent his iOS home screen: in Apple's widget every icon is a
+     FLAT WHITE silhouette — a white crescent moon with a small star,
+     a white cloud with the moon peeking out top-right, a single
+     solid white cloud. No colour at all: no yellow moon, no shaded
+     or grey cloud, no blue rain, no yellow bolt, no gradients, no
+     shadows. This set copies that exactly: every fill and stroke
+     below is #FFFFFF. wxAppleIcon(code, isDay) returns the SVG
+     markup; the label still comes from infoAt, so wording and the
+     after-sunset moon rule are unchanged. The Weather tab keeps
+     its emoji icons. */
   function wxSvgWrap(inner){return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">'+inner+'</svg>';}
   function wxSunAt(x,y,r){
-    var s='<g stroke="#FFB340" stroke-width="3" stroke-linecap="round">';
+    var s='<g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round">';
     var pts=[[0,-1],[1,-1],[1,0],[1,1],[0,1],[-1,1],[-1,0],[-1,-1]];
     for(var i=0;i<pts.length;i++){
       var ux=pts[i][0],uy=pts[i][1];
       if(ux!==0&&uy!==0){ux*=0.7071;uy*=0.7071;}
       s+='<line x1="'+(x+ux*(r+2.6)).toFixed(1)+'" y1="'+(y+uy*(r+2.6)).toFixed(1)+'" x2="'+(x+ux*(r+6.2)).toFixed(1)+'" y2="'+(y+uy*(r+6.2)).toFixed(1)+'"/>';
     }
-    return s+'</g><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="url(#wxgSun)"/>';
+    return s+'</g><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#FFFFFF"/>';
   }
   function wxMoonAt(x,y,r){
     var dx=(r*0.574).toFixed(1),dy=(r*0.819).toFixed(1),ri=(r*0.82).toFixed(1);
     var top=(x+ +dx)+','+(y- +dy),bot=(x+ +dx)+','+(y+ +dy);
-    return '<path d="M '+top+' A '+r+' '+r+' 0 1 0 '+bot+' A '+ri+' '+ri+' 0 1 1 '+top+' Z" fill="url(#wxgMoon)"/>';
+    return '<path d="M '+top+' A '+r+' '+r+' 0 1 0 '+bot+' A '+ri+' '+ri+' 0 1 1 '+top+' Z" fill="#FFFFFF"/>';
   }
   function wxSparkle(x,y,s){
-    return '<path d="M '+x+' '+(y-s)+' C '+(x+s*0.16)+' '+(y-s*0.16)+' '+(x+s*0.16)+' '+(y-s*0.16)+' '+(x+s)+' '+y+' C '+(x+s*0.16)+' '+(y+s*0.16)+' '+(x+s*0.16)+' '+(y+s*0.16)+' '+x+' '+(y+s)+' C '+(x-s*0.16)+' '+(y+s*0.16)+' '+(x-s*0.16)+' '+(y+s*0.16)+' '+(x-s)+' '+y+' C '+(x-s*0.16)+' '+(y-s*0.16)+' '+(x-s*0.16)+' '+(y-s*0.16)+' '+x+' '+(y-s)+' Z" fill="#FFF6C9"/>';
+    return '<path d="M '+x+' '+(y-s)+' C '+(x+s*0.16)+' '+(y-s*0.16)+' '+(x+s*0.16)+' '+(y-s*0.16)+' '+(x+s)+' '+y+' C '+(x+s*0.16)+' '+(y+s*0.16)+' '+(x+s*0.16)+' '+(y+s*0.16)+' '+x+' '+(y+s)+' C '+(x-s*0.16)+' '+(y+s*0.16)+' '+(x-s*0.16)+' '+(y+s*0.16)+' '+(x-s)+' '+y+' C '+(x-s*0.16)+' '+(y-s*0.16)+' '+(x-s*0.16)+' '+(y-s*0.16)+' '+x+' '+(y-s)+' Z" fill="#FFFFFF"/>';
   }
   function wxCloudShapes(){
-    return '<circle cx="16.5" cy="27.5" r="6.2"/><circle cx="25.5" cy="21" r="8.6"/><circle cx="34" cy="27" r="6.4"/><rect x="10.5" y="26" width="29" height="9" rx="4.5"/>';
+    return '<circle cx="17" cy="28" r="6.8"/><circle cx="26" cy="21.5" r="9"/><circle cx="34.5" cy="27.5" r="6.2"/><rect x="10.2" y="26.5" width="30.6" height="9" rx="4.5"/>';
   }
-  function wxCloud(tx,ty,s,fill,back){
-    var out='';
-    if(back)out+='<g transform="translate('+(tx-5)+' '+(ty-5)+') scale('+(s*0.92)+')" fill="'+back+'">'+wxCloudShapes()+'</g>';
-    return out+'<g transform="translate('+tx+' '+ty+') scale('+s+')" fill="'+fill+'">'+wxCloudShapes()+'</g>';
+  function wxCloud(tx,ty,s){
+    return '<g transform="translate('+tx+' '+ty+') scale('+s+')" fill="#FFFFFF">'+wxCloudShapes()+'</g>';
   }
   function wxDrops(cx,cy,n,heavy){
     var s='';var len=heavy?9:7.5;
     for(var i=0;i<n;i++){
       var dx=cx+(i-(n-1)/2)*8.5;
-      s+='<line x1="'+dx+'" y1="'+cy+'" x2="'+(dx-2.6)+'" y2="'+(cy+len)+'" stroke="url(#wxgDrop)" stroke-width="3.2" stroke-linecap="round"/>';
+      s+='<line x1="'+dx+'" y1="'+cy+'" x2="'+(dx-2.6)+'" y2="'+(cy+len)+'" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>';
     }
     return s;
   }
@@ -2471,33 +2588,32 @@ body.on-christmas{color-scheme:light}
   }
   function wxAppleIcon(c,isDay){
     var night=(isDay===0||isDay===false);
-    var CL='url(#wxgCloud)',CB='url(#wxgCloudBack)',CD='url(#wxgCloudDark)';
     if(c===0||c===1){
-      return night?wxSvgWrap(wxMoonAt(22,23,13.5)+wxSparkle(37,10,4.6))
-                  :wxSvgWrap(wxSunAt(24,24,9));
+      return night?wxSvgWrap(wxMoonAt(20,24,13)+wxSparkle(37,11,4.4))
+                  :wxSvgWrap(wxSunAt(24,24,9.5));
     }
     if(c===2){
-      return night?wxSvgWrap(wxMoonAt(15.5,14.5,8)+wxSparkle(38,8,3.4)+wxCloud(5,8,0.94,CL))
-                  :wxSvgWrap(wxSunAt(16,15,6.4)+wxCloud(5,8,0.94,CL));
+      return night?wxSvgWrap(wxMoonAt(34.5,12,6.5)+wxCloud(3,10,0.92))
+                  :wxSvgWrap(wxSunAt(15.5,14.5,6)+wxCloud(3,10,0.92));
     }
-    if(c===3){return wxSvgWrap(wxCloud(1,4,0.97,CL,CB));}
+    if(c===3){return wxSvgWrap(wxCloud(-1.5,0,1));}
     if(c===45||c===48){
-      return wxSvgWrap(wxCloud(0,-4,1,CL)+'<g stroke="#DCE3EE" stroke-width="3" stroke-linecap="round" opacity="0.9"><line x1="13" y1="38.5" x2="35" y2="38.5"/><line x1="17" y1="44" x2="31" y2="44"/></g>');
+      return wxSvgWrap(wxCloud(-1.5,-3,1)+'<g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><line x1="13" y1="38.5" x2="35" y2="38.5"/><line x1="17" y1="44" x2="31" y2="44"/></g>');
     }
-    if(c>=51&&c<=57){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxDrops(24,35,2,false));}
-    if(c===71||c===85){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxFlakes(24,38,3));}
-    if(c===73||c===86){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxFlakes(24,38,3)+wxFlakeAt(19.5,45)+wxFlakeAt(28.5,45));}
-    if(c===75||c===77){return wxSvgWrap(wxCloud(0,-6,1,CD,CB)+wxFlakes(24,37,3)+wxFlakeAt(19.5,44)+wxFlakeAt(28.5,44));}
+    if(c>=51&&c<=57){return wxSvgWrap(wxCloud(-1.5,-4,1)+wxDrops(24,35,2,false));}
+    if(c===71||c===85){return wxSvgWrap(wxCloud(-1.5,-4,1)+wxFlakes(24,39,3));}
+    if(c===73||c===86){return wxSvgWrap(wxCloud(-1.5,-5,1)+wxFlakes(24,36.5,3)+wxFlakeAt(19.5,43.5)+wxFlakeAt(28.5,43.5));}
+    if(c===75||c===77){return wxSvgWrap(wxCloud(-1.5,-5,1)+wxFlakes(24,36.5,3)+wxFlakeAt(19.5,43.5)+wxFlakeAt(28.5,43.5));}
     if(c===95||c===96||c===99){
-      var hail=(c===96||c===99)?'<circle cx="12.5" cy="41" r="2.3" fill="#EAF6FF"/><circle cx="36" cy="41" r="2.3" fill="#EAF6FF"/>':'';
-      return wxSvgWrap(wxCloud(0,-6,1,CD,CB)+'<path d="M 26.5 27 L 18.5 39.5 h 5.2 L 20.8 47 L 31.5 34.5 h -5.8 L 29.5 27 Z" fill="url(#wxgBolt)"/>'+hail);
+      var hail=(c===96||c===99)?'<circle cx="12.5" cy="41" r="2.3" fill="#FFFFFF"/><circle cx="36" cy="41" r="2.3" fill="#FFFFFF"/>':'';
+      return wxSvgWrap(wxCloud(-1.5,-5,1)+'<path d="M 26.5 27 L 18.5 39.5 h 5.2 L 20.8 47 L 31.5 34.5 h -5.8 L 29.5 27 Z" fill="#FFFFFF"/>'+hail);
     }
-    if(c===66||c===67){return wxSvgWrap(wxCloud(0,-5,1,CL,CB)+wxDrops(20,35,2,false)+wxFlakeAt(29,39));}
+    if(c===66||c===67){return wxSvgWrap(wxCloud(-1.5,-4,1)+wxDrops(20,35,2,false)+wxFlakeAt(29,39));}
     if((c>=61&&c<=65)||(c>=80&&c<=82)){
       var heavy=(c===65||c===82);
-      return wxSvgWrap(wxCloud(0,-5,1,heavy?CD:CL,CB)+wxDrops(24,35,3,heavy));
+      return wxSvgWrap(wxCloud(-1.5,-4,1)+wxDrops(24,35,3,heavy));
     }
-    return wxSvgWrap(wxCloud(0,2,1,CL,CB));
+    return wxSvgWrap(wxCloud(-1.5,2,1));
   }
   function infoApple(c,isDay){var base=infoAt(c,isDay);return [wxAppleIcon(c,isDay?1:0),base[1]];}
   function infoAt(c,isDay){if(!isDay){if(c===0)return ['🌙','Clear sky'];if(c===1)return ['🌙','Mainly clear'];if(c===2)return ['🌙☁️','Partly cloudy'];}return info(c);}
