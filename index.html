@@ -556,11 +556,9 @@ body>.teams-overlay{z-index:2000}
    The drop-down sits in the card's normal flow (the card grows),
    because #homeWxWidget clips overflow. Tapping anywhere else on
    the card still goes to the Weather tab.
-   Weekly summary: a separate quiet card directly under the weather
-   widget with a plain-English read of the live 7-day forecast
-   (filled by renderHomeWeek in the weather loader) and a
-   "Full forecast" button to the Weather tab. The weather widget
-   itself stays the simple Apple-style card. */
+   (The weekly-summary card that used to sit under this widget was
+   removed Nov 16 evening — Derek: "remove the trends" — and its
+   "Full forecast" button moved onto the widget itself.) */
 #view-home .hero h1{font-family:"Italianno","Pinyon Script","Snell Roundhand","Segoe Script",cursive;font-size:clamp(62px,13.5vw,92px);font-weight:400;line-height:1.08;letter-spacing:.01em;text-transform:none;margin:0 0 6px;text-shadow:0 2px 0 rgba(255,255,255,.55),0 8px 22px rgba(20,50,35,.22)}
 @media(prefers-color-scheme:dark){#view-home .hero h1{text-shadow:0 2px 0 rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.55)}}
 #homeWxWidget .wxd-loc.home-locpill{appearance:none;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.65);color:#fff;font:inherit;font-size:19px;font-weight:600;line-height:1.2;letter-spacing:.01em;border-radius:999px;padding:7px 13px;min-height:40px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 2px 8px rgba(0,30,60,.22);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);max-width:100%;text-shadow:0 1px 4px rgba(0,30,60,.18)}
@@ -580,6 +578,22 @@ body>.teams-overlay{z-index:2000}
 .home-week-sub:empty{display:none}
 .home-week-btn{margin-top:12px}
 @media(max-width:380px){#homeWxWidget .wxd-loc.home-locpill{font-size:17px}}
+</style>
+<style>
+/* == Nov 16 (evening): Home widget Apple-style icons + Full forecast
+   button; Home weekly-summary (trend) card removed ==
+   Icons are inline SVGs drawn like Apple Weather (flat colour sun /
+   moon, white-grey cloud, blue rain, snowflakes, yellow bolt) instead
+   of emoji. They are sized here because SVG does not follow the old
+   emoji font-size. The Full forecast pill sits inside the widget,
+   under the hourly row — the separate weekly summary card that used
+   to carry that button is gone. */
+#homeWxWidget .wxd-topicon{line-height:0}
+#homeWxWidget .wxd-topicon svg{width:36px;height:36px;display:block;filter:drop-shadow(0 2px 5px rgba(0,30,60,.25))}
+#homeWxWidget .wxd-h .i{line-height:0;display:flex;justify-content:center}
+#homeWxWidget .wxd-h .i svg{width:27px;height:27px;display:block;filter:drop-shadow(0 1px 3px rgba(0,30,60,.22))}
+#homeWxWidget .wxd-fullbtn{appearance:none;display:block;width:100%;margin-top:14px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(10px) saturate(160%);backdrop-filter:blur(10px) saturate(160%);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;text-shadow:0 1px 3px rgba(0,30,60,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+#homeWxWidget .wxd-fullbtn:active{background:rgba(255,255,255,.34)}
 </style>
 </head>
 <body>
@@ -755,19 +769,9 @@ body>.teams-overlay{z-index:2000}
     </div>
     <div class="wxd-heromain"><div class="wxd-temp" id="stripTemp">&mdash;&deg;</div><div class="wxd-heroright"><div class="wxd-cond" id="stripCond">Loading live weather&hellip;</div><span class="wxd-hl" id="homeWxHL"></span></div></div>
     <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 6 hours"><p class="wxd-status">Loading hourly…</p></div>
+    <button type="button" class="wxd-fullbtn" data-go="weather">Full forecast →</button>
   </section>
   <script>(function(){var p=document.getElementById('homeLocBar'),pop=document.getElementById('homeLocPop');if(!p||!pop)return;function close(){pop.hidden=true;p.setAttribute('aria-expanded','false');}p.addEventListener('click',function(e){e.stopPropagation();if(pop.hidden){pop.hidden=false;p.setAttribute('aria-expanded','true');}else{close();}});p.addEventListener('keydown',function(e){e.stopPropagation();});pop.addEventListener('click',function(e){e.stopPropagation();});pop.addEventListener('keydown',function(e){e.stopPropagation();});document.addEventListener('click',function(){if(!pop.hidden)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});})();</script>
-  <!-- Weekly summary: a quick plain-English read of the same live
-       7-day Open-Meteo forecast the Weather tab uses, filled in by
-       renderHomeWeek in the weather loader (honest unavailable line
-       if the forecast cannot load, never guessed numbers). The
-       button goes to the full forecast on the Weather tab. -->
-  <section class="hwidget home-week" id="homeWeekSummary" aria-label="Weekly weather summary">
-    <h2 class="home-week-h">🗓️ This week at a glance</h2>
-    <p class="home-week-text" id="homeWeekText">Loading the week from the live forecast…</p>
-    <p class="home-week-sub" id="homeWeekSub"></p>
-    <button type="button" class="hw-go home-week-btn" data-go="weather">Full forecast →</button>
-  </section>
   <section class="hwidget" id="homeSportsWidget" aria-label="Sports widget">
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
     <p class="hw-status" id="homeSportsEmpty" hidden>No games coming up for your teams.</p>
@@ -2390,6 +2394,35 @@ body.on-christmas{color-scheme:light}
      other condition (cloud, rain, snow, storm) reads the same day
      and night. Daily rows keep the plain day icon on purpose: a
      daily code summarises the whole day. */
+  /* Apple Weather-style icons — Home widget ONLY (Derek, Nov 16:
+     "use icons similar to apples"). Inline SVGs in Apple's flat
+     colour language: golden sun, pale crescent moon, white-grey
+     cloud, blue rain drops, snowflakes, yellow lightning bolt.
+     wxAppleIcon(code, isDay) returns the SVG markup; the label still
+     comes from infoAt, so wording and the after-sunset moon rule are
+     unchanged. The Weather tab keeps its emoji icons. */
+  function wxSvgWrap(inner){return '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">'+inner+'</svg>';}
+  function wxSunSvg(x,y,r){var s='<g stroke="#FF9500" stroke-width="2.6" stroke-linecap="round">';var pts=[[0,-1.55],[1.1,-1.1],[1.55,0],[1.1,1.1],[0,1.55],[-1.1,1.1],[-1.55,0],[-1.1,-1.1]];for(var i=0;i<pts.length;i++){s+='<line x1="'+(x+pts[i][0]*r*1.18).toFixed(1)+'" y1="'+(y+pts[i][1]*r*1.18).toFixed(1)+'" x2="'+(x+pts[i][0]*r*1.52).toFixed(1)+'" y2="'+(y+pts[i][1]*r*1.52).toFixed(1)+'"/>';}return s+'</g><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#FFCC02" stroke="#FF9500" stroke-width="1.6"/>';}
+  function wxMoonSvg(x,y,r){return '<path d="M '+(x+r*0.95)+' '+(y-r*0.85)+' A '+r+' '+r+' 0 1 0 '+(x+r*0.95)+' '+(y+r*0.85)+' A '+(r*0.78)+' '+(r*0.78)+' 0 1 1 '+(x+r*0.95)+' '+(y-r*0.85)+' Z" fill="#FFE98A" stroke="#F5C542" stroke-width="1.4" stroke-linejoin="round"/><circle cx="'+(x+r*0.55)+'" cy="'+(y-r*0.55)+'" r="1.5" fill="#FFF3B0"/>';}
+  function wxCloudSvg(cx,cy,s,front,back){var p='<path d="M '+(cx-11*s)+' '+(cy+7*s)+' a '+(7*s)+' '+(7*s)+' 0 0 1 '+ (1.5*s)+' '+( -13.5*s)+' a '+(8.5*s)+' '+(8.5*s)+' 0 0 1 '+(16*s)+' '+(2.5*s)+' a '+(6*s)+' '+(6*s)+' 0 0 1 '+( -1*s)+' '+(11*s)+' Z" fill="BACK"/>';var out='';if(back)out+=p.replace('BACK',back);return out+p.replace('BACK',front);}
+  function wxDropsSvg(cx,cy,n,heavy){var s='';for(var i=0;i<n;i++){var dx=cx+(i-(n-1)/2)*8;s+='<line x1="'+dx+'" y1="'+cy+'" x2="'+(dx-2.5)+'" y2="'+(cy+(heavy?9:7))+'" stroke="#64D2FF" stroke-width="3" stroke-linecap="round"/>';}return s;}
+  function wxFlakeAt(x,y){return '<g stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"><line x1="'+(x-3.2)+'" y1="'+y+'" x2="'+(x+3.2)+'" y2="'+y+'"/><line x1="'+(x-1.6)+'" y1="'+(y-2.8)+'" x2="'+(x+1.6)+'" y2="'+(y+2.8)+'"/><line x1="'+(x+1.6)+'" y1="'+(y-2.8)+'" x2="'+(x-1.6)+'" y2="'+(y+2.8)+'"/></g>';}
+  function wxFlakesSvg(cx,cy){var s='';[-8,0,8].forEach(function(dx){s+=wxFlakeAt(cx+dx,cy);});return s;}
+  function wxAppleIcon(c,isDay){
+    var night=(isDay===0||isDay===false);
+    if(c===0||c===1){return night?wxSvgWrap(wxMoonSvg(22,22,13)):wxSvgWrap(wxSunSvg(24,24,10));}
+    if(c===2){return night?wxSvgWrap(wxMoonSvg(17,15,8)+wxCloudSvg(27,29,1.05,'#F2F2F7','#C7C7CC')):wxSvgWrap(wxSunSvg(16,15,7.5)+wxCloudSvg(27,29,1.05,'#F2F2F7','#D1D1D6'));}
+    if(c===3){return wxSvgWrap(wxCloudSvg(21,17,0.95,'#D1D1D6','')+wxCloudSvg(27,28,1.05,'#F2F2F7',''));}
+    if(c===45||c===48){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#E5E5EA','')+'<g stroke="#AEAEB2" stroke-width="2.6" stroke-linecap="round"><line x1="14" y1="35" x2="34" y2="35"/><line x1="18" y1="41" x2="30" y2="41"/></g>');}
+    if(c>=51&&c<=57){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxDropsSvg(24,33,2,false));}
+    if(c===71||c===73||c===85||c===86){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxFlakesSvg(24,36));}
+    if(c===75||c===77){return wxSvgWrap(wxCloudSvg(24,18,1.1,'#F2F2F7','#D1D1D6')+wxFlakesSvg(24,35)+wxFlakesSvg(24,42));}
+    if(c===95||c===96||c===99){var hail=(c===96||c===99)?'<circle cx="15" cy="38" r="2.2" fill="#F2F2F7"/><circle cx="33" cy="38" r="2.2" fill="#F2F2F7"/>':'';return wxSvgWrap(wxCloudSvg(24,18,1.05,'#E5E5EA','#C7C7CC')+'<path d="M 26 27 L 19 39 h 5 L 21.5 47 L 31 34 h -5.5 L 29 27 Z" fill="#FFD60A" stroke="#FF9500" stroke-width="1.2" stroke-linejoin="round"/>'+hail);}
+    if(c===66||c===67){return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxDropsSvg(24,32,2,false)+wxFlakeAt(24,42));}
+    if((c>=61&&c<=65)||(c>=80&&c<=82)){var heavy=(c===65||c===82);return wxSvgWrap(wxCloudSvg(24,19,1.05,'#F2F2F7','#D1D1D6')+wxDropsSvg(24,33,heavy?3:3,heavy));}
+    return wxSvgWrap(wxCloudSvg(24,24,1.1,'#F2F2F7','#D1D1D6'));
+  }
+  function infoApple(c,isDay){var base=infoAt(c,isDay);return [wxAppleIcon(c,isDay?1:0),base[1]];}
   function infoAt(c,isDay){if(!isDay){if(c===0)return ['🌙','Clear sky'];if(c===1)return ['🌙','Mainly clear'];if(c===2)return ['🌙☁️','Partly cloudy'];}return info(c);}
   /* is_day for hourly index idx; if the feed ever omits it, fall
      back to comparing the hour against that date's live sunrise /
@@ -2765,26 +2798,6 @@ body.on-christmas{color-scheme:light}
     function stat(l,v,u){return '<div class="wxtrend-stat"><div class="l">'+l+'</div><div class="v">'+v+'</div>'+(u?'<div class="u">'+u+'</div>':'')+'</div>';}
     if(stEl)stEl.innerHTML=stat('Warmest day',hi[peak]+'\u00B0',full[peak])+stat('Coldest night',lo[trough]+'\u00B0',full[trough])+stat('Average high',avgHi+'\u00B0','Average low '+avgLo+'\u00B0')+stat('Wettest day',pp[wet]==null?'\u2014':pp[wet]+'% chance',full[wet]);
   }
-  /* Home weekly summary — the quick version of the Weather tab's
-     week trend, from the same live daily arrays: warming / cooling /
-     steady, warmest day, coldest night, and the precip outlook.
-     Called with null when the forecast failed, so Home shows an
-     honest unavailable line instead of guessed numbers. */
-  function renderHomeWeek(d){
-    var tEl=document.getElementById('homeWeekText'),sEl=document.getElementById('homeWeekSub');
-    if(!tEl)return;
-    if(!d||!d.daily||!d.daily.time||!d.daily.temperature_2m_max||!d.daily.temperature_2m_min){tEl.textContent='Live weekly summary unavailable — reload to try again.';if(sEl)sEl.textContent='';return;}
-    var n=d.daily.time.length,hi=[],lo=[],pp=[],full=[];
-    for(var i=0;i<n;i++){hi.push(Math.round(d.daily.temperature_2m_max[i]));lo.push(Math.round(d.daily.temperature_2m_min[i]));pp.push((d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[i]!=null)?Math.round(d.daily.precipitation_probability_max[i]):null);var dt2=new Date(d.daily.time[i]+'T12:00:00');full.push(i===0?'today':dt2.toLocaleDateString('en-US',{weekday:'long'}));}
-    var peak=0,trough=0,wet=0;for(var j=1;j<n;j++){if(hi[j]>hi[peak])peak=j;if(lo[j]<lo[trough])trough=j;if(pp[j]!=null&&(pp[wet]==null||pp[j]>pp[wet]))wet=j;}
-    var head;if((hi[n-1]-hi[0])>=4)head='Warming through the week — highs climb from '+hi[0]+'° today to '+hi[n-1]+'° by '+full[n-1]+'.';else if((hi[n-1]-hi[0])<=-4)head='Cooling through the week — highs fall from '+hi[0]+'° today to '+hi[n-1]+'° by '+full[n-1]+'.';else head='Highs hold fairly steady around '+Math.round(hi.reduce(function(a,b){return a+b;},0)/n)+'° this week.';
-    tEl.textContent=head+' Warmest is '+full[peak]+' at '+hi[peak]+'°. Coldest night is '+full[trough]+' at '+lo[trough]+'°.';
-    var wetNames=[];for(var w=0;w<n;w++){if(pp[w]!=null&&pp[w]>=50)wetNames.push(full[w]+' ('+pp[w]+'%)');}
-    var sub;if(wetNames.length)sub='Precip is most likely on '+wetNames.join(', ')+'.';else if(pp[wet]!=null&&pp[wet]>=30)sub='Highest precip chance is '+full[wet]+' at '+pp[wet]+'% — no day looks like a washout.';else sub='Little precip expected this week.';
-    var rainTot=0,snowTot=0;if(d.daily.rain_sum)for(var r3=0;r3<n;r3++)rainTot+=(d.daily.rain_sum[r3]||0);if(d.daily.snowfall_sum)for(var s3=0;s3<n;s3++)snowTot+=(d.daily.snowfall_sum[s3]||0);
-    var rainIn=rainTot/25.4,snowIn=snowTot/2.54;if(rainIn>=0.01)sub+=' About '+(Math.round(rainIn*100)/100)+' in of rain expected over the week.';if(snowIn>=0.1)sub+=' About '+(Math.round(snowIn*10)/10)+' in of snow expected over the week.';
-    if(sEl)sEl.textContent=sub;
-  }
   fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     snowWx=d; wxData=d; updateSnowDay(); 
     var cur=d.current, ci=infoAt(cur.weather_code,(cur.is_day!=null?cur.is_day:((d.daily&&d.daily.sunrise&&d.daily.sunset&&cur.time)?((String(cur.time).slice(0,16)>=String(d.daily.sunrise[0]).slice(0,16)&&String(cur.time).slice(0,16)<String(d.daily.sunset[0]).slice(0,16))?1:0):1)));
@@ -2815,7 +2828,7 @@ body.on-christmas{color-scheme:light}
         var ht=new Date(d.hourly.time[j]), hii=infoAt(d.hourly.weather_code[j],isDayAt(d,j));
         var lbl=(j===hi)?'Now':ht.toLocaleTimeString('en-US',{hour:'numeric'});
         var pp=d.hourly.precipitation_probability?d.hourly.precipitation_probability[j]:null;
-        var strip='<div class="wxd-h"><div class="t">'+lbl+'</div><div class="i">'+hii[0]+'</div><div class="tp">'+Math.round(d.hourly.temperature_2m[j])+'°</div></div>';
+        var strip='<div class="wxd-h"><div class="t">'+lbl+'</div><div class="i">'+wxAppleIcon(d.hourly.weather_code[j],isDayAt(d,j))+'</div><div class="tp">'+Math.round(d.hourly.temperature_2m[j])+'°</div></div>';
         if(j<hi+6)hs+=strip; /* Home widget: 6 hours only (simple Apple-style, Nov 16) */
         heroCards.push({t:new Date(d.hourly.time[j]).getTime(),html:'<div class="hour'+(j===hi?' now':'')+'"><div class="hh">'+lbl+'</div><div class="ic">'+hii[0]+'</div><div class="ht">'+Math.round(d.hourly.temperature_2m[j])+'°F</div><div class="hp">💧 '+(pp==null?'—':Math.round(pp)+'%')+'</div></div>'});
       }
@@ -2841,7 +2854,7 @@ body.on-christmas{color-scheme:light}
    (homeWxFeelsLine, set above) instead of floating on its own under
    the condition icon. */if(__pp!=null){var __hf3=document.getElementById('homeWxFeelsLine');if(__hf3&&__hf3.textContent&&__hf3.textContent.indexOf('Next hour')<0)__hf3.textContent+=' \u00b7 Next hour '+__kind+' chance '+Math.round(__pp)+'%';}}
     applyWxBg(cur.weather_code,cur.is_day,ci[1],cur.time);
-    document.getElementById('stripIcon').textContent=ci[0];
+    document.getElementById('stripIcon').innerHTML=wxAppleIcon(cur.weather_code,(cur.is_day!=null?cur.is_day:((d.daily&&d.daily.sunrise&&d.daily.sunset&&cur.time)?((String(cur.time).slice(0,16)>=String(d.daily.sunrise[0]).slice(0,16)&&String(cur.time).slice(0,16)<String(d.daily.sunset[0]).slice(0,16))?1:0):1)));
     document.getElementById('stripTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('stripCond').textContent=ci[1];
     var html='';
@@ -2854,12 +2867,12 @@ body.on-christmas{color-scheme:light}
       html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'<div class="tap-hint">Tap for detail</div></button>';
     });
     document.getElementById('wxDays').innerHTML=html;
-    renderWxTrend(d); renderHomeWeek(d);
+    renderWxTrend(d);
     var hmd=document.getElementById('homeMiniDays');
     if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColor(mdLo)+','+wxTempColor(mdHi)+')"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
     var hwm=document.getElementById('homeWxMeta');if(hwm)hwm.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° · Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);
     document.getElementById('wxStamp').textContent='Live data: Open-Meteo · Alerts: National Weather Service · '+__wxLoc.label+' · Loaded '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  }).catch(function(){snowWxFailed=true;updateSnowDay();renderWxTrend(null);renderHomeWeek(null);document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
+  }).catch(function(){snowWxFailed=true;updateSnowDay();renderWxTrend(null);document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
   // Live weather alerts — National Weather Service (api.weather.gov), Cicero point. Shown only when active.
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
