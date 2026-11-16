@@ -23,6 +23,13 @@
 # headline is not straight news gets no grace listing at all.
 # v2.2 (Nov 16, 2026): multi-bank outage rule — a major outage
 # across several banks counts as significant (listing only).
+# v2.3 (Nov 16, 2026): Chase-led bank wording — AP/CNN framed the
+# outage as Chase trouble/delays, so one more pattern catches that.
+# v2.4 (Nov 16, 2026): major-airline-grounded rule — a major airline
+# grounded counts as significant ONLY when air travel has already
+# been breaking news (active/grace item or cooldown entry for an
+# air-travel rule within 7 days); a standalone airline outage on a
+# normal week doesn't list.
 # YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: Breaking news
 
@@ -234,9 +241,38 @@ jobs:
               ]),
               ("major-flooding", [
                   r"(flash flood emergency|catastrophic flooding|historic flooding)[^.]{0,70}(texas|florida|carolina|midwest|northeast|u\.s\.|kentucky|tennessee|louisiana)"]),
+              # v2.4 (Nov 16, 2026): a major airline grounded — but ONLY when air
+              # travel has already been breaking news (Derek's condition, after
+              # United grounded its flights Nov 16 amid the post-ground-stop
+              # disruption). The gate lives in news_signal(): this rule is skipped
+              # unless the previous breaking.json shows an active/grace air-travel
+              # item or a cooldown entry for one (i.e. air travel was breaking
+              # news within the last 7 days). A standalone airline outage on a
+              # normal week doesn't list. Significant only (listing, never takeover).
+              ("major-airline-grounded", [
+                  r"(united airlines|american airlines|delta air lines|delta airlines|southwest airlines).{0,60}(grounded|grounds|ground stop|halts? (all )?(its |their )?departures|flights? (grounded|halted|held))",
+                  r"all (united|american|delta|southwest).{0,40}flights?.{0,40}(grounded|ground stop|halted)",
+                  r"(united|american|delta|southwest).{0,40}flights.{0,40}(grounded|ground stop|halted)",
+              ]),
           ]
           ALL_RULES = [(rid, pats, "massive") for rid, pats in MASSIVE_RULES] + \
                       [(rid, pats, "significant") for rid, pats in SIGNIFICANT_RULES]
+
+          # v2.4 gate: rules that only count when air travel has already been
+          # breaking news. An item id is '<rule>-YYYY-MM-DD', so rule_of()
+          # recovers the rule; the FAA live-feed item is 'faa-ground-stop-...'.
+          AIR_TRAVEL_RULES = {"nationwide-ground-stop", "major-airline-grounded",
+                              "faa-ground-stop"}
+
+
+          def air_travel_gate_open(prev, cooldowns):
+              """True when air travel has already been breaking news: the previous
+              breaking.json holds an active or grace (expired) air-travel item, or
+              a cooldown entry for an air-travel rule (within the 7-day window)."""
+              item = (prev or {}).get("item") or {}
+              if item.get("id") and rule_of(item["id"]) in AIR_TRAVEL_RULES:
+                  return True
+              return any(rid in AIR_TRAVEL_RULES for rid in (cooldowns or {}))
 
 
           def get(url):
@@ -326,12 +362,17 @@ jobs:
               return out
 
 
-          def news_signal():
+          def news_signal(air_gate=True):
               """Any-2-of-5 cross-confirmation, tiered by rule severity.
 
               A massive match beats a significant one. One outlet alone —
               however dramatic its headline — never fires anything.
+              v2.4: the major-airline-grounded rule only counts when air_gate is
+              open (air travel has already been breaking news — see
+              air_travel_gate_open). Otherwise it is skipped outright.
               """
+              if not air_gate:
+                  print("air-travel gate CLOSED: major-airline-grounded rule skipped this run")
               per_feed = []
               ok = 0
               for name, url in FEEDS:
@@ -352,6 +393,8 @@ jobs:
                           continue
                       low = it["title"].lower()
                       for rid, pats, sev in ALL_RULES:
+                          if rid == "major-airline-grounded" and not air_gate:
+                              continue
                           if any(re.search(p, low) for p in pats):
                               if not headline_ok(it["title"]):
                                   print(f"{name}: rule {rid} matched but headline is not straight news, skipping: {it['title'][:100]}")
@@ -407,15 +450,8 @@ jobs:
 
 
           def main():
-              item, faa_ok = faa_signal()
-              reachable = faa_ok
-              from_news = False
-              if item is None:
-                  item, news_ok = news_signal()
-                  from_news = item is not None
-                  reachable = reachable or news_ok
-              if not reachable:
-                  raise SystemExit("all breaking sources unreachable - not writing breaking.json")
+              # v2.4: load the previous state first so the air-travel gate can be
+              # decided before the news signal runs.
               prev = None
               try:
                   with open("breaking.json") as f:
@@ -423,6 +459,17 @@ jobs:
               except Exception:
                   prev = None
               cooldowns = prune_cooldowns((prev or {}).get("cooldowns"))
+              air_gate = air_travel_gate_open(prev, cooldowns)
+              print(f"air-travel gate: {'OPEN' if air_gate else 'CLOSED'}")
+              item, faa_ok = faa_signal()
+              reachable = faa_ok
+              from_news = False
+              if item is None:
+                  item, news_ok = news_signal(air_gate)
+                  from_news = item is not None
+                  reachable = reachable or news_ok
+              if not reachable:
+                  raise SystemExit("all breaking sources unreachable - not writing breaking.json")
               if item is not None and from_news:
                   # v2.1: a news-signal rule that expired recently cannot re-fire
                   # on follow-up coverage of the same event. (The official FAA
