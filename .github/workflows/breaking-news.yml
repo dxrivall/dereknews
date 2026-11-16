@@ -11,8 +11,18 @@
 # a severity: "massive" fires the site's full-screen takeover;
 # "significant" appears only in the News tab Breaking News section.
 # A single outlet never fires. Items expire 3 hours after the
-# signal was last seen. Fetcher source: .src/fetch_breaking.py in
+# signal was last seen, then stay in breaking.json for a 6-hour
+# grace period marked expired (site lists them as EXPIRED in the
+# Breaking News section only - no takeover) and are dropped
+# completely after that. Fetcher source: .src/fetch_breaking.py in
 # the build workspace (embedded unchanged below).
+# v2.1 (Nov 15, 2026): selectivity — opinion/talk-show/question/
+# look-back/"event is over" headlines never count toward a signal,
+# and a rule whose item expired cannot re-fire for 7 days
+# (cooldowns recorded in breaking.json). An expired item whose
+# headline is not straight news gets no grace listing at all.
+# v2.2 (Nov 16, 2026): multi-bank outage rule — a major outage
+# across several banks counts as significant (listing only).
 # YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: Breaking news
 
