@@ -1140,8 +1140,11 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .nhero h1 .nred{color:#b42318}
 #view-news .nrule{height:4px;width:56px;border-radius:99px;background:#b42318;margin-top:14px}
 #view-news .ncard{background:var(--panel);border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 28px rgba(20,40,50,.12);padding:24px 22px;margin-top:14px;text-align:left}
-#view-news .news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:12px;align-items:start}
-#view-news .news-grid .ncard{margin-top:0;padding:15px 14px;border-radius:20px;min-width:0}
+#view-news .news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:12px;align-items:stretch}
+#view-news .news-grid .ncard{margin-top:0;padding:15px 14px;border-radius:20px;min-width:0;height:100%;box-sizing:border-box;display:flex;flex-direction:column}
+#view-news .news-grid .lnews{flex:1 1 auto;display:flex;flex-direction:column}
+#view-news .news-grid .lnews .nmore{flex:0 0 auto}
+#view-news .news-grid .nmore-toggle{margin-top:auto}
 #view-news .news-grid .ncard h2{font-size:16.5px}
 #view-news .news-grid .nkick{font-size:10px}
 #view-news .news-grid .lnews-t{font-size:13.8px;line-height:1.35}
@@ -5066,6 +5069,18 @@ body.on-christmas{color-scheme:light}
     var hrs=Math.round(mins/60);if(hrs<24)return hrs+'h ago';
     return Math.round(hrs/24)+'d ago';
   }
+  /* Freshness guard: Google News RSS returns stories by relevance,
+     not just recency, so a months-old piece (e.g. an August NYS Fair
+     forecast) can surface as a featured story in November. Nothing
+     older than 7 days — and nothing undated or future-dated — is
+     ever shown in any News tab section. */
+  var NEWS_MAX_AGE_MS=7*24*60*60*1000;
+  function isFresh(iso){
+    var ts=new Date(iso).getTime();
+    if(!ts||isNaN(ts))return false;
+    var age=Date.now()-ts;
+    return age>=-60*60*1000&&age<=NEWS_MAX_AGE_MS;
+  }
   function row(title,source,when,url){
     if(!url)return'';
     return '<a class="lnews-item" href="'+esc(url)+'" target="_blank" rel="noopener"><span class="lnews-t">'+esc(title)+'</span><span class="lnews-m">'+esc(source)+(when?' · '+esc(when):'')+'</span></a>';
@@ -5105,6 +5120,7 @@ body.on-christmas{color-scheme:light}
         if(out.length>=cap)return;
         var s=splitTitle(it.title);
         if(!s.title||seen[s.title])return;
+        if(!isFresh(it.pubDate))return;
         if(!okStory(s.title,it.description))return;
         if(keep&&!keep(s,it))return;
         seen[s.title]=1;
@@ -5124,6 +5140,7 @@ body.on-christmas{color-scheme:light}
         if(out.length>=cap)return;
         var sp=splitTitle(it.title);
         if(!sp.title||seen[sp.title])return;
+        if(!isFresh(it.pubDate))return;
         if(!okStory(sp.title,it.description))return;
         if(keep&&!keep(sp,it))return;
         seen[sp.title]=1;
@@ -5146,9 +5163,13 @@ body.on-christmas{color-scheme:light}
         (items||[]).forEach(function(it){
           var sp=splitTitle(it.title);
           if(!sp.title)return;
+          if(!isFresh(it.pubDate))return;
           if(!okStory(sp.title,it.description))return;
           out.push({title:sp.title,source:sp.source,when:ago(it.pubDate),ts:new Date(it.pubDate).getTime()||0,link:it.link});
         });
+        /* Newest first — the featured picks below take the first
+           item in each list, so RSS relevance order must not win. */
+        out.sort(function(a,b){return b.ts-a.ts;});
         return out;
       }
       var nat=clean(lists[0]),cny=clean(lists[1]);
@@ -5218,6 +5239,7 @@ body.on-christmas{color-scheme:light}
       ((d&&d.articles)||[]).forEach(function(a){
         var title=a.headline||'';
         if(!title||seen[title])return;
+        if(!isFresh(a.published))return;
         if(!okStory(title,a.description))return;
         var link=(a.links&&a.links.web&&a.links.web.href)||'';
         if(!link)return;
