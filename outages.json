@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-16T03:37:23.952752+00:00",
+ "updated_at": "2026-11-16T05:01:48.023541+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
-  "out": 2715,
+  "out": 2659,
   "pct": 0.03,
-  "source_updated": "2026-11-16T03:34:39+00:00",
+  "source_updated": "2026-11-16T04:54:05+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -15,16 +15,16 @@
     "pct": 49.35
    },
    {
-    "name": "Delaware County Electric Coop",
-    "tracked": 5335,
-    "out": 92,
-    "pct": 1.72
+    "name": "National Grid",
+    "tracked": 1698909,
+    "out": 61,
+    "pct": 0.0
    },
    {
     "name": "FirstEnergy",
     "tracked": 3816,
-    "out": 39,
-    "pct": 1.02
+    "out": 27,
+    "pct": 0.71
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -35,25 +35,13 @@
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 6,
-    "pct": 0.0
-   },
-   {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315411,
-    "out": 5,
-    "pct": 0.0
-   },
-   {
-    "name": "National Grid",
-    "tracked": 1698909,
-    "out": 3,
+    "out": 2,
     "pct": 0.0
    },
    {
     "name": "New York State Electric & Gas",
     "tracked": 919169,
-    "out": 3,
+    "out": 2,
     "pct": 0.0
    },
    {
@@ -66,6 +54,18 @@
     "name": "PSEG Long Island",
     "tracked": 1159509,
     "out": 1,
+    "pct": 0.0
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315411,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Delaware County Electric Coop",
+    "tracked": 5335,
+    "out": 0,
     "pct": 0.0
    },
    {
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 1,
-  "source_updated": "2026-11-16T03:34:38+00:00",
+  "out": 0,
+  "source_updated": "2026-11-16T04:54:03+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 1,
+    "out": 0,
     "pct": 0.0
    },
    {
