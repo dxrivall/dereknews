@@ -502,6 +502,43 @@ body>.teams-overlay{z-index:2000}
 #breakingSection .brk-expired .brk-title{color:var(--soft)}
 .brk-expired-note{font-size:13px;font-weight:700;color:#4b5563;background:rgba(107,114,128,.14);border:1px solid rgba(107,114,128,.4);border-radius:10px;padding:8px 11px;line-height:1.45;margin:8px 0}
 </style>
+<style>
+/* == Nov 16: Home weather widget — SIMPLE Apple Weather style ==
+   Derek: "way too much going on" + reference screenshot of the iOS
+   Apple Weather widget. The Home widget now shows ONLY:
+     top row  — place name (left) + condition icon (right)
+     hero row — huge thin temp (left); condition word + "H:.. L:.."
+                right-aligned on the right
+     one hourly row — 6 hours, each just hour / icon / temp.
+   No location buttons, no Feels-like/wind line, no Next-60-min box,
+   no 3-day rows, no "Full forecast" button, no extra text. The whole
+   card is tappable to the Weather tab (data-go="weather" on the
+   section). Location switching lives on the Weather tab now.
+   Data is unchanged: same live Open-Meteo loader, same condition-
+   tinted gradient classes (.wxth-* on #homeWxWidget). This block is
+   last in <head> so it wins over the older Home-widget overrides. */
+#homeWxWidget{padding:18px 20px 16px;border-radius:28px;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#homeWxWidget:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#homeWxWidget .wxd-toprow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+#homeWxWidget .wxd-loc{display:inline-flex;align-items:center;gap:5px;font-size:21px;font-weight:600;line-height:1.2;letter-spacing:.01em;min-width:0}
+#homeWxWidget .wxd-loc .dn-loc-ic{flex:none;opacity:.95}
+#homeWxWidget .wxd-topicon{font-size:27px;line-height:1.15;flex:none}
+#homeWxWidget .wxd-heromain{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:2px;text-align:left}
+#homeWxWidget .wxd-temp{font-size:clamp(64px,17vw,76px);font-weight:200;line-height:1;letter-spacing:-.02em}
+#homeWxWidget .wxd-heroright{text-align:right;flex:none;max-width:52%}
+#homeWxWidget .wxd-cond{font-size:19px;font-weight:500;line-height:1.25;margin:0;opacity:1}
+#homeWxWidget .wxd-hl{display:block;font-size:17px;font-weight:500;margin-top:3px;font-variant-numeric:tabular-nums}
+#homeWxWidget .wxd-hl:empty{display:none}
+#homeWxWidget .wxd-hourly{display:flex;width:100%;gap:0;justify-content:space-between;overflow:visible;padding:0;margin-top:16px;border-top:0;border-bottom:0}
+#homeWxWidget .wxd-h{flex:1 1 0;min-width:0;padding:0 1px;text-align:center}
+#homeWxWidget .wxd-h .t{font-size:13.5px;font-weight:500;white-space:nowrap;opacity:.92}
+#homeWxWidget .wxd-h .i{font-size:21px;margin:6px 0 4px;line-height:1.2}
+#homeWxWidget .wxd-h .tp{font-size:16.5px;font-weight:500;font-variant-numeric:tabular-nums}
+#homeWxWidget .wxd-status{font-size:13.5px;opacity:.85;margin:2px 0}
+/* Removed pieces stay gone even if old markup ever returns */
+#homeWxWidget .wxd-feelsline,#homeWxWidget .wxd-precip60,#homeWxWidget .wxd-days,#homeWxWidget .wxd-meta,#homeWxWidget .wxd-foot,#homeWxWidget .wxd-locbtn,#homeWxWidget .wxd-locstatus{display:none!important}
+@media(max-width:380px){#homeWxWidget{padding:16px 16px 14px}#homeWxWidget .wxd-cond{font-size:17px}#homeWxWidget .wxd-hl{font-size:15.5px}#homeWxWidget .wxd-h .t{font-size:12.5px}}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -658,17 +695,19 @@ body>.teams-overlay{z-index:2000}
   <div class="dateline" id="todayLine">Loading date…</div></div>
   <div class="widget-stack">
 
-  <!-- Weather widget: live conditions + next 8 hours &amp; 3-day forecast — always current, always shown -->
-  <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget">
-    <div class="wxd-locrow"><div class="wxd-loc" id="homeLocLabel">Cicero, NY</div><button type="button" class="wxd-locbtn" id="homeUseLoc"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg> Use my location</button><button type="button" class="wxd-locbtn" id="homeUseCicero" hidden>&larr; Cicero, NY</button></div>
-    <span class="wxd-locstatus" id="homeLocStatus" role="status"></span>
-    <div class="wxd-heromain"><div class="wxd-temp" id="stripTemp">&mdash;&deg;</div><div class="wxd-herocond"><div class="ic" id="stripIcon" aria-hidden="true">🌡️</div><div class="cd" id="stripCond">Loading live weather&hellip;</div></div></div>
-    <p class="wxd-feelsline" id="homeWxFeelsLine"></p>
-    <div class="wxd-precip60" id="homePrecip60" aria-label="Precipitation in the next 60 minutes">Next 60 min: —</div>
-    <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 8 hours"><p class="wxd-status">Loading hourly…</p></div>
-    <div class="wxd-days" id="homeMiniDays" aria-label="3-day forecast"><p class="wxd-status">Loading forecast…</p></div>
-    <div class="wxd-meta" id="homeWxMeta"></div>
-    <div class="wxd-foot"><span></span><button type="button" class="wxd-go" data-go="weather">Full forecast &rarr;</button></div>
+  <!-- Thanksgiving widget: moved to the top of Home, above the weather widget -->
+  <section class="hwidget" id="homeThanksgivingWidget" aria-label="Thanksgiving widget">
+    <div class="hwidget-head"><h2>🦃 Thanksgiving</h2></div>
+    <div class="tg-row"><div class="tg-big" id="homeTGBig"><span id="homeTGDays">—</span> days until Thanksgiving</div></div>
+  </section>
+  <!-- Weather widget: SIMPLE Apple-style (Nov 16) — place + icon on top,
+       huge temp with condition word + H/L on the right, then ONE row of
+       6 hours (hour / icon / temp). Nothing else. Whole card taps
+       through to the Weather tab. Same live Open-Meteo data as before. -->
+  <section class="hwidget wx-dn wxth-cloudy" id="homeWxWidget" aria-label="Weather widget — tap for the full forecast" data-go="weather" role="link" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+    <div class="wxd-toprow"><div class="wxd-loc"><span id="homeLocLabel">Cicero, NY</span><svg class="dn-loc-ic" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg></div><div class="wxd-topicon" id="stripIcon" aria-hidden="true">🌡️</div></div>
+    <div class="wxd-heromain"><div class="wxd-temp" id="stripTemp">&mdash;&deg;</div><div class="wxd-heroright"><div class="wxd-cond" id="stripCond">Loading live weather&hellip;</div><span class="wxd-hl" id="homeWxHL"></span></div></div>
+    <div class="wxd-hourly" id="homeHourly" aria-label="Hourly forecast for the next 6 hours"><p class="wxd-status">Loading hourly…</p></div>
   </section>
   <section class="hwidget" id="homeSportsWidget" aria-label="Sports widget">
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
@@ -696,10 +735,6 @@ body>.teams-overlay{z-index:2000}
       <a class="faith-mass" href="https://www.youtube.com/channel/UCv0TUu1tuIdVqRLFwGlos4A" target="_blank" rel="noopener">▶ Weekly Mass</a>
       <a class="faith-votd" href="https://www.bible.com/verse-of-the-day" target="_blank" rel="noopener">📖 Today&rsquo;s Verse</a>
     </div>
-  </section>
-  <section class="hwidget" id="homeThanksgivingWidget" aria-label="Thanksgiving widget">
-    <div class="hwidget-head"><h2>🦃 Thanksgiving</h2></div>
-    <div class="tg-row"><div class="tg-big" id="homeTGBig"><span id="homeTGDays">—</span> days until Thanksgiving</div></div>
   </section>
   <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
     <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
@@ -2658,7 +2693,7 @@ body.on-christmas{color-scheme:light}
     document.getElementById('wxTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('wxDesc').textContent=ci[1];
     document.getElementById('wxMeta').textContent='Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);var __fl=document.getElementById('wxFeelsLine');if(__fl)__fl.textContent='Feels like '+Math.round(cur.apparent_temperature)+'°';
-    if(d.daily&&d.daily.temperature_2m_max&&d.daily.temperature_2m_max[0]!=null){var hlTxt='H:'+Math.round(d.daily.temperature_2m_max[0])+'°   L:'+Math.round(d.daily.temperature_2m_min[0])+'°';var hlA=document.getElementById('homeWxHL');if(hlA)hlA.textContent=hlTxt;var hlB=document.getElementById('wxHL');if(hlB)hlB.textContent=hlTxt;var __fl2=document.getElementById('wxFeelsLine');var __hf=document.getElementById('homeWxFeelsLine');if(__hf)__hf.textContent='Feels like '+Math.round(cur.apparent_temperature)+'\u00B0 | H '+Math.round(d.daily.temperature_2m_max[0])+'\u00B0 | L '+Math.round(d.daily.temperature_2m_min[0])+'\u00B0';if(__fl2)__fl2.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° | H '+Math.round(d.daily.temperature_2m_max[0])+'° | L '+Math.round(d.daily.temperature_2m_min[0])+'°';}
+    if(d.daily&&d.daily.temperature_2m_max&&d.daily.temperature_2m_max[0]!=null){var hlTxt='H:'+Math.round(d.daily.temperature_2m_max[0])+'° L:'+Math.round(d.daily.temperature_2m_min[0])+'°';var hlA=document.getElementById('homeWxHL');if(hlA)hlA.textContent=hlTxt;var hlB=document.getElementById('wxHL');if(hlB)hlB.textContent=hlTxt;var __fl2=document.getElementById('wxFeelsLine');var __hf=document.getElementById('homeWxFeelsLine');if(__hf)__hf.textContent='Feels like '+Math.round(cur.apparent_temperature)+'\u00B0 | H '+Math.round(d.daily.temperature_2m_max[0])+'\u00B0 | L '+Math.round(d.daily.temperature_2m_min[0])+'\u00B0';if(__fl2)__fl2.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° | H '+Math.round(d.daily.temperature_2m_max[0])+'° | L '+Math.round(d.daily.temperature_2m_min[0])+'°';}
     // Today's Details grid
     var det='';
     function tile(l,v,s){det+='<div class="wdet"><div class="wl">'+l+'</div><div class="wv">'+v+'</div>'+(s?'<div class="ws">'+s+'</div>':'')+'</div>';}
@@ -2682,7 +2717,7 @@ body.on-christmas{color-scheme:light}
         var lbl=(j===hi)?'Now':ht.toLocaleTimeString('en-US',{hour:'numeric'});
         var pp=d.hourly.precipitation_probability?d.hourly.precipitation_probability[j]:null;
         var strip='<div class="wxd-h"><div class="t">'+lbl+'</div><div class="i">'+hii[0]+'</div><div class="tp">'+Math.round(d.hourly.temperature_2m[j])+'°</div></div>';
-        if(j<hi+8)hs+=strip;
+        if(j<hi+6)hs+=strip; /* Home widget: 6 hours only (simple Apple-style, Nov 16) */
         heroCards.push({t:new Date(d.hourly.time[j]).getTime(),html:'<div class="hour'+(j===hi?' now':'')+'"><div class="hh">'+lbl+'</div><div class="ic">'+hii[0]+'</div><div class="ht">'+Math.round(d.hourly.temperature_2m[j])+'°F</div><div class="hp">💧 '+(pp==null?'—':Math.round(pp)+'%')+'</div></div>'});
       }
       var hHour=document.getElementById('homeHourly');if(hHour)hHour.innerHTML=hs;
@@ -2725,7 +2760,7 @@ body.on-christmas{color-scheme:light}
     if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColor(mdLo)+','+wxTempColor(mdHi)+')"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
     var hwm=document.getElementById('homeWxMeta');if(hwm)hwm.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° · Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);
     document.getElementById('wxStamp').textContent='Live data: Open-Meteo · Alerts: National Weather Service · '+__wxLoc.label+' · Loaded '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  }).catch(function(){snowWxFailed=true;updateSnowDay();renderWxTrend(null);document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable — open the Weather tab to retry.';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
+  }).catch(function(){snowWxFailed=true;updateSnowDay();renderWxTrend(null);document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
   // Live weather alerts — National Weather Service (api.weather.gov), Cicero point. Shown only when active.
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
