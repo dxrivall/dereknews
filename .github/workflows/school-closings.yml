@@ -39,17 +39,36 @@ jobs:
           and writes a slim closings.json at the repo root; index.html reads it
           from the same GitHub Pages origin (the Home page NSCSD note only).
 
-          Discovery, not guessing: the fetcher opens the CNY Central home page,
-          follows links whose href or text mentions closings, and parses the
-          closings page it finds. Parsing is deliberately conservative:
-          - Only lines carrying a real status word (closed / delay / remote /
-            early dismissal / cancelled ...) paired with an organisation name
-            become entries; nothing is ever invented.
-          - If a closings page explicitly says there are no closings, an empty
-            list is written (that is real data, not a parse failure).
-          - If no closings page can be found or parsed at all, exit non-zero
-            and do NOT overwrite the last closings.json.
+          How the data is actually reached (verified live 2026-11-16):
+            1. The CNY Central home page is a Next.js app: the closings link
+               ("/weather/closings") lives in embedded JSON nav data, not in a
+               real <a href>, so discovery scans quoted paths as well as hrefs.
+            2. The closings page embeds a Sinclair iframe
+               (sbgcg.com/.../Stations/WSTM/closings.html) which is only a JS
+               loader; the real list comes from closings-output.php on the same
+               host, derived from the iframe path's station segment.
+            3. That output page embeds a base64-encoded JSON feed URL
+               (ticker.news.sinclairinc.cloud ... /CLOSINGS/?format=json ...);
+               the feed's bladeQueryItem (or closingGroup.closingList) is the
+               authoritative structured list. An empty list means no closings.
+
+          Failure policy (the point of the Nov 16 fix):
+          - If the home page itself cannot be fetched, exit non-zero and do NOT
+            overwrite the last closings.json (a real outage; keep last good data).
+          - If the home page loads fine but publishes no closings link right now,
+            that is normal on most days (nothing to report): write a fresh empty
+            list and exit 0, instead of failing every 15 minutes.
+          - If a closings page is found but yields neither entries nor an
+            explicit "no closings", exit non-zero and keep the last good file
+            (a genuine parse failure, worth one email, not a silent wipe).
+
+          Parsing is deliberately conservative: only lines carrying a real status
+          word (closed / delay / remote / early dismissal / cancelled ...) paired
+          with an organisation name become entries; nothing is ever invented.
+          Bare "closing"/"closings" is NOT a status word (it is the page title
+          and nav text, and matching it once produced a bogus "Watch" entry).
           """
+          import base64
           import datetime
           import html as htmlmod
           import json
@@ -65,7 +84,7 @@ jobs:
           ]
           HOME = "https://cnycentral.com"
           STATUS_RE = re.compile(
-              r"(closed|closing|delay|remote learning|remote day|virtual learning|"
+              r"(closed|delay|remote learning|remote day|virtual learning|"
               r"early dismissal|dismissing early|cancel+ed|cancel+ation|no school|"
               r"no classes|2[\s-]*hour|two[\s-]*hour)", re.I)
           NONE_RE = re.compile(
@@ -74,6 +93,11 @@ jobs:
           NAME_SKIP = ("cny central", "cnycentral", "school closings", "closings",
                        "weather", "news", "menu", "search", "sign up", "log in",
                        "facebook", "twitter", "instagram", "youtube", "advertisement")
+
+
+          def log_url(url):
+              # Never print query strings: the JSON feed URL carries an api key.
+              return url.split("?")[0]
 
 
           def get(url):
@@ -87,13 +111,13 @@ jobs:
                       })
                       with urllib.request.urlopen(req, timeout=30) as r:
                           body = r.read().decode("utf-8", "ignore")
-                      print(f"GET {url} -> {r.status}, {len(body)} bytes (UA {attempt})")
+                      print(f"GET {log_url(url)} -> {r.status}, {len(body)} bytes (UA {attempt})")
                       return body
                   except Exception as e:
                       last = e
-                      print(f"GET {url} attempt {attempt} failed: {e}")
+                      print(f"GET {log_url(url)} attempt {attempt} failed: {e}")
                       time.sleep(3)
-              raise SystemExit(f"fetch failed for {url}: {last}")
+              raise SystemExit(f"fetch failed for {log_url(url)}: {last}")
 
 
           def page_lines(page):
@@ -151,32 +175,138 @@ jobs:
                       continue
                   if "closing" in full.lower() and full not in urls:
                       urls.append(full)
+              # CNY Central is a Next.js app: nav links also live in embedded JSON
+              # ("href":"/weather/closings") rather than real <a href> tags.
+              # That JSON is backslash-escaped, so the path ends in \" rather
+              # than a bare quote: allow (but do not capture) the backslash
+              # before the closing quote, or the match silently finds nothing.
+              for path in re.findall(r'["\'](/[^"\'\\\s]*closing[^"\'\\\s]*?)\\?["\']', home_html):
+                  full = urljoin(HOME, path)
+                  if "submit" in full.lower():
+                      continue  # "Submit a Closing" is a form, not the list
+                  if full not in urls:
+                      urls.append(full)
               return urls[:3]
+
+
+          def find_iframe_srcs(page):
+              urls = []
+              for src in re.findall(r'https?://[^\s"\'\\]+closings\.html', page):
+                  if src not in urls:
+                      urls.append(src)
+              return urls
+
+
+          def output_url_for_iframe(iframe_url):
+              # .../Stations/<STATION>/closings.html -> .../closings-output.php
+              parts = [p for p in urlparse(iframe_url).path.split("/") if p]
+              if len(parts) < 2:
+                  return None
+              station = parts[-2]
+              return urljoin(iframe_url,
+                              f"../../closings-output.php?station={station}&file=closings.html")
+
+
+          def json_feed_url(output_html):
+              m = re.search(r'encodedJsonUrl\s*=\s*"([A-Za-z0-9+/=]+)"', output_html)
+              if not m:
+                  return None
+              try:
+                  url = base64.b64decode(m.group(1)).decode("utf-8", "ignore").strip()
+              except Exception:
+                  return None
+              return url if url.startswith(("http://", "https://")) else None
+
+
+          def parse_json_feed(data):
+              if isinstance(data, dict):
+                  if data.get("closingGroup") and data["closingGroup"].get("closingList"):
+                      raw = data["closingGroup"]["closingList"]
+                  else:
+                      raw = data.get("bladeQueryItem", [])
+              elif isinstance(data, list):
+                  raw = data
+              else:
+                  raw = []
+              if not isinstance(raw, list):
+                  raw = [raw]
+              items, seen = [], set()
+              for it in raw:
+                  if not isinstance(it, dict):
+                      continue
+                  name = (it.get("institution_name") or it.get("name") or "").strip()
+                  status = (it.get("statusName") or it.get("status") or "").strip()
+                  detail = (it.get("category") or it.get("group") or "").strip()
+                  if not name or not status:
+                      continue
+                  if (name.lower(), status.lower()) in seen:
+                      continue
+                  seen.add((name.lower(), status.lower()))
+                  items.append({"name": name, "status": status, "detail": detail})
+              return items
+
+
+          def try_json_feed(page):
+              """Follow the closings page's Sinclair embed to the JSON feed.
+
+              Returns a list of entries (possibly empty) when the feed was reached,
+              or None when this page has no Sinclair embed to follow.
+              """
+              for src in find_iframe_srcs(page):
+                  out_url = output_url_for_iframe(src)
+                  if not out_url:
+                      continue
+                  try:
+                      out_html = get(out_url)
+                  except SystemExit:
+                      continue
+                  feed = json_feed_url(out_html)
+                  if not feed:
+                      continue
+                  try:
+                      data = json.loads(get(feed))
+                  except SystemExit:
+                      continue
+                  except Exception as e:
+                      print(f"JSON feed parse failed: {e}")
+                      continue
+                  return parse_json_feed(data)
+              return None
+
+
+          def write_out(items, note):
+              out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                     "source": "CNY Central (cnycentral.com) school closings, fetched server-side",
+                     "closings": sorted(items, key=lambda x: x["name"].lower())}
+              with open("closings.json", "w") as f:
+                  json.dump(out, f, indent=1)
+              print(f"{note}: wrote closings.json with {len(items)} closings/delays")
 
 
           def main():
               home = get(HOME)
               candidates = discover(home)
               print("closings page candidates:", candidates)
+              if not candidates:
+                  # The home page loaded fine but publishes no closings link right
+                  # now. That is normal on most days (nothing to report), not an
+                  # outage: write a fresh empty list so closings.json stays current
+                  # and the site note stays hidden, instead of failing every run.
+                  write_out([], "no closings link published on homepage")
+                  return 0
               for url in candidates:
                   page = get(url)
+                  items = try_json_feed(page)
+                  if items is not None:
+                      write_out(items, f"JSON feed via {url}")
+                      return 0
                   lines = page_lines(page)
                   items = parse_closings(lines)
                   if items:
-                      out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                             "source": "CNY Central (cnycentral.com) school closings, fetched server-side",
-                             "closings": sorted(items, key=lambda x: x["name"].lower())}
-                      with open("closings.json", "w") as f:
-                          json.dump(out, f, indent=1)
-                      print(f"wrote closings.json with {len(items)} closings/delays from {url}")
+                      write_out(items, f"parsed from {url}")
                       return 0
                   if NONE_RE.search(" ".join(lines)):
-                      out = {"updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                             "source": "CNY Central (cnycentral.com) school closings, fetched server-side",
-                             "closings": []}
-                      with open("closings.json", "w") as f:
-                          json.dump(out, f, indent=1)
-                      print(f"CNY Central reports no closings ({url}); wrote empty closings.json")
+                      write_out([], f"CNY Central reports no closings ({url})")
                       return 0
                   print(f"no closings parsed from {url}")
               raise SystemExit("no usable closings page found - not writing closings.json")
