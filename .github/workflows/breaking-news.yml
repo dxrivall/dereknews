@@ -11,16 +11,8 @@
 # a severity: "massive" fires the site's full-screen takeover;
 # "significant" appears only in the News tab Breaking News section.
 # A single outlet never fires. Items expire 3 hours after the
-# signal was last seen, then stay in breaking.json for a 6-hour
-# grace period marked expired (site lists them as EXPIRED in the
-# Breaking News section only - no takeover) and are dropped
-# completely after that. Fetcher source: .src/fetch_breaking.py in
+# signal was last seen. Fetcher source: .src/fetch_breaking.py in
 # the build workspace (embedded unchanged below).
-# v2.1 (Nov 15, 2026): selectivity — opinion/talk-show/question/
-# look-back/"event is over" headlines never count toward a signal,
-# and a rule whose item expired cannot re-fire for 7 days
-# (cooldowns recorded in breaking.json). An expired item whose
-# headline is not straight news gets no grace listing at all.
 # YAML fix: see kalshi-odds.yml - block scalar fetch step.
 name: Breaking news
 
@@ -212,6 +204,18 @@ jobs:
                                 r"earthquake[^.]{0,50}magnitude 6\.\d"]),
               ("widespread-outage", [
                   r"(power outage|without power)[^.]{0,70}(\d[\d,\.]*\s*(million|thousand)|million)"]),
+              # v2.2 (Nov 16, 2026): a multi-bank outage counts as breaking
+              # news — people can't pay or withdraw. Significant only (News
+              # tab listing, never the takeover). Gaps use . not [^.] because
+              # bank headlines carry "U.S." (periods) mid-phrase. Single-bank
+              # glitches don't match: every pattern needs multi-bank scope
+              # (major/multiple/several/widespread, or two named banks).
+              ("multi-bank-outage", [
+                  r"(major|multiple|several|widespread).{0,60}(bank|banks|banking).{0,60}(outage|outages|down|offline)",
+                  r"(bank|banks|banking).{0,60}(outage|outages).{0,80}(chase|wells fargo|bank of america|u\.s\. bank|truist|capital one|citibank|citi|pnc)",
+                  r"(chase|wells fargo|bank of america).{0,60}(chase|wells fargo|bank of america|u\.s\. bank|truist|capital one|citibank|citi|pnc).{0,60}(outage|outages|down|offline)",
+                  r"(outage|outages|down).{0,40}(major|multiple|several).{0,40}(bank|banks)",
+              ]),
               ("major-flooding", [
                   r"(flash flood emergency|catastrophic flooding|historic flooding)[^.]{0,70}(texas|florida|carolina|midwest|northeast|u\.s\.|kentucky|tennessee|louisiana)"]),
           ]
@@ -494,4 +498,3 @@ jobs:
             git rebase "origin/$branch" || git rebase --abort
           done
           git push origin "HEAD:$branch"
-
