@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-16T10:26:11.311804+00:00",
+ "updated_at": "2026-11-16T11:41:35.188866+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384064,
   "out": 2566,
   "pct": 0.03,
-  "source_updated": "2026-11-16T10:13:50+00:00",
+  "source_updated": "2026-11-16T11:33:54+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -27,15 +27,9 @@
     "pct": 0.0
    },
    {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 1,
-    "pct": 0.0
-   },
-   {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 0,
+    "out": 1,
     "pct": 0.0
    },
    {
@@ -69,6 +63,12 @@
     "pct": 0.0
    },
    {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Steuben Rural Electric Coop",
     "tracked": 6714,
     "out": 0,
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 0,
-  "source_updated": "2026-11-16T10:13:49+00:00",
+  "source_updated": "2026-11-16T11:33:52+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
