@@ -1,59 +1,59 @@
 {
- "updated_at": "2026-11-16T19:58:14.723453+00:00",
+ "updated_at": "2026-11-16T20:40:24.902834+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384040,
-  "out": 2124,
-  "pct": 0.03,
-  "source_updated": "2026-11-16T19:54:27+00:00",
+  "out": 940,
+  "pct": 0.01,
+  "source_updated": "2026-11-16T20:34:46+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "Otsego Electric Coop",
-    "tracked": 5163,
-    "out": 548,
-    "pct": 10.61
+    "name": "New York State Electric & Gas",
+    "tracked": 919169,
+    "out": 372,
+    "pct": 0.04
    },
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315387,
-    "out": 516,
-    "pct": 0.16
+    "name": "Otsego Electric Coop",
+    "tracked": 5163,
+    "out": 180,
+    "pct": 3.49
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392028,
-    "out": 437,
-    "pct": 0.11
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919169,
-    "out": 371,
+    "out": 168,
     "pct": 0.04
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 164,
+    "out": 113,
+    "pct": 0.0
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315387,
+    "out": 32,
+    "pct": 0.01
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 30,
     "pct": 0.0
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 31,
-    "pct": 0.0
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 31,
+    "out": 24,
     "pct": 0.0
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 26,
+    "out": 21,
     "pct": 0.01
    },
    {
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 1,
-  "source_updated": "2026-11-16T19:54:25+00:00",
+  "out": 0,
+  "source_updated": "2026-11-16T20:34:45+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 1,
+    "out": 0,
     "pct": 0.0
    },
    {
