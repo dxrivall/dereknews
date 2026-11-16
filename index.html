@@ -612,6 +612,23 @@ body>.teams-overlay{z-index:2000}
 #homeWxWidget .wxd-fullbtn{appearance:none;display:block;width:100%;margin-top:14px;min-height:42px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(10px) saturate(160%);backdrop-filter:blur(10px) saturate(160%);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;text-shadow:0 1px 3px rgba(0,30,60,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
 #homeWxWidget .wxd-fullbtn:active{background:rgba(255,255,255,.34)}
 </style>
+<style>
+/* == Nov 16 (later): Home widget uses the Weather tab's exact icons ==
+   Derek: "For my widget use the exact icons in the weather tab
+   instead" — the Home widget now renders the same emoji glyphs as
+   the Weather tab (codes / infoAt), not the flat-white SVG set, so
+   the SVG sizing rules above no longer apply; emoji sizing is
+   restored here. Night partly cloudy (code 2) is the one layered
+   exception: the Weather tab glyph puts the moon NEXT TO the cloud,
+   and Derek asked for the moon BEHIND the cloud — .wx-behind layers
+   the moon peeking out from behind the top-right of the cloud.
+   Weather tab itself is unchanged. */
+#homeWxWidget .wxd-topicon{line-height:1.15;font-size:34px}
+#homeWxWidget .wxd-h .i{line-height:1.2;display:block;font-size:21px}
+#homeWxWidget .wx-behind{position:relative;display:inline-block;width:1.5em;height:1.12em;line-height:1;vertical-align:-0.06em}
+#homeWxWidget .wx-behind .wx-bm{position:absolute;top:-0.16em;right:0;font-size:0.64em;line-height:1;z-index:0}
+#homeWxWidget .wx-behind .wx-bc{position:absolute;left:0;bottom:-0.08em;font-size:1.04em;line-height:1;z-index:1}
+</style>
 </head>
 <body>
 <script>window.__dnTest=(function(){try{return new URLSearchParams(location.search).get('test')||'';}catch(e){return '';}})();</script>
@@ -2540,7 +2557,10 @@ body.on-christmas{color-scheme:light}
      solid white cloud. No colour at all: no yellow moon, no shaded
      or grey cloud, no blue rain, no yellow bolt, no gradients, no
      shadows. This set copies that exactly: every fill and stroke
-     below is #FFFFFF. wxAppleIcon(code, isDay) returns the SVG
+     below is #FFFFFF. SUPERSEDED Nov 16 (later): the Home widget
+     now uses wxHomeIcon — the Weather tab's exact emoji glyphs —
+     so this SVG set is unused, kept only for an easy revert.
+     wxAppleIcon(code, isDay) returns the SVG
      markup; the label still comes from infoAt, so wording and the
      after-sunset moon rule are unchanged. The Weather tab keeps
      its emoji icons. */
@@ -2617,6 +2637,18 @@ body.on-christmas{color-scheme:light}
   }
   function infoApple(c,isDay){var base=infoAt(c,isDay);return [wxAppleIcon(c,isDay?1:0),base[1]];}
   function infoAt(c,isDay){if(!isDay){if(c===0)return ['🌙','Clear sky'];if(c===1)return ['🌙','Mainly clear'];if(c===2)return ['🌙☁️','Partly cloudy'];}return info(c);}
+  /* Home widget icon — the Weather tab's exact glyph (infoAt) for
+     every code, EXCEPT night partly cloudy (code 2 after sunset):
+     there the moon goes BEHIND the cloud (layered .wx-behind spans,
+     styled in the Nov 16 later CSS block) instead of sitting next
+     to it. Day partly cloudy keeps its single glyph — its sun is
+     already behind the cloud. Home widget only; the Weather tab
+     keeps infoAt exactly as-is. */
+  function wxHomeIcon(c,isDay){
+    var night=(isDay===0||isDay===false);
+    if(c===2&&night)return '<span class="wx-behind" aria-hidden="true"><span class="wx-bm">🌙</span><span class="wx-bc">☁️</span></span>';
+    return infoAt(c,isDay)[0];
+  }
   /* is_day for hourly index idx; if the feed ever omits it, fall
      back to comparing the hour against that date's live sunrise /
      sunset from the same forecast — still never a guessed icon. */
@@ -3037,7 +3069,7 @@ body.on-christmas{color-scheme:light}
         var ht=new Date(d.hourly.time[j]), hii=infoAt(d.hourly.weather_code[j],isDayAt(d,j));
         var lbl=(j===hi)?'Now':ht.toLocaleTimeString('en-US',{hour:'numeric'});
         var pp=d.hourly.precipitation_probability?d.hourly.precipitation_probability[j]:null;
-        var strip='<div class="wxd-h"><div class="t">'+lbl+'</div><div class="i">'+wxAppleIcon(d.hourly.weather_code[j],isDayAt(d,j))+'</div><div class="tp">'+Math.round(d.hourly.temperature_2m[j])+'°</div></div>';
+        var strip='<div class="wxd-h"><div class="t">'+lbl+'</div><div class="i">'+wxHomeIcon(d.hourly.weather_code[j],isDayAt(d,j))+'</div><div class="tp">'+Math.round(d.hourly.temperature_2m[j])+'°</div></div>';
         if(j<hi+6)hs+=strip; /* Home widget: 6 hours only (simple Apple-style, Nov 16) */
         heroCards.push({t:new Date(d.hourly.time[j]).getTime(),html:'<div class="hour'+(j===hi?' now':'')+'"><div class="hh">'+lbl+'</div><div class="ic">'+hii[0]+'</div><div class="ht">'+Math.round(d.hourly.temperature_2m[j])+'°F</div><div class="hp">💧 '+(pp==null?'—':Math.round(pp)+'%')+'</div></div>'});
       }
@@ -3063,7 +3095,7 @@ body.on-christmas{color-scheme:light}
    (homeWxFeelsLine, set above) instead of floating on its own under
    the condition icon. */if(__pp!=null){var __hf3=document.getElementById('homeWxFeelsLine');if(__hf3&&__hf3.textContent&&__hf3.textContent.indexOf('Next hour')<0)__hf3.textContent+=' \u00b7 Next hour '+__kind+' chance '+Math.round(__pp)+'%';}}
     applyWxBg(cur.weather_code,dayNow,ci[1],cur.time);
-    document.getElementById('stripIcon').innerHTML=wxAppleIcon(cur.weather_code,dayNow);
+    document.getElementById('stripIcon').innerHTML=wxHomeIcon(cur.weather_code,dayNow);
     document.getElementById('stripTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('stripCond').textContent=ci[1];
     var html='';
