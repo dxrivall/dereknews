@@ -1,60 +1,60 @@
 {
- "updated_at": "2026-11-16T16:08:55.039819+00:00",
+ "updated_at": "2026-11-16T17:16:42.883335+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384040,
-  "out": 3109,
-  "pct": 0.04,
-  "source_updated": "2026-11-16T16:04:29+00:00",
+  "out": 2612,
+  "pct": 0.03,
+  "source_updated": "2026-11-16T17:04:26+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
-    "out": 1798,
-    "pct": 34.82
+    "out": 1059,
+    "pct": 20.51
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315387,
-    "out": 660,
-    "pct": 0.21
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 260,
-    "pct": 0.02
+    "out": 574,
+    "pct": 0.18
    },
    {
     "name": "New York State Electric & Gas",
     "tracked": 919169,
-    "out": 162,
-    "pct": 0.02
+    "out": 511,
+    "pct": 0.06
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392028,
+    "out": 168,
+    "pct": 0.04
    },
    {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 149,
+    "out": 105,
     "pct": 0.01
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 97,
+    "pct": 0.01
+   },
+   {
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 61,
+    "pct": 0.0
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5335,
     "out": 36,
     "pct": 0.67
-   },
-   {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 28,
-    "pct": 0.0
-   },
-   {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392028,
-    "out": 15,
-    "pct": 0.0
    },
    {
     "name": "Orange & Rockland Utilities Inc",
@@ -96,16 +96,16 @@
  },
  "county": {
   "tracked": 212640,
-  "out": 21,
-  "source_updated": "2026-11-16T16:04:27+00:00",
-  "pct": 0.01,
+  "out": 2,
+  "source_updated": "2026-11-16T17:04:24+00:00",
+  "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204486,
-    "out": 21,
-    "pct": 0.01
+    "out": 2,
+    "pct": 0.0
    },
    {
     "name": "New York State Electric & Gas",
