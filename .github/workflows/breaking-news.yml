@@ -225,6 +225,12 @@ jobs:
                   r"(bank|banks|banking).{0,60}(outage|outages).{0,80}(chase|wells fargo|bank of america|u\.s\. bank|truist|capital one|citibank|citi|pnc)",
                   r"(chase|wells fargo|bank of america).{0,60}(chase|wells fargo|bank of america|u\.s\. bank|truist|capital one|citibank|citi|pnc).{0,60}(outage|outages|down|offline)",
                   r"(outage|outages|down).{0,40}(major|multiple|several).{0,40}(bank|banks)",
+                  # Nov 16 v2.3: Chase-led wording — AP/CNN framed today's multi-bank
+                  # outage as Chase trouble/delays with no "outage/down" and no second
+                  # bank in the headline, so the four patterns above missed it. This
+                  # one catches that shape. The 2-outlet confirmation still keeps a
+                  # one-off single-bank glitch out.
+                  r"(chase|jpmorgan).{0,80}(bank|banks|banking).{0,60}(trouble|delays?|problems|outage|outages|down|offline)",
               ]),
               ("major-flooding", [
                   r"(flash flood emergency|catastrophic flooding|historic flooding)[^.]{0,70}(texas|florida|carolina|midwest|northeast|u\.s\.|kentucky|tennessee|louisiana)"]),
