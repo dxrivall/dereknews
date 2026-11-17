@@ -1225,6 +1225,14 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .isw:active{opacity:.75}
 #view-news .et-risk{text-align:center;padding:18px 8px 4px}
 #view-news .et-risk-num{font-size:56px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
+#view-news .et-risk-trend{font-size:15px;font-weight:800;margin-top:6px}
+#view-news .et-risk-trend:empty{display:none}
+#view-news .et-trend-up{color:#b42318}
+#view-news .et-trend-down{color:#15803d}
+#view-news .et-trend-flat{color:var(--soft)}
+#view-news .et-trend-lab{font-size:12.5px;font-weight:600;color:var(--soft)}
+#view-news .et-risk-updated{font-size:12.5px;color:var(--soft);margin-top:4px}
+#view-news .et-risk-updated:empty{display:none}
 #view-news .et-risk-lab{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-top:8px}
 #view-news .et-risk-sub{font-size:12.5px;color:var(--soft);line-height:1.5;margin-top:4px}
 #view-news .et-risk-level{font-size:15px;font-weight:800;margin-top:6px}
@@ -1258,6 +1266,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .cy-live{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#b42318;border:1.5px solid rgba(180,35,24,.6);border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:1px}
 #view-news .cy-map{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--link);text-decoration:none;border:1.5px solid var(--border);border-radius:999px;padding:9px 14px}
 #view-news .cy-map:active{opacity:.7}
+#view-news .et-pizza{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
+#view-news .et-pizza p{font-size:13.5px;line-height:1.5;margin:6px 0}
+#view-news .et-pizza .et-pizza-caveat{font-size:12.5px;color:var(--soft)}
 </style>
   <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
   <section class="ncard" id="breakingSection" aria-label="Breaking news">
@@ -1268,6 +1279,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <span class="nkick">News &middot; War &amp; Cyber Tracker</span><h2>🛡️ War &amp; Cyber Tracker</h2>
     <div class="et-risk" id="etRisk">
       <div class="et-risk-num" id="etRiskNum">—</div>
+      <div class="et-risk-trend" id="etRiskTrend"></div>
+      <div class="et-risk-updated" id="etRiskUpdated"></div>
       <div class="et-risk-lab">Iran War Risk</div>
       <div class="et-risk-level" id="etRiskLevel">—</div>
       <div class="et-risk-driver" id="etRiskDriver"></div>
@@ -1277,12 +1290,18 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <h3 class="et-h">Live war &amp; peace odds &middot; Polymarket</h3>
     <div id="etMarkets"><p class="lstatus">Loading live odds&hellip;</p></div>
     <p class="esrc">Odds: Polymarket, tapped rows open the live market. Market-implied chances, not predictions &mdash; prices move constantly. <span id="etUpdated"></span></p>
-    <h3 class="et-h">💻 Recent cyber incidents</h3>
-    <p class="et-status" id="cyLiveStatus">Checking for recent incidents&hellip;</p>
-    <div id="cyList"><p class="lstatus">Loading recent incidents&hellip;</p></div>
+    <h3 class="et-h">💻 Everything going on</h3>
+    <p class="et-status" id="cyLiveStatus">Checking what&rsquo;s going on&hellip;</p>
+    <div id="cyList"><p class="lstatus">Loading what&rsquo;s going on&hellip;</p></div>
     <a class="cy-map" href="https://threatmap.checkpoint.com/" target="_blank" rel="noopener">Live global cyber attack map &rarr;</a>
     <p class="cy-cisa-line">Official guidance: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">CISA advisories &rarr;</a></p>
-    <p class="esrc">Incidents: major ransomware, data breach, hack and outage reports from Google News, last 7 days only. Only real reported items show; if the feed can&rsquo;t load, it says so instead of guessing. <span id="cyUpdated"></span></p>
+    <p class="esrc">What&rsquo;s going on: major outages, bank and airline disruptions, emergency alerts, ransomware, breaches and hacks from Google News, last 7 days only. Only real reported items show; if the feed can&rsquo;t load, it says so instead of guessing. <span id="cyUpdated"></span></p>
+    <div class="et-pizza" aria-label="Pizza Index">
+      <h3 class="et-h">🍕 Pizza Index</h3>
+      <p>When Pentagon staff work late on a crisis, nearby pizza spots get busier than usual — the old OSINT tell.</p>
+      <p class="et-pizza-caveat">A folk indicator, not proof — busy pizza nights have plenty of ordinary causes.</p>
+      <a class="cy-map" href="https://x.com/PenPizzaReport" target="_blank" rel="noopener">Live report: @PenPizzaReport on X &rarr;</a>
+    </div>
     <div class="et-prep" aria-label="How to prepare">
       <h3 class="et-h" style="margin-top:2px">How to prepare</h3>
       <h4>Cyber</h4>
@@ -1346,9 +1365,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
    ceasefire, China-Taiwan, US-Iran nuclear deal) are listed for
    context only and are NOT part of the composite.
    War odds: Polymarket public Gamma API (same pattern as the 2028
-   outlook). Cyber: recent incidents only — Google News via rss2json
-   with broader ransomware / data breach / hack / major outage
-   queries, last 7 days, top 6. CISA is only a small guidance link.
+   outlook). Cyber / disruptions: "Everything going on" — Google
+   News via rss2json with ransomware / data breach / hack / major
+   outage / bank outage / airline ground stop / emergency alert
+   test queries, last 7 days, top 6. CISA is only a small guidance link.
    Risk readout under the composite uses the same two Iran inputs
    only; cyber does not feed the number. If a fetch fails, an honest
    fallback shows — never a guessed number. */
@@ -1396,17 +1416,19 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     if(!prices||prices[0]==null)return null;
     var pct=parseFloat(prices[0])*100;
     if(isNaN(pct))return null;
-    return {pct:pct,day:(typeof m.oneDayPriceChange==='number'?m.oneDayPriceChange*100:null)};
+    var token=null;
+    try{var toks=JSON.parse(m.clobTokenIds||'null');if(toks&&toks[0]!=null)token=String(toks[0]);}catch(e){}
+    return {pct:pct,day:(typeof m.oneDayPriceChange==='number'?m.oneDayPriceChange*100:null),token:token};
   }
   if(box){
     Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
       var rows=[];
-      var invade=null,cease=null;
+      var invade=null,cease=null,invadeToken=null,ceaseToken=null;
       evs.forEach(function(ev,i){
         var w=WATCH[i],r=ev?pickPrice(ev,w.pick):null;
         if(!r)return;
-        if(i===0)invade=r.pct;
-        if(i===1)cease=r.pct;
+        if(i===0){invade=r.pct;invadeToken=r.token||null;}
+        if(i===1){cease=r.pct;ceaseToken=r.token||null;}
         var pct=r.pct>=10?Math.round(r.pct):Math.round(r.pct*10)/10;
         var move='';
         if(r.day!=null&&Math.abs(r.day)>=0.5){
@@ -1420,6 +1442,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       var riskEl=document.getElementById('etRiskNum');
       var levelEl=document.getElementById('etRiskLevel');
       var driverEl=document.getElementById('etRiskDriver');
+      var trendEl=document.getElementById('etRiskTrend');
+      var riskUpdatedEl=document.getElementById('etRiskUpdated');
       if(riskEl){
         if(invade!=null&&cease!=null){
           var risk=(invade+(100-cease))/2;
@@ -1432,34 +1456,80 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
             var noCease=100-cease;
             driverEl.textContent=noCease>invade?'Driven by low ceasefire odds.':(invade>noCease?'Driven by invasion odds.':'Driven by low ceasefire odds.');
           }
+          if(trendEl){
+            var prevStored=null;
+            try{var rawPrev=localStorage.getItem('derekNewsIranRisk');if(rawPrev){var pjPrev=JSON.parse(rawPrev);if(pjPrev&&typeof pjPrev.risk==='number'&&isFinite(pjPrev.risk))prevStored=pjPrev.risk;}}catch(e){}
+            try{localStorage.setItem('derekNewsIranRisk',JSON.stringify({risk:risk,ts:Date.now()}));}catch(e){}
+            var showTrend=function(prev,label){
+              if(prev==null||typeof prev!=='number'||!isFinite(prev))return;
+              var d=Math.round((risk-prev)*10)/10;
+              if(d>0)trendEl.innerHTML='<span class="et-trend-up">\u2191 '+d+' pts</span> <span class="et-trend-lab">'+label+'</span>';
+              else if(d<0)trendEl.innerHTML='<span class="et-trend-down">\u2193 '+Math.abs(d)+' pts</span> <span class="et-trend-lab">'+label+'</span>';
+              else trendEl.innerHTML='<span class="et-trend-flat">\u2014 0 pts</span> <span class="et-trend-lab">'+label+'</span>';
+            };
+            var hist24=function(token){
+              if(!token)throw new Error('no token');
+              return fetch('https://clob.polymarket.com/prices-history?market='+encodeURIComponent(token)+'&interval=1d&fidelity=60').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+                var h=(d&&d.history)||[];
+                if(!h.length)throw new Error('empty');
+                var target=Date.now()/1000-86400,best=null,bd=null,i2;
+                for(i2=0;i2<h.length;i2++){if(!h[i2]||typeof h[i2].p!=='number'||typeof h[i2].t!=='number')continue;var dd=Math.abs(h[i2].t-target);if(bd===null||dd<bd){bd=dd;best=h[i2];}}
+                if(!best)throw new Error('empty');
+                return best.p*100;
+              });
+            };
+            if(invadeToken&&ceaseToken){
+              Promise.all([hist24(invadeToken),hist24(ceaseToken)]).then(function(v){
+                var prevRisk=(v[0]+(100-v[1]))/2;
+                showTrend(prevRisk,'vs 24h ago');
+              }).catch(function(){showTrend(prevStored,'since your last visit');});
+            }else{
+              showTrend(prevStored,'since your last visit');
+            }
+          }
         }else{
           riskEl.textContent='—';
+          if(trendEl)trendEl.textContent='';
           if(levelEl)levelEl.textContent='—';
           if(driverEl)driverEl.textContent='';
         }
       }
+      var timeStr=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});
       var u=document.getElementById('etUpdated');
-      if(u)u.textContent='Odds updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET.';
+      if(u)u.textContent='Odds updated '+timeStr+' ET.';
+      if(riskUpdatedEl)riskUpdatedEl.textContent='Updated '+timeStr+' ET';
     }).catch(function(){
       box.innerHTML='<p class="lstatus">Live odds couldn’t load right now — see them on <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027" target="_blank" rel="noopener">Polymarket</a>.</p>';
     });
   }
-  /* Cyber section: Recent cyber incidents only — major ransomware,
-     data breach, hack and outage reports from Google News via
-     rss2json (same pattern as the News sections). Last 7 days only,
-     newest first, top 6, deduped. No CISA advisories list — CISA is
-     only a small guidance link in the card. Honest empty/failure
-     states; never invent an incident. */
+  /* Everything going on: broad recent disruptions — major outages,
+     bank and airline disruptions, emergency alerts, ransomware,
+     breaches and hacks from Google News via rss2json (same pattern
+     as the News sections). Last 7 days only, newest first, top 6,
+     deduped. No CISA advisories list — CISA is only a small guidance
+     link in the card. Honest empty/failure states; never invent an
+     item. Pinned rows, in fixed order: the date-gated EAS test row
+     (Nov 17, 2026 only), then the live NWS outage row. */
   var cyBox=document.getElementById('cyList');
   var cyStatus=document.getElementById('cyLiveStatus');
   if(cyBox){
     var cyRendered=false;
     var nwsDown=false;
-    function maybePrependNws(){
-      if(!nwsDown||!cyRendered)return;
-      if(document.getElementById('nwsOutageRow'))return;
-      cyBox.insertAdjacentHTML('afterbegin','<a class="cy-item" id="nwsOutageRow" href="https://www.weather.gov/" target="_blank" rel="noopener"><span class="cy-t">National Weather Service API outage — weather alerts unavailable</span><span class="cy-m">Nov 17 <span class="cy-live">Ongoing</span></span></a>');
+    var easNow=new Date();
+    var isEasDay=(easNow.getFullYear()===2026&&easNow.getMonth()===10&&easNow.getDate()===17);
+    function prependPinned(){
+      if(!cyRendered)return;
+      var easRow=document.getElementById('easTestRow');
+      if(nwsDown&&!document.getElementById('nwsOutageRow')){
+        var nwsHtml='<a class="cy-item" id="nwsOutageRow" href="https://www.weather.gov/" target="_blank" rel="noopener"><span class="cy-t">National Weather Service API outage — weather alerts unavailable</span><span class="cy-m">Nov 17 <span class="cy-live">Ongoing</span></span></a>';
+        if(easRow)easRow.insertAdjacentHTML('afterend',nwsHtml);
+        else cyBox.insertAdjacentHTML('afterbegin',nwsHtml);
+      }
+      if(isEasDay&&!document.getElementById('easTestRow')){
+        cyBox.insertAdjacentHTML('afterbegin','<a class="cy-item" id="easTestRow" href="https://www.fema.gov/emergency-managers/practitioners/integrated-public-alert-warning-system/national-test-2026" target="_blank" rel="noopener"><span class="cy-t">Nationwide Emergency Alert System test — TV &amp; radio only, phones stay quiet</span><span class="cy-m">Today 2:20 PM ET <span class="cy-live">Today</span></span></a>');
+      }
     }
+    function maybePrependNws(){prependPinned();}
     (function(){
       var ctrl=null,timer=null;
       try{
@@ -1502,7 +1572,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       'ransomware attack',
       '"data breach"',
       'cyber hack OR hacked OR cyberattack',
-      '"major outage" OR "service outage" hack'
+      '"major outage" OR "service outage" hack',
+      'bank outage OR "online banking" down OR "banking delays"',
+      'airline grounded OR "ground stop" OR flights grounded',
+      '"emergency alert test" OR "EAS test"',
+      'Iran attack US base Bahrain',
+      'Iran dirty bomb Washington'
     ];
     Promise.all(queries.map(function(q){return rss2j(gnews(q)).catch(function(){return null;});})).then(function(res){
       var ok=res.some(function(r){return r!==null;});
@@ -1520,9 +1595,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       all.sort(function(a,b){return b.when-a.when;});
       var top=all.slice(0,6);
       if(!top.length){
-        cyBox.innerHTML='<p class="lstatus">No major cyber incidents reported in the last 7 days.</p>';
+        cyBox.innerHTML='<p class="lstatus">No major disruptions reported in the last 7 days.</p>';
         cyRendered=true;maybePrependNws();
-        if(cyStatus){cyStatus.className='et-status is-calm';cyStatus.innerHTML='🟢 <strong>Recent incidents:</strong> none reported in the last 7 days.';}
+        if(cyStatus){cyStatus.className='et-status is-calm';cyStatus.innerHTML='🟢 <strong>Everything going on:</strong> nothing major in the last 7 days.';}
         return;
       }
       var rows=top.map(function(it){
@@ -1533,14 +1608,14 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       cyRendered=true;maybePrependNws();
       if(cyStatus){
         cyStatus.className='et-status';
-        cyStatus.innerHTML='<strong>Recent incidents:</strong> '+top.length+' major incident'+(top.length===1?'':'s')+' reported in the last 7 days. Latest below.';
+        cyStatus.innerHTML='<strong>Everything going on:</strong> '+top.length+' things going on in the last 7 days. Latest below.';
       }
       var cu=document.getElementById('cyUpdated');
-      if(cu)cu.textContent='Incidents updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET.';
+      if(cu)cu.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET.';
     }).catch(function(){
-      cyBox.innerHTML='<p class="lstatus">Recent incidents couldn&rsquo;t load right now — check back shortly.</p>';
+      cyBox.innerHTML='<p class="lstatus">What&rsquo;s going on couldn&rsquo;t load right now — check back shortly.</p>';
       cyRendered=true;maybePrependNws();
-      if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live incident feed couldn’t load — check back shortly.';}
+      if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live feed couldn’t load — check back shortly.';}
     });
   }
 })();
