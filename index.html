@@ -1227,6 +1227,17 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .et-risk-num{font-size:56px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
 #view-news .et-risk-lab{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-top:8px}
 #view-news .et-risk-sub{font-size:12.5px;color:var(--soft);line-height:1.5;margin-top:4px}
+#view-news .et-risk-level{font-size:15px;font-weight:800;margin-top:6px}
+#view-news .et-risk-driver{font-size:12.5px;color:var(--soft);line-height:1.45;margin-top:2px}
+#view-news .et-prep{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
+#view-news .et-prep h4{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:12px 0 6px}
+#view-news .et-prep h4:first-of-type{margin-top:4px}
+#view-news .et-prep ul{list-style:none;margin:0;padding:0}
+#view-news .et-prep li{font-size:13.5px;line-height:1.45;padding:5px 0 5px 22px;position:relative;border-bottom:1px solid var(--border)}
+#view-news .et-prep li:last-child{border-bottom:0}
+#view-news .et-prep li::before{content:"✓";position:absolute;left:2px;top:5px;font-weight:800;color:#15803d}
+#view-news .cy-cisa-line{font-size:12.5px;color:var(--soft);margin-top:10px}
+#view-news .cy-cisa-line a{color:var(--link);font-weight:700}
 #view-news .et-status{font-size:13.5px;line-height:1.5;border-radius:14px;padding:11px 13px;margin:14px 0 2px;background:rgba(127,160,175,.14)}
 #view-news .et-status.is-calm{background:rgba(21,128,61,.13)}
 #view-news .et-status.is-alert{background:rgba(180,35,24,.13)}
@@ -1257,17 +1268,36 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <div class="et-risk" id="etRisk">
       <div class="et-risk-num" id="etRiskNum">—</div>
       <div class="et-risk-lab">Iran War Risk</div>
+      <div class="et-risk-level" id="etRiskLevel">—</div>
+      <div class="et-risk-driver" id="etRiskDriver"></div>
       <div class="et-risk-sub">Average of the two Iran markets below.</div>
     </div>
     <p class="et-status" id="etLiveStatus">Checking the live breaking feed&hellip;</p>
     <h3 class="et-h">Live war &amp; peace odds &middot; Polymarket</h3>
     <div id="etMarkets"><p class="lstatus">Loading live odds&hellip;</p></div>
     <p class="esrc">Odds: Polymarket, tapped rows open the live market. Market-implied chances, not predictions &mdash; prices move constantly. <span id="etUpdated"></span></p>
-    <h3 class="et-h">💻 Cyber war tracker &middot; Live</h3>
-    <p class="et-status" id="cyLiveStatus">Checking the live cyber feeds&hellip;</p>
-    <div id="cyList"><p class="lstatus">Loading live cyber alerts&hellip;</p></div>
+    <h3 class="et-h">💻 Recent cyber incidents</h3>
+    <p class="et-status" id="cyLiveStatus">Checking for recent incidents&hellip;</p>
+    <div id="cyList"><p class="lstatus">Loading recent incidents&hellip;</p></div>
     <a class="cy-map" href="https://threatmap.checkpoint.com/" target="_blank" rel="noopener">Live global cyber attack map &rarr;</a>
-    <p class="esrc">Cyber sources: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">CISA</a> &mdash; the U.S. government&rsquo;s official cybersecurity advisories &mdash; plus major cyberattack headlines from Google News. Only real reported items show; if a feed can&rsquo;t load, it says so instead of guessing. <span id="cyUpdated"></span></p>
+    <p class="cy-cisa-line">Official guidance: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">CISA advisories &rarr;</a></p>
+    <p class="esrc">Incidents: major ransomware, data breach, hack and outage reports from Google News, last 7 days only. Only real reported items show; if the feed can&rsquo;t load, it says so instead of guessing. <span id="cyUpdated"></span></p>
+    <div class="et-prep" aria-label="How to prepare">
+      <h3 class="et-h" style="margin-top:2px">How to prepare</h3>
+      <h4>Cyber</h4>
+      <ul>
+        <li>Turn on multi-factor authentication on important accounts</li>
+        <li>Back up important files</li>
+        <li>Don&rsquo;t click links or attachments from unknown senders</li>
+      </ul>
+      <h4>If things escalate</h4>
+      <ul>
+        <li>Keep a few days of water, food, and any medicines</li>
+        <li>Keep some cash on hand</li>
+        <li>Know how you get local emergency alerts</li>
+        <li>Keep phones charged and a flashlight handy</li>
+      </ul>
+    </div>
   </section>
   <div class="news-grid">
   <section class="ncard" aria-label="Weather stories">
@@ -1315,10 +1345,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
    ceasefire, China-Taiwan, US-Iran nuclear deal) are listed for
    context only and are NOT part of the composite.
    War odds: Polymarket public Gamma API (same pattern as the 2028
-   outlook). Cyber: CISA official advisories RSS + major-cyberattack
-   Google News headlines, both via rss2json. Slugs verified live
-   2026-11-17. If a fetch fails, an honest fallback shows — never a
-   guessed number. */
+   outlook). Cyber: recent incidents only — Google News via rss2json
+   with broader ransomware / data breach / hack / major outage
+   queries, last 7 days, top 6. CISA is only a small guidance link.
+   Risk readout under the composite uses the same two Iran inputs
+   only; cyber does not feed the number. If a fetch fails, an honest
+   fallback shows — never a guessed number. */
 (function(){
   var statusEl=document.getElementById('etLiveStatus');
   var box=document.getElementById('etMarkets');
@@ -1385,12 +1417,24 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       if(!rows.length)throw new Error('empty');
       box.innerHTML=rows.join('');
       var riskEl=document.getElementById('etRiskNum');
+      var levelEl=document.getElementById('etRiskLevel');
+      var driverEl=document.getElementById('etRiskDriver');
       if(riskEl){
         if(invade!=null&&cease!=null){
           var risk=(invade+(100-cease))/2;
           riskEl.textContent=(Math.round(risk*10)/10)+'%';
+          if(levelEl){
+            var lvl=risk<10?'Low':(risk<25?'Elevated':(risk<=50?'High':'Severe'));
+            levelEl.textContent=lvl;
+          }
+          if(driverEl){
+            var noCease=100-cease;
+            driverEl.textContent=noCease>invade?'Driven by low ceasefire odds.':(invade>noCease?'Driven by invasion odds.':'Driven by low ceasefire odds.');
+          }
         }else{
           riskEl.textContent='—';
+          if(levelEl)levelEl.textContent='—';
+          if(driverEl)driverEl.textContent='';
         }
       }
       var u=document.getElementById('etUpdated');
@@ -1399,9 +1443,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       box.innerHTML='<p class="lstatus">Live odds couldn’t load right now — see them on <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027" target="_blank" rel="noopener">Polymarket</a>.</p>';
     });
   }
-  /* Cyber section: CISA official advisories + major-attack headlines,
-     both via rss2json like the News sections. Recent only (14 days),
-     newest first, capped — stale or undated items are dropped. */
+  /* Cyber section: Recent cyber incidents only — major ransomware,
+     data breach, hack and outage reports from Google News via
+     rss2json (same pattern as the News sections). Last 7 days only,
+     newest first, top 6, deduped. No CISA advisories list — CISA is
+     only a small guidance link in the card. Honest empty/failure
+     states; never invent an incident. */
   var cyBox=document.getElementById('cyList');
   var cyStatus=document.getElementById('cyLiveStatus');
   if(cyBox){
@@ -1411,47 +1458,63 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
         return d.items;
       });
     }
-    function ago(d){
-      var s=(Date.now()-d)/1000;
-      if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';
-      if(s<86400)return Math.round(s/3600)+'h ago';
-      return Math.round(s/86400)+'d ago';
+    function fmtDate(d){
+      try{return new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});}catch(e){return '';}
     }
-    function fresh(items,src){
+    function fresh7(items){
       var out=[];
       (items||[]).forEach(function(it){
         var d=Date.parse(String(it.pubDate||'').replace(' ','T')+'Z');
         if(isNaN(d))d=Date.parse(it.pubDate||'');
-        if(isNaN(d)||d>Date.now()||Date.now()-d>14*864e5)return;
-        out.push({title:it.title||'',link:it.link||'',when:d,src:src});
+        if(isNaN(d)||d>Date.now()||Date.now()-d>7*864e5)return;
+        if(!it.title||!it.link)return;
+        out.push({title:it.title,link:it.link,when:d});
       });
       return out;
     }
-    var cisaFeed='https://www.cisa.gov/cybersecurity-advisories/all.xml';
-    var newsFeed='https://news.google.com/rss/search?q='+encodeURIComponent('(cyberattack OR ransomware OR "data breach" OR hacked) (critical infrastructure OR government OR hospital OR bank OR military) when:7d')+'&hl=en-US&gl=US&ceid=US:en';
-    Promise.all([rss2j(cisaFeed).catch(function(){return null;}),rss2j(newsFeed).catch(function(){return null;})]).then(function(res){
-      var cisa=res[0]?fresh(res[0],'CISA'):[];
-      var news=res[1]?fresh(res[1],'News'):[];
-      news.sort(function(a,b){return b.when-a.when;});
-      var rows=[];
-      cisa.slice(0,3).forEach(function(it){
-        rows.push('<a class="cy-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="cy-t">'+esc(it.title)+'</span><span class="cy-m">🛡️ CISA official advisory · '+ago(it.when)+'</span></a>');
+    function gnews(q){
+      return 'https://news.google.com/rss/search?q='+encodeURIComponent(q+' when:7d')+'&hl=en-US&gl=US&ceid=US:en';
+    }
+    var queries=[
+      'ransomware attack',
+      '"data breach"',
+      'cyber hack OR hacked OR cyberattack',
+      '"major outage" OR "service outage" hack'
+    ];
+    Promise.all(queries.map(function(q){return rss2j(gnews(q)).catch(function(){return null;});})).then(function(res){
+      var ok=res.some(function(r){return r!==null;});
+      if(!ok)throw new Error('all feeds failed');
+      var seen={},all=[];
+      res.forEach(function(items){
+        if(!items)return;
+        fresh7(items).forEach(function(it){
+          var key=String(it.title).toLowerCase().replace(/\s+-[^-]{2,40}$/,'').trim();
+          if(seen[key])return;
+          seen[key]=1;
+          all.push(it);
+        });
       });
-      news.slice(0,3).forEach(function(it){
+      all.sort(function(a,b){return b.when-a.when;});
+      var top=all.slice(0,6);
+      if(!top.length){
+        cyBox.innerHTML='<p class="lstatus">No major cyber incidents reported in the last 7 days.</p>';
+        if(cyStatus){cyStatus.className='et-status is-calm';cyStatus.innerHTML='🟢 <strong>Recent incidents:</strong> none reported in the last 7 days.';}
+        return;
+      }
+      var rows=top.map(function(it){
         var clean=String(it.title).replace(/\s+-[^-]{2,40}$/,'');
-        rows.push('<a class="cy-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="cy-t">'+esc(clean)+'</span><span class="cy-m">📰 Reported · '+ago(it.when)+'</span></a>');
+        return '<a class="cy-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="cy-t">'+esc(clean)+'</span><span class="cy-m">'+esc(fmtDate(it.when))+'</span></a>';
       });
-      if(!rows.length)throw new Error('empty');
       cyBox.innerHTML=rows.join('');
       if(cyStatus){
-        cyStatus.className='et-status'+(cisa.length?' is-calm':'');
-        cyStatus.innerHTML='🟢 <strong>Cyber front:</strong> '+cisa.length+' recent official CISA advisor'+(cisa.length===1?'y':'ies')+' in the last 14 days'+(news.length?', plus '+news.length+' major attack report'+(news.length===1?'':'s')+' this week':'')+'. Latest items below.';
+        cyStatus.className='et-status';
+        cyStatus.innerHTML='<strong>Recent incidents:</strong> '+top.length+' major incident'+(top.length===1?'':'s')+' reported in the last 7 days. Latest below.';
       }
       var cu=document.getElementById('cyUpdated');
-      if(cu)cu.textContent='Cyber feeds updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET.';
+      if(cu)cu.textContent='Incidents updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET.';
     }).catch(function(){
-      cyBox.innerHTML='<p class="lstatus">Live cyber feeds couldn’t load right now — see the latest on <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">CISA</a>.</p>';
-      if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live cyber feeds couldn’t load — tap a CISA advisory link below or check back shortly.';}
+      cyBox.innerHTML='<p class="lstatus">Recent incidents couldn&rsquo;t load right now — check back shortly.</p>';
+      if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live incident feed couldn’t load — check back shortly.';}
     });
   }
 })();
