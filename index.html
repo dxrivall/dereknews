@@ -1348,12 +1348,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 /* War & Cyber Tracker (News tab) — Iran War Risk composite ONLY.
    The individual Polymarket market rows are NOT shown: the card
    displays just the composite percent, its trend and its risk band.
-   Composite = P(US invades Iran) alone, computed live in-page from
-   the Polymarket public Gamma API. The US-Iran ceasefire market is
-   deliberately NOT factored in — the ceasefire keeps being talked
-   about and not happening, so it should not move the number. If the
-   invasion market fails to load, the composite shows "—", never a
-   guessed number.
+   Composite formula: (P(US invades Iran) + (100 - P(US-Iran ceasefire
+   by Dec 31))) / 2, computed live in-page from the two fetched Iran
+   market prices (Polymarket public Gamma API). If either Iran market
+   fails to load, the composite shows "—", never a guessed number.
    Trend: current composite vs the composite 24h ago from Polymarket
    price history; if price history fails, vs the previous composite
    stored on this device ("since your last visit"); no previous value
@@ -1370,7 +1368,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     if(levelEl)levelEl.textContent='—';
   }
   var WATCH=[
-    {slug:'will-the-us-invade-iran-before-2027',pick:null}
+    {slug:'will-the-us-invade-iran-before-2027',pick:null},
+    {slug:'us-x-iran-effective-ceasefire-begins-by-2-week-pause-20261108',pick:'December 31'}
   ];
   function gevent(slug){
     return fetch('https://gamma-api.polymarket.com/events?slug='+slug).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d[0])||null;});
@@ -1394,8 +1393,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   }
   Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
     var invadeR=evs[0]?pickPrice(evs[0],WATCH[0].pick):null;
-    if(!invadeR){fail();return;}
-    var risk=invadeR.pct;
+    var ceaseR=evs[1]?pickPrice(evs[1],WATCH[1].pick):null;
+    if(!invadeR||!ceaseR){fail();return;}
+    var invade=invadeR.pct,cease=ceaseR.pct;
+    var risk=(invade+(100-cease))/2;
     riskEl.textContent=(Math.round(risk*10)/10)+'%';
     if(levelEl)levelEl.textContent=risk<10?'Low':(risk<25?'Elevated':(risk<=50?'High':'Severe'));
     if(updatedEl)updatedEl.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
@@ -1421,9 +1422,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
           return best.p*100;
         });
       };
-      if(invadeR.token){
-        hist24(invadeR.token).then(function(v){
-          showTrend(v,'vs 24h ago');
+      if(invadeR.token&&ceaseR.token){
+        Promise.all([hist24(invadeR.token),hist24(ceaseR.token)]).then(function(v){
+          showTrend((v[0]+(100-v[1]))/2,'vs 24h ago');
         }).catch(function(){showTrend(prevStored,'since your last visit');});
       }else{
         showTrend(prevStored,'since your last visit');
