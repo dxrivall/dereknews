@@ -1868,15 +1868,15 @@ body.on-sports footer{color:#aebfe6!important}
   @keyframes livePulse{0%,100%{opacity:1}50%{opacity:.3}}
   .parlay-leg .live-why{display:block;font-size:11.5px;color:#aebfe6;margin-top:1px}
   </style>
-  <section class="acard" id="liveParlaySection" hidden aria-label="Live Parlay — live pace projections from games in progress">
+  <section class="acard" id="liveParlaySection" hidden aria-label="Live Parlay — real-odds model from games in progress">
   <div class="ahead"><h2>🔴 Live Parlay</h2><span class="league-pill" style="background:#b42318"><span class="live-pulse" aria-hidden="true"></span> LIVE</span></div>
-  <p class="astatus" style="color:#fff">Built from games happening <b>right now</b> — each leg reads the player&rsquo;s stats so far in the live box score and his pace with the time left, then suggests the next line that pace supports (for example, 3 threes already in the 2nd quarter &rarr; the 4+ threes line). <b>Live pace projection — not a guarantee:</b> pace can change fast, and the hit % is still the legs multiplied together, same as the other slips. This section only appears while games are live. When enough live props qualify, a second <b>Riskier Live Parlay</b> appears under it &mdash; 4&ndash;5 players, <b>all props, no moneylines</b>, on higher lines off the same live pace, so it pays more and hits less often. Still a live pace projection &mdash; not a guarantee.</p>
+  <p class="astatus" style="color:#fff">One live bet per sport, priced with <b>real odds — not pace math</b>. Each leg uses the player&rsquo;s actual base rate (season average blended with his last 5 games) and the real scoring distribution for the time left, adjusted for how much he&rsquo;s playing tonight and the score. An early stat only lowers what he still needs — it never inflates his rate, so 1 goal in the 1st period does <b>not</b> project to 3. A line only shows when that real chance is at least 55%. Only players actually in the game — anyone Out, Inactive or did-not-play is never used. <b>Model estimate — not a guarantee:</b> the hit % is still the legs multiplied together. This section only appears while a live leg honestly qualifies.</p>
   <div id="liveParlayList"></div>
   <p class="astatus" id="liveParlayStamp" style="font-size:12px"></p>
   </section>
   <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
   <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. <b>Edge Parlay:</b> 2–3 legs whose model % beats the book&rsquo;s price, built to actually hit. <b>🎰 Lotto Bet of the Day:</b> one longshot per sport. <b>🔥 Streak Lotto:</b> one slip per sport where every leg hit in 6/6 of its last 6 games &mdash; each leg&rsquo;s line is that player&rsquo;s lowest game in the last 6 (their 6-game minimum), so 1+ threes or 4+ rebounds counts if they hit it in all 6 (checked from live game logs) — past form, not a guarantee. Plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
+  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. <b>Max 2 pre-game bets per sport per day</b> — the two strongest by model hit % / edge are shown and the rest are dropped. Every leg is checked against that game&rsquo;s ESPN injury / inactive report: a player who is Out, Doubtful or Inactive is never used, touchdown legs included. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. Slip types that can make the top 2: <b>Edge Parlay</b> (2–3 legs whose model % beats the book&rsquo;s price), <b>🎰 Lotto Bet of the Day</b>, <b>🔥 Streak Lotto</b> (every leg hit in 6/6 of its last 6 games at its 6-game-minimum line), <b>🚀 Extreme Lotto</b>, plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
   <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
   <div id="parlayList"></div>
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
@@ -3750,6 +3750,8 @@ body.on-christmas{color-scheme:light}
   function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
   var dayFmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'});
   function etKeyPlus(n){var base=dayFmt.format(new Date());var q=base.split('-');var d=new Date(Date.UTC(+q[0],+q[1]-1,+q[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate());}
+  function dnNormName(s){return String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();}
+  function dnBlockedForGame(g,id,name){if(!g)return false;if(id&&g.blockedIds&&g.blockedIds[String(id)])return true;if(name&&g.blockedNames&&g.blockedNames[dnNormName(name)])return true;return false;}
   function etDay(iso){var d=new Date(iso);return isNaN(d)?'':dayFmt.format(d);}
   function todayStr(){return dayFmt.format(new Date());}
   /* Current NBA/NHL season END year for the ESPN core API (the
@@ -3796,6 +3798,45 @@ body.on-christmas{color-scheme:light}
   function propsFromSummary(d,lg,g){
     var out=[],all=[],tdByName={};
     var byId={};byId[g.away.id]=g.away;byId[g.home.id]=g.home;
+    /* ---- In/out FIRST (Nov 16 fix) --------------------------------
+       The game's own ESPN injury / inactive report is read BEFORE
+       any leader is turned into a prop or a TD leg. Anyone listed
+       Out, Doubtful, Inactive, on injured reserve or suspended is
+       blocked by BOTH athlete id and name, and an athlete whose
+       own status says the same is blocked too. This is what let a
+       touchdown leg through for a player who was not even active:
+       the TD pool was built from season leaders, and a hurt star
+       can still lead his team in TDs. Blocked players now never
+       reach props, allProps or tdPlayers — so no parlay slip and
+       no Cheat Sheet line can use them. */
+    var blockedIds={},blockedNames={},inj={};
+    var BLOCK_RE=/\bout\b|doubtful|inactive|injured reserve|suspended|did not play|not active/i;
+    (d.injuries||[]).forEach(function(gr){
+      var tid=String((gr.team&&gr.team.id)||'');
+      var names=[];
+      (gr.injuries||[]).forEach(function(x){
+        var st=String(x.status||((x.type||{}).name)||'');
+        var at=x.athlete||{};
+        var nm=at.displayName||at.shortName||'';
+        if(st&&/out|doubtful|inactive/i.test(st)&&nm)names.push(nm+(st?' ('+st+')':''));
+        if(!BLOCK_RE.test(st))return;
+        if(at.id)blockedIds[String(at.id)]=1;
+        if(at.displayName)blockedNames[dnNormName(at.displayName)]=1;
+        if(at.shortName)blockedNames[dnNormName(at.shortName)]=1;
+      });
+      if(tid)inj[tid]=names;
+    });
+    g.injuriesByTeam=inj;
+    g.blockedIds=blockedIds;
+    g.blockedNames=blockedNames;
+    function isBlocked(ld,nm){
+      var at=(ld&&ld.athlete)||{};
+      if(at.id&&blockedIds[String(at.id)])return true;
+      if(nm&&blockedNames[dnNormName(nm)])return true;
+      var own='';
+      try{own=String((at.status&&at.status.type&&(at.status.type.name||at.status.type.shortName))||at.status||ld.status||'');}catch(e){}
+      return BLOCK_RE.test(own);
+    }
     (d.leaders||[]).forEach(function(L){
       var tm=byId[String((L.team&&L.team.id)||'')];
       if(!tm)return;
@@ -3807,16 +3848,11 @@ body.on-christmas{color-scheme:light}
           var nm=ld.athlete.displayName||ld.athlete.shortName||'';
           var v=parseFloat(ld.value);
           if(!nm||isNaN(v))return;
+          if(isBlocked(ld,nm))return;
           var avg=(lg.avgMode==='perGame')?v:(tm.gp>0?v/tm.gp:null);
           if(avg==null||avg<=0)return;
           var rec={name:nm,id:String(ld.athlete.id||''),label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10};
-          /* Uncapped per-category list — the special slips (Rebounds,
-             3s, Goals, Shots) draw from this, not the 4-prop display cap. */
           if(!all.some(function(a){return a.name===nm&&a.label===cat[1];}))all.push(rec);
-          /* NFL anytime-TD verification: the rushing / receiving
-             leader's live display line carries his TD total
-             ("177 CAR, 847 YDS, 9 TD"). Passing TDs are NOT scorer
-             TDs, so the Passing Yards category is never used here. */
           if(lg.key==='nfl'&&(cat[1]==='Rush Yds'||cat[1]==='Rec Yds')&&tm.gp>0){
             var mm=String(ld.displayValue||'').match(/(\d+)\s*TD\b/);
             if(mm){
@@ -3835,17 +3871,6 @@ body.on-christmas{color-scheme:light}
         });
       });
     });
-    var inj={};
-    (d.injuries||[]).forEach(function(gr){
-      var tid=String((gr.team&&gr.team.id)||''); if(!tid)return;
-      var names=[];
-      (gr.injuries||[]).forEach(function(x){
-        var st=String(x.status||'');
-        if(/out|doubtful/i.test(st))names.push(((x.athlete&&x.athlete.displayName)||'')+(st?' ('+st+')':''));
-      });
-      inj[tid]=names;
-    });
-    g.injuriesByTeam=inj;
     g.allProps=all;
     g.tdPlayers=Object.keys(tdByName).map(function(k){return tdByName[k];});
     return out.slice(0,4);
@@ -4032,6 +4057,7 @@ body.on-christmas{color-scheme:light}
     var players={},order=[];
     function addPlayer(g,id,name,statKey,avg){
       if(!id||!name)return;
+      if(dnBlockedForGame(g,id,name))return;
       var pid=String(id);
       if(!players[pid]){players[pid]={g:g,id:pid,name:name,avgs:{}};order.push(players[pid]);}
       if(statKey&&avg!=null&&!isNaN(avg)&&players[pid].avgs[statKey]==null)players[pid].avgs[statKey]=avg;
@@ -4163,6 +4189,7 @@ body.on-christmas{color-scheme:light}
       var seenPr={};
       props.forEach(function(pr,i){
         var kk=pr.name+'-'+pr.label;if(seenPr[kk])return;seenPr[kk]=1;
+        if(dnBlockedForGame(g,pr.id,pr.name))return;
         var mp=modelPropProb(pr);
         pool.push({kind:'Prop',prob:mp.prob,edge:mp.prob-0.524,text:pr.name+' Over '+pr.line+' '+pr.label,sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+(mp.usedL5?('last-5 avg '+(pr.l5?pr.l5.avg:'')+' \u00b7 blended '+mp.effAvg+'/gm'):('season avg '+pr.avg+'/gm')),avg:pr.avg,line:pr.line,key:'prop-'+g.id+'-'+i+'-'+pr.name+'-'+pr.label,gameId:g.id,name:pr.name});
       });
@@ -4216,6 +4243,7 @@ body.on-christmas{color-scheme:light}
     var legs=[];
     games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
       if(pr.label!=='Reb')return;
+      if(dnBlockedForGame(g,pr.id,pr.name))return;
       legs.push({kind:'Prop',name:pr.name,prob:modelPropProb(pr).prob,text:pr.name+' Over '+pr.line+' Reb',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' reb/gm',avg:pr.avg,line:pr.line,key:'reb-'+g.id+'-'+pr.name});
     });});
     return dedupeSort(legs);
@@ -4224,6 +4252,7 @@ body.on-christmas{color-scheme:light}
     var legs=[];
     games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
       if(pr.label!=='Goals')return;
+      if(dnBlockedForGame(g,pr.id,pr.name))return;
       legs.push({kind:'Prop',name:pr.name,prob:modelPropProb({avg:pr.avg,line:0.5,l5:pr.l5}).prob,text:pr.name+' Over 0.5 Goals',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' goals/gm',avg:pr.avg,line:0.5,key:'goal-'+g.id+'-'+pr.name});
     });});
     return dedupeSort(legs);
@@ -4231,6 +4260,7 @@ body.on-christmas{color-scheme:light}
   function tdPool(games){
     var legs=[];
     games.forEach(function(g){(g.tdPlayers||[]).forEach(function(tp){
+      if(dnBlockedForGame(g,tp.id,tp.name))return;
       if(!tp.gp||tp.td<=0)return;
       var rate=tp.td/tp.gp;
       var prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;
@@ -4241,6 +4271,7 @@ body.on-christmas{color-scheme:light}
   function sogPool(games){
     var legs=[];
     games.forEach(function(g){(g.sogProps||[]).forEach(function(sp){
+      if(dnBlockedForGame(g,sp.id,sp.name))return;
       var line=simLine(sp.avg);
       legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5}).prob,text:sp.name+' Over '+line+' Shots on Goal',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' shots/gm',avg:sp.avg,line:line,key:'sog-'+g.id+'-'+sp.name});
     });});
@@ -4249,6 +4280,7 @@ body.on-christmas{color-scheme:light}
   function threePool(games){
     var legs=[];
     games.forEach(function(g){(g.threeProps||[]).forEach(function(sp){
+      if(dnBlockedForGame(g,sp.id,sp.name))return;
       var line=simLine(sp.avg);
       legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5}).prob,text:sp.name+' Over '+line+' 3-Pointers',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' 3PM/gm',avg:sp.avg,line:line,key:'3pm-'+g.id+'-'+sp.name});
     });});
@@ -4387,6 +4419,13 @@ body.on-christmas{color-scheme:light}
         addSpecial(rebPool(gamesToday),'Rebounds','NBA Rebounds slip: not enough verified legs today — no rebounds parlay shown.');
         addSpecial(threePool(gamesToday),'3-Pointers','NBA 3-Pointers slip: not enough verified legs today — no 3-pointers parlay shown.');
       }
+      var hadExtreme=parlays.some(function(p){return p.extreme;});
+      /* Cap (Nov 16): max 2 pre-game bets per sport per day. Keep
+         the two strongest — ranked by model hit %, Edge Parlay
+         winning a tie, then a Streak slip — and drop the rest
+         instead of stacking 5-6 slips a day per sport. */
+      parlays.sort(function(a,b){if(b.hit!==a.hit)return b.hit-a.hit;var ea=(a.edge?1:0)+(a.streak?0.5:0),eb=(b.edge?1:0)+(b.streak?0.5:0);return eb-ea;});
+      if(parlays.length>2){var droppedN=parlays.length-2;parlays=parlays.slice(0,2);notes+='<p class="astatus">Max 2 pre-game bets per sport per day — the 2 strongest by model hit % / edge are above; '+droppedN+' other '+esc(lg.label.replace(/^[^ ]+ /,''))+' slip'+(droppedN===1?'':'s')+' the model built today '+(droppedN===1?'was':'were')+' dropped.</p>';}
       if(!parlays.length){h+='<p class="astatus">No real edge found in today&rsquo;s games for this sport — no parlay forced. The Edge Parlay only runs when the model beats the book&rsquo;s price.</p>'+notes;return;}
       any=true;
       parlays.forEach(function(p,pi){
@@ -4412,13 +4451,13 @@ body.on-christmas{color-scheme:light}
         h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
         h+='</div></div>';
       });
-      if(!parlays.some(function(p){return p.extreme;}))notes+='<p class="astatus">\ud83d\ude80 Extreme Lotto: no combination in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games could honestly reach about 100x with a real chance (around 1\u20133%) from real model legs \u2014 no extreme slip today instead of forcing one.</p>';
+      if(!hadExtreme)notes+='<p class="astatus">\ud83d\ude80 Extreme Lotto: no combination in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games could honestly reach about 100x with a real chance (around 1\u20133%) from real model legs \u2014 no extreme slip today instead of forcing one.</p>';
       h+=notes;
     });
     list.innerHTML=h;
-    if(pst)pst.textContent=any?'Built live from today\u2019s games only — every parlay settles today.':'No parlays could be built from verified legs in today\u2019s games right now.';
+    if(pst)pst.textContent=any?'Top 2 pre-game bets per sport for today (max 2 per sport per day) — every leg checked active, no Out / Doubtful / Inactive players — every parlay settles today.':'No parlays could be built from verified legs in today\u2019s games right now.';
     var stamp=document.getElementById('parlayStamp');
-    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries from the game summary; props blend each player&rsquo;s last 5 game logs with their season average &middot; Edge = model % minus the book price &middot; Today&rsquo;s games only &middot; Hit % = legs multiplied &middot; Streak Lotto legs verified from live ESPN game logs (hit in 6/6 last games; line = each player\u2019s 6-game minimum, shown as N+) &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries; props blend last-5 game logs with season average &middot; Edge = model % minus book price &middot; Today only &middot; Max 2 pre-game bets per sport per day (2 strongest by hit % / edge) &middot; Every leg checked against the ESPN injury / inactive report for its game — Out, Doubtful, Inactive or suspended players are never used, TD legs included &middot; Hit % = legs multiplied &middot; Streak Lotto legs verified from live ESPN game logs (6/6 last games; line = 6-game minimum, shown as N+) &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
     });
   }
   var loading=false;
@@ -4491,55 +4530,69 @@ body.on-christmas{color-scheme:light}
 })();
 </script>
 <script>
-/* Live Parlay — Bet Simulator only. Watches games that are LIVE
-   right now (ESPN scoreboard, status state "in") and reads each
-   player's CURRENT in-game stats from the ESPN summary box score.
-   A leg is suggested only when the player's pace so far — current
-   stat divided by the fraction of regulation already played —
-   projects comfortably past the next line, with the time left
-   factored into the hit %. The suggested line is deliberately
-   conservative (a capped step above the current stat, never the
-   raw pace number). This is a live pace projection from live
-   data — NOT a guarantee, and legs vanish as games end. The
-   whole section stays hidden when nothing is in progress or no
-   player is on a qualifying pace — no empty state.
-   Riskier slip: a second builder re-runs the SAME pace math with
-   a higher line (past the conservative suggestion, capped well
-   inside the pace projection) and a lower per-leg chance band
-   (34–68%). It needs 4–5 distinct players, ALL player props —
-   this code never creates a moneyline / team leg — and it is
-   dropped entirely if the combined chance falls below 1.5%
-   (a lottery ticket) or fewer than 4 players qualify. */
+/* Live Parlay — Bet Simulator only. ONE live bet per sport.
+   REAL-ODDS MODEL (rebuilt Nov 16 at Derek's request — no more
+   simple pace math): the old model divided the current stat by
+   the share of the game played, so 1 goal in the 1st period
+   "projected" to 3 goals over 3 periods. That is gone.
+   How a leg is priced now:
+   - Base rate: the player's REAL per-game rate for the stat —
+     his season average blended 60/40 with his last-5 average,
+     both from his live ESPN game log.
+   - Distribution: what he still needs is priced off the actual
+     scoring distribution for the time LEFT — Poisson for
+     counting stats (goals, assists, points, rebounds, 3s, shots),
+     a normal curve (game-log spread scaled by time left) for
+     yards and NBA points. Expected remaining production =
+     base rate x share of regulation left, adjusted for how much
+     he is actually playing tonight (minutes / ice time vs his
+     usual) and for game state (score). The stat he already has
+     only lowers what he still needs — it never inflates the rate.
+     So a 0.3-goals-a-game player who scored early is still
+     unlikely to score again, and the model says so.
+   - A line is suggested only when that real probability is at
+     least 55%; the highest such line is used, and the slip shows
+     the honest multiplied chance. No verified base rate, no leg.
+   - Active only: anyone Out / Doubtful / Inactive in the game's
+     ESPN injury report, and anyone marked did-not-play or
+     inactive in the box score, is never used.
+   The section stays hidden when no game is live or no leg
+   honestly clears 55% — no empty state, never a forced slip. */
 (function(){
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
   var dayFmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'});
   function etKeyPlus(n){var base=dayFmt.format(new Date());var q=base.split('-');var d=new Date(Date.UTC(+q[0],+q[1]-1,+q[2]+n));function z(x){return (x<10?'0':'')+x;}return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate());}
   function erf(x){var s=x<0?-1:1;x=Math.abs(x);var t=1/(1+0.3275911*x);var y=1-((((1.061405429*t-1.453152027)*t+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return s*y;}
   function normCdf(z){return 0.5*(1+erf(z/Math.SQRT2));}
-  function fmtOdds(dec){if(!dec||dec<=1)return'';return dec>=2?('+'+Math.round((dec-1)*100)):('−'+Math.round(100/(dec-1)));}
+  function fmtOdds(dec){if(!dec||dec<=1)return'';return dec>=2?('+'+Math.round((dec-1)*100)):('\u2212'+Math.round(100/(dec-1)));}
+  function poisAtLeast(lam,k){if(k<=0)return 1;if(!(lam>0))return 0;var term=Math.exp(-lam),sum=term;for(var i=1;i<k;i++){term*=lam/i;sum+=term;if(term<1e-12&&i>lam)break;}var p=1-sum;return p<0?0:(p>1?1:p);}
   var LEAGUES=[
-    {key:'nba',label:'🏀 NBA',path:'basketball/nba',reg:4,plen:12,ot:5,total:48,plabel:'Q'},
-    {key:'nfl',label:'🏈 NFL',path:'football/nfl',reg:4,plen:15,ot:10,total:60,plabel:'Q'},
-    {key:'nhl',label:'🏒 NHL',path:'hockey/nhl',reg:3,plen:20,ot:5,total:60,plabel:'P'}
+    {key:'nba',label:'\uD83C\uDFC0 NBA',path:'basketball/nba',reg:4,plen:12,ot:5,total:48,plabel:'Q'},
+    {key:'nfl',label:'\uD83C\uDFC8 NFL',path:'football/nfl',reg:4,plen:15,ot:10,total:60,plabel:'Q'},
+    {key:'nhl',label:'\uD83C\uDFD2 NHL',path:'hockey/nhl',reg:3,plen:20,ot:5,total:60,plabel:'P'}
   ];
+  /* dist: 'pois' = Poisson on the count still needed;
+     'norm' = normal curve on the amount still needed.
+     gl: how to find the stat in the ESPN game log (names first,
+     then labels) for the player's real base rate. */
   var STATS={
     nba:[
-      {k:'pts',line:'Points',unit:'points',min:8,bucket:5,step:15,safety:0.84,sdFrac:0.16},
-      {k:'reb',line:'Rebounds',unit:'rebounds',min:4,bucket:1,step:4,safety:0.82,sdFrac:0.20},
-      {k:'ast',line:'Assists',unit:'assists',min:3,bucket:1,step:3,safety:0.82,sdFrac:0.20},
-      {k:'tpm',line:'3-Pointers',unit:'3-pointers',min:2,bucket:1,step:2,safety:0.80,sdFrac:0.30}
+      {k:'pts',line:'Points',unit:'points',min:6,bucket:1,maxSteps:8,dist:'norm',gl:{labels:['PTS'],names:['points']}},
+      {k:'reb',line:'Rebounds',unit:'rebounds',min:4,bucket:1,maxSteps:4,dist:'pois',gl:{labels:['REB'],names:['totalRebounds','rebounds']}},
+      {k:'ast',line:'Assists',unit:'assists',min:3,bucket:1,maxSteps:4,dist:'pois',gl:{labels:['AST'],names:['assists']}},
+      {k:'tpm',line:'3-Pointers',unit:'3-pointers',min:2,bucket:1,maxSteps:2,dist:'pois',gl:{labels:['3PT'],names:['threePointFieldGoalsMade']}}
     ],
     nfl:[
-      {k:'passYds',line:'Passing Yards',unit:'passing yards',min:80,bucket:10,step:100,safety:0.86,sdFrac:0.20},
-      {k:'rushYds',line:'Rushing Yards',unit:'rushing yards',min:30,bucket:10,step:40,safety:0.84,sdFrac:0.20},
-      {k:'recYds',line:'Receiving Yards',unit:'receiving yards',min:30,bucket:10,step:40,safety:0.84,sdFrac:0.20}
+      {k:'passYds',line:'Passing Yards',unit:'passing yards',min:80,bucket:10,maxSteps:6,dist:'norm',gl:{labels:[],names:['passingYards']}},
+      {k:'rushYds',line:'Rushing Yards',unit:'rushing yards',min:30,bucket:10,maxSteps:4,dist:'norm',gl:{labels:[],names:['rushingYards']}},
+      {k:'recYds',line:'Receiving Yards',unit:'receiving yards',min:30,bucket:10,maxSteps:4,dist:'norm',gl:{labels:[],names:['receivingYards']}}
     ],
     nhl:[
-      {k:'ptsH',line:'Points',unit:'points',min:2,bucket:1,step:2,safety:0.82,sdFrac:0.30},
-      {k:'g',line:'Goals',unit:'goals',min:1,bucket:1,step:1,safety:0.80,sdFrac:0.30},
-      {k:'a',line:'Assists',unit:'assists',min:1,bucket:1,step:2,safety:0.82,sdFrac:0.30},
-      {k:'sog',line:'Shots on Goal',unit:'shots on goal',min:3,bucket:1,step:3,safety:0.84,sdFrac:0.28}
+      {k:'ptsH',line:'Points',unit:'points',min:2,bucket:1,maxSteps:2,dist:'pois',gl:{labels:['PTS'],names:['points']}},
+      {k:'g',line:'Goals',unit:'goals',min:1,bucket:1,maxSteps:1,dist:'pois',gl:{labels:['G'],names:['goals']}},
+      {k:'a',line:'Assists',unit:'assists',min:1,bucket:1,maxSteps:2,dist:'pois',gl:{labels:['A'],names:['assists']}},
+      {k:'sog',line:'Shots on Goal',unit:'shots on goal',min:3,bucket:1,maxSteps:3,dist:'pois',gl:{labels:['SOG','S'],names:['shotsOnGoal','shots']}}
     ]
   };
   function clockMinLeft(dc){if(!dc)return null;var p=String(dc).split(':');if(p.length!==2)return null;var m=parseFloat(p[0]),s=parseFloat(p[1]);if(isNaN(m)||isNaN(s))return null;return m+s/60;}
@@ -4555,17 +4608,34 @@ body.on-christmas{color-scheme:light}
     if(elapsed<0)elapsed=0;if(elapsed>lg.total+20)elapsed=lg.total+20;
     var remain=Math.max(0,lg.total-elapsed);
     var plab=period?(period<=lg.reg?(lg.plabel+period):('OT'+(period-lg.reg))):'';
-    var clock=plab+((st&&st.displayClock)?(' · '+st.displayClock+' left'):'');
+    var clock=plab+((st&&st.displayClock)?(' \u00b7 '+st.displayClock+' left'):'');
     return{elapsed:elapsed,remain:remain,frac:elapsed/lg.total,clock:clock,detail:detail};
   }
   function numVal(raw,madeOnly){if(raw==null)return null;var s=String(raw).replace(/,/g,'');if(madeOnly&&s.indexOf('-')>-1)s=s.split('-')[0];if(s.indexOf('/')>-1)s=s.split('/')[0];var v=parseFloat(s);return isNaN(v)?null:v;}
   function minPlayed(raw){if(raw==null)return null;var s=String(raw);if(s.indexOf(':')>-1){var p=s.split(':');var v=parseFloat(p[0])+(parseFloat(p[1]||0)/60);return isNaN(v)?null:v;}var v2=parseFloat(s);return isNaN(v2)?null:v2;}
+  function normName(s){return String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();}
+  var BLOCK_RE=/\bout\b|doubtful|inactive|injured reserve|suspended|did not play|not active/i;
   function parseBox(d,lg){
+    /* In/out for THIS game: the summary's injury report. Anyone
+       Out / Doubtful / Inactive there is blocked even if the box
+       score still lists him. */
+    var blockedIds={},blockedNames={};
+    (d.injuries||[]).forEach(function(gr){(gr.injuries||[]).forEach(function(x){
+      var st=String(x.status||((x.type||{}).name)||'');
+      if(!BLOCK_RE.test(st))return;
+      var at=x.athlete||{};
+      if(at.id)blockedIds[String(at.id)]=1;
+      if(at.displayName)blockedNames[normName(at.displayName)]=1;
+      if(at.shortName)blockedNames[normName(at.shortName)]=1;
+    });});
     var out=[],byAth={};
     var groups=(((d||{}).boxscore||{}).players)||[];
     function recFor(at,teamAbbr){
       var id=String((at&&at.id)||'');var nm=(at&&(at.displayName||at.shortName))||'';
-      if(!nm)return null;var key=id||nm;
+      if(!nm)return null;
+      if(id&&blockedIds[id])return null;
+      if(blockedNames[normName(nm)])return null;
+      var key=id||nm;
       if(!byAth[key]){var r={name:nm,id:id,team:teamAbbr||'',stats:{}};byAth[key]=r;out.push(r);}
       return byAth[key];
     }
@@ -4576,6 +4646,7 @@ body.on-christmas{color-scheme:light}
         function idxOf(names){for(var i=0;i<names.length;i++){var ix=labels.indexOf(names[i]);if(ix>-1)return ix;}return -1;}
         (sg.athletes||[]).forEach(function(ae){
           if(ae.didNotPlay)return;
+          if(ae.active===false)return;
           var stats=ae.stats||[];if(!stats.length)return;
           var r=recFor(ae.athlete,tAbbr);if(!r)return;
           function put(k,ix,made){if(ix<0)return;var v=numVal(stats[ix],made);if(v!=null)r.stats[k]=v;}
@@ -4595,35 +4666,109 @@ body.on-christmas{color-scheme:light}
     });
     return out;
   }
-  function suggestLegs(lg,game,players,clk,risky){
+  /* ---- Real base rates from the player's ESPN game log -------
+     Season mean blended 60/40 with the last-5 mean, plus the
+     game-log spread and his usual minutes (NBA MIN / NHL TOI).
+     No game log (fewer than 3 games) = no base rate = no leg. */
+  var baseCache={};
+  function baseRates(lg,athleteId){
+    var key=lg.key+'-base-'+athleteId;
+    if(baseCache[key])return baseCache[key];
+    var parts=lg.path.split('/');
+    var pr=fetchJSON('https://site.api.espn.com/apis/common/v3/sports/'+parts[0]+'/'+parts[1]+'/athletes/'+athleteId+'/gamelog').then(function(d){
+      if(!d)return null;
+      var sts=d.seasonTypes||[],st=null;
+      for(var i=0;i<sts.length;i++){if(/regular/i.test(sts[i].displayName||'')){st=sts[i];break;}}
+      if(!st)st=sts[0];
+      if(!st)return null;
+      var evMap=d.events||{},seen={},evs=[];
+      (st.categories||[]).forEach(function(cat){(cat.events||[]).forEach(function(e){var id=String(e.eventId||'');if(!id||seen[id])return;seen[id]=1;evs.push(e);});});
+      evs.sort(function(a,b){var da=(evMap[String(a.eventId)]||{}).gameDate||'',db=(evMap[String(b.eventId)]||{}).gameDate||'';return db<da?-1:(db>da?1:0);});
+      if(evs.length<3)return null;
+      var labels=d.labels||[],names=d.names||[];
+      function series(def){
+        var ix=-1,ci;
+        var nc=def.names||[];for(ci=0;ci<nc.length;ci++){ix=names.indexOf(nc[ci]);if(ix>=0)break;ix=-1;}
+        if(ix<0){var lc=def.labels||[];for(ci=0;ci<lc.length;ci++){ix=labels.indexOf(lc[ci]);if(ix>=0)break;ix=-1;}}
+        if(ix<0)return null;
+        var out=[];
+        for(var k=0;k<evs.length&&out.length<25;k++){var raw=evs[k].stats&&evs[k].stats[ix];if(raw==null)continue;var v=parseFloat(String(raw).replace(/,/g,'').split('-')[0]);if(isNaN(v))continue;out.push(v);}
+        return out.length>=3?out:null;
+      }
+      function avg(a){return a.reduce(function(x,y){return x+y;},0)/a.length;}
+      var minIx=labels.indexOf(lg.key==='nhl'?'TOI':'MIN'),minAvg=null;
+      if(minIx>=0){var mv=[];for(var k2=0;k2<evs.length&&mv.length<25;k2++){var raw2=evs[k2].stats&&evs[k2].stats[minIx];if(raw2==null)continue;var vv=minPlayed(raw2);if(vv!=null)mv.push(vv);}if(mv.length>=3)minAvg=avg(mv);}
+      var res={minAvg:minAvg},found=false;
+      (STATS[lg.key]||[]).forEach(function(cfg){
+        var vals=series(cfg.gl);if(!vals)return;
+        var season=avg(vals),r5=avg(vals.slice(0,5));
+        var mu=0.6*season+0.4*r5;
+        var sd=Math.sqrt(vals.reduce(function(a,b){return a+(b-season)*(b-season);},0)/vals.length);
+        res[cfg.k]={mu:mu,sd:sd,n:vals.length,season:season,r5:r5};found=true;
+      });
+      return found?res:null;
+    }).catch(function(){return null;});
+    baseCache[key]=pr;return pr;
+  }
+  function isCandidate(lg,p,clk){
+    var ok=false;
+    (STATS[lg.key]||[]).forEach(function(cfg){var cur=p.stats[cfg.k];if(cur!=null&&cur>=cfg.min)ok=true;});
+    if(!ok)return false;
+    if(lg.key==='nba'&&p.stats.min!=null&&(p.stats.min<6||p.stats.min<clk.elapsed*0.32))return false;
+    if(lg.key==='nhl'&&p.stats.min!=null&&(p.stats.min<4||p.stats.min<clk.elapsed*0.22))return false;
+    return true;
+  }
+  /* ---- Price the legs off the real distribution ---------------
+     Expected REMAINING production = base rate x share of
+     regulation left x playing-time adjustment x game-state
+     adjustment. The chance of a line = the distribution's chance
+     he produces at least what he still needs in that time. */
+  function buildLegs(lg,game,players,baseMap,clk){
     var legs=[];
-    if(clk.frac<0.20||clk.frac>0.92)return legs;
-    (STATS[lg.key]||[]).forEach(function(cfg){
-      players.forEach(function(p){
+    if(clk.frac<0.12||clk.frac>0.93||clk.remain<6)return legs;
+    var remainFrac=clk.remain/lg.total;
+    function fmtRate(v){return v>=20?String(Math.round(v)):(String(Math.round(v*10)/10).replace(/\.0$/,''));}
+    players.forEach(function(p){
+      var base=p.id?baseMap[p.id]:null;
+      if(!base)return;
+      var diff=(p.team===game.away)?(game.aScore-game.hScore):(game.hScore-game.aScore);
+      (STATS[lg.key]||[]).forEach(function(cfg){
         var cur=p.stats[cfg.k];if(cur==null||cur<cfg.min)return;
         if(lg.key==='nba'&&p.stats.min!=null&&(p.stats.min<6||p.stats.min<clk.elapsed*0.32))return;
         if(lg.key==='nhl'&&p.stats.min!=null&&(p.stats.min<4||p.stats.min<clk.elapsed*0.22))return;
-        var proj=cur/clk.frac;if(!(proj>cur))return;
-        var sugg=Math.floor((proj*cfg.safety)/cfg.bucket)*cfg.bucket;
-        var cap=Math.floor((cur+cfg.step)/cfg.bucket)*cfg.bucket;
-        if(sugg>cap)sugg=cap;
-        if(sugg<=cur)sugg=cur+cfg.bucket;
-        if(risky){
-          var safeSugg=sugg;
-          sugg=Math.floor((proj*0.96)/cfg.bucket)*cfg.bucket;
-          var rCap=Math.floor((cur+cfg.step*1.75)/cfg.bucket)*cfg.bucket;
-          if(sugg>rCap)sugg=rCap;
-          if(sugg<=safeSugg)sugg=safeSugg+cfg.bucket;
+        var b=base[cfg.k];if(!b||!(b.mu>0))return;
+        var shareAdj=1,shareTxt='';
+        if(base.minAvg&&base.minAvg>0&&p.stats.min!=null&&clk.elapsed>0){
+          var projMin=p.stats.min/clk.elapsed*lg.total;
+          shareAdj=Math.max(0.65,Math.min(1.35,projMin/base.minAvg));
+          if(shareAdj>=1.12)shareTxt='playing more than usual tonight';
+          else if(shareAdj<=0.88)shareTxt='playing less than usual tonight';
         }
-        if(sugg<=cur||sugg>proj*(risky?1.08:1.02))return;
-        var rem=proj-cur;
-        var sd=Math.max(Math.sqrt(Math.max(rem,1))*1.5,proj*cfg.sdFrac,cfg.bucket);
-        var prob=1-normCdf((sugg-0.5-proj)/sd);
-        if(prob>0.93)prob=0.93;
-        if(risky){if(prob<0.34||prob>0.68)return;}
-        else if(prob<0.57)return;
-        var projTxt=proj>=20?String(Math.round(proj)):(String(Math.round(proj*10)/10).replace(/\.0$/,''));
-        legs.push({name:p.name,text:p.name+' '+sugg+'+ '+cfg.line,prob:Math.round(prob*100)/100,curTxt:'Has '+cur+' '+cfg.unit+' now',why:'On pace for ~'+projTxt+' '+cfg.unit+' · '+Math.round(clk.remain)+' min left in regulation',clock:clk.clock,gameId:game.id,gameTxt:game.away+' at '+game.home,key:(risky?'live-risky-':'live-')+game.id+'-'+p.name+'-'+cfg.k});
+        var gsAdj=1,gsTxt='';
+        if(lg.key==='nhl'&&clk.remain<=20&&diff<0&&(cfg.k==='g'||cfg.k==='sog'||cfg.k==='ptsH'||cfg.k==='a')){gsAdj=1.10;gsTxt='team trailing late — more push expected';}
+        else if(lg.key==='nba'&&clk.remain<=12&&diff<=-15){gsAdj=0.90;gsTxt='blowout — garbage-time risk';}
+        else if(lg.key==='nfl'&&clk.elapsed>=30&&diff<=-9&&(cfg.k==='passYds'||cfg.k==='recYds')){gsAdj=1.08;gsTxt='team trailing — more passing expected';}
+        else if(lg.key==='nfl'&&clk.elapsed>=30&&diff<=-9&&cfg.k==='rushYds'){gsAdj=0.92;gsTxt='team trailing — less rushing expected';}
+        else if(lg.key==='nfl'&&clk.elapsed>=30&&diff>=9&&cfg.k==='rushYds'){gsAdj=1.08;gsTxt='team leading — more rushing expected';}
+        var muRem=b.mu*remainFrac*shareAdj*gsAdj;
+        var sdRem=null;
+        if(cfg.dist==='norm'){sdRem=Math.max((b.sd||b.mu*0.4)*Math.sqrt(remainFrac)*shareAdj,cfg.bucket*0.8);}
+        var best=null;
+        for(var step=1;step<=cfg.maxSteps;step++){
+          var sugg=Math.ceil((cur+step*cfg.bucket)/cfg.bucket)*cfg.bucket;
+          var need=sugg-cur;
+          var prob;
+          if(cfg.dist==='pois')prob=poisAtLeast(muRem,need);
+          else prob=1-normCdf((need-0.5-muRem)/sdRem);
+          if(prob>=0.55)best={sugg:sugg,need:need,prob:prob};
+          else break;
+        }
+        if(!best)return;
+        var prob2=Math.min(0.93,Math.round(best.prob*100)/100);
+        var why='Real rate '+fmtRate(b.mu)+' '+cfg.unit+'/gm (season '+fmtRate(b.season)+', last 5 '+fmtRate(b.r5)+') \u00b7 needs '+best.need+' more with '+Math.round(clk.remain)+' min left';
+        if(shareTxt)why+=' \u00b7 '+shareTxt;
+        if(gsTxt)why+=' \u00b7 '+gsTxt;
+        legs.push({name:p.name,text:p.name+' '+best.sugg+'+ '+cfg.line,prob:prob2,curTxt:'Has '+cur+' '+cfg.unit+' now',why:why,clock:clk.clock,gameId:game.id,gameTxt:game.away+' at '+game.home,key:'live-'+game.id+'-'+p.name+'-'+cfg.k});
       });
     });
     return legs;
@@ -4633,6 +4778,7 @@ body.on-christmas{color-scheme:light}
     if(lg.key==='nfl')urls.push('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/scoreboard');
     return Promise.all(urls.map(function(u){return fetchJSON(u).catch(function(){return null;});})).then(function(sbs){
       var byId={},live=[];
+      function scoreOf(c){var s=c&&c.score;if(s==null)return 0;var v=(typeof s==='object')?(s.value!=null?s.value:s.displayValue):s;var n=parseFloat(v);return isNaN(n)?0:n;}
       sbs.forEach(function(sb){((sb&&sb.events)||[]).forEach(function(ev){
         var comp=(ev.competitions||[])[0];if(!comp)return;
         var st=comp.status||{};var type=st.type||{};
@@ -4640,13 +4786,21 @@ body.on-christmas{color-scheme:light}
         var id=String(ev.id||'');if(!id||byId[id])return;byId[id]=1;
         var away=(comp.competitors||[]).filter(function(c){return c.homeAway==='away';})[0];
         var home=(comp.competitors||[]).filter(function(c){return c.homeAway==='home';})[0];
-        var aAbbr=away&&away.team?(away.team.abbreviation||away.team.shortDisplayName||''):''; 
-        var hAbbr=home&&home.team?(home.team.abbreviation||home.team.shortDisplayName||''):''; 
-        live.push({id:id,away:aAbbr,home:hAbbr,clk:gameClock(lg,st)});
+        var aAbbr=away&&away.team?(away.team.abbreviation||away.team.shortDisplayName||''):'';
+        var hAbbr=home&&home.team?(home.team.abbreviation||home.team.shortDisplayName||''):'';
+        live.push({id:id,away:aAbbr,home:hAbbr,aScore:scoreOf(away),hScore:scoreOf(home),clk:gameClock(lg,st)});
       });});
       return Promise.all(live.map(function(g){
-        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){var pl=parseBox(d,lg);return{safe:suggestLegs(lg,g,pl,g.clk,false),risky:suggestLegs(lg,g,pl,g.clk,true)};}).catch(function(){return{safe:[],risky:[]};});
-      })).then(function(perGame){var all=[],allR=[];perGame.forEach(function(ls){all=all.concat(ls.safe||[]);allR=allR.concat(ls.risky||[]);});return{safe:all,risky:allR};});
+        return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+lg.path+'/summary?event='+g.id).then(function(d){
+          var players=parseBox(d,lg);
+          var ids=[],seenId={};
+          players.forEach(function(p){if(p.id&&isCandidate(lg,p,g.clk)&&!seenId[p.id]){seenId[p.id]=1;ids.push(p.id);}});
+          return Promise.all(ids.slice(0,24).map(function(id){return baseRates(lg,id).then(function(b){return{id:id,base:b};});})).then(function(list){
+            var baseMap={};list.forEach(function(x){if(x.base)baseMap[x.id]=x.base;});
+            return buildLegs(lg,g,players,baseMap,g.clk);
+          });
+        }).catch(function(){return[];});
+      })).then(function(perGame){var all=[];perGame.forEach(function(ls){all=all.concat(ls||[]);});return all;});
     });
   }
   function buildLiveParlay(legs){
@@ -4662,23 +4816,7 @@ body.on-christmas{color-scheme:light}
     var hit=picked.reduce(function(a,l){return a*l.prob;},1);
     return{legs:picked,hit:hit};
   }
-  function buildLiveRiskyParlay(legs){
-    var sorted=(legs||[]).slice().sort(function(a,b){return b.prob-a.prob;});
-    var picked=[],usedName={},perGame={};
-    sorted.forEach(function(l){
-      if(picked.length>=5)return;
-      if(usedName[l.name])return;
-      if((perGame[l.gameId]||0)>=5)return;
-      if(l.prob<0.34||l.prob>0.68)return;
-      usedName[l.name]=1;perGame[l.gameId]=(perGame[l.gameId]||0)+1;picked.push(l);
-    });
-    if(picked.length<4)return null;
-    var hit=picked.reduce(function(a,l){return a*l.prob;},1);
-    if(picked.length===5&&hit<0.03){picked=picked.slice(0,4);hit=picked.reduce(function(a,l){return a*l.prob;},1);}
-    if(picked.length<4||hit<0.015)return null;
-    return{legs:picked,hit:hit};
-  }
-  var lastByLeague={},lastByLeagueRisky={};
+  var lastByLeague={};
   function applyPick(){
     var sec=document.getElementById('liveParlaySection');if(!sec)return;
     var panel=document.getElementById('sport-betsim');
@@ -4698,54 +4836,35 @@ body.on-christmas{color-scheme:light}
       var p=buildLiveParlay(legs);
       h+='<div data-liveleague="'+lg.key+'">';
       if(p){
-        h+='<p class="brk-conf">'+lg.label+' — Live Parlay</p>';
+        h+='<p class="brk-conf">'+lg.label+' \u2014 Live Parlay</p>';
         var hitPct=p.hit*100;var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
         var dec=1;p.legs.forEach(function(l){dec*=(1/l.prob);});var amount=10*dec;
         var leagueName=lg.label.replace(/^[^ ]+ /,'');
-        var copyTxt=leagueName+' Live Parlay — Live Pace Projection (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+' — '+l.curTxt+'; '+l.why+' ('+l.gameTxt+(l.clock?' · '+l.clock:'')+')';}).join('\n')+'\nCombined odds: '+fmtOdds(dec)+' · Stake: $10 → Payout: $'+amount.toFixed(2)+' · Model hit chance: '+hitTxt+'% · Live pace projection — not a guarantee';
+        var copyTxt=leagueName+' Live Parlay \u2014 Real-Odds Model (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+' \u2014 '+l.curTxt+'; '+l.why+' ('+l.gameTxt+(l.clock?' \u00b7 '+l.clock:'')+')';}).join('\n')+'\nCombined odds: '+fmtOdds(dec)+' \u00b7 Stake: $10 \u2192 Payout: $'+amount.toFixed(2)+' \u00b7 Model hit chance: '+hitTxt+'% \u00b7 Real-odds model \u2014 not a guarantee';
         var pbTxt='@Playbook '+leagueName+' live parlay: '+p.legs.map(function(l){return l.text;}).join('; ');
-        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">🔴 '+esc(leagueName)+' Live Parlay — Pace Picks</span><span class="parlay-count">'+p.legs.length+' legs · LIVE</span></div>';
+        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">\uD83D\uDD34 '+esc(leagueName)+' Live Parlay \u2014 Real Odds</span><span class="parlay-count">'+p.legs.length+' legs \u00b7 LIVE</span></div>';
         p.legs.forEach(function(l){
-          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">LIVE</span><span class="p-sub">'+esc(l.curTxt)+' · '+esc(l.gameTxt)+(l.clock?' · '+esc(l.clock):'')+'</span><span class="live-why">'+esc(l.why)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
-        });
-        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Live pace projection — legs multiplied together from current stats and time left. Pace can change fast; not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
-        h+='<div class="hit-pay">$10 → $'+amount.toFixed(2)+(amount>10?' ('+fmtOdds(dec)+')':'')+'</div><div class="hit-lab">SIM estimate from the live pace chances — no book price is verified for live pace props, so no best book is claimed.</div></div>';
-        h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> — that copies the bet as a backup and opens X with it pre-filled for @Playbook. Lines can differ by book.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">📋 Copy this bet</button>';
-        h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook →</a>';
-        h+='</div></div>';
-      }
-      var legsR=lastByLeagueRisky[lg.key]||[];
-      var pr=buildLiveRiskyParlay(legsR);
-      if(pr){
-        h+='<p class="brk-conf">'+lg.label+' \u2014 Riskier Live Parlay \u00b7 All Props</p>';
-        var hitPctR=pr.hit*100;var hitTxtR=hitPctR>=10?hitPctR.toFixed(1):hitPctR.toFixed(2);
-        var decR=1;pr.legs.forEach(function(l){decR*=(1/l.prob);});var amountR=10*decR;
-        var leagueNameR=lg.label.replace(/^[^ ]+ /,'');
-        var copyTxtR=leagueNameR+' Riskier Live Parlay \u2014 All Props, Live Pace Projection (Derek News Bet Simulator)\n'+pr.legs.map(function(l,i){return (i+1)+'. '+l.text+' \u2014 '+l.curTxt+'; '+l.why+' ('+l.gameTxt+(l.clock?' \u00b7 '+l.clock:'')+')';}).join('\n')+'\nCombined odds: '+fmtOdds(decR)+' \u00b7 Stake: $10 \u2192 Payout: $'+amountR.toFixed(2)+' \u00b7 Model hit chance: '+hitTxtR+'% \u00b7 All player props \u2014 no moneylines \u00b7 Live pace projection \u2014 not a guarantee';
-        var pbTxtR='@Playbook '+leagueNameR+' riskier live parlay (all props): '+pr.legs.map(function(l){return l.text;}).join('; ');
-        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">\u26a0\ufe0f '+esc(leagueNameR)+' Riskier Live Parlay \u2014 All Props</span><span class="parlay-count">'+pr.legs.length+' legs \u00b7 LIVE \u00b7 NO MONEYLINES</span></div>';
-        pr.legs.forEach(function(l){
           h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">LIVE</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span><span class="live-why">'+esc(l.why)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
-        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxtR)+'% chance to hit</div><div class="hit-lab">Riskier live pace projection \u2014 higher lines off the same live pace, so this hits less often than the main Live Parlay. All player props, no moneylines. Legs multiplied together from current stats and time left. Pace can change fast; not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPctR)).toFixed(1)+'%"></i></div>';
-        h+='<div class="hit-pay">$10 \u2192 $'+amountR.toFixed(2)+(amountR>10?' ('+fmtOdds(decR)+')':'')+'</div><div class="hit-lab">SIM estimate from the live pace chances \u2014 no book price is verified for live pace props, so no best book is claimed.</div></div>';
-        h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> \u2014 that copies the bet as a backup and opens X with it pre-filled for @Playbook. Lines can differ by book.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxtR)+'">\ud83d\udccb Copy this bet</button>';
-        h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxtR)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxtR)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Real-odds model \u2014 each chance comes from the player\u2019s actual scoring distribution (season + last-5 base rate over the time left), not pace math. Legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
+        h+='<div class="hit-pay">$10 \u2192 $'+amount.toFixed(2)+(amount>10?' ('+fmtOdds(dec)+')':'')+'</div><div class="hit-lab">SIM estimate from the real-odds chances \u2014 no book price is verified for live props, so no best book is claimed.</div></div>';
+        h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> \u2014 that copies the bet as a backup and opens X with it pre-filled for @Playbook. Lines can differ by book.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\uD83D\uDCCB Copy this bet</button>';
+        h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
         h+='</div></div>';
       }
       h+='</div>';
     });
     list.innerHTML=h;
     var stamp=document.getElementById('liveParlayStamp');
-    if(stamp)stamp.textContent='Box scores & clocks: ESPN live · Pace = current stat ÷ share of regulation played · Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' · Refreshes every minute while games are live';
+    if(stamp)stamp.textContent='Box scores & clocks: ESPN live \u00b7 Chances: real base rate (season + last 5) run through the scoring distribution for the time left, adjusted for minutes / ice time and the score \u2014 never pace math \u00b7 Only players actually in the game: Out / Inactive / did-not-play are never used \u00b7 Max 1 live bet per sport \u00b7 Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' \u00b7 Refreshes every minute while games are live';
     applyPick();
   }
   var liveLoading=false;
   function renderLive(){
     if(liveLoading)return;liveLoading=true;
     Promise.all(LEAGUES.map(loadLiveLeague)).then(function(res){
-      liveLoading=false;lastByLeague={};lastByLeagueRisky={};
-      LEAGUES.forEach(function(lg,li){var r=res[li]||{};lastByLeague[lg.key]=r.safe||[];lastByLeagueRisky[lg.key]=r.risky||[];});
+      liveLoading=false;lastByLeague={};
+      LEAGUES.forEach(function(lg,li){lastByLeague[lg.key]=res[li]||[];});
       draw();
     }).catch(function(){liveLoading=false;});
   }
@@ -4757,7 +4876,7 @@ body.on-christmas{color-scheme:light}
     var btn=ev.target&&ev.target.closest?ev.target.closest('.copy-legs-btn'):null;
     if(!btn)return;
     var txt=btn.getAttribute('data-copy')||'';
-    function done(){var o=btn.textContent;btn.textContent='✓ Copied legs';setTimeout(function(){btn.textContent=o;},1600);}
+    function done(){var o=btn.textContent;btn.textContent='\u2713 Copied legs';setTimeout(function(){btn.textContent=o;},1600);}
     if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){navigator.clipboard.writeText(txt).then(done).catch(function(){fbCopy(txt);done();});}
     else{fbCopy(txt);done();}
   });
