@@ -1,48 +1,42 @@
 {
- "updated_at": "2026-11-17T22:39:38.591130+00:00",
+ "updated_at": "2026-11-17T23:27:57.295412+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385239,
-  "out": 618,
-  "pct": 0.01,
-  "source_updated": "2026-11-17T22:34:49+00:00",
+  "out": 89,
+  "pct": 0.0,
+  "source_updated": "2026-11-17T23:24:40+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 254,
-    "pct": 0.02
+    "name": "National Grid",
+    "tracked": 1699953,
+    "out": 25,
+    "pct": 0.0
    },
    {
-    "name": "New York State Electric & Gas",
-    "tracked": 919266,
-    "out": 241,
-    "pct": 0.03
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 23,
+    "pct": 0.0
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 57,
-    "pct": 0.0
-   },
-   {
-    "name": "National Grid",
-    "tracked": 1699953,
-    "out": 37,
+    "out": 11,
     "pct": 0.0
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 15,
-    "pct": 0.01
+    "out": 9,
+    "pct": 0.0
    },
    {
-    "name": "Otsego Electric Coop",
-    "tracked": 5163,
-    "out": 5,
-    "pct": 0.1
+    "name": "New York State Electric & Gas",
+    "tracked": 919266,
+    "out": 8,
+    "pct": 0.0
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -55,6 +49,12 @@
     "tracked": 315387,
     "out": 4,
     "pct": 0.0
+   },
+   {
+    "name": "Otsego Electric Coop",
+    "tracked": 5163,
+    "out": 4,
+    "pct": 0.08
    },
    {
     "name": "Delaware County Electric Coop",
@@ -96,16 +96,16 @@
  },
  "county": {
   "tracked": 212912,
-  "out": 15,
-  "source_updated": "2026-11-17T22:34:47+00:00",
-  "pct": 0.01,
+  "out": 0,
+  "source_updated": "2026-11-17T23:24:38+00:00",
+  "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204758,
-    "out": 15,
-    "pct": 0.01
+    "out": 0,
+    "pct": 0.0
    },
    {
     "name": "New York State Electric & Gas",
