@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dxrivall.github.io/dereknews/sitemap.xml
