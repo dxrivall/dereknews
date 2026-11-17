@@ -1439,19 +1439,22 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
    emergency alerts, ransomware, breaches and hacks, last 7 days
    only, newest first, top 6, one row per happening.
    Data path: going-on.json FIRST (same-origin file refreshed
-   server-side by a GitHub Action, cache:'no-store'), used only
-   when it parses with an items array and its updated_at is no
-   more than 30 minutes old. If the file is missing, stale or
-   invalid, fall back to the live Google News via rss2json fetch
-   of the same 9 queries — fetched SEQUENTIALLY about 1.5s apart
-   (not all at once, which is what got rss2json rate-limited),
-   keeping the 7-day freshness, exact-title and first-8-words
-   dedupe, top-6 and newest-first rules. If that fallback fails
-   on first load, it retries once after ~30 seconds, then shows
-   the honest couldn't-load state. The 5-minute refresh (News tab
-   open, page visible) re-reads going-on.json first the same way;
-   a failed refresh after a successful load keeps the existing
-   list and notes the failure instead of wiping it.
+   server-side by a GitHub Action, cache:'no-store'). The file is
+   accepted as last-good up to 24 hours old (the Action only lands
+   about hourly, so it is stale past 30 minutes roughly half the
+   time) — a stale file still renders its items and tension with a
+   "Refresh delayed" note, instead of blanking the card. Only a
+   file older than 24 hours, missing or invalid falls back to the
+   live Google News via rss2json fetch of the same 9 queries —
+   fetched SEQUENTIALLY about 1.5s apart (not all at once, which is
+   what got rss2json rate-limited), keeping the 7-day freshness,
+   exact-title and first-8-words dedupe, top-6 and newest-first
+   rules. If that fallback fails on first load, it retries once
+   after ~30 seconds, then shows the honest couldn't-load state.
+   The 5-minute refresh (News tab open, page visible) re-reads
+   going-on.json first the same way; a failed refresh after a
+   successful load keeps the existing list and notes the failure
+   instead of wiping it.
    Pinned rows, in fixed order: the date-gated EAS test row
    (Nov 17, 2026 only), then the live NWS outage row (live
    self-check, self-clearing, outage wording only).
@@ -1634,7 +1637,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     return fetch('going-on.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad');return r.json();}).then(function(d){
       if(!d||!Array.isArray(d.items))throw new Error('bad going-on.json');
       var upd=Date.parse(d.updated_at||'');
-      if(isNaN(upd)||Date.now()-upd>30*60*1000)throw new Error('stale going-on.json');
+      if(isNaN(upd))throw new Error('stale going-on.json');
+      var stale=Date.now()-upd>30*60*1000;
+      if(stale&&Date.now()-upd>24*60*60*1000)throw new Error('stale going-on.json');
       var out=[];
       d.items.forEach(function(it){
         if(!it||!it.title||!it.link)return;
@@ -1642,7 +1647,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
         out.push({title:it.title,link:it.link,when:isNaN(when)?upd:when});
       });
       var tension=(d.tension&&typeof d.tension.attacks_7d==='number')?d.tension.attacks_7d:null;
-      return {items:out,tension:tension,updatedAt:upd};
+      return {items:out,tension:tension,updatedAt:upd,stale:stale};
     });
   }
   function wgDelay(ms){return new Promise(function(res){setTimeout(res,ms);});}
@@ -1663,7 +1668,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     fetchGoingOnFile().then(function(res){
       wgLoading=false;
       renderItems(res.items);
-      if(res.tension!==null&&res.tension!==undefined)renderTension(res.tension,Date.now()-res.updatedAt>30*60*1000);
+      if(res.stale){var rn=document.getElementById('wgRefreshNote');if(rn)rn.textContent='Refresh delayed — showing the last update.';}
+      if(res.tension!==null&&res.tension!==undefined)renderTension(res.tension,res.stale);
     }).catch(function(){
       fetchRssSequential().then(function(res){
         wgLoading=false;
