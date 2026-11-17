@@ -1227,6 +1227,25 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .isw b{display:block;font-size:17px;font-weight:800;margin:0 0 3px}
 #view-news .isw span{font-size:13.5px;color:var(--soft);line-height:1.5}
 #view-news .isw:active{opacity:.75}
+#view-news .et-risk{text-align:center;padding:18px 8px 4px}
+#view-news .et-risk-num{font-size:56px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
+#view-news .et-risk-trend{font-size:15px;font-weight:800;margin-top:6px}
+#view-news .et-risk-trend:empty{display:none}
+#view-news .et-trend-up{color:#b42318}
+#view-news .et-trend-down{color:#15803d}
+#view-news .et-trend-flat{color:var(--soft)}
+#view-news .et-trend-lab{font-size:12.5px;font-weight:600;color:var(--soft)}
+#view-news .et-risk-updated{font-size:12.5px;color:var(--soft);margin-top:4px}
+#view-news .et-risk-updated:empty{display:none}
+#view-news .et-risk-lab{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-top:8px}
+#view-news .et-risk-level{font-size:15px;font-weight:800;margin-top:6px}
+#view-news .et-prep{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
+#view-news .et-prep h4{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:12px 0 6px}
+#view-news .et-prep h4:first-of-type{margin-top:4px}
+#view-news .et-prep ul{list-style:none;margin:0;padding:0}
+#view-news .et-prep li{font-size:13.5px;line-height:1.45;padding:5px 0 5px 22px;position:relative;border-bottom:1px solid var(--border)}
+#view-news .et-prep li:last-child{border-bottom:0}
+#view-news .et-prep li::before{content:"✓";position:absolute;left:2px;top:5px;font-weight:800;color:#15803d}
 #view-news .et-status{font-size:13.5px;line-height:1.5;border-radius:14px;padding:11px 13px;margin:14px 0 2px;background:rgba(127,160,175,.14)}
 #view-news .et-status.is-calm{background:rgba(21,128,61,.13)}
 #view-news .et-status.is-alert{background:rgba(180,35,24,.13)}
@@ -1242,19 +1261,66 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .cy-t{display:block;font-size:14.5px;font-weight:650;line-height:1.35}
 #view-news .cy-m{display:block;font-size:12px;color:var(--soft);margin-top:3px}
 #view-news .cy-live{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#b42318;border:1.5px solid rgba(180,35,24,.6);border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:1px}
+#view-news .cy-map{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--link);text-decoration:none;border:1.5px solid var(--border);border-radius:999px;padding:9px 14px}
+#view-news .cy-map:active{opacity:.7}
+#view-news .et-pizza{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
+#view-news .et-pizza p{font-size:13.5px;line-height:1.5;margin:6px 0}
+#view-news .et-pizza .et-pizza-caveat{font-size:12.5px;color:var(--soft)}
+#view-news .et-pizza-big{font-size:30px;font-weight:800;line-height:1.1;margin:8px 0 2px}
+#view-news .et-pizza-big small{font-size:15px;font-weight:700}
+#view-news .et-pizza-lv5{color:#15803d}
+#view-news .et-pizza-lv4{color:#65a30d}
+#view-news .et-pizza-lv3{color:#d97706}
+#view-news .et-pizza-lv2{color:#dc2626}
+#view-news .et-pizza-lv1{color:#b42318}
+#view-news .et-pizza-v{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;padding:5px 0;border-bottom:1px solid var(--border)}
+#view-news .et-pizza-v:last-child{border-bottom:0}
+#view-news .et-pizza-v b{white-space:nowrap}
+#view-news .et-pizza-up{font-size:12.5px;color:var(--soft);margin-top:8px}
 </style>
   <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
   <section class="ncard" id="breakingSection" aria-label="Breaking news">
     <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
     <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
   </section>
-  <section class="ncard" id="emergencyTracker" aria-label="What's going on">
-    <span class="nkick">News &middot; What&rsquo;s going on</span><h2>💻 What&rsquo;s going on</h2>
+  <section class="ncard" id="emergencyTracker" aria-label="War and cyber tracker">
+    <span class="nkick">News &middot; War &amp; Cyber Tracker</span><h2>🛡️ War &amp; Cyber Tracker</h2>
+    <div class="et-risk" id="etRisk">
+      <div class="et-risk-num" id="etRiskNum">—</div>
+      <div class="et-risk-trend" id="etRiskTrend"></div>
+      <div class="et-risk-updated" id="etRiskUpdated"></div>
+      <div class="et-risk-lab">Iran War Risk</div>
+      <div class="et-risk-level" id="etRiskLevel">—</div>
+    </div>
+    <h3 class="et-h">💻 Everything going on</h3>
     <p class="wg-updated" id="cyUpdated"></p>
     <p class="et-status" id="cyLiveStatus">Checking what&rsquo;s going on&hellip;</p>
     <div id="cyList"><p class="lstatus">Loading what&rsquo;s going on&hellip;</p></div>
     <p class="wg-refresh-note" id="wgRefreshNote"></p>
     <p class="esrc">What&rsquo;s going on: major outages, bank and airline disruptions, emergency alerts, ransomware, breaches and hacks from Google News, last 7 days only. Only real reported items show; if the feed can&rsquo;t load, it says so instead of guessing.</p>
+    <div class="et-pizza" aria-label="Pizza Index">
+      <h3 class="et-h">🍕 Pizza Index</h3>
+      <div id="pizzaLive"><p class="lstatus">Loading the live Pizza Index&hellip;</p></div>
+      <p>When Pentagon staff work late on a crisis, nearby pizza spots get busier than usual — the old OSINT tell.</p>
+      <p class="et-pizza-caveat">A folk indicator, not proof — busy pizza nights have plenty of ordinary causes.</p>
+      <a class="cy-map" href="https://x.com/PenPizzaReport" target="_blank" rel="noopener">Live report: @PenPizzaReport on X &rarr;</a>
+    </div>
+    <div class="et-prep" aria-label="How to prepare">
+      <h3 class="et-h" style="margin-top:2px">How to prepare</h3>
+      <h4>Cyber</h4>
+      <ul>
+        <li>Turn on multi-factor authentication on important accounts</li>
+        <li>Back up important files</li>
+        <li>Don&rsquo;t click links or attachments from unknown senders</li>
+      </ul>
+      <h4>If things escalate</h4>
+      <ul>
+        <li>Keep a few days of water, food, and any medicines</li>
+        <li>Keep some cash on hand</li>
+        <li>Know how you get local emergency alerts</li>
+        <li>Keep phones charged and a flashlight handy</li>
+      </ul>
+    </div>
   </section>
   <section class="ncard" id="newsFeedCard" aria-label="News feed">
     <span class="nkick">News · Feed</span><h2 id="newsFeedTitle">Top Stories</h2>
@@ -1279,16 +1345,147 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   </section>
 </main>
 <script>
+/* War & Cyber Tracker (News tab) — Iran War Risk composite ONLY.
+   The individual Polymarket market rows are NOT shown: the card
+   displays just the composite percent, its trend and its risk band.
+   Composite formula: (P(US invades Iran) + (100 - P(US-Iran ceasefire
+   by Dec 31))) / 2, computed live in-page from the two fetched Iran
+   market prices (Polymarket public Gamma API). If either Iran market
+   fails to load, the composite shows "—", never a guessed number.
+   Trend: current composite vs the composite 24h ago from Polymarket
+   price history; if price history fails, vs the previous composite
+   stored on this device ("since your last visit"); no previous value
+   means no arrow. */
+(function(){
+  var riskEl=document.getElementById('etRiskNum');
+  var trendEl=document.getElementById('etRiskTrend');
+  var updatedEl=document.getElementById('etRiskUpdated');
+  var levelEl=document.getElementById('etRiskLevel');
+  if(!riskEl)return;
+  function fail(){
+    riskEl.textContent='—';
+    if(trendEl)trendEl.textContent='';
+    if(levelEl)levelEl.textContent='—';
+  }
+  var WATCH=[
+    {slug:'will-the-us-invade-iran-before-2027',pick:null},
+    {slug:'us-x-iran-effective-ceasefire-begins-by-2-week-pause-20261108',pick:'December 31'}
+  ];
+  function gevent(slug){
+    return fetch('https://gamma-api.polymarket.com/events?slug='+slug).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d[0])||null;});
+  }
+  function pickPrice(ev,pick){
+    var ms=(ev&&ev.markets)||[],m=null,i;
+    for(i=0;i<ms.length;i++){
+      if(ms[i].closed)continue;
+      if(!pick){m=ms[i];break;}
+      if(ms[i].groupItemTitle===pick){m=ms[i];break;}
+    }
+    if(!m)return null;
+    var prices=null;
+    try{prices=JSON.parse(m.outcomePrices||'null');}catch(e){}
+    if(!prices||prices[0]==null)return null;
+    var pct=parseFloat(prices[0])*100;
+    if(isNaN(pct))return null;
+    var token=null;
+    try{var toks=JSON.parse(m.clobTokenIds||'null');if(toks&&toks[0]!=null)token=String(toks[0]);}catch(e){}
+    return {pct:pct,token:token};
+  }
+  Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
+    var invadeR=evs[0]?pickPrice(evs[0],WATCH[0].pick):null;
+    var ceaseR=evs[1]?pickPrice(evs[1],WATCH[1].pick):null;
+    if(!invadeR||!ceaseR){fail();return;}
+    var invade=invadeR.pct,cease=ceaseR.pct;
+    var risk=(invade+(100-cease))/2;
+    riskEl.textContent=(Math.round(risk*10)/10)+'%';
+    if(levelEl)levelEl.textContent=risk<10?'Low':(risk<25?'Elevated':(risk<=50?'High':'Severe'));
+    if(updatedEl)updatedEl.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+    if(trendEl){
+      var prevStored=null;
+      try{var rawPrev=localStorage.getItem('derekNewsIranRisk');if(rawPrev){var pjPrev=JSON.parse(rawPrev);if(pjPrev&&typeof pjPrev.risk==='number'&&isFinite(pjPrev.risk))prevStored=pjPrev.risk;}}catch(e){}
+      try{localStorage.setItem('derekNewsIranRisk',JSON.stringify({risk:risk,ts:Date.now()}));}catch(e){}
+      var showTrend=function(prev,label){
+        if(prev==null||typeof prev!=='number'||!isFinite(prev))return;
+        var d=Math.round((risk-prev)*10)/10;
+        if(d>0)trendEl.innerHTML='<span class="et-trend-up">↑ '+d+' pts</span> <span class="et-trend-lab">'+label+'</span>';
+        else if(d<0)trendEl.innerHTML='<span class="et-trend-down">↓ '+Math.abs(d)+' pts</span> <span class="et-trend-lab">'+label+'</span>';
+        else trendEl.innerHTML='<span class="et-trend-flat">— 0 pts</span> <span class="et-trend-lab">'+label+'</span>';
+      };
+      var hist24=function(token){
+        if(!token)throw new Error('no token');
+        return fetch('https://clob.polymarket.com/prices-history?market='+encodeURIComponent(token)+'&interval=1d&fidelity=60').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+          var h=(d&&d.history)||[];
+          if(!h.length)throw new Error('empty');
+          var target=Date.now()/1000-86400,best=null,bd=null,i2;
+          for(i2=0;i2<h.length;i2++){if(!h[i2]||typeof h[i2].p!=='number'||typeof h[i2].t!=='number')continue;var dd=Math.abs(h[i2].t-target);if(bd===null||dd<bd){bd=dd;best=h[i2];}}
+          if(!best)throw new Error('empty');
+          return best.p*100;
+        });
+      };
+      if(invadeR.token&&ceaseR.token){
+        Promise.all([hist24(invadeR.token),hist24(ceaseR.token)]).then(function(v){
+          showTrend((v[0]+(100-v[1]))/2,'vs 24h ago');
+        }).catch(function(){showTrend(prevStored,'since your last visit');});
+      }else{
+        showTrend(prevStored,'since your last visit');
+      }
+    }
+  }).catch(fail);
+})();
+</script>
+<script>
+/* Pizza Index — live level from pizza.json (GitHub Action refreshes
+   it every 15 min from World Monitor). Same honest pattern as the
+   outages widget: stale data shows last good values with a
+   "refresh delayed" note; only data over 24h old counts as failed,
+   and a missing file shows a couldn't-load line — never a guess. */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  var box=document.getElementById('pizzaLive');
+  if(!box)return;
+  function fail(){box.innerHTML='<p class="lstatus">Pizza Index couldn&rsquo;t load right now.</p>';}
+  function vsFmt(v){
+    if(typeof v!=='number'||!isFinite(v))return 'No data';
+    if(v===0)return '0% vs usual';
+    return (v<0?'\u2212':'+')+Math.abs(v)+'% vs usual';
+  }
+  fetch('pizza.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+    if(!d||typeof d.level!=='number'||d.level<1||d.level>5||!d.label||!d.updated_at||!Array.isArray(d.venues)||!d.venues.length)throw new Error('bad pizza.json');
+    var age=Date.now()-new Date(d.updated_at).getTime();
+    if(!(age>-300000&&age<=86400000))throw new Error('stale pizza.json');
+    var h='<div class="et-pizza-big et-pizza-lv'+d.level+'">'+d.level+' <small>&mdash; '+esc(d.label)+'</small></div>';
+    d.venues.forEach(function(v){
+      if(!v||!v.name)return;
+      var right=(typeof v.vs_usual==='number')?vsFmt(v.vs_usual):esc(v.note||'No data');
+      h+='<div class="et-pizza-v"><span>'+esc(v.name)+'</span><b>'+right+'</b></div>';
+    });
+    h+='<p class="et-pizza-up">Updated '+new Date(d.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'+(age<=1800000?'':' &mdash; refresh delayed, showing the last good numbers')+' &middot; Source: World Monitor</p>';
+    box.innerHTML=h;
+  }).catch(fail);
+})();
+</script>
+<script>
 /* What's going on (News tab) — the whole card, directly under
    Breaking News. Major outages, bank and airline disruptions,
-   emergency alerts, ransomware, breaches and hacks from Google
-   News via rss2json, last 7 days only, newest first, top 6, one
-   row per happening. Pinned rows, in fixed order: the date-gated
-   EAS test row (Nov 17, 2026 only), then the live NWS outage row
-   (live self-check, self-clearing, outage wording only). The list
-   re-fetches every 5 minutes while the News tab is open and the
-   page is visible; a failed refresh after a successful load keeps
-   the existing list and notes the failure instead of wiping it.
+   emergency alerts, ransomware, breaches and hacks, last 7 days
+   only, newest first, top 6, one row per happening.
+   Data path: going-on.json FIRST (same-origin file refreshed
+   server-side by a GitHub Action, cache:'no-store'), used only
+   when it parses with an items array and its updated_at is no
+   more than 30 minutes old. If the file is missing, stale or
+   invalid, fall back to the live Google News via rss2json fetch
+   of the same 9 queries — fetched SEQUENTIALLY about 1.5s apart
+   (not all at once, which is what got rss2json rate-limited),
+   keeping the 7-day freshness, exact-title and first-8-words
+   dedupe, top-6 and newest-first rules. If that fallback fails
+   on first load, it retries once after ~30 seconds, then shows
+   the honest couldn't-load state. The 5-minute refresh (News tab
+   open, page visible) re-reads going-on.json first the same way;
+   a failed refresh after a successful load keeps the existing
+   list and notes the failure instead of wiping it.
+   Pinned rows, in fixed order: the date-gated EAS test row
+   (Nov 17, 2026 only), then the live NWS outage row (live
+   self-check, self-clearing, outage wording only).
    Honest empty/failure states; never invent an item. */
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -1367,58 +1564,99 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     var cu=document.getElementById('cyUpdated');
     if(cu)cu.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
   }
-  function loadWhatsGoingOn(isRefresh){
+  var wgRetryTimer=null;
+  function renderItems(top){
+    var note=document.getElementById('wgRefreshNote');
+    if(note)note.textContent='';
+    if(!top.length){
+      cyBox.innerHTML='<p class="lstatus">No major disruptions reported in the last 7 days.</p>';
+      cyRendered=true;hasLoaded=true;maybePrependNws();setUpdated();
+      if(cyStatus){cyStatus.className='et-status is-calm';cyStatus.innerHTML='🟢 <strong>What&rsquo;s going on:</strong> nothing major in the last 7 days.';}
+      return;
+    }
+    var rows=top.map(function(it){
+      var clean=String(it.title).replace(/\s+-[^-]{2,40}$/,'');
+      return '<a class="cy-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="cy-t">'+esc(clean)+'</span><span class="cy-m">'+esc(fmtDate(it.when))+'</span></a>';
+    });
+    cyBox.innerHTML=rows.join('');
+    cyRendered=true;hasLoaded=true;maybePrependNws();setUpdated();
+    if(cyStatus){
+      cyStatus.className='et-status';
+      cyStatus.innerHTML='<strong>What&rsquo;s going on:</strong> '+top.length+' things going on in the last 7 days. Latest below.';
+    }
+  }
+  function handleLoadFail(){
+    if(hasLoaded){
+      var note=document.getElementById('wgRefreshNote');
+      if(note)note.textContent='Refresh failed — showing the last update.';
+      return;
+    }
+    cyBox.innerHTML='<p class="lstatus">What&rsquo;s going on couldn&rsquo;t load right now — check back shortly.</p>';
+    cyRendered=true;maybePrependNws();
+    if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live feed couldn’t load — check back shortly.';}
+  }
+  function fetchGoingOnFile(){
+    return fetch('going-on.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad');return r.json();}).then(function(d){
+      if(!d||!Array.isArray(d.items))throw new Error('bad going-on.json');
+      var upd=Date.parse(d.updated_at||'');
+      if(isNaN(upd)||Date.now()-upd>30*60*1000)throw new Error('stale going-on.json');
+      var out=[];
+      d.items.forEach(function(it){
+        if(!it||!it.title||!it.link)return;
+        var when=Date.parse(it.date||'');
+        out.push({title:it.title,link:it.link,when:isNaN(when)?upd:when});
+      });
+      return out;
+    });
+  }
+  function wgDelay(ms){return new Promise(function(res){setTimeout(res,ms);});}
+  function fetchRssSequential(){
+    var results=[];
+    var chain=Promise.resolve();
+    queries.forEach(function(q,i){
+      chain=chain.then(function(){return i>0?wgDelay(1500):null;}).then(function(){
+        return rss2j(gnews(q)).then(function(items){results.push(items);}).catch(function(){results.push(null);});
+      });
+    });
+    return chain.then(function(){return results;});
+  }
+  function loadWhatsGoingOn(isRefresh,isRetry){
     if(wgLoading)return;
     wgLoading=true;
     checkNws();
-    Promise.all(queries.map(function(q){return rss2j(gnews(q)).catch(function(){return null;});})).then(function(res){
+    fetchGoingOnFile().then(function(items){
       wgLoading=false;
-      var ok=res.some(function(r){return r!==null;});
-      if(!ok)throw new Error('all feeds failed');
-      var seen={},seen8={},all=[];
-      res.forEach(function(items){
-        if(!items)return;
-        fresh7(items).forEach(function(it){
-          var key=String(it.title).toLowerCase().replace(/\s+-[^-]{2,40}$/,'').trim();
-          if(seen[key])return;
-          var norm=String(it.title).toLowerCase().replace(/\s+-[^-]{2,40}$/,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
-          var first8=norm?norm.split(' ').slice(0,8).join(' '):'';
-          if(first8&&seen8[first8])return;
-          seen[key]=1;
-          if(first8)seen8[first8]=1;
-          all.push(it);
-        });
-      });
-      all.sort(function(a,b){return b.when-a.when;});
-      var top=all.slice(0,6);
-      var note=document.getElementById('wgRefreshNote');
-      if(note)note.textContent='';
-      if(!top.length){
-        cyBox.innerHTML='<p class="lstatus">No major disruptions reported in the last 7 days.</p>';
-        cyRendered=true;hasLoaded=true;maybePrependNws();setUpdated();
-        if(cyStatus){cyStatus.className='et-status is-calm';cyStatus.innerHTML='🟢 <strong>What&rsquo;s going on:</strong> nothing major in the last 7 days.';}
-        return;
-      }
-      var rows=top.map(function(it){
-        var clean=String(it.title).replace(/\s+-[^-]{2,40}$/,'');
-        return '<a class="cy-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="cy-t">'+esc(clean)+'</span><span class="cy-m">'+esc(fmtDate(it.when))+'</span></a>';
-      });
-      cyBox.innerHTML=rows.join('');
-      cyRendered=true;hasLoaded=true;maybePrependNws();setUpdated();
-      if(cyStatus){
-        cyStatus.className='et-status';
-        cyStatus.innerHTML='<strong>What&rsquo;s going on:</strong> '+top.length+' things going on in the last 7 days. Latest below.';
-      }
+      renderItems(items);
     }).catch(function(){
-      wgLoading=false;
-      if(hasLoaded){
-        var note=document.getElementById('wgRefreshNote');
-        if(note)note.textContent='Refresh failed — showing the last update.';
-        return;
-      }
-      cyBox.innerHTML='<p class="lstatus">What&rsquo;s going on couldn&rsquo;t load right now — check back shortly.</p>';
-      cyRendered=true;maybePrependNws();
-      if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live feed couldn’t load — check back shortly.';}
+      fetchRssSequential().then(function(res){
+        wgLoading=false;
+        var ok=res.some(function(r){return r!==null;});
+        if(!ok)throw new Error('all feeds failed');
+        var seen={},seen8={},all=[];
+        res.forEach(function(items){
+          if(!items)return;
+          fresh7(items).forEach(function(it){
+            var key=String(it.title).toLowerCase().replace(/\s+-[^-]{2,40}$/,'').trim();
+            if(seen[key])return;
+            var norm=String(it.title).toLowerCase().replace(/\s+-[^-]{2,40}$/,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+            var first8=norm?norm.split(' ').slice(0,8).join(' '):'';
+            if(first8&&seen8[first8])return;
+            seen[key]=1;
+            if(first8)seen8[first8]=1;
+            all.push(it);
+          });
+        });
+        all.sort(function(a,b){return b.when-a.when;});
+        renderItems(all.slice(0,6));
+      }).catch(function(){
+        wgLoading=false;
+        if(!hasLoaded&&!isRetry){
+          if(wgRetryTimer)clearTimeout(wgRetryTimer);
+          wgRetryTimer=setTimeout(function(){wgRetryTimer=null;loadWhatsGoingOn(isRefresh,true);},30000);
+          return;
+        }
+        handleLoadFail();
+      });
     });
   }
   function newsTabOpen(){
