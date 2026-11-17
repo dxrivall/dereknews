@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-17T10:35:45.380697+00:00",
+ "updated_at": "2026-11-17T11:23:28.667967+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384196,
-  "out": 289,
+  "out": 304,
   "pct": 0.0,
-  "source_updated": "2026-11-17T10:24:40+00:00",
+  "source_updated": "2026-11-17T11:15:01+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -21,6 +21,12 @@
     "pct": 0.01
    },
    {
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 17,
+    "pct": 0.0
+   },
+   {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
     "out": 5,
@@ -33,21 +39,9 @@
     "pct": 0.0
    },
    {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 2,
-    "pct": 0.0
-   },
-   {
     "name": "National Grid",
     "tracked": 1698909,
-    "out": 1,
-    "pct": 0.0
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 1,
+    "out": 2,
     "pct": 0.0
    },
    {
@@ -65,6 +59,12 @@
    {
     "name": "FirstEnergy",
     "tracked": 3816,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212640,
   "out": 0,
-  "source_updated": "2026-11-17T10:24:39+00:00",
+  "source_updated": "2026-11-17T11:15:00+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
