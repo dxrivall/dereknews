@@ -1234,6 +1234,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .et-risk-num.lv-high{color:#c2410c}
 #view-news .et-risk-num.lv-severe{color:#b42318}
 #view-news .et-risk-num.long{font-size:40px}
+#view-news .et-risk-market{font-size:13px;font-weight:700;color:var(--soft);margin-top:6px}
+#view-news .et-risk-market:empty{display:none}
 #view-news .et-risk-trend{font-size:15px;font-weight:800;margin-top:6px}
 #view-news .et-risk-trend:empty{display:none}
 #view-news .et-trend-up{color:#b42318}
@@ -1296,6 +1298,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       <div class="et-risk-updated" id="etRiskUpdated"></div>
       <div class="et-risk-lab">Iran War Risk</div>
       <div class="et-risk-level" id="etRiskLevel">—</div>
+      <div class="et-risk-market" id="etRiskMarket">Polymarket: —</div>
     </div>
     <h3 class="et-h">💻 Everything going on</h3>
     <p class="wg-updated" id="cyUpdated"></p>
@@ -1349,11 +1352,56 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <a class="isw" href="https://www.isidewith.com/" target="_blank" rel="noopener"><span class="isw-kick">Politics · Your Alignment</span><b>iSideWith →</b><span>Answer the issues quiz and see how you align with the candidates — right under the live outlook above.</span></a>
   </section>
 </main>
-<!-- War & Cyber Tracker: the Iran War Risk number is now a TENSION INDEX, not a market percent.
-     It counts Iran/US attacks in the last 7 days (0 Low, 1 Elevated, 2 High, 3+ Severe) with the
-     count shown under it. The count comes from going-on.json (server-side, over the full feed) or
-     the live rss2json fallback — see renderTension / countAttacks in the What's going on script
-     below. No Polymarket fetch here anymore: no near-term strike market exists to price tension. -->
+<script>
+/* War & Cyber Tracker — market percent line, kept alongside the
+   tension index. The big number is the tension level (SEVERE etc.);
+   this line keeps the market-implied composite: (P(US invades Iran)
+   + (100 - P(US-Iran ceasefire by Dec 31))) / 2, computed live from
+   the two Polymarket Gamma prices. If either market fails to load
+   it shows "—", never a guessed number. The individual market rows
+   stay hidden. Refreshes every 5 minutes while the News tab is open. */
+(function(){
+  var marketEl=document.getElementById('etRiskMarket');
+  if(!marketEl)return;
+  var WATCH=[
+    {slug:'will-the-us-invade-iran-before-2027',pick:null},
+    {slug:'us-x-iran-effective-ceasefire-begins-by-2-week-pause-20261108',pick:'December 31'}
+  ];
+  function gevent(slug){
+    return fetch('https://gamma-api.polymarket.com/events?slug='+slug).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){return (d&&d[0])||null;});
+  }
+  function pickPrice(ev,pick){
+    var ms=(ev&&ev.markets)||[],m=null,i;
+    for(i=0;i<ms.length;i++){
+      if(ms[i].closed)continue;
+      if(!pick){m=ms[i];break;}
+      if(ms[i].groupItemTitle===pick){m=ms[i];break;}
+    }
+    if(!m)return null;
+    var prices=null;
+    try{prices=JSON.parse(m.outcomePrices||'null');}catch(e){}
+    if(!prices||prices[0]==null)return null;
+    var pct=parseFloat(prices[0])*100;
+    return isNaN(pct)?null:pct;
+  }
+  function fail(){marketEl.textContent='Polymarket: —';}
+  function fetchMarket(){
+    Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
+      var invade=evs[0]?pickPrice(evs[0],WATCH[0].pick):null;
+      var cease=evs[1]?pickPrice(evs[1],WATCH[1].pick):null;
+      if(invade===null||cease===null){fail();return;}
+      var risk=(invade+(100-cease))/2;
+      marketEl.textContent='Polymarket: '+(Math.round(risk*10)/10)+'%';
+    }).catch(fail);
+  }
+  function newsOpen(){
+    var v=document.getElementById('view-news');
+    return !!(v&&v.classList.contains('pg-on'));
+  }
+  fetchMarket();
+  setInterval(function(){if(newsOpen())fetchMarket();},5*60*1000);
+})();
+</script>
 <script>
 /* Pizza Index — live level from pizza.json (GitHub Action refreshes
    it every 15 min from World Monitor). Same honest pattern as the
