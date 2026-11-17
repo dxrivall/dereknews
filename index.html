@@ -353,7 +353,7 @@ body>.teams-overlay{z-index:2000}
 @media(prefers-color-scheme:dark){#homeThanksgivingWidget{background:linear-gradient(160deg,#3a2410 0%,#33200e 45%,#261705 100%);border-color:#d97706}}
 #homeThanksgivingWidget::before{content:"";position:absolute;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#b45309 0 26px,#92400e 26px 52px,#d97706 52px 78px);opacity:.9}
 #homeThanksgivingWidget>*{position:relative;z-index:1}
-#homeThanksgivingWidget .tg-big{color:#92400e;font-size:30px;line-height:1.25;font-weight:700}
+#homeThanksgivingWidget .tg-big{color:#92400e;font-size:clamp(18px,5.4vw,22px);line-height:1.15;font-weight:700;white-space:nowrap;letter-spacing:-.01em}
 @media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-big{color:#fcd9a0}}
 .betsport-picker{margin:0 0 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px;color:#fff}
 .betsport-pick-label{font-weight:800;font-size:15px;margin:0 0 10px}
