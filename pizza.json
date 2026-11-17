@@ -1,24 +1,24 @@
 {
- "updated_at": "2026-11-17T21:32:23.039193+00:00",
+ "updated_at": "2026-11-17T22:32:05.748162+00:00",
  "level": 5,
  "label": "Normal Activity",
- "as_of": "Nov 17, 2026, 9:31 PM UTC",
+ "as_of": "Nov 17, 2026, 10:31 PM UTC",
  "venues": [
   {
    "name": "Extreme Pizza",
-   "vs_usual": -33
+   "vs_usual": -37
   },
   {
    "name": "District Pizza Palace",
-   "vs_usual": -33
+   "vs_usual": -36
   },
   {
    "name": "Nighthawk Brewery & Pizza",
-   "vs_usual": -33
+   "vs_usual": -31
   },
   {
    "name": "Pizzato Pizza",
-   "vs_usual": -20
+   "vs_usual": -33
   },
   {
    "name": "Domino's Pizza",
@@ -27,7 +27,7 @@
   },
   {
    "name": "Papa Johns Pizza",
-   "vs_usual": -30
+   "vs_usual": -36
   }
  ],
  "source": "World Monitor Pentagon Pizza Index"
