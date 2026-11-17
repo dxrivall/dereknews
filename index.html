@@ -1870,7 +1870,7 @@ body.on-sports footer{color:#aebfe6!important}
   </style>
   <section class="acard" id="liveParlaySection" hidden aria-label="Live Parlay — real-odds model from games in progress">
   <div class="ahead"><h2>🔴 Live Parlay</h2><span class="league-pill" style="background:#b42318"><span class="live-pulse" aria-hidden="true"></span> LIVE</span></div>
-  <p class="astatus" style="color:#fff">One live bet per sport, priced with <b>real odds — not pace math</b>. Each leg uses the player&rsquo;s actual base rate (season average blended with his last 5 games) and the real scoring distribution for the time left, adjusted for how much he&rsquo;s playing tonight and the score. An early stat only lowers what he still needs — it never inflates his rate, so 1 goal in the 1st period does <b>not</b> project to 3. A line only shows when that real chance is at least 55%. Only players actually in the game — anyone Out, Inactive or did-not-play is never used. <b>Model estimate — not a guarantee:</b> the hit % is still the legs multiplied together. This section only appears while a live leg honestly qualifies.</p>
+  <p class="astatus" style="color:#fff">One live bet per sport, priced with <b>real odds — not pace math</b>. Each leg uses the player&rsquo;s actual base rate (season average blended with his last 5 games) and the real scoring distribution for the time left, adjusted for how much he&rsquo;s playing tonight and the score. An early stat only lowers what he still needs — it never inflates his rate, so 1 goal in the 1st period does <b>not</b> project to 3. A line counts as a Live Parlay leg when that real chance is at least 55%. If nothing clears 55% while a game is live, the closest legs still show below &mdash; labeled <b>Closest &mdash; under 55%</b> with their real chances, never dressed up as qualifiers. Only players actually in the game — anyone Out, Inactive or did-not-play is never used. <b>Model estimate — not a guarantee:</b> the hit % is still the legs multiplied together. This section only appears while a game is live.</p>
   <div id="liveParlayList"></div>
   <p class="astatus" id="liveParlayStamp" style="font-size:12px"></p>
   </section>
@@ -4550,14 +4550,23 @@ body.on-christmas{color-scheme:light}
      only lowers what he still needs — it never inflates the rate.
      So a 0.3-goals-a-game player who scored early is still
      unlikely to score again, and the model says so.
-   - A line is suggested only when that real probability is at
-     least 55%; the highest such line is used, and the slip shows
-     the honest multiplied chance. No verified base rate, no leg.
+   - A line counts as a qualifier only when that real probability
+     is at least 55%; the highest such line is used, and the slip
+     shows the honest multiplied chance. No verified base rate,
+     no leg. When NO line in a live sport clears 55%, the closest
+     lines still show (Derek, Nov 16: "show the closest legs
+     anyway") — the lowest line for each player/stat, which is
+     the one nearest the bar, flagged belowBar and rendered in a
+     separate "Closest — under 55%" card with the real chances
+     and no payout / tail buttons. A 15% floor keeps hopeless
+     lines out; under that there is nothing honest to show.
    - Active only: anyone Out / Doubtful / Inactive in the game's
      ESPN injury report, and anyone marked did-not-play or
      inactive in the box score, is never used.
-   The section stays hidden when no game is live or no leg
-   honestly clears 55% — no empty state, never a forced slip. */
+   The section stays hidden when no game is live. While a game
+   is live it shows the qualifying Live Parlay, or — when nothing
+   qualifies — the closest legs under the bar, or a plain
+   "no live legs to price yet" note when nothing can be priced. */
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
@@ -4763,12 +4772,25 @@ body.on-christmas{color-scheme:light}
           if(prob>=0.55)best={sugg:sugg,need:need,prob:prob};
           else break;
         }
-        if(!best)return;
-        var prob2=Math.min(0.93,Math.round(best.prob*100)/100);
-        var why='Real rate '+fmtRate(b.mu)+' '+cfg.unit+'/gm (season '+fmtRate(b.season)+', last 5 '+fmtRate(b.r5)+') \u00b7 needs '+best.need+' more with '+Math.round(clk.remain)+' min left';
+        var fb=null;
+        if(!best){
+          /* Closest-leg fallback: the lowest line (step 1) is the
+             one nearest the 55% bar. Price it honestly; keep it
+             only if it is at least a 15% shot, and flag it so it
+             never renders as a qualifier. */
+          var suggF=Math.ceil((cur+cfg.bucket)/cfg.bucket)*cfg.bucket;
+          var needF=suggF-cur,probF;
+          if(cfg.dist==='pois')probF=poisAtLeast(muRem,needF);
+          else probF=1-normCdf((needF-0.5-muRem)/sdRem);
+          if(probF>=0.15&&probF<0.55)fb={sugg:suggF,need:needF,prob:probF};
+          if(!fb)return;
+        }
+        var use=best||fb;
+        var prob2=Math.min(0.93,Math.round(use.prob*100)/100);
+        var why='Real rate '+fmtRate(b.mu)+' '+cfg.unit+'/gm (season '+fmtRate(b.season)+', last 5 '+fmtRate(b.r5)+') \u00b7 needs '+use.need+' more with '+Math.round(clk.remain)+' min left';
         if(shareTxt)why+=' \u00b7 '+shareTxt;
         if(gsTxt)why+=' \u00b7 '+gsTxt;
-        legs.push({name:p.name,text:p.name+' '+best.sugg+'+ '+cfg.line,prob:prob2,curTxt:'Has '+cur+' '+cfg.unit+' now',why:why,clock:clk.clock,gameId:game.id,gameTxt:game.away+' at '+game.home,key:'live-'+game.id+'-'+p.name+'-'+cfg.k});
+        legs.push({name:p.name,text:p.name+' '+use.sugg+'+ '+cfg.line,prob:prob2,belowBar:!best,curTxt:'Has '+cur+' '+cfg.unit+' now',why:why,clock:clk.clock,gameId:game.id,gameTxt:game.away+' at '+game.home,key:'live-'+game.id+'-'+p.name+'-'+cfg.k});
       });
     });
     return legs;
@@ -4800,23 +4822,36 @@ body.on-christmas{color-scheme:light}
             return buildLegs(lg,g,players,baseMap,g.clk);
           });
         }).catch(function(){return[];});
-      })).then(function(perGame){var all=[];perGame.forEach(function(ls){all=all.concat(ls||[]);});return all;});
+      })).then(function(perGame){var all=[];perGame.forEach(function(ls){all=all.concat(ls||[]);});return{legs:all,liveGames:live.length};});
     });
   }
-  function buildLiveParlay(legs){
-    var sorted=legs.slice().sort(function(a,b){return b.prob-a.prob;});
+  function pickLegs(pool,cap){
+    var sorted=pool.slice().sort(function(a,b){return b.prob-a.prob;});
     var picked=[],usedName={},perGame={};
     sorted.forEach(function(l){
-      if(picked.length>=4)return;
+      if(picked.length>=cap)return;
       if(usedName[l.name])return;
       if((perGame[l.gameId]||0)>=2)return;
       usedName[l.name]=1;perGame[l.gameId]=(perGame[l.gameId]||0)+1;picked.push(l);
     });
+    return picked;
+  }
+  function buildLiveParlay(legs){
+    var picked=pickLegs(legs.filter(function(l){return !l.belowBar;}),4);
     if(!picked.length)return null;
     var hit=picked.reduce(function(a,l){return a*l.prob;},1);
     return{legs:picked,hit:hit};
   }
-  var lastByLeague={};
+  /* Closest legs: used only when no leg in the sport clears 55%.
+     Same real-odds pricing, same in/out filtering — just under
+     the bar, and labeled that way. Top 3 nearest the bar. */
+  function buildClosestLegs(legs){
+    var picked=pickLegs(legs.filter(function(l){return l.belowBar;}),3);
+    if(!picked.length)return null;
+    var hit=picked.reduce(function(a,l){return a*l.prob;},1);
+    return{legs:picked,hit:hit};
+  }
+  var lastByLeague={},lastLiveGames={};
   function applyPick(){
     var sec=document.getElementById('liveParlaySection');if(!sec)return;
     var panel=document.getElementById('sport-betsim');
@@ -4824,7 +4859,7 @@ body.on-christmas{color-scheme:light}
     var anyVisible=false;
     LEAGUES.forEach(function(lg){
       var blk=sec.querySelector('[data-liveleague="'+lg.key+'"]');
-      if(blk){var hasCard=!!blk.querySelector('.parlay-card');var show=hasCard&&(!pick||pick===lg.key);blk.style.display=show?'':'none';if(show)anyVisible=true;}
+      if(blk){var hasCard=!!(blk.querySelector('.parlay-card')||blk.querySelector('.live-none-note'));var show=hasCard&&(!pick||pick===lg.key);blk.style.display=show?'':'none';if(show)anyVisible=true;}
     });
     sec.hidden=!anyVisible;
   }
@@ -4834,7 +4869,23 @@ body.on-christmas{color-scheme:light}
     LEAGUES.forEach(function(lg){
       var legs=lastByLeague[lg.key]||[];
       var p=buildLiveParlay(legs);
+      var cp=p?null:buildClosestLegs(legs);
       h+='<div data-liveleague="'+lg.key+'">';
+      if(cp){
+        h+='<p class="brk-conf">'+lg.label+' \u2014 Closest Live Legs</p>';
+        var cHitPct=cp.hit*100;var cHitTxt=cHitPct>=10?cHitPct.toFixed(1):cHitPct.toFixed(2);
+        var cLeague=lg.label.replace(/^[^ ]+ /,'');
+        h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">\uD83D\uDD34 '+esc(cLeague)+' Live \u2014 Closest Legs</span><span class="parlay-count">UNDER 55%</span></div>';
+        h+='<p class="astatus" style="color:#fff;margin:8px 0 4px">Nothing clears the 55% bar right now \u2014 these are the closest legs, at their real chances. Shown for tracking, not a suggested bet.</p>';
+        cp.legs.forEach(function(l){
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">UNDER 55%</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span><span class="live-why">'+esc(l.why)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+        });
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(cHitTxt)+'% if all '+cp.legs.length+' hit together</div><div class="hit-lab">Closest legs only \u2014 every leg here is under the 55% bar, so there is no Live Parlay for this sport right now. Real-odds model, legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,cHitPct)).toFixed(1)+'%"></i></div></div>';
+        h+='</div>';
+      }
+      else if(!p&&(lastLiveGames[lg.key]||0)>0){
+        h+='<p class="live-none-note astatus" style="color:#fff">'+lg.label+' is live, but there are no live legs to price yet \u2014 no player has a verified base rate and a stat line in a live game so far.</p>';
+      }
       if(p){
         h+='<p class="brk-conf">'+lg.label+' \u2014 Live Parlay</p>';
         var hitPct=p.hit*100;var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
@@ -4864,7 +4915,7 @@ body.on-christmas{color-scheme:light}
     if(liveLoading)return;liveLoading=true;
     Promise.all(LEAGUES.map(loadLiveLeague)).then(function(res){
       liveLoading=false;lastByLeague={};
-      LEAGUES.forEach(function(lg,li){lastByLeague[lg.key]=res[li]||[];});
+      LEAGUES.forEach(function(lg,li){var r=res[li]||{};lastByLeague[lg.key]=r.legs||[];lastLiveGames[lg.key]=r.liveGames||0;});
       draw();
     }).catch(function(){liveLoading=false;});
   }
