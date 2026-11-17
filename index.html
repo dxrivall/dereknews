@@ -1300,12 +1300,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       <div class="et-risk-level" id="etRiskLevel">—</div>
       <div class="et-risk-market" id="etRiskMarket">Polymarket: —</div>
     </div>
-    <h3 class="et-h">💻 Everything going on</h3>
-    <p class="wg-updated" id="cyUpdated"></p>
-    <p class="et-status" id="cyLiveStatus">Checking what&rsquo;s going on&hellip;</p>
-    <div id="cyList"><p class="lstatus">Loading what&rsquo;s going on&hellip;</p></div>
-    <p class="wg-refresh-note" id="wgRefreshNote"></p>
-    <p class="esrc">What&rsquo;s going on: major outages, bank and airline disruptions, emergency alerts, ransomware, breaches and hacks from Google News, last 7 days only. Only real reported items show; if the feed can&rsquo;t load, it says so instead of guessing.</p>
     <div class="et-pizza" aria-label="Pizza Index">
       <h3 class="et-h">🍕 Pizza Index</h3>
       <div id="pizzaLive"><p class="lstatus">Loading the live Pizza Index&hellip;</p></div>
@@ -1434,31 +1428,22 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 })();
 </script>
 <script>
-/* What's going on (News tab) — the whole card, directly under
-   Breaking News. Major outages, bank and airline disruptions,
-   emergency alerts, ransomware, breaches and hacks, last 7 days
-   only, newest first, top 6, one row per happening.
+/* Tension index feed (News tab) — the War & Cyber Tracker card,
+   directly under Breaking News. The "What's going on" list was
+   removed Nov 17, 2026: the feed below is still fetched, but only
+   to count the tension index — nothing is rendered as a list.
    Data path: going-on.json FIRST (same-origin file refreshed
    server-side by a GitHub Action, cache:'no-store'). The file is
    accepted as last-good up to 24 hours old (the Action only lands
    about hourly, so it is stale past 30 minutes roughly half the
-   time) — a stale file still renders its items and tension with a
-   "Refresh delayed" note, instead of blanking the card. Only a
-   file older than 24 hours, missing or invalid falls back to the
-   live Google News via rss2json fetch of the same 9 queries —
-   fetched SEQUENTIALLY about 1.5s apart (not all at once, which is
-   what got rss2json rate-limited), keeping the 7-day freshness,
-   exact-title and first-8-words dedupe, top-6 and newest-first
-   rules. If that fallback fails on first load, it retries once
-   after ~30 seconds, then shows the honest couldn't-load state.
+   time). Only a file older than 24 hours, missing or invalid falls
+   back to the live Google News via rss2json fetch of the same 9
+   queries — fetched SEQUENTIALLY about 1.5s apart (not all at
+   once, which is what got rss2json rate-limited), keeping the
+   7-day freshness, exact-title and first-8-words dedupe. If that
+   fallback fails on first load, it retries once after ~30 seconds.
    The 5-minute refresh (News tab open, page visible) re-reads
-   going-on.json first the same way; a failed refresh after a
-   successful load keeps the existing list and notes the failure
-   instead of wiping it.
-   Pinned rows, in fixed order: the date-gated EAS test row
-   (Nov 17, 2026 only), then the live NWS outage row (live
-   self-check, self-clearing, outage wording only).
-   Honest empty/failure states; never invent an item.
+   going-on.json first the same way.
    Tension index (the Iran War Risk number at the top of this card):
    counted from the same items — server-side in going-on.json
    ("tension": {attacks_7d, level}) over the full feed, or here from
@@ -1468,9 +1453,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
    counts; several reports of one strike count once. */
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  var cyBox=document.getElementById('cyList');
-  var cyStatus=document.getElementById('cyLiveStatus');
-  if(!cyBox)return;
+  /* No list to guard on anymore — the loader runs for the tension
+     number alone, so guard on the tension element instead. */
+  if(!document.getElementById('etRiskNum'))return;
   /* Tension index — same rule as .src/fetch_going_on.py (keep them
      identical). An item counts when its headline names Iran +
      an attack word + a US-side target, deduped by (ET day,
@@ -1530,40 +1515,8 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       else tensionTrend.innerHTML='<span class="et-trend-down">↓ '+(prev-count)+'</span> <span class="et-trend-lab">since your last visit</span>';
     }
   }
-  var cyRendered=false;
   var hasLoaded=false;
   var wgLoading=false;
-  var nwsDown=false;
-  function isEasDayNow(){var d=new Date();return d.getFullYear()===2026&&d.getMonth()===10&&d.getDate()===17;}
-  function prependPinned(){
-    if(!cyRendered)return;
-    var easRow=document.getElementById('easTestRow');
-    if(nwsDown&&!document.getElementById('nwsOutageRow')){
-      var nwsHtml='<a class="cy-item" id="nwsOutageRow" href="https://www.weather.gov/" target="_blank" rel="noopener"><span class="cy-t">National Weather Service API outage — weather alerts unavailable</span><span class="cy-m">Nov 17 <span class="cy-live">Ongoing</span></span></a>';
-      if(easRow)easRow.insertAdjacentHTML('afterend',nwsHtml);
-      else cyBox.insertAdjacentHTML('afterbegin',nwsHtml);
-    }
-    if(isEasDayNow()&&!document.getElementById('easTestRow')){
-      cyBox.insertAdjacentHTML('afterbegin','<a class="cy-item" id="easTestRow" href="https://www.fema.gov/emergency-managers/practitioners/integrated-public-alert-warning-system/national-test-2026" target="_blank" rel="noopener"><span class="cy-t">Nationwide Emergency Alert System test — TV &amp; radio only, phones stay quiet</span><span class="cy-m">Today 2:20 PM ET <span class="cy-live">Today</span></span></a>');
-    }
-  }
-  function maybePrependNws(){prependPinned();}
-  function checkNws(){
-    var ctrl=null,timer=null;
-    try{
-      if(typeof AbortController!=='undefined'){ctrl=new AbortController();timer=setTimeout(function(){try{ctrl.abort();}catch(e){}},8000);}
-    }catch(e){ctrl=null;}
-    var opts={headers:{'Accept':'application/geo+json'}};
-    if(ctrl)opts.signal=ctrl.signal;
-    return fetch('https://api.weather.gov/alerts/active?point=43.1713,-76.1250',opts).then(function(r){
-      if(timer)clearTimeout(timer);
-      nwsDown=!r.ok;
-      maybePrependNws();
-    }).catch(function(){
-      if(timer)clearTimeout(timer);
-      nwsDown=true;maybePrependNws();
-    });
-  }
   function rss2j(feed){
     return fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed)).then(function(r){return r.json();}).then(function(d){
       if(!d||d.status!=='ok'||!d.items)throw new Error('rss');
@@ -1598,40 +1551,16 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     'Iran attack US base Bahrain',
     'Iran dirty bomb Washington'
   ];
-  function setUpdated(){
-    var cu=document.getElementById('cyUpdated');
-    if(cu)cu.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
-  }
   var wgRetryTimer=null;
+  /* List removed Nov 17, 2026 — the feed is still fetched so the
+     tension index can count from it; nothing is rendered here. */
   function renderItems(top){
-    var note=document.getElementById('wgRefreshNote');
-    if(note)note.textContent='';
-    if(!top.length){
-      cyBox.innerHTML='<p class="lstatus">No major disruptions reported in the last 7 days.</p>';
-      cyRendered=true;hasLoaded=true;maybePrependNws();setUpdated();
-      if(cyStatus){cyStatus.className='et-status is-calm';cyStatus.innerHTML='🟢 <strong>What&rsquo;s going on:</strong> nothing major in the last 7 days.';}
-      return;
-    }
-    var rows=top.map(function(it){
-      var clean=String(it.title).replace(/\s+-[^-]{2,40}$/,'');
-      return '<a class="cy-item" href="'+esc(it.link)+'" target="_blank" rel="noopener"><span class="cy-t">'+esc(clean)+'</span><span class="cy-m">'+esc(fmtDate(it.when))+'</span></a>';
-    });
-    cyBox.innerHTML=rows.join('');
-    cyRendered=true;hasLoaded=true;maybePrependNws();setUpdated();
-    if(cyStatus){
-      cyStatus.className='et-status';
-      cyStatus.innerHTML='<strong>What&rsquo;s going on:</strong> '+top.length+' things going on in the last 7 days. Latest below.';
-    }
+    hasLoaded=true;
   }
   function handleLoadFail(){
-    if(hasLoaded){
-      var note=document.getElementById('wgRefreshNote');
-      if(note)note.textContent='Refresh failed — showing the last update.';
-      return;
-    }
-    cyBox.innerHTML='<p class="lstatus">What&rsquo;s going on couldn&rsquo;t load right now — check back shortly.</p>';
-    cyRendered=true;maybePrependNws();
-    if(cyStatus){cyStatus.className='et-status';cyStatus.textContent='Live feed couldn’t load — check back shortly.';}
+    /* Nothing to show the failure in — the tension number simply
+       stays "—" until a feed loads again. */
+    return;
   }
   function fetchGoingOnFile(){
     return fetch('going-on.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad');return r.json();}).then(function(d){
@@ -1664,11 +1593,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   function loadWhatsGoingOn(isRefresh,isRetry){
     if(wgLoading)return;
     wgLoading=true;
-    checkNws();
     fetchGoingOnFile().then(function(res){
       wgLoading=false;
       renderItems(res.items);
-      if(res.stale){var rn=document.getElementById('wgRefreshNote');if(rn)rn.textContent='Refresh delayed — showing the last update.';}
       if(res.tension!==null&&res.tension!==undefined)renderTension(res.tension,res.stale);
     }).catch(function(){
       fetchRssSequential().then(function(res){
