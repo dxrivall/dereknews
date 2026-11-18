@@ -1,35 +1,29 @@
 {
- "updated_at": "2026-11-18T17:27:11.225765+00:00",
+ "updated_at": "2026-11-18T18:13:34.772985+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385341,
-  "out": 11322,
-  "pct": 0.14,
-  "source_updated": "2026-11-18T17:24:46+00:00",
+  "out": 1265,
+  "pct": 0.02,
+  "source_updated": "2026-11-18T18:05:03+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315387,
-    "out": 8343,
-    "pct": 2.65
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 450,
+    "pct": 0.19
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 2078,
-    "pct": 0.18
+    "out": 214,
+    "pct": 0.02
    },
    {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 460,
-    "pct": 0.03
-   },
-   {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 240,
+    "out": 179,
     "pct": 0.01
    },
    {
@@ -41,20 +35,20 @@
    {
     "name": "New York State Electric & Gas",
     "tracked": 919315,
-    "out": 64,
+    "out": 125,
     "pct": 0.01
    },
    {
-    "name": "Tri-County Rural Electric Coop",
-    "tracked": 59,
-    "out": 4,
-    "pct": 6.78
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 121,
+    "pct": 0.0
    },
    {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 3,
-    "pct": 0.0
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315387,
+    "out": 45,
+    "pct": 0.01
    },
    {
     "name": "Otsego Electric Coop",
@@ -63,14 +57,14 @@
     "pct": 0.02
    },
    {
-    "name": "Delaware County Electric Coop",
-    "tracked": 5335,
-    "out": 0,
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392140,
+    "out": 1,
     "pct": 0.0
    },
    {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392140,
+    "name": "Delaware County Electric Coop",
+    "tracked": 5335,
     "out": 0,
     "pct": 0.0
    },
@@ -87,6 +81,12 @@
     "pct": 0.0
    },
    {
+    "name": "Tri-County Rural Electric Coop",
+    "tracked": 59,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Warren Electric Coop",
     "tracked": 8696,
     "out": 0,
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212912,
-  "out": 108,
-  "source_updated": "2026-11-18T17:24:45+00:00",
+  "out": 107,
+  "source_updated": "2026-11-18T18:05:01+00:00",
   "pct": 0.05,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204758,
-    "out": 108,
+    "out": 107,
     "pct": 0.05
    },
    {
