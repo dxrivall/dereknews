@@ -38,16 +38,22 @@ jobs:
           Pulls the same 9 Google News queries directly (server-side, no CORS
           issue), applies the same rules as the site's client code (7-day
           freshness, newest-first, dedupe: exact-title key + collapse same
-          first 8 words, top 6), and writes going-on.json at the repo root:
+          first 8 words), and writes going-on.json at the repo root:
           {updated_at (UTC ISO), items: [{title, link, date (ISO UTC)}]}.
 
           The site reads going-on.json first and only falls back to live
           rss2json when the file is missing or older than 30 minutes, so a
           rate-limited rss2json no longer blanks the list.
 
+          The file stores ALL deduped items (not just the top 6), and each
+          run merges the previous file's items forward through the same
+          dedupe + 7-day cutoff — so an attack the current fetch can no
+          longer see (Bing only reaches ~1-2 days back) is carried until it
+          ages out, instead of the count dropping when the source window
+          moves on.
+
           Tension index: the fetcher also counts Iran/US attacks in the
-          last 7 days over the FULL deduped list (before the top-6 cut, so
-          older attacks in the window are not lost) and writes it as
+          last 7 days over the FULL merged list and writes it as
           "tension": {"attacks_7d": N, "level": "Low|Elevated|High|Severe"}.
           The rule: a headline counts when it names Iran (iran/irgc/tehran)
           + an attack word (attack/strike/drone/missile/fired/bomb...) + a
@@ -124,16 +130,32 @@ jobs:
               return items
 
 
-          # Queries whose failure would break the tension count get one
-          # rss2json fallback. Nov 18, 2026: Google News started rate-limiting
-          # the GitHub runner IPs, so the direct fetch failed on every run for
+          # Queries whose failure would break the tension count get two
+          # fallbacks. Nov 18, 2026: Google News started rate-limiting the
+          # GitHub runner IPs, so the direct fetch failed on every run for
           # ~24h while the runs still exited 0 — going-on.json went stale and
           # the tension count froze. rss2json fetches the same feed from its
-          # own servers, so it works when the runner is blocked. Kept to the
-          # war query only: it is the one that feeds the tension count (the
-          # list this file used to feed was removed Nov 17), and rss2json is a
-          # shared free service — don't burn its quota on the other queries.
+          # own servers, so it works when the runner is blocked — but Google
+          # ALSO throttles rss2json's fetch of the hot war query, so rss2json
+          # itself returns "The feed host is rate limiting requests" for it.
+          # Bing News RSS is the second fallback: it works from the runner
+          # (verified Nov 18 — 12 items, parses with the same XML reader),
+          # but only reaches ~1-2 days back, so the merge below carries older
+          # attacks forward. Kept to the war query only: it is the one that
+          # feeds the tension count (the list this file used to feed was
+          # removed Nov 17), and rss2json is a shared free service — don't
+          # burn its quota on the other queries.
           FALLBACK_QUERIES = {'Iran attack US base Bahrain OR Kuwait'}
+          # Simplified space-separated query for Bing (it does not take
+          # Google's OR / when: syntax).
+          BING_QUERY = {'Iran attack US base Bahrain OR Kuwait':
+                        'iran attack us base bahrain kuwait'}
+
+
+          def bing_url(q):
+              return ("https://www.bing.com/news/search?q="
+                      + urllib.parse.quote(BING_QUERY[q])
+                      + "&format=rss&count=30")
 
 
           def fetch_items_rss2json(url):
@@ -165,8 +187,9 @@ jobs:
 
           def fetch_query(q):
               """Fetch one query: direct Google News, up to 2 tries, then the
-              rss2json fallback for the war query. Raises only if all paths
-              fail, so the caller can keep the last good file."""
+              rss2json fallback and the Bing News RSS fallback for the war
+              query. Raises only if all paths fail, so the caller can keep
+              the last good file."""
               url = gnews_url(q)
               last_err = None
               for attempt in range(2):
@@ -182,6 +205,11 @@ jobs:
                   except Exception as e:
                       last_err = e
                       print(f"rss2json fallback failed ({q}): {e}")
+                  try:
+                      return fetch_items(bing_url(q))
+                  except Exception as e:
+                      last_err = e
+                      print(f"bing fallback failed ({q}): {e}")
               raise last_err
 
 
@@ -274,6 +302,31 @@ jobs:
               return "Severe"
 
 
+          def load_previous():
+              """Load the previous going-on.json items (for the merge), or [].
+              Items are returned in the same shape the fetcher uses
+              ({title, link, when})."""
+              try:
+                  d = json.loads(OUT.read_text())
+              except Exception:
+                  return []
+              items = []
+              for it in d.get("items") or []:
+                  title = (it.get("title") or "").strip()
+                  link = (it.get("link") or "").strip()
+                  date = (it.get("date") or "").strip()
+                  if not title or not link or not date:
+                      continue
+                  try:
+                      when = datetime.fromisoformat(date.replace("Z", "+00:00"))
+                  except ValueError:
+                      continue
+                  if when.tzinfo is None:
+                      when = when.replace(tzinfo=timezone.utc)
+                  items.append({"title": title, "link": link, "when": when})
+              return items
+
+
           def main():
               now = datetime.now(timezone.utc)
               cutoff = now - timedelta(days=7)
@@ -281,6 +334,24 @@ jobs:
               seen8 = set()
               all_items = []
               any_ok = False
+              # Merge the previous file's items first, so an attack the current
+              # fetch can no longer see (Bing only reaches ~1-2 days back) is
+              # carried forward until it ages out of the 7-day window, instead
+              # of the count dropping when the source window moves on.
+              for it in load_previous():
+                  d = it["when"]
+                  if d > now or d < cutoff:
+                      continue
+                  key = strip_outlet(it["title"]).lower()
+                  if key in seen:
+                      continue
+                  k8 = first8_key(it["title"])
+                  if k8 and k8 in seen8:
+                      continue
+                  seen.add(key)
+                  if k8:
+                      seen8.add(k8)
+                  all_items.append(it)
               for q in QUERIES:
                   try:
                       fetched = fetch_query(q)
@@ -308,18 +379,17 @@ jobs:
                   return
               all_items.sort(key=lambda x: x["when"], reverse=True)
               n_attacks = count_attacks(all_items)
-              top = all_items[:6]
               out = {
                   "updated_at": now.isoformat().replace("+00:00", "Z"),
                   "tension": {"attacks_7d": n_attacks, "level": tension_level(n_attacks)},
                   "items": [
                       {"title": it["title"], "link": it["link"],
                        "date": it["when"].astimezone(timezone.utc).isoformat().replace("+00:00", "Z")}
-                      for it in top
+                      for it in all_items
                   ],
               }
               OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
-              print(f"wrote {OUT} with {len(top)} items, tension {n_attacks} attacks ({tension_level(n_attacks)})")
+              print(f"wrote {OUT} with {len(all_items)} items, tension {n_attacks} attacks ({tension_level(n_attacks)})")
 
 
           if __name__ == "__main__":
