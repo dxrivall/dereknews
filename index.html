@@ -181,7 +181,7 @@ html,body{overflow-x:hidden}
 .wxd-hl:empty{display:none}
 .wxhero .hl:empty{display:none}
 .wxd-meta{font-size:12px;opacity:.78;margin-top:4px;line-height:1.4;font-weight:400}
-.wxd-hourly{display:flex;gap:4px;overflow-x:auto;padding:6px 2px 5px;margin-top:9px;border-top:1px solid rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.38);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.wxd-hourly{display:flex;gap:4px;overflow-x:auto;padding:6px 2px 5px;margin-top:9px;border-top:1px solid rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.38);-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:none}
 .wxd-hourly::-webkit-scrollbar{display:none}
 .wxd-h{flex:0 0 auto;min-width:46px;text-align:center;color:#fff;background:transparent;border:0;padding:1px 3px}
 .wxd-h .t{font-size:12px;font-weight:600;white-space:nowrap;opacity:.95}
@@ -333,12 +333,13 @@ body>.teams-overlay{z-index:2000}
 #homeWxWidget .wxd-herocond .ic{font-size:30px}
 #homeWxWidget .wxd-hourly{display:flex;width:100%;gap:0;justify-content:space-between}
 #homeWxWidget .wxd-h{flex:1 1 0;min-width:0;padding:0 1px}
-.faith-widget{background:linear-gradient(155deg,#fff7e8 0%,#fdeeda 45%,#fbe3dd 100%);border-color:rgba(180,120,40,.35);overflow:hidden;position:relative}
+.faith-widget{background:linear-gradient(155deg,#fff3d6 0%,#ffe9c4 42%,#ffd9c2 78%,#f6c9a8 100%);border-color:rgba(180,120,40,.45);overflow:hidden;position:relative}
 .faith-widget::before{content:"";position:absolute;inset:0 0 auto 0;height:54px;background:radial-gradient(ellipse 70% 90% at 50% -30%,rgba(255,196,86,.55),transparent 70%);pointer-events:none}
+.faith-scene-mini{margin:14px -16px -14px;line-height:0}.faith-scene-mini svg{display:block;width:100%;height:52px}
 @media(prefers-color-scheme:dark){.faith-widget{background:linear-gradient(155deg,#3a2c1c 0%,#44301f 45%,#3d2730 100%);border-color:rgba(255,196,86,.3)}}
 .faith-hero{display:flex;align-items:center;gap:14px;position:relative}
-.faith-sun{flex:none;width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#ffd98a,#ffb454);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(200,130,20,.35)}
-.faith-verse-line{margin:0;line-height:1.55;font-size:15px}
+.faith-sun{flex:none;width:68px;height:68px;border-radius:50%;background:linear-gradient(180deg,#ffe9a8,#ffb454);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(255,196,86,.22),0 0 26px rgba(255,170,60,.55),0 2px 10px rgba(200,130,20,.35)}
+.faith-verse-line{margin:0;line-height:1.45;font-size:16.5px;font-weight:650}
 .faith-prayer-toggle{display:block;width:100%;margin-top:14px;background:#7c2d12;color:#fff;border:0;font:inherit;font-weight:700;font-size:14.5px;border-radius:999px;padding:12px;cursor:pointer;min-height:46px;position:relative}
 .faith-prayer{margin-top:12px;background:rgba(255,255,255,.55);border:1px solid rgba(180,120,40,.3);border-radius:12px;padding:12px 14px;line-height:1.65;font-size:14.5px}
 @media(prefers-color-scheme:dark){.faith-prayer{background:rgba(0,0,0,.3)}}
@@ -367,7 +368,6 @@ body>.teams-overlay{z-index:2000}
 .betsport-btn[aria-pressed="true"]{background:#b42318;border-color:#fff}
 .betsport-prompt{font-size:13.5px;line-height:1.5;opacity:.92;margin:10px 0 0}
 .betsport-prompt[hidden]{display:none!important}
-#sport-betsim[data-pick=""] #parlayList{display:none!important}
 </style>
 <style>
 /* == Nov 13 fixes E: dead-centre play buttons / Christmas widget plain
@@ -379,6 +379,7 @@ body>.teams-overlay{z-index:2000}
 #homeChristmasWidget .xmas-big{font-size:30px;line-height:1.25;font-weight:700}
 #homeChristmasWidget .xmas-row{display:block}
 .xmas-radio{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:14px}
+@media(max-width:560px){.xp-row{flex-wrap:wrap}.xp-btn{width:100%;text-align:center}.xmas-panel .xmas-radio{margin-left:auto}}
 .xmas-radio-btn{appearance:none;width:68px;height:68px;min-height:68px;padding:0!important;line-height:0;border-radius:50%;border:1.5px solid #14532d;background:#fff;color:#14532d;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(11,61,32,.22)}
 .xmas-radio-btn svg{display:block;margin:0!important;padding:0!important;transform:none!important}
 .xmas-radio-status{font-size:13.5px;line-height:1.5;color:#3a4a40;margin:0;min-height:20px}
@@ -410,8 +411,7 @@ body>.teams-overlay{z-index:2000}
 @media(prefers-reduced-motion:reduce){.wxbg-clouds{animation:none}}
 </style>
 <style>
-/* == Nov 13 fixes F: standings Conference/Divisions toggle, NBA BPI
-   Playoffs %, MLB standings, Playoff Path == */
+/* == Nov 13 fixes F: standings Conference/Divisions toggle == */
 .std-tog{display:flex;gap:8px}
 .std-tog button{flex:1;appearance:none;border:1.5px solid rgba(255,255,255,.45);background:rgba(0,0,0,.25);color:#fff;font:inherit;font-weight:700;font-size:14px;border-radius:999px;padding:10px;cursor:pointer;min-height:44px}
 .std-tog button[aria-selected="true"]{background:#ffd34d;border-color:#ffd34d;color:#14213d}
@@ -830,7 +830,8 @@ body>.teams-overlay{z-index:2000}
   <!-- Faith widget: today's verse + this week's Mass — timely every day, always shown -->
   <section class="hwidget faith-widget" aria-label="Faith widget">
     <div class="hwidget-head"><h2>🙏 Faith — Time With God</h2><button class="hw-go" data-go="faith">Go to Faith →</button></div>
-    <div class="faith-hero"><div class="faith-sun" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#7c2d12" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="14" r="4.5" fill="#fff7e0"/><path d="M12 3v3M4.9 7.9l2.1 2.1M19.1 7.9L17 10M3 14h3M18 14h3M5 20h14"/></svg></div><p class="faith-verse-line">Start the day with God — today&rsquo;s verse, this week&rsquo;s Mass, and a quiet minute of prayer.</p></div>
+    <div class="faith-hero"><div class="faith-sun" aria-hidden="true"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#7c2d12" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="14" r="4.5" fill="#fff7e0"/><path d="M12 3v3M4.9 7.9l2.1 2.1M19.1 7.9L17 10M3 14h3M18 14h3M5 20h14"/></svg></div><p class="faith-verse-line">Start the day with God — today&rsquo;s verse, this week&rsquo;s Mass, and a quiet minute of prayer.</p></div>
+    <div class="faith-scene-mini" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMax slice" role="presentation" focusable="false"><path d="M0 44 Q140 22 300 36 T600 34 V60 H0 Z" fill="rgba(124,45,18,.20)"/><path d="M0 52 Q180 36 360 46 T600 48 V60 H0 Z" fill="rgba(124,45,18,.28)"/><g fill="rgba(124,45,18,.55)"><rect x="290" y="18" width="20" height="42"/><path d="M287 20 L300 8 L313 20 Z"/><rect x="298" y="2" width="4" height="8"/></g></svg></div>
     <button type="button" class="faith-prayer-toggle" id="homePrayerToggle" aria-expanded="false" aria-controls="homePrayer">🙏 Daily Prayer — tap to read</button>
     <div class="faith-prayer" id="homePrayer" hidden><p>God, protect my family, bless our health, help the poor, help the sick, grant rest for those who passed, and help everyone else in need.</p></div>
     <div class="faith-links">
@@ -852,12 +853,12 @@ body>.teams-overlay{z-index:2000}
 body.on-weather #wxBg{opacity:1}
 body.on-weather{background:#16232a}
 body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
-.wxhero{position:relative;margin:0 -20px;padding:48px 20px 44px;color:#fff;background:transparent}
+.wxhero{position:relative;margin:0 -20px;padding:20px 20px 44px;color:#fff;background:transparent}
 .wxhero h2{color:var(--orange);font-style:italic;text-align:center;font-size:clamp(30px,6vw,40px);margin:0 0 8px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .wxloc{text-align:center;opacity:.95}.wxnote{text-align:center;font-size:clamp(16px,3.4vw,19px);line-height:1.5;max-width:640px;margin:14px auto 0;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .current{display:flex;align-items:center;justify-content:center;gap:clamp(18px,6vw,56px);flex-wrap:wrap;margin:46px 0 22px;text-align:center}
 .current .temp{font-size:clamp(62px,13vw,80px);font-weight:500;line-height:1}.current .desc{font-size:19px;margin-top:10px}.current .meta{font-size:14px;opacity:.9;margin-top:6px}
-.days{display:flex;flex-direction:row;flex-wrap:nowrap;gap:12px;margin:42px 0 8px;overflow-x:auto;overflow-y:hidden;padding:6px 4px 14px 2px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-padding-left:2px;overscroll-behavior-x:contain}.days::after{content:"";flex:0 0 8px;width:8px}.days .day{flex:0 0 104px;width:104px;max-width:104px;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden}
+.days{display:flex;flex-direction:row;flex-wrap:nowrap;gap:12px;margin:42px 0 8px;overflow-x:auto;overflow-y:hidden;padding:6px 4px 14px 2px;-webkit-overflow-scrolling:touch;scroll-snap-type:none;overscroll-behavior-x:contain}.days::after{content:"";flex:0 0 8px;width:8px}.days .day{flex:0 0 104px;width:104px;max-width:104px;box-sizing:border-box;overflow:hidden}
 .day{background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 6px 16px;text-align:center;font:inherit;color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent}.day .d{font-size:16px;font-weight:500;white-space:nowrap;overflow:hidden}.day .ic{font-size:26px;margin:6px 0}.day .hi{color:#ff7a70;font-weight:700;font-size:17px}.day .lo{color:#3ce882;font-size:16px}.day.today{outline:2px solid rgba(255,255,255,.65);outline-offset:-2px}.day.selected{outline:2px solid #fff;outline-offset:-2px;background:rgba(0,0,0,.55)}.day:focus-visible{outline:3px solid #7dd3fc;outline-offset:2px}.day .tap-hint{font-size:10px;opacity:.75;margin-top:5px}
 
 .wxstamp{text-align:center;font-size:13px;opacity:.88;margin-top:22px}.wxerr{background:rgba(120,20,10,.55);border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:12px;text-align:center;margin-top:16px;display:none}
@@ -879,7 +880,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .alert-src{font-size:12px;color:#64748b;margin:8px 0 0}
 .wxalerts-err{margin:14px auto 0;max-width:680px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:8px;padding:10px 12px;text-align:center;font-size:13px;line-height:1.5;display:none}
 .wxsec{font-size:19px;text-align:left;margin:38px 0 16px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6)}
-.hourly{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.hourly{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scroll-snap-type:none}
 .hour{flex:0 0 auto;scroll-snap-align:start;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 14px;text-align:center;min-width:86px;color:#fff}
 .hour.now{outline:2px solid rgba(255,255,255,.65)}
 .hour .hh{font-size:13px;font-weight:700;white-space:nowrap}
@@ -897,7 +898,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .day .pp{font-size:12px;color:#9fd8ff;margin-top:3px;white-space:nowrap}
 .wxmore-open{margin-top:0}
 .wxdetails-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;background:none;border:0;padding:0;margin:38px 0 16px;cursor:pointer;font:inherit;color:#fff;text-align:left;-webkit-tap-highlight-color:transparent}.wxdetails-toggle .wxsec{margin:0}.wxdetails-chev{flex:none;font-size:20px;line-height:1;transition:transform .25s ease;text-shadow:0 1px 4px rgba(0,0,0,.6)}.wxdetails-toggle[aria-expanded="true"] .wxdetails-chev{transform:rotate(180deg)}.wxdetails-panel[hidden]{display:none}.wxdetails-panel .wdetails{margin-top:2px}
-.wxday-detail{position:relative;display:block;width:100%;max-width:680px;margin:14px auto 4px;background:rgba(6,18,26,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:18px 16px 16px;color:#fff;text-align:left;box-sizing:border-box;overflow:hidden}.wxday-detail[hidden]{display:none}.wdd-head{display:flex;align-items:flex-start;gap:12px}.wdd-head .wdd-ic{font-size:38px;line-height:1;flex:none}.wdd-title{font-size:20px;font-weight:700;line-height:1.2;margin:0}.wdd-sub{font-size:14px;opacity:.92;margin:3px 0 0;line-height:1.4}.wdd-x{margin-left:auto;flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.14);color:#fff;font-size:22px;line-height:1;cursor:pointer;font:inherit}.wdd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}@media(max-width:380px){.wdd-grid{grid-template-columns:1fr}}.wdd-tile{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:11px 12px;min-width:0}.wdd-tile .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;opacity:.85}.wdd-tile .v{font-size:17px;font-weight:700;margin-top:3px;line-height:1.25;overflow-wrap:break-word}.wdd-tile .u{font-size:12px;opacity:.85;margin-top:2px;line-height:1.35}.wdd-hours-h{font-size:14px;font-weight:700;margin:16px 0 8px}.wdd-hours{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;max-width:100%}.wdd-hour{flex:0 0 64px;width:64px;box-sizing:border-box;scroll-snap-align:start;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:9px 4px;text-align:center;overflow:hidden}.wdd-hour .h{font-size:11px;font-weight:700;white-space:nowrap}.wdd-hour .i{font-size:19px;margin:3px 0 2px}.wdd-hour .t{font-size:14px;font-weight:700}.wdd-hour .pp{font-size:11px;color:#9fd8ff;margin-top:2px;white-space:nowrap}.snowday-dialrow{display:flex;justify-content:center;margin:10px 0 2px}.snowday-dial{position:relative;width:min(40vw,128px);height:min(40vw,128px);flex:none}.snowday-dial svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}.snowday-dial .ring-bg{fill:none;stroke:rgba(255,255,255,.22);stroke-width:13}.snowday-dial .ring-fg{fill:none;stroke:url(#snowDialGrad);stroke-width:13;stroke-linecap:round;transition:stroke-dashoffset .8s ease}.snowday-delay{font-size:13px;opacity:.94;margin:8px 0 0;line-height:1.45}.wdet .wdet-ic{display:flex;justify-content:center;align-items:center;margin:4px 0 5px;line-height:1}.wdet .wdet-ic .moon-glyph{font-size:28px;line-height:1}.sun-ic{display:block;width:30px;height:30px}.wdet .sun-ic{width:34px;height:34px}.wx-hero-hourly .hour .ic{display:flex;align-items:center;justify-content:center;min-height:30px}.snowday[hidden]{display:none!important}
+.wxday-detail{position:relative;display:block;width:100%;max-width:680px;margin:14px auto 4px;background:rgba(6,18,26,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:18px 16px 16px;color:#fff;text-align:left;box-sizing:border-box;overflow:hidden}.wxday-detail[hidden]{display:none}.wdd-head{display:flex;align-items:flex-start;gap:12px}.wdd-head .wdd-ic{font-size:38px;line-height:1;flex:none}.wdd-title{font-size:20px;font-weight:700;line-height:1.2;margin:0}.wdd-sub{font-size:14px;opacity:.92;margin:3px 0 0;line-height:1.4}.wdd-x{margin-left:auto;flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.14);color:#fff;font-size:22px;line-height:1;cursor:pointer;font:inherit}.wdd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}@media(max-width:380px){.wdd-grid{grid-template-columns:1fr}}.wdd-tile{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:11px 12px;min-width:0}.wdd-tile .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;opacity:.85}.wdd-tile .v{font-size:17px;font-weight:700;margin-top:3px;line-height:1.25;overflow-wrap:break-word}.wdd-tile .u{font-size:12px;opacity:.85;margin-top:2px;line-height:1.35}.wdd-hours-h{font-size:14px;font-weight:700;margin:16px 0 8px}.wdd-hours{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scroll-snap-type:none;max-width:100%}.wdd-hour{flex:0 0 64px;width:64px;box-sizing:border-box;scroll-snap-align:start;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:9px 4px;text-align:center;overflow:hidden}.wdd-hour .h{font-size:11px;font-weight:700;white-space:nowrap}.wdd-hour .i{font-size:19px;margin:3px 0 2px}.wdd-hour .t{font-size:14px;font-weight:700}.wdd-hour .pp{font-size:11px;color:#9fd8ff;margin-top:2px;white-space:nowrap}.snowday-dialrow{display:flex;justify-content:center;margin:10px 0 2px}.snowday-dial{position:relative;width:min(40vw,128px);height:min(40vw,128px);flex:none}.snowday-dial svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}.snowday-dial .ring-bg{fill:none;stroke:rgba(255,255,255,.22);stroke-width:13}.snowday-dial .ring-fg{fill:none;stroke:url(#snowDialGrad);stroke-width:13;stroke-linecap:round;transition:stroke-dashoffset .8s ease}.snowday-delay{font-size:13px;opacity:.94;margin:8px 0 0;line-height:1.45}.wdet .wdet-ic{display:flex;justify-content:center;align-items:center;margin:4px 0 5px;line-height:1}.wdet .wdet-ic .moon-glyph{font-size:28px;line-height:1}.sun-ic{display:block;width:30px;height:30px}.wdet .sun-ic{width:34px;height:34px}.wx-hero-hourly .hour .ic{display:flex;align-items:center;justify-content:center;min-height:30px}.snowday[hidden]{display:none!important}
 .snowday{margin:26px auto 0;width:min(80vw,300px);max-width:300px;aspect-ratio:1/1;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:16px 14px;color:#fff;overflow:hidden}
 .snowday-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.92}
 .snowday-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(34px,10vw,46px);font-weight:800;line-height:1;letter-spacing:-.02em;margin:0;text-align:center}
@@ -933,7 +934,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxtrend-stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;opacity:.85}
 .wxtrend-stat .v{font-size:17px;font-weight:700;margin-top:3px;line-height:1.25}
 .wxtrend-stat .u{font-size:12px;opacity:.85;margin-top:2px;line-height:1.35}
-.wx-hero-hourly{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.wx-hero-hourly{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scroll-snap-type:none}
 /* Next-24-hours strip: every hour card is identical — same fixed width,
    padding and margin, Now included. The Now highlight is drawn inside
    the card (outline-offset:-2px) so it adds no extra space before,
@@ -961,7 +962,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxpair-right{min-width:0}
 .wxpair-right .wxsec{margin:0 0 12px;font-size:16px}
 .wxpair .snowday{width:100%;max-width:none;margin:0}
-.radar.seamless{border:0;border-radius:18px;background:transparent;box-shadow:none;margin-top:26px}
+.radar.seamless{position:relative;border:0;border-radius:18px;background:transparent;box-shadow:none;margin-top:26px}
+.radar-cover{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;border:0;border-radius:18px;background:rgba(6,18,26,.45);color:#fff;font:inherit;font-size:15px;font-weight:700;cursor:pointer;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.radar-cover[hidden]{display:none}
 .radar.seamless iframe{border-radius:18px;height:340px}
 .wxloc-controls{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin:12px auto 0}
 .wxloc-btn{appearance:none;border:1.5px solid rgba(255,255,255,.85);background:rgba(0,0,0,.35);color:#fff;font:inherit;font-size:13.5px;font-weight:700;border-radius:999px;padding:9px 15px;cursor:pointer;min-height:40px}
@@ -1044,7 +1047,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   </section>
     <div class="radar seamless">
     <iframe id="wxRadar" title="Live weather map" src="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" loading="lazy" allowfullscreen></iframe>
+    <button type="button" class="radar-cover" id="radarCover" aria-label="Radar is frozen — tap to interact with the map">🔒 Radar frozen — tap to explore</button>
   </div>
+  <script>(function(){var c=document.getElementById('radarCover');if(!c)return;c.addEventListener('click',function(){c.hidden=true;});})();</script>
   <button type="button" class="wxdetails-toggle" id="wxDetailsToggle" aria-expanded="false" aria-controls="wxDetailsPanel"><span class="wxsec">📋 Today&rsquo;s Details</span><span class="wxdetails-chev" aria-hidden="true">▾</span></button>
   <div class="wxdetails-panel" id="wxDetailsPanel" hidden>
   <div class="wdetails" id="wxDetails" aria-label="Today's weather details"></div>
@@ -1130,7 +1135,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
   <p class="nws-line"><a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service — Official Forecast for Cicero, NY →</a></p>
-  <h3 class="wxsec">📰 Weather News — Nationwide &amp; Central NY</h3>
+  <h3 class="wxsec">📰 Local and Nationwide Weather News</h3>
   <p class="lstatus" id="wxNewsStatus">Loading weather news…</p>
   <div class="storm-list" id="wxNewsList" aria-label="Weather news"></div>
   <p class="nfeed-updated" id="wxNewsUpdated"></p>
@@ -1230,24 +1235,29 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .isw:active{opacity:.75}
 #view-news .et-risk{text-align:center;padding:18px 8px 4px}
 #view-news .et-risk-num{font-size:56px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
-#view-news .et-risk-num.lv-low{color:#1e7e34}
-#view-news .et-risk-num.lv-elevated{color:#b26a00}
-#view-news .et-risk-num.lv-high{color:#c2410c}
-#view-news .et-risk-num.lv-severe{color:#b42318}
-#view-news .et-risk-num.long{font-size:40px}
+#view-news .et-risk-num.bd-safe{color:#1e7e34}
+#view-news .et-risk-num.bd-moderate{color:#b26a00}
+#view-news .et-risk-num.bd-caution{color:#c2410c}
+#view-news .et-risk-num.bd-high{color:#b42318}
+#view-news .et-risk-num.bd-likely{color:#8f1d14}
+#view-news .et-risk-num.bd-prepare{color:#7f1d1d}
 #view-news .et-scale{display:flex;gap:4px;margin:14px 2px 0}
 #view-news .et-scale span{flex:1;text-align:center}
 #view-news .et-scale i{display:block;height:6px;border-radius:99px;background:rgba(127,160,175,.25);margin-bottom:5px}
-#view-news .et-scale span.on[data-lv="low"] i{background:#1e7e34}
-#view-news .et-scale span.on[data-lv="elevated"] i{background:#b26a00}
-#view-news .et-scale span.on[data-lv="high"] i{background:#c2410c}
-#view-news .et-scale span.on[data-lv="severe"] i{background:#b42318}
+#view-news .et-scale span.on[data-band="safe"] i{background:#1e7e34}
+#view-news .et-scale span.on[data-band="moderate"] i{background:#b26a00}
+#view-news .et-scale span.on[data-band="caution"] i{background:#c2410c}
+#view-news .et-scale span.on[data-band="high"] i{background:#b42318}
+#view-news .et-scale span.on[data-band="likely"] i{background:#8f1d14}
+#view-news .et-scale span.on[data-band="prepare"] i{background:#7f1d1d}
 #view-news .et-scale b{display:block;font-size:11px;font-weight:700;color:var(--soft)}
 #view-news .et-scale em{display:block;font-style:normal;font-size:10.5px;font-weight:600;color:var(--soft);opacity:.75;margin-top:1px}
-#view-news .et-scale span.cur[data-lv="low"] b{color:#1e7e34;font-weight:800}
-#view-news .et-scale span.cur[data-lv="elevated"] b{color:#b26a00;font-weight:800}
-#view-news .et-scale span.cur[data-lv="high"] b{color:#c2410c;font-weight:800}
-#view-news .et-scale span.cur[data-lv="severe"] b{color:#b42318;font-weight:800}
+#view-news .et-scale span.cur[data-band="safe"] b{color:#1e7e34;font-weight:800}
+#view-news .et-scale span.cur[data-band="moderate"] b{color:#b26a00;font-weight:800}
+#view-news .et-scale span.cur[data-band="caution"] b{color:#c2410c;font-weight:800}
+#view-news .et-scale span.cur[data-band="high"] b{color:#b42318;font-weight:800}
+#view-news .et-scale span.cur[data-band="likely"] b{color:#8f1d14;font-weight:800}
+#view-news .et-scale span.cur[data-band="prepare"] b{color:#7f1d1d;font-weight:800}
 #view-news .et-risk-market{font-size:13px;font-weight:700;color:var(--soft);margin-top:6px}
 #view-news .et-risk-market:empty{display:none}
 #view-news .et-risk-trend{font-size:15px;font-weight:800;margin-top:6px}
@@ -1259,14 +1269,20 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .et-risk-updated{font-size:12.5px;color:var(--soft);margin-top:4px}
 #view-news .et-risk-updated:empty{display:none}
 #view-news .et-risk-lab{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-top:8px}
-#view-news .et-risk-level{font-size:15px;font-weight:800;margin-top:6px}
-#view-news .et-prep{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
-#view-news .et-prep h4{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:12px 0 6px}
-#view-news .et-prep h4:first-of-type{margin-top:4px}
-#view-news .et-prep ul{list-style:none;margin:0;padding:0}
-#view-news .et-prep li{font-size:13.5px;line-height:1.45;padding:5px 0 5px 22px;position:relative;border-bottom:1px solid var(--border)}
-#view-news .et-prep li:last-child{border-bottom:0}
-#view-news .et-prep li::before{content:"✓";position:absolute;left:2px;top:5px;font-weight:800;color:#15803d}
+#view-news .et-risk-level{font-size:22px;font-weight:800;margin-top:8px;letter-spacing:.02em}
+#view-news .et-risk-level.bd-safe{color:#1e7e34}
+#view-news .et-risk-level.bd-moderate{color:#b26a00}
+#view-news .et-risk-level.bd-caution{color:#c2410c}
+#view-news .et-risk-level.bd-high{color:#b42318}
+#view-news .et-risk-level.bd-likely{color:#8f1d14}
+#view-news .et-risk-level.bd-prepare{color:#7f1d1d}
+#view-news .et-headlines{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
+#view-news .et-headlines .et-h{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin:0 0 4px}
+#view-news .et-hl{display:block;padding:11px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
+#view-news .et-hl:last-child{border-bottom:0}
+#view-news .et-hl:active{opacity:.7}
+#view-news .et-hl-t{display:block;font-size:15px;font-weight:650;line-height:1.4}
+#view-news .et-hl-m{display:block;font-size:12px;color:var(--soft);margin-top:3px}
 #view-news .et-status{font-size:13.5px;line-height:1.5;border-radius:14px;padding:11px 13px;margin:14px 0 2px;background:rgba(127,160,175,.14)}
 #view-news .et-status.is-calm{background:rgba(21,128,61,.13)}
 #view-news .et-status.is-alert{background:rgba(180,35,24,.13)}
@@ -1290,37 +1306,25 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
     <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
   </section>
-  <section class="ncard" id="emergencyTracker" aria-label="War and cyber tracker">
-    <span class="nkick">News &middot; War &amp; Cyber Tracker</span><h2>🛡️ War &amp; Cyber Tracker</h2>
+  <section class="ncard" id="emergencyTracker" aria-label="Iran War Risk">
+    <span class="nkick">News &middot; Iran War Risk</span><h2>⚠️ IRAN WAR RISK</h2>
     <div class="et-risk" id="etRisk">
       <div class="et-risk-num" id="etRiskNum">—</div>
-      <div class="et-scale" id="etRiskScale" aria-label="Tension scale: Low 0 attacks, Elevated 1, High 2, Severe 3 or more">
-        <span data-lv="low"><i></i><b>Low</b><em>0</em></span>
-        <span data-lv="elevated"><i></i><b>Elevated</b><em>1</em></span>
-        <span data-lv="high"><i></i><b>High</b><em>2</em></span>
-        <span data-lv="severe"><i></i><b>Severe</b><em>3+</em></span>
-      </div>
-      <div class="et-risk-trend" id="etRiskTrend"></div>
-      <div class="et-risk-updated" id="etRiskUpdated"></div>
-      <div class="et-risk-lab">Iran War Risk</div>
       <div class="et-risk-level" id="etRiskLevel">—</div>
+      <div class="et-scale" id="etRiskScale" aria-label="War risk scale, by Polymarket percent">
+        <span data-band="safe"><i></i><b>Safe</b><em>&lt;10%</em></span>
+        <span data-band="moderate"><i></i><b>Moderate</b><em>10–20%</em></span>
+        <span data-band="caution"><i></i><b>Caution</b><em>20–40%</em></span>
+        <span data-band="high"><i></i><b>High</b><em>40–60%</em></span>
+        <span data-band="likely"><i></i><b>Likely</b><em>60–80%</em></span>
+        <span data-band="prepare"><i></i><b>Prepare</b><em>80–100%</em></span>
+      </div>
       <div class="et-risk-market" id="etRiskMarket">Polymarket: —</div>
+      <div class="et-risk-updated" id="etRiskUpdated"></div>
     </div>
-    <div class="et-prep" aria-label="How to prepare">
-      <h3 class="et-h" style="margin-top:2px">How to prepare</h3>
-      <h4>Cyber</h4>
-      <ul>
-        <li>Turn on multi-factor authentication on important accounts</li>
-        <li>Back up important files</li>
-        <li>Don&rsquo;t click links or attachments from unknown senders</li>
-      </ul>
-      <h4>If things escalate</h4>
-      <ul>
-        <li>Keep a few days of water, food, and any medicines</li>
-        <li>Keep some cash on hand</li>
-        <li>Know how you get local emergency alerts</li>
-        <li>Keep phones charged and a flashlight handy</li>
-      </ul>
+    <div class="et-headlines" aria-label="Latest headlines">
+      <h3 class="et-h">Latest</h3>
+      <div id="etRiskHeadlinesList"><p class="lstatus">Loading the latest headlines…</p></div>
     </div>
   </section>
   <section class="ncard" id="newsFeedCard" aria-label="News feed">
@@ -1375,14 +1379,37 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     var pct=parseFloat(prices[0])*100;
     return isNaN(pct)?null:pct;
   }
-  function fail(){marketEl.textContent='Polymarket: —';}
+  var BAND_ORDER=['safe','moderate','caution','high','likely','prepare'];
+  function riskBand(p){
+    if(p<10)return{word:'Safe',cls:'safe'};
+    if(p<20)return{word:'Moderate',cls:'moderate'};
+    if(p<40)return{word:'Caution',cls:'caution'};
+    if(p<60)return{word:'High',cls:'high'};
+    if(p<80)return{word:'Likely',cls:'likely'};
+    return{word:'Prepare NOW',cls:'prepare'};
+  }
+  function fmt1(x){return String(Math.round(x*10)/10);}
+  function fail(){
+    marketEl.textContent='Polymarket: —';
+    var num=document.getElementById('etRiskNum');if(num){num.textContent='—';num.className='et-risk-num';}
+    var lv=document.getElementById('etRiskLevel');if(lv){lv.textContent='—';lv.className='et-risk-level';}
+  }
   function fetchMarket(){
     Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
       var invade=evs[0]?pickPrice(evs[0],WATCH[0].pick):null;
       var cease=evs[1]?pickPrice(evs[1],WATCH[1].pick):null;
       if(invade===null||cease===null){fail();return;}
       var risk=(invade+(100-cease))/2;
-      marketEl.textContent='Polymarket: '+(Math.round(risk*10)/10)+'%';
+      var b=riskBand(risk);
+      var num=document.getElementById('etRiskNum');
+      if(num){num.textContent=fmt1(risk)+'%';num.className='et-risk-num bd-'+b.cls;}
+      var lv=document.getElementById('etRiskLevel');
+      if(lv){lv.textContent=b.word.toUpperCase();lv.className='et-risk-level bd-'+b.cls;}
+      var sc=document.getElementById('etRiskScale');
+      if(sc){var ci=BAND_ORDER.indexOf(b.cls);sc.querySelectorAll('span').forEach(function(sp){var k=sp.getAttribute('data-band');var ki=BAND_ORDER.indexOf(k);sp.classList.toggle('on',ki>=0&&ki<=ci);sp.classList.toggle('cur',k===b.cls);});}
+      marketEl.textContent='US invades Iran '+fmt1(invade)+'% \u00b7 Ceasefire by Dec 31: '+fmt1(cease)+'%';
+      var up=document.getElementById('etRiskUpdated');
+      if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET \u00b7 Polymarket';
     }).catch(fail);
   }
   function newsOpen(){
@@ -1465,6 +1492,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   }
   function tensionLevelOf(n){return n===0?'Low':n===1?'Elevated':n===2?'High':'Severe';}
   function renderTension(count,delayed){
+    /* No-op now: Polymarket (fetchMarket) drives the IRAN WAR RISK
+       readout. The tension count is still computed server-side in
+       going-on.json but is no longer shown. */
+    return;
     if(!tensionEl)return;
     var level=tensionLevelOf(count);
     tensionEl.textContent=level.toUpperCase();
@@ -1530,8 +1561,30 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   var wgRetryTimer=null;
   /* List removed Nov 17, 2026 — the feed is still fetched so the
      tension index can count from it; nothing is rendered here. */
+  function agoStr(ms){
+    var s=Math.max(0,Math.round((Date.now()-ms)/1000));
+    if(s<60)return'just now';
+    var m=Math.floor(s/60);if(m<60)return m+'m ago';
+    var h=Math.floor(m/60);if(h<24)return h+'h ago';
+    return Math.floor(h/24)+'d ago';
+  }
   function renderItems(top){
     hasLoaded=true;
+    var box=document.getElementById('etRiskHeadlinesList');if(!box)return;
+    var WAR=/\b(attack|attacks|attacked|strike|strikes|struck|missile|missiles|drone|drones|base|bases|bahrain|kuwait|qeshm|hormuz|israel|trump|ceasefire|nuclear|war|gulf|tehran|irgc|invasion|invade|invasion)\b/;
+    var NOISE=/\b(plot|plots|plotting|threat|threatens|threatening|warns|warning|prepares|preparing|considering|will pay the price)\b/;
+    var list=(top||[]).filter(function(it){
+      var t=String(it.title||'').toLowerCase();
+      if(t.indexOf('iran')<0&&t.indexOf('irgc')<0&&t.indexOf('tehran')<0)return false;
+      if(!WAR.test(t))return false;
+      if(NOISE.test(t))return false;
+      return true;
+    }).sort(function(a,b){return (b.when||0)-(a.when||0);}).slice(0,6);
+    if(!list.length){box.innerHTML='<p class="lstatus">No war headlines right now.</p>';return;}
+    box.innerHTML=list.map(function(it){
+      var title=String(it.title||'').replace(/\s+-[^-]{2,40}$/,'').trim();
+      return '<a class="et-hl" href="'+esc(it.link||'#')+'" target="_blank" rel="noopener"><span class="et-hl-t">'+esc(title)+'</span><span class="et-hl-m">'+esc(agoStr(it.when||Date.now()))+'</span></a>';
+    }).join('');
   }
   function handleLoadFail(){
     /* Nothing to show the failure in — the tension number simply
@@ -1644,7 +1697,7 @@ body.on-sports .bottomnav{background:rgba(10,24,58,.52);border-color:rgba(255,25
 body.on-sports .tab{color:#c9d6f2!important;background:transparent!important}
 body.on-sports .tab[aria-selected="true"]{background:transparent!important;color:#0a1a3f!important}
 body.on-sports footer{color:#aebfe6!important}
-#view-sports{--ink:#fff;--soft:#b9c8ec;--link:#9fc0ff;--panel:rgba(8,22,54,.78);--border:rgba(255,255,255,.13);color:#fff}
+#view-sports{--ink:#fff;--soft:#c9cdd6;--link:#ff9d94;--panel:rgba(38,34,36,.78);--border:rgba(255,255,255,.13);color:#fff}
 #view-sports .hero{text-align:left;padding:38px 4px 6px}
 .sette-btn{appearance:none;margin-top:10px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.30);color:#fff;font:inherit;font-size:12.5px;font-weight:700;border-radius:999px;padding:7px 13px;cursor:pointer;min-height:34px}
 .teams-overlay{position:fixed;inset:0;z-index:1200;background:rgba(4,10,28,.72);display:flex;align-items:flex-end;justify-content:center;padding:0}
@@ -1664,7 +1717,7 @@ body.on-sports footer{color:#aebfe6!important}
 #view-sports .hero h1{color:#fff;font-weight:700}
 #view-sports .dateline{color:#aebfe6}
 #view-sports .sport-intro{text-align:left;color:#c9d6f2;font-size:15px;line-height:1.6;max-width:640px;margin:14px 0 0}
-#view-sports .card{background:rgba(8,22,54,.78);border:1px solid rgba(255,255,255,.12);border-radius:22px;color:#fff;box-shadow:0 8px 28px rgba(0,0,0,.28)}
+#view-sports .card{background:rgba(38,34,36,.78);border:1px solid rgba(255,255,255,.12);border-radius:22px;color:#fff;box-shadow:0 8px 28px rgba(0,0,0,.28)}
 #view-sports .card h2{color:#fff}
 #view-sports .back-btn{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);box-shadow:none}
 #view-sports .team-btn{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:12px;box-shadow:none}
@@ -1714,14 +1767,15 @@ body.on-sports footer{color:#aebfe6!important}
 .acenter .live{color:#ff7a6e;font-weight:800}
 .anone{text-align:center;color:#aebfe6;font-size:15px;line-height:1.6;padding:20px 10px;margin:0}
 .stoday{margin-top:6px}
-.stoday .agame{padding:14px 2px}
-.stoday-featured{border:1.5px solid rgba(255,211,77,.75);border-radius:18px;padding:12px 10px 6px;margin:4px 0 6px;background:rgba(255,211,77,.07);text-align:center}
+.stoday .agame{padding:10px 2px}
+.stoday-featured{border:1.5px solid rgba(255,107,97,.75);border-radius:18px;padding:10px 8px 4px;margin:2px 0 4px;background:rgba(255,107,97,.07);text-align:center}
 .stoday-featured .agame{padding-top:8px;padding-bottom:10px;border-bottom:0;text-align:left}
-.stoday-featured .ateam img{width:64px;height:64px}
-.stoday-featured .aside.score{font-size:26px}
-.stoday-featured .acenter .at{font-size:19px}
-.stoday-tag{display:inline-block;background:rgba(255,211,77,.16);border:1px solid rgba(255,211,77,.55);border-radius:999px;padding:4px 11px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#ffd34d;margin:0 auto 2px;line-height:1.35;white-space:nowrap}
-.stoday-league{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8fa3cc;margin:14px 0 0}
+.stoday-featured .ateam img{width:48px;height:48px}
+.stoday-featured .aside.score{font-size:22px}
+.stoday-featured .acenter .at{font-size:17px}
+.stoday-tag{display:inline-block;background:rgba(255,107,97,.16);border:1px solid rgba(255,107,97,.55);border-radius:999px;padding:4px 11px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#ff9d94;margin:0 auto 2px;line-height:1.35;white-space:nowrap}
+.stoday-league{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#c9cdd6;margin:14px 0 0}
+.st-count{display:flex;align-items:baseline;gap:10px;margin-top:6px}.st-count #stDays{font-size:44px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#ff6b61}.st-count-label{font-size:13px;color:#c9cdd6;line-height:1.4}
 .fight-list{text-align:left;max-width:600px;margin:0 auto;line-height:1.65;color:#c9d6f2;font-size:15px}
 .fight-list li{margin:10px 0}
 .fight-list b{color:#fff}
@@ -1735,7 +1789,6 @@ body.on-sports footer{color:#aebfe6!important}
 .stable td.rank{color:#aebfe6;width:22px;text-align:left;padding-left:2px}
 .stable tr.hl td{background:rgba(255,211,77,.1)}
 .stable tr.hl td.team{font-weight:700}
-.stable tr.cut td{border-bottom:1.5px dashed rgba(255,255,255,.35)}
 .stable .star{color:#ffd34d;font-size:12px}
 .stable td.fpi{white-space:nowrap}
 .brk-conf{font-size:15px;font-weight:800;margin:16px 0 2px;text-align:left;color:#fff}
@@ -1810,25 +1863,36 @@ body.on-sports footer{color:#aebfe6!important}
    Every rule is scoped to #sportsHome (plus the hero while the main
    page is showing, via :has), so the sport sub-pages and the Bet
    Simulator keep their exact existing look and behaviour. ===== */
-#view-sports:has(>#sportsHome:not([hidden])) .hero{padding-top:46px}
-#view-sports:has(>#sportsHome:not([hidden])) .hero h1{font-size:clamp(40px,9.5vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1.02;text-shadow:0 4px 22px rgba(0,0,10,.45)}
-#view-sports:has(>#sportsHome:not([hidden])) .hero::after{content:"";display:block;width:72px;height:4px;border-radius:2px;margin-top:16px;background:linear-gradient(90deg,#ffd34d,#ff7a6e 55%,#7ee2a8)}
+#view-sports:has(>#sportsHome:not([hidden])) .hero{padding-top:46px;text-align:center}
+#view-sports:has(>#sportsHome:not([hidden])) .hero h1{font-size:clamp(40px,9.5vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1.02;text-shadow:0 4px 22px rgba(0,0,10,.45);text-align:center}
+#view-sports:has(>#sportsHome:not([hidden])) .hero::after{content:"";display:block;width:72px;height:4px;border-radius:2px;margin:16px auto 0;background:linear-gradient(90deg,#ff6b61,#b42318 55%,#8a8f98)}
 #view-sports:has(>#sportsHome:not([hidden])) .sette-btn{background:rgba(255,211,77,.14);border-color:rgba(255,211,77,.55);color:#ffd34d;padding:8px 15px;box-shadow:0 6px 18px rgba(0,0,10,.3)}
-#sportsHome .stoday{position:relative;overflow:hidden;background:linear-gradient(165deg,rgba(47,95,208,.55),rgba(8,22,54,.88) 58%);border:1px solid rgba(255,255,255,.2);border-radius:28px;padding:26px 20px 20px;margin-top:22px;box-shadow:0 20px 46px rgba(0,0,10,.48),inset 0 1px 0 rgba(255,255,255,.22)}
+#sportsHome .stoday{position:relative;overflow:hidden;background:linear-gradient(165deg,rgba(180,35,24,.55),rgba(38,34,36,.88) 58%);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:18px 16px 14px;margin-top:16px;box-shadow:0 20px 46px rgba(0,0,10,.48),inset 0 1px 0 rgba(255,255,255,.22)}
 #sportsHome .stoday::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#ffd34d,#ff7a6e 45%,#7ee2a8 80%,#4da3ff)}
 #sportsHome .stoday .ahead{margin-bottom:14px}
 #sportsHome .stoday .ahead h2{font-size:26px;font-weight:800;letter-spacing:-.01em}
 #sportsHome .stoday .league-pill{background:rgba(255,211,77,.15);border:1px solid rgba(255,211,77,.55);color:#ffd34d;box-shadow:none}
+#sportsHome{max-width:640px;margin-left:auto;margin-right:auto}
+.stable tr[data-team-id]{cursor:pointer}.stable tr[data-team-id]:hover td{background:rgba(255,255,255,.05)}
+.team-sheet[hidden]{display:none}.team-sheet{position:fixed;inset:0;z-index:9000;display:flex;align-items:flex-end;justify-content:center}
+.team-sheet-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.team-sheet-card{position:relative;width:100%;max-width:560px;max-height:82vh;overflow-y:auto;background:#1c1a1b;color:#fff;border:1px solid rgba(255,255,255,.2);border-bottom:0;border-radius:22px 22px 0 0;padding:20px 18px 28px;box-sizing:border-box;-webkit-overflow-scrolling:touch}
+.team-sheet-x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.team-sheet-card h2{font-size:24px;margin:4px 0 2px;padding-right:48px}
+.team-sheet-stats{font-size:15px;color:#ff9d94;font-weight:700;margin:0 0 16px}
+.team-sheet-card h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#c9cdd6;margin:18px 0 8px}
+.ts-game{display:flex;justify-content:space-between;gap:12px;padding:10px 2px;border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px}
+.ts-game:last-child{border-bottom:0}
 #sportsHome .sport-list{display:flex;flex-direction:column;margin-top:38px}
-#sportsHome .sport-list::before{content:"Browse Sports";font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ffd34d;margin-bottom:10px}
-#sportsHome .sport-row{position:relative;display:flex;align-items:center;gap:13px;width:100%;box-sizing:border-box;text-align:left;min-height:66px;padding:11px 14px;background:rgba(8,22,54,.78);border:1px solid rgba(255,255,255,.13);border-radius:18px;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;font:inherit;transition:transform .12s ease}
+#sportsHome .sport-list::before{content:"Browse Sports";font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ff6b61;margin-bottom:10px}
+#sportsHome .sport-row{position:relative;display:flex;align-items:center;gap:13px;width:100%;box-sizing:border-box;text-align:left;min-height:66px;padding:11px 14px;background:rgba(38,34,36,.78);border:1px solid rgba(255,255,255,.13);border-radius:18px;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;font:inherit;transition:transform .12s ease}
 #sportsHome .sport-row+.sport-row{margin-top:10px}
 #sportsHome .sport-row:active{transform:scale(.98)}
 #sportsHome .sport-row .emoji{flex:none;font-size:24px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:14px;line-height:1}
 #sportsHome .sport-row .sport-main{flex:1 1 auto;min-width:0}
 #sportsHome .sport-row b{display:block;font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
-#sportsHome .sport-row .sport-sub{display:block;font-size:12.5px;color:#aebfe6;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#sportsHome .sport-row .sport-live{flex:none;font-size:12.5px;font-weight:800;color:#aebfe6}
+#sportsHome .sport-row .sport-sub{display:block;font-size:12.5px;color:#c9cdd6;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sportsHome .sport-row .sport-live{flex:none;font-size:12.5px;font-weight:800;color:#c9cdd6}
 #sportsHome .sport-row .sport-live.is-live{color:#7ee2a8}
 #sportsHome .sport-row::after{content:"\203A";flex:none;font-size:24px;font-weight:700;line-height:1;color:rgba(255,255,255,.5)}
 #sportsHome .sport-row:nth-child(1) .emoji{background:rgba(255,122,110,.2);border-color:rgba(255,122,110,.4)}
@@ -1851,7 +1915,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <div id="sportsHome">
   <section class="acard stoday" id="sportsTodayWidget" aria-label="Today's games">
-    <div class="ahead"><h2>📅 Today</h2><span class="league-pill" id="sportsTodayDate">Today</span></div>
+    <div class="ahead"><h2><span id="todaySportEmoji" aria-hidden="true">⚾</span> Today</h2><span class="league-pill" id="sportsTodayDate">Today</span></div>
     <div id="sportsTodayFeatured"></div>
     <p class="astatus" id="sportsTodayStatus">Loading today&rsquo;s games…</p>
     <div id="sportsTodayGames"></div>
@@ -1864,7 +1928,7 @@ body.on-sports footer{color:#aebfe6!important}
     <button type="button" class="sport-row" data-sport="hockey"><span class="emoji">🏒</span><span class="sport-main"><b>Hockey</b><span class="sport-sub">All NHL teams</span></span><span class="sport-live" data-live="nhl"></span><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="ufc"><span class="emoji">👊</span><span class="sport-main"><b>UFC</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="boxing"><span class="emoji">🥊</span><span class="sport-main"><b>Boxing</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
-    <button type="button" class="sport-row" data-sport="betsim"><span class="emoji">🎲</span><span class="sport-main"><b>Parlays</b><span class="sport-sub">Bet Simulator</span></span><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="betsim"><span class="emoji">🎲</span><span class="sport-main"><b>Parlays</b><span class="sport-sub">Bet Simulator</span></span></button>
   </div>
   <section class="acard" aria-label="Sports news">
   <div class="ahead"><h2>📰 Sports News</h2></div>
@@ -1897,6 +1961,12 @@ body.on-sports footer{color:#aebfe6!important}
   <div class="aerr" id="mlbLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.mlb.com/" target="_blank" rel="noopener">MLB.com</a> and reload.</div>
   <p class="asrc" id="mlbLiveStamp">Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
+  <section class="acard" id="springTrainingCard" aria-label="Countdown to Spring Training">
+  <div class="ahead"><h2>🌱 Spring Training</h2><span class="league-pill">2027</span></div>
+  <div class="st-count"><span id="stDays">—</span><span class="st-count-label">days until first games · Fri, Feb 19, 2027</span></div>
+  <p class="asrc">All 30 clubs open spring games Feb 19, 2027 · Yankees open at the Blue Jays in Dunedin</p>
+  </section>
+  <script>(function(){var el=document.getElementById('stDays');if(!el)return;var t=new Date(2027,1,19);var now=new Date();var d=Math.ceil((new Date(t.getFullYear(),t.getMonth(),t.getDate())-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);el.textContent=d>0?String(d):(d===0?'Today':'Underway');})();</script>
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="MLB standings view"><button type="button" role="tab" data-std="mlb:conf" aria-selected="true">League</button><button type="button" role="tab" data-std="mlb:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="mlbConfCard" aria-label="MLB final standings">
   <h2>⚾ MLB Standings — Final</h2>
@@ -1906,46 +1976,13 @@ body.on-sports footer{color:#aebfe6!important}
   <h3 class="div-h">National League</h3>
   <p class="astatus" id="mlbNlStatus">Loading standings…</p>
   <div id="mlbStandingsNL"></div>
-  <p class="asrc">Final standings: ESPN · Dashed line = playoff cut after 6th</p>
+  <p class="asrc">Final standings: ESPN</p>
   </section>
   <section class="acard" id="mlbDivCard" hidden aria-label="MLB division standings">
   <h2>Divisions — Final</h2>
   <p class="astatus" id="mlbDivStatus">Loading divisions…</p>
   <div id="mlbDivisions"></div>
   <p class="asrc">Final standings: ESPN</p>
-  </section>
-  <section class="card"><h2>⚾ Other MLB Teams</h2>
-  <div class="other-grid">
-    <a href="https://www.mlb.com/dbacks" target="_blank" rel="noopener">Arizona Diamondbacks &rarr;</a>
-    <a href="https://www.mlb.com/athletics" target="_blank" rel="noopener">Athletics &rarr;</a>
-    <a href="https://www.mlb.com/braves" target="_blank" rel="noopener">Atlanta Braves &rarr;</a>
-    <a href="https://www.mlb.com/orioles" target="_blank" rel="noopener">Baltimore Orioles &rarr;</a>
-    <a href="https://www.mlb.com/redsox" target="_blank" rel="noopener">Boston Red Sox &rarr;</a>
-    <a href="https://www.mlb.com/cubs" target="_blank" rel="noopener">Chicago Cubs &rarr;</a>
-    <a href="https://www.mlb.com/whitesox" target="_blank" rel="noopener">Chicago White Sox &rarr;</a>
-    <a href="https://www.mlb.com/reds" target="_blank" rel="noopener">Cincinnati Reds &rarr;</a>
-    <a href="https://www.mlb.com/guardians" target="_blank" rel="noopener">Cleveland Guardians &rarr;</a>
-    <a href="https://www.mlb.com/rockies" target="_blank" rel="noopener">Colorado Rockies &rarr;</a>
-    <a href="https://www.mlb.com/tigers" target="_blank" rel="noopener">Detroit Tigers &rarr;</a>
-    <a href="https://www.mlb.com/astros" target="_blank" rel="noopener">Houston Astros &rarr;</a>
-    <a href="https://www.mlb.com/royals" target="_blank" rel="noopener">Kansas City Royals &rarr;</a>
-    <a href="https://www.mlb.com/angels" target="_blank" rel="noopener">Los Angeles Angels &rarr;</a>
-    <a href="https://www.mlb.com/dodgers" target="_blank" rel="noopener">Los Angeles Dodgers &rarr;</a>
-    <a href="https://www.mlb.com/marlins" target="_blank" rel="noopener">Miami Marlins &rarr;</a>
-    <a href="https://www.mlb.com/brewers" target="_blank" rel="noopener">Milwaukee Brewers &rarr;</a>
-    <a href="https://www.mlb.com/twins" target="_blank" rel="noopener">Minnesota Twins &rarr;</a>
-    <a href="https://www.mlb.com/mets" target="_blank" rel="noopener">New York Mets &rarr;</a>
-    <a href="https://www.mlb.com/phillies" target="_blank" rel="noopener">Philadelphia Phillies &rarr;</a>
-    <a href="https://www.mlb.com/pirates" target="_blank" rel="noopener">Pittsburgh Pirates &rarr;</a>
-    <a href="https://www.mlb.com/padres" target="_blank" rel="noopener">San Diego Padres &rarr;</a>
-    <a href="https://www.mlb.com/giants" target="_blank" rel="noopener">San Francisco Giants &rarr;</a>
-    <a href="https://www.mlb.com/mariners" target="_blank" rel="noopener">Seattle Mariners &rarr;</a>
-    <a href="https://www.mlb.com/cardinals" target="_blank" rel="noopener">St. Louis Cardinals &rarr;</a>
-    <a href="https://www.mlb.com/rays" target="_blank" rel="noopener">Tampa Bay Rays &rarr;</a>
-    <a href="https://www.mlb.com/rangers" target="_blank" rel="noopener">Texas Rangers &rarr;</a>
-    <a href="https://www.mlb.com/bluejays" target="_blank" rel="noopener">Toronto Blue Jays &rarr;</a>
-    <a href="https://www.mlb.com/nationals" target="_blank" rel="noopener">Washington Nationals &rarr;</a>
-  </div>
   </section>
   </div>
   <div class="sport-panel" id="sport-basketball" hidden>
@@ -1974,57 +2011,19 @@ body.on-sports footer{color:#aebfe6!important}
   <h2>Western Conference</h2>
   <p class="astatus" id="westStatus">Loading standings…</p>
   <div id="standingsWest"></div>
-  <p class="asrc">Standings: ESPN · Playoffs %: ESPN BPI (bpi.json) · <span style="color:#ffd34d">★</span> = Lakers &amp; Suns · Dashed line = playoff cut after 6th</p>
+  <p class="asrc">Standings: ESPN · <span style="color:#ff6b61">★</span> = Lakers &amp; Suns</p>
   </section>
   <section class="acard" id="nbaEastCard" aria-label="Eastern Conference standings">
   <h2>Eastern Conference</h2>
   <p class="astatus" id="eastStatus">Loading standings…</p>
   <div id="standingsEast"></div>
-  <p class="asrc">Standings: ESPN · Playoffs %: ESPN BPI (bpi.json) · Dashed line = playoff cut after 6th</p>
+  <p class="asrc">Standings: ESPN</p>
   </section>
   <section class="acard" id="nbaDivCard" hidden aria-label="NBA division standings">
   <h2>Divisions</h2>
   <p class="astatus" id="nbaDivStatus">Loading divisions…</p>
   <div id="nbaDivisions"></div>
-  <p class="asrc">Standings: ESPN · Playoffs %: ESPN BPI (bpi.json)</p>
-  </section>
-  <section class="acard" aria-label="NBA Playoff Path">
-  <h2>🧭 Playoff Path</h2>
-  <label class="pp-lab">Pick a team<select id="ppNbaTeam" class="pp-sel" aria-label="Pick an NBA team"></select></label>
-  <div id="ppNbaOut"><p class="astatus">Loading Playoff Path…</p></div>
-  <p class="asrc">Record, seeds &amp; schedule: ESPN · Playoffs %: ESPN BPI (bpi.json) · Win targets are simple win-total math, not a simulation.</p>
-  </section>
-  <section class="acard"><h2>🏀 Other NBA Teams</h2>
-  <div class="other-grid">
-    <a href="https://www.nba.com/hawks" target="_blank" rel="noopener">Atlanta Hawks &rarr;</a>
-    <a href="https://www.nba.com/celtics" target="_blank" rel="noopener">Boston Celtics &rarr;</a>
-    <a href="https://www.nba.com/nets" target="_blank" rel="noopener">Brooklyn Nets &rarr;</a>
-    <a href="https://www.nba.com/hornets" target="_blank" rel="noopener">Charlotte Hornets &rarr;</a>
-    <a href="https://www.nba.com/bulls" target="_blank" rel="noopener">Chicago Bulls &rarr;</a>
-    <a href="https://www.nba.com/cavaliers" target="_blank" rel="noopener">Cleveland Cavaliers &rarr;</a>
-    <a href="https://www.mavs.com/" target="_blank" rel="noopener">Dallas Mavericks &rarr;</a>
-    <a href="https://www.nba.com/nuggets" target="_blank" rel="noopener">Denver Nuggets &rarr;</a>
-    <a href="https://www.nba.com/pistons" target="_blank" rel="noopener">Detroit Pistons &rarr;</a>
-    <a href="https://www.nba.com/warriors" target="_blank" rel="noopener">Golden State Warriors &rarr;</a>
-    <a href="https://www.nba.com/rockets" target="_blank" rel="noopener">Houston Rockets &rarr;</a>
-    <a href="https://www.nba.com/pacers" target="_blank" rel="noopener">Indiana Pacers &rarr;</a>
-    <a href="https://www.nba.com/clippers" target="_blank" rel="noopener">LA Clippers &rarr;</a>
-    <a href="https://www.nba.com/grizzlies" target="_blank" rel="noopener">Memphis Grizzlies &rarr;</a>
-    <a href="https://www.nba.com/heat" target="_blank" rel="noopener">Miami Heat &rarr;</a>
-    <a href="https://www.nba.com/bucks" target="_blank" rel="noopener">Milwaukee Bucks &rarr;</a>
-    <a href="https://www.nba.com/timberwolves" target="_blank" rel="noopener">Minnesota Timberwolves &rarr;</a>
-    <a href="https://www.nba.com/pelicans" target="_blank" rel="noopener">New Orleans Pelicans &rarr;</a>
-    <a href="https://www.nba.com/knicks" target="_blank" rel="noopener">New York Knicks &rarr;</a>
-    <a href="https://www.nba.com/thunder" target="_blank" rel="noopener">Oklahoma City Thunder &rarr;</a>
-    <a href="https://www.nba.com/magic" target="_blank" rel="noopener">Orlando Magic &rarr;</a>
-    <a href="https://www.nba.com/sixers" target="_blank" rel="noopener">Philadelphia 76ers &rarr;</a>
-    <a href="https://www.nba.com/blazers" target="_blank" rel="noopener">Portland Trail Blazers &rarr;</a>
-    <a href="https://www.nba.com/kings" target="_blank" rel="noopener">Sacramento Kings &rarr;</a>
-    <a href="https://www.nba.com/spurs" target="_blank" rel="noopener">San Antonio Spurs &rarr;</a>
-    <a href="https://www.nba.com/raptors" target="_blank" rel="noopener">Toronto Raptors &rarr;</a>
-    <a href="https://www.nba.com/jazz" target="_blank" rel="noopener">Utah Jazz &rarr;</a>
-    <a href="https://www.nba.com/wizards" target="_blank" rel="noopener">Washington Wizards &rarr;</a>
-  </div>
+  <p class="asrc">Standings: ESPN</p>
   </section>
   </div>
   <div class="sport-panel" id="sport-football" hidden>
@@ -2056,63 +2055,25 @@ body.on-sports footer{color:#aebfe6!important}
   <h2>American Football Conference</h2>
   <p class="astatus" id="nflAfcStatus">Loading standings…</p>
   <div id="standingsAfc"></div>
-  <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI (fpi.json) &middot; <span style="color:#ffd34d">★</span> = Jaguars, Patriots, Saints &amp; Eagles &middot; Dashed line = playoff cut after 7th</p>
+  <p class="asrc">Standings: ESPN &middot; <span style="color:#ff6b61">★</span> = Jaguars, Patriots, Saints &amp; Eagles</p>
   </section>
   <section class="acard" id="nflNfcCard" aria-label="NFC standings">
   <h2>National Football Conference</h2>
   <p class="astatus" id="nflNfcStatus">Loading standings…</p>
   <div id="standingsNfc"></div>
-  <p class="asrc">Standings: ESPN &middot; Playoffs %: ESPN FPI (fpi.json) &middot; Dashed line = playoff cut after 7th</p>
+  <p class="asrc">Standings: ESPN</p>
   </section>
   <section class="acard" id="nflDivCard" hidden aria-label="NFL division standings">
   <h2>Divisions</h2>
   <p class="astatus" id="nflDivStatus">Loading divisions…</p>
   <div id="nflDivisions"></div>
-  <p class="asrc">Standings: ESPN · Playoffs %: ESPN FPI (fpi.json)</p>
+  <p class="asrc">Standings: ESPN</p>
   </section>
   <section class="acard" aria-label="Projected playoff bracket">
   <h2>🏆 Projected Playoff Bracket</h2>
   <p class="astatus" id="nflBracketStatus">Loading projection&hellip;</p>
   <div id="nflBracket"></div>
   <p class="asrc">Seeds: ESPN standings &middot; Win chances: ESPN FPI (fpi.json) &middot; <a href="https://www.nflplayoffscenario.com/bracket" target="_blank" rel="noopener" style="color:#9fc0ff;text-decoration:underline">Full simulator &rarr;</a></p>
-  </section>
-  <section class="acard" aria-label="NFL Playoff Path">
-  <h2>🧭 Playoff Path</h2>
-  <label class="pp-lab">Pick a team<select id="ppNflTeam" class="pp-sel" aria-label="Pick an NFL team"></select></label>
-  <div id="ppNflOut"><p class="astatus">Loading Playoff Path…</p></div>
-  <p class="asrc">Record, seeds &amp; schedule: ESPN · Playoffs %: ESPN FPI (fpi.json) · Win targets are simple win-total math, not a simulation.</p>
-  </section>
-  <section class="acard"><h2>🏈 Other NFL Teams</h2>
-  <div class="other-grid">
-    <a href="https://www.nfl.com/teams/arizona-cardinals/" target="_blank" rel="noopener">Arizona Cardinals &rarr;</a>
-    <a href="https://www.nfl.com/teams/atlanta-falcons/" target="_blank" rel="noopener">Atlanta Falcons &rarr;</a>
-    <a href="https://www.nfl.com/teams/baltimore-ravens/" target="_blank" rel="noopener">Baltimore Ravens &rarr;</a>
-    <a href="https://www.nfl.com/teams/buffalo-bills/" target="_blank" rel="noopener">Buffalo Bills &rarr;</a>
-    <a href="https://www.nfl.com/teams/carolina-panthers/" target="_blank" rel="noopener">Carolina Panthers &rarr;</a>
-    <a href="https://www.nfl.com/teams/chicago-bears/" target="_blank" rel="noopener">Chicago Bears &rarr;</a>
-    <a href="https://www.nfl.com/teams/cincinnati-bengals/" target="_blank" rel="noopener">Cincinnati Bengals &rarr;</a>
-    <a href="https://www.nfl.com/teams/cleveland-browns/" target="_blank" rel="noopener">Cleveland Browns &rarr;</a>
-    <a href="https://www.nfl.com/teams/dallas-cowboys/" target="_blank" rel="noopener">Dallas Cowboys &rarr;</a>
-    <a href="https://www.nfl.com/teams/denver-broncos/" target="_blank" rel="noopener">Denver Broncos &rarr;</a>
-    <a href="https://www.nfl.com/teams/detroit-lions/" target="_blank" rel="noopener">Detroit Lions &rarr;</a>
-    <a href="https://www.nfl.com/teams/green-bay-packers/" target="_blank" rel="noopener">Green Bay Packers &rarr;</a>
-    <a href="https://www.nfl.com/teams/houston-texans/" target="_blank" rel="noopener">Houston Texans &rarr;</a>
-    <a href="https://www.nfl.com/teams/indianapolis-colts/" target="_blank" rel="noopener">Indianapolis Colts &rarr;</a>
-    <a href="https://www.nfl.com/teams/kansas-city-chiefs/" target="_blank" rel="noopener">Kansas City Chiefs &rarr;</a>
-    <a href="https://www.nfl.com/teams/las-vegas-raiders/" target="_blank" rel="noopener">Las Vegas Raiders &rarr;</a>
-    <a href="https://www.nfl.com/teams/los-angeles-chargers/" target="_blank" rel="noopener">Los Angeles Chargers &rarr;</a>
-    <a href="https://www.nfl.com/teams/los-angeles-rams/" target="_blank" rel="noopener">Los Angeles Rams &rarr;</a>
-    <a href="https://www.nfl.com/teams/miami-dolphins/" target="_blank" rel="noopener">Miami Dolphins &rarr;</a>
-    <a href="https://www.nfl.com/teams/minnesota-vikings/" target="_blank" rel="noopener">Minnesota Vikings &rarr;</a>
-    <a href="https://www.nfl.com/teams/new-york-giants/" target="_blank" rel="noopener">New York Giants &rarr;</a>
-    <a href="https://www.nfl.com/teams/new-york-jets/" target="_blank" rel="noopener">New York Jets &rarr;</a>
-    <a href="https://www.nfl.com/teams/pittsburgh-steelers/" target="_blank" rel="noopener">Pittsburgh Steelers &rarr;</a>
-    <a href="https://www.nfl.com/teams/san-francisco-49ers/" target="_blank" rel="noopener">San Francisco 49ers &rarr;</a>
-    <a href="https://www.nfl.com/teams/seattle-seahawks/" target="_blank" rel="noopener">Seattle Seahawks &rarr;</a>
-    <a href="https://www.nfl.com/teams/tampa-bay-buccaneers/" target="_blank" rel="noopener">Tampa Bay Buccaneers &rarr;</a>
-    <a href="https://www.nfl.com/teams/tennessee-titans/" target="_blank" rel="noopener">Tennessee Titans &rarr;</a>
-    <a href="https://www.nfl.com/teams/washington-commanders/" target="_blank" rel="noopener">Washington Commanders &rarr;</a>
-  </div>
   </section>
   </div>
   <div class="sport-panel" id="sport-hockey" hidden>
@@ -2136,49 +2097,13 @@ body.on-sports footer{color:#aebfe6!important}
   <h2>Eastern Conference</h2>
   <p class="astatus" id="nhlEastStatus">Loading standings…</p>
   <div id="nhlStandingsEast"></div>
-  <p class="asrc">Standings: ESPN &middot; W / L / OTL / PTS &middot; Dashed line = playoff cut after 8th</p>
+  <p class="asrc">Standings: ESPN &middot; W / L / OTL / PTS</p>
   </section>
   <section class="acard" aria-label="Western Conference standings">
   <h2>Western Conference</h2>
   <p class="astatus" id="nhlWestStatus">Loading standings…</p>
   <div id="nhlStandingsWest"></div>
-  <p class="asrc">Standings: ESPN &middot; W / L / OTL / PTS &middot; Dashed line = playoff cut after 8th</p>
-  </section>
-  <section class="acard"><h2>🏒 NHL Teams</h2>
-  <div class="other-grid">
-    <a href="https://www.nhl.com/ducks" target="_blank" rel="noopener">Anaheim Ducks &rarr;</a>
-    <a href="https://www.nhl.com/bruins" target="_blank" rel="noopener">Boston Bruins &rarr;</a>
-    <a href="https://www.nhl.com/sabres" target="_blank" rel="noopener">Buffalo Sabres &rarr;</a>
-    <a href="https://www.nhl.com/flames" target="_blank" rel="noopener">Calgary Flames &rarr;</a>
-    <a href="https://www.nhl.com/hurricanes" target="_blank" rel="noopener">Carolina Hurricanes &rarr;</a>
-    <a href="https://www.nhl.com/blackhawks" target="_blank" rel="noopener">Chicago Blackhawks &rarr;</a>
-    <a href="https://www.nhl.com/avalanche" target="_blank" rel="noopener">Colorado Avalanche &rarr;</a>
-    <a href="https://www.nhl.com/bluejackets" target="_blank" rel="noopener">Columbus Blue Jackets &rarr;</a>
-    <a href="https://www.nhl.com/stars" target="_blank" rel="noopener">Dallas Stars &rarr;</a>
-    <a href="https://www.nhl.com/redwings" target="_blank" rel="noopener">Detroit Red Wings &rarr;</a>
-    <a href="https://www.nhl.com/oilers" target="_blank" rel="noopener">Edmonton Oilers &rarr;</a>
-    <a href="https://www.nhl.com/panthers" target="_blank" rel="noopener">Florida Panthers &rarr;</a>
-    <a href="https://www.nhl.com/kings" target="_blank" rel="noopener">Los Angeles Kings &rarr;</a>
-    <a href="https://www.nhl.com/wild" target="_blank" rel="noopener">Minnesota Wild &rarr;</a>
-    <a href="https://www.nhl.com/canadiens" target="_blank" rel="noopener">Montreal Canadiens &rarr;</a>
-    <a href="https://www.nhl.com/predators" target="_blank" rel="noopener">Nashville Predators &rarr;</a>
-    <a href="https://www.nhl.com/devils" target="_blank" rel="noopener">New Jersey Devils &rarr;</a>
-    <a href="https://www.nhl.com/islanders" target="_blank" rel="noopener">New York Islanders &rarr;</a>
-    <a href="https://www.nhl.com/rangers" target="_blank" rel="noopener">New York Rangers &rarr;</a>
-    <a href="https://www.nhl.com/senators" target="_blank" rel="noopener">Ottawa Senators &rarr;</a>
-    <a href="https://www.nhl.com/flyers" target="_blank" rel="noopener">Philadelphia Flyers &rarr;</a>
-    <a href="https://www.nhl.com/penguins" target="_blank" rel="noopener">Pittsburgh Penguins &rarr;</a>
-    <a href="https://www.nhl.com/sharks" target="_blank" rel="noopener">San Jose Sharks &rarr;</a>
-    <a href="https://www.nhl.com/kraken" target="_blank" rel="noopener">Seattle Kraken &rarr;</a>
-    <a href="https://www.nhl.com/blues" target="_blank" rel="noopener">St. Louis Blues &rarr;</a>
-    <a href="https://www.nhl.com/lightning" target="_blank" rel="noopener">Tampa Bay Lightning &rarr;</a>
-    <a href="https://www.nhl.com/mapleleafs" target="_blank" rel="noopener">Toronto Maple Leafs &rarr;</a>
-    <a href="https://www.nhl.com/utah" target="_blank" rel="noopener">Utah Mammoth &rarr;</a>
-    <a href="https://www.nhl.com/canucks" target="_blank" rel="noopener">Vancouver Canucks &rarr;</a>
-    <a href="https://www.nhl.com/goldenknights" target="_blank" rel="noopener">Vegas Golden Knights &rarr;</a>
-    <a href="https://www.nhl.com/capitals" target="_blank" rel="noopener">Washington Capitals &rarr;</a>
-    <a href="https://www.nhl.com/jets" target="_blank" rel="noopener">Winnipeg Jets &rarr;</a>
-  </div>
+  <p class="asrc">Standings: ESPN &middot; W / L / OTL / PTS</p>
   </section>
   </div>
   <div class="sport-panel" id="sport-ufc" hidden>
@@ -2215,8 +2140,8 @@ body.on-sports footer{color:#aebfe6!important}
   <div class="sport-panel" id="sport-betsim" hidden data-pick="">
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
   <div class="betsport-picker" role="group" aria-label="Pick a sport">
-    <p class="betsport-pick-label">🎟️ Pick a sport first</p>
-    <div class="betsport-btns"><button type="button" class="betsport-btn" data-betsport="nba" aria-pressed="false">🏀 NBA<span class="dn-dot" data-betdot="nba" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nfl" aria-pressed="false">🏈 NFL<span class="dn-dot" data-betdot="nfl" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nhl" aria-pressed="false">🏒 NHL<span class="dn-dot" data-betdot="nhl" aria-hidden="true"></span></button></div>
+    <p class="betsport-pick-label">🎟️ All sports — tap one to filter</p>
+    <div class="betsport-btns"><button type="button" class="betsport-btn" data-betsport="all" aria-pressed="true">All</button><button type="button" class="betsport-btn" data-betsport="nba" aria-pressed="false">🏀 NBA<span class="dn-dot" data-betdot="nba" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nfl" aria-pressed="false">🏈 NFL<span class="dn-dot" data-betdot="nfl" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nhl" aria-pressed="false">🏒 NHL<span class="dn-dot" data-betdot="nhl" aria-hidden="true"></span></button></div>
   </div>
   <style>
   #liveParlaySection[hidden]{display:none!important}
@@ -2235,6 +2160,60 @@ body.on-sports footer{color:#aebfe6!important}
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
   </section>
   </div>
+  <div class="team-sheet" id="teamSheet" hidden role="dialog" aria-modal="true" aria-label="Team detail">
+    <div class="team-sheet-backdrop" data-team-close></div>
+    <div class="team-sheet-card">
+      <button type="button" class="team-sheet-x" data-team-close aria-label="Close">&times;</button>
+      <h2 id="teamSheetName">Team</h2>
+      <p class="team-sheet-stats" id="teamSheetStats"></p>
+      <h3>Upcoming games</h3>
+      <div id="teamSheetUpcoming"><p class="astatus">Loading upcoming games&hellip;</p></div>
+      <h3>Last 5</h3>
+      <div id="teamSheetForm"><p class="astatus">Loading recent form&hellip;</p></div>
+    </div>
+  </div>
+  <script>
+  /* Team detail sheet — tap a standings row to see a team's seasonal
+     stats, upcoming games and last-5 form (ESPN team schedule). */
+  (function(){
+    var sheet=document.getElementById('teamSheet');if(!sheet)return;
+    var PATH={nba:'basketball/nba',nfl:'football/nfl',nhl:'hockey/nhl',mlb:'baseball/mlb'};
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function fmtDay(iso){try{var d=new Date(iso);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}catch(e){return '';}}
+    function fmtTime(iso){try{var d=new Date(iso);return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+    function close(){sheet.hidden=true;document.body.style.overflow='';}
+    sheet.querySelectorAll('[data-team-close]').forEach(function(b){b.addEventListener('click',close);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)close();});
+    document.addEventListener('click',function(e){
+      var tr=e.target.closest?e.target.closest('tr[data-team-id]'):null;
+      if(!tr)return;
+      var id=tr.getAttribute('data-team-id'),lg=tr.getAttribute('data-league');
+      if(!id||!lg||!PATH[lg])return;
+      document.getElementById('teamSheetName').textContent=tr.getAttribute('data-team-name')||'Team';
+      document.getElementById('teamSheetStats').textContent=tr.getAttribute('data-stats')||'';
+      document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Loading upcoming games&hellip;</p>';
+      document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Loading recent form&hellip;</p>';
+      sheet.hidden=false;document.body.style.overflow='hidden';
+      fetch('https://site.api.espn.com/apis/site/v2/sports/'+PATH[lg]+'/teams/'+encodeURIComponent(id)+'/schedule').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+        var evs=(d&&d.events)||[];
+        function side(e){var c=(e.competitions||[])[0]||{};var mine=null,opp=null;(c.competitors||[]).forEach(function(x){if(String(x.team.id)===String(id)){mine=x;}else opp=x;});return{mine:mine,opp:opp,comp:c};}
+        function oppName(e){var s=side(e);var t=s.opp&&s.opp.team;return t?(t.shortDisplayName||t.displayName||t.name||''):'Opponent';}
+        function ha(e){var s=side(e);return s.mine&&s.mine.homeAway==='home'?'vs':'@';}
+        var now=Date.now();
+        var up=evs.filter(function(e){var c=(e.competitions||[])[0]||{};var st=c.status&&c.status.type;return !(st&&st.completed)&&new Date(e.date).getTime()>=now-3600000;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,5);
+        var done=evs.filter(function(e){var c=(e.competitions||[])[0]||{};var st=c.status&&c.status.type;return st&&st.completed;}).sort(function(a,b){return new Date(b.date)-new Date(a.date);}).slice(0,5);
+        var upEl=document.getElementById('teamSheetUpcoming');
+        upEl.innerHTML=up.length?up.map(function(e){return '<div class="ts-game"><span>'+esc(fmtDay(e.date))+' · '+esc(fmtTime(e.date))+'</span><span><b>'+esc(ha(e)+' '+oppName(e))+'</b></span></div>';}).join(''):'<p class="astatus">No upcoming games listed right now.</p>';
+        var fmEl=document.getElementById('teamSheetForm');
+        if(!done.length){fmEl.innerHTML='<p class="astatus">No recent games found.</p>';return;}
+        fmEl.innerHTML=done.map(function(e){var s=side(e);var ms=s.mine&&s.mine.score?parseFloat(s.mine.score.value):NaN,os=s.opp&&s.opp.score?parseFloat(s.opp.score.value):NaN;var w=!isNaN(ms)&&!isNaN(os)?(ms>os?'W':'L'):'—';var sc=(!isNaN(ms)&&!isNaN(os))?(' '+ms+'-'+os):'';return '<div class="ts-game"><span>'+esc(fmtDay(e.date))+'</span><span><b>'+esc(w+' '+ha(e)+' '+oppName(e)+sc)+'</b></span></div>';}).join('');
+      }).catch(function(){
+        document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Couldn\u2019t load upcoming games right now.</p>';
+        document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Couldn\u2019t load recent form right now.</p>';
+      });
+    });
+  })();
+  </script>
 </main>
 <!-- FAITH / RELIGION -->
 <main class="wrap view" id="view-faith">
@@ -2245,6 +2224,7 @@ body.on-sports footer{color:#aebfe6!important}
 .mass-btn{display:block;margin:20px auto 0;max-width:520px;background:#b42318;color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 18px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.22);min-height:54px}
 .votd-btn{display:block;margin:20px auto 0;max-width:520px;background:#1d2a30;color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 18px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.22);min-height:54px}
 .faith-note{font-size:13px;color:var(--soft);margin-top:12px!important}
+.faith-scene{margin:18px -20px 0;line-height:0}.faith-scene svg{display:block;width:100%;height:74px}
 #view-faith .faith-events{margin-top:34px;background:var(--panel);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:30px 24px;text-align:center}
 #view-faith .faith-events h2{margin:0 0 8px;font-size:clamp(22px,5vw,28px)}
 #view-faith .faith-events>p{line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto}
@@ -2252,14 +2232,23 @@ body.on-sports footer{color:#aebfe6!important}
 .fe-event-main{min-width:0}
 .fe-event-name{font-weight:700;font-size:16px;line-height:1.35}
 .fe-event-date{color:var(--soft);font-size:14px;margin-top:2px;line-height:1.45}
-.fe-hdo{display:inline-block;margin-top:6px;background:#b42318;color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px}
+.fe-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#b42318;margin-left:7px;vertical-align:1px;flex:none}
+.fe-legend{font-size:13px;color:var(--soft);margin-top:14px!important}
+.fe-legend .fe-dot{margin-left:0;margin-right:6px}
 .fe-when{flex:none;font-weight:700;font-size:14px;color:#7c2d12;background:#fdeeda;border:1px solid rgba(180,120,40,.35);border-radius:999px;padding:7px 11px;white-space:nowrap}
 @media(prefers-color-scheme:dark){.fe-when{color:#ffd98a;background:rgba(0,0,0,.3)}}
 
 /* ===== Faith church background (Nov 13) — static stained-glass /
    warm church treatment, no live photo, no auto-update. Cards keep a
    solid warm panel on top of it so every section stays readable. ===== */
+body.on-home{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(255,170,80,.5),transparent 60%),radial-gradient(ellipse 80% 34% at 18% 30%,rgba(200,110,40,.28),transparent 70%),radial-gradient(ellipse 80% 34% at 85% 55%,rgba(140,70,20,.24),transparent 70%),linear-gradient(180deg,#6b3a14 0%,#8a4a1c 30%,#5e2f12 62%,#3a1e0c 100%);color:#fff3e0}
+body.on-home::before{background:radial-gradient(ellipse 60% 30% at 50% 12%,rgba(255,200,120,.22),transparent 70%)}
+body.on-home .bottomnav{background:rgba(58,30,12,.55);border-color:rgba(255,200,120,.35);box-shadow:0 16px 38px rgba(10,2,0,.5),inset 0 1px 0 rgba(255,220,170,.28)}
 body.on-faith{background:radial-gradient(ellipse 95% 40% at 50% -6%,rgba(255,198,92,.6),transparent 62%),repeating-linear-gradient(90deg,rgba(255,216,150,.055) 0 2px,transparent 2px 118px),linear-gradient(180deg,#40220f 0%,#5f2f16 26%,#38202a 58%,#1e130e 100%);color:#fff7e8}
+body.on-faith[data-faith-phase="dawn"]{background:radial-gradient(ellipse 95% 42% at 50% -6%,rgba(255,190,110,.65),transparent 62%),linear-gradient(180deg,#7a3b1e 0%,#a85a2a 30%,#5b2a3a 62%,#241a2e 100%)}
+body.on-faith[data-faith-phase="day"]{background:radial-gradient(ellipse 95% 42% at 50% -6%,rgba(255,230,150,.55),transparent 62%),linear-gradient(180deg,#2e5d3a 0%,#4a7a4d 30%,#2c4a5e 62%,#16283a 100%)}
+body.on-faith[data-faith-phase="dusk"]{background:radial-gradient(ellipse 95% 42% at 50% -6%,rgba(255,150,90,.6),transparent 62%),linear-gradient(180deg,#6b2a4a 0%,#8a3a3a 30%,#3a2a4a 62%,#1c1426 100%)}
+body.on-faith[data-faith-phase="night"]{background:radial-gradient(ellipse 95% 42% at 50% -6%,rgba(120,150,220,.35),transparent 62%),linear-gradient(180deg,#101c33 0%,#1a2a4a 30%,#14202e 62%,#0a101c 100%)}
 body.on-faith::before{background:radial-gradient(ellipse 48% 30% at 16% 9%,rgba(255,172,64,.36),transparent 70%),radial-gradient(ellipse 48% 30% at 84% 15%,rgba(164,62,92,.32),transparent 70%),radial-gradient(ellipse 62% 34% at 50% 48%,rgba(72,92,168,.22),transparent 70%)}
 body.on-faith .bottomnav{background:rgba(46,27,15,.55);border-color:rgba(255,220,150,.38);box-shadow:0 16px 38px rgba(10,2,0,.5),inset 0 1px 0 rgba(255,230,170,.3)}
 body.on-faith .tab{color:#f3ddba!important;background:transparent!important}
@@ -2362,12 +2351,14 @@ body.on-faith footer{color:#e8cf9f!important}
     <p>Watch this week&rsquo;s Catholic Mass from Heart of the Nation on YouTube.</p>
     <a class="mass-btn" href="https://www.youtube.com/channel/UCv0TUu1tuIdVqRLFwGlos4A" target="_blank" rel="noopener">▶ Watch the Weekly Mass on YouTube &rarr;</a>
     </section>
+  <div class="faith-scene" aria-hidden="true"><svg viewBox="0 0 600 90" preserveAspectRatio="xMidYMax slice" role="presentation" focusable="false"><path d="M0 78 Q120 46 240 66 T480 58 T600 70 V90 H0 Z" fill="rgba(0,0,0,.28)"/><path d="M0 86 Q160 62 320 76 T600 80 V90 H0 Z" fill="rgba(0,0,0,.34)"/><g fill="rgba(0,0,0,.45)"><rect x="286" y="34" width="28" height="56"/><path d="M282 36 L300 20 L318 36 Z"/><rect x="297" y="8" width="6" height="16"/><rect x="292" y="2" width="16" height="4"/></g></svg></div>
+  <script>(function(){function ph(){var h=new Date().getHours();return (h>=5&&h<8)?'dawn':(h>=8&&h<16)?'day':(h>=16&&h<19)?'dusk':'night';}function set(){document.body.setAttribute('data-faith-phase',ph());}set();setInterval(set,60*60*1000);})();</script>
   <section class="faith-events" aria-label="Upcoming religious events">
     <div style="font-size:46px;line-height:1" aria-hidden="true">🗓️</div>
     <h2>Upcoming Religious Events</h2>
     <p>Major Catholic holy days and feasts coming up, soonest first. Dates checked against the USCCB Liturgical Calendar for the Dioceses of the United States of America.</p>
     <div id="faithEventsList"><p class="faith-note">Loading upcoming events&hellip;</p></div>
-    <p class="faith-note">Holy Day of Obligation = Catholics are required to attend Mass that day (in addition to Sundays). Ascension is a holy day on Thu, May 6, 2027 in the New York province, which includes the Diocese of Syracuse &mdash; in many other U.S. dioceses it is observed on Sun, May 9, 2027 instead.</p>
+    <p class="faith-note fe-legend"><span class="fe-dot" aria-hidden="true"></span> = Holy Day of Obligation &mdash; Catholics are required to attend Mass that day.</p>
   </section>
   <script>
   /* Upcoming Religious Events — verified fixed dates for the
@@ -2402,10 +2393,8 @@ body.on-faith footer{color:#e8cf9f!important}
       {d:'2027-03-28',name:'Easter Sunday',note:'The Resurrection of the Lord'},
       {d:'2027-05-06',name:'Ascension of the Lord',note:'In many other U.S. dioceses it is observed on Sun, May 9, 2027 instead',hdo:true},
       {d:'2027-05-16',name:'Pentecost Sunday',note:'The birthday of the Church'},
-      {d:'2027-05-30',name:'Corpus Christi',note:'The Most Holy Body and Blood of Christ \u2014 observed on Sunday in the U.S.'},
       {d:'2027-08-15',name:'Assumption of Mary',note:'Falls on a Sunday in 2027',hdo:true},
       {d:'2027-11-01',name:'All Saints Day',note:'A holy day of obligation in the U.S. \u2014 in 2027 it falls on a Monday, so the obligation to attend Mass is lifted in the U.S. that year'},
-      {d:'2027-11-02',name:'All Souls Day',note:'Praying for all the faithful departed'},
       {d:'2027-11-28',name:'First Sunday of Advent',note:'Advent begins'},
       {d:'2027-12-08',name:'Immaculate Conception',note:'Patronal feast of the United States',hdo:true},
       {d:'2027-12-25',name:'Christmas \u2014 The Nativity of the Lord',hdo:true}
@@ -2419,12 +2408,12 @@ body.on-faith footer{color:#e8cf9f!important}
     function render(){
       var today=fmtET.format(new Date());
       var tNum=dayNum(today);
-      var up=EV.map(function(e){return{e:e,days:dayNum(e.d)-tNum};}).filter(function(x){return x.days>=0;}).sort(function(a,b){return a.days-b.days;}).slice(0,10);
+      var up=EV.map(function(e){return{e:e,days:dayNum(e.d)-tNum};}).filter(function(x){return x.days>=0;}).sort(function(a,b){return a.days-b.days;}).slice(0,6);
       if(!up.length){box.innerHTML='<p class="faith-note">No upcoming events are listed right now \u2014 check back soon.</p>';return;}
       box.innerHTML=up.map(function(x){
         var e=x.e;
         var when=x.days===0?'Today':(x.days===1?'Tomorrow':('in '+x.days+' days'));
-        return '<div class="fe-event"><div class="fe-event-main"><div class="fe-event-name">'+e.name+'</div><div class="fe-event-date">'+fmt(e.d)+(e.note?' \u00b7 '+e.note:'')+'</div>'+(e.hdo?'<span class="fe-hdo">Holy Day of Obligation</span>':'')+'</div><span class="fe-when">'+when+'</span></div>';
+        return '<div class="fe-event"><div class="fe-event-main"><div class="fe-event-name">'+e.name+(e.hdo?'<span class="fe-dot" aria-label="Holy Day of Obligation"></span>':'')+'</div><div class="fe-event-date">'+fmt(e.d)+(e.note?' \u00b7 '+e.note:'')+'</div></div><span class="fe-when">'+when+'</span></div>';
       }).join('');
     }
     render();
@@ -2444,12 +2433,18 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 .xmas{background:linear-gradient(160deg,#7a1710,#b42318 45%,#14532d);border:2px solid #fff;border-radius:20px;padding:34px 22px;margin-top:34px;color:#fff;text-align:center;box-shadow:var(--shadow)}
 .xmas .big{font-size:clamp(44px,10vw,68px);font-weight:700;line-height:1;margin:10px 0}.xmas h2{color:#14532d;background:#fff;border:2px solid #14532d;border-radius:10px;padding:10px 12px;font-style:italic;margin:0;font-size:clamp(26px,5vw,34px)}
 .check{text-align:left;max-width:520px;margin:18px auto 0;line-height:1.9;font-size:16px}.check li{margin:8px 0}
-.santa{margin-top:34px;background:#fff;border:2px solid #b42318;border-radius:20px;padding:30px 24px;text-align:center;box-shadow:var(--shadow);color:#1d2a30}
-.santa h2{color:#b42318;margin:0 0 8px;font-size:clamp(24px,5vw,30px)}
-.santa p{line-height:1.65;color:#3d4f57;max-width:600px;margin:0 auto}
-.santa-btn{display:block;margin:16px auto 0;max-width:520px;background:#b42318;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 18px;border-radius:999px;border:2px solid #14532d;box-shadow:0 3px 10px rgba(0,0,0,.25);min-height:56px}
-.santa-btn:hover{background:#14532d}
-.santa-note{font-size:13px;color:#6b7a80;margin-top:12px}
+.xmas-panel{margin-top:34px;background:#fff;border:2px solid #14532d;border-radius:20px;box-shadow:var(--shadow);color:#0f2419;overflow:hidden}
+.xp-row{display:flex;align-items:center;gap:16px;padding:24px;border-bottom:1px solid rgba(20,83,45,.25)}
+.xp-row:last-child{border-bottom:0}
+.xp-ic{flex:none;font-size:40px;line-height:1}
+.xp-main{flex:1;min-width:0;text-align:left}
+.xp-main h2{color:#8f1d14;margin:0 0 4px;font-size:clamp(21px,4.5vw,26px)}
+.xp-main p{line-height:1.6;color:#24382d;margin:0}
+.xp-btn{flex:none;background:#b42318;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 18px;border-radius:999px;border:2px solid #14532d;box-shadow:0 2px 8px rgba(0,0,0,.2);white-space:nowrap}
+.xp-btn:hover{background:#14532d}
+.xp-check{align-items:flex-start}
+.xp-check .check{margin:6px 0 0}
+.xmas-panel .xmas-radio{margin-top:0;flex:none}
 body.on-christmas footer{color:#fff!important}
 body.on-christmas{--ink:#0f2419;--soft:#24382d;--link:#0b3d20;--panel:#fff;--border:rgba(20,83,45,.4);--nav:#fff;--sky3:#fff;--green:#14532d}
 body.on-christmas .bottomnav{background:rgba(255,255,255,.72);border-color:rgba(255,255,255,.9)}
@@ -2459,10 +2454,6 @@ body.on-christmas .tab[aria-selected="true"]{background:#14532d!important;color:
 #view-christmas .card{background:#fff!important;color:#0f2419!important;border:2px solid #14532d!important}
 #view-christmas .card h2{color:#0b3d20!important}
 #view-christmas .card p,#view-christmas .card li,#view-christmas .check,#view-christmas .check li{color:#0f2419!important}
-#view-christmas .santa{color:#0f2419!important}
-#view-christmas .santa h2{color:#8f1d14!important}
-#view-christmas .santa p{color:#24382d!important}
-#view-christmas .santa-note{color:#3a4a40!important}
 body.on-christmas{color-scheme:light}
 #view-christmas .hero .dateline{color:#fff!important}
 </style>
@@ -2470,27 +2461,30 @@ body.on-christmas{color-scheme:light}
   <div class="xmas"><h2>Countdown to Christmas</h2>
   <div class="big"><span id="xDays">—</span> days</div>
   <p id="xLine" style="opacity:.92;margin:0">Counting down to December 25…</p></div>
-  <section class="santa" aria-label="Google Santa Tracker">
-    <div style="font-size:52px;line-height:1" aria-hidden="true">🎅</div>
-    <h2>Google Santa Tracker</h2>
-    <p>Track Santa on Christmas Eve with Google.</p>
-    <a class="santa-btn" href="https://santatracker.google.com/" target="_blank" rel="noopener">🎅 Track Santa with Google &rarr;</a>
-    
+  <section class="xmas-panel" aria-label="Christmas">
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">🎅</div>
+      <div class="xp-main"><h2>Google Santa Tracker</h2><p>Track Santa on Christmas Eve with Google.</p></div>
+      <a class="xp-btn" href="https://santatracker.google.com/" target="_blank" rel="noopener">Track Santa &rarr;</a>
+    </div>
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">🎵</div>
+      <div class="xp-main"><h2>Christmas Radio</h2><p>Christmas hits, live all season. Tap play to listen.</p></div>
+      <div class="xmas-radio"><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="xmas-radio-status" id="xmasRadioStatus" role="status"></p><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div>
+    </div>
+    <div class="xp-row xp-check">
+      <div class="xp-ic" aria-hidden="true">🎁</div>
+      <div class="xp-main"><h2>Christmas Checklist</h2>
+      <ul class="check">
+        <li>Put up the tree and lights</li>
+        <li>Make the gift list — and check it twice</li>
+        <li>Plan Christmas Mass and family time</li>
+        <li>Stock up on wrapping paper, cards, and cocoa</li>
+        <li>Watch the Weather tab before any holiday travel</li>
+        <li>Check the Google Santa Tracker on Christmas Eve</li>
+      </ul></div>
+    </div>
   </section>
-  <section class="santa" aria-label="Christmas Radio, playing in this page" style="border-color:#14532d">
-    <h2 style="color:#14532d">Christmas Radio</h2>
-    <p>Christmas hits, live all season.</p>
-    <div class="xmas-radio"><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="xmas-radio-status" id="xmasRadioStatus" role="status"></p><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div>
-  </section>
-  <section class="card"><h2>🎁 Christmas Checklist</h2>
-  <ul class="check">
-    <li>Put up the tree and lights</li>
-    <li>Make the gift list — and check it twice</li>
-    <li>Plan Christmas Mass and family time</li>
-    <li>Stock up on wrapping paper, cards, and cocoa</li>
-    <li>Watch the Weather tab before any holiday travel</li>
-    <li>Check the Google Santa Tracker on Christmas Eve</li>
-  </ul></section>
   </main>
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News<div style="font-size:11.5px;opacity:.65;margin-top:5px">Last updated <span id="footerUpdated"></span></div></footer>
 <script>
@@ -3265,7 +3259,7 @@ body.on-christmas{color-scheme:light}
     function stat(l,v,u){return '<div class="wxtrend-stat"><div class="l">'+l+'</div><div class="v">'+v+'</div>'+(u?'<div class="u">'+u+'</div>':'')+'</div>';}
     if(stEl)stEl.innerHTML=stat('Warmest day',hi[peak]+'\u00B0',full[peak])+stat('Coldest night',lo[trough]+'\u00B0',full[trough])+stat('Average high',avgHi+'\u00B0','Average low '+avgLo+'\u00B0')+stat('Wettest day',pp[wet]==null?'\u2014':pp[wet]+'% chance',full[wet]);
   }
-  fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+  function loadWxTab(){fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     snowWx=d; wxData=d; updateSnowDay(); 
     var cur=d.current, dayNow=wxIsDayNow(cur,d.daily), ci=infoAt(cur.weather_code,dayNow);
     document.getElementById('wxIcon').textContent=ci[0];
@@ -3339,7 +3333,10 @@ body.on-christmas{color-scheme:light}
     if(hmd){var mh='';var mCount=Math.min(3,d.daily.time.length);for(var mi=0;mi<mCount;mi++){var mdt=new Date(d.daily.time[mi]+'T12:00:00'),mdi=info(d.daily.weather_code[mi]);var mpp=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[mi]!=null)?Math.round(d.daily.precipitation_probability_max[mi]):null;var mdLo=Math.round(d.daily.temperature_2m_min[mi]),mdHi=Math.round(d.daily.temperature_2m_max[mi]);var mbL=Math.max(0,Math.min(100,(mdLo-gLo)/gRg*100)),mbW=Math.max(6,Math.min(100-mbL,(mdHi-mdLo)/gRg*100));var mName=(mi===0?'Today':mdt.toLocaleDateString('en-US',{weekday:'short'}));mh+='<div class="wxd-day"><span class="wxd-dname">'+mName+'</span><span class="wxd-dic">'+mdi[0]+'<span class="wxd-pp">💧 '+(mpp==null?'—':mpp+'%')+'</span></span><span class="wxd-dlo">'+mdLo+'°</span><span class="wxd-bar"><span class="wxd-barfill" style="left:'+mbL.toFixed(1)+'%;width:'+mbW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColor(mdLo)+','+wxTempColor(mdHi)+')"></span></span><span class="wxd-dhi">'+mdHi+'°</span></div>';}hmd.innerHTML=mh;}
     var hwm=document.getElementById('homeWxMeta');if(hwm)hwm.textContent='Feels like '+Math.round(cur.apparent_temperature)+'° · Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);
     document.getElementById('wxStamp').textContent='Live data: Open-Meteo · Alerts: National Weather Service · '+__wxLoc.label+' · Loaded '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  }).catch(function(){snowWxFailed=true;updateSnowDay();renderWxTrend(null);document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});
+  }).catch(function(){snowWxFailed=true;updateSnowDay();renderWxTrend(null);document.getElementById('wxError').style.display='block';document.getElementById('wxDesc').textContent='Live weather unavailable';document.getElementById('stripCond').textContent='Live weather unavailable';var hx=document.getElementById('wxHeroHourly');if(hx)hx.innerHTML='<p style="margin:6px 2px;font-size:14px;opacity:.9">Hourly forecast unavailable right now — reload to try again.</p>';var md=document.getElementById('wxDetails');if(md&&!md.innerHTML)md.innerHTML=wxMoonTileHtml();});}
+  loadWxTab();
+  /* Refresh the Weather tab every 10 minutes so it never goes days-old on a page left open. */
+  setInterval(loadWxTab,10*60*1000);
   // Live weather alerts — National Weather Service (api.weather.gov), Cicero point. Shown only when active.
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function fmtT(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}
@@ -3604,7 +3601,7 @@ body.on-christmas{color-scheme:light}
   function renderConf(entries,divMode){
     if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
     else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th><th>Playoffs %</th></tr></thead><tbody>';
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var apiLogo=(t.logos&&t.logos.length)?t.logos[0].href:'';
@@ -3613,8 +3610,9 @@ body.on-christmas{color-scheme:light}
       if(gb!==''&&parseFloat(gb)===0)gb='-';
       var seed=divMode?String(i+1):((m.playoffSeed||{}).displayValue||String(i+1));
       if(t.id)recMap[String(t.id)]=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'');
-      var hl=divMode?(TEAM_IDS[String(t.id||'')]?' class="hl"':''):(TEAM_IDS[String(t.id||'')]?' class="hl'+(i===5?' cut':'')+'"':(i===5?' class="cut"':''));
-      h+='<tr'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td><td class="fpi">'+nbaPlayoffCell(t)+'</td></tr>';
+      var hl=TEAM_IDS[String(t.id||'')]?' class="hl"':'';
+      var stTxt=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'')+' \u00b7 '+fmtPct(m.winPercent)+(gb&&gb!=='-'?' \u00b7 '+gb+' GB':' \u00b7 Leader');
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nba" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
     });
     return h+'</tbody></table>';
   }
@@ -3826,15 +3824,16 @@ body.on-christmas{color-scheme:light}
     if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
     else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
     var seeds=[];
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th><th>Playoffs %</th></tr></thead><tbody>';
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var seed=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
       var seedN=parseInt(seed,10)||(i+1);
       if(!divMode&&seedN>=1&&seedN<=7)seeds.push({seed:seedN,id:String(t.id||''),abbr:t.abbreviation||'',name:t.name||t.shortDisplayName||''});
       if(t.id)nflBoard.recMap[String(t.id)]=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'');
-      var hl=divMode?(NFL_FAVS[String(t.id||'')]?' class="hl"':''):(NFL_FAVS[String(t.id||'')]?' class="hl'+(i===6?' cut':'')+'"':(i===6?' class="cut"':''));
-      h+='<tr'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td class="fpi">'+playoffPctCell(t)+'</td></tr>';
+      var hl=NFL_FAVS[String(t.id||'')]?' class="hl"':'';
+      var stTxt=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'')+' \u00b7 '+fmtPct(m.winPercent);
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nfl" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td></tr>';
     });
     seeds.sort(function(a,b){return a.seed-b.seed;});
     if(confKey)NFL_SEEDS[confKey]=seeds;
@@ -4047,8 +4046,9 @@ body.on-christmas{color-scheme:light}
       var m=statMap(e),t=e.team||{};
       var seed=sv(m,'playoffSeed')||String(i+1);
       if(t.id)nhlBoard.recMap[String(t.id)]=sv(m,'wins')+'-'+sv(m,'losses')+'-'+sv(m,'otLosses');
-      var hl=(i===7)?' class="cut"':'';
-      h+='<tr'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nhl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'otLosses'))+'</td><td>'+esc(sv(m,'points'))+'</td></tr>';
+      var hl='';
+      var stTxt=sv(m,'wins')+'-'+sv(m,'losses')+'-'+sv(m,'otLosses')+' \u00b7 '+sv(m,'points')+' pts';
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nhl" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nhl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'otLosses'))+'</td><td>'+esc(sv(m,'points'))+'</td></tr>';
     });
     return h+'</tbody></table>';
   }
@@ -5645,21 +5645,23 @@ body.on-christmas{color-scheme:light}
     });
   }
   window.__dnUpdatePickerCounts=updatePickerCounts;
+  /* Header emoji flashes through the sports instead of one static icon. */
+  (function(){var em=['\u26BE','\uD83C\uDFC0','\uD83C\uDFC8','\uD83C\uDFD2','\uD83D\uDC4A','\uD83E\uDD4A'],i=0,el=document.getElementById('todaySportEmoji');if(!el)return;setInterval(function(){i=(i+1)%em.length;el.textContent=em[i];},2000);})();
   loadToday();
   setInterval(loadToday,60000);
 })();
 </script>
 <script>
 /* Christmas Radio: homemade player for the iHeart Christmas stream
-   (station 4596, direct AAC feed) — no iHeart embed. Opening the
-   Christmas tab tries to start it; if the browser blocks autoplay,
-   the play button starts it instead. */
+   (station 4596, direct AAC feed) — no iHeart embed. Autoplay is
+   OFF (Derek, Nov 18, 2026): the radio only plays when the visitor
+   taps the play button. */
 (function(){
   var a=document.getElementById('xmasRadioAudio'),b=document.getElementById('xmasRadioBtn'),st=document.getElementById('xmasRadioStatus');
   if(!a||!b)return;
   var XP='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg>';
   var XQ='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 6.5h3.2v11H7.5zM13.3 6.5h3.2v11h-3.2z"/></svg>';
-  var want=false,timer=null,kicked=false;
+  var want=false,timer=null;
   function setBtn(){b.innerHTML=want?XQ:XP;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause Christmas Radio':'Play Christmas Radio');}
   function fail(auto){
     if(!want)return; want=false; if(timer){clearTimeout(timer);timer=null;}
@@ -5676,10 +5678,6 @@ body.on-christmas{color-scheme:light}
   }
   function stop(){want=false; if(timer){clearTimeout(timer);timer=null;} try{a.pause();}catch(e){} setBtn(); if(st)st.textContent='Paused.';}
   b.addEventListener('click',function(){want?stop():start(false);});
-  function kick(){if(kicked)return; kicked=true; start(true);}
-  if(window.MutationObserver){var mo=new MutationObserver(function(){if(document.body.classList.contains('on-christmas'))kick();}); mo.observe(document.body,{attributes:true,attributeFilter:['class']});}
-  document.querySelectorAll('[data-go="christmas"]').forEach(function(el){el.addEventListener('click',kick);});
-  if(document.body.classList.contains('on-christmas'))kick();
 })();
 </script>
 
@@ -6418,9 +6416,11 @@ body.on-christmas{color-scheme:light}
   panel.addEventListener('click',function(e){
     var b=e.target; while(b&&b!==panel&&!(b.classList&&b.classList.contains('betsport-btn')))b=b.parentNode;
     if(!b||b===panel||!b.getAttribute)return;
-    var pick=b.getAttribute('data-betsport'); if(!pick)return;
+    var pick=b.getAttribute('data-betsport'); if(pick==null)return;
+    if(pick==='all')pick='';
+    else if(pick===(panel.getAttribute('data-pick')||''))pick='';
     panel.setAttribute('data-pick',pick);
-    panel.querySelectorAll('.betsport-btn').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    panel.querySelectorAll('.betsport-btn').forEach(function(x){var k=x.getAttribute('data-betsport');x.setAttribute('aria-pressed',(pick===''&&k==='all')||(pick!==''&&k===pick)?'true':'false');});
     if(prompt)prompt.hidden=true;
     apply();
   });
@@ -6450,9 +6450,10 @@ body.on-christmas{color-scheme:light}
       var m=statMap(e),t=e.team||{};
       var gb=sv(m,'gamesBehind');if(gb!==''&&parseFloat(gb)===0)gb='-';
       var rank=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
-      var hl=divMode?(FAVS[String(t.id||'')]?' class="hl"':''):(FAVS[String(t.id||'')]?' class="hl'+(i===5?' cut':'')+'"':(i===5?' class="cut"':''));
+      var hl=FAVS[String(t.id||'')]?' class="hl"':'';
       var logo=t.abbreviation?'<img src="https://a.espncdn.com/i/teamlogos/mlb/500/'+esc(String(t.abbreviation).toLowerCase())+'.png" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'';
-      h+='<tr'+hl+'><td class="rank">'+esc(rank)+'</td><td class="team">'+logo+esc(t.name||t.shortDisplayName||'')+(FAVS[String(t.id||'')]?' <span class="star">\u2605</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
+      var stTxt=sv(m,'wins')+'-'+sv(m,'losses')+' \u00b7 '+fmtPct(m.winPercent)+(gb&&gb!=='-'?' \u00b7 '+gb+' GB':' \u00b7 Leader');
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="mlb" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(rank)+'</td><td class="team">'+logo+esc(t.name||t.shortDisplayName||'')+(FAVS[String(t.id||'')]?' <span class="star">\u2605</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
     });
     return h+'</tbody></table>';
   }
@@ -6583,110 +6584,6 @@ body.on-christmas{color-scheme:light}
   }
   loadGames();
   setInterval(loadGames,60000);
-})();
-</script>
-<script>
-/* Playoff Path -- pick a team, get its live path: record + seed, playoff
-   odds (FPI/BPI file), division picture, remaining schedule with swing
-   games marked, the win-total math to the cut line, head-to-head results
-   vs the teams around it, and who to root against (with their next game).
-   Everything comes from live ESPN standings + schedules; anything that
-   cannot load says so instead of guessing. */
-(function(){
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
-  function statMap(e){var m={};(e.stats||[]).forEach(function(s){m[s.name]=s;});return m;}
-  function num(m,k){var s=m[k];if(!s)return null;var v=parseFloat(s.value!=null?s.value:s.displayValue);return isNaN(v)?null:v;}
-  function disp(m,k){var s=m[k];return s?(s.displayValue!=null?s.displayValue:''):'';}
-  function fmtPct(v){if(v==null)return '\u2014';var x=Math.round(v*10)/10;return (x%1===0?String(Math.round(x)):String(x))+'%';}
-  function fmtDate(iso){var d=new Date(iso);if(isNaN(d))return'';return d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'})+' \u00b7 '+d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'});}
-  var CFG={
-    nfl:{path:'football/nfl',cut:7,sel:'ppNflTeam',out:'ppNflOut',oddsFile:'fpi.json',oddsName:'ESPN FPI',def:'JAX',playIn:0},
-    nba:{path:'basketball/nba',cut:6,sel:'ppNbaTeam',out:'ppNbaOut',oddsFile:'bpi.json',oddsName:'ESPN BPI',def:'LAL',playIn:10}
-  };
-  Object.keys(CFG).forEach(function(key){
-    var C=CFG[key];
-    var S={teams:{},order:[],odds:{},sched:{}};
-    var selEl=document.getElementById(C.sel),outEl=document.getElementById(C.out);
-    if(!selEl||!outEl)return;
-    function recOf(e){var m=statMap(e);var w=num(m,'wins')||0,l=num(m,'losses')||0,ti=num(m,'ties')||0;return{w:w,l:l,t:ti,pct:num(m,'winPercent')||0,seed:num(m,'playoffSeed'),gb:disp(m,'gamesBehind'),txt:w+'-'+l+(ti?('-'+ti):'')};}
-    function sched(id){if(S.sched[id])return S.sched[id];S.sched[id]=fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+C.path+'/teams/'+id+'/schedule').then(function(d){return (d&&d.events)||[];}).catch(function(){return null;});return S.sched[id];}
-    function evInfo(ev,myId){var comp=(ev.competitions||[])[0];if(!comp)return null;var st=(comp.status&&comp.status.type)||{};var mine=null,opp=null;(comp.competitors||[]).forEach(function(c){var tid=String((c.team||{}).id||'');if(tid===String(myId))mine=c;else opp=c;});if(!mine||!opp)return null;return{date:ev.date,state:st.state||'',home:mine.homeAway==='home',opp:opp.team||{},myScore:(mine.score||{}).displayValue||'',oppScore:(opp.score||{}).displayValue||'',win:!!mine.winner};}
-    function render(id){
-      var T=S.teams[id];if(!T)return;
-      var conf=S.confs[T.conf]||[];
-      var r=T.rec;
-      var h='<p class="pp-head"><b>'+esc(T.name)+'</b> \u2014 '+esc(r.txt)+' \u00b7 #'+esc(String(r.seed||'?'))+' in the '+esc(T.confShort)+' \u00b7 Playoffs: <b>'+fmtPct(S.odds[id])+'</b> ('+C.oddsName+')</p>';
-      var cutE=conf[C.cut-1],cutR=cutE?recOf(cutE.entry):null;
-      var status='';
-      if(r.seed&&r.seed<=C.cut){status='Currently IN the playoffs \u2014 seed '+r.seed+' of '+C.cut+'.';}
-      else if(C.playIn&&r.seed&&r.seed<=C.playIn){status='Currently in the play-in (seeds 7\u201310) \u2014 a top-6 seed skips it.';}
-      else if(cutR){var gb=((cutR.w-r.w)+(r.l-cutR.l))/2;status='Currently OUT \u2014 '+gb+' game'+(gb===1?'':'s')+' behind the #'+C.cut+' seed, the '+esc(cutE.name)+' ('+esc(cutR.txt)+').';}
-      if(status)h+='<p class="pp-note" style="font-size:14.5px;color:#e8eef7">'+esc(status)+'</p>';
-      if(T.div){h+='<p class="pp-note">Division: '+esc(T.div.name)+' \u2014 '+(T.div.rank===1?'leading it.':(esc(T.div.gb)+' games behind the '+esc(T.div.leader)+'.'))+'</p>';}
-      h+='<div class="pp-blk" id="'+C.out+'Path"><h3>The path</h3><p class="pp-note">Loading remaining schedule\u2026</p></div>';
-      h+='<div class="pp-blk" id="'+C.out+'Root"><h3>Root against</h3><p class="pp-note">Loading\u2026</p></div>';
-      outEl.innerHTML=h;
-      Promise.all([sched(id)]).then(function(res){
-        if(selEl.value!==String(id))return;
-        var evs=res[0];var blk=document.getElementById(C.out+'Path');if(!blk)return;
-        if(!evs){blk.innerHTML='<h3>The path</h3><p class="pp-note">Remaining schedule couldn\u2019t load right now \u2014 reload to try again.</p>';return;}
-        var infos=evs.map(function(ev){return evInfo(ev,id);}).filter(Boolean);
-        var rem=infos.filter(function(x){return x.state==='pre';}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-        var played=infos.filter(function(x){return x.state==='post';});
-        var R=rem.length,maxW=r.w+R;
-        var lines=[];
-        if(cutR&&r.seed&&r.seed>C.cut){var need=Math.max(0,cutR.w-r.w+1);if(need<=R)lines.push(esc(T.name)+' needs at least <b>'+need+' more win'+(need===1?'':'s')+'</b> to pass the '+esc(cutE.name)+'\u2019s current win total ('+cutR.w+') \u2014 with '+R+' games left, that means finishing at least '+need+'\u2013'+(R-need)+' the rest of the way.');else lines.push('Even winning out ('+maxW+' wins) can\u2019t pass the '+esc(cutE.name)+'\u2019s current win total ('+cutR.w+') \u2014 '+esc(T.name)+' also needs the teams ahead of it to lose.');}
-        else if(r.seed&&r.seed<=C.cut){var below=conf[C.cut];if(below){var br=recOf(below.entry);var theirNeed=Math.max(0,r.w-br.w+1);lines.push('First team out: the '+esc(below.name)+' ('+esc(br.txt)+'). They pass '+esc(T.name)+'\u2019s current win total with '+theirNeed+' more win'+(theirNeed===1?'':'s')+' \u2014 every '+esc(T.name)+' win pushes that number up.');}}
-        if(C.playIn&&r.seed&&r.seed>C.cut&&r.seed<=C.playIn){var t6=conf[C.cut-1];if(t6){var t6r=recOf(t6.entry);var need6=Math.max(0,t6r.w-r.w+1);lines.push('For a direct playoff spot (top 6): '+need6+' more win'+(need6===1?'':'s')+' passes the '+esc(t6.name)+'\u2019s current win total ('+t6r.w+').');}}
-        var html='<h3>The path</h3>';
-        if(lines.length)html+='<p class="pp-note" style="font-size:14.5px;color:#e8eef7">'+lines.join('<br>')+'</p><p class="pp-note">Simple win-total math from the live standings \u2014 tiebreakers can change it.</p>';
-        html+='<p class="pp-note" style="margin-top:10px"><b style="color:#fff">Remaining schedule ('+R+')</b></p><ul class="pp-list">';
-        rem.forEach(function(g){var o=S.teams[String(g.opp.id||'')];var tag='';if(o&&o.conf===T.conf){var near=o.rec.seed&&r.seed&&Math.abs(o.rec.seed-r.seed)<=3;var sameDiv=T.div&&o.div&&T.div.name===o.div.name;if(near||sameDiv||(o.rec.seed&&Math.abs(o.rec.seed-C.cut)<=1))tag=' <span class="pp-swing">Swing game</span>';}html+='<li>'+esc(fmtDate(g.date))+' \u2014 '+(g.home?'vs ':'at ')+esc(g.opp.displayName||g.opp.shortDisplayName||g.opp.name||'')+(o&&o.conf===T.conf?' (#'+o.rec.seed+', '+esc(o.rec.txt)+')':'')+tag+'</li>';});
-        html+='</ul>';
-        var h2h=played.filter(function(g){var o=S.teams[String(g.opp.id||'')];return o&&o.conf===T.conf&&o.rec.seed&&r.seed&&Math.abs(o.rec.seed-r.seed)<=3;});
-        if(h2h.length){html+='<p class="pp-note" style="margin-top:10px"><b style="color:#fff">Tiebreaker watch \u2014 already played the teams around them:</b></p><ul class="pp-list">'+h2h.map(function(g){return '<li>'+(g.win?'Beat':'Lost to')+' '+esc(g.opp.displayName||g.opp.name||'')+' '+esc(g.myScore)+'\u2013'+esc(g.oppScore)+'</li>';}).join('')+'</ul>';}
-        blk.innerHTML=html;
-        renderRoot(id,T,conf,r);
-      });
-    }
-    function renderRoot(id,T,conf,r){
-      var blk=document.getElementById(C.out+'Root');if(!blk)return;
-      var idx=conf.findIndex(function(x){return x.id===String(id);});
-      var rivals=[];
-      for(var i=Math.max(0,idx-3);i<idx;i++)rivals.push(conf[i]);
-      if(r.seed&&r.seed<=C.cut){for(var j=idx+1;j<Math.min(conf.length,idx+3);j++)rivals.push(conf[j]);}
-      if(!rivals.length){blk.innerHTML='<h3>Root against</h3><p class="pp-note">No teams close enough to matter right now.</p>';return;}
-      Promise.all(rivals.map(function(rv){return sched(rv.id);})).then(function(schs){
-        if(selEl.value!==String(id))return;
-        var items=rivals.map(function(rv,i){
-          var evs=schs[i];var nxt=null;
-          if(evs){var infos=evs.map(function(ev){return evInfo(ev,rv.id);}).filter(Boolean).filter(function(x){return x.state==='pre';}).sort(function(a,b){return new Date(a.date)-new Date(b.date);});nxt=infos[0]||null;}
-          return '<li><b>'+esc(rv.name)+'</b> (#'+rv.rec.seed+', '+esc(rv.rec.txt)+')'+(nxt?(' \u2014 next: '+(nxt.home?'vs ':'at ')+esc(nxt.opp.displayName||nxt.opp.name||'')+', '+esc(fmtDate(nxt.date))):' \u2014 next game couldn\u2019t load')+'</li>';
-        });
-        blk.innerHTML='<h3>Root against</h3><ul class="pp-list">'+items.join('')+'</ul><p class="pp-note">The teams closest to '+esc(T.name)+' in the '+esc(T.confShort)+' race \u2014 their losses help most.</p>';
-      });
-    }
-    selEl.addEventListener('change',function(){render(selEl.value);});
-    var pOdds=fetch(C.oddsFile,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){(d.teams||[]).forEach(function(x){if(x&&x.playoff!=null)S.odds[String(x.id||'')]=parseFloat(x.playoff);});}).catch(function(){return fetchJSON('https://site.web.api.espn.com/apis/fitt/v3/sports/'+C.path+'/powerindex?region=us&lang=en').then(function(d){var pn=[];(d.categories||[]).forEach(function(c){if(c.name==='projections')pn=c.names||[];});var ix=pn.indexOf('probmakeplayoffs');if(ix<0)return;(d.teams||[]).forEach(function(e){(e.categories||[]).forEach(function(cat){if(cat.name==='projections'&&cat.values&&cat.values[ix]!=null)S.odds[String((e.team||{}).id||'')]=parseFloat(cat.values[ix]);});});}).catch(function(){});});
-    Promise.all([fetchJSON('https://site.api.espn.com/apis/v2/sports/'+C.path+'/standings'),fetchJSON('https://site.api.espn.com/apis/v2/sports/'+C.path+'/standings?level=3').catch(function(){return null;}),pOdds]).then(function(res){
-      var d=res[0],d3=res[1];
-      S.confs={};
-      (d.children||[]).forEach(function(ch){
-        var cname=ch.name||'';var short=cname.replace(' Conference','').replace('American Football','AFC').replace('National Football','NFC');
-        var list=((ch.standings&&ch.standings.entries)||[]).map(function(e){var t=e.team||{};return{id:String(t.id||''),name:t.displayName||t.name||'',abbr:t.abbreviation||'',entry:e,rec:recOf(e),conf:cname,confShort:short};});
-        list.sort(function(a,b){return (a.rec.seed||99)-(b.rec.seed||99);});
-        S.confs[cname]=list;
-        list.forEach(function(x){x.confList=list;S.teams[x.id]=x;S.order.push(x);});
-      });
-      if(d3){(d3.children||[]).forEach(function(ch){(ch.children||[]).forEach(function(dv){var ents=((dv.standings&&dv.standings.entries)||[]).slice();ents.sort(function(a,b){var ra=recOf(a),rb=recOf(b);return rb.pct-ra.pct||rb.w-ra.w;});ents.forEach(function(e,i){var tid=String((e.team||{}).id||'');var T=S.teams[tid];if(T)T.div={name:dv.name||'',rank:i+1,gb:disp(statMap(e),'gamesBehind'),leader:((ents[0]||{}).team||{}).displayName||''};});});});}
-      if(!S.order.length){outEl.innerHTML='<p class="astatus">Playoff Path unavailable right now \u2014 the live standings couldn\u2019t load.</p>';return;}
-      selEl.innerHTML=S.order.map(function(x){return '<option value="'+esc(x.id)+'"'+(x.abbr===C.def?' selected':'')+'>'+esc(x.name)+'</option>';}).join('');
-      var start=S.order.filter(function(x){return x.abbr===C.def;})[0]||S.order[0];
-      selEl.value=start.id;
-      render(start.id);
-    }).catch(function(){outEl.innerHTML='<p class="astatus">Playoff Path unavailable right now \u2014 the live standings couldn\u2019t load.</p>';});
-  });
 })();
 </script>
 <script>
@@ -6951,7 +6848,7 @@ body.on-christmas{color-scheme:light}
   function save(s){try{localStorage.setItem(LS,JSON.stringify(s));}catch(e){}}
   var seen=load();
   var nav={home:false,weather:false,news:false,sports:false,faith:false,christmas:false};
-  var sport={baseball:false,basketball:false,football:false,hockey:false,ufc:false,boxing:false,betsim:false};
+  var sport={baseball:false,basketball:false,football:false,hockey:false,ufc:false,boxing:false};
   var bet={nba:false,nfl:false,nhl:false};
   function activeTab(){var el=document.querySelector('.bottomnav .tab[aria-selected="true"]');return el?el.getAttribute('data-go'):'home';}
   function render(){
@@ -6995,8 +6892,7 @@ body.on-christmas{color-scheme:light}
         done++;
         if(done===jobs.length){
           var par=document.getElementById('parlayList');
-          sport.betsim=!!(bet.nba||bet.nfl||bet.nhl||(par&&par.children.length>0));
-          nav.sports=!!(sport.baseball||sport.basketball||sport.football||sport.hockey||sport.ufc||sport.boxing||sport.betsim);
+          nav.sports=!!(sport.baseball||sport.basketball||sport.football||sport.hockey||sport.ufc||sport.boxing);
           render();
         }
       });
