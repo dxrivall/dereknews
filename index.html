@@ -370,7 +370,7 @@ body>.teams-overlay{z-index:2000}
 .betsport-btn[aria-pressed="true"]{background:#b42318;border-color:#fff}
 .betsport-prompt{font-size:13.5px;line-height:1.5;opacity:.92;margin:10px 0 0}
 .betsport-prompt[hidden]{display:none!important}
-#sport-betsim[data-pick=""] #parlayList,#sport-betsim[data-pick=""] #betSimGames,#sport-betsim[data-pick=""] #cheatToggle{display:none!important}
+#sport-betsim[data-pick=""] #parlayList{display:none!important}
 </style>
 <style>
 /* == Nov 13 fixes E: dead-centre play buttons / Christmas widget plain
@@ -1699,20 +1699,22 @@ body.on-sports footer{color:#aebfe6!important}
 .daytabs{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.15);margin:0 -2px 4px}
 .daytabs button{appearance:none;background:none;border:0;color:#8fa3cc;font:inherit;font-size:17px;font-weight:500;cursor:pointer;padding:14px 4px;min-height:48px}
 .daytabs button[aria-selected="true"]{color:#fff;font-weight:700}
-.agame{display:grid;grid-template-columns:minmax(62px,1fr) 42px minmax(88px,auto) 42px minmax(62px,1fr);align-items:center;gap:2px;padding:19px 2px;border-bottom:1px solid rgba(255,255,255,.1);color:#fff;text-decoration:none}
+.agame{display:grid;grid-template-columns:minmax(62px,1fr) 42px minmax(88px,auto) 42px minmax(62px,1fr);align-items:center;gap:2px;padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.1);color:#fff;text-decoration:none}
 .agame:last-child{border-bottom:0}
 .ateam{text-align:center;min-width:0}
 .ateam img{width:48px;height:48px;object-fit:contain;object-position:center;display:block;margin:0 auto 4px;background:transparent;border:0}
-.ateam .an{font-size:13px;color:#dbe5fa;line-height:1.2;display:block}
+.ateam .abbr{display:block;font-size:16px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:.02em}
+.ateam .an{font-size:12px;color:#9db1d6;font-weight:600;line-height:1.2;display:block}
 .ateam .star{color:#ffd34d;font-size:12px}
 .ateam .kalshi-line{display:block;font-size:11px;font-weight:600;color:#7ee2a8;line-height:1.3;margin-top:2px;letter-spacing:.01em}
 .kalshi-credit{text-align:center;color:#8fa3cc;font-size:11px;line-height:1.4;margin:8px 0 0}
 .aside{text-align:center;font-size:15px;color:#93a7d4;font-variant-numeric:tabular-nums}
-.aside.score{color:#fff;font-weight:700;font-size:20px}
+.aside.score{color:#fff;font-weight:800;font-size:23px}
+.aside.score.lost{color:rgba(255,255,255,.45);font-weight:600}
 .acenter{text-align:center;min-width:0}
 .acenter .at{font-size:17px;font-weight:700;color:#fff;white-space:nowrap}
 .acenter .as{font-size:12px;color:#8fa3cc;margin-top:4px;text-transform:uppercase;letter-spacing:.02em;line-height:1.35}
-.acenter .live{color:#ff7a6e}
+.acenter .live{color:#ff7a6e;font-weight:800}
 .anone{text-align:center;color:#aebfe6;font-size:15px;line-height:1.6;padding:20px 10px;margin:0}
 .stoday{margin-top:6px}
 .stoday .agame{padding:14px 2px}
@@ -1804,11 +1806,6 @@ body.on-sports footer{color:#aebfe6!important}
 .parlay-bar i{display:block;height:100%;border-radius:3px;background:#7ee2a8}
 .parlay-hit .hit-pay{font-size:17px;font-weight:800;color:#ffd34d;margin-top:6px;line-height:1.2}
 .parlay-hit .hit-best{display:inline-block;margin-top:6px;background:#ffd34d;color:#14213d;font-size:11.5px;font-weight:800;letter-spacing:.02em;border-radius:999px;padding:3px 10px}
-.tail-btn.best-book{border-color:#ffd34d;color:#ffd34d;font-weight:800}
-.tail-label{font-size:12px;color:#8fa3cc;margin:12px 0 0;line-height:1.45}
-.tail-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
-.tail-btn{flex:1 1 30%;text-align:center;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px 6px;border-radius:999px;min-height:38px;display:inline-flex;align-items:center;justify-content:center}
-.copy-legs-btn{flex:1 1 100%;background:#2f5fd0;border-color:#2f5fd0;cursor:pointer;font:inherit}
 .other-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:480px){.other-grid{grid-template-columns:1fr}}.other-grid a{display:block;padding:13px 14px;text-decoration:none;font-size:15px;line-height:1.35}#view-sports .team-btn{display:block;text-align:center;text-decoration:none;padding:15px 16px;margin-top:14px;font-size:16px;font-weight:600}#view-sports .back-btn{display:inline-block;font:inherit;font-size:15px;font-weight:600;padding:11px 18px;border-radius:999px;cursor:pointer;margin:28px 0 2px}
 @media(max-width:420px){.stable td.team{max-width:104px}.stable td,.stable th{padding-left:3px;padding-right:3px;font-size:15px}.agame{grid-template-columns:minmax(54px,1fr) 34px minmax(78px,auto) 34px minmax(54px,1fr)}.acenter .at{font-size:15px}}
 
@@ -1860,7 +1857,7 @@ body.on-sports footer{color:#aebfe6!important}
     <div id="sportsTodayFeatured"></div>
     <p class="astatus" id="sportsTodayStatus">Loading today&rsquo;s games…</p>
     <div id="sportsTodayGames"></div>
-    <p class="kalshi-credit">Moneyline %: Kalshi</p>
+    <p class="kalshi-credit">Moneyline %: Polymarket</p>
   </section>
   <div class="quick">
     <button type="button" data-sport="baseball"><span class="emoji">⚾</span><b>Baseball</b><span class="dn-dot" data-sportdot="baseball" aria-hidden="true"></span></button>
@@ -1869,7 +1866,7 @@ body.on-sports footer{color:#aebfe6!important}
     <button type="button" data-sport="hockey"><span class="emoji">🏒</span><b>Hockey</b><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
     <button type="button" data-sport="ufc"><span class="emoji">👊</span><b>UFC</b><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
     <button type="button" data-sport="boxing"><span class="emoji">🥊</span><b>Boxing</b><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
-    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays &amp; Cheat Sheet</b><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
+    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays</b><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
   </div>
   </div>
   <div class="sport-panel" id="sport-baseball" hidden>
@@ -1892,7 +1889,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <p class="astatus" id="mlbLiveStatus">Loading games…</p>
   <div id="mlbGames"></div>
-  <p class="kalshi-credit">Moneyline %: Kalshi</p>
+  <p class="kalshi-credit">Moneyline %: Polymarket</p>
   <div class="aerr" id="mlbLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.mlb.com/" target="_blank" rel="noopener">MLB.com</a> and reload.</div>
   <p class="asrc" id="mlbLiveStamp">Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
@@ -1964,7 +1961,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <p class="astatus" id="nbaLiveStatus">Loading games…</p>
   <div id="appleGames"></div>
-  <p class="kalshi-credit">Moneyline %: Kalshi</p>
+  <p class="kalshi-credit">Moneyline %: Polymarket</p>
   <div class="aerr" id="nbaLiveErr" hidden>Couldn&rsquo;t load games right now — check the <a href="https://www.nba.com/lakers" target="_blank" rel="noopener">Lakers</a> or <a href="https://www.nba.com/suns" target="_blank" rel="noopener">Suns</a> on NBA.com and reload.</div>
   <p class="asrc" id="nbaLiveStamp">Live data: ESPN · All NBA teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
@@ -2046,7 +2043,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <p class="astatus" id="nflLiveStatus">Loading games…</p>
   <div id="nflGames"></div>
-  <p class="kalshi-credit">Moneyline %: Kalshi</p>
+  <p class="kalshi-credit">Moneyline %: Polymarket</p>
   <div class="aerr" id="nflLiveErr" hidden>Couldn&rsquo;t load games right now — check your teams on <a href="https://www.nfl.com/" target="_blank" rel="noopener">NFL.com</a> and reload.</div>
   <p class="asrc" id="nflLiveStamp">Live data: ESPN &middot; All NFL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
@@ -2127,7 +2124,7 @@ body.on-sports footer{color:#aebfe6!important}
   </div>
   <p class="astatus" id="nhlLiveStatus">Loading games…</p>
   <div id="nhlGames"></div>
-  <p class="kalshi-credit">Moneyline %: Kalshi</p>
+  <p class="kalshi-credit">Moneyline %: Polymarket</p>
   <div class="aerr" id="nhlLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.nhl.com/" target="_blank" rel="noopener">NHL.com</a> and reload.</div>
   <p class="asrc" id="nhlLiveStamp">Live data: ESPN &middot; All NHL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
@@ -2216,34 +2213,22 @@ body.on-sports footer{color:#aebfe6!important}
   <div class="betsport-picker" role="group" aria-label="Pick a sport">
     <p class="betsport-pick-label">🎟️ Pick a sport first</p>
     <div class="betsport-btns"><button type="button" class="betsport-btn" data-betsport="nba" aria-pressed="false">🏀 NBA<span class="dn-dot" data-betdot="nba" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nfl" aria-pressed="false">🏈 NFL<span class="dn-dot" data-betdot="nfl" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nhl" aria-pressed="false">🏒 NHL<span class="dn-dot" data-betdot="nhl" aria-hidden="true"></span></button></div>
-    <p class="betsport-prompt" id="betSportPrompt">Pick a sport above — you&rsquo;ll only see that sport&rsquo;s Parlays of the Day and Cheat Sheet, not everything at once.</p>
   </div>
   <style>
   #liveParlaySection[hidden]{display:none!important}
   .live-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff;animation:livePulse 1.6s ease-in-out infinite}
   @keyframes livePulse{0%,100%{opacity:1}50%{opacity:.3}}
-  .parlay-leg .live-why{display:block;font-size:11.5px;color:#aebfe6;margin-top:1px}
   </style>
   <section class="acard" id="liveParlaySection" hidden aria-label="Live Parlay — real-odds model from games in progress">
   <div class="ahead"><h2>🔴 Live Parlay</h2><span class="league-pill" style="background:#b42318"><span class="live-pulse" aria-hidden="true"></span> LIVE</span></div>
-  <p class="astatus" style="color:#fff">One live bet per sport, priced with <b>real odds — not pace math</b>. Each leg uses the player&rsquo;s actual base rate (season average blended with his last 5 games) and the real scoring distribution for the time left, adjusted for how much he&rsquo;s playing tonight and the score. An early stat only lowers what he still needs — it never inflates his rate, so 1 goal in the 1st period does <b>not</b> project to 3. A line counts as a Live Parlay leg when that real chance is at least 55%. If nothing clears 55% while a game is live, the closest legs still show below &mdash; labeled <b>Closest &mdash; under 55%</b> with their real chances, never dressed up as qualifiers. Only players actually in the game — anyone Out, Inactive or did-not-play is never used. <b>Model estimate — not a guarantee:</b> the hit % is still the legs multiplied together. This section only appears while a game is live.</p>
   <div id="liveParlayList"></div>
   <p class="astatus" id="liveParlayStamp" style="font-size:12px"></p>
   </section>
   <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
   <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Featured parlays — TODAY&rsquo;s games only, so every parlay settles today. <b>Max 2 pre-game bets per sport per day</b> — the two strongest by model hit % / edge are shown and the rest are dropped. Every leg is checked against that game&rsquo;s ESPN injury / inactive report: a player who is Out, Doubtful or Inactive is never used, touchdown legs included. The model uses last-5 form, home/away splits, rest days, injuries, and each player&rsquo;s last 5 games — not just season averages. Slip types that can make the top 2: <b>Edge Parlay</b> (2–3 legs whose model % beats the book&rsquo;s price), <b>🎰 Lotto Bet of the Day</b>, <b>🔥 Streak Lotto</b> (every leg hit in 6/6 of its last 6 games at its 6-game-minimum line), <b>🚀 Extreme Lotto</b>, plus the NFL Touchdown, NHL Shots/Goals and NBA Rebounds/3s slips. Simulation only — not a guarantee.</p>
   <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
   <div id="parlayList"></div>
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
-  </section>
-  <section class="acard" aria-label="Bet Simulator — simulated upcoming NBA, NFL and NHL games">
-  <div class="ahead"><h2>📋 Cheat Sheet</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" style="color:#fff">Every upcoming NBA, NFL &amp; NHL game — moneylines from DraftKings (via ESPN), plus simulated player props. Collapsed so the parlays stay on top — tap below to expand the full list.</p>
-  <p class="astatus" id="betSimStatus">Loading games&hellip;</p>
-  <button type="button" class="cheatsheet-toggle" id="cheatToggle" aria-expanded="false" aria-controls="betSimGames" style="display:block;width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font:inherit;font-weight:700;font-size:14.5px;border-radius:12px;padding:12px;cursor:pointer;min-height:48px">Show the full odds list ▾</button>
-  <div id="betSimGames" hidden></div>
-  <p class="asrc" id="betSimStamp">Games &amp; moneylines: ESPN / DraftKings &middot; Props: simulated lines (SIM) from live ESPN season averages</p>
   </section>
   </div>
 </main>
@@ -3388,13 +3373,17 @@ body.on-christmas{color-scheme:light}
 })();
 </script>
 <script>
-/* Kalshi moneyline % — same-origin kalshi.json only.
-   A GitHub Action refreshes kalshi.json server-side every 5 minutes;
-   browsers cannot call Kalshi directly (no CORS / 403), so this code
-   NEVER calls the Kalshi API directly. It fetches 'kalshi.json'
-   relative to this page. Missing file, stale data (updated_at more
-   than 30 minutes old), or no exact game match = show nothing —
-   never a fake or guessed %. */
+/* Polymarket moneyline % — same-origin polymarket.json only.
+   A GitHub Action refreshes polymarket.json server-side every 5
+   minutes from Polymarket's public Gamma API (no key needed). The
+   file has the same shape as the old kalshi.json, so the matcher
+   below is unchanged. Switched from Kalshi Nov 18, 2026: the Kalshi
+   % kept not loading because the Kalshi Action lands ~hourly while
+   the site discards data older than 30 minutes. Missing file,
+   stale data (updated_at more than 30 minutes old), or no exact
+   game match = show nothing — never a fake or guessed %.
+   NOTE: the __kalshi* loader names and .kalshi-line class below
+   are unchanged legacy identifiers; the data is Polymarket now. */
 (function(){
   var SERIES={nba:'KXNBAGAME',nfl:'KXNFLGAME',mlb:'KXMLBGAME',nhl:'KXNHLGAME'};
   var NBA_ABBR_BY_ID={'1':'ATL','2':'BOS','3':'NO','4':'CHI','5':'CLE','6':'DAL','7':'DEN','8':'DET','9':'GS','10':'HOU','11':'IND','12':'LAC','13':'LAL','14':'MIA','15':'MIL','16':'MIN','17':'BKN','18':'NY','19':'ORL','20':'PHI','21':'PHX','22':'POR','23':'SAC','24':'SA','25':'OKC','26':'UTA','27':'WSH','28':'TOR','29':'MEM','30':'CHA'};
@@ -3424,7 +3413,7 @@ body.on-christmas{color-scheme:light}
     return (Date.now()-ts)>30*60*1000;
   }
   function load(){
-    return fetch('kalshi.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){state.data=(d&&Array.isArray(d.games))?d:null;return state.data;}).catch(function(){return state.data;});
+    return fetch('polymarket.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){state.data=(d&&Array.isArray(d.games))?d:null;return state.data;}).catch(function(){return state.data;});
   }
   function pct(league,team,opp){
     var d=state.data;if(!d||isStale(d)||!Array.isArray(d.games))return null;
@@ -3446,7 +3435,7 @@ body.on-christmas{color-scheme:light}
   function line(league,team,opp){
     var v=pct(league,team,opp);
     if(v==null)return '';
-    return '<span class="kalshi-line">Kalshi '+v+'%</span>';
+    return '<span class="kalshi-line">Polymarket '+v+'%</span>';
   }
   window.__kalshiLoad=load;
   window.__kalshiPct=pct;
@@ -3526,7 +3515,7 @@ body.on-christmas{color-scheme:light}
       // logo above is only a fallback candidate — teamCell() builds the
       // real src from the team id via logoImg() so every feed agrees.
       var rec='';if(c.records&&c.records.length)rec=c.records[0].summary||'';
-      return{id:String((c.team&&c.team.id)||''),name:(c.team&&(c.team.shortDisplayName||c.team.name))||'',full:(c.team&&(c.team.displayName))||'',logo:logo,score:sv,winner:!!c.winner,homeAway:c.homeAway||'',record:rec};
+      return{id:String((c.team&&c.team.id)||''),abbr:((c.team&&c.team.abbreviation)||''),name:(c.team&&(c.team.shortDisplayName||c.team.name))||'',full:(c.team&&(c.team.displayName))||'',logo:logo,score:sv,winner:!!c.winner,homeAway:c.homeAway||'',record:rec};
     });
     var link='';(ev.links||[]).forEach(function(l){if(!link&&l.href&&l.href.indexOf('https://www.espn.com/nba/game/')===0)link=l.href;});
     return{id:String(ev.id||''),date:ev.date||comp.date||'',state:st.state||'',detail:st.detail||st.shortDetail||'',displayClock:(comp.status&&comp.status.displayClock)||'',period:(comp.status&&comp.status.period)||0,venue:(comp.venue&&comp.venue.fullName)||'',teams:teams,link:link,spread:spread};
@@ -3535,14 +3524,14 @@ body.on-christmas{color-scheme:light}
   function teamCell(t,opp){
     var h='<div class="ateam">';
     h+=logoImg(t.id,'g',t.logo);
-    h+='<span class="an">'+esc(t.name)+(TEAM_IDS[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
+    h+=(t.abbr?'<span class="abbr">'+esc(t.abbr)+'</span>':'')+'<span class="an">'+esc(t.name)+(TEAM_IDS[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
     if(window.__kalshiLine&&opp)h+=window.__kalshiLine('nba',t,opp);
     h+='</div>';
     return h;
   }
   var recMap={};
   function sideVal(t,g){
-    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score">'+esc(t.score)+'</div>';
+    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score'+((g.state==='post'&&!t.winner)?' lost':'')+'">'+esc(t.score)+'</div>';
     return '<div class="aside">'+esc(t.record||recMap[t.id]||'')+'</div>';
   }
   function gameRow(g,bucket){
@@ -3721,13 +3710,13 @@ body.on-christmas{color-scheme:light}
     var curDay='today';
     function teamCell(t,opp){
       var h='<div class="ateam">'+logoImg(cfg.league,t.abbr,'g');
-      h+='<span class="an">'+esc(t.name)+(cfg.favs[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
+      h+=(t.abbr?'<span class="abbr">'+esc(t.abbr)+'</span>':'')+'<span class="an">'+esc(t.name)+(cfg.favs[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
       if(window.__kalshiLine&&opp)h+=window.__kalshiLine(cfg.league,t,opp);
       h+='</div>';
       return h;
     }
     function sideVal(t,g){
-      if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score">'+esc(t.score)+'</div>';
+      if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score'+((g.state==='post'&&!t.winner)?' lost':'')+'">'+esc(t.score)+'</div>';
       return '<div class="aside">'+esc(t.record||recMap[t.id]||'')+'</div>';
     }
     function gameRow(g,bucket){
@@ -4092,9 +4081,10 @@ body.on-christmas{color-scheme:light}
 /* Bet Simulator — every upcoming NBA / NFL / NHL game from the live
    ESPN scoreboards. Moneylines: DraftKings lines carried in the ESPN
    scoreboard feed itself (competitions[].odds[].moneyline) — a
-   different source from Kalshi. (Kalshi showed dashes here because the
-   repo's kalshi.json snapshot goes stale: the site discards Kalshi data
-   older than 30 minutes, so every % came back null.)
+   different source from Polymarket. (The old Kalshi feed showed dashes
+   here because the repo's kalshi.json snapshot goes stale: the site
+   discards data older than 30 minutes, so every % came back null.
+   The moneyline feed is Polymarket now.)
    Player props: SIMULATED lines built from verified live ESPN season
    stats — each game's ESPN summary "leaders" (the team's top player in
    each category, with his season average / total). The sim line is the
@@ -4268,7 +4258,7 @@ body.on-christmas{color-scheme:light}
   var BOOKS=[
     {name:'DraftKings',url:'https://sportsbook.draftkings.com/'},
     {name:'FanDuel',url:'https://sportsbook.fanduel.com/'},
-    {name:'Kalshi',url:'https://kalshi.com/'},
+    {name:'Polymarket',url:'https://polymarket.com/'},
     {name:'Caesars',url:'https://www.caesars.com/sportsbook-and-casino'}
   ];
   function erf(x){var s=x<0?-1:1;x=Math.abs(x);var t=1/(1+0.3275911*x);var y=1-((((1.061405429*t-1.453152027)*t+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return s*y;}
@@ -4538,7 +4528,7 @@ body.on-christmas{color-scheme:light}
           var tm=side==='away'?g.away:g.home,opp=side==='away'?g.home:g.away,mlStr=side==='away'?g.ml.away:g.ml.home;
           var kalPct=null;
           try{if(window.__kalshiPct)kalPct=window.__kalshiPct(lg.key,{abbr:tm.abbr,name:tm.name,full:tm.name,id:tm.id},{abbr:opp.abbr,name:opp.name,full:opp.name,id:opp.id});}catch(e){}
-          pool.push({kind:'ML',prob:mm.prob,edge:mm.edge,text:tm.name+' ML '+fmtML(mlStr),sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+fmtWhen(g.date)+(mm.why.length?' \u00b7 '+mm.why.join(' \u00b7 '):''),key:'ml-'+g.id+'-'+side,dkDec:mlDec(mlStr),kalDec:pctDec(kalPct),gameId:g.id});
+          pool.push({kind:'ML',prob:mm.prob,edge:mm.edge,text:tm.name+' ML '+fmtML(mlStr),sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+fmtWhen(g.date),key:'ml-'+g.id+'-'+side,dkDec:mlDec(mlStr),kalDec:pctDec(kalPct),gameId:g.id});
         });
       }
       var props=(g.allProps&&g.allProps.length)?g.allProps:(g.props||[]);
@@ -4566,7 +4556,7 @@ body.on-christmas{color-scheme:light}
   function pctDec(pct){if(pct==null||isNaN(pct)||pct<=0||pct>=100)return null;return 100/pct;}
   /* $10 payout + best book. A best book is marked ONLY when every leg
      has a verified price from two books (DraftKings via ESPN and
-     Kalshi) — then the two real combined payouts are compared. SIM
+     Polymarket) — then the two real combined payouts are compared. SIM
      prop legs have no verified book price anywhere, so parlays with
      props get a SIM-estimated payout and no best-book claim. */
   function parlayPayout(p){
@@ -4579,9 +4569,9 @@ body.on-christmas{color-scheme:light}
     p.legs.forEach(function(l){if(!l.dkDec){kalOk=false;return;}dk*=l.dkDec;if(l.kalDec)kal*=l.kalDec;else kalOk=false;});
     if(kalOk){
       var dkPay=10*dk,kalPay=10*kal;
-      return{amount:Math.max(dkPay,kalPay),best:dkPay>=kalPay?'DraftKings':'Kalshi',note:'Best of the verified prices — DraftKings $10 \u2192 $'+dkPay.toFixed(2)+' \u00b7 Kalshi $10 \u2192 $'+kalPay.toFixed(2)+'.'};
+      return{amount:Math.max(dkPay,kalPay),best:dkPay>=kalPay?'DraftKings':'Polymarket',note:'Best of the verified prices — DraftKings $10 \u2192 $'+dkPay.toFixed(2)+' \u00b7 Polymarket $10 \u2192 $'+kalPay.toFixed(2)+'.'};
     }
-    return{amount:10*dk,best:null,note:'Priced from the verified DraftKings moneylines (via ESPN). A Kalshi price could not be verified for every leg, so no best book is claimed.'};
+    return{amount:10*dk,best:null,note:'Priced from the verified DraftKings moneylines (via ESPN). A Polymarket price could not be verified for every leg, so no best book is claimed.'};
   }
   function dedupeSort(legs){
     var seen={},out=[];
@@ -4790,30 +4780,23 @@ body.on-christmas{color-scheme:light}
         var pay=parlayPayout(p);
         var leagueName=lg.label.replace(/^[^ ]+ /,'');
         var betTitle=p.streak?'Streak Lotto (hit in 6/6 last games)':(p.extreme?'Extreme Lotto':(p.lotto?'Lotto Bet of the Day':(p.edge?'Edge Parlay':(p.title||'Parlay'))));
-        var copyTxt=leagueName+' Parlay — '+betTitle+' (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+(l.kind==='Prop'?' (SIM)':'')+' — '+l.sub;}).join('\n')+'\nCombined odds: '+fmtOdds(pay.amount/10)+' · Stake: $10 → Payout: $'+pay.amount.toFixed(2)+(p.extreme?(' · Stake: $25 → Payout: $'+(pay.amount*2.5).toFixed(2)):'')+' · Model hit chance: '+hitTxt+'%';
-        var pbTxt='@Playbook '+leagueName+' parlay: '+p.legs.map(function(l){return l.text;}).join('; ');
         var titleTxt=p.streak?('\ud83d\udd25 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Streak Lotto \u2014 6/6 Last 6 Games'):(p.extreme?('\ud83d\ude80 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Extreme Lotto \u2014 Longshot With a Real Chance'):(p.lotto?('🎰 '+esc(lg.label.replace(/^[^ ]+ /,''))+' Lotto Bet of the Day'):(esc(lg.label.replace(/^[^ ]+ /,''))+' '+(p.edge?'Edge Parlay':'Parlay '+(pi+1)+' — '+esc(p.title)))));
         h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">'+titleTxt+'</span><span class="parlay-count">'+p.legs.length+' legs</span></div>';
         p.legs.forEach(function(l){
           h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b>'+(l.kind==='Prop'?' <span class="sim">SIM</span>':'')+(l.streak?' <span class="sim" style="color:#ffb347">6/6 STREAK</span>':'')+((l.edge!=null&&l.edge>=0.02)?' <span class="sim" style="color:#7ee2a8">+'+Math.round(l.edge*100)+'% EDGE</span>':'')+'<span class="p-sub">'+esc(l.sub)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
-        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Simulation — all '+p.legs.length+' legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
         h+='<div class="hit-pay">$10 \u2192 $'+pay.amount.toFixed(2)+(pay.amount>10?' ('+fmtOdds(pay.amount/10)+')':'')+'</div><div class="hit-lab">'+esc(pay.note)+'</div>';
-        if(p.extreme)h+='<div class="hit-pay">$25 \u2192 $'+(pay.amount*2.5).toFixed(2)+'</div><div class="hit-lab">\ud83d\ude80 Extreme Lotto \u2014 a longshot with a real chance, not a guaranteed thing. Go light on this: small stakes only.</div>';
         if(pay.best)h+='<span class="hit-best">\u2605 Best payout: '+esc(pay.best)+'</span>';
-        if(p.streak)h+='<div class="hit-lab">\ud83d\udd25 Streak Lotto \u2014 every leg above hit its line in all 6 of its last 6 games (100% over the last 6) \u2014 each line is that player\u2019s lowest game in the last 6, so it is the highest line he hit every single game. That is past form, not a guarantee: a 6/6 streak can end tonight, and the hit % above is still the model\u2019s per-leg chances multiplied \u2014 not 100%.</div>';
         h+='</div>';
-        h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> — that copies the bet as a backup and opens X with it pre-filled for @Playbook. Playbook replies with a pre-loaded slip link for your book (DraftKings, FanDuel &amp; more), where you pick your app and place it. Lines can differ by book; SIM props may not be offered everywhere.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\ud83d\udccb Copy this bet</button>';
-        h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
-        h+='</div></div>';
+        h+='</div>';
       });
-      if(!hadExtreme)notes+='<p class="astatus">\ud83d\ude80 Extreme Lotto: no combination in today\u2019s '+esc(lg.label.replace(/^[^ ]+ /,''))+' games could honestly reach about 100x with a real chance (around 1\u20133%) from real model legs \u2014 no extreme slip today instead of forcing one.</p>';
       h+=notes;
     });
     list.innerHTML=h;
-    if(pst)pst.textContent=any?'Top 2 pre-game bets per sport for today (max 2 per sport per day) — every leg checked active, no Out / Doubtful / Inactive players — every parlay settles today.':'No parlays could be built from verified legs in today\u2019s games right now.';
+    if(pst)pst.textContent=any?'':'No parlays could be built from verified legs in today\u2019s games right now.';
     var stamp=document.getElementById('parlayStamp');
-    if(stamp)stamp.innerHTML='Model: DraftKings moneylines (via ESPN) de-vigged, adjusted for last-5 team form, home/away splits, rest days &amp; injuries; props blend last-5 game logs with season average &middot; Edge = model % minus book price &middot; Today only &middot; Max 2 pre-game bets per sport per day (2 strongest by hit % / edge) &middot; Every leg checked against the ESPN injury / inactive report for its game — Out, Doubtful, Inactive or suspended players are never used, TD legs included &middot; Hit % = legs multiplied &middot; Streak Lotto legs verified from live ESPN game logs (6/6 last games; line = 6-game minimum, shown as N+) &middot; Updated '+esc(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));
+    if(stamp)stamp.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     });
   }
   var loading=false;
@@ -5234,7 +5217,7 @@ body.on-christmas{color-scheme:light}
         h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">\uD83D\uDD34 '+esc(cLeague)+' Live \u2014 Closest Legs</span><span class="parlay-count">UNDER 55%</span></div>';
         h+='<p class="astatus" style="color:#fff;margin:8px 0 4px">Nothing clears the 55% bar right now \u2014 these are the closest legs, at their real chances. Shown for tracking, not a suggested bet.</p>';
         cp.legs.forEach(function(l){
-          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">UNDER 55%</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span><span class="live-why">'+esc(l.why)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">UNDER 55%</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
         h+='<div class="parlay-hit"><div class="hit-pct">'+esc(cHitTxt)+'% if all '+cp.legs.length+' hit together</div><div class="hit-lab">Closest legs only \u2014 every leg here is under the 55% bar, so there is no Live Parlay for this sport right now. Real-odds model, legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,cHitPct)).toFixed(1)+'%"></i></div></div>';
         h+='</div>';
@@ -5247,23 +5230,19 @@ body.on-christmas{color-scheme:light}
         var hitPct=p.hit*100;var hitTxt=hitPct>=10?hitPct.toFixed(1):hitPct.toFixed(2);
         var dec=1;p.legs.forEach(function(l){dec*=(1/l.prob);});var amount=10*dec;
         var leagueName=lg.label.replace(/^[^ ]+ /,'');
-        var copyTxt=leagueName+' Live Parlay \u2014 Real-Odds Model (Derek News Bet Simulator)\n'+p.legs.map(function(l,i){return (i+1)+'. '+l.text+' \u2014 '+l.curTxt+'; '+l.why+' ('+l.gameTxt+(l.clock?' \u00b7 '+l.clock:'')+')';}).join('\n')+'\nCombined odds: '+fmtOdds(dec)+' \u00b7 Stake: $10 \u2192 Payout: $'+amount.toFixed(2)+' \u00b7 Model hit chance: '+hitTxt+'% \u00b7 Real-odds model \u2014 not a guarantee';
-        var pbTxt='@Playbook '+leagueName+' live parlay: '+p.legs.map(function(l){return l.text;}).join('; ');
         h+='<div class="parlay-card"><div class="parlay-head"><span class="parlay-title">\uD83D\uDD34 '+esc(leagueName)+' Live Parlay \u2014 Real Odds</span><span class="parlay-count">'+p.legs.length+' legs \u00b7 LIVE</span></div>';
         p.legs.forEach(function(l){
-          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">LIVE</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span><span class="live-why">'+esc(l.why)+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
+          h+='<div class="parlay-leg"><span><b>'+esc(l.text)+'</b> <span class="sim">LIVE</span><span class="p-sub">'+esc(l.curTxt)+' \u00b7 '+esc(l.gameTxt)+(l.clock?' \u00b7 '+esc(l.clock):'')+'</span></span><span class="p-prob">'+Math.round(l.prob*100)+'%</span></div>';
         });
-        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="hit-lab">Real-odds model \u2014 each chance comes from the player\u2019s actual scoring distribution (season + last-5 base rate over the time left), not pace math. Legs multiplied together. Not a guarantee.</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
-        h+='<div class="hit-pay">$10 \u2192 $'+amount.toFixed(2)+(amount>10?' ('+fmtOdds(dec)+')':'')+'</div><div class="hit-lab">SIM estimate from the real-odds chances \u2014 no book price is verified for live props, so no best book is claimed.</div></div>';
-        h+='<p class="tail-label">Tail it with Playbook: tap <b>Copy this bet</b> and paste it to @Playbook (on X, Discord or in the Action app), or tap <b>Open in Playbook</b> \u2014 that copies the bet as a backup and opens X with it pre-filled for @Playbook. Lines can differ by book.</p><div class="tail-row"><button type="button" class="tail-btn copy-legs-btn" data-copy="'+esc(copyTxt)+'">\uD83D\uDCCB Copy this bet</button>';
-        h+='<a class="tail-btn playbook-btn" data-copy="'+esc(copyTxt)+'" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(pbTxt)+'" target="_blank" rel="noopener">Open in Playbook \u2192</a>';
-        h+='</div></div>';
+        h+='<div class="parlay-hit"><div class="hit-pct">'+esc(hitTxt)+'% chance to hit</div><div class="parlay-bar"><i style="width:'+Math.max(2,Math.min(100,hitPct)).toFixed(1)+'%"></i></div>';
+        h+='<div class="hit-pay">$10 \u2192 $'+amount.toFixed(2)+(amount>10?' ('+fmtOdds(dec)+')':'')+'</div></div>';
+        h+='</div>';
       }
       h+='</div>';
     });
     list.innerHTML=h;
     var stamp=document.getElementById('liveParlayStamp');
-    if(stamp)stamp.textContent='Box scores & clocks: ESPN live \u00b7 Chances: real base rate (season + last 5) run through the scoring distribution for the time left, adjusted for minutes / ice time and the score \u2014 never pace math \u00b7 Only players actually in the game: Out / Inactive / did-not-play are never used \u00b7 Max 1 live bet per sport \u00b7 Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' \u00b7 Refreshes every minute while games are live';
+    if(stamp)stamp.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' \u00b7 Refreshes every minute while games are live';
     applyPick();
   }
   var liveLoading=false;
@@ -5568,9 +5547,9 @@ body.on-christmas{color-scheme:light}
     var link='';(ev.links||[]).forEach(function(l){if(!link&&l.href&&l.href.indexOf('https://www.espn.com/'+league+'/game/')===0)link=l.href;});
     return{id:String(ev.id||''),league:league,date:ev.date||comp.date||'',state:st.state||'',detail:st.detail||st.shortDetail||'',displayClock:(comp.status&&comp.status.displayClock)||'',period:(comp.status&&comp.status.period)||0,teams:teams,link:link};
   }
-  function teamCell(t,league,opp){var kh=(opp&&window.__kalshiLine)?window.__kalshiLine(league,t,opp):'';return '<div class="ateam">'+logo(league,t.abbr)+'<span class="an">'+esc(t.name)+'</span>'+kh+'</div>';}
+  function teamCell(t,league,opp){var kh=(opp&&window.__kalshiLine)?window.__kalshiLine(league,t,opp):'';return '<div class="ateam">'+logo(league,t.abbr)+(t.abbr?'<span class="abbr">'+esc(t.abbr)+'</span>':'')+'<span class="an">'+esc(t.name)+'</span>'+kh+'</div>';}
   function sideVal(t,g){
-    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score">'+esc(t.score)+'</div>';
+    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score'+((g.state==='post'&&!t.winner)?' lost':'')+'">'+esc(t.score)+'</div>';
     return '<div class="aside">'+esc(t.record||'')+'</div>';
   }
   function row(g,featured){
@@ -6478,13 +6457,13 @@ body.on-christmas{color-scheme:light}
   }
   function teamCell(t,opp){
     var h='<div class="ateam">'+logoHtml(t);
-    h+='<span class="an">'+esc(t.name)+(FAVS[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
+    h+=(t.abbr?'<span class="abbr">'+esc(t.abbr)+'</span>':'')+'<span class="an">'+esc(t.name)+(FAVS[t.id]?' <span class="star" aria-label="favorite">★</span>':'')+'</span>';
     if(window.__kalshiLine&&opp)h+=window.__kalshiLine('mlb',t,opp);
     h+='</div>';
     return h;
   }
   function sideVal(t,g){
-    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score">'+esc(t.score)+'</div>';
+    if(g.state!=='pre'&&t.score!=null&&t.score!=='')return '<div class="aside score'+((g.state==='post'&&!t.winner)?' lost':'')+'">'+esc(t.score)+'</div>';
     return '<div class="aside">'+esc(t.record||'')+'</div>';
   }
   function gameRow(g,bucket){
