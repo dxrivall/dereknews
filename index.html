@@ -94,7 +94,7 @@ html{scroll-padding-bottom:120px}
 .dn-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 2px rgba(255,255,255,.92),0 1px 4px rgba(0,0,0,.35);display:none;pointer-events:none;z-index:4}
 .dn-dot.on{display:block}
 .tab .dn-dot{top:2px;right:calc(50% - 19px)}
-#view-sports .quick button .dn-dot{top:-5px;right:-5px;width:11px;height:11px}
+#view-sports .sport-row .dn-dot{top:-5px;right:-5px;width:11px;height:11px}
 .betsport-btn{position:relative}
 .betsport-btn .dn-dot{top:-4px;right:6px}
 
@@ -201,9 +201,6 @@ html,body{overflow-x:hidden}
 .wxd-barfill{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#2f6fd0,#e5484d)}
 .wxd-note{font-size:11px;color:rgba(255,255,255,.72);margin:0;line-height:1.45;text-align:left}
 .wxd-note a{color:#fff;text-decoration:underline}
-.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:30px}
-.quick button{font:inherit;cursor:pointer;background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:26px 12px;box-shadow:var(--shadow);color:var(--ink)}
-.quick .emoji{font-size:30px;display:block;margin-bottom:8px}.quick b{display:block;font-size:16px}.quick span{font-size:13px;color:var(--soft)}
 </style>
 
 <style>
@@ -1667,8 +1664,6 @@ body.on-sports footer{color:#aebfe6!important}
 #view-sports .hero h1{color:#fff;font-weight:700}
 #view-sports .dateline{color:#aebfe6}
 #view-sports .sport-intro{text-align:left;color:#c9d6f2;font-size:15px;line-height:1.6;max-width:640px;margin:14px 0 0}
-#view-sports .quick button{background:rgba(8,22,54,.78);border:1px solid rgba(255,255,255,.13);border-radius:20px;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-#view-sports .quick span{color:#aebfe6}
 #view-sports .card{background:rgba(8,22,54,.78);border:1px solid rgba(255,255,255,.12);border-radius:22px;color:#fff;box-shadow:0 8px 28px rgba(0,0,0,.28)}
 #view-sports .card h2{color:#fff}
 #view-sports .back-btn{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);box-shadow:none}
@@ -1824,24 +1819,25 @@ body.on-sports footer{color:#aebfe6!important}
 #sportsHome .stoday .ahead{margin-bottom:14px}
 #sportsHome .stoday .ahead h2{font-size:26px;font-weight:800;letter-spacing:-.01em}
 #sportsHome .stoday .league-pill{background:rgba(255,211,77,.15);border:1px solid rgba(255,211,77,.55);color:#ffd34d;box-shadow:none}
-#sportsHome .quick{grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
-#sportsHome .quick::before{content:"Browse Sports";grid-column:1/-1;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ffd34d;margin-bottom:-2px}
-#sportsHome .quick button{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-height:124px;padding:18px 16px 16px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.19);box-shadow:0 14px 32px rgba(0,0,10,.38),inset 0 1px 0 rgba(255,255,255,.18);transition:transform .12s ease}
-#sportsHome .quick button:active{transform:scale(.965)}
-#sportsHome .quick button .emoji{font-size:29px;width:54px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:17px;margin-bottom:11px;line-height:1}
-#sportsHome .quick button b{font-size:17.5px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
-#sportsHome .quick button::after{content:"\203A";position:absolute;top:14px;right:16px;font-size:24px;font-weight:700;line-height:1;color:rgba(255,255,255,.5)}
-#sportsHome .quick button:nth-child(1) .emoji{background:rgba(255,122,110,.2);border-color:rgba(255,122,110,.4)}
-#sportsHome .quick button:nth-child(2) .emoji{background:rgba(245,154,0,.22);border-color:rgba(245,154,0,.45)}
-#sportsHome .quick button:nth-child(3) .emoji{background:rgba(126,226,168,.18);border-color:rgba(126,226,168,.4)}
-#sportsHome .quick button:nth-child(4) .emoji{background:rgba(125,211,252,.2);border-color:rgba(125,211,252,.42)}
-#sportsHome .quick button:nth-child(5) .emoji{background:rgba(255,100,100,.2);border-color:rgba(255,100,100,.42)}
-#sportsHome .quick button:nth-child(6) .emoji{background:rgba(196,141,255,.2);border-color:rgba(196,141,255,.42)}
-#sportsHome .quick button:nth-child(7){grid-column:1/-1;flex-direction:row;align-items:center;gap:14px;min-height:86px;padding:16px 18px;background:linear-gradient(120deg,rgba(255,211,77,.24),rgba(255,122,110,.14) 60%,rgba(255,255,255,.05));border-color:rgba(255,211,77,.55)}
-#sportsHome .quick button:nth-child(7) .emoji{margin-bottom:0;background:rgba(255,211,77,.22);border-color:rgba(255,211,77,.5)}
-#sportsHome .quick button:nth-child(7) b{font-size:19px}
-#sportsHome .quick button:nth-child(7)::after{top:50%;transform:translateY(-50%)}
-@media(max-width:380px){#sportsHome .quick button{min-height:112px;padding:15px 13px}#sportsHome .quick button b{font-size:16px}}
+#sportsHome .sport-list{display:flex;flex-direction:column;margin-top:38px}
+#sportsHome .sport-list::before{content:"Browse Sports";font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ffd34d;margin-bottom:10px}
+#sportsHome .sport-row{position:relative;display:flex;align-items:center;gap:13px;width:100%;box-sizing:border-box;text-align:left;min-height:66px;padding:11px 14px;background:rgba(8,22,54,.78);border:1px solid rgba(255,255,255,.13);border-radius:18px;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;font:inherit;transition:transform .12s ease}
+#sportsHome .sport-row+.sport-row{margin-top:10px}
+#sportsHome .sport-row:active{transform:scale(.98)}
+#sportsHome .sport-row .emoji{flex:none;font-size:24px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:14px;line-height:1}
+#sportsHome .sport-row .sport-main{flex:1 1 auto;min-width:0}
+#sportsHome .sport-row b{display:block;font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
+#sportsHome .sport-row .sport-sub{display:block;font-size:12.5px;color:#aebfe6;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sportsHome .sport-row .sport-live{flex:none;font-size:12.5px;font-weight:800;color:#aebfe6}
+#sportsHome .sport-row .sport-live.is-live{color:#7ee2a8}
+#sportsHome .sport-row::after{content:"\203A";flex:none;font-size:24px;font-weight:700;line-height:1;color:rgba(255,255,255,.5)}
+#sportsHome .sport-row:nth-child(1) .emoji{background:rgba(255,122,110,.2);border-color:rgba(255,122,110,.4)}
+#sportsHome .sport-row:nth-child(2) .emoji{background:rgba(245,154,0,.22);border-color:rgba(245,154,0,.45)}
+#sportsHome .sport-row:nth-child(3) .emoji{background:rgba(126,226,168,.18);border-color:rgba(126,226,168,.4)}
+#sportsHome .sport-row:nth-child(4) .emoji{background:rgba(125,211,252,.2);border-color:rgba(125,211,252,.42)}
+#sportsHome .sport-row:nth-child(5) .emoji{background:rgba(255,100,100,.2);border-color:rgba(255,100,100,.42)}
+#sportsHome .sport-row:nth-child(6) .emoji{background:rgba(196,141,255,.2);border-color:rgba(196,141,255,.42)}
+#sportsHome .sport-row:nth-child(7) .emoji{background:rgba(255,211,77,.22);border-color:rgba(255,211,77,.45)}
 </style>
   <div class="hero"><h1>🏟️ Sports</h1><button type="button" class="sette-btn" id="setTeamsBtn">⚙️ Set Teams</button></div>
   <div class="teams-overlay" id="teamsPicker" hidden role="dialog" aria-modal="true" aria-label="Choose your favorite teams">
@@ -1861,14 +1857,14 @@ body.on-sports footer{color:#aebfe6!important}
     <div id="sportsTodayGames"></div>
     <p class="kalshi-credit">Moneyline %: Polymarket</p>
   </section>
-  <div class="quick">
-    <button type="button" data-sport="baseball"><span class="emoji">⚾</span><b>Baseball</b><span class="dn-dot" data-sportdot="baseball" aria-hidden="true"></span></button>
-    <button type="button" data-sport="basketball"><span class="emoji">🏀</span><b>Basketball</b><span class="dn-dot" data-sportdot="basketball" aria-hidden="true"></span></button>
-    <button type="button" data-sport="football"><span class="emoji">🏈</span><b>Football</b><span class="dn-dot" data-sportdot="football" aria-hidden="true"></span></button>
-    <button type="button" data-sport="hockey"><span class="emoji">🏒</span><b>Hockey</b><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
-    <button type="button" data-sport="ufc"><span class="emoji">👊</span><b>UFC</b><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
-    <button type="button" data-sport="boxing"><span class="emoji">🥊</span><b>Boxing</b><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
-    <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays</b><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
+  <div class="sport-list">
+    <button type="button" class="sport-row" data-sport="baseball"><span class="emoji">⚾</span><span class="sport-main"><b>Baseball</b><span class="sport-sub">Yankees · Season done</span></span><span class="sport-live" data-live="mlb"></span><span class="dn-dot" data-sportdot="baseball" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="basketball"><span class="emoji">🏀</span><span class="sport-main"><b>Basketball</b><span class="sport-sub">Lakers · Suns</span></span><span class="sport-live" data-live="nba"></span><span class="dn-dot" data-sportdot="basketball" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="football"><span class="emoji">🏈</span><span class="sport-main"><b>Football</b><span class="sport-sub">Jaguars · Patriots · Saints · Eagles</span></span><span class="sport-live" data-live="nfl"></span><span class="dn-dot" data-sportdot="football" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="hockey"><span class="emoji">🏒</span><span class="sport-main"><b>Hockey</b><span class="sport-sub">All NHL teams</span></span><span class="sport-live" data-live="nhl"></span><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="ufc"><span class="emoji">👊</span><span class="sport-main"><b>UFC</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="boxing"><span class="emoji">🥊</span><span class="sport-main"><b>Boxing</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="betsim"><span class="emoji">🎲</span><span class="sport-main"><b>Parlays</b><span class="sport-sub">Bet Simulator</span></span><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
   </div>
   <section class="acard" aria-label="Sports news">
   <div class="ahead"><h2>📰 Sports News</h2></div>
@@ -5609,15 +5605,18 @@ body.on-christmas{color-scheme:light}
       var st=document.getElementById('sportsTodayStatus'),fBox=document.getElementById('sportsTodayFeatured'),box=document.getElementById('sportsTodayGames');
       if(!box)return;
       if(res.every(function(r){return !r.d;})){if(st)st.textContent='Couldn’t load today’s games right now — open a sport below for live scores.';return;}
-      var seen={},all=[];
+      var seen={},all=[],counts={},seenC={};
       res.forEach(function(r){((r.d&&r.d.events)||[]).forEach(function(ev){
         var g=norm(ev,r.league);if(!g||!g.id)return;
         var isToday=etKey(g.date)===tk;
+        if(isToday){var ck=r.league+':'+g.id;if(!seenC[ck]){seenC[ck]=1;var cc=counts[r.league]=counts[r.league]||{today:0,live:0};cc.today++;if(g.state==='in')cc.live++;}}
         if(!isToday&&!recentFinal(g))return; /* today, or a final under 24h old */
         var fav=FAVS[g.league];
         if(fav&&!g.teams.some(function(t){return fav[t.id];}))return;
         var k=g.league+':'+g.id;if(seen[k])return;seen[k]=1;all.push(g);
       });});
+      window.__dnTodayCounts=counts;
+      if(window.__dnUpdatePickerCounts)window.__dnUpdatePickerCounts();
       function rank(g){
         if(g.state==='in')return 0;
         if(etKey(g.date)===tk)return 1;
@@ -5634,6 +5633,18 @@ body.on-christmas{color-scheme:light}
       if(st)st.textContent=all.length?'':'No games today.';
     }).catch(function(){loading=false;var st=document.getElementById('sportsTodayStatus');if(st)st.textContent='Couldn’t load today’s games right now — open a sport below for live scores.';});
   }
+  /* Picker live badges: fill each sport row's right-hand badge from
+     the Today fetch's per-league counts (no extra requests). */
+  function updatePickerCounts(){
+    var c=window.__dnTodayCounts||{};
+    document.querySelectorAll('#sportsHome [data-live]').forEach(function(el){
+      var v=c[el.getAttribute('data-live')];
+      if(!v||!v.today){el.textContent='';el.classList.remove('is-live');return;}
+      if(v.live>0){el.textContent='● '+v.live+' LIVE';el.classList.add('is-live');}
+      else{el.textContent=v.today+' today';el.classList.remove('is-live');}
+    });
+  }
+  window.__dnUpdatePickerCounts=updatePickerCounts;
   loadToday();
   setInterval(loadToday,60000);
 })();
@@ -5960,8 +5971,15 @@ body.on-christmas{color-scheme:light}
     return out.length?out.join('|'):'';
   };
   selectSection('top');
-  /* Auto-refresh: every 4 minutes, ACTIVE section only. */
-  setInterval(function(){fetchSection(active);},REFRESH_MS);
+  /* Auto-refresh: every 4 minutes, the ACTIVE section — plus one
+     background section in rotation, so a section you haven't tapped
+     (like Local) still stays fresh instead of freezing at page load. */
+  var bgOrder=['local','nationwide','global','top'],bgIdx=0;
+  setInterval(function(){
+    fetchSection(active);
+    var k=bgOrder[bgIdx%bgOrder.length];bgIdx++;
+    if(k!==active)fetchSection(k);
+  },REFRESH_MS);
   /* Sports + Weather tab news (Derek, Nov 18): the News feed's
      Weather and Sports chips were removed — those stories now live
      on their own tabs. Same fetchers and rows as the feed, their own
