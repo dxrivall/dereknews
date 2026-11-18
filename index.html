@@ -1133,6 +1133,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
   <p class="nws-line"><a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service — Official Forecast for Cicero, NY →</a></p>
+  <h3 class="wxsec">📰 Weather News — Nationwide &amp; Central NY</h3>
+  <p class="lstatus" id="wxNewsStatus">Loading weather news…</p>
+  <div class="storm-list" id="wxNewsList" aria-label="Weather news"></div>
+  <p class="nfeed-updated" id="wxNewsUpdated"></p>
   <script>
   (function(){
     var a=document.getElementById('wxRadioAudio'),b=document.getElementById('wxRadioBtn'),st=document.getElementById('wxRadioStatus');
@@ -1188,23 +1192,23 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .nchip.is-active{background:#b42318;border-color:#b42318;color:#fff}
 #view-news .nchip:active{opacity:.75}
 #view-news .nfeed-note{margin:0 0 4px}
-#view-news .nfeed{display:flex;flex-direction:column}
-#view-news .nfeed-item{display:flex;gap:12px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
-#view-news .nfeed-item:last-child{border-bottom:0}
-#view-news .nfeed-item:active{opacity:.7}
-#view-news .nfeed-main{flex:1 1 auto;min-width:0}
-#view-news .nfeed-t{display:block;font-size:15.5px;font-weight:650;line-height:1.4}
-#view-news .nfeed-m{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
-#view-news .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
+#view-news .nfeed,#view-sports .nfeed,#view-weather .nfeed{display:flex;flex-direction:column}
+#view-news .nfeed-item,#view-sports .nfeed-item,#view-weather .nfeed-item{display:flex;gap:12px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
+#view-news .nfeed-item:last-child,#view-sports .nfeed-item:last-child,#view-weather .nfeed-item:last-child{border-bottom:0}
+#view-news .nfeed-item:active,#view-sports .nfeed-item:active,#view-weather .nfeed-item:active{opacity:.7}
+#view-news .nfeed-main,#view-sports .nfeed-main,#view-weather .nfeed-main{flex:1 1 auto;min-width:0}
+#view-news .nfeed-t,#view-sports .nfeed-t,#view-weather .nfeed-t{display:block;font-size:15.5px;font-weight:650;line-height:1.4}
+#view-news .nfeed-m,#view-sports .nfeed-m,#view-weather .nfeed-m{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
+#view-news .nfeed-thumb,#view-sports .nfeed-thumb,#view-weather .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
 #view-news .nfeed-more{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:13px 2px 4px;cursor:pointer;min-height:44px}
 #view-news .nfeed-more:active{opacity:.7}
-#view-news .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
-#view-news .nfeed-updated:empty{display:none}
+#view-news .nfeed-updated,#view-sports .nfeed-updated,#view-weather .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
+#view-news .nfeed-updated:empty,#view-sports .nfeed-updated:empty,#view-weather .nfeed-updated:empty{display:none}
 #view-news .brk-toggle{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:11px 2px 2px;cursor:pointer;min-height:40px}
 #view-news .brk-toggle:active{opacity:.7}
 #view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
 #view-news .ncard h2{font-size:21px;font-weight:800;letter-spacing:-.01em;text-align:left;margin:0 0 6px;line-height:1.25}
-#view-news .lstatus{color:var(--soft);font-size:14px;line-height:1.55;margin:8px 0}
+#view-news .lstatus,#view-sports .lstatus,#view-weather .lstatus{color:var(--soft);font-size:14px;line-height:1.55;margin:8px 0}
 #view-news .eparty{display:flex;height:44px;border-radius:12px;overflow:hidden;margin-top:14px;font-size:13.5px;font-weight:800;color:#fff}
 #view-news .edem{background:#2563eb;display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden}
 #view-news .erep{background:#dc2626;display:flex;align-items:center;justify-content:flex-end;padding:0 12px;white-space:nowrap;overflow:hidden}
@@ -1326,11 +1330,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <span class="nkick">News · Feed</span><h2 id="newsFeedTitle">Top Stories</h2>
     <div class="nfeed-chips" role="tablist" aria-label="News sections">
       <button type="button" class="nchip is-active" data-nfeed="top" role="tab" aria-selected="true">Top Stories</button>
-      <button type="button" class="nchip" data-nfeed="weather" role="tab" aria-selected="false">Weather</button>
       <button type="button" class="nchip" data-nfeed="local" role="tab" aria-selected="false">Local</button>
       <button type="button" class="nchip" data-nfeed="nationwide" role="tab" aria-selected="false">Nationwide</button>
       <button type="button" class="nchip" data-nfeed="global" role="tab" aria-selected="false">Global</button>
-      <button type="button" class="nchip" data-nfeed="sports" role="tab" aria-selected="false">Sports</button>
     </div>
     <p class="nnote nfeed-note" id="newsFeedNote">Straight news only — AP, Reuters &amp; wires. No opinion and no partisan quote pieces.</p>
     <p class="lstatus" id="newsFeedStatus">Loading top stories…</p>
@@ -1868,6 +1870,12 @@ body.on-sports footer{color:#aebfe6!important}
     <button type="button" data-sport="boxing"><span class="emoji">🥊</span><b>Boxing</b><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
     <button type="button" data-sport="betsim"><span class="emoji">🎲</span><b>Parlays</b><span class="dn-dot" data-sportdot="betsim" aria-hidden="true"></span></button>
   </div>
+  <section class="acard" aria-label="Sports news">
+  <div class="ahead"><h2>📰 Sports News</h2></div>
+  <p class="astatus" id="sportsNewsStatus">Loading sports news…</p>
+  <div class="nfeed" id="sportsNewsList"></div>
+  <p class="nfeed-updated" id="sportsNewsUpdated"></p>
+  </section>
   </div>
   <div class="sport-panel" id="sport-baseball" hidden>
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
@@ -5846,11 +5854,9 @@ body.on-christmas{color-scheme:light}
   }
   var SECTIONS={
     top:{label:'Top Stories',note:true,empty:'No straight-news stories right now.',err:'Couldn\u2019t load top stories right now.',load:'Loading top stories\u2026',fetch:function(){return rssCollect(NAT_Q.concat(GLOB_Q),polKeep,15);}},
-    weather:{label:'Weather',note:false,empty:'No weather stories right now.',err:'Couldn\u2019t load weather stories right now.',load:'Loading weather stories\u2026',fetch:fetchWeather},
     local:{label:'Local',note:false,empty:'No local stories right now.',err:'Couldn\u2019t load local news right now.',load:'Loading local news\u2026',fetch:function(){return rssCollect(LOCAL_Q,localKeep,10);}},
     nationwide:{label:'Nationwide',note:true,empty:'No straight-news nationwide stories right now.',err:'Couldn\u2019t load nationwide headlines right now.',load:'Loading nationwide headlines\u2026',fetch:function(){return rssCollect(NAT_Q,polKeep,10);}},
     global:{label:'Global',note:true,empty:'No straight-news global stories right now.',err:'Couldn\u2019t load global headlines right now.',load:'Loading global headlines\u2026',fetch:function(){return rssCollect(GLOB_Q,polKeep,10);}},
-    sports:{label:'Sports',note:false,empty:'No sports stories right now.',err:'Couldn\u2019t load sports stories right now.',load:'Loading sports stories\u2026',fetch:fetchSports}
   };
   var REFRESH_MS=240000;
   var cache={},inFlight={},active='top',expanded=false,prefetched=false;
@@ -5909,7 +5915,7 @@ body.on-christmas{color-scheme:light}
        (window.__dnNewsSig) has every section's headlines, mirroring
        what the old grid loaded on page load. Staggered a few
        seconds apart; per-tick refreshes never do this. */
-    ['weather','local','nationwide','global','sports'].forEach(function(k,i){
+    ['local','nationwide','global'].forEach(function(k,i){
       setTimeout(function(){if(!cache[k])fetchSection(k);},3000*(i+1));
     });
   }
@@ -5944,9 +5950,9 @@ body.on-christmas{color-scheme:light}
     ch.addEventListener('click',function(){selectSection(ch.getAttribute('data-nfeed'));});
   });
   /* News red dot: signature from the CACHED sections — first 3
-     titles each of weather, local, nationwide, global, sports. */
+     titles each of local, nationwide, global. */
   window.__dnNewsSig=function(){
-    var order=['weather','local','nationwide','global','sports'],out=[];
+    var order=['local','nationwide','global'],out=[];
     order.forEach(function(k){
       var c=cache[k];
       if(c&&c.items)c.items.slice(0,3).forEach(function(a){if(a&&a.title)out.push(a.title);});
@@ -5956,6 +5962,29 @@ body.on-christmas{color-scheme:light}
   selectSection('top');
   /* Auto-refresh: every 4 minutes, ACTIVE section only. */
   setInterval(function(){fetchSection(active);},REFRESH_MS);
+  /* Sports + Weather tab news (Derek, Nov 18): the News feed's
+     Weather and Sports chips were removed — those stories now live
+     on their own tabs. Same fetchers and rows as the feed, their own
+     small loader each, refreshed on the same 4-minute cadence. */
+  function fillTabNews(listId,statusId,updId,fetchFn,emptyMsg,errMsg){
+    var list=document.getElementById(listId),st=document.getElementById(statusId),up=document.getElementById(updId);
+    if(!list)return;
+    if(st)st.textContent='Loading\u2026';
+    fetchFn().then(function(items){
+      if(!items||!items.length){if(st)st.textContent=emptyMsg;list.innerHTML='';if(up)up.textContent='';return;}
+      if(st)st.textContent='';
+      list.innerHTML=items.slice(0,10).map(feedRow).join('');
+      if(up)up.textContent=fmtUpdated(Date.now());
+    }).catch(function(){
+      if(st)st.textContent=errMsg;list.innerHTML='';if(up)up.textContent='';
+    });
+  }
+  function refreshTabNews(){
+    fillTabNews('sportsNewsList','sportsNewsStatus','sportsNewsUpdated',fetchSports,'No sports stories right now.','Couldn\u2019t load sports stories right now.');
+    fillTabNews('wxNewsList','wxNewsStatus','wxNewsUpdated',fetchWeather,'No weather stories right now.','Couldn\u2019t load weather stories right now.');
+  }
+  refreshTabNews();
+  setInterval(refreshTabNews,REFRESH_MS);
   /* 2028 outlook: live from Polymarket's public Gamma API (CORS *).
      Numbers render only from the live response. */
   var ebox=document.getElementById('electionOutlook');
