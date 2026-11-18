@@ -1,5 +1,5 @@
 # "What's going on" fetcher for Derek News
-# Pulls the same 9 Google News queries server-side every 5 minutes
+# Pulls the same 11 Google News queries server-side every 5 minutes
 # and writes going-on.json at the repo root. The site reads
 # going-on.json first and only falls back to live rss2json when the
 # file is missing or older than 30 minutes, so an rss2json rate
@@ -87,7 +87,7 @@ jobs:
               'bank outage OR "online banking" down OR "banking delays"',
               'airline grounded OR "ground stop" OR flights grounded',
               '"emergency alert test" OR "EAS test"',
-              'Iran attack US base Bahrain',
+              'Iran attack US base Bahrain OR Kuwait',
               'Iran dirty bomb Washington',
           ]
 
@@ -122,6 +122,67 @@ jobs:
                       d = d.replace(tzinfo=timezone.utc)
                   items.append({"title": title, "link": link, "when": d})
               return items
+
+
+          # Queries whose failure would break the tension count get one
+          # rss2json fallback. Nov 18, 2026: Google News started rate-limiting
+          # the GitHub runner IPs, so the direct fetch failed on every run for
+          # ~24h while the runs still exited 0 — going-on.json went stale and
+          # the tension count froze. rss2json fetches the same feed from its
+          # own servers, so it works when the runner is blocked. Kept to the
+          # war query only: it is the one that feeds the tension count (the
+          # list this file used to feed was removed Nov 17), and rss2json is a
+          # shared free service — don't burn its quota on the other queries.
+          FALLBACK_QUERIES = {'Iran attack US base Bahrain OR Kuwait'}
+
+
+          def fetch_items_rss2json(url):
+              api = ("https://api.rss2json.com/v1/api.json?rss_url="
+                     + urllib.parse.quote(url, safe=""))
+              req = urllib.request.Request(api, headers=UA)
+              with urllib.request.urlopen(req, timeout=25) as r:
+                  d = json.loads(r.read().decode("utf-8", "replace"))
+              if d.get("status") != "ok":
+                  raise RuntimeError("rss2json status: %s" % d.get("status"))
+              items = []
+              for it in d.get("items") or []:
+                  title = (it.get("title") or "").strip()
+                  link = (it.get("link") or "").strip()
+                  pub = (it.get("pubDate") or "").strip()
+                  if not title or not link or not pub:
+                      continue
+                  try:
+                      when = parsedate_to_datetime(pub)
+                  except (TypeError, ValueError):
+                      continue
+                  if when is None:
+                      continue
+                  if when.tzinfo is None:
+                      when = when.replace(tzinfo=timezone.utc)
+                  items.append({"title": title, "link": link, "when": when})
+              return items
+
+
+          def fetch_query(q):
+              """Fetch one query: direct Google News, up to 2 tries, then the
+              rss2json fallback for the war query. Raises only if all paths
+              fail, so the caller can keep the last good file."""
+              url = gnews_url(q)
+              last_err = None
+              for attempt in range(2):
+                  try:
+                      return fetch_items(url)
+                  except Exception as e:
+                      last_err = e
+                      print(f"direct fetch failed ({q}) attempt {attempt + 1}: {e}")
+                      time.sleep(10)
+              if q in FALLBACK_QUERIES:
+                  try:
+                      return fetch_items_rss2json(url)
+                  except Exception as e:
+                      last_err = e
+                      print(f"rss2json fallback failed ({q}): {e}")
+              raise last_err
 
 
           def strip_outlet(title):
@@ -222,7 +283,7 @@ jobs:
               any_ok = False
               for q in QUERIES:
                   try:
-                      fetched = fetch_items(gnews_url(q))
+                      fetched = fetch_query(q)
                       any_ok = True
                   except Exception as e:
                       print(f"query failed ({q}): {e}")
