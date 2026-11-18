@@ -1,47 +1,53 @@
 {
- "updated_at": "2026-11-18T13:40:47.337575+00:00",
+ "updated_at": "2026-11-18T14:34:55.240263+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385341,
-  "out": 10585,
-  "pct": 0.13,
-  "source_updated": "2026-11-18T13:34:33+00:00",
+  "out": 8760,
+  "pct": 0.1,
+  "source_updated": "2026-11-18T14:25:04+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315387,
-    "out": 8372,
-    "pct": 2.65
+    "out": 8392,
+    "pct": 2.66
    },
    {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 2065,
-    "pct": 0.12
+    "out": 149,
+    "pct": 0.01
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 78,
+    "out": 126,
     "pct": 0.01
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 46,
+    "out": 43,
     "pct": 0.0
    },
    {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392140,
-    "out": 15,
+    "name": "New York State Electric & Gas",
+    "tracked": 919315,
+    "out": 37,
     "pct": 0.0
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 8,
+    "out": 6,
+    "pct": 0.0
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392140,
+    "out": 6,
     "pct": 0.0
    },
    {
@@ -59,12 +65,6 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919315,
     "out": 0,
     "pct": 0.0
    },
@@ -96,16 +96,16 @@
  },
  "county": {
   "tracked": 212912,
-  "out": 1997,
-  "source_updated": "2026-11-18T13:34:32+00:00",
-  "pct": 0.94,
+  "out": 3,
+  "source_updated": "2026-11-18T14:25:02+00:00",
+  "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204758,
-    "out": 1997,
-    "pct": 0.98
+    "out": 3,
+    "pct": 0.0
    },
    {
     "name": "New York State Electric & Gas",
