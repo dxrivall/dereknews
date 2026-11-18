@@ -1234,6 +1234,19 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .et-risk-num.lv-high{color:#c2410c}
 #view-news .et-risk-num.lv-severe{color:#b42318}
 #view-news .et-risk-num.long{font-size:40px}
+#view-news .et-scale{display:flex;gap:4px;margin:14px 2px 0}
+#view-news .et-scale span{flex:1;text-align:center}
+#view-news .et-scale i{display:block;height:6px;border-radius:99px;background:rgba(127,160,175,.25);margin-bottom:5px}
+#view-news .et-scale span.on[data-lv="low"] i{background:#1e7e34}
+#view-news .et-scale span.on[data-lv="elevated"] i{background:#b26a00}
+#view-news .et-scale span.on[data-lv="high"] i{background:#c2410c}
+#view-news .et-scale span.on[data-lv="severe"] i{background:#b42318}
+#view-news .et-scale b{display:block;font-size:11px;font-weight:700;color:var(--soft)}
+#view-news .et-scale em{display:block;font-style:normal;font-size:10.5px;font-weight:600;color:var(--soft);opacity:.75;margin-top:1px}
+#view-news .et-scale span.cur[data-lv="low"] b{color:#1e7e34;font-weight:800}
+#view-news .et-scale span.cur[data-lv="elevated"] b{color:#b26a00;font-weight:800}
+#view-news .et-scale span.cur[data-lv="high"] b{color:#c2410c;font-weight:800}
+#view-news .et-scale span.cur[data-lv="severe"] b{color:#b42318;font-weight:800}
 #view-news .et-risk-market{font-size:13px;font-weight:700;color:var(--soft);margin-top:6px}
 #view-news .et-risk-market:empty{display:none}
 #view-news .et-risk-trend{font-size:15px;font-weight:800;margin-top:6px}
@@ -1280,6 +1293,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <span class="nkick">News &middot; War &amp; Cyber Tracker</span><h2>🛡️ War &amp; Cyber Tracker</h2>
     <div class="et-risk" id="etRisk">
       <div class="et-risk-num" id="etRiskNum">—</div>
+      <div class="et-scale" id="etRiskScale" aria-label="Tension scale: Low 0 attacks, Elevated 1, High 2, Severe 3 or more">
+        <span data-lv="low"><i></i><b>Low</b><em>0</em></span>
+        <span data-lv="elevated"><i></i><b>Elevated</b><em>1</em></span>
+        <span data-lv="high"><i></i><b>High</b><em>2</em></span>
+        <span data-lv="severe"><i></i><b>Severe</b><em>3+</em></span>
+      </div>
       <div class="et-risk-trend" id="etRiskTrend"></div>
       <div class="et-risk-updated" id="etRiskUpdated"></div>
       <div class="et-risk-lab">Iran War Risk</div>
@@ -1451,6 +1470,16 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     var level=tensionLevelOf(count);
     tensionEl.textContent=level.toUpperCase();
     tensionEl.className='et-risk-num lv-'+level.toLowerCase()+(level.length>6?' long':'');
+    var scaleEl=document.getElementById('etRiskScale');
+    if(scaleEl){
+      var lvls=['low','elevated','high','severe'];
+      var idx=lvls.indexOf(level.toLowerCase());
+      var segs=scaleEl.querySelectorAll('span');
+      for(var i=0;i<segs.length;i++){
+        segs[i].classList.toggle('on',i<=idx);
+        segs[i].classList.toggle('cur',i===idx);
+      }
+    }
     if(tensionLevelEl)tensionLevelEl.textContent=count===0?'No attacks in the last 7 days':count===1?'1 attack in the last 7 days':count+' attacks in the last 7 days';
     if(tensionUpdated)tensionUpdated.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'+(delayed?' — refresh delayed':'');
     if(tensionTrend){
