@@ -1270,20 +1270,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 #view-news .cy-live{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#b42318;border:1.5px solid rgba(180,35,24,.6);border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:1px}
 #view-news .cy-map{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--link);text-decoration:none;border:1.5px solid var(--border);border-radius:999px;padding:9px 14px}
 #view-news .cy-map:active{opacity:.7}
-#view-news .et-pizza{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;text-align:left}
-#view-news .et-pizza p{font-size:13.5px;line-height:1.5;margin:6px 0}
-#view-news .et-pizza .et-pizza-caveat{font-size:12.5px;color:var(--soft)}
-#view-news .et-pizza-big{font-size:30px;font-weight:800;line-height:1.1;margin:8px 0 2px}
-#view-news .et-pizza-big small{font-size:15px;font-weight:700}
-#view-news .et-pizza-lv5{color:#15803d}
-#view-news .et-pizza-lv4{color:#65a30d}
-#view-news .et-pizza-lv3{color:#d97706}
-#view-news .et-pizza-lv2{color:#dc2626}
-#view-news .et-pizza-lv1{color:#b42318}
-#view-news .et-pizza-v{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;padding:5px 0;border-bottom:1px solid var(--border)}
-#view-news .et-pizza-v:last-child{border-bottom:0}
-#view-news .et-pizza-v b{white-space:nowrap}
-#view-news .et-pizza-up{font-size:12.5px;color:var(--soft);margin-top:8px}
 </style>
   <div class="nhero"><h1>📰 <span class="nred">News</span></h1><div class="nrule" aria-hidden="true"></div></div>
   <section class="ncard" id="breakingSection" aria-label="Breaking news">
@@ -1299,13 +1285,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       <div class="et-risk-lab">Iran War Risk</div>
       <div class="et-risk-level" id="etRiskLevel">—</div>
       <div class="et-risk-market" id="etRiskMarket">Polymarket: —</div>
-    </div>
-    <div class="et-pizza" aria-label="Pizza Index">
-      <h3 class="et-h">🍕 Pizza Index</h3>
-      <div id="pizzaLive"><p class="lstatus">Loading the live Pizza Index&hellip;</p></div>
-      <p>When Pentagon staff work late on a crisis, nearby pizza spots get busier than usual — the old OSINT tell.</p>
-      <p class="et-pizza-caveat">A folk indicator, not proof — busy pizza nights have plenty of ordinary causes.</p>
-      <a class="cy-map" href="https://x.com/PenPizzaReport" target="_blank" rel="noopener">Live report: @PenPizzaReport on X &rarr;</a>
     </div>
     <div class="et-prep" aria-label="How to prepare">
       <h3 class="et-h" style="margin-top:2px">How to prepare</h3>
@@ -1394,37 +1373,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   }
   fetchMarket();
   setInterval(function(){if(newsOpen())fetchMarket();},5*60*1000);
-})();
-</script>
-<script>
-/* Pizza Index — live level from pizza.json (GitHub Action refreshes
-   it every 15 min from World Monitor). Same honest pattern as the
-   outages widget: stale data shows last good values with a
-   "refresh delayed" note; only data over 24h old counts as failed,
-   and a missing file shows a couldn't-load line — never a guess. */
-(function(){
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  var box=document.getElementById('pizzaLive');
-  if(!box)return;
-  function fail(){box.innerHTML='<p class="lstatus">Pizza Index couldn&rsquo;t load right now.</p>';}
-  function vsFmt(v){
-    if(typeof v!=='number'||!isFinite(v))return 'No data';
-    if(v===0)return '0% vs usual';
-    return (v<0?'\u2212':'+')+Math.abs(v)+'% vs usual';
-  }
-  fetch('pizza.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-    if(!d||typeof d.level!=='number'||d.level<1||d.level>5||!d.label||!d.updated_at||!Array.isArray(d.venues)||!d.venues.length)throw new Error('bad pizza.json');
-    var age=Date.now()-new Date(d.updated_at).getTime();
-    if(!(age>-300000&&age<=86400000))throw new Error('stale pizza.json');
-    var h='<div class="et-pizza-big et-pizza-lv'+d.level+'">'+d.level+' <small>&mdash; '+esc(d.label)+'</small></div>';
-    d.venues.forEach(function(v){
-      if(!v||!v.name)return;
-      var right=(typeof v.vs_usual==='number')?vsFmt(v.vs_usual):esc(v.note||'No data');
-      h+='<div class="et-pizza-v"><span>'+esc(v.name)+'</span><b>'+right+'</b></div>';
-    });
-    h+='<p class="et-pizza-up">Updated '+new Date(d.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'+(age<=1800000?'':' &mdash; refresh delayed, showing the last good numbers')+' &middot; Source: World Monitor</p>';
-    box.innerHTML=h;
-  }).catch(fail);
 })();
 </script>
 <script>
