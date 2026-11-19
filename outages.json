@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-19T05:47:43.565381+00:00",
+ "updated_at": "2026-11-19T06:43:41.983718+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385439,
-  "out": 715,
+  "out": 700,
   "pct": 0.01,
-  "source_updated": "2026-11-19T05:44:56+00:00",
+  "source_updated": "2026-11-19T06:35:04+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 418,
+    "out": 417,
     "pct": 0.17
    },
    {
@@ -35,8 +35,8 @@
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392174,
-    "out": 23,
-    "pct": 0.01
+    "out": 9,
+    "pct": 0.0
    },
    {
     "name": "National Grid",
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-19T05:44:55+00:00",
+  "source_updated": "2026-11-19T06:35:02+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
