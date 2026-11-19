@@ -1700,6 +1700,7 @@ body.on-sports footer{color:#d8b8b2!important}
 #view-sports{--ink:#fff;--soft:#c9cdd6;--link:#ff9d94;--panel:rgba(38,34,36,.78);--border:rgba(255,255,255,.13);color:#fff}
 #view-sports .hero{text-align:left;padding:38px 4px 6px}
 .sette-btn{appearance:none;margin-top:10px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.30);color:#fff;font:inherit;font-size:12.5px;font-weight:700;border-radius:999px;padding:7px 13px;cursor:pointer;min-height:34px}
+#view-sports .sette-btn-small{background:transparent!important;border-color:rgba(255,255,255,.22)!important;color:#c9cdd6!important;box-shadow:none!important;font-size:12px!important;padding:6px 12px!important;min-height:30px!important;margin-top:0}
 .teams-overlay{position:fixed;inset:0;z-index:1200;background:rgba(4,10,28,.72);display:flex;align-items:flex-end;justify-content:center;padding:0}
 .teams-overlay[hidden]{display:none}
 .teams-sheet{background:#0d2150;color:#fff;width:100%;max-width:560px;max-height:88vh;overflow-y:auto;border-radius:22px 22px 0 0;padding:22px 18px calc(20px + env(safe-area-inset-bottom));text-align:left;box-shadow:0 -12px 40px rgba(0,0,0,.5)}
@@ -1903,7 +1904,7 @@ body.on-sports footer{color:#d8b8b2!important}
 #sportsHome .sport-row:nth-child(6) .emoji{background:rgba(196,141,255,.2);border-color:rgba(196,141,255,.42)}
 #sportsHome .sport-row:nth-child(7) .emoji{background:rgba(255,211,77,.22);border-color:rgba(255,211,77,.45)}
 </style>
-  <div class="hero"><h1>🏟️ Sports</h1><button type="button" class="sette-btn" id="setTeamsBtn">⚙️ Set Teams</button></div>
+  <div class="hero"><h1>🏟️ Sports</h1></div>
   <div class="teams-overlay" id="teamsPicker" hidden role="dialog" aria-modal="true" aria-label="Choose your favorite teams">
     <div class="teams-sheet">
       <h3>⭐ My Teams</h3>
@@ -1936,6 +1937,7 @@ body.on-sports footer{color:#d8b8b2!important}
   <div class="nfeed" id="sportsNewsList"></div>
   <p class="nfeed-updated" id="sportsNewsUpdated"></p>
   </section>
+  <p style="text-align:center;margin:20px 0 6px"><button type="button" class="sette-btn sette-btn-small" id="setTeamsBtn">⚙️ Set Teams</button></p>
   </div>
   <div class="sport-panel" id="sport-baseball" hidden>
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
@@ -2160,60 +2162,7 @@ body.on-sports footer{color:#d8b8b2!important}
   <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
   </section>
   </div>
-  <div class="team-sheet" id="teamSheet" hidden role="dialog" aria-modal="true" aria-label="Team detail">
-    <div class="team-sheet-backdrop" data-team-close></div>
-    <div class="team-sheet-card">
-      <button type="button" class="team-sheet-x" data-team-close aria-label="Close">&times;</button>
-      <h2 id="teamSheetName">Team</h2>
-      <p class="team-sheet-stats" id="teamSheetStats"></p>
-      <h3>Upcoming games</h3>
-      <div id="teamSheetUpcoming"><p class="astatus">Loading upcoming games&hellip;</p></div>
-      <h3>Last 5</h3>
-      <div id="teamSheetForm"><p class="astatus">Loading recent form&hellip;</p></div>
-    </div>
-  </div>
-  <script>
-  /* Team detail sheet — tap a standings row to see a team's seasonal
-     stats, upcoming games and last-5 form (ESPN team schedule). */
-  (function(){
-    var sheet=document.getElementById('teamSheet');if(!sheet)return;
-    var PATH={nba:'basketball/nba',nfl:'football/nfl',nhl:'hockey/nhl',mlb:'baseball/mlb'};
-    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-    function fmtDay(iso){try{var d=new Date(iso);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}catch(e){return '';}}
-    function fmtTime(iso){try{var d=new Date(iso);return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
-    function close(){sheet.hidden=true;document.body.style.overflow='';}
-    sheet.querySelectorAll('[data-team-close]').forEach(function(b){b.addEventListener('click',close);});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)close();});
-    document.addEventListener('click',function(e){
-      var tr=e.target.closest?e.target.closest('tr[data-team-id]'):null;
-      if(!tr)return;
-      var id=tr.getAttribute('data-team-id'),lg=tr.getAttribute('data-league');
-      if(!id||!lg||!PATH[lg])return;
-      document.getElementById('teamSheetName').textContent=tr.getAttribute('data-team-name')||'Team';
-      document.getElementById('teamSheetStats').textContent=tr.getAttribute('data-stats')||'';
-      document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Loading upcoming games&hellip;</p>';
-      document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Loading recent form&hellip;</p>';
-      sheet.hidden=false;document.body.style.overflow='hidden';
-      fetch('https://site.api.espn.com/apis/site/v2/sports/'+PATH[lg]+'/teams/'+encodeURIComponent(id)+'/schedule').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-        var evs=(d&&d.events)||[];
-        function side(e){var c=(e.competitions||[])[0]||{};var mine=null,opp=null;(c.competitors||[]).forEach(function(x){if(String(x.team.id)===String(id)){mine=x;}else opp=x;});return{mine:mine,opp:opp,comp:c};}
-        function oppName(e){var s=side(e);var t=s.opp&&s.opp.team;return t?(t.shortDisplayName||t.displayName||t.name||''):'Opponent';}
-        function ha(e){var s=side(e);return s.mine&&s.mine.homeAway==='home'?'vs':'@';}
-        var now=Date.now();
-        var up=evs.filter(function(e){var c=(e.competitions||[])[0]||{};var st=c.status&&c.status.type;return !(st&&st.completed)&&new Date(e.date).getTime()>=now-3600000;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,5);
-        var done=evs.filter(function(e){var c=(e.competitions||[])[0]||{};var st=c.status&&c.status.type;return st&&st.completed;}).sort(function(a,b){return new Date(b.date)-new Date(a.date);}).slice(0,5);
-        var upEl=document.getElementById('teamSheetUpcoming');
-        upEl.innerHTML=up.length?up.map(function(e){return '<div class="ts-game"><span>'+esc(fmtDay(e.date))+' · '+esc(fmtTime(e.date))+'</span><span><b>'+esc(ha(e)+' '+oppName(e))+'</b></span></div>';}).join(''):'<p class="astatus">No upcoming games listed right now.</p>';
-        var fmEl=document.getElementById('teamSheetForm');
-        if(!done.length){fmEl.innerHTML='<p class="astatus">No recent games found.</p>';return;}
-        fmEl.innerHTML=done.map(function(e){var s=side(e);var ms=s.mine&&s.mine.score?parseFloat(s.mine.score.value):NaN,os=s.opp&&s.opp.score?parseFloat(s.opp.score.value):NaN;var w=!isNaN(ms)&&!isNaN(os)?(ms>os?'W':'L'):'—';var sc=(!isNaN(ms)&&!isNaN(os))?(' '+ms+'-'+os):'';return '<div class="ts-game"><span>'+esc(fmtDay(e.date))+'</span><span><b>'+esc(w+' '+ha(e)+' '+oppName(e)+sc)+'</b></span></div>';}).join('');
-      }).catch(function(){
-        document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Couldn\u2019t load upcoming games right now.</p>';
-        document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Couldn\u2019t load recent form right now.</p>';
-      });
-    });
-  })();
-  </script>
+
 </main>
 <!-- FAITH / RELIGION -->
 <main class="wrap view" id="view-faith">
@@ -6951,5 +6900,59 @@ body.on-christmas{color-scheme:light}
   render();
 })();
 </script>
+  <div class="team-sheet" id="teamSheet" hidden role="dialog" aria-modal="true" aria-label="Team detail">
+    <div class="team-sheet-backdrop" data-team-close></div>
+    <div class="team-sheet-card">
+      <button type="button" class="team-sheet-x" data-team-close aria-label="Close">&times;</button>
+      <h2 id="teamSheetName">Team</h2>
+      <p class="team-sheet-stats" id="teamSheetStats"></p>
+      <h3>Upcoming games</h3>
+      <div id="teamSheetUpcoming"><p class="astatus">Loading upcoming games&hellip;</p></div>
+      <h3>Last 5</h3>
+      <div id="teamSheetForm"><p class="astatus">Loading recent form&hellip;</p></div>
+    </div>
+  </div>
+  <script>
+  /* Team detail sheet — tap a standings row to see a team's seasonal
+     stats, upcoming games and last-5 form (ESPN team schedule). */
+  (function(){
+    var sheet=document.getElementById('teamSheet');if(!sheet)return;
+    var PATH={nba:'basketball/nba',nfl:'football/nfl',nhl:'hockey/nhl',mlb:'baseball/mlb'};
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function fmtDay(iso){try{var d=new Date(iso);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}catch(e){return '';}}
+    function fmtTime(iso){try{var d=new Date(iso);return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+    function close(){sheet.hidden=true;document.body.style.overflow='';}
+    sheet.querySelectorAll('[data-team-close]').forEach(function(b){b.addEventListener('click',close);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)close();});
+    document.addEventListener('click',function(e){
+      var tr=e.target.closest?e.target.closest('tr[data-team-id]'):null;
+      if(!tr)return;
+      var id=tr.getAttribute('data-team-id'),lg=tr.getAttribute('data-league');
+      if(!id||!lg||!PATH[lg])return;
+      document.getElementById('teamSheetName').textContent=tr.getAttribute('data-team-name')||'Team';
+      document.getElementById('teamSheetStats').textContent=tr.getAttribute('data-stats')||'';
+      document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Loading upcoming games&hellip;</p>';
+      document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Loading recent form&hellip;</p>';
+      sheet.hidden=false;document.body.style.overflow='hidden';
+      fetch('https://site.api.espn.com/apis/site/v2/sports/'+PATH[lg]+'/teams/'+encodeURIComponent(id)+'/schedule').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+        var evs=(d&&d.events)||[];
+        function side(e){var c=(e.competitions||[])[0]||{};var mine=null,opp=null;(c.competitors||[]).forEach(function(x){if(String(x.team.id)===String(id)){mine=x;}else opp=x;});return{mine:mine,opp:opp,comp:c};}
+        function oppName(e){var s=side(e);var t=s.opp&&s.opp.team;return t?(t.shortDisplayName||t.displayName||t.name||''):'Opponent';}
+        function ha(e){var s=side(e);return s.mine&&s.mine.homeAway==='home'?'vs':'@';}
+        var now=Date.now();
+        var up=evs.filter(function(e){var c=(e.competitions||[])[0]||{};var st=c.status&&c.status.type;return !(st&&st.completed)&&new Date(e.date).getTime()>=now-3600000;}).sort(function(a,b){return new Date(a.date)-new Date(b.date);}).slice(0,5);
+        var done=evs.filter(function(e){var c=(e.competitions||[])[0]||{};var st=c.status&&c.status.type;return st&&st.completed;}).sort(function(a,b){return new Date(b.date)-new Date(a.date);}).slice(0,5);
+        var upEl=document.getElementById('teamSheetUpcoming');
+        upEl.innerHTML=up.length?up.map(function(e){return '<div class="ts-game"><span>'+esc(fmtDay(e.date))+' · '+esc(fmtTime(e.date))+'</span><span><b>'+esc(ha(e)+' '+oppName(e))+'</b></span></div>';}).join(''):'<p class="astatus">No upcoming games listed right now.</p>';
+        var fmEl=document.getElementById('teamSheetForm');
+        if(!done.length){fmEl.innerHTML='<p class="astatus">No recent games found.</p>';return;}
+        fmEl.innerHTML=done.map(function(e){var s=side(e);var ms=s.mine&&s.mine.score?parseFloat(s.mine.score.value):NaN,os=s.opp&&s.opp.score?parseFloat(s.opp.score.value):NaN;var w=!isNaN(ms)&&!isNaN(os)?(ms>os?'W':'L'):'—';var sc=(!isNaN(ms)&&!isNaN(os))?(' '+ms+'-'+os):'';return '<div class="ts-game"><span>'+esc(fmtDay(e.date))+'</span><span><b>'+esc(w+' '+ha(e)+' '+oppName(e)+sc)+'</b></span></div>';}).join('');
+      }).catch(function(){
+        document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Couldn\u2019t load upcoming games right now.</p>';
+        document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Couldn\u2019t load recent form right now.</p>';
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
