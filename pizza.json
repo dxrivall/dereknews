@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-19T07:58:12.118571+00:00",
+ "updated_at": "2026-11-19T15:02:04.895558+00:00",
  "level": 5,
  "label": "Normal Activity",
- "as_of": "Nov 19, 2026, 7:46 AM UTC",
+ "as_of": "Nov 19, 2026, 3:02 PM UTC",
  "venues": [
   {
    "name": "Extreme Pizza",
@@ -21,17 +21,17 @@
   },
   {
    "name": "Pizzato Pizza",
-   "vs_usual": -20
+   "vs_usual": null,
+   "note": "No data"
   },
   {
    "name": "Domino's Pizza",
    "vs_usual": null,
-   "note": "No data"
+   "note": "No baseline"
   },
   {
    "name": "Papa Johns Pizza",
-   "vs_usual": null,
-   "note": "No data"
+   "vs_usual": -25
   }
  ],
  "source": "World Monitor Pentagon Pizza Index"
