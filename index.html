@@ -2453,10 +2453,70 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1
 #view-coc .card{background:rgba(255,255,255,.96);border-color:#2d5a27}
 </style>
   <div class="hero"><h1>⚔️ Clash of Clans</h1></div>
-  <section class="card">
-    <h2>Coming Soon</h2>
-    <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto">Clash of Clans is coming soon to Derek News.</p>
+  <section class="card" aria-label="WAR II clan info">
+    <h2>⚔️ WAR II</h2>
+    <p style="text-align:center;color:var(--soft);margin:0 0 4px"><b style="color:var(--ink)">#2JQVGQRC9</b> · Level 4 · Silver League I · United States · 18/50 members · 16,250 trophies</p>
+    <p style="text-align:center;color:var(--soft);font-style:italic;margin:0 0 14px">"welcome to war clan 2 we take pride in winning wars. you earn leadership roles by participating in wars and donating troops. use both attacks in war and attack bases marked for you"</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;margin:0 0 14px">
+      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">4-2</div><div style="font-size:12px;color:var(--soft)">War record<br>(last 6 logged wars)</div></div>
+      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">67%</div><div style="font-size:12px;color:var(--soft)">Win rate<br>(recent wars)</div></div>
+      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">2×/wk</div><div style="font-size:12px;color:var(--soft)">War frequency<br>Twice a week</div></div>
+    </div>
+    <h3 style="margin:14px 0 6px">Current War</h3>
+    <p style="line-height:1.6;color:var(--soft);margin:0 0 10px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
+    <h3 style="margin:14px 0 6px">War Log</h3>
+    <ul style="text-align:left;max-width:560px;margin:0 auto;line-height:1.75;color:var(--soft);font-size:14.5px">
+      <li><b style="color:#b42318">Loss</b> vs SirangFitu — 14-14 · 97.8% vs 99.4% · Nov 16, 2026</li>
+      <li><b style="color:#b42318">Loss</b> vs F22 — 13-13 · 92.4% vs 94.4% · Oct 31, 2026</li>
+      <li><b style="color:#2d5a27">Win</b> vs Afghanistan — 15-14 · 100% vs 94.4% · Oct 29, 2026</li>
+      <li><b style="color:#2d5a27">Win</b> vs los money wey — 15-13 · 100% vs 90% · Oct 23, 2026</li>
+      <li><b style="color:#2d5a27">Win</b> vs teneme el nene — 14-7 · 98.6% vs 54.8% · Feb 17, 2025</li>
+      <li><b style="color:#2d5a27">Win</b> vs THE BROYS — 14-14 · 96% vs 93.6% · Jan 27, 2025</li>
+    </ul>
+    <p style="font-size:12.5px;color:var(--soft);margin:8px 0 0">War log is not public — information may be incomplete.</p>
+    <h3 style="margin:14px 0 6px">Clan War League 2026</h3>
+    <ul style="text-align:left;max-width:560px;margin:0 auto;line-height:1.75;color:var(--soft);font-size:14.5px">
+      <li>November, Silver League I — 79 stars · 2 wins, 4 losses, 1 draw</li>
+      <li>October, Gold League III — 65 stars · 1 win, 6 losses</li>
+      <li>September, Gold League III — 136 stars · 3 wins, 4 losses</li>
+      <li>August, Gold League II — 125 stars · 3 wins, 4 losses</li>
+    </ul>
+    <h3 style="margin:14px 0 6px">Key Members</h3>
+    <p style="line-height:1.6;color:var(--soft);margin:0">Leader: <b style="color:var(--ink)">boxing noah</b> (TH18, Lv210) · Co-leaders include <b style="color:var(--ink)">dxrival</b> (TH17, Lv203) and Nastypu (TH19, Lv246) · <b style="color:var(--ink)">Derek 2.0</b> (TH10) is an Elder.</p>
+    <p class="asrc">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot · <a href="https://clashspot.net/en/clan/2JQVGQRC9/view" target="_blank" rel="noopener">WAR II on ClashSpot &rarr;</a></p>
   </section>
+  <section class="card" aria-label="Latest Clash of Clans news">
+    <h2>📰 Latest Clash of Clans News</h2>
+    <p class="lstatus" id="cocNewsStatus">Loading Clash news…</p>
+    <div id="cocNewsList"></div>
+    <p class="nfeed-updated" id="cocNewsUpdated"></p>
+  </section>
+  <script>
+/* Clash of Clans news — live from Google News, top 5, every 4 min. */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+  function ago(iso){var t=new Date(iso).getTime();if(isNaN(t))return'';var s=Math.floor((Date.now()-t)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
+  function splitTitle(t){var i=String(t||'').lastIndexOf(' - ');if(i>12)return{title:t.slice(0,i),source:t.slice(i+3)};return{title:String(t||''),source:'Google News'};}
+  function load(){
+    var st=document.getElementById('cocNewsStatus'),list=document.getElementById('cocNewsList'),up=document.getElementById('cocNewsUpdated');
+    if(!list)return;
+    var feed='https://news.google.com/rss/search?q='+encodeURIComponent('Clash of Clans')+'&hl=en-US&gl=US&ceid=US:en';
+    fetchJSON('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed)).then(function(d){
+      if(!d||d.status!=='ok'||!d.items)throw new Error('rss');
+      var arts=d.items.slice(0,5);
+      if(!arts.length){if(st)st.textContent='No Clash news right now.';list.innerHTML='';if(up)up.textContent='';return;}
+      if(st)st.textContent='';
+      list.innerHTML=arts.map(function(it){
+        var sp=splitTitle(it.title);
+        return '<a class="nfeed-item" href="'+esc(it.link||'#')+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(sp.title)+'</span><span class="nfeed-m">'+esc(sp.source)+(it.pubDate?' \u00b7 '+esc(ago(it.pubDate)):'')+'</span></span></a>';
+      }).join('');
+      if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+    }).catch(function(){if(st)st.textContent='Couldn\u2019t load Clash news right now.';});
+  }
+  load();setInterval(load,4*60*1000);
+})();
+</script>
 </main>
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News<div style="font-size:11.5px;opacity:.65;margin-top:5px">Last updated <span id="footerUpdated"></span></div></footer>
 <script>
