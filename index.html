@@ -2446,6 +2446,7 @@ body.on-christmas{color-scheme:light}
 <main class="wrap view" id="view-coc">
 <style>
 body.on-coc{background:linear-gradient(180deg,#1d3a1f 0,#2d5a27 40%,#12200f 100%);color:#fff}
+body.on-coc{--ink:#12200f;--soft:#2c4426;--link:#1d5a27;--panel:#fff;--border:rgba(45,90,39,.4);--nav:#fff;--green:#2d5a27}
 body.on-coc .bottomnav{background:rgba(20,40,16,.55);border-color:rgba(255,255,255,.28);box-shadow:0 16px 38px rgba(0,0,10,.5),inset 0 1px 0 rgba(255,255,255,.25)}
 body.on-coc .tab{color:#cfe8c9!important;background:transparent!important}
 body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1d3a1f!important}
@@ -2483,7 +2484,22 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1
     </ul>
     <h3 style="margin:14px 0 6px">Key Members</h3>
     <p style="line-height:1.6;color:var(--soft);margin:0">Leader: <b style="color:var(--ink)">boxing noah</b> (TH18, Lv210) · Co-leaders include <b style="color:var(--ink)">dxrival</b> (TH17, Lv203) and Nastypu (TH19, Lv246) · <b style="color:var(--ink)">Derek 2.0</b> (TH10) is an Elder.</p>
-    <p class="asrc">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot · <a href="https://clashspot.net/en/clan/2JQVGQRC9/view" target="_blank" rel="noopener">WAR II on ClashSpot &rarr;</a></p>
+    <p class="asrc">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot.</p>
+  </section>
+  <section class="card" aria-label="Clash of Titans update">
+    <h2>🔥 Clash of Titans — Town Hall 19 Is Here</h2>
+    <p style="text-align:center;color:var(--soft);margin:0 0 10px">Out since Monday, November 16, 2026</p>
+    <ul style="text-align:left;max-width:600px;margin:0 auto;line-height:1.75;color:var(--soft);font-size:14.5px">
+      <li><b style="color:var(--ink)">Squads</b> — 12 at launch. A fixed group of troops that deploys with one tap and takes less housing space. Unlocks at Town Hall 8 through the new Squad Barracks.</li>
+      <li><b style="color:var(--ink)">Town Hall troops</b> — choose Barbarians, Archers, or Wizards to live in your Town Hall and defend it when attacked.</li>
+      <li><b style="color:var(--ink)">Spiky Tower</b> — a Dark Elixir defense that only attacks when hit; its damage is based on the attacker's max hitpoints.</li>
+      <li><b style="color:var(--ink)">Firecracker Tower</b> — a merge of a max Archer Tower and a max Scattershot. Splash rockets and sparks, ground and air.</li>
+      <li><b style="color:var(--ink)">Guardian Shrine</b> — your Guardian moves off the Town Hall to a free, instant-to-place Shrine.</li>
+      <li><b style="color:var(--ink)">Heroic Spell</b> — unlocks at Town Hall 17. Damage reduction, extra speed, and troops walk straight through walls.</li>
+      <li><b style="color:var(--ink)">Star Bonus rework</b> — rewards now scale with your Town Hall level, not your Ranked League.</li>
+      <li><b style="color:var(--ink)">New levels</b> — heroes to 115 (King/Queen), 100 (Minion Prince), 90 (Warden), 60 (Champion), 30 (Dragon Duke); Lab 17, Hero Hall 13, a 5th Air Defense, a 10th Spring Trap, and 25 more walls (350 total).</li>
+    </ul>
+    <p class="asrc">From Supercell's official Clash of Titans release notes.</p>
   </section>
   <section class="card" aria-label="Latest Clash of Clans news">
     <h2>📰 Latest Clash of Clans News</h2>
@@ -2509,7 +2525,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1
       if(st)st.textContent='';
       list.innerHTML=arts.map(function(it){
         var sp=splitTitle(it.title);
-        return '<a class="nfeed-item" href="'+esc(it.link||'#')+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(sp.title)+'</span><span class="nfeed-m">'+esc(sp.source)+(it.pubDate?' \u00b7 '+esc(ago(it.pubDate)):'')+'</span></span></a>';
+        return '<div class="nfeed-item"><span class="nfeed-main"><span class="nfeed-t">'+esc(sp.title)+'</span><span class="nfeed-m">'+esc(sp.source)+(it.pubDate?' \u00b7 '+esc(ago(it.pubDate)):'')+'</span></span></div>';
       }).join('');
       if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
     }).catch(function(){if(st)st.textContent='Couldn\u2019t load Clash news right now.';});
