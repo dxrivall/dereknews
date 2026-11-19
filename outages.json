@@ -1,54 +1,54 @@
 {
- "updated_at": "2026-11-19T14:02:13.324366+00:00",
+ "updated_at": "2026-11-19T14:54:38.720123+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385439,
-  "out": 369,
+  "out": 372,
   "pct": 0.0,
-  "source_updated": "2026-11-19T13:57:42+00:00",
+  "source_updated": "2026-11-19T14:45:09+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 185,
-    "pct": 0.02
-   },
-   {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 97,
+    "out": 127,
     "pct": 0.01
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 53,
-    "pct": 0.02
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 22,
+    "out": 83,
     "pct": 0.0
    },
    {
-    "name": "New York State Electric & Gas",
-    "tracked": 919379,
-    "out": 6,
-    "pct": 0.0
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 78,
+    "pct": 0.01
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392174,
+    "out": 42,
+    "pct": 0.01
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315387,
-    "out": 3,
-    "pct": 0.0
+    "out": 37,
+    "pct": 0.01
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
     "out": 3,
     "pct": 0.06
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 2,
+    "pct": 0.0
    },
    {
     "name": "Delaware County Electric Coop",
@@ -63,8 +63,8 @@
     "pct": 0.0
    },
    {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392174,
+    "name": "New York State Electric & Gas",
+    "tracked": 919379,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 1,
-  "source_updated": "2026-11-19T13:57:40+00:00",
+  "source_updated": "2026-11-19T14:45:08+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
