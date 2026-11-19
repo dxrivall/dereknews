@@ -2456,15 +2456,16 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1
   <div class="hero"><h1>⚔️ Clash of Clans</h1></div>
   <section class="card" aria-label="WAR II clan info">
     <h2>⚔️ WAR II</h2>
-    <p style="text-align:center;color:var(--soft);margin:0 0 4px"><b style="color:var(--ink)">#2JQVGQRC9</b> · Level 4 · Silver League I · United States · 18/50 members · 16,250 trophies</p>
+    <p id="cocClanHead" style="text-align:center;color:var(--soft);margin:0 0 4px"><b style="color:var(--ink)">#2JQVGQRC9</b> · Level 4 · Silver League I · United States · 18/50 members · 16,250 trophies</p>
     <p style="text-align:center;color:var(--soft);font-style:italic;margin:0 0 14px">"welcome to war clan 2 we take pride in winning wars. you earn leadership roles by participating in wars and donating troops. use both attacks in war and attack bases marked for you"</p>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;margin:0 0 14px">
-      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">8</div><div style="font-size:12px;color:var(--soft)">War wins<br>(official count)</div></div>
-      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">0</div><div style="font-size:12px;color:var(--soft)">Current<br>win streak</div></div>
+      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div id="cocClanWins" style="font-size:24px;font-weight:800;color:#2d5a27">8</div><div style="font-size:12px;color:var(--soft)">War wins<br>(official count)</div></div>
+      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div id="cocClanStreak" style="font-size:24px;font-weight:800;color:#2d5a27">0</div><div style="font-size:12px;color:var(--soft)">Current<br>win streak</div></div>
       <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">2×/wk</div><div style="font-size:12px;color:var(--soft)">War frequency<br>Twice a week</div></div>
     </div>
     <h3 style="margin:14px 0 6px">Current War</h3>
-    <p style="line-height:1.6;color:var(--soft);margin:0 0 10px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
+    <p id="cocCurrentWar" style="line-height:1.6;color:var(--soft);margin:0 0 10px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
+    <p id="cocRaid" style="line-height:1.6;color:var(--soft);margin:0 0 10px">Raid Weekend Nov 13–16: 5,218 Capital Gold looted, 6 attacks, 1 district destroyed.</p>
     <h3 style="margin:14px 0 6px">War Log</h3>
     <ul style="text-align:left;max-width:560px;margin:0 auto;line-height:1.75;color:var(--soft);font-size:14.5px">
       <li><b style="color:#b42318">Loss</b> vs SirangFitu — 14-14 · 97.8% vs 99.4% · Nov 16, 2026</li>
@@ -2484,8 +2485,54 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1
     </ul>
     <h3 style="margin:14px 0 6px">Key Members</h3>
     <p style="line-height:1.6;color:var(--soft);margin:0">Leader: <b style="color:var(--ink)">boxing noah</b> (TH18, Lv210) · Co-leaders include <b style="color:var(--ink)">dxrival</b> (TH17, Lv203) and Nastypu (TH19, Lv246) · <b style="color:var(--ink)">Derek 2.0</b> (TH10) is an Elder.</p>
-    <p class="asrc">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot.</p>
+    <p class="asrc" id="cocClanUpdated">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot.</p>
   </section>
+  <script>
+/* WAR II clan card — live from clan.json (Clashboard via GitHub Action).
+   Hardcoded snapshot above is the fallback; this only overwrites it
+   when clan.json loads and is fresh (<2h old). */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fmt(n){return Number(n).toLocaleString('en-US');}
+  function etTime(iso){try{return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}catch(e){return'';}}
+  function left(ms){if(ms<=0)return'ended';var m=Math.floor(ms/60000);if(m<60)return m+'m left';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m left';return Math.floor(h/24)+'d left';}
+  function load(){
+    fetch('clan.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+      if(!d||!d.clan||d.clan.tag!=='#2JQVGQRC9')return;
+      var age=Date.now()-new Date(d.updated_at||0).getTime();
+      if(isNaN(age)||age>2*3600*1000)return; /* stale: keep the snapshot */
+      var c=d.clan;
+      var head=document.getElementById('cocClanHead');
+      if(head)head.innerHTML='<b style="color:var(--ink)">'+esc(c.tag)+'</b> \u00b7 Level '+esc(c.level)+' \u00b7 '+esc(c.league||'')+' \u00b7 '+(c.location?esc(c.location)+' \u00b7 ':'')+esc(c.members)+'/50 members \u00b7 '+fmt(c.clanPoints)+' trophies';
+      var w=document.getElementById('cocClanWins');if(w)w.textContent=c.warWins;
+      var s=document.getElementById('cocClanStreak');if(s)s.textContent=c.warWinStreak;
+      var cw=document.getElementById('cocCurrentWar');
+      if(cw){
+        var war=d.currentWar;
+        if(war&&war.clan&&war.opponent){
+          var end=war.battleEndTime||war.endTime||'';
+          var tl=end?left(new Date(end).getTime()-Date.now()):'';
+          cw.innerHTML='<b style="color:var(--ink)">WAR IN PROGRESS</b> vs '+esc(war.opponent.name||'')+' — '+esc(war.clan.stars!=null?war.clan.stars:'?')+'\u2605 vs '+esc(war.opponent.stars!=null?war.opponent.stars:'?')+'\u2605'+(war.clan.destructionPercentage!=null?' ('+war.clan.destructionPercentage+'% vs '+war.opponent.destructionPercentage+'%)':'')+(tl?' \u00b7 '+tl:'');
+        }else if(war&&war.state){
+          cw.textContent='War '+war.state+'.';
+        }else{
+          cw.textContent='No war in progress right now.';
+        }
+      }
+      var rd=document.getElementById('cocRaid');
+      if(rd&&d.capital&&d.capital.state==='ended'&&d.capital.capitalTotalLoot!=null){
+        var st=d.capital.startTime||'',en=d.capital.endTime||'';
+        var rng='';
+        try{rng=new Date(st).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'})+'\u2013'+new Date(en).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});}catch(e){}
+        rd.textContent='Raid Weekend'+(rng?' '+rng:'')+': '+fmt(d.capital.capitalTotalLoot)+' Capital Gold looted, '+d.capital.totalAttacks+' attacks, '+d.capital.enemyDistrictsDestroyed+' district'+(d.capital.enemyDistrictsDestroyed===1?'':'s')+' destroyed.';
+      }
+      var up=document.getElementById('cocClanUpdated');
+      if(up)up.textContent='Clan data live from Clashboard \u00b7 Updated '+etTime(d.updated_at)+' ET';
+    }).catch(function(){/* keep the snapshot */});
+  }
+  load();setInterval(load,10*60*1000);
+})();
+</script>
   <section class="card" aria-label="Clash of Titans update">
     <h2>🔥 Clash of Titans — Town Hall 19 Is Here</h2>
     <p style="text-align:center;color:var(--soft);margin:0 0 10px">Out since Monday, November 16, 2026</p>

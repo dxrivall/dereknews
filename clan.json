@@ -1,0 +1,445 @@
+{
+  "updated_at": "2026-11-19T01:13:53Z",
+  "fetched_at": "2026-11-19T01:13:54.297Z",
+  "source": "clashboard.gg/clan/2JQVGQRC9",
+  "clan": {
+    "name": "WAR II",
+    "tag": "#2JQVGQRC9",
+    "level": 4,
+    "members": 18,
+    "warWins": 8,
+    "warLosses": "$undefined",
+    "warTies": "$undefined",
+    "warWinStreak": 0,
+    "warFrequency": "moreThanOncePerWeek",
+    "isWarLogPublic": false,
+    "league": "Silver League I",
+    "capitalLeague": "Bronze League III",
+    "clanPoints": 16250,
+    "clanBuilderPoints": 12918,
+    "clanCapitalPoints": 359,
+    "requiredTownhallLevel": 1,
+    "requiredTrophies": 5500,
+    "type": "closed",
+    "location": "United States",
+    "labels": [
+      {
+        "id": 56000000,
+        "name": "Clan Wars",
+        "icon": "https://api-assets.clashofclans.com/labels/64/lXaIuoTlfoNOY5fKcQGeT57apz1KFWkN9-raxqIlMbE.png"
+      },
+      {
+        "id": 56000001,
+        "name": "Clan War League",
+        "icon": "https://api-assets.clashofclans.com/labels/64/5w60_3bdtYUe9SM6rkxBRyV_8VvWw_jTlDS5ieU3IsI.png"
+      },
+      {
+        "id": 56000012,
+        "name": "Underdog",
+        "icon": "https://api-assets.clashofclans.com/labels/64/ImSgCg88EEl80mwzFZMIiJTqa33bJmJPcl4v2eT6O04.png"
+      }
+    ],
+    "badge": "https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png",
+    "description": "welcome to war clan 2 we take pride in winning wars. you earn leadership roles my participating in wars, participating in wars and donating troops. use both attacks in war and attack bases marked for you",
+    "memberList": [
+      {
+        "tag": "#GUVC2U9Q",
+        "name": "Nastypu",
+        "role": "coLeader",
+        "th": 19,
+        "expLevel": 246,
+        "trophies": 389,
+        "league": "Legend League",
+        "leagueTier": "Electro League 32",
+        "donations": 62,
+        "donationsReceived": 0,
+        "clanRank": 1,
+        "previousClanRank": 1
+      },
+      {
+        "tag": "#P22YG2PJU",
+        "name": "boxing noah",
+        "role": "leader",
+        "th": 18,
+        "expLevel": 210,
+        "trophies": 76,
+        "league": "Unranked",
+        "leagueTier": "Titan League 27",
+        "donations": 206,
+        "donationsReceived": 0,
+        "clanRank": 2,
+        "previousClanRank": 2
+      },
+      {
+        "tag": "#QP9QPJQGL",
+        "name": "Niihuu",
+        "role": "admin",
+        "th": 17,
+        "expLevel": 147,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Titan League 25",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 3,
+        "previousClanRank": 3
+      },
+      {
+        "tag": "#YU2JUR8LU",
+        "name": "WRAndrew",
+        "role": "coLeader",
+        "th": 16,
+        "expLevel": 136,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Golem League 20",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 4,
+        "previousClanRank": 4
+      },
+      {
+        "tag": "#GL80JCCU2",
+        "name": "not real 315",
+        "role": "coLeader",
+        "th": 14,
+        "expLevel": 133,
+        "trophies": 70,
+        "league": "Unranked",
+        "leagueTier": "Valkyrie League 14",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 5,
+        "previousClanRank": 5
+      },
+      {
+        "tag": "#QLUC892LV",
+        "name": "aviksaha",
+        "role": "admin",
+        "th": 13,
+        "expLevel": 66,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Wizard League 11",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 6,
+        "previousClanRank": 6
+      },
+      {
+        "tag": "#QRQ2QLJJU",
+        "name": "gowe",
+        "role": "admin",
+        "th": 13,
+        "expLevel": 69,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Wizard League 11",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 7,
+        "previousClanRank": 7
+      },
+      {
+        "tag": "#R80PGRL0C",
+        "name": "NightHawk",
+        "role": "admin",
+        "th": 11,
+        "expLevel": 75,
+        "trophies": 127,
+        "league": "Unranked",
+        "leagueTier": "Archer League 9",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 8,
+        "previousClanRank": 8
+      },
+      {
+        "tag": "#90L8L0C0R",
+        "name": "Derek 2.0",
+        "role": "admin",
+        "th": 10,
+        "expLevel": 76,
+        "trophies": 842,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 9,
+        "previousClanRank": 9
+      },
+      {
+        "tag": "#GGRYJ2CCQ",
+        "name": "Drewvibes2",
+        "role": "admin",
+        "th": 5,
+        "expLevel": 18,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 10,
+        "previousClanRank": 10
+      },
+      {
+        "tag": "#LQC8UJCVP",
+        "name": "lakersfan06",
+        "role": "coLeader",
+        "th": 13,
+        "expLevel": 113,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 11,
+        "previousClanRank": 11
+      },
+      {
+        "tag": "#QUYPQCCJC",
+        "name": "Andrew the best",
+        "role": "admin",
+        "th": 9,
+        "expLevel": 38,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 12,
+        "previousClanRank": 12
+      },
+      {
+        "tag": "#Q828YPY8J",
+        "name": "Albert",
+        "role": "coLeader",
+        "th": 14,
+        "expLevel": 129,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 13,
+        "previousClanRank": 13
+      },
+      {
+        "tag": "#GQ2YJQQ0J",
+        "name": "unstoppablepeka",
+        "role": "coLeader",
+        "th": 9,
+        "expLevel": 42,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 14,
+        "previousClanRank": 14
+      },
+      {
+        "tag": "#80GVR9CG",
+        "name": "tony",
+        "role": "coLeader",
+        "th": 15,
+        "expLevel": 140,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 15,
+        "previousClanRank": 15
+      },
+      {
+        "tag": "#Q9GCRU2PL",
+        "name": "hulk_smash",
+        "role": "coLeader",
+        "th": 17,
+        "expLevel": 212,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 16,
+        "previousClanRank": 16
+      },
+      {
+        "tag": "#Q8YV0JYUG",
+        "name": "Icy",
+        "role": "coLeader",
+        "th": 14,
+        "expLevel": 133,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 0,
+        "clanRank": 17,
+        "previousClanRank": 17
+      },
+      {
+        "tag": "#P8VGJCLY",
+        "name": "dxrival",
+        "role": "coLeader",
+        "th": 17,
+        "expLevel": 203,
+        "trophies": 0,
+        "league": "Unranked",
+        "leagueTier": "Unranked",
+        "donations": 0,
+        "donationsReceived": 268,
+        "clanRank": 18,
+        "previousClanRank": 18
+      }
+    ]
+  },
+  "currentWar": null,
+  "warLog": null,
+  "cwl": {
+    "unavailableRounds": [],
+    "season": null,
+    "state": null,
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "ongoing": 0,
+      "prep": 0
+    },
+    "wars": [],
+    "roster": []
+  },
+  "capital": {
+    "participationAvailable": true,
+    "startTime": "20261113T070000.000Z",
+    "endTime": "20261116T070000.000Z",
+    "state": "ended",
+    "capitalTotalLoot": 5218,
+    "raidsCompleted": 0,
+    "totalAttacks": 6,
+    "enemyDistrictsDestroyed": 1,
+    "offensiveReward": 23,
+    "defensiveReward": 0,
+    "members": [
+      {
+        "tag": "#GUVC2U9Q",
+        "name": "Nastypu",
+        "attacks": 6,
+        "attackLimit": 5,
+        "bonusAttackLimit": 1,
+        "capitalResourcesLooted": 5218
+      }
+    ],
+    "skipped": [
+      {
+        "tag": "#Q828YPY8J",
+        "name": "Albert",
+        "role": "coLeader",
+        "townHallLevel": 14
+      },
+      {
+        "tag": "#QUYPQCCJC",
+        "name": "Andrew the best",
+        "role": "admin",
+        "townHallLevel": 9
+      },
+      {
+        "tag": "#QLUC892LV",
+        "name": "aviksaha",
+        "role": "admin",
+        "townHallLevel": 13
+      },
+      {
+        "tag": "#P22YG2PJU",
+        "name": "boxing noah",
+        "role": "leader",
+        "townHallLevel": 18
+      },
+      {
+        "tag": "#90L8L0C0R",
+        "name": "Derek 2.0",
+        "role": "admin",
+        "townHallLevel": 10
+      },
+      {
+        "tag": "#GGRYJ2CCQ",
+        "name": "Drewvibes2",
+        "role": "admin",
+        "townHallLevel": 5
+      },
+      {
+        "tag": "#P8VGJCLY",
+        "name": "dxrival",
+        "role": "coLeader",
+        "townHallLevel": 17
+      },
+      {
+        "tag": "#QRQ2QLJJU",
+        "name": "gowe",
+        "role": "admin",
+        "townHallLevel": 13
+      },
+      {
+        "tag": "#Q9GCRU2PL",
+        "name": "hulk_smash",
+        "role": "coLeader",
+        "townHallLevel": 17
+      },
+      {
+        "tag": "#Q8YV0JYUG",
+        "name": "Icy",
+        "role": "coLeader",
+        "townHallLevel": 14
+      },
+      {
+        "tag": "#LQC8UJCVP",
+        "name": "lakersfan06",
+        "role": "coLeader",
+        "townHallLevel": 13
+      },
+      {
+        "tag": "#R80PGRL0C",
+        "name": "NightHawk",
+        "role": "admin",
+        "townHallLevel": 11
+      },
+      {
+        "tag": "#QP9QPJQGL",
+        "name": "Niihuu",
+        "role": "admin",
+        "townHallLevel": 17
+      },
+      {
+        "tag": "#GL80JCCU2",
+        "name": "not real 315",
+        "role": "coLeader",
+        "townHallLevel": 14
+      },
+      {
+        "tag": "#80GVR9CG",
+        "name": "tony",
+        "role": "coLeader",
+        "townHallLevel": 15
+      },
+      {
+        "tag": "#GQ2YJQQ0J",
+        "name": "unstoppablepeka",
+        "role": "coLeader",
+        "townHallLevel": 9
+      },
+      {
+        "tag": "#YU2JUR8LU",
+        "name": "WRAndrew",
+        "role": "coLeader",
+        "townHallLevel": 16
+      }
+    ],
+    "partial": [],
+    "rosterSize": 18,
+    "rosterAttacked": 1,
+    "rosterCaveat": true
+  }
+}
