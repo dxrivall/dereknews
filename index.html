@@ -2445,86 +2445,228 @@ body.on-christmas{color-scheme:light}
   </main>
 <main class="wrap view" id="view-coc">
 <style>
-body.on-coc{background:linear-gradient(180deg,#1d3a1f 0,#2d5a27 40%,#12200f 100%);color:#fff}
-body.on-coc{--ink:#12200f;--soft:#2c4426;--link:#1d5a27;--panel:#fff;--border:rgba(45,90,39,.4);--nav:#fff;--green:#2d5a27}
+body.on-coc{background:linear-gradient(180deg,#0a0f14 0,#0d1620 45%,#0a0f14 100%);color:#eef5f7}
+body.on-coc{--ink:#eef5f7;--soft:#b8c8d0;--link:#7fb8e8;--panel:#111a22;--border:rgba(255,255,255,.18);--nav:#0d141b;--green:#7fc97f}
+body.on-coc{color-scheme:dark}
 body.on-coc .bottomnav{background:rgba(20,40,16,.55);border-color:rgba(255,255,255,.28);box-shadow:0 16px 38px rgba(0,0,10,.5),inset 0 1px 0 rgba(255,255,255,.25)}
-body.on-coc .tab{color:#cfe8c9!important;background:transparent!important}
-body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#1d3a1f!important}
+body.on-coc .tab{color:#b8c8d0!important;background:transparent!important}
+body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#eef5f7!important}
 #view-coc .hero h1{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
-#view-coc .card{background:rgba(255,255,255,.96);border-color:#2d5a27}
+.cs-clan{background:#0d141b;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px;margin-top:34px;color:#eef5f7}
+.cs-head{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.cs-badge{position:relative;width:66px;height:66px;flex:none}
+.cs-badge img{width:100%;height:100%;object-fit:contain}
+.cs-lvl{position:absolute;top:-4px;right:-2px;background:#1d3a1f;border:2px solid #eef5f7;border-radius:6px;color:#fff;font-weight:800;font-size:13px;padding:1px 6px}
+.cs-id{flex:1;min-width:120px}
+.cs-name{font-size:27px;font-weight:800;color:#fff;line-height:1.1}
+.cs-tag{color:#9fb2bd;font-size:15px;margin-top:4px}
+.cs-right{flex:1 1 100%}
+.cs-loc{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:6px 12px;font-weight:700;color:#fff;font-size:15px}
+.cs-stats{display:flex;gap:10px;margin-top:12px}
+.cs-stat{flex:1;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:10px 4px;text-align:center;font-weight:800;color:#fff;font-size:17px;white-space:nowrap}
+.cs-stat .cs-ic{margin-right:4px}
+.cs-labels{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.cs-label{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 9px;font-size:13px;font-weight:700;color:#d7e6eb}
+.cs-more{margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:6px;color:#fff;font-weight:700;font-size:14px;padding:7px 12px;cursor:pointer}
+.cs-desc{color:#c3d4da;font-style:italic;line-height:1.6;margin:12px 0 0;font-size:14.5px}
+.cs-tabs{display:flex;gap:4px;overflow-x:auto;margin-top:18px;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+.cs-tab{flex:none;background:transparent;border:0;color:#c3d4da;font-weight:800;font-size:15px;padding:10px 14px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.cs-tab.active{background:#1f6fb2;color:#fff}
+.cs-h{color:#fff;font-size:20px;margin:18px 0 10px}
+.cs-p{color:#c3d4da;line-height:1.6;margin:0 0 10px;font-size:14.5px}
+.cs-list{text-align:left;line-height:1.75;color:#c3d4da;font-size:14.5px;margin:0 0 10px;padding-left:20px}
+.cs-info{border:1px solid #2ecc71;border-radius:8px;padding:14px;display:flex;gap:12px;align-items:flex-start;color:#eef5f7;margin-top:14px;font-size:15px;line-height:1.5}
+.cs-info-ic{flex:none;width:34px;height:34px;border-radius:50%;background:#2ecc71;color:#0d141b;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px}
+.cs-war{background:linear-gradient(160deg,#1d4e5f,#123a4a);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:16px;margin-top:14px;color:#fff}
+.cs-war-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;font-size:17px}
+.cs-war-mid{display:flex;align-items:center;gap:10px;margin-top:14px}
+.cs-war-side{flex:1;text-align:center}
+.cs-war-score{font-size:23px;font-weight:800}
+.cs-war-pct{color:#b8d4de;font-size:14px;margin-top:2px}
+.cs-result{flex:none;border:2px solid;border-radius:6px;padding:9px 16px;font-weight:800;font-size:17px}
+.cs-result.win{border-color:#2ecc71;background:rgba(46,204,113,.16)}
+.cs-result.loss{border-color:#e74c3c;background:rgba(231,76,60,.16)}
+.cs-war-bot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:#c3d4da;font-size:14.5px}
+.cs-size{border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:4px 12px;font-weight:700;color:#fff}
+.cs-member{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 2px;font-size:15px}
+.cs-member:last-child{border-bottom:0}
+.cs-m-name{font-weight:700;color:#fff}
+.cs-m-role{color:#9fb2bd;white-space:nowrap}
+.cs-you{background:#1f6fb2;color:#fff;border-radius:999px;font-size:11px;font-weight:800;padding:2px 8px;vertical-align:2px}
+.cs-statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;margin:0 0 14px}
+.cs-sg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:12px 6px}
+.cs-sg-n{font-size:24px;font-weight:800;color:#fff}
+.cs-sg-l{font-size:12px;color:#9fb2bd;margin-top:2px}
+.cs-updated{color:#7d93a0;font-size:12.5px;text-align:center;margin:16px 0 0}
 </style>
   <div class="hero"><h1>⚔️ Clash of Clans</h1></div>
-  <section class="card" aria-label="WAR II clan info">
-    <h2>⚔️ WAR II</h2>
-    <p id="cocClanHead" style="text-align:center;color:var(--soft);margin:0 0 4px"><b style="color:var(--ink)">#2JQVGQRC9</b> · Level 4 · Silver League I · United States · 18/50 members · 16,250 trophies</p>
-    <p style="text-align:center;color:var(--soft);font-style:italic;margin:0 0 14px">"welcome to war clan 2 we take pride in winning wars. you earn leadership roles by participating in wars and donating troops. use both attacks in war and attack bases marked for you"</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;margin:0 0 14px">
-      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div id="cocClanWins" style="font-size:24px;font-weight:800;color:#2d5a27">8</div><div style="font-size:12px;color:var(--soft)">War wins<br>(official count)</div></div>
-      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div id="cocClanStreak" style="font-size:24px;font-weight:800;color:#2d5a27">0</div><div style="font-size:12px;color:var(--soft)">Current<br>win streak</div></div>
-      <div style="background:rgba(45,90,39,.12);border:1px solid rgba(45,90,39,.35);border-radius:14px;padding:12px 6px"><div style="font-size:24px;font-weight:800;color:#2d5a27">2×/wk</div><div style="font-size:12px;color:var(--soft)">War frequency<br>Twice a week</div></div>
+  <section class="cs-clan" aria-label="WAR II clan info">
+    <div class="cs-head">
+      <div class="cs-badge"><img src="https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png" alt="WAR II clan badge" loading="lazy"><span class="cs-lvl">4</span></div>
+      <div class="cs-id">
+        <div class="cs-name">WAR II</div>
+        <div class="cs-tag">#2JQVGQRC9</div>
+      </div>
+      <div class="cs-right">
+        <span class="cs-loc">🇺🇸 United States</span>
+        <div class="cs-stats">
+          <div class="cs-stat"><span class="cs-ic">🏆</span><span id="cocClanPts">16,250</span></div>
+          <div class="cs-stat"><span class="cs-ic">🔨</span><span id="cocClanBld">12,918</span></div>
+          <div class="cs-stat"><span class="cs-ic">🏰</span><span id="cocClanCap">359</span></div>
+        </div>
+      </div>
     </div>
-    <h3 style="margin:14px 0 6px">Current War</h3>
-    <p id="cocCurrentWar" style="line-height:1.6;color:var(--soft);margin:0 0 10px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
-    <p id="cocRaid" style="line-height:1.6;color:var(--soft);margin:0 0 10px">Raid Weekend Nov 13–16: 5,218 Capital Gold looted, 6 attacks, 1 district destroyed.</p>
-    <h3 style="margin:14px 0 6px">War Log</h3>
-    <ul style="text-align:left;max-width:560px;margin:0 auto;line-height:1.75;color:var(--soft);font-size:14.5px">
-      <li><b style="color:#b42318">Loss</b> vs SirangFitu — 14-14 · 97.8% vs 99.4% · Nov 16, 2026</li>
-      <li><b style="color:#b42318">Loss</b> vs F22 — 13-13 · 92.4% vs 94.4% · Oct 31, 2026</li>
-      <li><b style="color:#2d5a27">Win</b> vs Afghanistan — 15-14 · 100% vs 94.4% · Oct 29, 2026</li>
-      <li><b style="color:#2d5a27">Win</b> vs los money wey — 15-13 · 100% vs 90% · Oct 23, 2026</li>
-      <li><b style="color:#2d5a27">Win</b> vs teneme el nene — 14-7 · 98.6% vs 54.8% · Feb 17, 2025</li>
-      <li><b style="color:#2d5a27">Win</b> vs THE BROYS — 14-14 · 96% vs 93.6% · Jan 27, 2025</li>
-    </ul>
-    <p style="font-size:12.5px;color:var(--soft);margin:8px 0 0">War log is not public — information may be incomplete.</p>
-    <h3 style="margin:14px 0 6px">Clan War League 2026</h3>
-    <ul style="text-align:left;max-width:560px;margin:0 auto;line-height:1.75;color:var(--soft);font-size:14.5px">
-      <li>November, Silver League I — 79 stars · 2 wins, 4 losses, 1 draw</li>
-      <li>October, Gold League III — 65 stars · 1 win, 6 losses</li>
-      <li>September, Gold League III — 136 stars · 3 wins, 4 losses</li>
-      <li>August, Gold League II — 125 stars · 3 wins, 4 losses</li>
-    </ul>
-    <h3 style="margin:14px 0 6px">Key Members</h3>
-    <p style="line-height:1.6;color:var(--soft);margin:0">Leader: <b style="color:var(--ink)">boxing noah</b> (TH18, Lv210) · Co-leaders include <b style="color:var(--ink)">dxrival</b> (TH17, Lv203) and Nastypu (TH19, Lv246) · <b style="color:var(--ink)">Derek 2.0</b> (TH10) is an Elder.</p>
-    <p class="asrc" id="cocClanUpdated">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot.</p>
+    <div class="cs-labels">
+      <span class="cs-label">⚔️ Clan Wars</span>
+      <span class="cs-label">🏆 Clan War League</span>
+      <span class="cs-label">🐶 Underdog</span>
+      <button type="button" class="cs-more" id="cocMoreBtn" aria-expanded="false">+ more details</button>
+    </div>
+    <p class="cs-desc" id="cocDesc" hidden>"welcome to war clan 2 we take pride in winning wars. you earn leadership roles by participating in wars and donating troops. use both attacks in war and attack bases marked for you"</p>
+    <div class="cs-tabs" role="tablist" aria-label="Clan sections">
+      <button type="button" class="cs-tab" data-cspanel="members" role="tab" aria-selected="false">👥 MEMBERS</button>
+      <button type="button" class="cs-tab" data-cspanel="warstats" role="tab" aria-selected="false">📈 WAR STATS</button>
+      <button type="button" class="cs-tab active" data-cspanel="cw" role="tab" aria-selected="true">⚔️ CW</button>
+      <button type="button" class="cs-tab" data-cspanel="cwl" role="tab" aria-selected="false">🏆 CWL</button>
+    </div>
+    <div class="cs-panel" id="csPanel-members" hidden>
+      <h3 class="cs-h">Members <span id="cocMemberCount" style="color:#9fb2bd;font-size:14px">18 / 50</span></h3>
+      <div id="cocMembersList"></div>
+    </div>
+    <div class="cs-panel" id="csPanel-warstats" hidden>
+      <h3 class="cs-h">War Stats</h3>
+      <div class="cs-statgrid">
+        <div class="cs-sg"><div class="cs-sg-n" id="cocClanWins">8</div><div class="cs-sg-l">War wins</div></div>
+        <div class="cs-sg"><div class="cs-sg-n" id="cocClanStreak">0</div><div class="cs-sg-l">Win streak</div></div>
+        <div class="cs-sg"><div class="cs-sg-n">2×/wk</div><div class="cs-sg-l">War frequency</div></div>
+      </div>
+      <p class="cs-p" id="cocWarStatsCurrent">No war in progress right now.</p>
+      <p class="cs-p" id="cocRaid">Raid Weekend Nov 13–16: 5,218 Capital Gold looted, 6 attacks, 1 district destroyed.</p>
+    </div>
+    <div class="cs-panel" id="csPanel-cw">
+      <h3 class="cs-h">Clan Wars</h3>
+      <p class="cs-p" id="cocCurrentWar" style="margin-bottom:12px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
+      <div class="cs-info"><span class="cs-info-ic">i</span><span>The war log is not public, the following information may be incomplete.</span></div>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>SirangFitu#7 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">14 ⭐</div><div class="cs-war-pct">97.8%</div></div><div class="cs-result loss">Loss</div><div class="cs-war-side"><div class="cs-war-score">⭐ 14</div><div class="cs-war-pct">99.4%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 11/16/26 - 14:12</span></div>
+      </div>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>F22 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">13 ⭐</div><div class="cs-war-pct">92.4%</div></div><div class="cs-result loss">Loss</div><div class="cs-war-side"><div class="cs-war-score">⭐ 13</div><div class="cs-war-pct">94.4%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 10/31/26 - 23:59</span></div>
+      </div>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>Afghanistan 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">15 ⭐</div><div class="cs-war-pct">100%</div></div><div class="cs-result win">Win</div><div class="cs-war-side"><div class="cs-war-score">⭐ 14</div><div class="cs-war-pct">94.4%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 10/29/26 - 09:17</span></div>
+      </div>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>los money wey 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">15 ⭐</div><div class="cs-war-pct">100%</div></div><div class="cs-result win">Win</div><div class="cs-war-side"><div class="cs-war-score">⭐ 13</div><div class="cs-war-pct">90%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 10/23/26 - 01:13</span></div>
+      </div>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>teneme el nene 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">14 ⭐</div><div class="cs-war-pct">98.6%</div></div><div class="cs-result win">Win</div><div class="cs-war-side"><div class="cs-war-score">⭐ 7</div><div class="cs-war-pct">54.8%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 2/17/25 - 12:54</span></div>
+      </div>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>THE BROYS 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">14 ⭐</div><div class="cs-war-pct">96%</div></div><div class="cs-result win">Win</div><div class="cs-war-side"><div class="cs-war-score">⭐ 14</div><div class="cs-war-pct">93.6%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 1/27/25 - 14:47</span></div>
+      </div>
+    </div>
+    <div class="cs-panel" id="csPanel-cwl" hidden>
+      <h3 class="cs-h">Clan War League 2026</h3>
+      <ul class="cs-list">
+        <li>November, Silver League I — 79 stars · 2 wins, 4 losses, 1 draw</li>
+        <li>October, Gold League III — 65 stars · 1 win, 6 losses</li>
+        <li>September, Gold League III — 136 stars · 3 wins, 4 losses</li>
+        <li>August, Gold League II — 125 stars · 3 wins, 4 losses</li>
+      </ul>
+      <p class="cs-p">Not in Clan War League right now. CWL runs for about a week at the start of each month.</p>
+    </div>
+    <p class="cs-updated" id="cocClanUpdated">Clan data checked Nov 18, 2026 · ClashSpot blocks live lookups, so this is a snapshot.</p>
   </section>
   <script>
-/* WAR II clan card — live from clan.json (Clashboard via GitHub Action).
-   Hardcoded snapshot above is the fallback; this only overwrites it
-   when clan.json loads and is fresh (<2h old). */
+/* WAR II clan card — ClashSpot-style tabs + live clan.json.
+   Hardcoded snapshot above is the fallback; clan.json (Clashboard
+   via GitHub Action) overwrites the live parts when fresh (<2h). */
 (function(){
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function esc(s){var d=document.createElement('div');d.textContent=String(s==null?'':s);return d.innerHTML;}
   function fmt(n){return Number(n).toLocaleString('en-US');}
   function etTime(iso){try{return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}catch(e){return'';}}
   function left(ms){if(ms<=0)return'ended';var m=Math.floor(ms/60000);if(m<60)return m+'m left';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m left';return Math.floor(h/24)+'d left';}
+  /* tabs */
+  var tabs=document.querySelectorAll('.cs-tab');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
+    t.classList.add('active');t.setAttribute('aria-selected','true');
+    document.querySelectorAll('.cs-panel').forEach(function(p){p.hidden=true;});
+    var p=document.getElementById('csPanel-'+t.getAttribute('data-cspanel'));
+    if(p)p.hidden=false;
+  });});
+  /* more details */
+  var mb=document.getElementById('cocMoreBtn'),ds=document.getElementById('cocDesc');
+  if(mb&&ds)mb.addEventListener('click',function(){var open=ds.hidden;ds.hidden=!open;mb.textContent=open?'- less details':'+ more details';mb.setAttribute('aria-expanded',open?'true':'false');});
+  /* members — static fallback roster (ClashSpot, Nov 18) */
+  var FALLBACK=[
+    ['boxing noah','Leader','TH18'],['Nastypu','Co-leader','TH19'],['WRAndrew','Co-leader','TH16'],
+    ['not real 315','Co-leader','TH14'],['lakersfan06','Co-leader','TH13'],['Albert','Co-leader','TH14'],
+    ['unstoppablepeka','Co-leader','TH9'],['tony','Co-leader','TH15'],['hulk_smash','Co-leader','TH17'],
+    ['Icy','Co-leader','TH14'],['dxrival','Co-leader','TH17'],['Niihuu','Elder','TH17'],
+    ['aviksaha','Elder','TH13'],['gowe','Elder','TH13'],['NightHawk','Elder','TH11'],
+    ['Derek 2.0','Elder','TH10'],['Drewvibes2','Elder','TH5'],['Andrew the best','Elder','TH9']];
+  function roleName(r){return r==='leader'?'Leader':r==='coLeader'?'Co-leader':r==='admin'?'Elder':(r||'Member');}
+  function renderMembers(list){
+    var el=document.getElementById('cocMembersList');if(!el)return;
+    el.innerHTML=list.map(function(m){
+      var name=m[0],role=m[1],th=m[2];
+      return '<div class="cs-member"><span class="cs-m-name">'+esc(name)+(name==='dxrival'?' <span class="cs-you">you</span>':'')+'</span><span class="cs-m-role">'+esc(role)+' \u00b7 '+esc(th)+'</span></div>';
+    }).join('');
+    var mc=document.getElementById('cocMemberCount');if(mc)mc.textContent=list.length+' / 50';
+  }
+  renderMembers(FALLBACK);
+  /* live clan.json */
   function load(){
     fetch('clan.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
       if(!d||!d.clan||d.clan.tag!=='#2JQVGQRC9')return;
       var age=Date.now()-new Date(d.updated_at||0).getTime();
       if(isNaN(age)||age>2*3600*1000)return; /* stale: keep the snapshot */
       var c=d.clan;
-      var head=document.getElementById('cocClanHead');
-      if(head)head.innerHTML='<b style="color:var(--ink)">'+esc(c.tag)+'</b> \u00b7 Level '+esc(c.level)+' \u00b7 '+esc(c.league||'')+' \u00b7 '+(c.location?esc(c.location)+' \u00b7 ':'')+esc(c.members)+'/50 members \u00b7 '+fmt(c.clanPoints)+' trophies';
+      var pts=document.getElementById('cocClanPts');if(pts)pts.textContent=fmt(c.clanPoints);
+      var bld=document.getElementById('cocClanBld');if(bld)bld.textContent=fmt(c.clanBuilderPoints);
+      var cap=document.getElementById('cocClanCap');if(cap)cap.textContent=fmt(c.clanCapitalPoints);
       var w=document.getElementById('cocClanWins');if(w)w.textContent=c.warWins;
       var s=document.getElementById('cocClanStreak');if(s)s.textContent=c.warWinStreak;
-      var cw=document.getElementById('cocCurrentWar');
-      if(cw){
-        var war=d.currentWar;
-        if(war&&war.clan&&war.opponent){
-          var end=war.battleEndTime||war.endTime||'';
-          var tl=end?left(new Date(end).getTime()-Date.now()):'';
-          cw.innerHTML='<b style="color:var(--ink)">WAR IN PROGRESS</b> vs '+esc(war.opponent.name||'')+' — '+esc(war.clan.stars!=null?war.clan.stars:'?')+'\u2605 vs '+esc(war.opponent.stars!=null?war.opponent.stars:'?')+'\u2605'+(war.clan.destructionPercentage!=null?' ('+war.clan.destructionPercentage+'% vs '+war.opponent.destructionPercentage+'%)':'')+(tl?' \u00b7 '+tl:'');
-        }else if(war&&war.state){
-          cw.textContent='War '+war.state+'.';
-        }else{
-          cw.textContent='No war in progress right now.';
-        }
-      }
+      var cw=document.getElementById('cocCurrentWar'),ws=document.getElementById('cocWarStatsCurrent');
+      var war=d.currentWar,txt='No war in progress right now.';
+      if(war&&war.clan&&war.opponent){
+        var end=war.battleEndTime||war.endTime||'';
+        var tl=end?left(new Date(end).getTime()-Date.now()):'';
+        txt='WAR IN PROGRESS vs '+war.opponent.name+' — '+war.clan.stars+'\u2605 vs '+war.opponent.stars+'\u2605'+(war.clan.destructionPercentage!=null?' ('+war.clan.destructionPercentage+'% vs '+war.opponent.destructionPercentage+'%)':'')+(tl?' \u00b7 '+tl:'');
+      }else if(war&&war.state){txt='War '+war.state+'.';}
+      if(cw)cw.textContent=txt;
+      if(ws)ws.textContent=txt;
       var rd=document.getElementById('cocRaid');
       if(rd&&d.capital&&d.capital.state==='ended'&&d.capital.capitalTotalLoot!=null){
         var st=d.capital.startTime||'',en=d.capital.endTime||'';
         var rng='';
         try{rng=new Date(st).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'})+'\u2013'+new Date(en).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});}catch(e){}
         rd.textContent='Raid Weekend'+(rng?' '+rng:'')+': '+fmt(d.capital.capitalTotalLoot)+' Capital Gold looted, '+d.capital.totalAttacks+' attacks, '+d.capital.enemyDistrictsDestroyed+' district'+(d.capital.enemyDistrictsDestroyed===1?'':'s')+' destroyed.';
+      }
+      /* live roster from the raid data (members + skipped) */
+      if(d.capital&&(d.capital.members||d.capital.skipped)){
+        var roster=(d.capital.members||[]).concat(d.capital.skipped||[]).map(function(m){
+          var name=m.name||'',role=roleName(m.role),th=m.townHallLevel?('TH'+m.townHallLevel):'';
+          if(name==='Nastypu'){role='Co-leader';th='TH19';}
+          return [name,role,th];
+        }).filter(function(m){return m[0];});
+        var order={'Leader':0,'Co-leader':1,'Elder':2,'Member':3};
+        roster.sort(function(a,b){return (order[a[1]]||3)-(order[b[1]]||3)||a[0].localeCompare(b[0]);});
+        if(roster.length)renderMembers(roster);
       }
       var up=document.getElementById('cocClanUpdated');
       if(up)up.textContent='Clan data live from Clashboard \u00b7 Updated '+etTime(d.updated_at)+' ET';
