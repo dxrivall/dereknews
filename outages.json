@@ -1,30 +1,36 @@
 {
- "updated_at": "2026-11-19T14:54:38.720123+00:00",
+ "updated_at": "2026-11-19T15:44:10.809489+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
-  "tracked": 8385439,
-  "out": 372,
-  "pct": 0.0,
-  "source_updated": "2026-11-19T14:45:09+00:00",
+  "tracked": 8385441,
+  "out": 648,
+  "pct": 0.01,
+  "source_updated": "2026-11-19T15:35:03+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "National Grid",
-    "tracked": 1699953,
-    "out": 127,
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 245,
     "pct": 0.01
    },
    {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 83,
-    "pct": 0.0
+    "name": "National Grid",
+    "tracked": 1699953,
+    "out": 134,
+    "pct": 0.01
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159509,
-    "out": 78,
+    "out": 125,
     "pct": 0.01
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315387,
+    "out": 60,
+    "pct": 0.02
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -33,22 +39,28 @@
     "pct": 0.01
    },
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315387,
-    "out": 37,
-    "pct": 0.01
+    "name": "New York State Electric & Gas",
+    "tracked": 919379,
+    "out": 21,
+    "pct": 0.0
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 12,
+    "pct": 0.0
+   },
+   {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6716,
+    "out": 6,
+    "pct": 0.09
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
     "out": 3,
     "pct": 0.06
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 2,
-    "pct": 0.0
    },
    {
     "name": "Delaware County Electric Coop",
@@ -59,18 +71,6 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919379,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "Steuben Rural Electric Coop",
-    "tracked": 6714,
     "out": 0,
     "pct": 0.0
    },
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212912,
-  "out": 1,
-  "source_updated": "2026-11-19T14:45:08+00:00",
+  "out": 0,
+  "source_updated": "2026-11-19T15:35:01+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204758,
-    "out": 1,
+    "out": 0,
     "pct": 0.0
    },
    {
