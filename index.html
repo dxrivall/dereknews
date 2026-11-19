@@ -1923,6 +1923,7 @@ body.on-sports footer{color:#d8b8b2!important}
     <button type="button" class="sport-row" data-sport="hockey"><span class="emoji">🏒</span><span class="sport-main"><b>Hockey</b><span class="sport-sub">All NHL teams</span></span><span class="sport-live" data-live="nhl"></span><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="ufc"><span class="emoji">👊</span><span class="sport-main"><b>UFC</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="boxing"><span class="emoji">🥊</span><span class="sport-main"><b>Boxing</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
+    <button type="button" class="sport-row" data-sport="coc"><span class="emoji">⚔️</span><span class="sport-main"><b>Clash of Clans</b><span class="sport-sub">Coming soon</span></span></button>
     <button type="button" class="sport-row" data-sport="betsim"><span class="emoji">🎲</span><span class="sport-main"><b>Parlays</b><span class="sport-sub">Bet Simulator</span></span></button>
   </div>
   <section class="acard" aria-label="Sports news">
@@ -1935,17 +1936,45 @@ body.on-sports footer{color:#d8b8b2!important}
   </div>
   <div class="sport-panel" id="sport-baseball" hidden>
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
-  <section class="card"><h2>⚾ Baseball</h2>
-  <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto">The season is done — congrats to the <b>Brewers</b>! 🏆 The Milwaukee Brewers won the World Series, their first title, beating the Tampa Bay Rays 4-1.</p>
-  <a class="team-btn" href="https://www.mlb.com/yankees" target="_blank" rel="noopener">⚾ New York Yankees on MLB.com &rarr;</a>
-  <a class="team-btn" href="https://www.mlb.com/brewers" target="_blank" rel="noopener">🏆 Brewers on MLB.com &rarr;</a>
+  <section class="acard" id="springTrainingCard" aria-label="Countdown to Spring Training">
+  <div class="ahead"><h2>🌱 Spring Training</h2><span class="league-pill">2027</span></div>
+  <div class="st-count"><span id="stDays">—</span><span class="st-count-label">days until first games · Fri, Feb 19, 2027</span></div>
+  <p class="asrc">All 30 clubs open spring games Feb 19, 2027 · Yankees open at the Blue Jays in Dunedin</p>
   </section>
+  <script>(function(){var el=document.getElementById('stDays');if(!el)return;var t=new Date(2027,1,19);var now=new Date();var d=Math.ceil((new Date(t.getFullYear(),t.getMonth(),t.getDate())-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);el.textContent=d>0?String(d):(d===0?'Today':'Underway');})();</script>
   <section class="card"><h2>📰 Yankees Latest</h2>
-  <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto 10px"><b style="color:var(--ink)">Cam Schlittler just won the 2026 AL Cy Young — unanimously.</b> 🏆 The Yankees ace took every first-place vote.</p>
-  <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto 10px">Aaron Judge congratulated him on Instagram.</p>
-  <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto">Judge himself is resting through the offseason after a follow-up with his doctor — no new procedure. He only played 66 games this year, and he will likely get more DH time in 2027.</p>
+  <p class="lstatus" id="yankeesLatestStatus">Loading Yankees news…</p>
+  <div id="yankeesLatestList"></div>
+  <p class="nfeed-updated" id="yankeesLatestUpdated"></p>
   </section>
-  <section class="acard" aria-label="MLB games — all teams, favorites first — Yesterday, Today, Upcoming">
+  <script>
+/* Yankees Latest — live from ESPN MLB news, filtered to Yankees
+   stories. Refreshes every 4 minutes. */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+  function ago(iso){var t=new Date(iso).getTime();if(isNaN(t))return'';var s=Math.floor((Date.now()-t)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
+  var KEYS=['yankees','yankee','judge','cole','schlittler','soto','stanton','volpe','rodon','gil','wells','chisholm','bellinger','fried','williams','boone'];
+  function isYankees(a){var t=((a.headline||'')+' '+(a.description||'')).toLowerCase();return KEYS.some(function(k){return t.indexOf(k)>-1;});}
+  function load(){
+    var st=document.getElementById('yankeesLatestStatus'),list=document.getElementById('yankeesLatestList'),up=document.getElementById('yankeesLatestUpdated');
+    if(!list)return;
+    fetchJSON('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/news?limit=20').then(function(d){
+      var arts=(d.articles||[]).filter(isYankees).slice(0,4);
+      if(!arts.length){if(st)st.textContent='No Yankees news right now.';list.innerHTML='';if(up)up.textContent='';return;}
+      if(st)st.textContent='';
+      list.innerHTML=arts.map(function(a){
+        var href=((a.links||{}).web||{}).href||'#';
+        var when=a.published?ago(a.published):'';
+        return '<a class="nfeed-item" href="'+esc(href)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.headline||'')+'</span><span class="nfeed-m">ESPN'+(when?' \u00b7 '+esc(when):'')+'</span></span></a>';
+      }).join('');
+      if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+    }).catch(function(){if(st)st.textContent='Couldn\u2019t load Yankees news right now.';});
+  }
+  load();setInterval(load,4*60*1000);
+})();
+</script>
+  <section class="acard" id="mlbGamesCard" aria-label="MLB games — all teams, favorites first — Yesterday, Today, Upcoming">
   <div class="daytabs" role="tablist" aria-label="Choose day">
     <button type="button" role="tab" data-mlb-day="yesterday" aria-selected="false">Yesterday</button>
     <button type="button" role="tab" data-mlb-day="today" aria-selected="true">Today</button>
@@ -1957,15 +1986,11 @@ body.on-sports footer{color:#d8b8b2!important}
   <div class="aerr" id="mlbLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.mlb.com/" target="_blank" rel="noopener">MLB.com</a> and reload.</div>
   <p class="asrc" id="mlbLiveStamp">Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
-  <section class="acard" id="springTrainingCard" aria-label="Countdown to Spring Training">
-  <div class="ahead"><h2>🌱 Spring Training</h2><span class="league-pill">2027</span></div>
-  <div class="st-count"><span id="stDays">—</span><span class="st-count-label">days until first games · Fri, Feb 19, 2027</span></div>
-  <p class="asrc">All 30 clubs open spring games Feb 19, 2027 · Yankees open at the Blue Jays in Dunedin</p>
-  </section>
-  <script>(function(){var el=document.getElementById('stDays');if(!el)return;var t=new Date(2027,1,19);var now=new Date();var d=Math.ceil((new Date(t.getFullYear(),t.getMonth(),t.getDate())-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);el.textContent=d>0?String(d):(d===0?'Today':'Underway');})();</script>
+  <script>(function(){var c=document.getElementById('mlbGamesCard');if(!c)return;var now=new Date();var show=new Date(2027,1,16);if(now<show)c.style.display='none';})();</script>
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="MLB standings view"><button type="button" role="tab" data-std="mlb:conf" aria-selected="true">League</button><button type="button" role="tab" data-std="mlb:div" aria-selected="false">Divisions</button></div></section>
-  <section class="acard" id="mlbConfCard" aria-label="MLB final standings">
-  <h2>⚾ MLB Standings — Final</h2>
+  <section class="acard" id="mlbConfCard" aria-label="MLB standings">
+  <h2>⚾ MLB Standings</h2>
+  <p class="asrc" style="margin-top:-6px">2027 season — records reset to 0-0 until games begin.</p>
   <h3 class="div-h">American League</h3>
   <p class="astatus" id="mlbAlStatus">Loading standings…</p>
   <div id="mlbStandingsAL"></div>
@@ -2121,6 +2146,13 @@ body.on-sports footer{color:#d8b8b2!important}
     <li><b>Jason Moloney vs. Andres Teran</b> — bantamweight · Riyadh · Paramount+.</li>
   </ul>
   <a class="team-btn" href="https://www.dazn.com/en-US/news/boxing/pacheco-fulghum-rws-how-to-watch-combat-sports-weekend-t3r/qvrum1kxeuu11np12ht34vb2c" target="_blank" rel="noopener">This weekend&rsquo;s fights on DAZN &rarr;</a>
+  </section>
+  </div>
+  <div class="sport-panel" id="sport-coc" hidden>
+  <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
+  <section class="acard" aria-label="Clash of Clans — coming soon">
+  <div class="ahead"><h2>⚔️ Clash of Clans</h2><span class="league-pill">COMING SOON</span></div>
+  <p style="text-align:center;line-height:1.65;color:var(--soft);max-width:600px;margin:0 auto">Clash of Clans is coming soon to Derek News.</p>
   </section>
   </div>
   <div class="sport-panel" id="sport-betsim" hidden data-pick="">
@@ -6327,17 +6359,16 @@ body.on-christmas{color-scheme:light}
   var FAVS=(window.__dnTeams?window.__dnTeams.favs('mlb'):{});
   var CONF={al:null,nl:null},DIVS=null;
   function render(entries,divMode){
-    if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
-    else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
+    entries.sort(function(a,b){var na=((a.team||{}).name||(a.team||{}).shortDisplayName||'');var nb=((b.team||{}).name||(b.team||{}).shortDisplayName||'');return na<nb?-1:(na>nb?1:0);});
     var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
-      var gb=sv(m,'gamesBehind');if(gb!==''&&parseFloat(gb)===0)gb='-';
-      var rank=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
+      var gb='-';
+      var rank=String(i+1);
       var hl=FAVS[String(t.id||'')]?' class="hl"':'';
       var logo=t.abbreviation?'<img src="https://a.espncdn.com/i/teamlogos/mlb/500/'+esc(String(t.abbreviation).toLowerCase())+'.png" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'';
-      var stTxt=sv(m,'wins')+'-'+sv(m,'losses')+' \u00b7 '+fmtPct(m.winPercent)+(gb&&gb!=='-'?' \u00b7 '+gb+' GB':' \u00b7 Leader');
-      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="mlb" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(rank)+'</td><td class="team">'+logo+esc(t.name||t.shortDisplayName||'')+(FAVS[String(t.id||'')]?' <span class="star">\u2605</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
+      var stTxt='0-0 \u00b7 .000 \u00b7 Leader';
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="mlb" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(rank)+'</td><td class="team">'+logo+esc(t.name||t.shortDisplayName||'')+(FAVS[String(t.id||'')]?' <span class="star">\u2605</span>':'')+'</td><td>0</td><td>0</td><td>.000</td><td>-</td></tr>';
     });
     return h+'</tbody></table>';
   }
