@@ -1037,6 +1037,21 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <div class="days" id="wxDays" aria-label="7-day forecast"></div>
   <div class="wxday-detail" id="wxDayDetail" hidden role="region" aria-label="Day detail" aria-live="polite"></div>
   <p style="text-align:center;font-size:12px;opacity:.85;margin:6px 0 0">Tap a day above for the full detail.</p>
+  <section class="leo-card" id="leoForecast" aria-label="Leonida forecast — GTA VI">
+    <div class="leo-head"><h3>🌴 Leonida Forecast</h3><span class="leo-tag">GTA VI · Vice City</span></div>
+    <p class="leo-sub">The Weather Channel × Rockstar — a real forecast for a fictional state. The same team that forecasts your weather just forecasted Leonida.</p>
+    <ul class="leo-list">
+      <li><span class="leo-ic" aria-hidden="true">🌫️</span><div class="leo-tx"><strong>South Ocean Beach, Vice City</strong><span>Sea fog rolling in off the beach — coastal fog, clear inland.</span></div></li>
+      <li><span class="leo-ic" aria-hidden="true">🌧️</span><div class="leo-tx"><strong>Key Lento</strong><span>Steady rain over moving traffic — slick roads, low visibility.</span></div></li>
+      <li><span class="leo-ic" aria-hidden="true">🌊</span><div class="leo-tx"><strong>Brian&rsquo;s Marina, Leonida Keys</strong><span>Drenched roadway, fog, reduced visibility — drive slow.</span></div></li>
+      <li><span class="leo-ic" aria-hidden="true">⛈️</span><div class="leo-tx"><strong>The Rusty Anchor</strong><span>Tropical storm — choppy water, lightning, rough seas.</span></div></li>
+      <li><span class="leo-ic" aria-hidden="true">🌧️</span><div class="leo-tx"><strong>Pelican Valley</strong><span>Swamp after a recent storm — murky water, fishing&rsquo;s tough.</span></div></li>
+      <li><span class="leo-ic" aria-hidden="true">🌫️</span><div class="leo-tx"><strong>Gambit Bay</strong><span>Mist over the treetops in early sun — prime hunting weather.</span></div></li>
+    </ul>
+    <p class="leo-quote">&ldquo;We completely reimagined the weather — localized, persistent, and above all dynamic.&rdquo; — Owen Shepherd, Rockstar VP of Art</p>
+    <p class="leo-launch">🎮 GTA VI launches Thu Nov 19, 2026</p>
+    <p class="leo-src">Forecast: The Weather Channel × Rockstar Games, Nov 16, 2026.</p>
+  </section>
 <h3 class="wx-herolabel">Weather trend for the week</h3>
   <section class="wxtrend" id="wxTrend" aria-label="Weather trend for the week">
     <p class="wxtrend-summary" id="wxTrendSummary">Loading trend from the live forecast&hellip;</p>
@@ -2232,6 +2247,22 @@ body.gta6 #homeThanksgivingWidget .tg-big #homeTGDays{display:inline-block;backg
 #gtaPalms .pl{transform:rotate(-8deg) translateY(12px)}
 #gtaPalms .pr{transform:rotate(8deg) translateY(12px) scaleX(-1)}
 body:not(.gta6) #gtaPalms,body.gta6.on-faith #gtaPalms{display:none}
+/* Leonida Forecast — GTA VI x The Weather Channel card (Weather tab).
+   Hidden unless the GTA 6 theme is on, so it vanishes with the takeover. */
+.leo-card{display:none}
+body.gta6 .leo-card{display:block;background:rgba(20,8,45,.9);border:1px solid rgba(255,45,120,.6);border-radius:18px;box-shadow:0 4px 24px rgba(255,45,120,.3);padding:20px 18px;margin:26px 0;color:#fff;text-align:left}
+body.gta6 .leo-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+body.gta6 .leo-head h3{margin:0;font-family:"Archivo Black","Arial Black",Arial,sans-serif;font-size:22px;font-weight:900;letter-spacing:.02em;text-transform:uppercase;background:linear-gradient(90deg,#ff2d78,#ff7a18);-webkit-background-clip:text;background-clip:text;color:transparent}
+body.gta6 .leo-tag{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#ffd6ea;background:rgba(255,45,120,.25);border:1px solid rgba(255,45,120,.55);border-radius:999px;padding:5px 10px;white-space:nowrap}
+body.gta6 .leo-sub{font-size:14px;line-height:1.5;color:#e8c8e0;margin:10px 0 0}
+body.gta6 .leo-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+body.gta6 .leo-list li{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px}
+body.gta6 .leo-ic{font-size:28px;line-height:1;flex:none;margin-top:2px}
+body.gta6 .leo-tx strong{display:block;font-size:15.5px;line-height:1.3}
+body.gta6 .leo-tx span{display:block;font-size:13.5px;line-height:1.45;color:#e8c8e0;margin-top:3px}
+body.gta6 .leo-quote{font-size:13.5px;line-height:1.55;font-style:italic;color:#ffd6ea;margin:16px 0 0;border-left:3px solid #ff2d78;padding-left:12px}
+body.gta6 .leo-launch{font-size:14px;font-weight:700;color:#ffb347;margin:12px 0 0}
+body.gta6 .leo-src{font-size:12px;color:#b8c8d0;margin:10px 0 0}
 body.gta6 .hwidget{box-shadow:0 4px 24px rgba(255,45,120,.28)}
 body.on-faith{background:radial-gradient(ellipse 95% 40% at 50% -6%,rgba(255,198,92,.6),transparent 62%),repeating-linear-gradient(90deg,rgba(255,216,150,.055) 0 2px,transparent 2px 118px),linear-gradient(180deg,#40220f 0%,#5f2f16 26%,#38202a 58%,#1e130e 100%);color:#fff7e8}
 body.on-faith[data-faith-phase="dawn"]{background:radial-gradient(ellipse 95% 42% at 50% -6%,rgba(255,190,110,.65),transparent 62%),linear-gradient(180deg,#7a3b1e 0%,#a85a2a 30%,#5b2a3a 62%,#241a2e 100%)}
