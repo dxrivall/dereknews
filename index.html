@@ -1041,12 +1041,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <div class="leo-head"><h3>🌴 Leonida Forecast</h3><span class="leo-tag">GTA VI · Vice City</span></div>
     <p class="leo-sub">The Weather Channel × Rockstar — a real forecast for a fictional state. The same team that forecasts your weather just forecasted Leonida.</p>
     <ul class="leo-list">
-      <li><span class="leo-ic" aria-hidden="true">🌫️</span><div class="leo-tx"><strong>South Ocean Beach, Vice City</strong><span>Sea fog rolling in off the beach — coastal fog, clear inland.</span></div></li>
-      <li><span class="leo-ic" aria-hidden="true">🌧️</span><div class="leo-tx"><strong>Key Lento</strong><span>Steady rain over moving traffic — slick roads, low visibility.</span></div></li>
-      <li><span class="leo-ic" aria-hidden="true">🌊</span><div class="leo-tx"><strong>Brian&rsquo;s Marina, Leonida Keys</strong><span>Drenched roadway, fog, reduced visibility — drive slow.</span></div></li>
-      <li><span class="leo-ic" aria-hidden="true">⛈️</span><div class="leo-tx"><strong>The Rusty Anchor</strong><span>Tropical storm — choppy water, lightning, rough seas.</span></div></li>
-      <li><span class="leo-ic" aria-hidden="true">🌧️</span><div class="leo-tx"><strong>Pelican Valley</strong><span>Swamp after a recent storm — murky water, fishing&rsquo;s tough.</span></div></li>
-      <li><span class="leo-ic" aria-hidden="true">🌫️</span><div class="leo-tx"><strong>Gambit Bay</strong><span>Mist over the treetops in early sun — prime hunting weather.</span></div></li>
+      <li><img class="leo-img" src="images/leonida/south-ocean-beach.jpg" alt="Sea fog over South Ocean Beach, Vice City" loading="lazy"><div class="leo-tx"><strong>South Ocean Beach, Vice City</strong><span>Sea fog rolling in off the beach — coastal fog, clear inland.</span></div></li>
+      <li><img class="leo-img" src="images/leonida/key-lento.jpg" alt="Rain over Key Lento" loading="lazy"><div class="leo-tx"><strong>Key Lento</strong><span>Steady rain over moving traffic — slick roads, low visibility.</span></div></li>
+      <li><img class="leo-img" src="images/leonida/brians-marina.jpg" alt="Rain at Brian's Marina, Leonida Keys" loading="lazy"><div class="leo-tx"><strong>Brian&rsquo;s Marina, Leonida Keys</strong><span>Drenched roadway, fog, reduced visibility — drive slow.</span></div></li>
+      <li><img class="leo-img" src="images/leonida/rusty-anchor.jpg" alt="Tropical storm at the Rusty Anchor" loading="lazy"><div class="leo-tx"><strong>The Rusty Anchor</strong><span>Tropical storm — choppy water, lightning, rough seas.</span></div></li>
+      <li><img class="leo-img" src="images/leonida/pelican-valley.jpg" alt="Storm over the Pelican Valley swamp" loading="lazy"><div class="leo-tx"><strong>Pelican Valley</strong><span>Swamp after a recent storm — murky water, fishing&rsquo;s tough.</span></div></li>
+      <li><img class="leo-img" src="images/leonida/gambit-bay.jpg" alt="Mist over Gambit Bay" loading="lazy"><div class="leo-tx"><strong>Gambit Bay</strong><span>Mist over the treetops in early sun — prime hunting weather.</span></div></li>
     </ul>
     <p class="leo-quote">&ldquo;We completely reimagined the weather — localized, persistent, and above all dynamic.&rdquo; — Owen Shepherd, Rockstar VP of Art</p>
     <p class="leo-launch">🎮 GTA VI launches Thu Nov 19, 2026</p>
@@ -2263,6 +2263,22 @@ body.gta6 .leo-tx span{display:block;font-size:13.5px;line-height:1.45;color:#e8
 body.gta6 .leo-quote{font-size:13.5px;line-height:1.55;font-style:italic;color:#ffd6ea;margin:16px 0 0;border-left:3px solid #ff2d78;padding-left:12px}
 body.gta6 .leo-launch{font-size:14px;font-weight:700;color:#ffb347;margin:12px 0 0}
 body.gta6 .leo-src{font-size:12px;color:#b8c8d0;margin:10px 0 0}
+body.gta6 .leo-img{width:72px;height:42px;object-fit:cover;border-radius:8px;flex:none;border:1px solid rgba(255,255,255,.25)}
+/* Weather tab: Leonida imagery replaces the live sky while GTA 6 is on.
+   The live data-mode still picks which Leonida shot shows, so the
+   background still matches the weather — just with Rockstar's imagery. */
+body.gta6 #wxBg{background-size:cover;background-position:center;background-repeat:no-repeat;background-image:linear-gradient(rgba(8,20,28,.18),rgba(8,20,28,.38)),url('images/leonida/gambit-bay.jpg')}
+body.gta6 #wxBg[data-mode="clear-day"]{background-image:linear-gradient(rgba(8,20,28,.18),rgba(8,20,28,.38)),url('images/leonida/gambit-bay.jpg')}
+body.gta6 #wxBg[data-mode="clear-night"]{background-image:linear-gradient(rgba(8,20,28,.22),rgba(8,20,28,.42)),url('images/leonida/brians-marina.jpg')}
+body.gta6 #wxBg[data-mode="partly-day"]{background-image:linear-gradient(rgba(8,20,28,.18),rgba(8,20,28,.38)),url('images/leonida/south-ocean-beach.jpg')}
+body.gta6 #wxBg[data-mode="partly-night"]{background-image:linear-gradient(rgba(8,20,28,.22),rgba(8,20,28,.42)),url('images/leonida/brians-marina.jpg')}
+body.gta6 #wxBg[data-mode="cloudy"]{background-image:linear-gradient(rgba(8,20,28,.18),rgba(8,20,28,.38)),url('images/leonida/pelican-valley.jpg')}
+body.gta6 #wxBg[data-mode="fog"]{background-image:linear-gradient(rgba(8,20,28,.18),rgba(8,20,28,.38)),url('images/leonida/south-ocean-beach.jpg')}
+body.gta6 #wxBg[data-mode="drizzle"],body.gta6 #wxBg[data-mode="rain"]{background-image:linear-gradient(rgba(8,20,28,.22),rgba(8,20,28,.42)),url('images/leonida/key-lento.jpg')}
+body.gta6 #wxBg[data-mode="snow"]{background-image:linear-gradient(rgba(8,20,28,.22),rgba(8,20,28,.42)),url('images/leonida/key-lento.jpg')}
+body.gta6 #wxBg[data-mode="storm"]{background-image:linear-gradient(rgba(8,20,28,.22),rgba(8,20,28,.42)),url('images/leonida/rusty-anchor.jpg')}
+body.gta6 #wxBg[data-phase="dawn"]{background-image:linear-gradient(rgba(8,20,28,.18),rgba(8,20,28,.38)),url('images/leonida/gambit-bay.jpg')}
+body.gta6 #wxBgCanvas,body.gta6 .wxbg-sun,body.gta6 .wxbg-clouds{display:none}
 body.gta6 .hwidget{box-shadow:0 4px 24px rgba(255,45,120,.28)}
 body.on-faith{background:radial-gradient(ellipse 95% 40% at 50% -6%,rgba(255,198,92,.6),transparent 62%),repeating-linear-gradient(90deg,rgba(255,216,150,.055) 0 2px,transparent 2px 118px),linear-gradient(180deg,#40220f 0%,#5f2f16 26%,#38202a 58%,#1e130e 100%);color:#fff7e8}
 body.on-faith[data-faith-phase="dawn"]{background:radial-gradient(ellipse 95% 42% at 50% -6%,rgba(255,190,110,.65),transparent 62%),linear-gradient(180deg,#7a3b1e 0%,#a85a2a 30%,#5b2a3a 62%,#241a2e 100%)}
