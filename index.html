@@ -1135,10 +1135,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
   <h3 class="wxsec">📰 Storm Stories — Cicero &amp; Upstate NY</h3>
   <div class="storm-list" id="wxStormStories" aria-label="Storm stories from the National Weather Service"><p style="margin:6px 2px;font-size:14px;opacity:.9">Checking the National Weather Service for storm stories…</p></div>
   <p class="nws-line"><a href="https://www.weather.gov/" target="_blank" rel="noopener">National Weather Service — Official Forecast for Cicero, NY →</a></p>
-  <h3 class="wxsec">📰 Local and Nationwide Weather News</h3>
-  <p class="lstatus" id="wxNewsStatus">Loading weather news…</p>
-  <div class="storm-list" id="wxNewsList" aria-label="Weather news"></div>
-  <p class="nfeed-updated" id="wxNewsUpdated"></p>
   <script>
   (function(){
     var a=document.getElementById('wxRadioAudio'),b=document.getElementById('wxRadioBtn'),st=document.getElementById('wxRadioStatus');
@@ -1733,20 +1729,13 @@ body.on-sports footer{color:#d8b8b2!important}
 .asrc{display:none}
 .aerr{background:rgba(140,25,18,.35);color:#ffd9d4;border:1px solid rgba(255,140,130,.5);border-radius:10px;padding:12px;text-align:center;font-size:14px;line-height:1.55;margin-top:12px}
 .aerr a{color:#fff;text-decoration:underline}
-.favrow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .newslist{text-align:left;max-width:560px;margin:0 auto;line-height:1.75;color:#c9cdd6;font-size:15px}
 .newslist li{margin:10px 0}
-.fav{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:26px 12px 18px;text-align:center;color:#fff;text-decoration:none;display:block;overflow:visible}
-.fav .favlogo{width:64px;height:64px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center}
-.fav img{width:64px;height:64px;object-fit:contain;object-position:center;display:block;margin:0}
 .tlogo-fb{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#2f5fd0;color:#fff;font-weight:700;letter-spacing:.02em;flex:none;vertical-align:middle}
 .tlogo-fb.g{width:48px;height:48px;font-size:13px}
 .tlogo-fb.s{width:28px;height:28px;font-size:9px}
 .tlogo-fb.f{width:64px;height:64px;font-size:16px}
 #view-sports .sport-panel{scroll-margin-bottom:120px}
-.fav b{display:block;font-size:16px;line-height:1.25}
-.fav span{display:block;font-size:13px;color:#d8b8b2;margin-top:4px}
-.fav .star{color:#ffd34d}
 .daytabs{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.15);margin:0 -2px 4px}
 .daytabs button{appearance:none;background:none;border:0;color:#8fa3cc;font:inherit;font-size:17px;font-weight:500;cursor:pointer;padding:14px 4px;min-height:48px}
 .daytabs button[aria-selected="true"]{color:#fff;font-weight:700}
@@ -1989,12 +1978,8 @@ body.on-sports footer{color:#d8b8b2!important}
   </div>
   <div class="sport-panel" id="sport-basketball" hidden>
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
-  <section class="acard" aria-label="Basketball — Lakers and Suns on top">
+  <section class="acard" aria-label="Basketball">
   <div class="ahead"><h2>🏀 Basketball</h2><span class="league-pill"><img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="" loading="eager" onerror="this.style.display='none'"> NBA</span></div>
-  <div class="favrow">
-    <a class="fav" href="https://www.nba.com/lakers" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nba/500/lal.png" alt="Los Angeles Lakers logo" width="64" height="64" loading="eager" data-abbr="LAL" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>Los Angeles Lakers</b><span><span class="star">★</span> Favorite</span></a>
-    <a class="fav" href="https://www.nba.com/suns" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nba/500/phx.png" alt="Phoenix Suns logo" width="64" height="64" loading="eager" data-abbr="PHX" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>Phoenix Suns</b><span><span class="star">★</span> Favorite</span></a>
-  </div>
   </section>
   <section class="acard" aria-label="NBA games — all teams, favorites first — Yesterday, Today, Upcoming">
   <div class="daytabs" role="tablist" aria-label="Choose day">
@@ -2030,14 +2015,8 @@ body.on-sports footer{color:#d8b8b2!important}
   </div>
   <div class="sport-panel" id="sport-football" hidden>
   <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
-  <section class="acard" aria-label="Football — Jaguars, Patriots, Saints and Eagles on top">
+  <section class="acard" aria-label="Football">
   <div class="ahead"><h2>🏈 Football</h2><span class="league-pill"><img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="" loading="eager" onerror="this.style.display='none'"> NFL</span></div>
-  <div class="favrow">
-    <a class="fav" href="https://www.nfl.com/teams/jacksonville-jaguars/" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="Jacksonville Jaguars logo" width="64" height="64" loading="eager" data-abbr="jax" data-league="nfl" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>Jacksonville Jaguars</b><span><span class="star">★</span> Favorite</span></a>
-    <a class="fav" href="https://www.nfl.com/teams/new-england-patriots/" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="New England Patriots logo" width="64" height="64" loading="eager" data-abbr="ne" data-league="nfl" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>New England Patriots</b><span><span class="star">★</span> Favorite</span></a>
-    <a class="fav" href="https://www.nfl.com/teams/new-orleans-saints/" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="New Orleans Saints logo" width="64" height="64" loading="eager" data-abbr="no" data-league="nfl" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>New Orleans Saints</b><span><span class="star">★</span> Favorite</span></a>
-    <a class="fav" href="https://www.nfl.com/teams/philadelphia-eagles/" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="Philadelphia Eagles logo" width="64" height="64" loading="eager" data-abbr="phi" data-league="nfl" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>Philadelphia Eagles</b><span><span class="star">★</span> Favorite</span></a>
-  </div>
   <p class="astatus" id="nflWeekLabel" style="font-weight:700;color:#fff">Loading week…</p>
   </section>
   <section class="acard" aria-label="NFL games — all teams, favorites first — Yesterday, Today, Upcoming">
@@ -5747,42 +5726,6 @@ body.on-christmas{color-scheme:light}
   }
   /* Weather Stories — exactly 3 up top: 1 nationwide + 1 CNY + 1 more,
      then the rest newest-first, cap 10 (same picks as the old widget). */
-  function fetchWeather(){
-    return Promise.all([
-      rssItems('US weather storm forecast nationwide').catch(function(){return null;}),
-      rssItems('Central New York Syracuse weather storm forecast').catch(function(){return null;})
-    ]).then(function(lists){
-      if(!lists[0]&&!lists[1])throw new Error('rss');
-      function clean(items){
-        var out=[];
-        (items||[]).forEach(function(it){
-          var sp=splitTitle(it.title);
-          if(!sp.title)return;
-          if(!isFresh(it.pubDate))return;
-          if(!okStory(sp.title,it.description))return;
-          if(!it.link)return;
-          out.push({title:sp.title,source:sp.source,when:ago(it.pubDate),ts:new Date(it.pubDate).getTime()||0,link:it.link,thumb:thumbOf(it)});
-        });
-        out.sort(function(a,b){return b.ts-a.ts;});
-        return out;
-      }
-      var nat=clean(lists[0]),cny=clean(lists[1]);
-      var seen={},top=[];
-      function take(list){
-        for(var i=0;i<list.length;i++){if(!seen[list[i].title]){seen[list[i].title]=1;return list[i];}}
-        return null;
-      }
-      var firstNat=take(nat),firstCny=take(cny);
-      if(firstNat)top.push(firstNat);
-      if(firstCny)top.push(firstCny);
-      var rest=nat.concat(cny).filter(function(a){return !seen[a.title];}).sort(function(a,b){return b.ts-a.ts;});
-      rest.forEach(function(a){seen[a.title]=1;});
-      var uniqRest=[],rseen={};
-      rest.forEach(function(a){if(!rseen[a.title]){rseen[a.title]=1;uniqRest.push(a);}});
-      while(top.length<3&&uniqRest.length)top.push(uniqRest.shift());
-      return top.concat(uniqRest).slice(0,10);
-    });
-  }
   /* Sports: streamlined straight from ESPN league news — top stories
      across NBA / NFL / MLB, newest first. No team filter. */
   function fetchSports(){
@@ -5947,7 +5890,6 @@ body.on-christmas{color-scheme:light}
   }
   function refreshTabNews(){
     fillTabNews('sportsNewsList','sportsNewsStatus','sportsNewsUpdated',fetchSports,'No sports stories right now.','Couldn\u2019t load sports stories right now.');
-    fillTabNews('wxNewsList','wxNewsStatus','wxNewsUpdated',fetchWeather,'No weather stories right now.','Couldn\u2019t load weather stories right now.');
   }
   refreshTabNews();
   setInterval(refreshTabNews,REFRESH_MS);
@@ -6320,18 +6262,6 @@ body.on-christmas{color-scheme:light}
   var saveBtn=document.getElementById('teamsSave'); if(saveBtn)saveBtn.addEventListener('click',function(){if(draft)T.save(draft);location.reload();});
   var resetBtn=document.getElementById('teamsReset');
   if(resetBtn)resetBtn.addEventListener('click',function(){T.clear();location.reload();});
-  /* Favorite-team cards on the Basketball / Football pages + Home headings */
-  function favRow(panelId,lg,espnPath){
-    var panel=document.getElementById(panelId); if(!panel)return;
-    var rowEl=panel.querySelector('.favrow'); if(!rowEl)return;
-    var by={}; T.TEAMS[lg].forEach(function(tm){by[tm[0]]=tm;});
-    var picks=T.ids(lg).map(function(id){return by[id];}).filter(Boolean);
-    if(!picks.length){rowEl.innerHTML='<p style="grid-column:1/-1;text-align:center;color:var(--soft);font-size:14px;line-height:1.5;margin:0">No favorite '+lg.toUpperCase()+' teams chosen — tap Set Teams at the top of Sports to pick yours.</p>';return;}
-    rowEl.innerHTML=picks.map(function(tm){
-      return '<a class="fav" href="https://www.espn.com/'+espnPath+'/team/_/id/'+tm[0]+'" target="_blank" rel="noopener"><span class="favlogo"><img src="https://a.espncdn.com/i/teamlogos/'+lg+'/500/'+tm[1].toLowerCase()+'.png" alt="'+esc(tm[2])+' logo" width="64" height="64" loading="eager" data-abbr="'+tm[1]+'" data-size="f" onerror="window.__logoErr&&__logoErr(this)"></span><b>'+esc(tm[2])+'</b><span><span class="star">\u2605</span> Favorite</span></a>';
-    }).join('');
-  }
-  favRow('sport-basketball','nba','nba'); favRow('sport-football','nfl','nfl');
   function secHead(secId,emoji,lg,fallback){
     var sec=document.getElementById(secId); if(!sec)return;
     var h=sec.querySelector('.hw-sec'); if(!h)return;
