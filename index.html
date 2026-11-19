@@ -2703,38 +2703,6 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     </ul>
     <p class="asrc">From Supercell's official Clash of Titans release notes.</p>
   </section>
-  <section class="card" aria-label="Latest Clash of Clans news">
-    <h2>📰 Latest Clash of Clans News</h2>
-    <p class="lstatus" id="cocNewsStatus">Loading Clash news…</p>
-    <div id="cocNewsList"></div>
-    <p class="nfeed-updated" id="cocNewsUpdated"></p>
-  </section>
-  <script>
-/* Clash of Clans news — live from Google News, top 5, every 4 min. */
-(function(){
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function fetchJSON(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
-  function ago(iso){var t=new Date(iso).getTime();if(isNaN(t))return'';var s=Math.floor((Date.now()-t)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
-  function splitTitle(t){var i=String(t||'').lastIndexOf(' - ');if(i>12)return{title:t.slice(0,i),source:t.slice(i+3)};return{title:String(t||''),source:'Google News'};}
-  function load(){
-    var st=document.getElementById('cocNewsStatus'),list=document.getElementById('cocNewsList'),up=document.getElementById('cocNewsUpdated');
-    if(!list)return;
-    var feed='https://news.google.com/rss/search?q='+encodeURIComponent('Clash of Clans')+'&hl=en-US&gl=US&ceid=US:en';
-    fetchJSON('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed)).then(function(d){
-      if(!d||d.status!=='ok'||!d.items)throw new Error('rss');
-      var arts=d.items.slice(0,5);
-      if(!arts.length){if(st)st.textContent='No Clash news right now.';list.innerHTML='';if(up)up.textContent='';return;}
-      if(st)st.textContent='';
-      list.innerHTML=arts.map(function(it){
-        var sp=splitTitle(it.title);
-        return '<div class="nfeed-item"><span class="nfeed-main"><span class="nfeed-t">'+esc(sp.title)+'</span><span class="nfeed-m">'+esc(sp.source)+(it.pubDate?' \u00b7 '+esc(ago(it.pubDate)):'')+'</span></span></div>';
-      }).join('');
-      if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
-    }).catch(function(){if(st)st.textContent='Couldn\u2019t load Clash news right now.';});
-  }
-  load();setInterval(load,4*60*1000);
-})();
-</script>
 </main>
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News<div style="font-size:11.5px;opacity:.65;margin-top:5px">Last updated <span id="footerUpdated"></span></div></footer>
 <script>
