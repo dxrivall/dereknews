@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-19T01:13:53Z",
-  "fetched_at": "2026-11-19T01:13:54.297Z",
+  "updated_at": "2026-11-20T16:11:44Z",
+  "fetched_at": "2026-11-20T16:11:45.206Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -16,7 +16,7 @@
     "league": "Silver League I",
     "capitalLeague": "Bronze League III",
     "clanPoints": 16250,
-    "clanBuilderPoints": 12918,
+    "clanBuilderPoints": 12944,
     "clanCapitalPoints": 359,
     "requiredTownhallLevel": 1,
     "requiredTrophies": 5500,
@@ -48,7 +48,7 @@
         "role": "coLeader",
         "th": 19,
         "expLevel": 246,
-        "trophies": 389,
+        "trophies": 504,
         "league": "Legend League",
         "leagueTier": "Electro League 32",
         "donations": 62,
@@ -62,7 +62,7 @@
         "role": "leader",
         "th": 18,
         "expLevel": 210,
-        "trophies": 76,
+        "trophies": 125,
         "league": "Unranked",
         "leagueTier": "Titan League 27",
         "donations": 206,
@@ -103,8 +103,8 @@
         "name": "not real 315",
         "role": "coLeader",
         "th": 14,
-        "expLevel": 133,
-        "trophies": 70,
+        "expLevel": 134,
+        "trophies": 406,
         "league": "Unranked",
         "leagueTier": "Valkyrie League 14",
         "donations": 0,
@@ -145,8 +145,8 @@
         "name": "NightHawk",
         "role": "admin",
         "th": 11,
-        "expLevel": 75,
-        "trophies": 127,
+        "expLevel": 76,
+        "trophies": 181,
         "league": "Unranked",
         "leagueTier": "Archer League 9",
         "donations": 0,
@@ -314,14 +314,14 @@
   },
   "capital": {
     "participationAvailable": true,
-    "startTime": "20261113T070000.000Z",
-    "endTime": "20261116T070000.000Z",
-    "state": "ended",
-    "capitalTotalLoot": 5218,
+    "startTime": "20261120T070000.000Z",
+    "endTime": "20261123T070000.000Z",
+    "state": "ongoing",
+    "capitalTotalLoot": 6790,
     "raidsCompleted": 0,
     "totalAttacks": 6,
-    "enemyDistrictsDestroyed": 1,
-    "offensiveReward": 23,
+    "enemyDistrictsDestroyed": 2,
+    "offensiveReward": 0,
     "defensiveReward": 0,
     "members": [
       {
@@ -330,7 +330,7 @@
         "attacks": 6,
         "attackLimit": 5,
         "bonusAttackLimit": 1,
-        "capitalResourcesLooted": 5218
+        "capitalResourcesLooted": 6790
       }
     ],
     "skipped": [
