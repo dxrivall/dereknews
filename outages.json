@@ -1,13 +1,25 @@
 {
- "updated_at": "2026-11-20T04:41:31.060933+00:00",
+ "updated_at": "2026-11-20T05:43:02.324057+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385520,
-  "out": 86,
-  "pct": 0.0,
-  "source_updated": "2026-11-20T04:35:11+00:00",
+  "out": 1057,
+  "pct": 0.01,
+  "source_updated": "2026-11-20T05:34:56+00:00",
   "name": "New York",
   "utilities": [
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919443,
+    "out": 804,
+    "pct": 0.09
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392189,
+    "out": 152,
+    "pct": 0.04
+   },
    {
     "name": "Con Edison",
     "tracked": 3626606,
@@ -15,21 +27,15 @@
     "pct": 0.0
    },
    {
-    "name": "PSEG Long Island",
-    "tracked": 1159509,
-    "out": 19,
-    "pct": 0.0
-   },
-   {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 11,
+    "out": 33,
     "pct": 0.0
    },
    {
-    "name": "New York State Electric & Gas",
-    "tracked": 919443,
-    "out": 6,
+    "name": "PSEG Long Island",
+    "tracked": 1159509,
+    "out": 18,
     "pct": 0.0
    },
    {
@@ -63,12 +69,6 @@
     "pct": 0.0
    },
    {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392189,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
     "name": "Steuben Rural Electric Coop",
     "tracked": 6716,
     "out": 0,
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 1,
-  "source_updated": "2026-11-20T04:35:09+00:00",
+  "source_updated": "2026-11-20T05:34:54+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
