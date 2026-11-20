@@ -730,6 +730,14 @@ body>.teams-overlay{z-index:2000}
 .hwg .ctr .as{font-size:11px;color:var(--soft);margin-top:3px;line-height:1.3}
 .live-pill{display:inline-block;background:#b42318;color:#fff;font-size:10px;font-weight:700;border-radius:999px;padding:2px 8px}
 .hw-status{font-size:14px;color:var(--soft);line-height:1.55;margin:6px 0}
+.coc-war-widget{background:linear-gradient(160deg,#123a2a,#0d141b);border:1px solid rgba(46,204,113,.45);color:#eef5f7}
+.coc-war-widget .hwidget-head h2{color:#fff}
+.coc-war-widget .hw-go{background:#2ecc71;color:#0d141b}
+.hw-war-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:center}
+.hw-war-team{flex:1;font-weight:800;font-size:16px;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hw-war-score{flex:none;font-size:21px;font-weight:800;color:#fff;background:rgba(255,255,255,.12);border-radius:10px;padding:6px 12px;white-space:nowrap}
+.hw-war-sub{text-align:center;color:#b8d4de;font-size:13.5px;margin-top:10px;line-height:1.5}
+.hw-war-time{text-align:center;color:#7fc97f;font-weight:700;font-size:14px;margin-top:6px}
 .hw-err{background:#fff;color:#7a1710;border:1px solid #b42318;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.5;margin-top:8px}
 .hw-err a{color:#0b46d6}
 .faith-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
@@ -811,6 +819,13 @@ body>.teams-overlay{z-index:2000}
     <button type="button" class="wxd-fullbtn" data-go="weather">Full forecast →</button>
   </section>
   <script>(function(){var p=document.getElementById('homeLocBar'),pop=document.getElementById('homeLocPop');if(!p||!pop)return;function close(){pop.hidden=true;p.setAttribute('aria-expanded','false');}p.addEventListener('click',function(e){e.stopPropagation();if(pop.hidden){pop.hidden=false;p.setAttribute('aria-expanded','true');}else{close();}});p.addEventListener('keydown',function(e){e.stopPropagation();});pop.addEventListener('click',function(e){e.stopPropagation();});pop.addEventListener('keydown',function(e){e.stopPropagation();});document.addEventListener('click',function(){if(!pop.hidden)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});})();</script>
+  <!-- Clan War widget: live war score from clan.json — only shown while a war is active -->
+  <section class="hwidget coc-war-widget" id="homeWarWidget" aria-label="Clan War widget" hidden>
+    <div class="hwidget-head"><h2>⚔️ Clan War — <span id="homeWarState">Live</span></h2><button class="hw-go" data-go="coc">See War →</button></div>
+    <div class="hw-war-teams"><span class="hw-war-team">WAR II</span><span class="hw-war-score" id="homeWarScore">0★ – 0★</span><span class="hw-war-team" id="homeWarOpp">N.∆.Z.I</span></div>
+    <div class="hw-war-sub" id="homeWarSub">0% vs 0% destruction</div>
+    <div class="hw-war-time" id="homeWarTime">—</div>
+  </section>
   <section class="hwidget" id="homeSportsWidget" aria-label="Sports widget">
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
     <p class="hw-status" id="homeSportsEmpty" hidden>No games coming up for your teams.</p>
@@ -2592,6 +2607,8 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 .cs-result.loss{border-color:#e74c3c;background:rgba(231,76,60,.16)}
 .cs-war-bot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:#c3d4da;font-size:14.5px}
 .cs-size{border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:4px 12px;font-weight:700;color:#fff}
+.cs-war-live{flex:none;background:#e74c3c;color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:6px 12px;letter-spacing:.06em}
+.coc-featured{margin-top:18px;border-color:rgba(46,204,113,.55);box-shadow:0 0 0 1px rgba(46,204,113,.25)}
 .cs-member{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 2px;font-size:15px}
 .cs-member:last-child{border-bottom:0}
 .cs-m-name{font-weight:700;color:#fff}
@@ -2617,6 +2634,11 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 .dn-arch-status{color:#9fb2bd;font-size:14px;text-align:center;margin-top:24px}
 </style>
   <div class="hero"><h1>⚔️ Clash of Clans</h1></div>
+  <section class="cs-war coc-featured" id="cocFeaturedWar" aria-label="War in progress" hidden>
+    <div class="cs-war-top"><span>🛡️ WAR II</span><span id="cocFeatOppTop">N.∆.Z.I 🛡️</span></div>
+    <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score" id="cocFeatUs">0 ⭐</div><div class="cs-war-pct" id="cocFeatUsPct">0%</div></div><div class="cs-war-live" id="cocFeatLive">LIVE</div><div class="cs-war-side"><div class="cs-war-score" id="cocFeatThem">⭐ 0</div><div class="cs-war-pct" id="cocFeatThemPct">0%</div></div></div>
+    <div class="cs-war-bot"><span class="cs-size" id="cocFeatSize">5v5</span><span id="cocFeatTime">—</span></div>
+  </section>
   <section class="cs-clan" aria-label="WAR II clan info">
     <div class="cs-head">
       <div class="cs-badge"><img src="https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png" alt="WAR II clan badge" loading="lazy"><span class="cs-lvl">4</span></div>
@@ -2720,6 +2742,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   function fmt(n){return Number(n).toLocaleString('en-US');}
   function etTime(iso){try{return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}catch(e){return'';}}
   function left(ms){if(ms<=0)return'ended';var m=Math.floor(ms/60000);if(m<60)return m+'m left';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m left';return Math.floor(h/24)+'d left';}
+  function fmtLeft(ms){if(ms<=0)return'ended';var m=Math.floor(ms/60000);if(m<60)return m+'m';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m';return Math.floor(h/24)+'d';}
   /* tabs */
   var tabs=document.querySelectorAll('.cs-tab');
   tabs.forEach(function(t){t.addEventListener('click',function(){
@@ -2771,6 +2794,35 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       }else if(war&&war.state){txt='War '+war.state+'.';}
       if(cw)cw.textContent=txt;
       if(ws)ws.textContent=txt;
+      /* live war widgets — Home widget + featured CoC card. Shown
+         only while a war is in preparation or in progress. */
+      var hw=document.getElementById('homeWarWidget'),fw=document.getElementById('cocFeaturedWar');
+      var active=war&&war.clan&&war.opponent&&(war.state==='preparation'||war.state==='inWar');
+      if(hw)hw.hidden=!active;
+      if(fw)fw.hidden=!active;
+      if(active){
+        var inWar=war.state==='inWar';
+        var endMs=new Date(war.endTime||war.battleEndTime||0).getTime(),startMs=new Date(war.startTime||war.battleStartTime||0).getTime();
+        var timeTxt=inWar?('Battle ends in '+fmtLeft(endMs-Date.now())):('Battle starts in '+fmtLeft(startMs-Date.now()));
+        var used=(war.clan.attacks||0)+(war.opponent.attacks||0);
+        var total=(war.teamSize||5)*(war.attacksPerMember||2)*2;
+        var score=war.clan.stars+'★ – '+war.opponent.stars+'★';
+        var sub=(war.clan.destructionPercentage!=null?war.clan.destructionPercentage+'% vs '+war.opponent.destructionPercentage+'% destruction':'')+' · '+used+'/'+total+' attacks used';
+        var set=function(id,t){var el=document.getElementById(id);if(el)el.textContent=t;};
+        set('homeWarState',inWar?'Live':'Starts soon');
+        set('homeWarScore',score);
+        set('homeWarOpp',war.opponent.name);
+        set('homeWarSub',sub);
+        set('homeWarTime',timeTxt);
+        set('cocFeatOppTop',war.opponent.name+' 🛡️');
+        set('cocFeatUs',war.clan.stars+' ⭐');
+        set('cocFeatUsPct',(war.clan.destructionPercentage!=null?war.clan.destructionPercentage:0)+'%');
+        set('cocFeatThem','⭐ '+war.opponent.stars);
+        set('cocFeatThemPct',(war.opponent.destructionPercentage!=null?war.opponent.destructionPercentage:0)+'%');
+        set('cocFeatSize',(war.teamSize||5)+'v'+(war.teamSize||5));
+        set('cocFeatTime',timeTxt);
+        var lv=document.getElementById('cocFeatLive');if(lv)lv.textContent=inWar?'LIVE':'SOON';
+      }
       var rd=document.getElementById('cocRaid');
       if(rd&&d.capital&&d.capital.state==='ended'&&d.capital.capitalTotalLoot!=null){
         var st=d.capital.startTime||'',en=d.capital.endTime||'';
