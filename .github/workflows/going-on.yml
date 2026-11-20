@@ -82,7 +82,22 @@ jobs:
           from datetime import datetime, timezone, timedelta
           from email.utils import parsedate_to_datetime
 
-          ROOT = pathlib.Path(__file__).resolve().parent.parent
+          def _repo_root():
+              # Repo root: from the script file when run as a file, else the
+              # working directory. Under `python3 -` (stdin heredoc, how the
+              # GitHub Action runs this), __file__ is the literal string
+              # '<stdin>', so Path(__file__).parent.parent resolves OUTSIDE
+              # the repo — the Action was writing the JSON next to the
+              # checkout and committing nothing, while reporting success.
+              f = globals().get("__file__", "")
+              if f and f != "<stdin>":
+                  p = pathlib.Path(f).resolve()
+                  if p.is_file():
+                      return p.parent.parent
+              return pathlib.Path.cwd()
+
+
+          ROOT = _repo_root()
           OUT = ROOT / "going-on.json"
 
           QUERIES = [
