@@ -2637,7 +2637,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     </div>
     <div class="cs-panel" id="csPanel-cw">
       <h3 class="cs-h">Clan Wars</h3>
-      <p class="cs-p" id="cocCurrentWar" style="margin-bottom:12px">War vs N.Δ.Z. — declared Nov 19, battle day starts today (Nov 20).</p>
+      <p class="cs-p" id="cocCurrentWar" style="margin-bottom:12px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
       <div class="cs-info"><span class="cs-info-ic">i</span><span>The war log is not public, the following information may be incomplete.</span></div>
       <div class="cs-war">
         <div class="cs-war-top"><span>🛡️ WAR II</span><span>SirangFitu#7 🛡️</span></div>
@@ -2734,7 +2734,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       var w=document.getElementById('cocClanWins');if(w)w.textContent=c.warWins;
       var s=document.getElementById('cocClanStreak');if(s)s.textContent=c.warWinStreak;
       var cw=document.getElementById('cocCurrentWar'),ws=document.getElementById('cocWarStatsCurrent');
-      var war=d.currentWar,txt='War vs N.Δ.Z. — declared Nov 19, battle day starts today (Nov 20).';
+      var war=d.currentWar,txt='No war in progress right now.';
       if(war&&war.clan&&war.opponent){
         var end=war.battleEndTime||war.endTime||'';
         var tl=end?left(new Date(end).getTime()-Date.now()):'';

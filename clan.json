@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-20T16:11:44Z",
-  "fetched_at": "2026-11-20T16:11:45.206Z",
+  "updated_at": "2026-11-20T16:21:35Z",
+  "fetched_at": "2026-11-20T16:21:36.035Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -8,11 +8,11 @@
     "level": 4,
     "members": 18,
     "warWins": 8,
-    "warLosses": "$undefined",
-    "warTies": "$undefined",
+    "warLosses": 5,
+    "warTies": 0,
     "warWinStreak": 0,
     "warFrequency": "moreThanOncePerWeek",
-    "isWarLogPublic": false,
+    "isWarLogPublic": true,
     "league": "Silver League I",
     "capitalLeague": "Bronze League III",
     "clanPoints": 16250,
@@ -296,8 +296,296 @@
       }
     ]
   },
-  "currentWar": null,
-  "warLog": null,
+  "currentWar": {
+    "state": "preparation",
+    "teamSize": 5,
+    "attacksPerMember": 2,
+    "preparationStartTime": "20261119T223602.000Z",
+    "startTime": "20261120T213602.000Z",
+    "endTime": "20261121T213602.000Z",
+    "clan": {
+      "name": "WAR II",
+      "tag": "#2JQVGQRC9",
+      "stars": 0,
+      "destructionPercentage": 0,
+      "attacks": 0,
+      "members": [
+        {
+          "tag": "#LQC8UJCVP",
+          "name": "lakersfan06",
+          "mapPosition": 5,
+          "th": 13,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#GL80JCCU2",
+          "name": "not real 315",
+          "mapPosition": 3,
+          "th": 14,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#GUVC2U9Q",
+          "name": "Nastypu",
+          "mapPosition": 1,
+          "th": 19,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#Q8YV0JYUG",
+          "name": "Icy",
+          "mapPosition": 4,
+          "th": 14,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#P8VGJCLY",
+          "name": "dxrival",
+          "mapPosition": 2,
+          "th": 17,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        }
+      ]
+    },
+    "opponent": {
+      "name": "N.∆.Z.I",
+      "tag": "#2GGR8UPCY",
+      "stars": 0,
+      "destructionPercentage": 0,
+      "attacks": 0,
+      "members": [
+        {
+          "tag": "#GLY9JL0YP",
+          "name": "⚔️persia⚔️",
+          "mapPosition": 2,
+          "th": 16
+        },
+        {
+          "tag": "#GU0UR0YPL",
+          "name": "Josef St∆lin",
+          "mapPosition": 5,
+          "th": 9
+        },
+        {
+          "tag": "#YPJQ22GCY",
+          "name": "Rohmanz564",
+          "mapPosition": 3,
+          "th": 14
+        },
+        {
+          "tag": "#GY989P2YV",
+          "name": "◤ᴠɪᴋ◢",
+          "mapPosition": 1,
+          "th": 19
+        },
+        {
+          "tag": "#GJCQ9G2VG",
+          "name": "∆dolf H|tler",
+          "mapPosition": 4,
+          "th": 13
+        }
+      ]
+    }
+  },
+  "warLog": {
+    "record": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "total": 7,
+      "streak": {
+        "kind": "lose",
+        "count": 3
+      }
+    },
+    "items": [
+      {
+        "isCwl": false,
+        "result": "lose",
+        "endTime": "20261118T232626.000Z",
+        "teamSize": 5,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 14,
+          "pct": 97
+        },
+        "opp": {
+          "name": "O Clã",
+          "stars": 15,
+          "pct": 100,
+          "badge": "https://api-assets.clashofclans.com/badges/70/IkQPppLx9R-NRPKhI2cXG7Zwz9Pa2DlADLDQfUwfJ_Q.png"
+        }
+      },
+      {
+        "isCwl": false,
+        "result": "lose",
+        "endTime": "20261116T141226.000Z",
+        "teamSize": 5,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 14,
+          "pct": 97.8
+        },
+        "opp": {
+          "name": "SirangFitu#7",
+          "stars": 14,
+          "pct": 99.4,
+          "badge": "https://api-assets.clashofclans.com/badges/70/TSOfwDU4Hc9zyOOh6PtDRu-4A6Xja6zXRowY52anjY0.png"
+        }
+      },
+      {
+        "isCwl": true,
+        "result": null,
+        "endTime": "20261110T023011.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "us": {
+          "stars": 79,
+          "pct": 132.13333
+        },
+        "opp": {
+          "name": null,
+          "stars": 81,
+          "pct": 0,
+          "badge": "https://api-assets.clashofclans.com/badges/70/H39b_-WLZGtZVWQ0hqTkE-Tn2AaQnQWy_Iz4yBlvL0M.png"
+        }
+      },
+      {
+        "isCwl": false,
+        "result": "lose",
+        "endTime": "20261031T235925.000Z",
+        "teamSize": 5,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 13,
+          "pct": 92.4
+        },
+        "opp": {
+          "name": "F22",
+          "stars": 13,
+          "pct": 94.4,
+          "badge": "https://api-assets.clashofclans.com/badges/70/t6Eh7jUK25YvCzz39NQte9s1UfaauANKz-06tj33oDg.png"
+        }
+      },
+      {
+        "isCwl": false,
+        "result": "win",
+        "endTime": "20261029T091704.000Z",
+        "teamSize": 5,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 15,
+          "pct": 100
+        },
+        "opp": {
+          "name": "Afghanistan",
+          "stars": 14,
+          "pct": 94.4,
+          "badge": "https://api-assets.clashofclans.com/badges/70/Q0Hk2Uulgv-8OhLdAEZ8yOvFO6VU1qWEF-qCo0gQ9yw.png"
+        }
+      },
+      {
+        "isCwl": false,
+        "result": "win",
+        "endTime": "20261026T001310.000Z",
+        "teamSize": 5,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 14,
+          "pct": 94.2
+        },
+        "opp": {
+          "name": "Escopeta ANL",
+          "stars": 14,
+          "pct": 93,
+          "badge": "https://api-assets.clashofclans.com/badges/70/3yI8_XeuD5YLQkdBF07gYcd-qzltGpeuEZgm9UL38a4.png"
+        }
+      },
+      {
+        "isCwl": false,
+        "result": "win",
+        "endTime": "20261023T011350.000Z",
+        "teamSize": 5,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 15,
+          "pct": 100
+        },
+        "opp": {
+          "name": "los money wey",
+          "stars": 13,
+          "pct": 90,
+          "badge": "https://api-assets.clashofclans.com/badges/70/re_Xf7qT2MQ6QOvRSQvEL4y7JF5KciDHS-cYYkOE8u8.png"
+        }
+      },
+      {
+        "isCwl": true,
+        "result": "tie",
+        "endTime": "20261010T145006.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "us": {
+          "stars": 65,
+          "pct": 131.46666
+        },
+        "opp": {
+          "name": null,
+          "stars": 128,
+          "pct": 0,
+          "badge": "https://api-assets.clashofclans.com/badges/70/H39b_-WLZGtZVWQ0hqTkE-Tn2AaQnQWy_Iz4yBlvL0M.png"
+        }
+      },
+      {
+        "isCwl": true,
+        "result": null,
+        "endTime": "20260910T111715.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "us": {
+          "stars": 136,
+          "pct": 267.66666
+        },
+        "opp": {
+          "name": null,
+          "stars": 123,
+          "pct": 0,
+          "badge": "https://api-assets.clashofclans.com/badges/70/H39b_-WLZGtZVWQ0hqTkE-Tn2AaQnQWy_Iz4yBlvL0M.png"
+        }
+      },
+      {
+        "isCwl": false,
+        "result": "win",
+        "endTime": "20260824T135939.000Z",
+        "teamSize": 10,
+        "attacksPerMember": 2,
+        "us": {
+          "stars": 29,
+          "pct": 97.1
+        },
+        "opp": {
+          "name": "Insanity",
+          "stars": 23,
+          "pct": 80.5,
+          "badge": "https://api-assets.clashofclans.com/badges/70/D9MCNh7OcTrByMkcFsCxFpqm5_52L0OzTTQLhQcYOTs.png"
+        }
+      }
+    ]
+  },
   "cwl": {
     "unavailableRounds": [],
     "season": null,
