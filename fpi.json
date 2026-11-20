@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T07:24:23.131843+00:00",
+ "updated_at": "2026-11-20T13:18:58.034257+00:00",
  "source": "ESPN FPI (fitt v3 powerindex), fetched server-side",
  "teams": [
   {
@@ -7,24 +7,24 @@
    "abbr": "SF",
    "name": "San Francisco 49ers",
    "winConf": null,
-   "winDiv": 95.5,
+   "winDiv": 95.6,
    "playoff": 99.7,
-   "makeDiv": 87.7,
-   "makeSB": 39.2,
-   "winTitle": 21.6,
-   "makeConf": 58.7
+   "makeDiv": 87.2,
+   "makeSB": 38.3,
+   "winTitle": 21.1,
+   "makeConf": 58.2
   },
   {
    "id": "30",
    "abbr": "JAX",
    "name": "Jacksonville Jaguars",
    "winConf": null,
-   "winDiv": 98.8,
+   "winDiv": 98.1,
    "playoff": 99.9,
-   "makeDiv": 75.0,
-   "makeSB": 23.2,
-   "winTitle": 12.6,
-   "makeConf": 42.8
+   "makeDiv": 73.9,
+   "makeSB": 22.1,
+   "winTitle": 12.2,
+   "makeConf": 41.1
   },
   {
    "id": "2",
@@ -33,69 +33,69 @@
    "winConf": null,
    "winDiv": 100.0,
    "playoff": 100.0,
-   "makeDiv": 87.3,
-   "makeSB": 28.9,
-   "winTitle": 15.4,
-   "makeConf": 52.7
+   "makeDiv": 87.4,
+   "makeSB": 30.3,
+   "winTitle": 16.7,
+   "makeConf": 53.8
   },
   {
    "id": "4",
    "abbr": "CIN",
    "name": "Cincinnati Bengals",
    "winConf": null,
-   "winDiv": 93.4,
-   "playoff": 100.0,
-   "makeDiv": 72.6,
-   "makeSB": 19.4,
+   "winDiv": 94.0,
+   "playoff": 99.9,
+   "makeDiv": 71.8,
+   "makeSB": 19.3,
    "winTitle": 10.4,
-   "makeConf": 37.7
+   "makeConf": 37.4
   },
   {
    "id": "12",
    "abbr": "KC",
    "name": "Kansas City Chiefs",
    "winConf": null,
-   "winDiv": 43.8,
-   "playoff": 99.9,
-   "makeDiv": 61.3,
-   "makeSB": 15.5,
+   "winDiv": 43.9,
+   "playoff": 99.7,
+   "makeDiv": 60.9,
+   "makeSB": 15.3,
    "winTitle": 8.3,
-   "makeConf": 31.3
+   "makeConf": 30.9
   },
   {
    "id": "14",
    "abbr": "LAR",
    "name": "Los Angeles Rams",
    "winConf": null,
-   "winDiv": 1.8,
-   "playoff": 45.4,
-   "makeDiv": 27.6,
-   "makeSB": 7.3,
-   "winTitle": 3.5,
-   "makeConf": 13.8
+   "winDiv": 1.9,
+   "playoff": 46.5,
+   "makeDiv": 28.7,
+   "makeSB": 7.7,
+   "winTitle": 3.9,
+   "makeConf": 14.4
   },
   {
    "id": "3",
    "abbr": "CHI",
    "name": "Chicago Bears",
    "winConf": null,
-   "winDiv": 19.7,
-   "playoff": 85.6,
-   "makeDiv": 51.2,
-   "makeSB": 11.4,
-   "winTitle": 5.0,
-   "makeConf": 24.6
+   "winDiv": 19.0,
+   "playoff": 85.5,
+   "makeDiv": 51.6,
+   "makeSB": 11.3,
+   "winTitle": 5.2,
+   "makeConf": 25.3
   },
   {
    "id": "26",
    "abbr": "SEA",
    "name": "Seattle Seahawks",
    "winConf": null,
-   "winDiv": 2.7,
-   "playoff": 48.7,
-   "makeDiv": 26.9,
-   "makeSB": 5.7,
-   "winTitle": 2.7,
+   "winDiv": 2.5,
+   "playoff": 48.4,
+   "makeDiv": 25.9,
+   "makeSB": 5.8,
+   "winTitle": 2.8,
    "makeConf": 11.8
   },
   {
@@ -103,48 +103,48 @@
    "abbr": "MIN",
    "name": "Minnesota Vikings",
    "winConf": null,
-   "winDiv": 46.2,
+   "winDiv": 47.1,
    "playoff": 96.8,
-   "makeDiv": 62.0,
-   "makeSB": 14.1,
-   "winTitle": 6.1,
-   "makeConf": 31.9
+   "makeDiv": 62.2,
+   "makeSB": 15.3,
+   "winTitle": 6.3,
+   "makeConf": 32.3
   },
   {
    "id": "8",
    "abbr": "DET",
    "name": "Detroit Lions",
    "winConf": null,
-   "winDiv": 33.2,
+   "winDiv": 33.0,
    "playoff": 89.5,
-   "makeDiv": 52.2,
-   "makeSB": 9.8,
-   "winTitle": 4.2,
-   "makeConf": 24.7
-  },
-  {
-   "id": "7",
-   "abbr": "DEN",
-   "name": "Denver Broncos",
-   "winConf": null,
-   "winDiv": 56.3,
-   "playoff": 99.6,
-   "makeDiv": 56.3,
-   "makeSB": 9.4,
-   "winTitle": 4.2,
-   "makeConf": 23.6
+   "makeDiv": 51.3,
+   "makeSB": 9.9,
+   "winTitle": 4.0,
+   "makeConf": 24.4
   },
   {
    "id": "34",
    "abbr": "HOU",
    "name": "Houston Texans",
    "winConf": null,
-   "winDiv": 1.2,
-   "playoff": 32.0,
-   "makeDiv": 11.7,
-   "makeSB": 1.5,
-   "winTitle": 0.7,
-   "makeConf": 4.2
+   "winDiv": 1.9,
+   "playoff": 41.9,
+   "makeDiv": 16.3,
+   "makeSB": 2.4,
+   "winTitle": 1.0,
+   "makeConf": 6.3
+  },
+  {
+   "id": "7",
+   "abbr": "DEN",
+   "name": "Denver Broncos",
+   "winConf": null,
+   "winDiv": 56.1,
+   "playoff": 99.6,
+   "makeDiv": 55.6,
+   "makeSB": 8.8,
+   "winTitle": 3.7,
+   "makeConf": 23.3
   },
   {
    "id": "9",
@@ -152,22 +152,22 @@
    "name": "Green Bay Packers",
    "winConf": null,
    "winDiv": 1.0,
-   "playoff": 33.0,
+   "playoff": 32.3,
    "makeDiv": 15.3,
-   "makeSB": 2.3,
-   "winTitle": 0.9,
-   "makeConf": 6.0
+   "makeSB": 2.1,
+   "winTitle": 0.8,
+   "makeConf": 5.4
   },
   {
    "id": "6",
    "abbr": "DAL",
    "name": "Dallas Cowboys",
    "winConf": null,
-   "winDiv": 42.6,
-   "playoff": 42.9,
-   "makeDiv": 18.9,
-   "makeSB": 2.7,
-   "winTitle": 1.0,
+   "winDiv": 43.1,
+   "playoff": 43.4,
+   "makeDiv": 19.6,
+   "makeSB": 2.8,
+   "winTitle": 0.9,
    "makeConf": 7.8
   },
   {
@@ -177,21 +177,21 @@
    "winConf": null,
    "winDiv": 61.4,
    "playoff": 61.6,
-   "makeDiv": 30.0,
-   "makeSB": 5.8,
-   "winTitle": 2.5,
-   "makeConf": 13.7
+   "makeDiv": 29.9,
+   "makeSB": 5.3,
+   "winTitle": 2.0,
+   "makeConf": 13.0
   },
   {
    "id": "23",
    "abbr": "PIT",
    "name": "Pittsburgh Steelers",
    "winConf": null,
-   "winDiv": 4.6,
-   "playoff": 84.7,
-   "makeDiv": 21.5,
-   "makeSB": 1.5,
-   "winTitle": 0.6,
+   "winDiv": 4.1,
+   "playoff": 81.7,
+   "makeDiv": 21.7,
+   "makeSB": 1.4,
+   "winTitle": 0.4,
    "makeConf": 5.5
   },
   {
@@ -201,10 +201,10 @@
    "winConf": null,
    "winDiv": 31.3,
    "playoff": 31.7,
-   "makeDiv": 9.9,
-   "makeSB": 1.0,
+   "makeDiv": 10.9,
+   "makeSB": 0.8,
    "winTitle": 0.2,
-   "makeConf": 3.1
+   "makeConf": 3.4
   },
   {
    "id": "24",
@@ -212,8 +212,8 @@
    "name": "Los Angeles Chargers",
    "winConf": null,
    "winDiv": 0.0,
-   "playoff": 0.3,
-   "makeDiv": 0.1,
+   "playoff": 0.1,
+   "makeDiv": 0.0,
    "makeSB": 0.0,
    "winTitle": 0.0,
    "makeConf": 0.0
@@ -223,11 +223,11 @@
    "abbr": "WSH",
    "name": "Washington Commanders",
    "winConf": null,
-   "winDiv": 13.6,
-   "playoff": 13.6,
-   "makeDiv": 4.1,
-   "makeSB": 0.3,
-   "winTitle": 0.1,
+   "winDiv": 12.5,
+   "playoff": 12.5,
+   "makeDiv": 3.7,
+   "makeSB": 0.1,
+   "winTitle": 0.0,
    "makeConf": 1.0
   },
   {
@@ -237,10 +237,22 @@
    "winConf": null,
    "winDiv": 5.5,
    "playoff": 5.5,
-   "makeDiv": 1.7,
-   "makeSB": 0.1,
+   "makeDiv": 1.6,
+   "makeSB": 0.0,
    "winTitle": 0.0,
    "makeConf": 0.4
+  },
+  {
+   "id": "19",
+   "abbr": "NYG",
+   "name": "New York Giants",
+   "winConf": null,
+   "winDiv": 44.0,
+   "playoff": 44.2,
+   "makeDiv": 11.7,
+   "makeSB": 0.7,
+   "winTitle": 0.1,
+   "makeConf": 2.7
   },
   {
    "id": "11",
@@ -248,35 +260,35 @@
    "name": "Indianapolis Colts",
    "winConf": null,
    "winDiv": 0.0,
-   "playoff": 2.2,
-   "makeDiv": 0.5,
+   "playoff": 0.2,
+   "makeDiv": 0.0,
    "makeSB": 0.0,
    "winTitle": 0.0,
-   "makeConf": 0.1
-  },
-  {
-   "id": "19",
-   "abbr": "NYG",
-   "name": "New York Giants",
-   "winConf": null,
-   "winDiv": 43.5,
-   "playoff": 43.9,
-   "makeDiv": 12.0,
-   "makeSB": 0.4,
-   "winTitle": 0.1,
-   "makeConf": 2.5
+   "makeConf": 0.0
   },
   {
    "id": "5",
    "abbr": "CLE",
    "name": "Cleveland Browns",
    "winConf": null,
-   "winDiv": 1.9,
+   "winDiv": 1.8,
    "playoff": 56.5,
-   "makeDiv": 8.8,
+   "makeDiv": 8.4,
    "makeSB": 0.2,
    "winTitle": 0.0,
-   "makeConf": 1.2
+   "makeConf": 1.1
+  },
+  {
+   "id": "21",
+   "abbr": "PHI",
+   "name": "Philadelphia Eagles",
+   "winConf": null,
+   "winDiv": 0.4,
+   "playoff": 0.4,
+   "makeDiv": 0.1,
+   "makeSB": 0.0,
+   "winTitle": 0.0,
+   "makeConf": 0.0
   },
   {
    "id": "17",
@@ -284,23 +296,11 @@
    "name": "New England Patriots",
    "winConf": null,
    "winDiv": 0.0,
-   "playoff": 17.7,
-   "makeDiv": 4.1,
+   "playoff": 14.9,
+   "makeDiv": 3.0,
    "makeSB": 0.2,
-   "winTitle": 0.0,
-   "makeConf": 0.8
-  },
-  {
-   "id": "21",
-   "abbr": "PHI",
-   "name": "Philadelphia Eagles",
-   "winConf": null,
-   "winDiv": 0.3,
-   "playoff": 0.3,
-   "makeDiv": 0.0,
-   "makeSB": 0.0,
-   "winTitle": 0.0,
-   "makeConf": 0.0
+   "winTitle": 0.1,
+   "makeConf": 0.6
   },
   {
    "id": "1",
@@ -309,22 +309,10 @@
    "winConf": null,
    "winDiv": 1.8,
    "playoff": 1.8,
-   "makeDiv": 0.3,
+   "makeDiv": 0.4,
    "makeSB": 0.0,
    "winTitle": 0.0,
    "makeConf": 0.1
-  },
-  {
-   "id": "33",
-   "abbr": "BAL",
-   "name": "Baltimore Ravens",
-   "winConf": null,
-   "winDiv": 0.0,
-   "playoff": 4.6,
-   "makeDiv": 0.8,
-   "makeSB": 0.0,
-   "winTitle": 0.0,
-   "makeConf": 0.2
   },
   {
    "id": "22",
@@ -337,6 +325,18 @@
    "makeSB": 0.0,
    "winTitle": 0.0,
    "makeConf": 0.0
+  },
+  {
+   "id": "33",
+   "abbr": "BAL",
+   "name": "Baltimore Ravens",
+   "winConf": null,
+   "winDiv": 0.0,
+   "playoff": 3.8,
+   "makeDiv": 0.7,
+   "makeSB": 0.0,
+   "winTitle": 0.0,
+   "makeConf": 0.1
   },
   {
    "id": "10",
@@ -356,7 +356,7 @@
    "name": "New York Jets",
    "winConf": null,
    "winDiv": 0.0,
-   "playoff": 0.2,
+   "playoff": 0.0,
    "makeDiv": 0.0,
    "makeSB": 0.0,
    "winTitle": 0.0,
@@ -368,7 +368,7 @@
    "name": "Las Vegas Raiders",
    "winConf": null,
    "winDiv": 0.0,
-   "playoff": 2.5,
+   "playoff": 1.8,
    "makeDiv": 0.2,
    "makeSB": 0.0,
    "winTitle": 0.0,
