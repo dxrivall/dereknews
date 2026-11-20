@@ -100,6 +100,24 @@ jobs:
               raise last
 
 
+          def _fix_text(v):
+              # Repair mojibake from the RSC unicode_escape decode: non-ASCII
+              # (∆, emoji flags) comes through as Latin-1 chars holding UTF-8
+              # bytes, e.g. "N.â\x88\x86.Z.I" is really "N.∆.Z.I". Only strings
+              # that round-trip Latin-1 -> UTF-8 are changed; anything already
+              # correct (or plain Latin-1 like café) is left alone.
+              if isinstance(v, str):
+                  try:
+                      return v.encode("latin-1").decode("utf-8")
+                  except (UnicodeEncodeError, UnicodeDecodeError):
+                      return v
+              if isinstance(v, dict):
+                  return {k: _fix_text(x) for k, x in v.items()}
+              if isinstance(v, list):
+                  return [_fix_text(x) for x in v]
+              return v
+
+
           def js_unescape(s):
               return s.encode("utf-8").decode("unicode_escape", errors="replace")
 
@@ -167,6 +185,17 @@ jobs:
                   "cwl": pick_full(find_all(blob, "cwl")),
                   "capital": pick_full(find_all(blob, "capital")),
               }
+              # Clashboard names the war sides decl/opp; the site reads
+              # clan/opponent. Normalize so the tab renders the live score.
+              cw = out["currentWar"]
+              if isinstance(cw, dict):
+                  cw = dict(cw)
+                  if "decl" in cw:
+                      cw["clan"] = cw.pop("decl")
+                  if "opp" in cw:
+                      cw["opponent"] = cw.pop("opp")
+                  out["currentWar"] = cw
+              out = _fix_text(out)
               OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
               cw = out["currentWar"]
               print(
