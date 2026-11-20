@@ -1,48 +1,54 @@
 {
- "updated_at": "2026-11-20T22:29:29.875438+00:00",
+ "updated_at": "2026-11-20T23:13:42.428455+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385565,
-  "out": 2788,
-  "pct": 0.03,
-  "source_updated": "2026-11-20T22:26:14+00:00",
+  "out": 1500,
+  "pct": 0.02,
+  "source_updated": "2026-11-20T23:06:11+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919443,
-    "out": 2190,
-    "pct": 0.24
+    "out": 909,
+    "pct": 0.1
    },
    {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 543,
+    "out": 536,
     "pct": 0.03
-   },
-   {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315387,
-    "out": 25,
-    "pct": 0.01
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 25,
+    "out": 23,
     "pct": 0.0
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315387,
+    "out": 19,
+    "pct": 0.01
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 4,
+    "out": 10,
     "pct": 0.0
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
+    "out": 2,
+    "pct": 0.04
+   },
+   {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6708,
     "out": 1,
-    "pct": 0.02
+    "pct": 0.01
    },
    {
     "name": "Delaware County Electric Coop",
@@ -69,12 +75,6 @@
     "pct": 0.0
    },
    {
-    "name": "Steuben Rural Electric Coop",
-    "tracked": 6708,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
     "name": "Sussex REC",
     "tracked": 202,
     "out": 0,
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 212912,
-  "out": 8,
-  "source_updated": "2026-11-20T22:26:12+00:00",
+  "out": 2,
+  "source_updated": "2026-11-20T23:06:09+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204758,
-    "out": 8,
+    "out": 2,
     "pct": 0.0
    },
    {
