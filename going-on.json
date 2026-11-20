@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-20T22:50:46.778185Z",
+  "updated_at": "2026-11-20T23:32:25.398692Z",
   "tension": {
     "attacks_7d": 6,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Eskenazi Health investigating data breach involving patient information - Fox 59",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUDhkc2tSUGZKX0tubDRnVkxGTWNwenRSNGpoNUdBei1ZVjV6TTk1WWdsMlZSZTJLVXJjMkZFc3J6Z1A0TWZ3OU1SZEgySW9SYUdETFcwemdkdzRHODQxNnVmWlNzS0hwaHd3a1ZJQlNHX2FOOEc3dFRoR1gzOEVQbnlPRmQ3YmtJVGp1VHI5RnJVcG5XNlk3WVhEMNIBoAFBVV95cUxPNnpRUXgtdmlqVTBVX3FrLTM4WHhDSWZxSEhHOEFTMW9LRnphUFBES0owdXpBZV9Sak5DZl9xSnM5eGZseGppM1hCVXE3SVJtSzB2dmxjM3JHdmRsZXY0UEdSSk5PdTNiWENMN0ZCY05yT2VWOVpzb1JYNU1ockEtenNHZmVwMkdCOGxQa2N3UEE2elJwTmtfWUg0V0pqQW1M?oc=5",
+      "date": "2026-11-20T23:12:43Z"
+    },
     {
       "title": "Eskenazi reports data breach involving patient electronic health information - WTHR",
       "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQdVNZaFNJUU5KQTZQZGVnZ04zS052MTlhVTdxTVI0alk5NWVxYWFHckw4Q2E1cm9DdEdBMllMeGUxYkpCV0NxOGJsMkZnOGZGWlhZSlZERldFcUtrLVdheUhNMjkwaFllM3VZNzgyczBTRHFCc19rdUsxZF9UVS1RTjFSbnJOYkdQVVdNdmNSXzdiSlFNZ01XeGlKOVZXc0Nudm9NeUxfYVpKYW5uSURBcUhYdlFkNFJteThHX3YwR0FYQndxMkFhZWZEOWZPNTN2Ulg1WWhnS2tIZDR2MUs0cF9kNG9mNXFyUnlteWUxUm5RaHdpSE9aWnZ1OVBITGtsT0tzU2loX29vdVNkN05BQmRB?oc=5",
@@ -14,6 +19,11 @@
       "title": "Japan's Osaki Electric Industries hit by ransomware via VPN authentication flaw; smart meter production halted - BigGo Finance",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0zeEpkSi02RjAyMTdmaXI3b3RiN3lvbXNnV1BWRktaZzhHNmxyOGtLSUl0N1FiTWhTQ1gxNUNTdWFjNjNhVk9sZnNMZkNqeE9lNkdqb094aW45TnVoQjFWRWRrTXlZaU5mU3lLdWpMU1NnMVpyQ2c?oc=5",
       "date": "2026-11-20T22:05:00Z"
+    },
+    {
+      "title": "Cyberattack or Outage? CFOs Face the Same Cash Flow Problem - PYMNTS.com",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNa05zb2VURlZmTEdNRHpha1hRaUpvTG0tejhmLVMzNlhTSTd5UGxyU3Z3SnRNcm1ZRThXcmlMeUIxTkt2NHcxWmlpYjc0ZEJYUGozUHdabVoyRlBvMTk1blloTFdUam5yYzdoeTNUV2VDdl9HTll4UEw0NFp3UWV2S1lvZFAzTWp3MFRCNXhRNnNHT0pFNFZCYlIzZzhOc1lSVFItWE9B?oc=5",
+      "date": "2026-11-20T22:01:02Z"
     },
     {
       "title": "Bell says it's investigating cyberattack that led to potential theft of business customer data - CBC",
@@ -59,6 +69,11 @@
       "title": "Middle East latest: Saudi-led coalition targets Houthi weapons smuggling at Hodeidah port - The National",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPV2s2d2xVNlpZamM1RXpfRURTUFM4eFhHeFBkQVp6TTlLTXZWMjB5WFEwcF8wQ2dqR3U5SDd2VUNKdm1uV2RfV256RHUzUS1ZQWZJdnNlRmJtemxFeUZLR2tLWXhza2EwOVBWUEVPeUJ2VG9aV0R0RjVSWU1wVG8zU3p4RWJQMmhDcjdKOF9XZXBMQQ?oc=5",
       "date": "2026-11-20T19:34:36Z"
+    },
+    {
+      "title": "Trump warns Iran over reported plot to target Washington with dirty bomb - Operativ Məlumat Mərkəzi",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRHRwWWhNMHYyWWZwZVBYTjkzQThjbUNXU0puWGs2eC1uSDd1N0MwS3FSVDNNN0Z4aGcxcjZQeUxMZHVMRlFYSE1oeE5IZ3lHTjZ1V2hUZ1FvYXM4Z3NpTXp6REp4VHRIbDdSWVBEejkxSnNQUVJuLXZzNVMwWXhJaFdmbk1kWHVTYmZiRFlQa0s4ZDhXcjhrNFdadC1KYVJ6MVhkYkRpQWZyT0RZ?oc=5",
+      "date": "2026-11-20T19:25:24Z"
     },
     {
       "title": "Trump warns Iran against reported 'dirty bomb' plot targeting Washington - Anadolu Ajansı",
@@ -114,6 +129,11 @@
       "title": "Ransomware: What we know about the arrests of Chaos affiliates - Computer Weekly",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdmR6LXR5Q29LOTRhOVJSNEpYLXZqSUxhUHpfZC0yQmo0Mk05a1pYYkV3S2RndkltT2hsMVd3M0FDaW9rWExTVUxadmNNZFdlNTFidS1wMk1ySWJibDJiMUhSYUladGFvY2pLZzFEaGFaMzNtQk0tSWZCQ0VRZFY4b29qSnFEMHRFY1F2WjBwUmh2bkJOM29pSDJrM1NFajBPOUU2UGh4SmVnUG8?oc=5",
       "date": "2026-11-20T17:19:39Z"
+    },
+    {
+      "title": "How to determine if a tech outage is a cyberattack - SC Media",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeU1qdTJERFRONWY0blBhQ1JXVGQ0dGxxd0FnUGhwRnhhaVpzNUswWnJ4NU1TUXhsQlR0bzVFQXNNVkFqWk5MYmhVM1dUMElvdGZmUGIzeHEyLTdEeHE5SERkSmpXWjJCR011ZVV6VndicDh4dUo5eEN3VUo1a0JhbF9xZk9wOWc?oc=5",
+      "date": "2026-11-20T17:15:24Z"
     },
     {
       "title": "Samsung Defeats Consumer Data-Breach Lawsuit at Third Circuit - Bloomberg Law News",
@@ -304,6 +324,11 @@
       "title": "Qumulo and Cisco integrate data storage and network infrastructure to protect against ransomware - NEWS.am TECH",
       "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBXeHB0SHJHODZscHVMNUdXRzBBaUZBSTRNR05udXZkZEttVGpMd1BXRFc1Q2syWjJCYU5Hc3U4RFVtS29qTTJFYQ?oc=5",
       "date": "2026-11-20T11:03:00Z"
+    },
+    {
+      "title": "GOP leaders fume after members who lost reelection are no-shows - CNN",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR05HYnc1a3ZnclFrOGtKTU5mYnkzam1QSkNiYlRXbXF4bkVjSFhQTVFkSGtaZ2E5QkFrazgwOUtYbGpYTWhwSlg0eEVTNDZDQWZRXzRZY2V1VV9pX21zM0tGdWM0aTIwX1ZjQnJSUndId3dQdHVHZWZqdE9PSDh5WXk0VWdWS2M?oc=5",
+      "date": "2026-11-20T11:00:15Z"
     },
     {
       "title": "How the US would seek to intercept an Iranian dirty bomb - Washington Examiner",
@@ -561,6 +586,11 @@
       "date": "2026-11-20T00:00:00Z"
     },
     {
+      "title": "Watch JPMorgan, Visa Warn of Cyberattack That Hit Outside Vendor - Bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeGdnSHNKUEdCNnpIS2RhZUhfZWF1XzJkWW1ycHRkNVkyclVRQ2FoODMzNVpwY0ZwQVltUVlXZ3hvUzM2VE1nLXE5bXR1Tnc3TmFHWl9wN2VaN3AyT0tFbHp0aHNLVG5YQXBNTUdCZUNHaUNMSWR0YWZJTGZwWGNNNnM0VUdZQloyZUtsSGZKdXIzcnotamxsZHlfYUlyM2VQbldMTmJBZDRVQQ?oc=5",
+      "date": "2026-11-20T00:00:00Z"
+    },
+    {
       "title": "Rubrik warns ransomware recovery can take six weeks - IT Brief Australia",
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkxmamt1ZnRoWVVxWVE5M1hnX2JFM3RYcy1jMFBQNVZGb3ZFcmR4cEYyczBPUjRGWnYtbmtMNjRNLWxRYk9Cdy1YV3V2cTdqRjlLNkdvb3VOSnFSMFBzN1V6WXpibXVEWXktTGJicVg2MmRvOHhJRTBzaEkwNU4yMU9Od0hEd1U?oc=5",
       "date": "2026-11-19T23:36:00Z"
@@ -574,6 +604,11 @@
       "title": "Expedia hit by alleged cyberattack from Russia-based extortion group - MyNorthwest.com",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAwNjBxRnZlNzhiLXpBZ3lFNHRWOWl6UFF6ZGZpUFFzTXRhQ1hIcllrN1RzZG9lbFViQzRwUmEyVllBWVNDZTZsTEQ4UmxCQVhJRVY0d0d3RFkzNWVOajVXenRlY2lHS0ZEelk3eE1OcGRFUmFtZ3c4b2VhMFU?oc=5",
       "date": "2026-11-19T23:04:39Z"
+    },
+    {
+      "title": "Could Another Ground Stop Upend Holiday Travel? What the Recent Massive Flight Disruptions Revealed - AFAR",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQmtuU3AzUmFtdjJRSXNRWE9DZEQzYVFlM3RWY2RzRU1ydWJ5eFhPbGpWNW83TEp1YjBWVnRDNzI3a3ZCTjRqRjcyZlo5dzlXOWh3ZzRoTjkxU2s2RGlKUUFaeWlieGZSTXExVHloSzVib1dZYjFKbEFORG5Xc3B5MEI5d0Q5Q0k?oc=5",
+      "date": "2026-11-19T22:34:19Z"
     },
     {
       "title": "Fort Smith cyberattack began due to phishing scam, new report says - 5newsonline.com",
@@ -1996,6 +2031,11 @@
       "date": "2026-11-18T10:31:20Z"
     },
     {
+      "title": "Iran Widens Gulf Attacks, Firing On U.S. Air Base In Kuwait And At Targets In Bahrain - HuffPost",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPT2JEZ3BsWWlPbGVKdzZKOVdEczc5V015YjJqSjc5UkdWMGNpVXl0Ni1YamxyM0owNV9fNXRiam9VX1hCQUV5UnVtdm1mcTljYm9Jck5GSF9mUVBIeWRDaTFoSjJELWRBR19wX0taSEdOaWloUjVZYWt3YkVNTU5jY3Q0SGNJYUN5R1HSAY8BQVVfeXFMTy1JSUNLZy1oc213VlFQTkRhR1luOW9oVzlyR2Ztbl9QU25ILTJmNklJcVIxeUgzWjR6RDlreW56R1dVNHR4bDd3aTBRY194dDhmTU5xT2ZrU3BjVm9pX1ZPeHI0Q3dEY2NCUVhoSU9kTmlHMXM2UVBHaS1sTUk2R2FrUFF4TlRBUHBJS2kwaDQ?oc=5",
+      "date": "2026-11-18T10:02:55Z"
+    },
+    {
       "title": "Iran widens Gulf attacks, firing on a US air base in Kuwait and at targets in Bahrain - WPTZ",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZzcwZHZCMmFQT1dQcXNfZE9jdGVsSlJhWEdXZHZVb0xRaXpMdm5kbmxURjMxVDByTElaRkVxVEpaZTRQd3BJLWJzZlFWZTFHLUZkdGd6OTl0Yi10aVI0MVU2Tk1WN1FoRVFqQ0RMOElXdEFNSnNPWDhqU2VEZ2hNR2lfeFY1NGZT?oc=5",
       "date": "2026-11-18T10:02:00Z"
@@ -2049,6 +2089,11 @@
       "title": "Iran strikes U.S. air base in Kuwait, targets Bahrain amid wider Gulf attacks - The Hindu",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRWxUTnZlMk9XRWp3MnFNUXhtNS1jcnk0UUdJTjdCRnlVcVFsaUk3NnA4clRseTVsSy1ialI2NFRjTjZmaTIwLThaQzY2eFpMeG01bDNlOHNobWQ4MUNCOWV1b3BIcXA5WDl5LXdSMnNhMllqWUhBRUJIdlp2enZlNTYtMmFKUWgxN0puS1VuTXZKa0JGQzF0NlBsMHZucm14Rm9aQXRLZ2hxNzhlMzh3ZmlwRXB0SVlR0gG_AUFVX3lxTE1ONWlpb0tPUVZPOWtISTZWMGo0a2ZoVHczbUFOOFAwUlJpQnJfdkNIakZUSmNJRzY4NE5wdnlxRDNPamFPT2lBb3VvcXJkdzhYLUJlM05pdlJVQ2dBbVB1elNfQ2NOOXkwQ1pDR0pLaHRwbGpUd29RU1dGOEs5bEppcklZamVJYTIxNVhIaDBWdHZVbFd4Q0JPTTc2LTM0bVdMWGN4cElXNGloVkJSdTc0OXlJMkhwcGtQWFJuOFZB?oc=5",
       "date": "2026-11-18T08:32:21Z"
+    },
+    {
+      "title": "Trump says US taking ‘Dirty Bomb’ threat in Washington ‘very seriously’ - Times Kuwait",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbk5GQXF2NWIzN2t3Y1M4ZEtzbDE5RlNhVGpjR0dKUDJqMV9fZUJ4MVY1THRRZHhjQ2JTeWgySTdNbUdzcHJnWTAxZ2dodUVxWEVaeU5fYzFwMmM4WjRVQ1IxMTdneEJsUnJZT0NyLUxMTzI5X2JCRzJpOUttbFQyeHVyRGRhRzY0ZUhhcDFJcUJSTXZESUxB?oc=5",
+      "date": "2026-11-18T08:08:03Z"
     },
     {
       "title": "What Is Ransomware? How Attacks Work, Real Cases and Defences - MLQ.ai",
@@ -5131,6 +5176,11 @@
       "date": "2026-11-14T05:01:00Z"
     },
     {
+      "title": "Flight grounding lifted in US, delays expected to continue - Nine.com.au",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbkFwLVY4TUl1YV93SFliMkZybTA0SDhMa2s2TzZNd2Vob2NzOFFwNzF2QXBrRGR3TjZBRTJYb0Q0VkZkbjRwV2g5MzVicmFVbldfbWphOWFEWUZ6QmlDODlTd2FDOUMtd2NvclpFR0VBSnNMWXN0Vk10My1KcHo3a1V0VExDLWxJT0ZZZjRDNFBPQVVGektockFmaVlOV2JkeUZR?oc=5",
+      "date": "2026-11-14T04:57:19Z"
+    },
+    {
       "title": "Trump administration blames ‘overloaded’ systems for ground stop after FAA lets flights resume - AP News",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOeFBta25Rakd3c0VBM0NUWjJzbmV2ajZwTWRtUFVTcTVzZ2otRGo0cXZSWWV0MzNBSXdmMXNzdm9SU1d1blBBNnktRlNqQmcwVUVxQzhCNERGel9ETDBHZjJwb29IYmhGX2VPNm8xeGwwU0VNajFzZnpIM19lejBOVTZrRVVjb2t4SDh3emhSZHI?oc=5",
       "date": "2026-11-14T04:57:00Z"
@@ -5176,6 +5226,16 @@
       "date": "2026-11-14T03:02:00Z"
     },
     {
+      "title": "FAA lifts ground stop, flights resume at Boston Logan, other airports - Boston.com",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOOVl3Z1piaS1RV2tEVzJGYjRQcUZjNGE3Z3RXLVE4b3RIN05LOFFpNmt6cHhsb0tzRFdzeld5NmlOemJ6MExuZ0VCcFY2NG9FX3VuOTRoT3ZGdl93WlFwcUJOYWxkLTFGOG1lVG5RQ0dFOFVvMUtzOVB2U1hHZEhOeWdwN1JhQy1jUkdGMTZKQmtOMS1Iak9WcHVoZnJseklMNHF4TGN3?oc=5",
+      "date": "2026-11-14T02:43:04Z"
+    },
+    {
+      "title": "Flyers hit with range of emotions as flights grounded, then lifted - The Detroit News",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPcXJZMjViWHFkWGtFR0NQUDNYclY3LUw0VkVIZmFKOUtnN0Z3VHlKTU5VbVlPVEFWVExLOVRKaUVhWVNYTVRHeW56dDFRSnFhaTNFaTBDU2lGNTlOZWNLbklYN2pVLWVwdFZRaklLSmhzaEVvUDhLcm9fUl9MazQyekxCY2hXSWN6ZE94dFpUVElmeWZXR1hoOU5nU2JQQm14cGRFRHJybkJ1UQ?oc=5",
+      "date": "2026-11-14T02:30:00Z"
+    },
+    {
       "title": "Update: Nationwide ground stop of flights lifted; dozens of cancellations at Sacramento International Airport - Abridged – PBS KVIE",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVmdhTTNFRU5ZYUNUS1RNSFBTVTBybGhiNjlzX2xPVW9IeXVleWpkNUFMTV91eUt4ejF4M2p5d2N5NnB6Z1AxYVdsbVl0YmNPWHVwWGVVYkg2X0tXOGFFMVo2WVhrMzg1V1BSMXhUTjBXZGN3dVhGYTNfakN0a21abXNKRQ?oc=5",
       "date": "2026-11-14T01:51:18Z"
@@ -5216,24 +5276,24 @@
       "date": "2026-11-14T00:27:25Z"
     },
     {
+      "title": "Airport Chaos Began Long Before the Ground Stop - The Atlantic",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOV25BN0VSVVpyTlZsZV85Zm5zZ21FY2E1RmVPak9CeGZRcGE3b1BYUjRtQldwVGswczI0YmtXYW15aUVHLVZyc2pETXROWVBvVHhXNGJzNlJFTlpDam5ndGJmQnJ3X1pua1puWC1WMjdzYm44QVE4bTd1SUpuVDZScWdMRGNpcjA?oc=5",
+      "date": "2026-11-14T00:19:09Z"
+    },
+    {
       "title": "All departing US flights grounded for almost 5 hours amid air traffic control comms failure - The Times of Israel",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMG5JREk2eTZ5MEFWR1FYOS1iWHQwdWZwQ2VtcG84Qjlra3hZdzRSVzBaWDhrVXBvRHh5Wll1dmZoa0tRWXNFNXdfNlp3dHYxdVlyTW9COHB4V3FjNDhfOUZZdWVtVTdtZFg5aVNnNmFKeTFjVkNCMGdpTTAxNlQ2SlQ5YjZQZExuZWZQZ1VnR25raEFRVE9oNjllU3gyZjFITHUwUW1OaXI1QnR6XzNSTzFYRdIBuAFBVV95cUxPNEFFZjI5OUxObU9hUjFxZjR6WVVUNG9sNlR6bkliYnQ2YW9XQWZXMjIxNGFpOUhyNWlhal9UblhuNjk3bVo2SnBOUEdHUUhRYlhWN2ZPa1F1RzlMcjA2dkc1MTYwV2JHNWlodlVraGJJR1JKdS1nQnk5eTQ4S3dKdzJQRkVTR0FTbGxjQXJ0NjdiLVFHeXcwaEVPaEpoUGlrbUllWHRMVkVScjFpTEkxLTVQX1k3czNM?oc=5",
       "date": "2026-11-14T00:13:00Z"
     },
     {
-      "title": "Why were flights grounded in Nashville and across the U.S.? Behind the FAA ground stop - The Tennessean",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNb2tyOUlnczhybXk2enNTOE4wQTdRT1lCXzhXZDJETUc0Y0lnZUQzUHBXRkVacndyenloTTZhbWZpb05fYVFGV0x6SU1reXNNc3Q1S2VoR2JULXRPQVFOZzUyRGxTMVZ2OGpBbjVGSEQ0dVFhODJGU3RJTldvZWJrdi16UW9aRGtodkg1VUtLS1o3VzR3TkNpWnBVVUhVb0hpdWpXUzhCNzAxSlQwQm9hR3RFMnJzVzRtNjVuaVhKTkdld2t3eURGN1laZnNFbmZSNGNqVWFyc1BQUmhlYWJiai1LZVNfY0U?oc=5",
-      "date": "2026-11-13T23:08:17Z"
+      "title": "Watch US Flights Grounded Over Air Traffic Communication Issue - Bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSnJxbWVvWDdxd1gwZ0EtOE5aNDhTenh6VFc4WDVzLW1PQmR0VmZYRW5kMGRZYmNMTHdHNFFKUEVtWWlObVRiaDZtRmt2NjQ2ZDhCYk9TNG90MDZFSDNJeGJxU1ZhaW90cno1OFdKQzRWZFdfY3ZTTE5qUXJzYWNpT3NEdXVSLXNubllXWnlSMEFEVnpJb0FtN2R4Z0ZGTVpoLWJZS0FubC1GcnVFOXZydw?oc=5",
+      "date": "2026-11-14T00:10:18Z"
     },
     {
-      "title": "Flights grounded at all U.S. airports amid air traffic issues - larongeNOW",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPV0tJdUdhZUs0NldDbmVZTnAyV0lvZ2JZSzlpUXcxZV9GdEd3V0NiLWlCMHFEQlZCSTF2QUw2WXBhYWJUSVplZzN1b2FTU04wRXJWa2ZtVVUyU0lVRFVvWDB0UDE3ckIxMG5EODdqaFhqai11ZTVPWFAySjJzTTFBLXFTaE8tbVR1SWFPQjdFSXZVNFNLZVpfRGZ2aw?oc=5",
-      "date": "2026-11-13T23:03:28Z"
-    },
-    {
-      "title": "Flights at Santa Barbara Airport grounded - Santa Barbara News-Press",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZXV1UnROb0lmVFJEOUQyT1pkSVdlenJLVnEycTgxNDRwM1VhMjZtOFFudlQyT3Btazk3MnNZaE9oZWlyUlNaVW83MlU5alQ3VWcxbVRfelBkdEpzaDBxa1J6MWxQWkpkYU1WU1ZaSkxac0Vxcmt1bmFNbldNN25rclF6MFNJZw?oc=5",
-      "date": "2026-11-13T22:50:54Z"
+      "title": "Duffy seeks billions more for air traffic overhaul after rare nationwide grounding of flights - Politico",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ3NyTDBja3ZMMUNPSXA1d1RMYmNCdUlLN3pZel95U3VocHFvdmM4dm5vQld0Nm9PU2tJWnR3OGwzVTFmMG1MVHYzSW83QzZBUEVIcDNwcy1JUThoZWRSR2xHZmpSVFNqTkVULWNDQWd6LV9naEl5RFhwdFQ4cWMtRXlyam1lRE9LSHY2cDd3dlRnbEVWdktwcW0xREtvZkducGQ0?oc=5",
+      "date": "2026-11-13T23:37:00Z"
     }
   ]
 }
