@@ -6124,11 +6124,41 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       return arts.slice(0,12);
     });
   }
+  /* Server-side news feed (Nov 20): news.json is built every 5 min
+     by a GitHub Action (Bing News RSS for Reuters/AP + LocalSYR
+     RSS directly) so the tab no longer depends on rss2json, which
+     serves ~1-day-old cached data. Read it first; fall back to the
+     live rss2json fetch when the file is missing or older than
+     2 hours. Cached in memory for REFRESH_MS so one refresh cycle
+     fetches the file once. */
+  var newsFileCache=null;
+  function fetchNewsFile(){
+    var now=Date.now();
+    if(newsFileCache&&now-newsFileCache.fetchedAt<REFRESH_MS)return Promise.resolve(newsFileCache.sections);
+    return fetch('news.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad news.json');return r.json();}).then(function(d){
+      if(!d||!d.sections)throw new Error('bad news.json');
+      var upd=Date.parse(d.updated_at||'');
+      if(isNaN(upd)||now-upd>2*60*60*1000)throw new Error('stale news.json');
+      newsFileCache={sections:d.sections,fetchedAt:now};
+      return d.sections;
+    });
+  }
+  function newsItems(list){
+    return (list||[]).map(function(it){
+      if(!it||!it.title||!it.link)return null;
+      var ts=Date.parse(it.published||'');
+      if(isNaN(ts))return null;
+      return {title:it.title,source:it.source||'',when:ago(new Date(ts).toISOString()),ts:ts,link:it.link,thumb:it.thumb||''};
+    }).filter(Boolean);
+  }
+  function newsSection(key,fallback){
+    return fetchNewsFile().then(function(s){return newsItems(s[key]);}).catch(function(){return fallback();});
+  }
   var SECTIONS={
-    top:{label:'Top Stories',note:true,empty:'No straight-news stories right now.',err:'Couldn\u2019t load top stories right now.',load:'Loading top stories\u2026',fetch:function(){return rssCollect(NAT_Q.concat(GLOB_Q),polKeep,15);}},
-    local:{label:'Local',note:false,empty:'No local stories right now.',err:'Couldn\u2019t load local news right now.',load:'Loading local news\u2026',fetch:function(){return rssCollect(LOCAL_Q,localKeep,10);}},
-    nationwide:{label:'Nationwide',note:true,empty:'No straight-news nationwide stories right now.',err:'Couldn\u2019t load nationwide headlines right now.',load:'Loading nationwide headlines\u2026',fetch:function(){return rssCollect(NAT_Q,polKeep,10);}},
-    global:{label:'Global',note:true,empty:'No straight-news global stories right now.',err:'Couldn\u2019t load global headlines right now.',load:'Loading global headlines\u2026',fetch:function(){return rssCollect(GLOB_Q,polKeep,10);}},
+    top:{label:'Top Stories',note:true,empty:'No straight-news stories right now.',err:'Couldn\u2019t load top stories right now.',load:'Loading top stories\u2026',fetch:function(){return newsSection('top',function(){return rssCollect(NAT_Q.concat(GLOB_Q),polKeep,15);});}},
+    local:{label:'Local',note:false,empty:'No local stories right now.',err:'Couldn\u2019t load local news right now.',load:'Loading local news\u2026',fetch:function(){return newsSection('local',function(){return rssCollect(LOCAL_Q,localKeep,10);});}},
+    nationwide:{label:'Nationwide',note:true,empty:'No straight-news nationwide stories right now.',err:'Couldn\u2019t load nationwide headlines right now.',load:'Loading nationwide headlines\u2026',fetch:function(){return newsSection('nationwide',function(){return rssCollect(NAT_Q,polKeep,10);});}},
+    global:{label:'Global',note:true,empty:'No straight-news global stories right now.',err:'Couldn\u2019t load global headlines right now.',load:'Loading global headlines\u2026',fetch:function(){return newsSection('global',function(){return rssCollect(GLOB_Q,polKeep,10);});}},
   };
   var REFRESH_MS=240000;
   var cache={},inFlight={},active='top',expanded=false,prefetched=false;
