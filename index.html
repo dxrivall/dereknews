@@ -1370,12 +1370,18 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 </main>
 <script>
 /* War & Cyber Tracker — market percent line, kept alongside the
-   tension index. The big number is the tension level (SEVERE etc.);
-   this line keeps the market-implied composite: (P(US invades Iran)
-   + (100 - P(US-Iran ceasefire by Dec 31))) / 2, computed live from
-   the two Polymarket Gamma prices. If either market fails to load
-   it shows "—", never a guessed number. The individual market rows
-   stay hidden. Refreshes every 5 minutes while the News tab is open. */
+   tension index. The big number is the IRAN WAR RISK percent:
+   the market composite (P(US invades Iran) + (100 - P(US-Iran
+   ceasefire by Dec 31))) / 2, averaged with an attack score from
+   going-on.json — each attack in the last 7 days adds 10 points
+   (capped at 70) — so a sustained exchange climbs the number even
+   when the betting markets are slow to move. Without an attack
+   count (feed missing/stale) the number is the market composite
+   alone, never a guessed attack count. Computed live from the two
+   Polymarket Gamma prices plus going-on.json. If either market
+   fails to load it shows "—", never a guessed number. The
+   individual market rows stay hidden. Refreshes every 5 minutes
+   while the News tab is open. */
 (function(){
   var marketEl=document.getElementById('etRiskMarket');
   if(!marketEl)return;
@@ -1416,11 +1422,20 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     var lv=document.getElementById('etRiskLevel');if(lv){lv.textContent='—';lv.className='et-risk-level';}
   }
   function fetchMarket(){
-    Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});})).then(function(evs){
+    var attacksP=fetch('going-on.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad going-on');return r.json();}).then(function(d){
+      var upd=Date.parse(d.updated_at||'');
+      if(isNaN(upd)||Date.now()-upd>24*60*60*1000)return null;
+      var n=(d.tension&&typeof d.tension.attacks_7d==='number')?d.tension.attacks_7d:null;
+      return (typeof n==='number'&&n>=0)?n:null;
+    }).catch(function(){return null;});
+    Promise.all(WATCH.map(function(w){return gevent(w.slug).catch(function(){return null;});}).concat([attacksP])).then(function(all){
+      var evs=all.slice(0,2),attacks=all[2];
       var invade=evs[0]?pickPrice(evs[0],WATCH[0].pick):null;
       var cease=evs[1]?pickPrice(evs[1],WATCH[1].pick):null;
       if(invade===null||cease===null){fail();return;}
-      var risk=(invade+(100-cease))/2;
+      var market=(invade+(100-cease))/2;
+      var attackScore=(attacks===null)?null:Math.min(attacks*10,70);
+      var risk=(attackScore===null)?market:(market+attackScore)/2;
       var b=riskBand(risk);
       var num=document.getElementById('etRiskNum');
       if(num){num.textContent=fmt1(risk)+'%';num.className='et-risk-num bd-'+b.cls;}
@@ -1428,7 +1443,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
       if(lv){lv.textContent=b.word.toUpperCase();lv.className='et-risk-level bd-'+b.cls;}
       var sc=document.getElementById('etRiskScale');
       if(sc){var ci=BAND_ORDER.indexOf(b.cls);sc.querySelectorAll('span').forEach(function(sp){var k=sp.getAttribute('data-band');var ki=BAND_ORDER.indexOf(k);sp.classList.toggle('on',ki>=0&&ki<=ci);sp.classList.toggle('cur',k===b.cls);});}
-      marketEl.textContent='US invades Iran '+fmt1(invade)+'% \u00b7 Ceasefire by Dec 31: '+fmt1(cease)+'%';
+      marketEl.textContent='US invades Iran '+fmt1(invade)+'% \u00b7 Ceasefire by Dec 31: '+fmt1(cease)+'%'+(attacks===null?'':' \u00b7 '+attacks+' attack'+(attacks===1?'':'s')+' in 7 days');
       var up=document.getElementById('etRiskUpdated');
       if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET \u00b7 Polymarket';
     }).catch(fail);
