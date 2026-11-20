@@ -879,6 +879,11 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .alert-instr{font-size:14px;line-height:1.6;margin:8px 0 0;color:#1d2a30;background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:10px 12px;white-space:pre-wrap}
 .alert-src{font-size:12px;color:#64748b;margin:8px 0 0}
 .wxalerts-err{margin:14px auto 0;max-width:680px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:8px;padding:10px 12px;text-align:center;font-size:13px;line-height:1.5;display:none}
+.drought-note{margin:14px auto 0;max-width:680px;text-align:left;background:#fff;color:#1d2a30;border-left:7px solid #d97706;border-radius:10px;padding:14px 16px 16px;box-shadow:var(--shadow)}
+.drought-note h3{font-size:18px;font-weight:700;line-height:1.25;margin:0;color:#92400e}
+.drought-note p{font-size:14px;line-height:1.6;margin:8px 0 0;color:#334155}
+.drought-note .drought-src{font-size:12px;color:#64748b;margin:8px 0 0}
+.drought-note .drought-src a{color:#0b46d6;text-decoration:underline}
 .wxsec{font-size:19px;text-align:left;margin:38px 0 16px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .hourly{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scroll-snap-type:none}
 .hour{flex:0 0 auto;scroll-snap-align:start;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 14px;text-align:center;min-width:86px;color:#fff}
@@ -1021,6 +1026,11 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
     <div id="wxAlertsList"></div>
   </div>
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
+  <div class="drought-note" id="droughtNote" role="note">
+    <h3>Drought Watch — Onondaga County</h3>
+    <p>Onondaga County is under a Drought Watch from the NYS Department of Environmental Conservation (issued Nov 19, 2026) — low rainfall and declining stream and groundwater levels. No mandatory restrictions; conserve water where you can.</p>
+    <p class="drought-src">Source: <a href="https://dec.ny.gov/environmental-protection/water/water-quantity/drought" target="_blank" rel="noopener">NYSDEC</a></p>
+  </div>
   <div class="wxhero-top">
     <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
     <p class="wxhero-feels" id="wxFeelsLine"></p>
@@ -2637,8 +2647,12 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     </div>
     <div class="cs-panel" id="csPanel-cw">
       <h3 class="cs-h">Clan Wars</h3>
-      <p class="cs-p" id="cocCurrentWar" style="margin-bottom:12px">No war in progress right now. Last war ended Nov 16 — a loss to SirangFitu, 14-14 on stars (97.8% vs 99.4% destruction).</p>
-      <div class="cs-info"><span class="cs-info-ic">i</span><span>The war log is not public, the following information may be incomplete.</span></div>
+      <p class="cs-p" id="cocCurrentWar" style="margin-bottom:12px">No war in progress right now. Last war ended Nov 18 — a loss to O Clã, 14-15 on stars (97% vs 100% destruction).</p>
+      <div class="cs-war">
+        <div class="cs-war-top"><span>🛡️ WAR II</span><span>O Clã 🛡️</span></div>
+        <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">14 ⭐</div><div class="cs-war-pct">97%</div></div><div class="cs-result loss">Loss</div><div class="cs-war-side"><div class="cs-war-score">⭐ 15</div><div class="cs-war-pct">100%</div></div></div>
+        <div class="cs-war-bot"><span class="cs-size">5</span><span>📅 11/18/26 - 18:26</span></div>
+      </div>
       <div class="cs-war">
         <div class="cs-war-top"><span>🛡️ WAR II</span><span>SirangFitu#7 🛡️</span></div>
         <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score">14 ⭐</div><div class="cs-war-pct">97.8%</div></div><div class="cs-result loss">Loss</div><div class="cs-war-side"><div class="cs-war-score">⭐ 14</div><div class="cs-war-pct">99.4%</div></div></div>
