@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-20T23:55:50Z",
-  "fetched_at": "2026-11-20T23:55:50.220Z",
+  "updated_at": "2026-11-21T00:58:17Z",
+  "fetched_at": "2026-11-21T00:58:17.123Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -374,9 +374,9 @@
     "opponent": {
       "name": "N.∆.Z.I",
       "tag": "#2GGR8UPCY",
-      "stars": 0,
-      "destructionPercentage": 0,
-      "attacks": 0,
+      "stars": 6,
+      "destructionPercentage": 40,
+      "attacks": 2,
       "members": [
         {
           "tag": "#GLY9JL0YP",
