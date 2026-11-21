@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-21T20:41:18.154745+00:00",
+ "updated_at": "2026-11-21T21:21:23.945508+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385618,
-  "out": 671,
+  "out": 603,
   "pct": 0.01,
-  "source_updated": "2026-11-21T20:35:47+00:00",
+  "source_updated": "2026-11-21T21:15:45+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -17,20 +17,20 @@
    {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 187,
+    "out": 154,
     "pct": 0.01
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 110,
+    "out": 109,
     "pct": 0.0
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392213,
-    "out": 110,
-    "pct": 0.03
+    "out": 75,
+    "pct": 0.02
    },
    {
     "name": "PSEG Long Island",
@@ -45,6 +45,12 @@
     "pct": 0.0
    },
    {
+    "name": "New York State Electric & Gas",
+    "tracked": 919471,
+    "out": 1,
+    "pct": 0.0
+   },
+   {
     "name": "Delaware County Electric Coop",
     "tracked": 5336,
     "out": 0,
@@ -53,12 +59,6 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919471,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-21T20:35:45+00:00",
+  "source_updated": "2026-11-21T21:15:44+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
