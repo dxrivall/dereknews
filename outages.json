@@ -1,23 +1,17 @@
 {
- "updated_at": "2026-11-21T01:54:54.271945+00:00",
+ "updated_at": "2026-11-21T02:39:19.683646+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385593,
-  "out": 326,
+  "out": 228,
   "pct": 0.0,
-  "source_updated": "2026-11-21T01:45:53+00:00",
+  "source_updated": "2026-11-21T02:35:51+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 202,
-    "pct": 0.01
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919471,
-    "out": 98,
+    "out": 200,
     "pct": 0.01
    },
    {
@@ -33,16 +27,16 @@
     "pct": 0.0
    },
    {
-    "name": "PSEG Long Island",
-    "tracked": 1159562,
-    "out": 3,
+    "name": "New York State Electric & Gas",
+    "tracked": 919471,
+    "out": 6,
     "pct": 0.0
    },
    {
-    "name": "Steuben Rural Electric Coop",
-    "tracked": 6708,
-    "out": 3,
-    "pct": 0.04
+    "name": "PSEG Long Island",
+    "tracked": 1159562,
+    "out": 2,
+    "pct": 0.0
    },
    {
     "name": "Delaware County Electric Coop",
@@ -75,6 +69,12 @@
     "pct": 0.0
    },
    {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6708,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Sussex REC",
     "tracked": 202,
     "out": 0,
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-21T01:45:51+00:00",
+  "source_updated": "2026-11-21T02:35:49+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
