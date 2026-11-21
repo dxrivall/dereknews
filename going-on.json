@@ -1,14 +1,29 @@
 {
-  "updated_at": "2026-11-21T06:28:17.381113Z",
+  "updated_at": "2026-11-21T07:45:40.460972Z",
   "tension": {
     "attacks_7d": 6,
     "level": "Severe"
   },
   "items": [
     {
+      "title": "Report: FBI investigating cyberattack on crime database - chinadailyhk",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1vS2w5QlN0N2NrdFMwc09vODZwR1dSek1CSTctcDdQbFZnZHlPNXFrNTczTkQ1SkRRbWJPWVgtdTNDRzktZjlsWHFzM2NWMy1TMXZOekJhLTU?oc=5",
+      "date": "2026-11-21T07:03:21Z"
+    },
+    {
+      "title": "SpiceJet battles growing crisis as grounded fleet, cancellations, regulatory scrutiny mount - The Federal",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOYVdqQlhxNTFCT04tRkN0LTNBSjFHVzl5VXRBQjZXQ2ZBUDFYbFhlRjhDbHM4TFBrNWNkdF9adTd1aDVTaHdVeEQ0TXYyMU9oT3hkRTBjRkVxak9qRzhNSUZnSFNXalprR3k4clVVRVZYRnVCdEM2ejN0M2tfbXUyY29BUTNDNGdoa0VoNGRvOEtfOWE5OGdpb3N0clA5c2M1TnRpWl9oc00tNEpiR092WHlRWUFNRnRxVFM1ajRfUldVYzlFUmg4dWpkSlFHa3VVUlBiamc0cmI?oc=5",
+      "date": "2026-11-21T06:30:22Z"
+    },
+    {
       "title": "West Virginia Legislature Responds To Cyberattack On Network - The Intelligencer",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWnJyN2NjdHRydlJzYm1FOURuWTJQaENjeXdsUFM3WXUxYXluS0YwS1BOalZjeEZKMF9iS0N3YUk5SS1MLVFXck1kbnJ5M2t4dmRfQWQ2S191c1dxNUpsdzlydWxqRjN4Y2xleFdoU2k4RUhicVdxUzFQMm5SU1lSQnRJZkZUZHZaUmVuaUZJckhJdjFISnV3UDJrRUs4cC0zZjhyOWdZRnpZeW00c1NpeHFYTGp3V1Nodk5ZaXRB?oc=5",
       "date": "2026-11-21T06:21:12Z"
+    },
+    {
+      "title": "Fort Smith says it spoke too soon about scope of cyberattack - 5newsonline.com",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOM18wMkZGU3BxSE9rbDZfUUFhekwzZ0dqQ0UxRVNGdW80RVk5TnRDemxYNWdGeEZ6U2J4OUd1U2p1VkVjb0RETlRXVHk3dnN0VHVLTE93NkV2LXJZNWo0S185RnJ5Qm9DQ2w2RnljS25pQUJod3c4dHFoRVF5ZV9wajg1SlhiUzZIN1AtR2pWcW1kTVl6MlBnRnE0eFhXY1pUYXZDenpsVXhLWmpxMGtOcWRyMTdsR2hXXzJBeHN0V29EWDV2ekhPU1pkc3BZZ1djOEhERFIxc1NGT1RTS3c?oc=5",
+      "date": "2026-11-21T05:27:19Z"
     },
     {
       "title": "Trump Says US Monitoring Iran Over Alleged Building Of Dirty Bomb To Attack Washington - Sahara Reporters",
@@ -24,6 +39,11 @@
       "title": "FBI investigating potential breach of its crime database - NBC News",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdy14X2NKM3JhWUlQazJaSFZDT3NlSFVYNExGNFA2Nk40VmkyTFNaUlJ5Mkk4LVdOU3BlcmxVNS1XaFBQbG1vNjl5WXpBMUhROXpmYnNMSU1CQ1RVYlljVVk3V2VOampEOWY5SnROLVEzdXFyTEl5Y0l0SXNDOGtiVlJoREdXMUVUcXdHNXNhcE5adTZSVTNENHJNUVNIMjB6aGpCWUdwci16Nm1ZSzlXS0Vn?oc=5",
       "date": "2026-11-21T04:19:00Z"
+    },
+    {
+      "title": "FBI hack and USDA cyberattack target critical government data - Interesting Engineering",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOX3pZMnZzbE5SMU1yOHphZVk2dlFQNTdQNUlRSF9ORmVMRDlqLUVsdUUyczBESDJucGZLbnJ2Z3BVeVYwWXVyRUJEYllUMmJyNEF6V3RYOHZERUxVNVJib2pLbXFkY2VlcFhXZTVOR29SZGRVamh4WDdkQUMwYkw3S1ZaLWhHV2VXb3FBRXBwNmh3T0ZURDdv?oc=5",
+      "date": "2026-11-21T04:12:00Z"
     },
     {
       "title": "‘We will not allow that’: Trump warns Iran over ‘rumour’ of Tehran's dirty bomb plot - The Times of India",
@@ -69,6 +89,11 @@
       "title": "Standing Dooms Data Breach Suit Against Union Fund - Law360",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1Id0NXbngtTjUyZWJURWpBV09YalBmbkNlNDJQRVllTmV3a2lHaFNlaFlyV2FfaUc2ck9QT0pqVjgwOENUYTRlOFQzYzFBMmdqNVN1UTRn0gFWQVVfeXFMTUh3Q1dueC1ONTJlYlRFakFXT1hqUGZuQ2U0MlBFWWVOZXdraUdoU2VoWXJXYV9pRzZyT1BPSmpWODA4Q1RhNGU4VDNjMUEyZ2o1U3VRNGc?oc=5",
       "date": "2026-11-21T01:53:00Z"
+    },
+    {
+      "title": "Aesto Health Data Breach Exposes Critical Cybersecurity Risks Across Health Ecosystems - Bioengineer.org",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY0xoYS1rOEV4eklESklacWZvYnZzRlZxM18xdG16ZDJGd2s1Z1JnZ0JkS2EwNm5Cb3lYNmpKcjBJb2NjeW5PSXZuTHNZYzNlZWlzM0ZPRXBSTS0xaXJDelhDbmNpS3ZKb0stR3lIanpxZXRRekhfM3ZUMkdEWUg5OUc1ajNKdHJHcnZfQ2FWSW9oNHgwV2Y4VlJRRHJGa2I5OXR3WnZNcHhJczdfY0N5aw?oc=5",
+      "date": "2026-11-21T01:46:08Z"
     },
     {
       "title": "Legislature responds to cyberattack on network - www.dominionpost.com",
@@ -2876,6 +2901,11 @@
       "date": "2026-11-17T21:11:31Z"
     },
     {
+      "title": "Senior US official undercuts CNN’s alarming Iran ‘dirty bomb’ report: ‘It’s not new’ - Fox News",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQnpCR292WEd0VWpRb25meDhkSDlSdHlyeGxlaDR6WWtUSU1GbllrTFJUVHRRaXlWckF4SjBQeUk1RXZPbUxlV29xcjN1ZENicmZSQ0h3aUtXLUNCUEhodjZ3WWdEU19mdm01RGloRWNBa3B1elNNaGpSZDNpUkh3T1haYndqYnRUenlnU2J6ekZ4YzJ1RktvVWU3dW93Z0ZCMG9GZmZGMTlOS0NOd1d30gG0AUFVX3lxTE1mbnlBUE5VbVU5SloybnZhcjRKbXE0TFRxTzU1MnU5dzVCSDlhTC1DVmRjeXdTZlRIYnU0VmNNdDlpeEd4bzNjNUZEd2ZjTjFtYlJvTGxELTgyaDk1Sm5DR1BYX1FEYjdFTXpEOXE5Y1pzbmJ0TS1IN1B2U0ZxSEFrcVRZY0RSUXpBLUt6eElpSUg5Nmh1NG45UFU2YldKZkJXazI5enMwazRFYVlhZ01QQzlpQg?oc=5",
+      "date": "2026-11-17T21:11:31Z"
+    },
+    {
       "title": "Are Microsoft, FAA and bank failures connected? What we know about tech outages - MassLive",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbWdfTTdwenROLUJiMnd3cUU2bmtkYUJlYlNIVGt4Z0JDZHcxbkpINlJ6QUxQT0E5V0JQeU11UHc0aTdaNGJ0Y1pKUDBiNVJSVUZSY05GWURLZHJZSzN6bk1KMVFLb3ZIXzJOcUFPU1hvdGZuZnR3Z3k0UEJhMlVkYkRHSThtQTg2Y0txdF9SdGlqTXQxMTg5RGI2X0Q3S0hsTGJpTm9sWTNfM2szOGVCZ1pVa0plN3o5ZXpSd9IB0AFBVV95cUxPaGJ2aURDUEtwS2xzTENCa216Q09PTV9FaDBXSDJCLUZIMzVJTmM5bTFQVDk5SVdObU5HWUwzM0dZZlFPTlJ6R0sxQVl4cHZaQnVodHhyT3hRTnczcVZYYmRXN245NEdCY3lxaF84NWxlenowXzNMcHV1Qzl3QzViYlNDWWpkazkwbFJlLUhZNmVEWEpnaFhqSXpJRHlzaXczMVF5OExjLW1LLURKQXFvc1NzRENLTC1VRUJIUXAwdV8tR3RVSkhXamVyZmNhOWtf?oc=5",
       "date": "2026-11-17T21:07:00Z"
@@ -5554,21 +5584,6 @@
       "title": "BlackNevas Ransomware Attacks VMware ESXi Servers, Destroying Virtual Machines and Backup Infrastructure - GBHackers News",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1BZnh0cEN0emxGdktMR1pCVGZ5TVlPNUFRMlpjYzZiLVFMUFdlY2M1VG1LamI2M05Kb1JoMGo0N3dpTzdjTl9JOWw3bkpGaXZDWU9ydU9jMDZ6YTlUSGY1R3VJd1ZudTlFRU5wT2NGc203VGRFREZPcUFvaXDSAYIBQVVfeXFMTkNJVXM1OTloREVWZEoyZVNZM1BHM2ZHems4OVVyT3FZeUNCbXlQWmNZeUdoM0NzOC1WVkhWNnlyM2dOdFBuQW43MEZHcEEwZUhfRnFBX3F0NXllRE5DZHJkdkZYWENkelB3TGJVWXdJWlBSdzlmVjFNX1J2SUxJSlU4dw?oc=5",
       "date": "2026-11-14T07:47:10Z"
-    },
-    {
-      "title": "‘Incredibly old’ system behind grounding of all US flights that could disrupt travel for days - The Irish Times",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNX2xCTFJHcGVmVWp0OFJhc0hIU2FXczc2OTBvWTg3UWdIc3FwcjVoUWNVSGVEeUpkYjF1Z0ZYb2gyZmVJOWFDOHRhdVdvWXh0VnBWbU8xdzVzLUVwV0pfR1F0bjVzZWRxMVZwUE1Rc3l0SzFCSlV5MHYyREwtd25FcUEtaHNwemtUVzNMNWdmVjFSZUdDU2hFdnVVOHBxT296ejRWTlFsRGw3RFhqQW9yeEVBY3U2VC1tdEI5T1lNcWJ6Z2M5VHdaOGNvb3loZw?oc=5",
-      "date": "2026-11-14T07:37:42Z"
-    },
-    {
-      "title": "My flight was grounded during the FAA shutdown. Instead of waiting at the airport, I drove 300 miles with friends. - Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQVZfUmQzaElQeDRMRkpYblp0NDFoUW5pLU1wdlRJc2JhYnZvRGpSV21IbEdrOEZfM2FjRnFMOTZ2X21Mc0xxSWRFcnhZbDlOc3M5eW11OEs3R28xQ3plYXBFc1BPaERib3ZxdVhSM0FDb1FxUklYalp3UG5MS3BKQUsyZlEwMWxpV1NyZzYzckVwOW1ITjlYLWtiWXg?oc=5",
-      "date": "2026-11-14T07:22:00Z"
-    },
-    {
-      "title": "Nationwide flight ground stop lifted, including at Sacramento International Airport - KCRA",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcHNBQ0xIdHljZHdvMkVuUEMyeWJ6REVwd3lDZGNfSWtrdnJZeGpGUkV1ajB0YXg4ZnJQMFpwRDA3WVNsUExOT3ZSejNTSVJsLXYyS21TcVZhRlU3dXBHaVhCWEFaMlFqSkctOGNmZEpVaS1NMmVMSExFSU9PbkltQXU0aVVUcWlpZGRxMVlTY1VnN0puUXc?oc=5",
-      "date": "2026-11-14T06:42:00Z"
     }
   ]
 }
