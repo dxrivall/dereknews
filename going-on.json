@@ -1,10 +1,25 @@
 {
-  "updated_at": "2026-11-21T12:35:37.908744Z",
+  "updated_at": "2026-11-21T13:39:42.608255Z",
   "tension": {
     "attacks_7d": 7,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Staples Canada Breach: 5 Days, 6 Data Types, 0 Counts - shattered.io",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeDZEb2dLZjlydklQYVdhQ1FRamwzS2xXSVpES01NbGZDS2xuUGJRZzRaRjVVOE9yYWlVb2Myc2pPSTZkb3F5NUpxemRBbDBRNURGTFV2Y3JHS3ZJUWFydXNTX2NfYUVOMVlfSE9CakRldWpaZTNOZVNNTi0wSHFpOWlHZnB3U1I0TVFaYkh1LUdJV1RWWXc?oc=5",
+      "date": "2026-11-21T13:34:22Z"
+    },
+    {
+      "title": "The Flight Grounding Wasn’t a Cyberattack. Let’s Act Like It Was - Bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbGN5Ul96alRtdHl4eWlWZVFSeUJQV0VjdXNsQ0w5WUFpanZfdjB1Y2dWMWUxTHgyU1lzUlRrRFZZdEFTLXFHbnZjVklJVlI0UlZTSVh5NTNvQ1VjYTJXOE5wVllIZUIwLTlDdWttcEZDQ0VCQ083czliMTNVZEpUMGhDN18wZjgtLXY0SjM2S0ltSGx4aGRRMDMwQzlCbzZvOTIzM0RFb3FGdlhBcENuOXV5Tmw?oc=5",
+      "date": "2026-11-21T13:00:17Z"
+    },
+    {
+      "title": "Trump Just Showed His Hand on Iran: He Says He Is ‘Not Rushing Into Any Decision’ on New Strikes After Two Days of Attacks - National Security Journal",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOaFdPN3JYdURRcUR0TE1laWxNV0p5N0FiRkRRTlFUR1lsMElkdWNDTHlReVJMcmt3bHRvVXNRWEtjN3NfSmdPbllZelNid1RuY2lJSHNzYmFWdDN0a2xWU0VtOUJ4UUtoSXE3RjlSUFRsZ2NYd0tybVJmc3otQXo0dWFmSEFmM09oZVFOM3F4STdGSmlGNC1KanZ5UWZ2TlFyYVZZVlQ3c1hZSW9aQXpuMGhod2FfYUhnZXVWTHJZS0ZJbXExZEpmWXc3c25hMVBWaXYteVJlZ3BoaGRNblZicUpKNUloQmVoMzh1RQ?oc=5",
+      "date": "2026-11-21T12:45:34Z"
+    },
     {
       "title": "Iran says newly developed air defence system intercepted US Reaper drone over Hormuz - Middle East Eye",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQczVmUk9EVG1ranFja3dweDJKMVo5b1pSQVpQNkx3YzU1ZDI5eHBabTFxQmRwdGVjWDJQOGFZdWt4Vl9MbkZBSC1aTm9Ob09jMVFqQk54bmp3emtsWEdkaDhzZEV1MjJyUlVEd1haZTEzUjJ4V1FBUUZfRUVmQmctekdYWU5HYnRrRTU4VE5KZGVfUHRHWlhfSDJBMFV5YzZGSU5zUEVFbUVtcjA5NjF5UjBR?oc=5",
@@ -44,6 +59,11 @@
       "title": "Houthis launch strikes on Saudi Arabia - France 24",
       "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1mUmVmcDhLZFlILWJKS1dhWm9JM0ZtT0xselpHTUl6T1JIcFVwejczUDk5SHk3UUZ6Zk9FRm1tcXlNUnNRTWZnRHJ2LWcxcnJxQldGUm5lVWZNUkJ1aEIwZjFmbWtoWF9XbjE1c0tmUWpqdlFT?oc=5",
       "date": "2026-11-21T09:32:36Z"
+    },
+    {
+      "title": "AI Agent Swarm Executes Rapid Ransomware Attack on Company - OECD AI Policy Observatory",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5MbHFhSUR3NHBtR1RJVGdIdmMwejB4b0hGa3ZXUHFJWW8zd3pSOHpRelIwVE9JbUU0djBWdFREMlVrbWgtWFJaUWlzU2l4T1NBUnlaSm13Yw?oc=5",
+      "date": "2026-11-21T08:13:08Z"
     },
     {
       "title": "Uber drivers' licenses exposed in Fireworks AI data breach - Mashable",
@@ -381,6 +401,11 @@
       "date": "2026-11-20T17:11:00Z"
     },
     {
+      "title": "Chase Customers' Data Exposed in Vendor Hack — What To Know About Protecting Your Money - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPS2NUMWp2Y0hFNVlDZEgySnEtaURNNkxQd2NwRy16dTNLLTlieTB0QjFGTXpYZ2NRb2RxbFA3ZkhrUWFCMVNMZ21mcnVCcnNiQXBVU2hBakJpUnhSV2ZrTGd0ZGZJY2RBRWNZRG1sTHdOQU5hQmgxOVZGOExjbmtlU2VpNHN6b0Ztejc0eFF4dXpJdFRQd1MtakJKdHg?oc=5",
+      "date": "2026-11-20T17:00:39Z"
+    },
+    {
       "title": "Rubrik Zero Labs: New report on 20 days of recovery - SecNews.gr",
       "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1fcG1jY2VOeWhBaHJhc0pNTWN4Z0d1MzhZWEt1UjktRXZSR25XWVVCUWs1UlJzaHV6YXBlZmVWUldON1V3Z3VsekRubTVHOTd4TnpqRVdHOEYtZXpHMXBuNG1kdm51R2NjaHQyd2JkU19IWHNXTGZNV3Zn?oc=5",
       "date": "2026-11-20T16:56:07Z"
@@ -474,6 +499,11 @@
       "title": "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business",
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlg2SHdFdm9BbWczajlmYkFnbU1WbXZzMmdueFpOazRNR1ZaS0kzRDdXU0NMY0VRc2Yya29fVlhTVkVuaEJQZDFvYVVOMjhYaThOZEF6TEhVMDluVkI0ejFkazRISENLSmRUcExmQW5rblNOa0cxaUFyWUdwMGppUFpBRmxvTF9UTzRoeG5DTTNuRlg1MHpENU1XQ1J3aU0zeTlQb2VmbEVxUzN0QW1ZV19hTkJkNFpYcmtZ?oc=5",
       "date": "2026-11-20T14:34:36Z"
+    },
+    {
+      "title": "JPMorgan Chase Data Breach Exposes 16,000 Customer Emails - All About Cookies",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9hMk9QWEc1WFhTd1paSW1Ma01iMEpCdXZ1M1BCaGh5ejdtVmZqLXhnYkRUYjJLamM5QzRUU0xZWTRLQ1I1QTRGMmFYaGhOUlB3UDllZ3BHdTNLTnc3aW5LYWFpSzY?oc=5",
+      "date": "2026-11-20T14:29:00Z"
     },
     {
       "title": "Boeing data breach allegations put decades of data at risk - Cybernews",
@@ -1379,6 +1409,11 @@
       "title": "KPMG Canada Data Breach: 0 Client Counts Disclosed - shattered.io",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMGRQc1RON0ZvUWR2Rm9oOFlxZzVpZVo5N05KRW85LTYxQmVfNVQ5ekVjRVBxNmF5czRrR196WkpVVXBwUWRmMjY3RWxXNGdrMFpvZ2tVTEZ4YXo0MGVuQjU2TEp4Vml1TVJUNVZkc1RZX2poQVhQYVpVNUZZdFJpZDBsQnNUZW9na2ZVWUwxd2JUdw?oc=5",
       "date": "2026-11-19T13:38:05Z"
+    },
+    {
+      "title": "Another budget airline shuts down last flights as sole jet grounded - TheStreet",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMGQ5RkFKVjJpTDZ1bXQ1N0hucVc3a3RCZjgzQ1hYUjZ0REFDNUtobWp3Q3hLenBZODBNVWI4dENqcWZxY1dzakRWa2pzcFg1UmthZzR4Ulg5cnpiNXAxNDNJNXdnbmdHdFJkbEo5ZGVJWXEzQ2ltVnBDM2RwSlZFNko1cmdLNEh1ZVB1V1JrZGVxcjQ?oc=5",
+      "date": "2026-11-19T13:22:28Z"
     },
     {
       "title": "Irish credit unions hit by data breach after IT provider compromised - IT Pro",
@@ -2434,6 +2469,11 @@
       "title": "Iran strikes U.S. air base in Kuwait, targets Bahrain amid wider Gulf attacks - The Hindu",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRWxUTnZlMk9XRWp3MnFNUXhtNS1jcnk0UUdJTjdCRnlVcVFsaUk3NnA4clRseTVsSy1ialI2NFRjTjZmaTIwLThaQzY2eFpMeG01bDNlOHNobWQ4MUNCOWV1b3BIcXA5WDl5LXdSMnNhMllqWUhBRUJIdlp2enZlNTYtMmFKUWgxN0puS1VuTXZKa0JGQzF0NlBsMHZucm14Rm9aQXRLZ2hxNzhlMzh3ZmlwRXB0SVlR0gG_AUFVX3lxTE1ONWlpb0tPUVZPOWtISTZWMGo0a2ZoVHczbUFOOFAwUlJpQnJfdkNIakZUSmNJRzY4NE5wdnlxRDNPamFPT2lBb3VvcXJkdzhYLUJlM05pdlJVQ2dBbVB1elNfQ2NOOXkwQ1pDR0pLaHRwbGpUd29RU1dGOEs5bEppcklZamVJYTIxNVhIaDBWdHZVbFd4Q0JPTTc2LTM0bVdMWGN4cElXNGloVkJSdTc0OXlJMkhwcGtQWFJuOFZB?oc=5",
       "date": "2026-11-18T08:32:21Z"
+    },
+    {
+      "title": "What to Know About the Global Ransomware Attack - Time Magazine",
+      "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBtODExYUtsWXBla1BJbTVJbEUtWGZReHdzT01IdHY2TDAyMmVGSUxTaWdFVDZ0NTBYaVYtTjVuVk1FUUQ2SXVZ?oc=5",
+      "date": "2026-11-18T08:30:52Z"
     },
     {
       "title": "Trump says US taking ‘Dirty Bomb’ threat in Washington ‘very seriously’ - Times Kuwait",
@@ -4676,6 +4716,11 @@
       "date": "2026-11-16T22:27:00Z"
     },
     {
+      "title": "United Airlines Hit by Widespread System Outage Days After FAA Ground Stop - TMZ",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMVpBMlpPWXNHSlZRZzg4eGh0N0NleHZGbUwwWDBFd1dwSkhVUUNNMHBoMDVIa042TDdrY0FqcnhLRU1jMmMtb05xYzVwdUVZS09ZSTZOa0VHcXYtTGUyYUJSNV8xTGdzd25RWWduZ2xVR19tRlJhR3VOUGItcGJZQkln?oc=5",
+      "date": "2026-11-16T22:23:20Z"
+    },
+    {
       "title": "United Airlines Flights Resume After ‘Widespread System Outage’ - The New York Times",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPWU5TTEMwajFpdFFfcjFxc2RWdFZ5dGxWamh6UjZ5ZHM2ZHhfODVDVWx3Tm5zanVacS1CclgyWkhQUGE1R29jemxHSS1vTGFzenRZLTRtUHZPWmFnRHlFZDB6anRETHBqS3pzd0FzeEI5SXFfdVpocFF2cnVQM00yX0gtaEFMdw?oc=5",
       "date": "2026-11-16T22:21:15Z"
@@ -4709,6 +4754,11 @@
       "title": "Emergency alert test scheduled to interrupt TV, radio Tuesday afternoon - WLUK",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPakRhVmp4Ym91QWMxX21xeUx3YnFMMFVMRG42cDJEV2x2TlRDMlNyWEJ3NDNLdE9mU2R6VFFSOHBSbEgxOEdTang3NFJNTm5ja1I5VmlkSjB5dmNSMHNMTngtdENPcXdZdElyajl3VkRZVUw4ek5EMXVPUF84UURlSXI5T01xYXBudnZLc2oyeXU0WEVaazdmVm5YZl82aFJ0UVd3XzRhZ0l5MmJQNVlQU1R0Zw?oc=5",
       "date": "2026-11-16T22:15:42Z"
+    },
+    {
+      "title": "America plunged into more chaos as United flights are grounded over computer outage just days after nationwide ground stop - Daily Mail",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbEpEQjB1STVCNjdyUEM5dXFzM3VNVVVUUTNWUzZobUhZMnJzVDVsWGZ2Wkl4RXNzZ2tJR0lQSm1EajEwZXJUOGYxVjNDLWdkU2ZuVjI5NkF3RlA0LWxneWZFWFJoWVFXbjdyQjFKM1Buay1PZUJZYVZVUFJGV3ppaGE4V0tWdFl0c0Fj0gGQAUFVX3lxTE9lbFQ0VWRwV3dPVWQtT3Y2aGUxR25fdUpqNndpd0pOZ0xiV3B4OGpMOHFtRkdTSlYybDdWVE5IREVKNVF3M0hZRU5qOEptRFhsZ0lKRmtnaUlxYzNaZ1JSODhMSWZzbTlrZElJblU5UmUzbkhGT242djR6T2ZFUEdBaG83eHkyYndiMTV0YXhRbw?oc=5",
+      "date": "2026-11-16T22:12:33Z"
     },
     {
       "title": "Cyber giant Infoblox confirms security incident after hackers access ‘company information’ - TechCrunch",
@@ -5661,6 +5711,11 @@
       "date": "2026-11-14T15:03:00Z"
     },
     {
+      "title": "There’s a massive emergency alert test next week: What will and won’t happen - OregonLive.com",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNURPVVJTT1YweFI1blpzb2dYeFlvLWtWdGJhV3Z0LTh1ZzZVUjNpUU04azBMYmViZDNrQ3VidDh3TzR6bWtoWThLdmxMQkdsVGk4cGMwQ25wbFR6TlVvSUtpTjM3MldzNi1LTWxrdFRfamRrZmlyWXVDRm03ak8tNnU2ZGgzbkR0YW9UXzV0eVZkYm90Wm5BRHpSY1JzN1NUY01GdDQyaVV6WjdoazVkcFUzcGZyQ2xQeXI5aQ?oc=5",
+      "date": "2026-11-14T14:50:00Z"
+    },
+    {
       "title": "I was flying when the FAA grounded flights nationwide. Chaos ensued, and now I'm stuck in Florida. - Business Insider",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeW5RMjI4enZXWlBaZHBfazJCNTgxY2hMQ0xJVDJnWVphTFNTN2F1LVpvUG9mOGR1c19acmRuV0Z2eXNPR3JBUFNXZTg1X05fZGQ3UTRiUlZyZlZKd0RvdXlONjljXzBqNkJOb2RreUUySTBfREFxYy1wRnFiNGZkc1JYOHg3MnV6b2wyUVVtUlFLUjZhY1dmMEo0QTR5Mm9s?oc=5",
       "date": "2026-11-14T14:49:00Z"
@@ -5684,26 +5739,6 @@
       "title": "US airports grind to a halt leaving thousands of travellers stranded - The Independent",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObUptblRkTmktYV9NX1Q5dlFtLTJlUzFzdEhwMUVqQTZfZ2tvdjdzV0RuQmRKcG9TdHlZVko5YW9rSUxjbm5tWW5Pc2lYdjdtN1ZFaGNUd3ZBbFVVWmF6cHFjalQwOEpZT1RDbkowY2I5cFFEMHF3Sno1VVluQ080Q1Ntb3F0WU5hVEpnZW5MWkxNN1RfdWx0eA?oc=5",
       "date": "2026-11-14T13:47:00Z"
-    },
-    {
-      "title": "FAA ground stop latest updates: Wetin we know about US plane grounded and wat to do if your flight dey affected - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9TRTRWa2RrQVlzODNRZlh2M0Rmdk04TDRQeWFtR05mZmZwWjVwaW1BSHJNX2sxaXczVkVVUWxnRzF4SXNGMHhIYUctZGZnZXE2ZDB4VkNfNlNxZHk4MWfSAWNBVV95cUxOcHhFeHVyVzNZQW5DTWo4QTR6cFhMUzlxTDB4WTVab05MVDl0VWZ6WUd6a2VhYnVxUzA5SlZhczczVmMyVE1GeGF4dGxHWVoxaFdFWVppaUVhNU5sR1JTMmNwNWM?oc=5",
-      "date": "2026-11-14T13:33:45Z"
-    },
-    {
-      "title": "Weekend Air Travel Woes Mount After FAA Lifts Nationwide Ground Stop - WSJ",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQTWttclRZeVZvN2JCTHVnXy1Hdko4UFhvRHY1TzNPcGo5cFkyMXFhZTRreUtwaW9fUUxCaGY0VDNhempMRzd1RHNaSUNITFY1VnpLSk5CWFhOR0JVeURzRG9uYnUzME9qM1g4LUNBcjdjeDcxR2JLa2FOeE1uRFBqWGd5RQ?oc=5",
-      "date": "2026-11-14T13:10:00Z"
-    },
-    {
-      "title": "There’s a massive emergency alert test next week: What will and won’t happen - AL.com",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNM3Zjbm83QUJzZV9lVU5vVGlCelZyRkZIaEJ6UjlpUmNwNk8xSERHM0FvUmQ1T1ZaS1pPS25jWXJYS3BERW8tMW11VjE4X195dEhEZG9waWs2M2IxWGN5a2RHZHY0MkROcHZJcjZrdjBOZjhpUVFubWFtZUpqOTZ1VFJMcW5NOWo3dVZ0eEIwQ3hSMi1nVFJDR3ZPYXhNdVBwQkIydFczcnFkU0xkTm5n?oc=5",
-      "date": "2026-11-14T13:04:00Z"
-    },
-    {
-      "title": "Beware the New AI-Fueled Ransomware Boom - WIRED",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1jVlEzblczTFcwZTFqalo2VDNtZzVOOTlQUkR1bW04eXpqRUJWckZJR3VrWU84X3NXZ2xUZ09YQTJoQmlzeXk5aDlQaThjVXRodWRoanlIVjZHMjNjLU1wbUFKTk9OVGxFOG16Rzczek5hVDFYS0R4aQ?oc=5",
-      "date": "2026-11-14T13:00:00Z"
     }
   ]
 }
