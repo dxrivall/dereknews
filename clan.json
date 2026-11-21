@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-21T17:14:14Z",
-  "fetched_at": "2026-11-21T17:14:14.896Z",
+  "updated_at": "2026-11-21T17:58:39Z",
+  "fetched_at": "2026-11-21T17:58:39.312Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -306,9 +306,9 @@
     "clan": {
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
-      "stars": 11,
-      "destructionPercentage": 78,
-      "attacks": 4,
+      "stars": 14,
+      "destructionPercentage": 98,
+      "attacks": 5,
       "members": [
         {
           "tag": "#LQC8UJCVP",
@@ -374,8 +374,13 @@
           "mapPosition": 2,
           "th": 17,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
+          "warAttacks": [
+            {
+              "stars": 3,
+              "pct": 100
+            }
+          ],
+          "attackCount": 1,
           "attacksComplete": false
         }
       ]
