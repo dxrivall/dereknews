@@ -1,10 +1,25 @@
 {
-  "updated_at": "2026-11-21T09:26:42.586533Z",
+  "updated_at": "2026-11-21T10:17:11.150664Z",
   "tension": {
     "attacks_7d": 6,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Frederick Health data breach lawsuit moves forward after unsuccessful mediation - The Frederick News-Post",
+      "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxOc1VUS3V0TE54UndpVWo2ckpERjJFekxmVUV6T1k5SXdsTWVjMUtVNmpINXBZbk53clc4ckF0UUpHeHVfYmpHenhKNFBBa2VDNVRGSlBUeEVXYzF2aHVyQlJhZm82ek05cG1OWEY4UGxObHRTVVNVaklpRGpUQThId3pVbXZpUmVYd2p0amJWMDZJOW9Ua1o3U2hteG44dFNRRmZrTnZmRGdfUlQyU0RGUnNHMEtpd3pvTjQ5ZE9rVmFZdl93UDlDNTh1LXJoNXJfQ1dVRTFCbWJldDZnQ0tEa3pLbjhYTkpJNUFyMjN6TWVOSGJnUW1wX1J3cDVoVWhSUHhSbzNXRk1PQVA3Q1YyaWp0LURGM1I4c1Q4MzdB?oc=5",
+      "date": "2026-11-21T10:00:00Z"
+    },
+    {
+      "title": "Mideast conflicts continue; US claims Iran wants a deal - The Arkansas Democrat-Gazette",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdzNwcUltM2p0YjVHd2ZLRldpVHRmaTNtT2lpbXlyMDZKQ3NLM2JxSF9zVUEzeXJLN1NvZ1RSX0V0VWVvWjJpUEUtamM5a0tDRndCcXd6QjJOQlEtQTZzRGlzMlZyd1FUbTUwZDBhWGVjMk9SYzFHaUxMZ2ZERUpCWWhNeHUwaGMxQzVPNFJ3eXl0RUN6VHdCM0R6RHR5RGc?oc=5",
+      "date": "2026-11-21T09:44:00Z"
+    },
+    {
+      "title": "Houthis launch strikes on Saudi Arabia - France 24",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1mUmVmcDhLZFlILWJKS1dhWm9JM0ZtT0xselpHTUl6T1JIcFVwejczUDk5SHk3UUZ6Zk9FRm1tcXlNUnNRTWZnRHJ2LWcxcnJxQldGUm5lVWZNUkJ1aEIwZjFmbWtoWF9XbjE1c0tmUWpqdlFT?oc=5",
+      "date": "2026-11-21T09:32:36Z"
+    },
     {
       "title": "Uber drivers' licenses exposed in Fireworks AI data breach - Mashable",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1BVWtuQTVkOGFNVEtseW5QMHIwS0ZCcGlzaUN1eWZJeElzbktndG0wWE5PQ29FNGlsRERSczJYSXFVQnMyaWg0WUZTbllqTnA0UENKM1h2eUpxbG11LTFFNVpUMEg3c1BUSEIw?oc=5",
@@ -2009,6 +2024,11 @@
       "title": "Kazakhstan investigates alleged Supreme Court data breach affecting 16.6 mn citizens - Beinsure",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZExYdGUxLVlBdzdDV1hhSkRNV3RKMzV5MDRUWHVKUTh5aUFncndiOGo1UzRBUVRxekQ3N2Z4aERYTXZLZjBpTERJbTlTek9nZnBBV0pUTU9Yb3QzRW1OTS1KRXJsRHZWRTQzUk1kU2VDblZ0VG1hR3d0cFM1OEM5QzNmaTVrU0VubkVMV1VwNkFlMllfUlpWT3JRN1lSOWxQZklWMjRnWGJvRzk2a1A3ZQ?oc=5",
       "date": "2026-11-18T16:09:19Z"
+    },
+    {
+      "title": "‘Blame me’: FAA chief takes fall for nationwide flight grounding - Politico",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9vczA0UktWZF9sbWxuZWlLOURBcVhkTFBwaEtPSFFFSTdQVldZanVDY09Ibm5VY1U1NW52ajdCaG1oSm16UXhQWHpKS2wxWlRzWnNRcVh4UUxZY1BpQnZZcVNlV3ptTXJVQml5dm0xcDhBVG9nZkRFZV9mMA?oc=5",
+      "date": "2026-11-18T16:09:00Z"
     },
     {
       "title": "Vanguard sued over alleged failure to protect clients’ PII in data breach - Top Class Actions",
@@ -5639,11 +5659,6 @@
       "title": "US air travel thrown into chaos as nationwide flights grounded over 'radar instability' - Middle East Eye",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSVpJOVdveHotWjE5eWpuXzlUQ09Qc21JYk0xTzA5bVQzaGVsQnoxWEZnUHZSSmNKYlJldU00bUVzUjdybXU1VHFjak5iMWR2R191bDJRbGtzS1h0RUVKVk44R3lGb04xN19ZRHZYeDdlNHVkYlRubzMyS2Z2YU1MeG5DSUcwYWx1YWhDYkhKa2J5NW5IS00tVmhBaGRRMTA4NWM1NzVoNUFsaWVHMmJERHBn?oc=5",
       "date": "2026-11-14T11:27:00Z"
-    },
-    {
-      "title": "Flights at Fayetteville airport, Fort Bragg grounded by FAA order - The Fayetteville Observer",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOX3lYam1iT2g4R1F1MjlFZFJjcFRFZWZjQUoyOTRnZnh2Vk9ZU0hNZ2Z5c2U4Nkl5VmhneDJYTnFGNkk5Y1hlZ01UNS1pUEI4aG1hMzdxcDVRcWMwTWlVY0lUczRfNVhEd0RuRmotQkRLTVZtMzNUZ1VMaDRmS25iWUlOUDBoS3JZSjg3Tk5VY2VfeG5xRjc2ZTlmQS1haGFGZzlENjdXd3JNajZqZnBnOU02MTc1dHJJNFdQUXo2V0MyeDMwS21UU0VpTjVGU0RPeHc?oc=5",
-      "date": "2026-11-14T10:12:12Z"
     }
   ]
 }
