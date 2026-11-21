@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-21T03:28:56.200229Z",
+  "updated_at": "2026-11-21T04:29:33.602688Z",
   "tension": {
     "attacks_7d": 6,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Retail Ransomware Attacks Encrypt More Data Despite Faster Recovery - BusinessToday Malaysia",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWnR6QVA4VlRiUkZmbGFILVBibDhDUXJsa1pkSjNvajVWbjlLV21LWm9paTFoMFZzSXlIYVhHdFhONVNqYzJtMjdoWTdxLU1ydDFUdzRsNWJ2WlBIRlBSZGJJTEZaeDA3WkJIU2lmbDBKbjdNSWllQ2c3TnhVQ1pCNHhvYVZ6YlA4ZmVTSkNDbUJIM3NaSVc0MksxdGhDVTBuTG54MVVuQmlnbV93QWFxclp3?oc=5",
+      "date": "2026-11-21T04:08:12Z"
+    },
     {
       "title": "Japan's Mileage Obsession Leaves Islanders Grounded - News On Japan",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1UZy1uekdkcXpmMDR5ZDJmd3dTRUZXR0VtaGM4bnpqcjJMS21TQVV1Vm1CWlZRQ2NMbEZaNFA2VmZaaVp2S01keThtNjhQSjV1RE1iYg?oc=5",
@@ -64,6 +69,11 @@
       "title": "Eskenazi Health investigating data breach involving patient information - Fox 59",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUDhkc2tSUGZKX0tubDRnVkxGTWNwenRSNGpoNUdBei1ZVjV6TTk1WWdsMlZSZTJLVXJjMkZFc3J6Z1A0TWZ3OU1SZEgySW9SYUdETFcwemdkdzRHODQxNnVmWlNzS0hwaHd3a1ZJQlNHX2FOOEc3dFRoR1gzOEVQbnlPRmQ3YmtJVGp1VHI5RnJVcG5XNlk3WVhEMNIBoAFBVV95cUxPNnpRUXgtdmlqVTBVX3FrLTM4WHhDSWZxSEhHOEFTMW9LRnphUFBES0owdXpBZV9Sak5DZl9xSnM5eGZseGppM1hCVXE3SVJtSzB2dmxjM3JHdmRsZXY0UEdSSk5PdTNiWENMN0ZCY05yT2VWOVpzb1JYNU1ockEtenNHZmVwMkdCOGxQa2N3UEE2elJwTmtfWUg0V0pqQW1M?oc=5",
       "date": "2026-11-20T23:12:43Z"
+    },
+    {
+      "title": "Stryker Expects Full Recovery From 2026 Cyberattack by 2027 - Medical Device and Diagnostic industry",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPbUQxR2NuaWJsMVoyR1FmNnRXZUo0Y1BUYVFJTGkzV3FLNUt3dTVLUHZ4cmg2RHRNMkJuZjFLZWkzV0hwdDZaSndYOWY1Y1FxODFQVFVheGN5ZHVRa1dHQm9ROEstY2hMTG9kb3V3UXhDek5VY094Nkx3ZEpqMDctN2JaTkplTzVndnpVNjhJbTJwU3UxLURpNjFFMGxWdw?oc=5",
+      "date": "2026-11-20T23:10:59Z"
     },
     {
       "title": "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC",
@@ -226,6 +236,11 @@
       "date": "2026-11-20T17:11:00Z"
     },
     {
+      "title": "Rubrik Zero Labs: New report on 20 days of recovery - SecNews.gr",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1fcG1jY2VOeWhBaHJhc0pNTWN4Z0d1MzhZWEt1UjktRXZSR25XWVVCUWs1UlJzaHV6YXBlZmVWUldON1V3Z3VsekRubTVHOTd4TnpqRVdHOEYtZXpHMXBuNG1kdm51R2NjaHQyd2JkU19IWHNXTGZNV3Zn?oc=5",
+      "date": "2026-11-20T16:56:07Z"
+    },
+    {
       "title": "New government report sparks concern over potential cyberattack on US food supply - ABC News - Breaking News, Latest News and Videos",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaDZ0N0pwRFpFQndGOUxfSzAtNzk1MjhBcUluQjZRNWRtUWMyY2wweEhjUFZrNm1XMWlka3ZMSTg5Um1PbmE4UWJ4b2loTVpyd0FRcEc0eFExS2ZSZTJMckczUzNBdVp6ZExuUkZLdVZoX09BbnhDVXVmZ2hFR24ta0h2SlA0dDl4Um5hYmIxTVhWQ1BnN25ER1VTZTNMZW93anEtU0FjeWU5QjQxT0HSAbMBQVVfeXFMT29OWXFLemRRbUdhQlZ0ZFY5U1FBYVBQc1NNTXNwXzEtamVtTDBtVi0ybmVqLTdxRGpPNzI1WWp0YkJQY1RQSjY2VU8xMDBTWGVPYWU3NllnWUNQMm1iSXh6RmFJWWI2blIxZ3cwUXQ1ZlZOOEpra1RoMEZ6ZV93cUV3aXhLeHg5RTlJYWJabU5adTFrUnlfNWMyM09ZWF9pTnNRaHVzS3paNjZ4WFU0QlFzRm8?oc=5",
       "date": "2026-11-20T16:53:31Z"
@@ -239,6 +254,11 @@
       "title": "Mastercard and Visa data leaked in breach — ransomware hackers leak information in latest major attack - TechRadar",
       "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWTlmR05oUGZmZ0ZRc2EzY2xLR0x1dEh4NmdMeEZ0Y3dScno1M3lkcU15VEN0eXYySDBfOTBZUmNrcGpLRzVWNnBheHVLNU5SbGlvQWpTSEZUdXo3eUlOUWRDSzR1LUNNWEQ5bHMwM0tkM29fMEdQbVhtbloxNkVVbEpoQ3NxRkQ2d25BcGpTczM5NVQyUF9XTVRKdDhQT0VaN2Q2cThHZjh6Z0RySllMN0pUVGhpd0thYUVkbmZXbHNhRXFJUTM3M1pia1hmNTN4bWZ2eUd3?oc=5",
       "date": "2026-11-20T16:35:00Z"
+    },
+    {
+      "title": "BYOD: The Ransomware Group That Blackmails Universities with Audio Messages - SecNews.gr",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1yRjJjOWM4dUxjUVVJMXNJaExNdjZYUU1JSjlzT1RHc0p0aEZJMWpfVFZPMGsyQTg1R0FvaFVKT09EbUF1M1ZCSmtIMUNYa1hxUzFZOGVvWVhxOXBLMVYxUjY3M2IzZnFCY0xIQzVuSXhWS1MxdFFONlR3?oc=5",
+      "date": "2026-11-20T16:01:18Z"
     },
     {
       "title": "Vendor data breach exposes Chase, Visa, Mastercard customer info - BleepingComputer",
@@ -3336,6 +3356,11 @@
       "date": "2026-11-17T15:53:11Z"
     },
     {
+      "title": "Optimizely hack: Everything we know so far as hundreds of websites found serving malware to visitors - IT Pro",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPeW5VbmtBUjFtSWlJUWRmQWdWbkpuUXJ6dFFvOEFmNmNrQXBtM1VHZWdLU2FycGtoV25LcjNiRW9GRzF3dkZQU09MTVYzeEFDd3VJVUp1VmhaUkJrZmlqMXhYaDFYQzc4TnhheFhzTXgzSm8zSkh3emVQbzlMVlVuVi13b2xHN1JzdDQ1M19NdTYtMHRzak1mdUhHNlZGbjlmMTRzVkc1UW56M3BRT1BKUGFlZFVDTVlUZGVrNE45ckVyZXh4S0x3WXNBMDVKVlBSd2c1SE1KVzhrRTBu?oc=5",
+      "date": "2026-11-17T15:45:36Z"
+    },
+    {
       "title": "Trump says he takes possible Iran bomb threat to Washington 'very seriously' - France 24",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOd0FDZ1BwNTZhZmI1a3hxZkxMamFNZzZ1MXhnS0FiMDNsMHBRZUU2UUpualp6aFBZUGMydEtRWVlXajdLSjRFQ1ppMkF1R3NhNWlsVGNPX2Q5M3o5S05oand5ejU4b3Y4dHUzMG4xMGNnclFiVTlZOFRxdzZocHl5M2tJSU9fTW8yMkZvX3pCVGhmZ2hPbWRHTFFxUUQtQk9KMVBzZHJVOFBLNWF3SGF2ZFFoTVI0OGdIaUw5RQ?oc=5",
       "date": "2026-11-17T15:44:54Z"
@@ -4646,6 +4671,11 @@
       "date": "2026-11-16T19:17:34Z"
     },
     {
+      "title": "Chase, Bank of America, and Wells Fargo Are Experiencing Online Banking Outages - Gizmodo",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQV9vWjg1QTJHZUJKM3RCMUw5cjY5dGhDUE5YdFduZlRjaEJ5MEQ1V1kzNDRBcHFaRU1vSU1sQ25ia3lOV1pwdDJJbmYtc1BBcy1sQUpZNTNNVHZ2LUtibnRpdDYzNE1YYWl1SERadEdLcTJOclNia1RRWnVYZXJqM1ZOeTdsaG9yUEdwWFZwSmNNbTFJUkZvd1B1clBXZw?oc=5",
+      "date": "2026-11-16T19:16:45Z"
+    },
+    {
       "title": "Maileva data breach exposes information of 22 million people - SC Media",
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeGEtcENUQ09SdVMyQnBYMWFGdDU3eTZWazdRR2MxRVUzMTFMRHpjNXliZWJfM3pvMzZtRktHR0hFbUI4WjRzZXdydGNBRlM4NURpNVQyWkc4Q25rUEdUQ2FDZW5mRUNaWU0yYndOMHoySkdyTW5sdWlGN1lmeWhrNXZ1Zjg3N09JeWJQdHBZOTUyeG8t?oc=5",
       "date": "2026-11-16T19:13:16Z"
@@ -5346,6 +5376,11 @@
       "date": "2026-11-14T05:44:30Z"
     },
     {
+      "title": "US Flights Allowed To Take Off After Rare Nationwide Ground Stop But Delays Expected - MiNDFOOD",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZk8wbF9fQW5mcUJRa3dHbERaVjBmVjVnZW4tQTd0bV84TDBTTUJpdHA0RG5XM3c4Z1Z0NFl6TmtNVllMa3F4S2prVWlodXBXT0dkNWxuMnpXNEtwN1pfWlJqOHZJWkRiTHJkVW9qejMtNGUwaFFzMlo5TG9sRVV5Rlk3TWtZaXFMRHpGOXRzTzdEa1oyZEZZS2NZd2hYcjBSa2c?oc=5",
+      "date": "2026-11-14T05:02:42Z"
+    },
+    {
       "title": "FAA lifts nationwide ground stop. Hundreds of O'Hare, Midway flights remain delayed or canceled - Chicago Sun-Times",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObXYwSGxpYjh6cFRVeGlzN0d4SVRMZHBGWVlFNHNYSEdDNzRsdFp5ZWd2ckJiZGJrcDJ2LVhPNXRncmh1bXdmeFZOQWZBRnlvYzRlenBEWkdoSURQcUxXVmFHa2F3TTM1Zk9sR0w4VHN5dkRvY3NhMWJYay0yMFFXZTZWd2wtVWRLNEJ0OUtaNkZ0OEctYjdBU3dFcXZmaGV4R0ktaVVWSS12V1N5NWxtWEhVbw?oc=5",
       "date": "2026-11-14T05:01:00Z"
@@ -5369,21 +5404,6 @@
       "title": "What to Know About Friday’s Nationwide Ground Stop - The New York Times",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQ3ZnWGY2YWY1TW9QakM0dTdtNFRBcW9qVDc3aGJlV25yb0Q3S0szQ2otUy1IREYyWGgyMllrQW1xY2RRQlJMRlhnRHFEVFlwcFJyQ0FMLWFVTFdwbzdQVzRXR3FQc0lTQlFodFlzcnFkRk13emQ0Z05KRVQwa2lhbkVSS2FvZw?oc=5",
       "date": "2026-11-14T04:47:30Z"
-    },
-    {
-      "title": "Here's the Real Reason Every U.S. Flight Was Grounded for Over 4 Hours on Friday—and What Flyers Need to Know Now - Parade Magazine",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPTEJoeFhkQnBYdGFVa3hoWm5kYTVCX285VTFkeGV0ZDFmeWpmcldXdUgwdVM2SzZtTWdpQWVBNWFBX2VscnFEdG9OSjRQbnNNYWJnbF9YeXMwRndIX2JaN05JNk5ZUU5aWFphY25ldjVfaTFGcWF4MFZ0Qk9UNTd3c0EzUVdRbGlMazRwejE2Z3NCajdBekpHX0dyeGkzS1NMOUpzQ2lpVVVrcDM3c0ZfZDdBV3pUanhtV19iTTJCUDk2ODlMb1VIM1pwbFJNcnZG?oc=5",
-      "date": "2026-11-14T03:59:00Z"
-    },
-    {
-      "title": "US says airspace now 'opened up,' no cyberattack - AFP.com",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yZnRYcWtUUFdZaWRWUzFicW1MR0taTkdPYklKNU9tYmotcmJUd1N3dTViaU00VzQzYlNSdGdkZjVXSklEdjZLR0RyXzVCc0dwSU1Uai1Na1lrUUFZR3g3MTZlcWlzOGstTW9pRjdTTXBHZ2c?oc=5",
-      "date": "2026-11-14T03:35:12Z"
-    },
-    {
-      "title": "Here’s what we know about the US flight shutdown – and what it means for travel - SMH.com.au",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNQnRKVkE4ZnBXTHNYdDg3TWVKTG5LNThWRDQzNkJWVE1qN2lubXB5ZkVndjRUcUxDZ0szVlFtYUNrS3Y0a1BMaktHYTBxRDJuVm5OXzdOTjBPTXhsVWtmeVdjVkQ2M2ROT3pBWGlzbl92Zk1FQWdsS2w3RF9JdGpjZzBISGF5b0F3SUxKWWZ6TDNOTnVtejBNbmd6SVpsZGEtNTZSOWFuYVpkVkdUOGx4MElzUGJiYjdYRHh4bk9ralVjdHVDMzFPLUdxLTF5dw?oc=5",
-      "date": "2026-11-14T03:29:10Z"
     }
   ]
 }
