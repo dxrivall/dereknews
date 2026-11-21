@@ -1,10 +1,30 @@
 {
-  "updated_at": "2026-11-21T00:24:08.973972Z",
+  "updated_at": "2026-11-21T01:43:27.523000Z",
   "tension": {
     "attacks_7d": 6,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Legislature responds to cyberattack on network - www.dominionpost.com",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQVJEQ1R4OF9LMjRnR3lQZXdTU3dmLURsbGlxNXVVTHhKM3l0azhXNjYybmlkd0xQZm1EUV9QSjhoY2NDZlpUZWI0SG5fSlhmZ09yb19HdzBEdEFGcXVoZW54aGt5UWFObkNyTUVqNlEwWS1xdmVFZG9qbUpkYXREVXR0X1FVWjF6a0NOTTd3Mks?oc=5",
+      "date": "2026-11-21T01:41:13Z"
+    },
+    {
+      "title": "Carnegie Endowment for International Peace reports data breach - SC Media",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNSjYzNUhXUl95NDRRSGdaVnZWakVlWm5BLURlMDZHaDhlbU52MnBXSS12YXBGanl1NGJnazAzWXBNYWgtVy05WVFscXkwZmtNYzR6TWNGZV9oaWhDR1NfbGRIbE1LV0c4alhmQlVGWV9kaDliN2d0TW84dUpkTHdpMklPaXhtRXhFd3VnelY5YVRyUTYwX0o4?oc=5",
+      "date": "2026-11-21T00:50:58Z"
+    },
+    {
+      "title": "Ransomware recovery timelines and shifting attack tactics in 2026 - SC Media",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOdUxlQnlTRjZseUFPMGwzMmdTb05MS1dYYUxoZm5yODdLdkliM0pJU1dfb3pqSFdJaS1vbjVPZnFfNFJkN19QXzZUQWxENUh6R2Z1OEt1WnNEMVR3OUVrcTBRNGt3cVBkeXNEM2M0MzVTalJuRk1NVjdEMFhQV0lQVzI1dk9Rc0ZySVdKMlZlWVRYNFpHOF9QQkZoVQ?oc=5",
+      "date": "2026-11-21T00:48:28Z"
+    },
+    {
+      "title": "Ochsner Health confirms data breach in Microsoft system - KLFY.com",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaDRQSnFUal9zaDdQODJSdDMxVW5jS2hBYi12YXFyOTlBQmltYTYzN09ZQlo0Nk5IdzVZbTEwSnkzZlN4T3ZMeDhXaXQ5Qk94b09YZ1cyVWVLZFNQVV80V3VOdDJVeTQ4cG54a3otVk5ZMW9Ud0hrQlZvWTJ0eFR4X2t6OGZKNm52ajdEcHVaR2VlQmZCc0tGVm1FMjMwbVJ0X2fSAacBQVVfeXFMUF9JanlGWHZSTWRRQldVODNzaElYMVhJNjdtVmxVQld0ZnRCOVBVWUlFSGYwXzNWY3VGbld5cThyWFBDNVV5NWw5RzBjNU04MHNDLW5rUngzY01qS19uZjFKMnVBb204Q0dxN3BiWnRWdWRVUWgyX2pHLS1wWm9zTHZwem9SQklMZkN3QlRweEd3alpVZmtCVEdQamVjMEVjajhPcUxWd0U?oc=5",
+      "date": "2026-11-21T00:40:40Z"
+    },
     {
       "title": "USDA hit with cyberattack: Sources - ABC News - Breaking News, Latest News and Videos",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaDZ0N0pwRFpFQndGOUxfSzAtNzk1MjhBcUluQjZRNWRtUWMyY2wweEhjUFZrNm1XMWlka3ZMSTg5Um1PbmE4UWJ4b2loTVpyd0FRcEc0eFExS2ZSZTJMckczUzNBdVp6ZExuUkZLdVZoX09BbnhDVXVmZ2hFR24ta0h2SlA0dDl4Um5hYmIxTVhWQ1BnN25ER1VTZTNMZW93anEtU0FjeWU5QjQxT0HSAbMBQVVfeXFMT29OWXFLemRRbUdhQlZ0ZFY5U1FBYVBQc1NNTXNwXzEtamVtTDBtVi0ybmVqLTdxRGpPNzI1WWp0YkJQY1RQSjY2VU8xMDBTWGVPYWU3NllnWUNQMm1iSXh6RmFJWWI2blIxZ3cwUXQ1ZlZOOEpra1RoMEZ6ZV93cUV3aXhLeHg5RTlJYWJabU5adTFrUnlfNWMyM09ZWF9pTnNRaHVzS3paNjZ4WFU0QlFzRm8?oc=5",
@@ -44,6 +64,11 @@
       "title": "Phoebe confirms patient information leaked in former third-party vendor data breach - WALB.com",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSFV2RjZSRU0wQ20wdXdwRnQ4TlNTZUUxTng3TXNVWDRvblBzekF6MXJnamwxQWhfMVdpSXdCcjFXZUFSSWQ2SWpEWmVPS1RhcVI0VjR6NHdvNmtsYS1kZ2hVTUR0bERVMFYtMmNCcDBpVXREVUxHTlZFbjcwcG5UMFFZTGtJMTk5aFNYSjhUMkhLNUk0X2ZBbkQ4SkNXVkc5VEVhVVJVY0FPRHZzb3ZnaEl1cw?oc=5",
       "date": "2026-11-20T21:50:00Z"
+    },
+    {
+      "title": "West Virginia Legislature hit with cyber incident affecting IT systems - The Record from Recorded Future News",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5FLTBDZkg0dE5JR2drQUFGSWl1M0s3bGYyNHlmYXRlbzdkQVNRWUFyU0xueUNhaEY1U0NlbVVLcmxGTVFzaEgtdHB5dTRKLUxvcDVoVlFKcEJWd1owSXU3TklGbUtjSTIyeWxJSlpR?oc=5",
+      "date": "2026-11-20T21:43:16Z"
     },
     {
       "title": "Dion’s online ordering vendor warns customers of potential data breach - Albuquerque Journal",
@@ -651,6 +676,11 @@
       "date": "2026-11-19T21:56:00Z"
     },
     {
+      "title": "USDA grapples with security breach as IT staff take multiple systems offline - Nextgov/FCW",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPRDM0dWVjdGdINzgxX3ZkZE93YnFDZjhQM28yVnQ2TVcwSENyZU0yT1JTb1dWV0VUSWlrZ2oyc3czdmFLRTVfYnJkSF9jWjVQeVlqVmJ5dnpYTk9YdFNPaklYUUtMTXpKZUpfaVZlT3ZiOE1ERzgwUjBWNUZweTBoYnFMVVBWamdBVUNPS2ZwWlc3S1pqMDhmTTVSeW5Db1RUOGdydURoSlZqemtSVUZYbklWRUVTdThCWllTNXVZNA?oc=5",
+      "date": "2026-11-19T21:42:00Z"
+    },
+    {
       "title": "Trump says no rush on Iran decision, looks to next year - Reuters",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQkkzQVk3M3pnOXRWVlFCMmVzUEN0alhCS0gzQUhYNkhCMDhCOUM0N0tmMFpZNVNKcnVNbktaYXV5MV9ERm13WHoxTEVtUGRMUkZwT3dJZmlRZ2pyRE1WMGoyZW1VcXVWdTVRTmxZV1RISHNXWE9YY1BUUC1EWlJWRWRsYzlGTXo0WmhjaUxiUnAyMDl2OU9mWmliYndLd0htWGVLYWFUUldMOUIzLV9TSnBB?oc=5",
       "date": "2026-11-19T21:36:16Z"
@@ -712,6 +742,11 @@
     },
     {
       "title": "Wilmington School District Hit by Ransomware Attack, Possible Data Breach - Hoodline",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWXdyRzF1LS1RQ1BCMDdfUk0xNHJoUjgybGx6anowWU1aMVU5MW1DMThBcnU0TmdsRWdlSEdCR19ZaXpSUDV6bENRcVpmTFFxRWRrZzJLYzg3VGo3UVNrRkRSTlNhNUVia01ZazNGSk5iYmo1VTFNNGx0QWNtMldUbmppQlpkYXd4S2xJUHlXV0lNTDVzTDI3MkJiSml0ZGNua09nMA?oc=5",
+      "date": "2026-11-19T20:08:56Z"
+    },
+    {
+      "title": "Wilmington School District 209-U Ransomware Attack Probe - Hoodline",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWXdyRzF1LS1RQ1BCMDdfUk0xNHJoUjgybGx6anowWU1aMVU5MW1DMThBcnU0TmdsRWdlSEdCR19ZaXpSUDV6bENRcVpmTFFxRWRrZzJLYzg3VGo3UVNrRkRSTlNhNUVia01ZazNGSk5iYmo1VTFNNGx0QWNtMldUbmppQlpkYXd4S2xJUHlXV0lNTDVzTDI3MkJiSml0ZGNua09nMA?oc=5",
       "date": "2026-11-19T20:08:56Z"
     },
@@ -2374,6 +2409,11 @@
       "title": "Iran speaks out about dirty bombing allegations in Washington - Laodong.vn",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNV3lqMFpsUmxpU2tRMXFuS0xCQ1VTNGlFQ21nekU0aTNSOFBtaTV5TmNTZklvcW1ON2pKbjNGQ0hoakhxcy1NUzdoaTNwcnZZeDJMZllsVTNhZko5d1BTc2U4dERWTkgtc1k3VlV1TVJQeVVmbmlTSzRlcHg3SWFRdnB1SEh1RGt3cDZrTDVSd0RaLXdYZFdrV3d5NWN5QQ?oc=5",
       "date": "2026-11-18T00:12:28Z"
+    },
+    {
+      "title": "An Island hobby shop was the victim of a data breach. One customer says trust may be gone - CBC",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPU2lZX0xpZTFBYl83Y3NtQnhRSmJ5aGdpTzJickNkV25VRVY2eXRMTlJTQ01XSERMeEpjcnBxMEdwSk85dktkaGZoQWprcnEwdzRMYnhNWDFHX1AyeXhUa2RsM1Bvb21VTUUwaTlSd08tcWlReF9lRTh4SGhGNFVRb3FDY04zZlVtZVQ1aWRaWWxsbkRLcDY2YjJ2eENYTTd0cjZadw?oc=5",
+      "date": "2026-11-18T00:09:00Z"
     },
     {
       "title": "Iran has a dirty bomb ready for Washington: the affair disrupts Trump’s mission - la Repubblica",
@@ -4971,6 +5011,11 @@
       "date": "2026-11-15T18:48:24Z"
     },
     {
+      "title": "Emergency alert test set for Tuesday; Washington County urges residents to register for alerts - St. George News",
+      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOTHdHQXZnZUYtU0pxNWFtd0dqT3BLRDdxSG51dU9jTXVyMDB3X1pMNkw3UDlpeGVyVFU4aDNKTTJWVV9FclU2VU9TdXBQWkxWMXJ0UFBlY1VBUTF5aFRhVXlyRzZwc01tQVJNa3o2RUZhT0hpelFmVVc1R3d1b3NiajBRbmdSTUhrSndwaldvNE5EQjQzbmFVQ3BEamJUa0FyM1NOSlJvaEdSTWt6X1pzdG4zak9HY0Z4WnZHUHNiU005N1RHQkd6ZkdZOVgySjJjTGhvQ2h6cTJtenEtMHNOVlpOeEdBTXJ0VFZad3dOb3dKMDlOei1KdU9rS1JhOHBRQ2w2NDUtZWc?oc=5",
+      "date": "2026-11-15T18:15:00Z"
+    },
+    {
       "title": "Bahrain intercepts Iranian strikes on US airbase - The Hill",
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZDdKWmtnMUUxYS0tZThsV2M0cmhTQlFZdDNNZGNPNGROOFczaTVZekdyYlNlblJaSEJmNUVKZDJsNzZydll1b25CMENycUVWMjZpNzFEUm5YNlg1b0QzUzkxRTBaa0tJcXV0c2dmazFOQ3VuNXE2NWhtSjItRU9pUdIBhgFBVV95cUxPdzVHb3A5UmNFSFpqdHpBWURnc3YteEtQVXJhSE5iSzRpdVcya2loNUVyaFY0aE1wUUZIVkZvQ1JsRWtyU0FWc0RBVzdOaG0zemdMRUJFOXNQSl92MXliU0Ntanp6bW1HcGhJSmpvcEFrVDBibFhKUkdEZ1NLNEJFeFh4c2pkdw?oc=5",
       "date": "2026-11-15T17:57:00Z"
@@ -5039,6 +5084,11 @@
       "title": "Iran’s Revolutionary Guards claim attack on US base in Bahrain - VOV World",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbzZLVlYwVjBJZFdfX0NpdGQ3X2RaeWYyQXNPMlZiQUVLVEotNnNmbjJvN29ITVRrOVhrREtVdjdtVW5ZSXJxc0FueXF3Z2p1SzFaUXFaS0N0UnJJYU9SVlZjQzE0emJCMklFN3hfVnJCZlozSFVpMlljS3F5VjdDdmFxM1NNNDVBdkxEMEdpSG1ycTdfcE9HVkp6ckZIZWdD?oc=5",
       "date": "2026-11-15T12:58:00Z"
+    },
+    {
+      "title": "'We slept here': Flight delays linger as airlines recover from ground stop, but schedule improves Monday - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1KY3UzNERyMENfeU5QQ3QzLWZTVE9XSjBHV2Rfa3dVSk45TzdNWDk2NFVMREpKX0pPV1pncHM1cGllOFVGVnFSNC1zSUVSYzE4Nlk5RnY2V01FakFvYXh1eDdzLVo2UWhLVzhoYkhYbEZEaGNX0gF6QVVfeXFMT1dlM0JZU3FFdmk4ZG1mdDIwR3R2TElLYlJtQllqT1BKZHBta2FjTVE4MUtqejE3REkwZnB2d2VGSVg0UzAyRDdINUJ5bERMXzF0ZFBYVXhFYWlVWGZjNzVNdWd2MzdKeGZzRnFNM1NPNUZIV3MyT3hwTGc?oc=5",
+      "date": "2026-11-15T12:51:28Z"
     },
     {
       "title": "'Zionist regime's false flag': Iran warns France over supermarket cyberattack - Middle East Eye",
@@ -5151,6 +5201,16 @@
       "date": "2026-11-14T11:27:00Z"
     },
     {
+      "title": "Flights at Fayetteville airport, Fort Bragg grounded by FAA order - The Fayetteville Observer",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOX3lYam1iT2g4R1F1MjlFZFJjcFRFZWZjQUoyOTRnZnh2Vk9ZU0hNZ2Z5c2U4Nkl5VmhneDJYTnFGNkk5Y1hlZ01UNS1pUEI4aG1hMzdxcDVRcWMwTWlVY0lUczRfNVhEd0RuRmotQkRLTVZtMzNUZ1VMaDRmS25iWUlOUDBoS3JZSjg3Tk5VY2VfeG5xRjc2ZTlmQS1haGFGZzlENjdXd3JNajZqZnBnOU02MTc1dHJJNFdQUXo2V0MyeDMwS21UU0VpTjVGU0RPeHc?oc=5",
+      "date": "2026-11-14T10:12:12Z"
+    },
+    {
+      "title": "US air travel thrown into chaos after nationwide ground stop halts flights - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRnRRSHowTERIRFdMWUlVRWhSQ1QwelllTUZGTnJ2djBvSXBGaEFmbkw2bHduNFp5cnhGM0MwaGJlNUcyVU0wZGVSNFBJNnRtZVc5Nk5kY1dZMjZoQ0NxTEZFZEhZbEhFSzY4RmdHUzl2VlJMcDAyX1k0RGdWdVNtZVZDZXZ0QW9IbTB3cktfYU01cTNhMFdoVHNFNmV1MXQ4Z2Z4MV9vNFc1eVZNTjBR0gG0AUFVX3lxTE1YbUlqSUlnNmlydjhablpuTGVZbU4xb3UwWFJtMlBjWmQwMk1fTVJ4QXhoQi13WE5JMHBOdy13LWJqZ3pfRjVITUJudndmZjVRYWFqbE1aNXAyd2RYQlNNLV9sSlpvYTZXR1NwSTFPcHdrSDU0VjQ4OU1VTFFYc0tlaHNiNjJUTEJLYUdmVnNBQVRjTjZkUkdGWGozR1dXSU5DRC14RldkVzdTTzdNcFFTUW9Gbg?oc=5",
+      "date": "2026-11-14T09:18:08Z"
+    },
+    {
       "title": "No Signs of Hacking in FAA Ground Stop as FBI Reportedly Probes Software Update - SecurityWeek",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQNS1ManpreGNOcmQ1N0drOFRuQ2ZQRUtNemFIb2s5b0NmdkJJdTRVclF0RzNyX3FDSVNLbklmUUZBdmhuVGdWdmtEUkNNM0R1bTY3WWV2NllsWUJiLVZWTE1DVzhXcWx0a1NxcGE0SHJwRXhTZl9FUE5KRDhoVkJuOEdIVHdJZWcweEEyNENLb0Q4TE5CdzZMc1I5Wkd0Rk1yR3RPZEZobWlUX2I1Q1E?oc=5",
       "date": "2026-11-14T08:40:22Z"
@@ -5179,6 +5239,11 @@
       "title": "My flight was grounded during the FAA shutdown. Instead of waiting at the airport, I drove 300 miles with friends. - Yahoo",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQVZfUmQzaElQeDRMRkpYblp0NDFoUW5pLU1wdlRJc2JhYnZvRGpSV21IbEdrOEZfM2FjRnFMOTZ2X21Mc0xxSWRFcnhZbDlOc3M5eW11OEs3R28xQ3plYXBFc1BPaERib3ZxdVhSM0FDb1FxUklYalp3UG5MS3BKQUsyZlEwMWxpV1NyZzYzckVwOW1ITjlYLWtiWXg?oc=5",
       "date": "2026-11-14T07:22:00Z"
+    },
+    {
+      "title": "Nationwide flight ground stop lifted, including at Sacramento International Airport - KCRA",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcHNBQ0xIdHljZHdvMkVuUEMyeWJ6REVwd3lDZGNfSWtrdnJZeGpGUkV1ajB0YXg4ZnJQMFpwRDA3WVNsUExOT3ZSejNTSVJsLXYyS21TcVZhRlU3dXBHaVhCWEFaMlFqSkctOGNmZEpVaS1NMmVMSExFSU9PbkltQXU0aVVUcWlpZGRxMVlTY1VnN0puUXc?oc=5",
+      "date": "2026-11-14T06:42:00Z"
     },
     {
       "title": "Microsoft issues apology following global service outage - SABC News",
@@ -5246,6 +5311,11 @@
       "date": "2026-11-14T02:43:04Z"
     },
     {
+      "title": "Photos: Flights grounded at San Diego International Airport - San Diego Union-Tribune",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQWo3dXluNzVveWtRaS1FWUhNVkFwcUhWeUUyNDhOVGF3OUFBYmhDX0FwaVF4UEJxUmRfQy1kLUJ3cjZUTjJiMEVyVFZJQ3lhZ0JDb016SVdNX1ZrWmVsTTdzMmstd1Zld21tdERBeXphdW9yVnpVQ1hWbS1KVmZ6bHk2MTh6RFlSQ2F3TFhZX1pvNTdHMkhWdmw5dWFvQnRHMHlvN0JZcWJMdlU?oc=5",
+      "date": "2026-11-14T02:32:27Z"
+    },
+    {
       "title": "Flyers hit with range of emotions as flights grounded, then lifted - The Detroit News",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPcXJZMjViWHFkWGtFR0NQUDNYclY3LUw0VkVIZmFKOUtnN0Z3VHlKTU5VbVlPVEFWVExLOVRKaUVhWVNYTVRHeW56dDFRSnFhaTNFaTBDU2lGNTlOZWNLbklYN2pVLWVwdFZRaklLSmhzaEVvUDhLcm9fUl9MazQyekxCY2hXSWN6ZE94dFpUVElmeWZXR1hoOU5nU2JQQm14cGRFRHJybkJ1UQ?oc=5",
       "date": "2026-11-14T02:30:00Z"
@@ -5256,6 +5326,11 @@
       "date": "2026-11-14T02:27:00Z"
     },
     {
+      "title": "US-bound flights out of Australia delayed after telecommunications outage grounded American planes - The Guardian",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPNUtPdjkxRmlwM015NVhDd1Y0VGloUTNWRkNkejFYdWU1a2lnSXlOQkVuZldXNVRLRm5TTUNTYzBsMUhPM1BFeXFwaGZfb25JX0xDaEhrYU1KM2JKV1MwUGZ1ZXRVNm9BLUlheThrb0hxTTBGUWRwVFdieHVRNEd1b09TQnRHV08xNVdhWFJkT25TRlN5ZVdaTk9rYlVVYWo2WUo0ci1BLUttSFQwa0NtbnRsQ05XNE9MYkRrZ096SmhxbDlPX1luQS1td3ByaWFOd1NlVEJwWmZCR1BPYmN4TXVhU1U?oc=5",
+      "date": "2026-11-14T01:54:00Z"
+    },
+    {
       "title": "Update: Nationwide ground stop of flights lifted; dozens of cancellations at Sacramento International Airport - Abridged – PBS KVIE",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVmdhTTNFRU5ZYUNUS1RNSFBTVTBybGhiNjlzX2xPVW9IeXVleWpkNUFMTV91eUt4ejF4M2p5d2N5NnB6Z1AxYVdsbVl0YmNPWHVwWGVVYkg2X0tXOGFFMVo2WVhrMzg1V1BSMXhUTjBXZGN3dVhGYTNfakN0a21abXNKRQ?oc=5",
       "date": "2026-11-14T01:51:18Z"
@@ -5264,36 +5339,6 @@
       "title": "All Akron-Canton Airport flights grounded by national issue - Akron Beacon Journal",
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPVXItVmNNVU5nX2tTa05YV1ZRdTF4UVE3WnhmaVA1OTlYNmFpQ2ViTVlpNUh2c056Z0FodGttUkVxWGc2U2tIdnFFWXh1ODd4cXR5V2EyUDBZUk5nWHk5RF9PVW1hWHotekdCTjZ2WmRiYVFnQWNIYlpHQkFjUWdKUW1mUFpUZjd3MEZQVkh6NWR2clNVOHRhXzZBa0pCZW5jaUVmOEJPWGVYYk5wMHVUY3lTNGR6MXVnNmZNX0xHYmVtNGRNdmxOdWdTU3VQbXg0eGVRdTNkQ2xXZVE?oc=5",
       "date": "2026-11-14T01:49:00Z"
-    },
-    {
-      "title": "Flights grounded across U.S. over air traffic control glitch - Crain's Chicago Business",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPOG8tcE9lejFkbGxGVjIxWGwzMkpiZ1FOT04yS3JIV1lKRVBVMmZaNUpKOWRnTXdTbUxJZkFFSDdHVDFfVFBibnFWbEtPSlh4c1VPVUM5R1lsQi1kMUNMU0Vwb0F3Wmp4MXRheEtQOUVIVlRJOGgwVmRlRHFuS0hYV2tKWjdLeVNI?oc=5",
-      "date": "2026-11-14T01:39:09Z"
-    },
-    {
-      "title": "San Antonio airport sees delays as flights grounded nationwide - San Antonio Express-News",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pQ3dDcGJtSWhfR0N1ZWZnSGN6QWNxbHVpVzFDeUpNU3VrY1NGT1dhcENtdXh4aEptTmdSNlRTY3M3cXFsOEVMNFpGb2NHUGFOSGJLN0libjl2czctX2dWNk9qQ0VVdVVMMVVuaVNXS3FOXzlDOFpzSFhVMmdPWnc?oc=5",
-      "date": "2026-11-14T01:14:36Z"
-    },
-    {
-      "title": "Flights grounded nationwide in U.S. as communications outage hits air traffic control - Korea JoongAng Daily",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQdjY1MlRCQWdNMVJzTUhoZUIwQVRVTW1SV2tDZmdEQmp2MS1IejdFd1pmZk5QZVA1WnFHX3JwTG9KQmwwcUJtYmRNamNOYk8tYkdmX0RWUHB5R0c0RkpFNkt5empZcUZja1JUWEh4ZllUcTh2UFNERFRBRFl4aUFPOERLdG11bFQzalBicTB5SFNvek4tVS1TTFotYjFuSjlLdEZMU0V0dEtGUHgzWXZlSl9fLVJ6NDJhQ0NmZTRZSHB3dmVzalJlM1phNDFQQQ?oc=5",
-      "date": "2026-11-14T00:39:46Z"
-    },
-    {
-      "title": "Widespread disruption as departing flights grounded in US - RTE.ie",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1RNzBjYng3TU1NYy1nUDJaQjZqclgtZGJidVp2MEdXeUhjeXNIMmluNzdfSlVJbWktZGVFSW0zMUZZcy1ReHNNQW9xc0p5TmFaRzJtbVotU3lRX0RnMDZZY0p4YmxqeHZTLXFV?oc=5",
-      "date": "2026-11-14T00:36:12Z"
-    },
-    {
-      "title": "Experts predict AI will revolutionize ransomware tactics by 2027 - SC Media",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOc3BJMTBoQ3RwQlpaZDA4OVRhd0RPRFN1MEZaN1MtbXUyZlh6R3ROT2U5UGRfdkFQYnU1ZTJfQXhObV85RWdFTVl6ek9FdVNncjlkTnhVcFVCcEhOMjVsUFdRN2ViMkhaLUJ0aXh0V084ZDdYb3p6bTBIcllBcmFKa1dka05ycXlSaGdXaHMzTzE3WUQwekhJY3lB?oc=5",
-      "date": "2026-11-14T00:28:50Z"
-    },
-    {
-      "title": "All flights grounded across the US over ‘extraordinary circumstances and security concerns’ - EL PAÍS English",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPVzlTQUNDZTZqblpYRWNSdlBVTzRjaUVwLWp6WkoyN212cWUyU2tvYW81alI0U19NX3FubGJxSzdpV0JxS0FoS3RqZTllN3JOWjRMRzNnUFBUc1B3dWJGTkRXVEhlSWhRUWtBNmd6SmoxWFBFU05YQ0lfQ3VhS1E4NEE5RXNlTDJDNy1IT0N0RGZSRmVOUnE3MjFKY1B2NmZmWEMySUROSVUxdGRXd3N6TFBxRmtROUhMMzRrOFdranQ4Sk9tZ3kwZ2h5Q1pkdHlGRHfSAeYBQVVfeXFMT2pKdm5GTXA0N1ktOXF6WU9yT2hXd0VfRDJSQVRQQWlmWkoybWlxZERfaWIzMmdQQnJsekhKRHBQbHNvek9qU1ZocTlKNExwaW1hcHliWUdKT0JHallIM3JINUZmako0RWNmR291MnRHV0t6SWY5ZjZsYzZMYWZmUWJ0ZWJGR0RBakFTQTV6WnFRTmkyeG1SWHFyYU5pcWVHOVkza1pWRnRub29sTDNvb3p3bEJud01XVWJUVTdBWFZGalJ4bFZsM1hQRHZVZjZvWlBCNmhaQzE2Z0pFeGxrQWJQQ2UwcVE?oc=5",
-      "date": "2026-11-14T00:27:25Z"
     }
   ]
 }
