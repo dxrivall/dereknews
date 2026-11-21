@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-21T08:50:31Z",
-  "fetched_at": "2026-11-21T08:50:31.694Z",
+  "updated_at": "2026-11-21T09:37:02Z",
+  "fetched_at": "2026-11-21T09:37:02.025Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -48,7 +48,7 @@
         "role": "coLeader",
         "th": 19,
         "expLevel": 246,
-        "trophies": 658,
+        "trophies": 683,
         "league": "Legend League",
         "leagueTier": "Electro League 32",
         "donations": 62,
@@ -306,9 +306,9 @@
     "clan": {
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
-      "stars": 6,
-      "destructionPercentage": 40,
-      "attacks": 2,
+      "stars": 11,
+      "destructionPercentage": 78,
+      "attacks": 4,
       "members": [
         {
           "tag": "#LQC8UJCVP",
@@ -345,9 +345,18 @@
           "mapPosition": 1,
           "th": 19,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
-          "attacksComplete": false
+          "warAttacks": [
+            {
+              "stars": 2,
+              "pct": 90
+            },
+            {
+              "stars": 3,
+              "pct": 100
+            }
+          ],
+          "attackCount": 2,
+          "attacksComplete": true
         },
         {
           "tag": "#Q8YV0JYUG",
