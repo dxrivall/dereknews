@@ -1,10 +1,20 @@
 {
-  "updated_at": "2026-11-22T08:42:23.510822Z",
+  "updated_at": "2026-11-22T09:31:53.637272Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Breaking News Topic: Latest Updates and Key Developments - JFeed",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0zbjdQbFpHd0JLVmlmQkJjVXBvMWoxazNpUW9ZamVfMnhYbzl4TnFhZGZXa0dZdGZULTVnUFR5Y2dVMmM5NDVPeUM5b3JLUEhlWm1OOEUwU3RnSkhINGdKVW5n?oc=5",
+      "date": "2026-11-22T08:49:00Z"
+    },
+    {
+      "title": "Bahrain reports fire at industrial facility after Iranian attack - Latest news from Azerbaijan",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRkVWSU05Z3pYVlZKZjFGdWZjN0dZSEJmNDd3RGxSQWNzYXg0aldPT3RnVGdaQVFGdjRfeUxULWEwQmY3WTZaRW9QaEkwWGR2YmpiZmlldWFDb3hNVnFYaV8xU0Q5UDVHa2dwdzFUVjg3NnBPd1dRUHZrSlZDTWowNWhhZS11LWdmOTBEU2pR?oc=5",
+      "date": "2026-11-22T08:45:45Z"
+    },
     {
       "title": "IRGC Aerospace Force targets US military positions in Bahrain in missile and drone operation - خبرگزاری بین المللی قدس",
       "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9qOTk5Tm1HbHR6NUJOQjdpYVM5ZEZkYlRmNENrUXJjSm9pS1lEMmZHREVDc3E4VjNhTnZYRmpOWU5BZw?oc=5",
@@ -731,6 +741,11 @@
       "date": "2026-11-20T22:26:00Z"
     },
     {
+      "title": "Hackers Breach NYC Court Database to Access Retiree Data - GovTech",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX1gyY2RsX0VPd2dFampMTS0yZ1UwV2J2MEpXVjRRWVJYX0hoV1dHa0lCZmhWQmZic0daRmFRc2ZNTXR3QkVSNXpZOFp1RHFSR1ZuWEprOGlFb2x4WDFDczI2TWR5ZTlJMlNqNE1lMjczQkxacV9aUkJGeGp5ZFN2NzVwb2NVOVZhWnItRTZ0VVhFTWs?oc=5",
+      "date": "2026-11-20T22:23:35Z"
+    },
+    {
       "title": "Japan's Osaki Electric Industries hit by ransomware via VPN authentication flaw; smart meter production halted - BigGo Finance",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0zeEpkSi02RjAyMTdmaXI3b3RiN3lvbXNnV1BWRktaZzhHNmxyOGtLSUl0N1FiTWhTQ1gxNUNTdWFjNjNhVk9sZnNMZkNqeE9lNkdqb094aW45TnVoQjFWRWRrTXlZaU5mU3lLdWpMU1NnMVpyQ2c?oc=5",
       "date": "2026-11-20T22:05:00Z"
@@ -1236,6 +1251,11 @@
       "date": "2026-11-20T08:10:00Z"
     },
     {
+      "title": "MSU Password Reset: BYOD Claims 1.3M Students [2026] - shattered.io",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX2lOMjd5YVZHY0ZIeGF3cnRDdlJ3RUVualVfT0Q4N0drcWFIOGNmRUM1bV9YcDFjbzBKZFEtSndOanlzTWZFMk9HQVNkLU84MnViTFZVMm5OekhRdU9KSXF2UGh6TzE1SW8yN1BPVmp3TVJuUUpRVnk0T3FpenI2RGpQVmtpLTdhSUFlMGlvVjV4WmtsLXA0?oc=5",
+      "date": "2026-11-20T08:00:00Z"
+    },
+    {
       "title": "Cyberattack Exposes Chase, Mastercard Customer Data - Newser",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMDJneHpoQkhTeU5sVTdHcVFZQ2haSkN2eUpUOW5aQ3BfVTRlMnF3X0xqekVNRVZwX0kxZjF0Y3Y1UEZ3RWxENU9LeFA0eDVwZkNRbVhvWjdrV1pIdXZFd2Vsd0JuQjBFWTV0aWwyNEg4allEOGxJMjQzd2VESVc0VWlfeGh3RkthRk5EWG1ndlVhWUM3Tnc?oc=5",
       "date": "2026-11-20T07:30:00Z"
@@ -1269,6 +1289,11 @@
       "title": "Chase now blames cyberattack for Monday banking outage - KTEN",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSHRPc184TmxfcDdWbkJIODdSQVcxSWVOZlRlNzhkNVpybTJ3eHYtSkxfNVZmMzFFcWlJZWQ0RTVNelg1NEJuTk5jd3JoR0Uwc0VkUTZLWTFiamZ4QWx5eVA1YUkzR2tDamRzeDdUX3dIb2VlM2JNQ2NkWEFpZUZiTXpfS1kwaTBFWmp3Rkk1d3VWbDgtTEdTd3Y0cVd4aDVad0hKdkZtQVZvVzNNRF9hQmZSRmNiNWllT3ZSdUtoVHI4MkxKM3dWd2RB?oc=5",
       "date": "2026-11-20T05:59:55Z"
+    },
+    {
+      "title": "Will US strike Iran again? Trump says decision can wait until 2027 - Gulf News",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMDREQm1lckJpeEFwZ1pNMmk0M1FVbHpieHpyWi1KZDBTTEljaEhKODhrNjVzcGpPallxdkN6ek9HdEpWX0pCNk1kUTR3QjZtNkdnTGxxXzgxSjlocGJBWGhQSnhoWVczNkRVZk9MWmUtOWhxc0gwaUhOVGxUWk5lRWdBZGJIT1RnVlcwMWF0RG9qMlVTU2s0MF9ZOWtRa0s4RXhPNC1RTnBHOFJGMjhFN0dZZ9IBxgFBVV95cUxNZzRBRDM1aG1QeTM2clhzX1ZPc3R4ODBIV3lUR2tLZU1VR3dwdDl4ck53VFhiTFkxMFQ1NDlLeEpITG1rMjJQd2JzYjgyY1JUWVBBb0t2Nm5Wclo0SzJ3MklqMk5PTXIyU3RZTUVMdXFyUDlmUmRZSVBpdUdmV3N1MDdZdlgtRGlHUlJpUl9fS3RXMG9iZHYxTzlZd2VRZXFEWjhwQWRKZTdQVEZlaVd5UXVsQkt2bERMTWVPWUZhYjl5NG9wNnc?oc=5",
+      "date": "2026-11-20T05:47:24Z"
     },
     {
       "title": "Cirrus Data Breach Exposed Financial, Medical and ID Records of at Least 3,903 People - Avi-Go",
@@ -3089,6 +3114,11 @@
       "title": "Japan's Osaki Electric Hit by Ransomware Attack, Smart Meter Production Halted with No Recovery Timeline - finance.biggo.com",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5jZmVmbnhuLWRtbWV1MTVIOUZOMlA5X25JdEZIQ2xyNzNhN0RVc05Vc3hGc3FkRHFuWTdzRVd2Tzc0blk3V1o5TjJDLTNXZWhuSjBUZkdmVVVDeG0wa3EyVFJTNGxYYXF5R0pYa2JnVVZzOGxrRlE?oc=5",
       "date": "2026-11-18T09:25:00Z"
+    },
+    {
+      "title": "Iranian Army says drone strikes hit US military base in Kuwait - Pajhwok Afghan News",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZklscjJzMzZQbGtieVZ0b1BLUlE4WTN5ZUlydjRvb01BclRMMVZEdFhuRWVRbVFhUlZ6MUdLd2kwUkNpc29ITHU0OWVhRVk0YmpaaE5laTZYaERpV0NTekZEb2d6Y0wtRmc1VDFiYU1qal9scm91SHdxS3AtLWlMcC01RG91b2w5X05CUzI5OVRPdVMzdjUtUjZR?oc=5",
+      "date": "2026-11-18T09:24:09Z"
     },
     {
       "title": "Senate Republicans unsurprised by Iranian ‘dirty bomb’ plot, urge vigilance - Jewish Insider",
@@ -6746,6 +6776,11 @@
       "date": "2026-11-15T09:49:00Z"
     },
     {
+      "title": "Iran attacks US base in Bahrain - PM News Nigeria",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9GNkJDbW9oVG9jU1ZWRGZvZm9kSEpocGJOMzhhalhLUmZfZkFqOXk3MkFCZXNqQjl0U0swNzMxNTB3Y3JWRjdPeDl3TkpUSFpEclFGdVk0Nm1YWVFxS1NfODJRSUFRVEdGRE15eUFFTUVqVjZjWkRaVQ?oc=5",
+      "date": "2026-11-15T09:47:35Z"
+    },
+    {
       "title": "Blasts rock Bahrain as fresh Iran strikes target US base on island | Daily Sabah - Daily Sabah",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWU52a3V5bDYzbGhTWnIyb3A5QUpPbDJMN3c2bHExY3dmVWViOEU4eWphWDdqRHdQbTFIeGdNQmxJWU5mRVFzQnlMTUg5V1UyX01NejYzcUJJWGtVQS1wdFllWlFYMy1Fei01c2ZSZ25ZbGVBTXFQamJhaVlzb0ZnUGtoVFhsTTFnQ3NabnNUdXBOLW82MUZCaVg5NHN2QnFTZkpQbG12ZV9naVYy0gGyAUFVX3lxTE92VFV2VVBJMklqVTBNelZOLWU2elY4T3JoTHZZNHNLSE5RN1hTVVZsTUlKNkpVYS1nc1NaWkRQczkxYWRhc2JJZG42VHN2bncyVEZGdS16VjdodE51U0Q5UUp6NllEZVZMRnV6MXM3THFBdnVxQlVGWGNKQUtBUC04N1hsa2ZMWThlSmF4MkZWWEJtWjUtSWJ3YnhidmNldDFxX0RlaHNYZlBKal9QbC10N0E?oc=5",
       "date": "2026-11-15T09:38:00Z"
@@ -6754,16 +6789,6 @@
       "title": "Grounded planes, outages, AI crisis: Is everything breaking down? | Daily Sabah - Daily Sabah",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNMEdCUmVIQXpyOGVTSXdlVzFmQ2ljaDRjOWxETlViSGc0MmRFTTRFRGduWnZ3TUpUNzJ2WTl2RkpQcDNSTUNrcG1EdWUtbC04N2c5cTRqc3Z6VkpPR1hVVHZ2eWV3VWhLakpYR1cycXRfVm40dGRUeEUtM3ZPc1BxT01yeFJiMUhSOXFuYXQwR0pDVl81NVRVUU0zbklPcHJBT3ZsSNIBqgFBVV95cUxQLU5RN1RTQk1NTVhVNUlIVEdILVYwRGtvRFVqbEN6RjNBVlRELWVEODI3MlVnc3lPWnZJeURYWlZ3Ri1mbFVZaDdjUTFzTUpoMl9BZnF6bGdEVERYUDY3RFNyd3lZN183Yy1SZ2cwdC12MW5IaWU2ZmgzVTk5bExxaWliR00wWDN1VzNlNzhYZlFkVlFnYS1MaklDaDFVdkJpQUlEMmhoTWpwUQ?oc=5",
       "date": "2026-11-15T09:37:00Z"
-    },
-    {
-      "title": "What forced the US to ground all planes? A router switch, we now know - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNS3JsSXplR0tkbHNXWnB1TWlEZEFiTHRWaXNtWG54aUNRejRBdUtZb2xZNDg4VUhPOVB0VVBvUFNyODN1dFFLdFF3WUNtQ2pLMmlHcG8wUXhzYkRkSFBHT0hiZ0VfaGdsa1JCV0NiX0VxckozNVFPWEtTWjFfZFBmQ002U2Q2ODNRRUhZVFkzNVJzXzdZcmxEU2JSS0JvTW55RUVwRGtFTHR0dDZFZ2fSAbMBQVVfeXFMTkpzaTFRVmFaR3hVNUVkZkd6cmF0VmFJYnRhM29xUUdCLU0xZjhIc2tsaXpqWXk0emJOTzBmNllETGNIVGVCZ2Vvcng2SVhMc3FlMkg5ODBiZnhmZjlmS2t1U2c4UmtaaFBvSXZSSDIwcG1MeUFVTGdJbFM1eFMzLTJRX1M0Z2tRZ3RRRDdQb1JYa3FoUE96OEhUX0Q1aHNuMDRoQXpDVEJjclJxTUpzRVBuR28?oc=5",
-      "date": "2026-11-15T09:20:42Z"
-    },
-    {
-      "title": "Iran attacks US base in Bahrain - Punch Newspapers",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9hWWVRQ3laRUN6cFFubkpmVHRHX1lKNWZjRWV0anYya1MyaERlUXFzNzlBa0pkNUdzZEpyQzRGTnZZQkVVSnhsLVh3cjlHNFBwMUJUaDdlOWp5dVd5Y19XRnhB?oc=5",
-      "date": "2026-11-15T09:16:05Z"
     }
   ]
 }
