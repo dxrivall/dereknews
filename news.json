@@ -1,7 +1,28 @@
 {
-  "updated_at": "2026-11-22T15:18:25.651751Z",
+  "updated_at": "2026-11-22T16:01:46.094036Z",
   "sections": {
     "top": [
+      {
+        "title": "Fifty people remain missing after a fire at an Indonesian candy factory",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW040822112026RP1/",
+        "published": "2026-11-22T07:43:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.jwwk2fVUa8wE1c7CLCAZLA&pid=News"
+      },
+      {
+        "title": "Barcelona scores 3 goals in 10 minutes to beat Villarreal 3-2, Juventus routs Venezia 4-0",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/barcelona-liverpool-united-juventus-milan-3a57d1559ee22435de6fb5a40a86bac1",
+        "published": "2026-11-22T07:41:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.I97CYieJ235SaszdqW4UNQ&pid=News"
+      },
+      {
+        "title": "A suspected drone strike hits a Russian vessel in Libya",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/libya-russia-vessel-drone-benghazi-59f6f304f3053c69c8cc890138a94d1b",
+        "published": "2026-11-22T07:28:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT._vb152FxmA-Wx7UY8s8xXA&pid=News"
+      },
       {
         "title": "UN climate talks break down over bitter disagreements on fossil fuels",
         "source": "Associated Press News",
@@ -10,24 +31,17 @@
         "thumb": "http://www.bing.com/th?id=ONUT.qq65lV467BA6IvHG3QgPCA&pid=News"
       },
       {
-        "title": "German army starts testing kamikaze drones and AI targeting tool in Lithuania",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/aerospace-defense/german-army-starts-testing-kamikaze-drones-ai-targeting-tool-lithuania-2026-11-22/",
-        "published": "2026-11-22T06:47:00Z",
-        "thumb": ""
+        "title": "Sports on TV for Monday, Nov. 23",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/hawaii-3bbe05e04a49bb26cc78844978bcfa2f",
+        "published": "2026-11-22T07:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "Struggling Warriors counting on home-court advantage vs. Celtics",
+        "title": "Libya's eastern government suspects drone attack caused explosion on Russian ship",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/struggling-warriors-counting-home-court-advantage-vs-celtics--flm-2026-11-22/",
-        "published": "2026-11-22T06:42:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Canucks vie to pick up steam in encounter vs. Blackhawks",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/canucks-vie-pick-up-steam-encounter-vs-blackhawks--flm-2026-11-22/",
-        "published": "2026-11-22T06:19:00Z",
+        "link": "https://www.reuters.com/world/middle-east/libyas-eastern-government-suspects-drone-attack-caused-explosion-russian-ship-2026-11-22/",
+        "published": "2026-11-22T06:25:00Z",
         "thumb": ""
       },
       {
@@ -43,20 +57,6 @@
         "link": "https://apnews.com/article/anthropic-ipo-philanthropy-044fd361f0a5899dcf6756205711aa13",
         "published": "2026-11-22T04:59:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.aJwbbj5-66VAGBWpIhMm5g&pid=News"
-      },
-      {
-        "title": "Lucas Pinheiro Braathen’s hopes for 3rd straight win end after he fails to finish 1st run in Austria",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/slalom-pineiro-braathen-gurgl-mcgrath-haugan-d3059d910ddeae6f1e8104ac50553e3d",
-        "published": "2026-11-22T04:58:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.OpkMKWiAAoW6RcXKgU501Q&pid=News"
-      },
-      {
-        "title": "Okinawa celebrates restored Shuri Castle hall 7 years after fire",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/japan-okinawa-ryukyu-history-castle-3ac5a220df1efa2be0a6d32529518314",
-        "published": "2026-11-22T04:13:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.1kzhBncPp5qxlVYmTzgY-w&pid=News"
       },
       {
         "title": "What to know about tear gas and reproductive health as people raise concerns in France",
@@ -87,13 +87,6 @@
         "thumb": "http://www.bing.com/th?id=ONUT.Pbc3FPu1kCSn4m9zDqVOjw&pid=News"
       },
       {
-        "title": "Stumbles by Big Ten’s UCLA, Indiana set up shuffle in AP Top 25 as postseason draws near",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/college-football-rankings-9ebfeb2e878b23a35c6562dcb5b2d938",
-        "published": "2026-11-22T03:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.rv2FvH6CNP3BBbAC5STo_Q&pid=News"
-      },
-      {
         "title": "Like SpaceX, Anthropic ran an unusual IPO process, chafing some bankers",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/like-spacex-anthropic-ran-an-unusual-ipo-process-chafing-some-bankers-2026-11-22/",
@@ -106,6 +99,13 @@
         "link": "https://apnews.com/article/california-billionaire-tax-proposition-40-8add946e01aa49964606cfbb0c727017",
         "published": "2026-11-22T03:00:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.mQ2XGKK6de_ri430ojAjlw&pid=News"
+      },
+      {
+        "title": "Kyiv's restaurant owners brace for tough winter as war pressures mount",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/kyivs-restaurant-owners-brace-tough-winter-war-pressures-mount-2026-11-22/",
+        "published": "2026-11-22T02:05:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.O4QLbEOklmDZvhDi8DUoNQ&pid=News"
       }
     ],
     "local": [
@@ -189,18 +189,25 @@
         "thumb": "http://www.bing.com/th?id=ONUT.1wSLadYY3g3oEKEHuX-Nag&pid=News"
       },
       {
-        "title": "Stumbles by Big Ten’s UCLA, Indiana set up shuffle in AP Top 25 as postseason draws near",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/college-football-rankings-9ebfeb2e878b23a35c6562dcb5b2d938",
-        "published": "2026-11-22T03:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.rv2FvH6CNP3BBbAC5STo_Q&pid=News"
-      },
-      {
         "title": "A California billionaire tax proposal faced a major setback despite big wins for progressives",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/california-billionaire-tax-proposition-40-8add946e01aa49964606cfbb0c727017",
         "published": "2026-11-22T03:00:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.mQ2XGKK6de_ri430ojAjlw&pid=News"
+      },
+      {
+        "title": "Washington governor, union denounce ICE arrests of travelers at Seattle airport",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/legal/litigation/washington-governor-union-denounce-ice-arrests-travelers-seattle-airport-2026-11-22/",
+        "published": "2026-11-21T19:33:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0ukqo7xcxBueSQQku563Kw&pid=News"
+      },
+      {
+        "title": "San Francisco braces for massive tides. Mayor urges residents to reconsider travel",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/extreme-weather-flooding-florida-california-a096b0e373fe6e9b4c4dcdde11c1b31b",
+        "published": "2026-11-21T14:32:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.cH3d66z8mzXgBsHt6cy3bQ&pid=News"
       },
       {
         "title": "Exclusive AP investigation exposes suffering of overlooked victims of romance scams",
@@ -226,6 +233,27 @@
     ],
     "global": [
       {
+        "title": "Fifty people remain missing after a fire at an Indonesian candy factory",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW040822112026RP1/",
+        "published": "2026-11-22T07:43:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.jwwk2fVUa8wE1c7CLCAZLA&pid=News"
+      },
+      {
+        "title": "Barcelona scores 3 goals in 10 minutes to beat Villarreal 3-2, Juventus routs Venezia 4-0",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/barcelona-liverpool-united-juventus-milan-3a57d1559ee22435de6fb5a40a86bac1",
+        "published": "2026-11-22T07:41:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.I97CYieJ235SaszdqW4UNQ&pid=News"
+      },
+      {
+        "title": "A suspected drone strike hits a Russian vessel in Libya",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/libya-russia-vessel-drone-benghazi-59f6f304f3053c69c8cc890138a94d1b",
+        "published": "2026-11-22T07:28:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT._vb152FxmA-Wx7UY8s8xXA&pid=News"
+      },
+      {
         "title": "UN climate talks break down over bitter disagreements on fossil fuels",
         "source": "Associated Press News",
         "link": "https://apnews.com/video/un-climate-talks-break-down-over-bitter-disagreements-on-fossil-fuels-910a6949a5864adfbb9f15d2a81de586",
@@ -233,24 +261,17 @@
         "thumb": "http://www.bing.com/th?id=ONUT.qq65lV467BA6IvHG3QgPCA&pid=News"
       },
       {
-        "title": "German army starts testing kamikaze drones and AI targeting tool in Lithuania",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/aerospace-defense/german-army-starts-testing-kamikaze-drones-ai-targeting-tool-lithuania-2026-11-22/",
-        "published": "2026-11-22T06:47:00Z",
-        "thumb": ""
+        "title": "Sports on TV for Monday, Nov. 23",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/hawaii-3bbe05e04a49bb26cc78844978bcfa2f",
+        "published": "2026-11-22T07:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "Struggling Warriors counting on home-court advantage vs. Celtics",
+        "title": "Libya's eastern government suspects drone attack caused explosion on Russian ship",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/struggling-warriors-counting-home-court-advantage-vs-celtics--flm-2026-11-22/",
-        "published": "2026-11-22T06:42:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Canucks vie to pick up steam in encounter vs. Blackhawks",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/canucks-vie-pick-up-steam-encounter-vs-blackhawks--flm-2026-11-22/",
-        "published": "2026-11-22T06:19:00Z",
+        "link": "https://www.reuters.com/world/middle-east/libyas-eastern-government-suspects-drone-attack-caused-explosion-russian-ship-2026-11-22/",
+        "published": "2026-11-22T06:25:00Z",
         "thumb": ""
       },
       {
@@ -266,20 +287,6 @@
         "link": "https://apnews.com/article/anthropic-ipo-philanthropy-044fd361f0a5899dcf6756205711aa13",
         "published": "2026-11-22T04:59:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.aJwbbj5-66VAGBWpIhMm5g&pid=News"
-      },
-      {
-        "title": "Lucas Pinheiro Braathen’s hopes for 3rd straight win end after he fails to finish 1st run in Austria",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/slalom-pineiro-braathen-gurgl-mcgrath-haugan-d3059d910ddeae6f1e8104ac50553e3d",
-        "published": "2026-11-22T04:58:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.OpkMKWiAAoW6RcXKgU501Q&pid=News"
-      },
-      {
-        "title": "Okinawa celebrates restored Shuri Castle hall 7 years after fire",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/japan-okinawa-ryukyu-history-castle-3ac5a220df1efa2be0a6d32529518314",
-        "published": "2026-11-22T04:13:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.1kzhBncPp5qxlVYmTzgY-w&pid=News"
       },
       {
         "title": "What to know about tear gas and reproductive health as people raise concerns in France",
