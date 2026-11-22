@@ -1,10 +1,20 @@
 {
-  "updated_at": "2026-11-22T18:20:49.950346Z",
+  "updated_at": "2026-11-22T19:16:49.937196Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Iran strike wounds two in Bahrain, Saudi condemns 'criminal' attacks - 24NewsHD",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORkxyVmJ1dkJlR2dpZ2psYlhQRFdnR05aVTdyVXRVZkdtSWZ3TTRNOFhaajlKNlhmZXNLZHlkT1F6U2pFQm8ySWZLejZrUno1QjRkM0FabGlhaE4tNjk1d3V0cFBObWtsckpzS21tQmhmSmJ2b3NqdmtIQmpEUmFVMlhQcjVBRUl0dDRJTEJFZ2J6MGp1d3FoTjBaRTlMMGM?oc=5",
+      "date": "2026-11-22T18:30:23Z"
+    },
+    {
+      "title": "Delta grounds, delays hundreds of flights in US following automation error - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE91ZEJsVFRDZ042TTdtR042dHEtdmNQQ3d3WlQ3ck9lbWZlN19Td0tBOXJoRjVEUVByaTNScUdyWkg0MjhHclo3TEpmZWpkcUp2MkwwS3pNa0tmaFcwVnZv?oc=5",
+      "date": "2026-11-22T17:56:28Z"
+    },
     {
       "title": "DGCA Notice To SpiceJet: Regulator Seeks Reply On Mass Cancellations, Grounded Fleet As Passengers Await Refunds - LawChakra",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9DdG1USUlFaG1leDN0dTF2Ym1HM3p3eUpLSFdNYnRMbjFHR212Um9mclBOa2VHdkw2SWJyMnlQeWZJX2dhOThCZThYN2FFLUVEQ01FQmhwdm94OGJzaGZyR2hPMi0zbWc?oc=5",
@@ -26,6 +36,11 @@
       "date": "2026-11-22T17:15:02Z"
     },
     {
+      "title": "Delta delays ‘not related to any FAA air traffic systems,’ administration says - WSB-TV",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQY0RsNzdjQlFwdjBKdk43Z2ZGZDVKazZONmJ3czg0RmsyNmJKSUl1dEJfVHQ0NmxDbW16ZGpUdHdjN21HTTNkOHZZeG5CMXZ2STJ3ekd5YVBsc05mVjIzanRlNXFWRGVvX1M1Tktrckd4bVp3YU1pMlBwSVFRTnViOURMUmQ2ZF9CYjNIS1hydHpYaUN4bTNJc2piLXY5TUpZQkY1akRQZHl2d3cwTndWaVd2d25zdkpXdURjRllnYXA3dXVxRnM0TlVtYlhuQWtNOFpqYVNNN051dHdRa0ttd1psWWlRZTlB0gH8AUFVX3lxTE1Udk5CbkVnclRyTGxxNDhkVG5iYjJWR2pPOEJXdC1aZmQzS3JYRmNsQ1QzTDh4VWlScTlzYXg2b0psVUQxRXBBUThlTW8wOVcwVFFzR0x5NzNvT04tQ0lJNWNEOXZ1Q3ljUjBTNGQzTXd5WGhzNWFnbjZxRmpmNVFJQlFlVTJ5SGhrLXNTN2VxY0JJMUJFM2h1QlJaQXBWSjMzczgzeVNiMFF6Y1RYMWNZQktPZVR2eGRYaFhISENvQnVVWURBRmJzbHZENHVtZXFqOGNFbmpmTW1BVTJ0ZjVfbWl1YURJbW53SXk2YURua05hZ1JDb2VqMW95NA?oc=5",
+      "date": "2026-11-22T16:46:59Z"
+    },
+    {
       "title": "Was the Delta outage a cyberattack? No sign so far, and no link to United's outage shown - Nacionale",
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTWF2dWVsWFJBZVUzRzJBVE0tOUJFMFNacW1wdlB4cnNLdU1XRzJObnFlY3VfRG5aVGNnLXA4Y2k3VEtMYWJxcklzcklKYjJnVTlENlZYa1Q1R0xLSm42LUI4THZab1RzcElIV2ZjcXBxMFJ4ME5pNEJMVjFzQlFxSk5ocmhhYXBXbFVTc2VxcEgtdktmbEtLT1dJcWxValBIYTJoTWxZYVZHZG92cF9hdDM5Mkk5UQ?oc=5",
       "date": "2026-11-22T16:41:10Z"
@@ -39,6 +54,11 @@
       "title": "Iran renews strikes on Bahrain after 2 months: Timeline of latest attacks in November - Khaleej Times",
       "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMFoxR1RrUndyWXR4aFdxOE9ra0pZeVplT0lJb00xRjQ5X3dxeU1zamZ0OVlUN2loYUU0OTdIT3hJRWR2c2NjUUd5SUJSc2d3eXZlWnQwTE9iczFUZUxRenFkaXZwY0w2c1lob3BlVGtpZk95RGMxaDBEcC1ya1hUamFZQzjSAYwBQVVfeXFMUFZ2bS14NDFBdk81bmpMT0JOUkU4YlJHQXFGb2VtQXYzRVNXaGJHZ3prYUFPWVF1SnFKamlUVzJpeHlwU3dSUW5Ra1NQLW90Y0djaFJqZWN0ZTgtY1UzaHhqWU5NUndUcFNLLWNEOEFpRkxYZjNGVUlwdUtsRFNzb1JaMzl4clhKQWJsTm4?oc=5",
       "date": "2026-11-22T16:18:59Z"
+    },
+    {
+      "title": "Delta Air Lines flights delayed nationwide, snarling holiday travel after carrier computer problems - CNN",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBia1lORnFBYlkxMVNaMGx4TW5CLTFGM3pjMHJhWlpIUWk3Q2NGRmpmMVNTTU1tcmxRTWVtUjE4VXVudGJIM0dOUC1VTm9PY2NrTkNIMDFMMDFCX1U2cHg2cTUtSHo4aDU3OXlVV21R?oc=5",
+      "date": "2026-11-22T15:56:12Z"
     },
     {
       "title": "Bahrain Iran Attack: Industrial Site Hit as Tankers Attacked in Strait of Hormuz - theopenpress.in",
@@ -84,6 +104,11 @@
       "title": "Egypt strongly condemns attacks on Bahrain, reaffirms solidarity with kingdom - Foreign Affairs - Egypt - Ahram Online",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZWo1bnNYc19sMDdDd1FhTUsteFJsbVVpclBOcFNyUGpoRXNKVjA2cS1Va1E0ZHZ3dURtZ01pVnNEa2R1NGNNRmd6MExwZjFWajlYdDBzRGVmdUt5aDRMRDhVVEgweEsyek1lc2Y5VWY2aDhqSmVnZk44TEdhR2NSaTB3azdCQUg5amxRTllwb2hwMHI1MVRLVE4wS1dqbVB2ck94Unp6WUNCWnN3TmY2c3h5YU9tMUJpbTJBQkFUTzVNeGRSVEtieG5vVzY?oc=5",
       "date": "2026-11-22T12:24:09Z"
+    },
+    {
+      "title": "US ports face cyber attack onslaught as hackers target vital trade routes - Financial Times",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOS2pCeHY2Q3JsWjNLdVZPWk1hX053R3BRay1RSlN4WUE3UlpYOEdKU1QtYmNOM2RsbzZoZXlYY20zdnIzbEl3WHRuRV9PaFBac1BxTjB2ZFFmdnFzUk1jNDY4ZmpuZ1lmYzdRMFk0S0hWMG9UeUFKeFA0dHFQbTFyMUIyUHU?oc=5",
+      "date": "2026-11-22T12:00:06Z"
     },
     {
       "title": "Bahrain industrial site, US positions targeted by fresh Iran strikes | Daily Sabah - Daily Sabah",
@@ -604,6 +629,11 @@
       "title": "Trump says news of another FBI cyberattack 'not good' - USA Today",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNUVGWDdFdktUNUhpOU8tTTFicURjOGZDay1yVEpyY2tSSHFWZmdLV2U2elkzc3ZsM3U0ME9Dc2Rzc3RHMWtHYjZTa2J0UU9senBYcXRibFltcENhel9IWHVtOWtqQUMzMkotS21Qc29ZNlhEUnhxa1ZwMHV0WFVCRkhXazRtX01PNlE1VzBicEw3R0hGcTk4NXFR?oc=5",
       "date": "2026-11-21T17:50:00Z"
+    },
+    {
+      "title": "Brussels Airport to cancel all flights on Monday due to national strike - Aviation24.be",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMG83UXlhV0NrVHBacDlqQnRmZFRUTlMtTlB0emNSa0JkdmNGWkMyZzdjZ3h1WmlPLV8tZ1JYbkJnQ01Zby1pYVJ1dGMxMTVfdXpkY2VneS1qV1RaaXJpQjFMWGdtRWIwYjZqa1E4WlVnVlVoV19zVlNvbVR6RHQ4TTN0MjVCNEhpT1A1eXRDOEhROXk1UmZlRHNhNkRSRTNjWEQ4eFJWdVhyVm41?oc=5",
+      "date": "2026-11-21T17:28:28Z"
     },
     {
       "title": "U.S. military denies Iranian attack on F-16 fighter jet in Middle East - سانا",
@@ -1434,6 +1464,11 @@
       "title": "‘We’ve Got Time’: Trump Suggests Iran War Will Continue Into 2027 - Time Magazine",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQjZGUzREbXRjRmtjM2dNZXc5eXVvVEJJOUdFdkpRNnZXVngwcDItZE9JYnJQc0diN3dRU1p3OGMzY0RQRkw4Q244ckR3UWVFWVc3ZkJHeThzU09aWnE4SHhxcVJqdld4bUtrdmdaVjA0QUdWT3dySkwzc0VVZXRDcWlHaTBZNERRWTUxbG1ZMzk?oc=5",
       "date": "2026-11-20T09:30:09Z"
+    },
+    {
+      "title": "Trump says nuclear arms deal with China, Russia difficult, weighs next steps on Iran - سانا",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5Ldmk0WE1HMF82QjdmeUg3T0FHZy10YTh6QzdpOXRvbUJ2dmV5RjQ1cmJsbHBDUFk2XzNWVXljbzRVYW40R0VRZzFpUXppMDFkV25Z?oc=5",
+      "date": "2026-11-20T09:19:04Z"
     },
     {
       "title": "N-able Blames Service Disruption on Cyberattack - SecurityWeek",
@@ -2359,6 +2394,11 @@
       "title": "‘Unbelievably serious’: Iran’s alleged ‘dirty nuclear bomb attack’ on Washington dissected - News24",
       "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOelZKV0ROYXE1VXlaUmtRSTlkX2xlVDJUMFZ4Q0tfbndjbC1CSldMSHUyVUwwZzNyZHk2NUE1TlF3cU5VVE4za0RvOFJpQ3lCVjBtc1p5QkJfcVRBZ0M5d1R6YTZBVjM4TldEaEZpelNfcWRGejBtWjlzamVkY1YzOFNyODU4Y3BtZmhhQ1hFUkJuc1lKREpvX2JPZ2dDc3EyeVE0TnBLa19JdkZEV1BadGxHUlkwVVVrdXVGS3d2ZFZjRkFnX2lCTjI3NXJ6WldHSkEwVE16Q0hEYlpVcFVkb0N3bExJQ2lUX2d4dkRIY1VSUFdTSDl3ZTFlT2NUVDjSAYQCQVVfeXFMUGpSNk1Wc2NPRWQ5ZmRfZTMzOEJyeE9vc2xKZG9STXNhWWtGclpsaXZUbUJmeEtiN0sxQjF2ZUk5VzBxXy1CTDVwMVphUC1TZnUtQzlhT1ZHMHpUOThuT05kemREdGYyM1ctdW83ZEZoMHNDbzE3WFhfc3RJUWNpVlQ5LURQWDhZbFo3N0tRNFBHNnFjc2FLV2wwZG0zdUpIYzhTVXg4cDhpbFpqUThPNEtnWWZPbWJMeERLOHppRDA3NHZCSFIwMHAwLUJKRTBlblQtUnVmX1dqNHVwY1hUcU9xdUQ4UVdkZXE1VmQtRm8xWlRYMjBfRm8wYjBsNy0wcS1fNVY?oc=5",
       "date": "2026-11-19T09:28:31Z"
+    },
+    {
+      "title": "Ransomware group The Gentlemen threatens to leak Nvidia data following alleged cyberattack - Escudo Digital",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPOGNqMGJFU1ZfZFUwZTNyMnhlWWVYZjhfUk1KZ2d5MktTRVNBeVhLWnRwN3FFY2dWN3hvdERUNFg4eTdKT1U1SE5NQWpiUDBjZXNTaHJRZ0RESUdpQU9Ea0VVaUFTVERMUzI4ZVJldWRYdDVBd2xnN0VBNzZQczltWWhmelRwNG1EeGpKT3FMS19Fa0d0ZzBZRVYyazJzRHhOTzI2YlNCSDZDOFhCYVg4ODJxSmd1NGtESm5FeUtrU25DWlk1cGFzY3NGdzktU1pLM3plMFNGeWNBZw?oc=5",
+      "date": "2026-11-19T09:24:48Z"
     },
     {
       "title": "NVIDIA investigating Gentlemen ransomware breach claims - BleepingComputer",
@@ -7034,21 +7074,6 @@
       "title": "Iran launches drone strike on U.S. base in Bahrain - upi",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOMGZBa0VxcnpiTXkwczJSRFlnYjllZnpvNTM2ZkNIQ3c2V2ZJNzBseThhWjNUa1FiY1doY0J2WFNndmhURzI3TUtiMHJhdzJoU1plUk5oaTItRkw2T05UYUp3M19NNC1mcldKQ01NY09IMkh5VlppUWV0Ykk2bHJ6RUIwajYtN081MndkQmRfQjJKZ9IBlwFBVV95cUxNclh1bVNyMXpMR0F4OHhsN3EzLVcySWhCSThidDRMZFZTNUpDUjFRUlZKS2RDYWROcHI2RUFfZncwQUJ2TzBmZGg5a1pFVEVIbTBWcWNVWHJvOC1MZTJCbm9FUkRvb2hScEN1NnNnZi14Z2NGWTgyb3R5ZzFScnRoU2JfcGtFRjVSV1JnVGo4TjJxSnNtU0tZ?oc=5",
       "date": "2026-11-15T19:19:37Z"
-    },
-    {
-      "title": "Iran War Day 261: Iran Attacks U.S. Radar in Bahrain for Second Time in Two Days - The American Conservative",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWXhzTmtVakFOUkFOWV9lNlhRbjdJMkF6QnNkMW9YUG9aRGhiTS1vMGtWRS14WHFiTzdzYmVDd2N0LTFEeDUxUzhjUzhRd2xBQ215WjNjSTlhbjBaeExoZ0J4bUNtdnp0dXk0TWJCX0hfN3l2NWUyVVMzdU9rNVh2M0JKMzhjSEl3SDloYW44TU1UQTRSRjc0LVczYzUzTUlsaVVrdFBZNUl2d3RVLTRNYmJaV3JLVWg2aF9n?oc=5",
-      "date": "2026-11-15T18:59:00Z"
-    },
-    {
-      "title": "Iran Drone Strike on Bahrain: Can Tehran Target US Bases on Gulf Soil? - Diplomacy and Law",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhaDVzUXl2TE9FaVk1Und5R0tpb09FVnVFMlFMMEk1cU9aakkyN2ViMnQ1RkxjNVBXQjVuYnFwY0VyV3I4LXdKREpIVnFsUHpaMWc5djZ2N1BQd3h5bzY4X1MtelhHVUFv?oc=5",
-      "date": "2026-11-15T18:48:24Z"
-    },
-    {
-      "title": "Iran still has stockpile of 2,500 missiles — as regime threatens US bombers as far away as the UK: report - New York Post",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOaUFuTmllcjZBaFRkckg3SmhsZzNVbjdXWjlsSmpaQ3lUQ1RPVWlHTmJLVVZYNDRJbGRZMW16UDJxQkJTOHhnZHZYZXlfbE9NdXA1NkRST3BHZnFkWmM4My1LbWFVcHdIelJ2OHBWdnJrNXBEaC1xRmswMjVHblJfWC1KVzhyM1d0ZXNRSGNfZEFzU0JsUnN3dDZyYTZMelRUMGtxeldkNGJCWWw1OUVYZ3Z6cGIzWTQ?oc=5",
-      "date": "2026-11-15T18:44:00Z"
     }
   ]
 }
