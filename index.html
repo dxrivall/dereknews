@@ -4695,7 +4695,16 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
           var nm=ld.athlete.displayName||ld.athlete.shortName||'';
           var v=parseFloat(ld.value);
           if(!nm||isNaN(v))return;
-          if(isBlocked(ld,nm))return;
+          if(isBlocked(ld,nm)){
+            /* Record a blocked TD scorer (NFL, Nov 22, 2026) so a
+               backup on the same team/spot can be flagged as the
+               next man up. */
+            if(lg.key==='nfl'&&(cat[1]==='Rush Yds'||cat[1]==='Rec Yds')&&tm.gp>0){
+              var mmB=String(ld.displayValue||'').match(/(\d+)\s*TD\b/);
+              if(mmB){var tdB=parseInt(mmB[1],10);if(tdB>0){(g.blockedTd=g.blockedTd||{})[tm.id+'|'+(cat[1]==='Rush Yds'?'RB':'WR')]={name:nm,td:tdB,pos:(cat[1]==='Rush Yds'?'RB':'WR')};}}
+            }
+            return;
+          }
           var avg=(lg.avgMode==='perGame')?v:(tm.gp>0?v/tm.gp:null);
           if(avg==null||avg<=0)return;
           var rec={name:nm,id:String(ld.athlete.id||''),label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10};
@@ -4707,7 +4716,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
               if(td>0){
                 var cur=tdByName[nm];
                 if(cur){cur.td+=td;}
-                else tdByName[nm]={name:nm,id:rec.id,td:td,gp:tm.gp,game:g};
+                else tdByName[nm]={name:nm,id:rec.id,td:td,gp:tm.gp,game:g,pos:(cat[1]==='Rush Yds'?'RB':'WR'),teamId:tm.id};
               }
             }
           }
@@ -4718,6 +4727,17 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
         });
       });
     });
+    /* Flag backup TD legs (Nov 22, 2026): a TD scorer whose team
+       has a blocked TD scorer at the same spot is the next man up.
+       (The roster lookup in enrichTdBackups finds backups who are
+       not in the leaders at all.) */
+    if(g.blockedTd){
+      Object.keys(tdByName).forEach(function(k){
+        var tp=tdByName[k];
+        var b=g.blockedTd[tp.teamId+'|'+tp.pos];
+        if(b&&b.name!==tp.name){tp.backup=true;tp.backupNote='starting '+tp.pos+' out \u2014 backup gets goal-line work';}
+      });
+    }
     g.allProps=all;
     g.tdPlayers=Object.keys(tdByName).map(function(k){return tdByName[k];});
     return out.slice(0,4);
@@ -4751,9 +4771,9 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
      (1) the favorite moneyline of a game, with its probability taken
      from the DraftKings line in the ESPN feed (the two implied %s
      normalised so they sum to 100%), and (2) a SIM prop Over, with its
-     probability estimated from the player's verified live season
-     average — a normal-distribution estimate centred on that average
-     (spread depends on the size of the average). No leg is added if
+     probability taken from the player's ACTUAL game-by-game hit rate
+     for the line (Nov 22, 2026 — season blended 55/45 with last-5),
+     not a distribution around the average. No leg is added if
      its line / average could not be verified. A parlay's hit % is the
      product of its legs' probabilities. Simulation only. */
   var BOOKS=[
@@ -4807,8 +4827,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   var GLMAP={nba:{'Pts':'PTS','Reb':'REB','Ast':'AST','3PM':'3PT'},nhl:{'Goals':'G','Assists':'A','Points':'PTS','SOG':'S'}};
   function gamelogRecent(lg,athleteId,label){
     var glm=GLMAP[lg.key]||{};var gl=glm[label];if(!gl||!athleteId)return Promise.resolve(null);
-    var parts=lg.path.split('/');
-    return fetchJSON('https://site.api.espn.com/apis/common/v3/sports/'+parts[0]+'/'+parts[1]+'/athletes/'+athleteId+'/gamelog').then(function(d){
+    return dnGamelog(lg,athleteId).then(function(d){
       var labels=(d&&d.labels)||[];var idx=labels.indexOf(gl);if(idx<0)return null;
       var st0=((d.seasonTypes||[])[0])||{};var cat=((st0.categories||[])[0])||{};
       var evs=cat.events||[];var vals=[];
@@ -4854,8 +4873,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   function gamelogLast6(lg,athleteId){
     var key=lg.key+'-s6-'+athleteId;
     if(streakCache[key])return streakCache[key];
-    var parts=lg.path.split('/');
-    var pr=fetchJSON('https://site.api.espn.com/apis/common/v3/sports/'+parts[0]+'/'+parts[1]+'/athletes/'+athleteId+'/gamelog').then(function(d){
+    var pr=dnGamelog(lg,athleteId).then(function(d){
       if(!d)return null;
       var sts=d.seasonTypes||[],st=null;
       for(var i=0;i<sts.length;i++){if(/regular/i.test(sts[i].displayName||'')){st=sts[i];break;}}
@@ -4922,6 +4940,13 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     return Promise.all(order.slice(0,40).map(function(pl){
       return gamelogLast6(lg,pl.id).then(function(res){
         if(!res)return;
+        /* Streak legs are priced off the ACTUAL hit rate for the
+           streak line (Nov 22, 2026), capped at the season hit
+           rate + 5 points — a 6/6 streak must not push a leg far
+           above its season rate. The full series comes from the
+           same cached gamelog fetch; if it cannot be read, the
+           old estimate is the fallback. */
+        return dnGamelog(lg,pl.id).catch(function(){return null;}).then(function(gd){
         Object.keys(STREAK_META[lg.key]).forEach(function(statKey){
           var vals=res[statKey];if(!vals||vals.length<6)return;
           vals=vals.slice(0,6);
@@ -4938,9 +4963,17 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
           var sd6=Math.sqrt(vals.reduce(function(a,b){return a+(b-avg6)*(b-avg6);},0)/6);
           var avgSeason=(pl.avgs[statKey]!=null?pl.avgs[statKey]:null);
           var effAvg=(avgSeason!=null?avgSeason:avg6);
-          var prob;
-          if(statKey==='TD'){var rate=Math.max(effAvg||0,avg6||0);prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;}
+          var prob,hr=null;
+          if(gd){
+            var def=(STREAK_STATS[lg.key]||{})[statKey];
+            var full=dnSeriesFromGamelog(gd,def,20);
+            var hrs=dnHitRates(full,probLine);
+            if(hrs)hr=hrs;
+          }
+          if(hr){prob=Math.min(hr.blended,hr.season+0.05);}
+          else if(statKey==='TD'){var rate=Math.max(effAvg||0,avg6||0);prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;}
           else prob=modelPropProb({avg:effAvg,line:probLine,l5:{avg:avg6,sd:sd6}}).prob;
+          if(prob<0.15)prob=0.15;if(prob>0.85)prob=0.85;
           /* Meaningfulness: how big the streak line is next to what
              the player actually averaged over those 6 games. A line
              at 90% of his last-6 average is a real streak; a line at
@@ -4948,6 +4981,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
           var streakScore=avg6>0?(threshold/avg6):0;
           var text=pl.name+' '+threshold+'+ '+meta.label;
           (pl.g.streakLegs=pl.g.streakLegs||[]).push({kind:'Prop',name:pl.name,prob:prob,text:text,sub:pl.g.away.abbr+' at '+pl.g.home.abbr+' \u00b7 \ud83d\udd25 hit in 6/6 last games \u00b7 '+threshold+'+ in every game \u00b7 last 6: '+vals.join(', '),avg:effAvg,line:probLine,streakLine:threshold,streakMin:minVal,streakScore:streakScore,edge:prob-0.524,key:'streak-'+pl.g.id+'-'+pl.id+'-'+statKey,gameId:pl.g.id,streak:true,stat:statKey});
+        });
         });
       });
     })).then(function(){});
@@ -4971,10 +5005,91 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     legs.forEach(function(l){if(!l.name||seen[l.name])return;seen[l.name]=1;deduped.push(l);});
     legs=deduped;
     if(!legs.length)return{parlay:null,found:0};
-    if(legs.length===1)return{parlay:null,found:1,one:legs[0]};
-    var picked=legs.slice(0,5);
+    /* One leg per game (Nov 22, 2026) — never two legs from the
+       same game on one slip. */
+    var picked=[],seenGame={};
+    legs.forEach(function(l){
+      if(picked.length>=5)return;
+      if(l.gameId&&seenGame[l.gameId])return;
+      if(l.gameId)seenGame[l.gameId]=1;
+      picked.push(l);
+    });
+    if(!picked.length)return{parlay:null,found:0};
+    if(picked.length===1)return{parlay:null,found:1,one:picked[0]};
     var hit=picked.reduce(function(a,l){return a*l.prob;},1);
     return{parlay:{title:'Streak Lotto',legs:picked,hit:hit,streak:true},found:legs.length};
+  }
+  /* ---- Honest hit rates (Nov 22, 2026) ---------------------------
+     The old model turned a player's average into a probability with
+     a normal-distribution estimate, and it overshot: a player
+     averaging 0.8 pts/game was priced at 81% to get a point, when
+     his real rate is closer to 65%. Now every pre-game prop/TD leg
+     is priced off the player's ACTUAL game-by-game hit rate — the
+     fraction of games in which he cleared the line — blended
+     55% last-5 / 45% season, the same blend the model already uses
+     for averages. One cached gamelog fetch per athlete feeds the
+     last-5 stats, the streak series and the hit rate, so nothing
+     is fetched twice. */
+  var dnGamelogCache={};
+  function dnGamelog(lg,athleteId){
+    var key=lg.key+'-gl-'+athleteId;
+    if(dnGamelogCache[key])return dnGamelogCache[key];
+    var parts=lg.path.split('/');
+    var pr=fetchJSON('https://site.api.espn.com/apis/common/v3/sports/'+parts[0]+'/'+parts[1]+'/athletes/'+athleteId+'/gamelog').then(function(d){return d||null;}).catch(function(){return null;});
+    dnGamelogCache[key]=pr;return pr;
+  }
+  function dnParseVal(raw){if(raw==null)return null;var v=parseFloat(String(raw).replace(/,/g,'').split('-')[0]);return isNaN(v)?null:v;}
+  /* Per-game series (most recent first, up to maxN) for one stat,
+     from a cached gamelog JSON. def is a STREAK_STATS-style
+     definition ({names, labels, sum}). */
+  function dnSeriesFromGamelog(d,def,maxN){
+    if(!d||!def)return null;
+    var sts=d.seasonTypes||[],st=null;
+    for(var i=0;i<sts.length;i++){if(/regular/i.test(sts[i].displayName||'')){st=sts[i];break;}}
+    if(!st)st=sts[0];
+    if(!st)return null;
+    var evMap=d.events||{},seen={},evs=[];
+    (st.categories||[]).forEach(function(cat){(cat.events||[]).forEach(function(e){var id=String(e.eventId||'');if(!id||seen[id])return;seen[id]=1;evs.push(e);});});
+    evs.sort(function(a,b){var da=(evMap[String(a.eventId)]||{}).gameDate||'',db=(evMap[String(b.eventId)]||{}).gameDate||'';return db<da?-1:(db>da?1:0);});
+    var labels=d.labels||[],names=d.names||[];
+    var out=[];
+    if(def.sum){
+      var idxs=(def.names||[]).map(function(nm){return names.indexOf(nm);}).filter(function(x){return x>=0;});
+      if(!idxs.length)return null;
+      for(var k=0;k<evs.length&&out.length<(maxN||20);k++){var t=0,ok=false;idxs.forEach(function(ix){var v=dnParseVal(evs[k].stats&&evs[k].stats[ix]);if(v!=null){t+=v;ok=true;}});if(ok)out.push(t);}
+      return out.length?out:null;
+    }
+    var ix=-1,ci;
+    var nc=def.names||[];for(ci=0;ci<nc.length;ci++){ix=names.indexOf(nc[ci]);if(ix>=0)break;ix=-1;}
+    if(ix<0){var lc=def.labels||[];for(ci=0;ci<lc.length;ci++){ix=labels.indexOf(lc[ci]);if(ix>=0)break;ix=-1;}}
+    if(ix<0)return null;
+    for(var k2=0;k2<evs.length&&out.length<(maxN||20);k2++){var v2=dnParseVal(evs[k2].stats&&evs[k2].stats[ix]);if(v2!=null)out.push(v2);}
+    return out.length?out:null;
+  }
+  /* Blended hit rate for a line: 55% last-5 / 45% season. Returns
+     {blended, season, l5, n} or null when fewer than 5 games. A
+     "hit" is a game with value strictly over the line (Over 0.5 =
+     at least 1). */
+  function dnHitRates(series,line){
+    if(!series||series.length<5)return null;
+    function frac(arr){var c=0;arr.forEach(function(v){if(v>line)c++;});return c/arr.length;}
+    var season=frac(series),l5=frac(series.slice(0,5));
+    return{blended:0.55*l5+0.45*season,season:season,l5:l5,n:series.length};
+  }
+  function dnHitRate(series,line){var r=dnHitRates(series,line);return r?r.blended:null;}
+  /* Hit rate for one prop: fetch the athlete's gamelog (cached),
+     take the series for his stat, and price the line off it. */
+  function dnPropHitRate(lg,athleteId,label,line){
+    var def=(STREAK_STATS[lg.key]||{})[label];
+    if(!def||!athleteId||line==null)return Promise.resolve(null);
+    return dnGamelog(lg,athleteId).then(function(d){
+      if(!d)return null;
+      return dnHitRate(dnSeriesFromGamelog(d,def,20),line);
+    }).catch(function(){return null;});
+  }
+  function dnAttachHitRate(lg,pr,line){
+    var target=pr._t||pr;
+    return dnPropHitRate(lg,pr.id,pr.label,line).then(function(hr){if(hr!=null)target.hitRate=hr;}).catch(function(){});
   }
   function modelPropProb(pr){
     var line=(pr.line!=null?pr.line:0.5);
@@ -4982,9 +5097,16 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     var baseSd;if(pr.avg>20)baseSd=pr.avg*0.38;else if(pr.avg>5)baseSd=pr.avg*0.42;else baseSd=Math.max(0.55,pr.avg*0.65);
     if(pr.l5&&pr.l5.avg!=null){effAvg=0.55*pr.l5.avg+0.45*pr.avg;usedL5=true;if(pr.l5.sd>0)sd=Math.max(baseSd*0.5,Math.min(baseSd*1.1,pr.l5.sd));}
     if(sd==null)sd=baseSd;
-    var p=1-normCdf((line-effAvg)/sd);
+    var p;
+    /* Honest probability (Nov 22, 2026): when the player's actual
+       game-by-game hit rate for this line is known (pr.hitRate,
+       attached by the enrichment step), use it. The
+       normal-distribution estimate around the average overshoots
+       and is only a fallback when no hit rate was computed. */
+    if(pr.hitRate!=null&&!isNaN(pr.hitRate)){p=pr.hitRate;}
+    else{p=1-normCdf((line-effAvg)/sd);}
     if(p<0.22)p=0.22;if(p>0.85)p=0.85;
-    return{prob:p,effAvg:Math.round(effAvg*10)/10,usedL5:usedL5};
+    return{prob:p,effAvg:Math.round(effAvg*10)/10,usedL5:usedL5,hitRate:(pr.hitRate!=null)};
   }
   function mlModel(g,side){
     var pa=implied(g.ml.away),ph=implied(g.ml.home);if(pa==null||ph==null)return null;
@@ -5016,6 +5138,11 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       });
       cands.slice(0,18).forEach(function(pr){
         jobs.push(gamelogRecent(lg,pr.id,pr.label).then(function(l5){if(l5){if(pr._t)pr._t.l5=l5;else pr.l5=l5;}}));
+        /* Honest hit rate for this prop's line (Nov 22, 2026) — the
+           model's probability comes from the player's real
+           game-by-game record, not the average. */
+        var hrLine=(pr._t?simLine(pr._t.avg):pr.line);
+        if(hrLine!=null)jobs.push(dnAttachHitRate(lg,pr,hrLine));
       });
     }
     return Promise.all(jobs).catch(function(){});
@@ -5082,7 +5209,16 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   function specialFrom(pool,title){
     if(!pool||pool.length<4)return null;
-    var legs=pool.slice(0,6);
+    /* One leg per game (Nov 22, 2026) — never two legs from the
+       same game on one slip. */
+    var legs=[],seenGame={};
+    for(var i=0;i<pool.length&&legs.length<6;i++){
+      var l=pool[i];
+      if(l.gameId&&seenGame[l.gameId])continue;
+      if(l.gameId)seenGame[l.gameId]=1;
+      legs.push(l);
+    }
+    if(legs.length<4)return null;
     var hit=legs.reduce(function(a,l){return a*l.prob;},1);
     return{title:title,legs:legs,hit:hit};
   }
@@ -5100,9 +5236,97 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     games.forEach(function(g){(g.allProps||[]).forEach(function(pr){
       if(pr.label!=='Goals')return;
       if(dnBlockedForGame(g,pr.id,pr.name))return;
-      legs.push({kind:'Prop',name:pr.name,prob:modelPropProb({avg:pr.avg,line:0.5,l5:pr.l5}).prob,text:pr.name+' Over 0.5 Goals',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' goals/gm',avg:pr.avg,line:0.5,key:'goal-'+g.id+'-'+pr.name,gameId:g.id,stat:'Goals'});
+      legs.push({kind:'Prop',name:pr.name,prob:modelPropProb({avg:pr.avg,line:0.5,l5:pr.l5,hitRate:(pr.line===0.5?pr.hitRate:null)}).prob,text:pr.name+' Over 0.5 Goals',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+pr.avg+' goals/gm',avg:pr.avg,line:0.5,key:'goal-'+g.id+'-'+pr.name,gameId:g.id,stat:'Goals'});
     });});
     return dedupeSort(legs);
+  }
+  /* TD hit rates (Nov 22, 2026): a TD leg is priced off the
+     player's ACTUAL fraction of games with a touchdown (season
+     blended 55/45 with last-5), not 1-exp(-rate). The Poisson
+     estimate is only a fallback when no gamelog could be read. */
+  function enrichTdHitRates(lg,games){
+    if(lg.key!=='nfl')return Promise.resolve();
+    var tps=[];
+    games.forEach(function(g){(g.tdPlayers||[]).forEach(function(tp){tps.push(tp);});});
+    return Promise.all(tps.slice(0,24).map(function(tp){
+      return dnPropHitRate(lg,tp.id,'TD',0.5).then(function(hr){if(hr!=null)tp.hitRate=hr;}).catch(function(){});
+    })).then(function(){});
+  }
+  /* Next-man-up TD backups (Nov 22, 2026): when a team's TD leader
+     is Out/Doubtful, the backup who inherits the goal-line work is
+     found from the team roster (RBs for a rushing leader, WR/TEs
+     for a receiving leader) and added as a TD leg, flagged as the
+     backup. The backup is preferred over a similar healthy starter
+     when the parlay is picked (see rankTdLegs). */
+  var dnRosterCache={};
+  function dnTeamBackup(lg,g,teamId,pos,starter){
+    var key='nfl-roster-'+teamId;
+    var rp=dnRosterCache[key];
+    if(!rp){
+      rp=fetchJSON('https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/'+teamId+'/roster').catch(function(){return null;});
+      dnRosterCache[key]=rp;
+    }
+    return rp.then(function(roster){
+      if(!roster)return;
+      var wantPos=(pos==='RB'?['RB']:['WR','TE']);
+      var cands=[];
+      (roster.athletes||[]).forEach(function(gr){
+        if(gr.position!=='offense')return;
+        (gr.items||[]).forEach(function(a){
+          var pp=(a.position||{}).abbreviation||'';
+          if(wantPos.indexOf(pp)<0)return;
+          var id=String(a.id||''),nm=a.displayName||'';
+          if(!id||!nm||nm===starter.name)return;
+          if(dnBlockedForGame(g,id,nm))return;
+          cands.push({id:id,name:nm});
+        });
+      });
+      return Promise.all(cands.slice(0,8).map(function(c){
+        return dnGamelog(lg,c.id).then(function(d){
+          if(!d)return null;
+          var series=dnSeriesFromGamelog(d,{names:['rushingTouchdowns','receivingTouchdowns'],sum:true},20);
+          if(!series||series.length<3)return null;
+          var td=series.reduce(function(a,b){return a+b;},0);
+          if(td<=0)return null;
+          return{id:c.id,name:c.name,td:td,gp:series.length,hitRate:dnHitRate(series,0.5)};
+        }).catch(function(){return null;});
+      })).then(function(res){
+        var best=null;
+        res.forEach(function(r){
+          if(!r)return;
+          if(!best||r.td>best.td||(r.td===best.td&&(r.hitRate||0)>(best.hitRate||0)))best=r;
+        });
+        if(!best)return;
+        var exists=(g.tdPlayers||[]).some(function(tp){return tp.name===best.name;});
+        if(exists)return;
+        (g.tdPlayers=g.tdPlayers||[]).push({name:best.name,id:best.id,td:best.td,gp:best.gp,game:g,pos:pos,teamId:teamId,backup:true,backupNote:'starting '+pos+' out \u2014 backup gets goal-line work',hitRate:best.hitRate});
+      });
+    }).catch(function(){});
+  }
+  function enrichTdBackups(lg,games){
+    if(lg.key!=='nfl')return Promise.resolve();
+    var jobs=[];
+    games.forEach(function(g){
+      var blocked=g.blockedTd||{};
+      Object.keys(blocked).forEach(function(key){
+        var b=blocked[key];
+        var parts=key.split('|');
+        jobs.push(dnTeamBackup(lg,g,parts[0],parts[1],b));
+      });
+    });
+    return Promise.all(jobs).catch(function(){});
+  }
+  /* Rank TD legs: a backup is preferred over a healthy starter on
+     another team when their chances are close (within 5 points) —
+     the backup inherits the goal-line work. Otherwise the higher
+     probability wins. */
+  function rankTdLegs(legs){
+    return legs.slice().sort(function(a,b){
+      var pa=a.prob||0,pb=b.prob||0,ba=!!a.backup,bb=!!b.backup;
+      if(ba!==bb&&Math.abs(pa-pb)<0.05)return ba?-1:1;
+      if(pb!==pa)return pb-pa;
+      return (bb?1:0)-(ba?1:0);
+    });
   }
   function tdPool(games){
     var legs=[];
@@ -5110,8 +5334,11 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(dnBlockedForGame(g,tp.id,tp.name))return;
       if(!tp.gp||tp.td<=0)return;
       var rate=tp.td/tp.gp;
-      var prob=1-Math.exp(-rate);if(prob<0.15)prob=0.15;if(prob>0.70)prob=0.70;
-      legs.push({kind:'Prop',name:tp.name,prob:prob,text:tp.name+' — Anytime TD',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+tp.td+' TD in '+tp.gp+' games this season',avg:Math.round(rate*100)/100,key:'td-'+g.id+'-'+tp.name,gameId:g.id,stat:'TD'});
+      var prob;
+      if(tp.hitRate!=null&&!isNaN(tp.hitRate)){prob=tp.hitRate;}
+      else{prob=1-Math.exp(-rate);}
+      if(prob<0.15)prob=0.15;if(prob>0.85)prob=0.85;
+      legs.push({kind:'Prop',name:tp.name,prob:prob,text:tp.name+' — Anytime TD',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 '+tp.td+' TD in '+tp.gp+' games this season'+(tp.backup?' \u00b7 starting '+tp.pos+' out \u2014 backup gets goal-line work':''),avg:Math.round(rate*100)/100,key:'td-'+g.id+'-'+tp.name,gameId:g.id,stat:'TD',backup:!!tp.backup});
     });});
     return dedupeSort(legs);
   }
@@ -5120,7 +5347,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     games.forEach(function(g){(g.sogProps||[]).forEach(function(sp){
       if(dnBlockedForGame(g,sp.id,sp.name))return;
       var line=simLine(sp.avg);
-      legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5}).prob,text:sp.name+' Over '+line+' Shots on Goal',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' shots/gm',avg:sp.avg,line:line,key:'sog-'+g.id+'-'+sp.name,gameId:g.id,stat:'SOG'});
+      legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5,hitRate:sp.hitRate}).prob,text:sp.name+' Over '+line+' Shots on Goal',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' shots/gm',avg:sp.avg,line:line,key:'sog-'+g.id+'-'+sp.name,gameId:g.id,stat:'SOG'});
     });});
     return dedupeSort(legs);
   }
@@ -5129,7 +5356,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     games.forEach(function(g){(g.threeProps||[]).forEach(function(sp){
       if(dnBlockedForGame(g,sp.id,sp.name))return;
       var line=simLine(sp.avg);
-      legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5}).prob,text:sp.name+' Over '+line+' 3-Pointers',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' 3PM/gm',avg:sp.avg,line:line,key:'3pm-'+g.id+'-'+sp.name,gameId:g.id,stat:'3PM'});
+      legs.push({kind:'Prop',name:sp.name,prob:modelPropProb({avg:sp.avg,line:line,l5:sp.l5,hitRate:sp.hitRate}).prob,text:sp.name+' Over '+line+' 3-Pointers',sub:g.away.abbr+' at '+g.home.abbr+' \u00b7 avg '+sp.avg+' 3PM/gm',avg:sp.avg,line:line,key:'3pm-'+g.id+'-'+sp.name,gameId:g.id,stat:'3PM'});
     });});
     return dedupeSort(legs);
   }
@@ -5181,7 +5408,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       for(var i=0;i<sorted.length&&legs.length<8;i++){
         var l=sorted[i];
         if(l.name&&usedName[l.name])continue;
-        if(l.gameId&&(perGame[l.gameId]||0)>=2)continue;
+        if(l.gameId&&(perGame[l.gameId]||0)>=1)continue;
         legs.push(l);if(l.name)usedName[l.name]=1;if(l.gameId)perGame[l.gameId]=(perGame[l.gameId]||0)+1;
         if(legs.length>=6){
           var hit=legs.reduce(function(a,x){return a*x.prob;},1);
@@ -5195,34 +5422,78 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     for(var o=0;o<orders.length;o++){var r=attempt(orders[o]);if(r)return r;}
     return null;
   }
+  /* NFL Touchdown Slip (Nov 22, 2026) — exactly 4 legs, each a
+     plus-money TD scorer at roughly 30–45% TD probability (about
+     +120 to +230). No heavy-chalk scorers at ~70%. One leg per
+     game; backups preferred over a similar healthy starter. If
+     fewer than 4 qualify in the band, no slip is built — never
+     forced with chalk. */
+  function buildTdParlay(games){
+    var legs=rankTdLegs(tdPool(games).filter(function(l){return l.prob>=0.30&&l.prob<=0.45;}));
+    var perGame={},picked=[];
+    legs.forEach(function(l){
+      if(picked.length>=4)return;
+      if(perGame[l.gameId])return;
+      perGame[l.gameId]=1;picked.push(l);
+    });
+    if(picked.length<4)return null;
+    var hit=picked.reduce(function(a,l){return a*l.prob;},1);
+    return{title:'Touchdown Slip',legs:picked,hit:hit};
+  }
+  /* NFL Lotto Bet of the Day (Nov 22, 2026) — a COMPLETE full-slate
+     lotto: one touchdown scorer from EVERY game on the slate, each
+     a plus-money scorer at roughly 30–45% TD probability. The NFL
+     only plays once a week, so this is the big weekly lottery
+     ticket. Not capped at 4 legs — it takes one scorer per game.
+     A game with no qualifying plus-money scorer is skipped rather
+     than forced with chalk. The combined hit % is honestly very
+     low and the $10 payout is huge. */
+  function buildNflLotto(games){
+    var legs=rankTdLegs(tdPool(games).filter(function(l){return l.prob>=0.30&&l.prob<=0.45;}));
+    var perGame={},picked=[];
+    legs.forEach(function(l){
+      if(perGame[l.gameId])return;
+      perGame[l.gameId]=1;picked.push(l);
+    });
+    if(picked.length<4)return null;
+    var hit=picked.reduce(function(a,l){return a*l.prob;},1);
+    return{title:'Lotto Bet of the Day',legs:picked,hit:hit,lotto:true,slate:true};
+  }
   function buildParlays(lg,games){
     var pool=buildLegPool(lg,games);
     if(pool.length<2)return[];
     function prod(ls){return ls.reduce(function(a,l){return a*l.prob;},1);}
     var out=[];
-    /* Edge Parlay — only legs whose model % beats the book's price by
-       2+ points, 2-3 legs, trimmed so the combined chance stays real
-       (aim ~20%+). No edge, no parlay — never padded with chalk. */
+    /* Edge Parlay (Nov 22, 2026) — exactly 2 legs, the two strongest
+       by model % / edge, one per game. Only legs whose model % beats
+       the book's price by 2+ points. No edge, no parlay — never
+       padded with chalk. */
     var edgeLegs=pool.filter(function(l){return l.edge>=0.02&&l.prob>=0.50;});
     var picked=[],gameCount={};
     edgeLegs.forEach(function(l){
-      if(picked.length>=3)return;
-      if(gameCount[l.gameId]&&picked.length>=2)return;
-      picked.push(l);gameCount[l.gameId]=(gameCount[l.gameId]||0)+1;
+      if(picked.length>=2)return;
+      if(gameCount[l.gameId])return;
+      picked.push(l);gameCount[l.gameId]=1;
     });
-    while(picked.length>2&&prod(picked)<0.15)picked.pop();
-    if(picked.length>=2&&prod(picked)>=0.10)out.push({title:'Edge Parlay',legs:picked,hit:prod(picked),edge:true});
-    /* Lotto Bet of the Day — one longshot per sport: plus-money
-       underdogs + live longshot props, 4-5 legs, big payout, honest
-       low hit %. */
-    var dogs=pool.filter(function(l){return l.kind==='ML'&&l.dkDec&&l.dkDec>=2.0;}).sort(function(a,b){return b.prob-a.prob;});
-    var longProps=pool.filter(function(l){return l.kind==='Prop'&&l.prob>=0.26&&l.prob<=0.50;});
-    var lotto=[],di=0,pi2=0,seenK={};
-    while(lotto.length<5&&(di<dogs.length||pi2<longProps.length)){
-      if(di<dogs.length){var d1=dogs[di++];if(!seenK[d1.key]){seenK[d1.key]=1;lotto.push(d1);}}
-      if(lotto.length<5&&pi2<longProps.length){var p1=longProps[pi2++];if(!seenK[p1.key]){seenK[p1.key]=1;lotto.push(p1);}}
+    if(picked.length===2&&prod(picked)>=0.10)out.push({title:'Edge Parlay',legs:picked,hit:prod(picked),edge:true});
+    /* Lotto Bet of the Day — NFL: a COMPLETE full-slate lotto, one
+       touchdown scorer from every game (Nov 22, 2026; see
+       buildNflLotto). Other sports: plus-money underdogs + live
+       longshot props, 4-5 legs, big payout, honest low hit %. One
+       leg per game on every slip. */
+    if(lg.key==='nfl'){
+      var nflLotto=buildNflLotto(games);
+      if(nflLotto)out.push(nflLotto);
+    }else{
+      var dogs=pool.filter(function(l){return l.kind==='ML'&&l.dkDec&&l.dkDec>=2.0;}).sort(function(a,b){return b.prob-a.prob;});
+      var longProps=pool.filter(function(l){return l.kind==='Prop'&&l.prob>=0.26&&l.prob<=0.50;});
+      var lotto=[],di=0,pi2=0,seenK={},seenGame={};
+      while(lotto.length<5&&(di<dogs.length||pi2<longProps.length)){
+        if(di<dogs.length){var d1=dogs[di++];if(!seenK[d1.key]&&!(d1.gameId&&seenGame[d1.gameId])){seenK[d1.key]=1;if(d1.gameId)seenGame[d1.gameId]=1;lotto.push(d1);}}
+        if(lotto.length<5&&pi2<longProps.length){var p1=longProps[pi2++];if(!seenK[p1.key]&&!(p1.gameId&&seenGame[p1.gameId])){seenK[p1.key]=1;if(p1.gameId)seenGame[p1.gameId]=1;lotto.push(p1);}}
+      }
+      if(lotto.length>=4)out.push({title:'Lotto Bet of the Day',legs:lotto,hit:prod(lotto),lotto:true});
     }
-    if(lotto.length>=4)out.push({title:'Lotto Bet of the Day',legs:lotto,hit:prod(lotto),lotto:true});
     var extreme=buildExtremeLotto(pool);
     if(extreme)out.push(extreme);
     return out;
@@ -5474,7 +5745,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       return (res[li]||[]).filter(function(g){return etDay(g.date)===tk;});
     });
     var jobs=[];
-    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).then(function(){return enrichStreaks(lg,todays[li]);}).catch(function(){}));jobs.push(enrichModel(lg,todays[li]).catch(function(){}));});
+    LEAGUES.forEach(function(lg,li){jobs.push(enrichSpecials(lg,todays[li]).then(function(){return enrichStreaks(lg,todays[li]);}).catch(function(){}));jobs.push(enrichModel(lg,todays[li]).catch(function(){}));if(lg.key==='nfl'){jobs.push(enrichTdBackups(lg,todays[li]).then(function(){return enrichTdHitRates(lg,todays[li]);}).catch(function(){}));}});
     var kalJob=(window.__kalshiLoad?window.__kalshiLoad().catch(function(){}):Promise.resolve());
     return Promise.all(jobs.concat([kalJob])).then(function(){
     var h='',any=false;
@@ -5496,7 +5767,11 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
         var sp=specialFrom(pool,title);
         if(sp)parlays.push(sp);else notes+='<p class="astatus">'+esc(miss)+'</p>';
       }
-      if(lg.key==='nfl')addSpecial(tdPool(gamesToday),'Touchdown Slip','NFL Touchdown slip: not enough verified legs today — no touchdown parlay shown.');
+      if(lg.key==='nfl'){
+        var tdPar=buildTdParlay(gamesToday);
+        if(tdPar)parlays.push(tdPar);
+        else notes+='<p class="astatus">NFL Touchdown slip: not enough verified plus-money legs today — no touchdown parlay shown.</p>';
+      }
       if(lg.key==='nhl'){
         addSpecial(sogPool(gamesToday),'Shots on Goal','NHL Shots on Goal slip: not enough verified legs today — no shots parlay shown.');
         addSpecial(goalsPool(gamesToday),'Goals','NHL Goals slip: not enough verified legs today — no goals parlay shown.');
@@ -5512,7 +5787,12 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
          a Streak slip — and drop the rest instead of stacking
          5-6 slips a day per sport. */
       parlays.sort(function(a,b){if(b.hit!==a.hit)return b.hit-a.hit;var ea=(a.edge?1:0)+(a.streak?0.5:0),eb=(b.edge?1:0)+(b.streak?0.5:0);return eb-ea;});
-      if(parlays.length>4){var droppedN=parlays.length-4;parlays=parlays.slice(0,4);notes+='<p class="astatus">Max 4 pre-game bets per sport per day — the 4 strongest by model hit % / edge are above; '+droppedN+' other '+esc(lg.label.replace(/^[^ ]+ /,''))+' slip'+(droppedN===1?'':'s')+' the model built today '+(droppedN===1?'was':'were')+' dropped.</p>';}
+      /* The full-slate NFL lotto is the weekly ticket — it is never
+         dropped by the cap, even though its hit % sorts last. */
+      var slatePar=parlays.filter(function(p){return p.slate;});
+      var restPar=parlays.filter(function(p){return !p.slate;});
+      if(restPar.length>4){var droppedN=restPar.length-4;restPar=restPar.slice(0,4);notes+='<p class="astatus">Max 4 pre-game bets per sport per day — the 4 strongest by model hit % / edge are above; '+droppedN+' other '+esc(lg.label.replace(/^[^ ]+ /,''))+' slip'+(droppedN===1?'':'s')+' the model built today '+(droppedN===1?'was':'were')+' dropped.</p>';}
+      parlays=restPar.concat(slatePar);
       /* Save today's slips for the "Yesterday's Winners" feature
          (Nov 21, 2026): first non-empty set per league per day wins,
          so the morning's slips are the ones checked tomorrow. */
