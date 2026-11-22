@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-11-22T15:11:09.493850+00:00",
+ "updated_at": "2026-11-22T15:55:06.615657+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
-  "tracked": 8384882,
+  "tracked": 8384883,
   "out": 462,
   "pct": 0.01,
-  "source_updated": "2026-11-22T15:07:31+00:00",
+  "source_updated": "2026-11-22T15:46:36+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315387,
-    "out": 158,
-    "pct": 0.05
+    "name": "National Grid",
+    "tracked": 1699953,
+    "out": 118,
+    "pct": 0.01
    },
    {
     "name": "New York State Electric & Gas",
@@ -27,22 +27,34 @@
     "pct": 0.04
    },
    {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 55,
-    "pct": 0.0
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315387,
+    "out": 70,
+    "pct": 0.02
    },
    {
-    "name": "National Grid",
-    "tracked": 1699953,
-    "out": 32,
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 56,
     "pct": 0.0
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 17,
+    "out": 16,
     "pct": 0.0
+   },
+   {
+    "name": "Otsego Electric Coop",
+    "tracked": 5163,
+    "out": 1,
+    "pct": 0.02
+   },
+   {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6709,
+    "out": 1,
+    "pct": 0.01
    },
    {
     "name": "Delaware County Electric Coop",
@@ -57,20 +69,8 @@
     "pct": 0.0
    },
    {
-    "name": "Otsego Electric Coop",
-    "tracked": 5163,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392173,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "Steuben Rural Electric Coop",
-    "tracked": 6708,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-22T15:07:30+00:00",
+  "source_updated": "2026-11-22T15:46:35+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
