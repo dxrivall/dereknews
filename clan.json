@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-21T23:52:30Z",
-  "fetched_at": "2026-11-21T23:52:30.288Z",
+  "updated_at": "2026-11-22T00:38:34Z",
+  "fetched_at": "2026-11-22T00:38:34.654Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -297,24 +297,24 @@
     ]
   },
   "currentWar": {
-    "state": "warEnded",
+    "state": "preparation",
     "teamSize": 5,
     "attacksPerMember": 2,
-    "preparationStartTime": "20261119T223602.000Z",
-    "startTime": "20261120T213602.000Z",
-    "endTime": "20261121T213602.000Z",
+    "preparationStartTime": "20261122T003239.000Z",
+    "startTime": "20261122T233239.000Z",
+    "endTime": "20261123T233239.000Z",
     "clan": {
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
-      "stars": 14,
-      "destructionPercentage": 98,
-      "attacks": 5,
+      "stars": 0,
+      "destructionPercentage": 0,
+      "attacks": 0,
       "members": [
         {
-          "tag": "#LQC8UJCVP",
-          "name": "lakersfan06",
-          "mapPosition": 5,
-          "th": 13,
+          "tag": "#P22YG2PJU",
+          "name": "boxing noah",
+          "mapPosition": 2,
+          "th": 18,
           "attackLimit": 2,
           "warAttacks": [],
           "attackCount": 0,
@@ -323,21 +323,12 @@
         {
           "tag": "#GL80JCCU2",
           "name": "not real 315",
-          "mapPosition": 3,
+          "mapPosition": 4,
           "th": 14,
           "attackLimit": 2,
-          "warAttacks": [
-            {
-              "stars": 3,
-              "pct": 100
-            },
-            {
-              "stars": 3,
-              "pct": 100
-            }
-          ],
-          "attackCount": 2,
-          "attacksComplete": true
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
         },
         {
           "tag": "#GUVC2U9Q",
@@ -345,23 +336,14 @@
           "mapPosition": 1,
           "th": 19,
           "attackLimit": 2,
-          "warAttacks": [
-            {
-              "stars": 2,
-              "pct": 90
-            },
-            {
-              "stars": 3,
-              "pct": 100
-            }
-          ],
-          "attackCount": 2,
-          "attacksComplete": true
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
         },
         {
           "tag": "#Q8YV0JYUG",
           "name": "Icy",
-          "mapPosition": 4,
+          "mapPosition": 5,
           "th": 14,
           "attackLimit": 2,
           "warAttacks": [],
@@ -371,56 +353,51 @@
         {
           "tag": "#P8VGJCLY",
           "name": "dxrival",
-          "mapPosition": 2,
+          "mapPosition": 3,
           "th": 17,
           "attackLimit": 2,
-          "warAttacks": [
-            {
-              "stars": 3,
-              "pct": 100
-            }
-          ],
-          "attackCount": 1,
+          "warAttacks": [],
+          "attackCount": 0,
           "attacksComplete": false
         }
       ]
     },
     "opponent": {
-      "name": "N.∆.Z.I",
-      "tag": "#2GGR8UPCY",
-      "stars": 15,
-      "destructionPercentage": 100,
-      "attacks": 5,
+      "name": "MEMY",
+      "tag": "#8PGG2CGR",
+      "stars": 0,
+      "destructionPercentage": 0,
+      "attacks": 0,
       "members": [
         {
-          "tag": "#GLY9JL0YP",
-          "name": "⚔️persia⚔️",
-          "mapPosition": 2,
-          "th": 16
-        },
-        {
-          "tag": "#GU0UR0YPL",
-          "name": "Josef St∆lin",
+          "tag": "#QGQGQ28V",
+          "name": "SeBarSkii",
           "mapPosition": 5,
-          "th": 9
+          "th": 13
         },
         {
-          "tag": "#YPJQ22GCY",
-          "name": "Rohmanz564",
-          "mapPosition": 3,
+          "tag": "#RJ90RCC9",
+          "name": "Mighty Nom",
+          "mapPosition": 1,
+          "th": 18
+        },
+        {
+          "tag": "#JJ89V2JC",
+          "name": "gue",
+          "mapPosition": 4,
           "th": 14
         },
         {
-          "tag": "#GY989P2YV",
-          "name": "◤ᴠɪᴋ◢",
-          "mapPosition": 1,
-          "th": 19
+          "tag": "#8LRV89PP",
+          "name": "Ab Naib",
+          "mapPosition": 3,
+          "th": 16
         },
         {
-          "tag": "#GJCQ9G2VG",
-          "name": "∆dolf H|tler",
-          "mapPosition": 4,
-          "th": 13
+          "tag": "#9UUPUU90P",
+          "name": "Natsu",
+          "mapPosition": 2,
+          "th": 18
         }
       ]
     }
