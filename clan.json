@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-22T05:40:03Z",
-  "fetched_at": "2026-11-22T05:40:03.393Z",
+  "updated_at": "2026-11-22T06:39:52Z",
+  "fetched_at": "2026-11-22T06:39:52.237Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -146,7 +146,7 @@
         "role": "admin",
         "th": 11,
         "expLevel": 76,
-        "trophies": 256,
+        "trophies": 284,
         "league": "Unranked",
         "leagueTier": "Archer League 9",
         "donations": 0,
