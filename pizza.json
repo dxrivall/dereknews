@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-22T07:14:03.148911+00:00",
+ "updated_at": "2026-11-22T08:20:09.878370+00:00",
  "level": 5,
  "label": "Normal Activity",
- "as_of": "Nov 22, 2026, 7:02 AM UTC",
+ "as_of": "Nov 22, 2026, 8:17 AM UTC",
  "venues": [
   {
    "name": "Extreme Pizza",
@@ -21,7 +21,7 @@
   },
   {
    "name": "Pizzato Pizza",
-   "vs_usual": -20
+   "vs_usual": -25
   },
   {
    "name": "Domino's Pizza",
