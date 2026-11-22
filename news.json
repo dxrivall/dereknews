@@ -1,13 +1,41 @@
 {
-  "updated_at": "2026-11-22T12:52:06.445152Z",
+  "updated_at": "2026-11-22T13:45:12.665780Z",
   "sections": {
     "top": [
       {
-        "title": "Air alert sounds in Kaliningrad as Finland tries to extinguish fire aboard Russian cargo ship",
+        "title": "Finnish rescuers battle fire aboard Russian cargo ship",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/russia-ukraine-war-kaliningrad-baltic-fleet-drones-14fecc1c55d601bb9f5b5fc8c9fb0b94",
-        "published": "2026-11-22T04:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.4NQINvG0iqPZF362VXiP2w&pid=News"
+        "link": "https://apnews.com/video/finnish-rescuers-battle-fire-aboard-russian-cargo-ship-6d101d5dfffc49fab66d2c39dfedaa0a",
+        "published": "2026-11-22T05:34:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.jwXWbBFP8v7F--2FVHuQNA&pid=News"
+      },
+      {
+        "title": "Jazz strive to return to win column vs. Mavericks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/jazz-strive-return-win-column-vs-mavericks--flm-2026-11-22/",
+        "published": "2026-11-22T05:26:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Andrei Svechnikov, Hurricanes aim to stay hot vs. Rangers",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/andrei-svechnikov-hurricanes-aim-stay-hot-vs-rangers--flm-2026-11-22/",
+        "published": "2026-11-22T05:10:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Chinese exchanges ease margin trading requirements to aid stock markets",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/chinese-exchanges-ease-margin-trading-requirements-aid-stock-markets-2026-11-22/",
+        "published": "2026-11-22T05:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.m7qDZ8n3GIXk0oFl6TeFvA&pid=News"
+      },
+      {
+        "title": "Anthropic’s record IPO raises hopes for a charitable windfall that has nonprofits preparing to scale",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/anthropic-ipo-philanthropy-044fd361f0a5899dcf6756205711aa13",
+        "published": "2026-11-22T04:59:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.aJwbbj5-66VAGBWpIhMm5g&pid=News"
       },
       {
         "title": "Okinawa celebrates restored Shuri Castle hall 7 years after fire",
@@ -78,37 +106,16 @@
         "link": "https://www.reuters.com/world/like-spacex-anthropic-ran-an-unusual-ipo-process-chafing-some-bankers-2026-11-22/",
         "published": "2026-11-22T03:03:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.X-0S6FHa0FS9gQvEopcGVQ&pid=News"
-      },
-      {
-        "title": "A California billionaire tax proposal faced a major setback despite big wins for progressives",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/california-billionaire-tax-proposition-40-8add946e01aa49964606cfbb0c727017",
-        "published": "2026-11-22T03:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.mQ2XGKK6de_ri430ojAjlw&pid=News"
-      },
-      {
-        "title": "F1 presses on with Qatar and Abu Dhabi finale despite rising Middle East tensions",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/formula-1-f1-las-vegas-qatar-abu-dhabi-14a805b50b5b0f4cdde4f71fcda5cf10",
-        "published": "2026-11-22T03:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.o4Y5sHb3HEPIcK18zPCGSg&pid=News"
-      },
-      {
-        "title": "Kyiv's restaurant owners brace for tough winter as war pressures mount",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/kyivs-restaurant-owners-brace-tough-winter-war-pressures-mount-2026-11-22/",
-        "published": "2026-11-22T02:05:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.O4QLbEOklmDZvhDi8DUoNQ&pid=News"
-      },
-      {
-        "title": "At least 14 people missing after Russian drone hit building in Kyiv region, Zelenskiy says",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/least-14-people-missing-after-russian-drone-hit-building-kyiv-region-zelenskiy-2026-11-22/",
-        "published": "2026-11-22T00:59:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.usr2LF37060cQRTj0-ncEQ&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "Stop washing your turkey. If you want a safe Thanksgiving, here's what to do instead",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/national/ap-stop-washing-your-turkey-if-you-want-a-safe-thanksgiving-heres-what-to-do-instead/",
+        "published": "2026-11-22T13:00:06Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b01979da997b3.79440515.jpeg?w=900"
+      },
       {
         "title": "Still quiet, mild Sunday ahead of a chillier week",
         "source": "LocalSYR",
@@ -171,16 +178,23 @@
         "link": "https://www.localsyr.com/news/local-news/two-cny-families-make-their-love-official-on-national-adoption-day/",
         "published": "2026-11-21T13:15:00Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/Screenshot-2026-11-20-160224.png?w=611"
-      },
-      {
-        "title": "SUNY Chancellor John King talks about SUNY ESF getting ranked as the '#1 Green College'",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/530-interviews/suny-chancellor-john-king-suny-esf/",
-        "published": "2026-11-21T06:00:12Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/John-King-interview-11-21-2026.jpg?w=900"
       }
     ],
     "nationwide": [
+      {
+        "title": "Jazz strive to return to win column vs. Mavericks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/jazz-strive-return-win-column-vs-mavericks--flm-2026-11-22/",
+        "published": "2026-11-22T05:26:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Andrei Svechnikov, Hurricanes aim to stay hot vs. Rangers",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/andrei-svechnikov-hurricanes-aim-stay-hot-vs-rangers--flm-2026-11-22/",
+        "published": "2026-11-22T05:10:00Z",
+        "thumb": ""
+      },
       {
         "title": "Correction or deeper reckoning? Investors seek signs US stock selling will abate",
         "source": "Reuters",
@@ -217,13 +231,6 @@
         "thumb": "http://www.bing.com/th?id=ONUT.o4Y5sHb3HEPIcK18zPCGSg&pid=News"
       },
       {
-        "title": "San Francisco braces for massive tides. Mayor urges residents to reconsider travel",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/extreme-weather-flooding-florida-california-a096b0e373fe6e9b4c4dcdde11c1b31b",
-        "published": "2026-11-21T14:32:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.cH3d66z8mzXgBsHt6cy3bQ&pid=News"
-      },
-      {
         "title": "Exclusive AP investigation exposes suffering of overlooked victims of romance scams",
         "source": "The Associated Press",
         "link": "https://www.ap.org/news-highlights/best-of-the-week/first-winner/2026/exclusive-ap-investigation-exposes-suffering-of-overlooked-victims-of-romance-scams/",
@@ -247,11 +254,25 @@
     ],
     "global": [
       {
-        "title": "Air alert sounds in Kaliningrad as Finland tries to extinguish fire aboard Russian cargo ship",
+        "title": "Finnish rescuers battle fire aboard Russian cargo ship",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/russia-ukraine-war-kaliningrad-baltic-fleet-drones-14fecc1c55d601bb9f5b5fc8c9fb0b94",
-        "published": "2026-11-22T04:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.4NQINvG0iqPZF362VXiP2w&pid=News"
+        "link": "https://apnews.com/video/finnish-rescuers-battle-fire-aboard-russian-cargo-ship-6d101d5dfffc49fab66d2c39dfedaa0a",
+        "published": "2026-11-22T05:34:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.jwXWbBFP8v7F--2FVHuQNA&pid=News"
+      },
+      {
+        "title": "Chinese exchanges ease margin trading requirements to aid stock markets",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/chinese-exchanges-ease-margin-trading-requirements-aid-stock-markets-2026-11-22/",
+        "published": "2026-11-22T05:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.m7qDZ8n3GIXk0oFl6TeFvA&pid=News"
+      },
+      {
+        "title": "Anthropic’s record IPO raises hopes for a charitable windfall that has nonprofits preparing to scale",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/anthropic-ipo-philanthropy-044fd361f0a5899dcf6756205711aa13",
+        "published": "2026-11-22T04:59:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.aJwbbj5-66VAGBWpIhMm5g&pid=News"
       },
       {
         "title": "Okinawa celebrates restored Shuri Castle hall 7 years after fire",
@@ -301,20 +322,6 @@
         "link": "https://www.reuters.com/world/like-spacex-anthropic-ran-an-unusual-ipo-process-chafing-some-bankers-2026-11-22/",
         "published": "2026-11-22T03:03:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.X-0S6FHa0FS9gQvEopcGVQ&pid=News"
-      },
-      {
-        "title": "Kyiv's restaurant owners brace for tough winter as war pressures mount",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/kyivs-restaurant-owners-brace-tough-winter-war-pressures-mount-2026-11-22/",
-        "published": "2026-11-22T02:05:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.O4QLbEOklmDZvhDi8DUoNQ&pid=News"
-      },
-      {
-        "title": "At least 14 people missing after Russian drone hit building in Kyiv region, Zelenskiy says",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/least-14-people-missing-after-russian-drone-hit-building-kyiv-region-zelenskiy-2026-11-22/",
-        "published": "2026-11-22T00:59:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.usr2LF37060cQRTj0-ncEQ&pid=News"
       }
     ]
   }
