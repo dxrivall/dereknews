@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-22T20:20:12Z",
-  "fetched_at": "2026-11-22T20:20:12.580Z",
+  "updated_at": "2026-11-22T21:08:48Z",
+  "fetched_at": "2026-11-22T21:08:48.053Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -605,10 +605,10 @@
     "startTime": "20261120T070000.000Z",
     "endTime": "20261123T070000.000Z",
     "state": "ongoing",
-    "capitalTotalLoot": 6790,
-    "raidsCompleted": 0,
-    "totalAttacks": 6,
-    "enemyDistrictsDestroyed": 2,
+    "capitalTotalLoot": 10606,
+    "raidsCompleted": 1,
+    "totalAttacks": 10,
+    "enemyDistrictsDestroyed": 4,
     "offensiveReward": 0,
     "defensiveReward": 0,
     "members": [
@@ -619,15 +619,17 @@
         "attackLimit": 5,
         "bonusAttackLimit": 1,
         "capitalResourcesLooted": 6790
-      }
-    ],
-    "skipped": [
+      },
       {
         "tag": "#Q828YPY8J",
         "name": "Albert",
-        "role": "coLeader",
-        "townHallLevel": 14
-      },
+        "attacks": 4,
+        "attackLimit": 5,
+        "bonusAttackLimit": 1,
+        "capitalResourcesLooted": 3816
+      }
+    ],
+    "skipped": [
       {
         "tag": "#QUYPQCCJC",
         "name": "Andrew the best",
@@ -725,9 +727,17 @@
         "townHallLevel": 16
       }
     ],
-    "partial": [],
+    "partial": [
+      {
+        "tag": "#Q828YPY8J",
+        "name": "Albert",
+        "attacks": 4,
+        "attackLimit": 6,
+        "capitalResourcesLooted": 3816
+      }
+    ],
     "rosterSize": 18,
-    "rosterAttacked": 1,
+    "rosterAttacked": 2,
     "rosterCaveat": true
   }
 }
