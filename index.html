@@ -1010,14 +1010,12 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxradio-mini-btn{appearance:none;border:1.5px solid rgba(255,255,255,.85);background:rgba(0,0,0,.35);color:#fff;font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:7px 14px;cursor:pointer;min-height:36px;white-space:nowrap}
 .wxradio-mini-status{font-size:11.5px;opacity:.92;margin:0;line-height:1.35;text-align:center;max-width:150px}
 .wxradio-mini-status:empty{display:none}
+.wxradio-mini-label{font-size:13px;font-weight:600;opacity:.92;text-align:center}
 .wxhero-main .temp{font-size:clamp(96px,30vw,148px);font-weight:200;line-height:.95;letter-spacing:-.02em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.45)}
 .wxhero-cond{text-align:center;padding-top:16px;flex:none}
 .wxhero-icon{font-size:clamp(50px,14vw,70px);line-height:1}
 .wxhero-condword{font-size:clamp(19px,5vw,24px);font-weight:300;margin-top:8px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.55)}
 .wxhero-feels{font-size:clamp(17px,4.6vw,21px);font-weight:300;text-align:left;margin:12px 0 0;color:#fff;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.55)}
-.wxhero-nexthour{font-size:clamp(17px,4.6vw,21px);font-weight:300;text-align:left;margin:5px 0 0;color:#fff;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.55)}
-.wxhero-nexthour:empty{display:none}
-.wxhero-meta{font-size:14px;font-weight:300;opacity:.92;text-align:left;margin:8px 0 0;color:#fff}
 .wxpair{display:block;margin:0}
 .snowday.slim{width:100%;max-width:680px;margin:26px auto 0;aspect-ratio:auto;flex-direction:row;justify-content:flex-start;text-align:left;gap:20px;padding:16px 20px;border-radius:18px}
 .snowday.slim .snowday-dialrow{margin:0;flex:none}
@@ -1070,9 +1068,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-weather .wxhero-cond{padding-top:8px;text-align:center}
 #view-weather .wxhero-icon{font-size:clamp(44px,12vw,60px)}
 #view-weather .wxhero-condword{font-weight:200}
-#view-weather .wxhero-hl{font-size:17px;font-weight:400;text-align:center;margin:10px 0 0;color:#fff;opacity:.95;text-shadow:0 1px 4px rgba(0,0,0,.55)}
-#view-weather .wxhero-feels,#view-weather .wxhero-nexthour,#view-weather .wxhero-meta{text-align:center}
-#view-weather .wxhero-feels{margin-top:4px}
+#view-weather .wxhero-hl{font-size:17px;font-weight:400;text-align:center;margin:4px 0 0;color:#fff;opacity:.95;text-shadow:0 1px 4px rgba(0,0,0,.55)}
+#view-weather .wxhero-feels{text-align:center}
+#view-weather .wxhero-feels{margin-top:10px}
 #view-weather .wx-precip60{border-radius:22px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.28);padding:14px 16px 12px}
 .wx-precip-chart{display:flex;align-items:flex-end;gap:8px;height:72px;justify-content:center}
 .wx-precip-col{flex:0 0 44px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
@@ -1101,11 +1099,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     <p class="drought-src">Source: <a href="https://dec.ny.gov/environmental-protection/water/water-quantity/drought" target="_blank" rel="noopener">NYSDEC</a></p>
   </div>
   <div class="wxhero-top">
-    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div><div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div></div></div>
-    <p class="wxhero-hl" id="wxHL"></p>
+    <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div></div></div>
     <p class="wxhero-feels" id="wxFeelsLine"></p>
-    <p class="wxhero-nexthour" id="wxNextHour"></p>
-    <p class="wxhero-meta" id="wxMeta"></p>
+    <p class="wxhero-hl" id="wxHL"></p>
   </div>
   <div class="wxerr" id="wxError">Live weather could not load. Check your connection and reload — no old forecast is shown in its place.</div>
   
@@ -1145,6 +1141,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     <button type="button" class="radar-cover" id="radarCover" aria-label="Radar is frozen — tap to interact with the map">🔒 Radar frozen — tap to explore</button>
   </div>
   <script>(function(){var c=document.getElementById('radarCover');if(!c)return;c.addEventListener('click',function(){c.hidden=true;});})();</script>
+  <div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><span class="wxradio-mini-label">NOAA Weather Radio · WXL31</span><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div>
   <button type="button" class="wxdetails-toggle" id="wxDetailsToggle" aria-expanded="false" aria-controls="wxDetailsPanel"><span class="wxsec">📋 Today&rsquo;s Details</span><span class="wxdetails-chev" aria-hidden="true">▾</span></button>
   <div class="wxdetails-panel" id="wxDetailsPanel" hidden>
   <div class="wdetails" id="wxDetails" aria-label="Today's weather details"></div>
@@ -3832,7 +3829,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     document.getElementById('wxIcon').innerHTML=ci[0];
     document.getElementById('wxTemp').textContent=Math.round(cur.temperature_2m)+'°';
     document.getElementById('wxDesc').textContent=ci[1];
-    document.getElementById('wxMeta').textContent='Wind '+Math.round(cur.wind_speed_10m)+' mph '+compass(cur.wind_direction_10m);var __fl=document.getElementById('wxFeelsLine');if(__fl)__fl.textContent='Feels like '+Math.round(cur.apparent_temperature)+'°';
+    var __fl=document.getElementById('wxFeelsLine');if(__fl)__fl.textContent='Feels like '+Math.round(cur.apparent_temperature)+'°';
     if(d.daily&&d.daily.temperature_2m_max&&d.daily.temperature_2m_max[0]!=null){var hlTxt='H:'+Math.round(d.daily.temperature_2m_max[0])+'° L:'+Math.round(d.daily.temperature_2m_min[0])+'°';var hlA=document.getElementById('homeWxHL');if(hlA)hlA.textContent=hlTxt;var hlB=document.getElementById('wxHL');if(hlB)hlB.textContent=hlTxt;var __fl2=document.getElementById('wxFeelsLine');var __hf=document.getElementById('homeWxFeelsLine');if(__hf)__hf.textContent='Feels like '+Math.round(cur.apparent_temperature)+'\u00B0 | H '+Math.round(d.daily.temperature_2m_max[0])+'\u00B0 | L '+Math.round(d.daily.temperature_2m_min[0])+'\u00B0';if(__fl2)__fl2.textContent='Feels like '+Math.round(cur.apparent_temperature)+'°';}
     // Today's Details grid
     var det='';
@@ -3878,7 +3875,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
         wHour.innerHTML=wxHourCurveSvg(heroCards)+heroCards.map(function(c){return c.html;}).join('');
       }
     }
-    var __nh=document.getElementById('wxNextHour');if(__nh&&typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';__nh.textContent=(__pp==null)?'':'Next hour '+__kind+' chance '+Math.round(__pp)+'%';/* Home widget: the next-hour chance rides on the Feels like | H | L line
+    if(typeof hi==='number'&&d.hourly&&d.hourly.precipitation_probability&&d.hourly.time){var __ni=Math.min(hi+1,d.hourly.time.length-1);var __pp=d.hourly.precipitation_probability[__ni];var __nc=d.hourly.weather_code?d.hourly.weather_code[__ni]:0;var __kind=(__nc===71||__nc===73||__nc===75||__nc===77||__nc===85||__nc===86)?'snow':(__nc===95||__nc===96||__nc===99)?'storm':((__nc>=51&&__nc<=67)||(__nc>=80&&__nc<=82))?'rain':'precip';/* Home widget: the next-hour chance rides on the Feels like | H | L line
    (homeWxFeelsLine, set above) instead of floating on its own under
    the condition icon. */if(__pp!=null){var __hf3=document.getElementById('homeWxFeelsLine');if(__hf3&&__hf3.textContent&&__hf3.textContent.indexOf('Next hour')<0)__hf3.textContent+=' \u00b7 Next hour '+__kind+' chance '+Math.round(__pp)+'%';}}
     applyWxBg(cur.weather_code,dayNow,ci[1],cur.time);
@@ -7230,7 +7227,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       return '<div class="wx-precip-chart" role="img" aria-label="Precipitation intensity for the next hour">'+cols+'</div><div class="wx-precip-cap">'+msg+'</div>';
     }
     var wet=idx.map(function(x){return amt(x)>0;});
-    if(!wet.some(function(w){return w;})){setHome('No precipitation expected in the next hour');setWxText('No precipitation expected in the next hour');return;}
+    if(!wet.some(function(w){return w;})){setHome('No precipitation expected in the next hour');if(wx)wx.style.display='none';return;}
     var firstWet=wet.indexOf(true);
     var label=kind(idx[firstWet]),inten=intens(idx[firstWet]),msg;
     if(wet[0]){
