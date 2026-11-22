@@ -1,14 +1,24 @@
 {
-  "updated_at": "2026-11-22T04:43:46.454163Z",
+  "updated_at": "2026-11-22T05:40:54.688301Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
     {
+      "title": "Water supply hack warning: FBI says threats are rising - KARK",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZDIxUUpjbEZ6RUVRT0Jnd29XTFlESDBUdkdoa1VxenpURmJSUlJtXzJ3WWl0aW1NMDR0UjNKYjJZY2VwbkZ1al9UaG82Vkh4Nm5rODh6UEVYMkRndjRMaWVMLVdOU0hqN3BZdmZXaGxoZFVkZG9fUjk2YUlZd0Q0OHZJcWlDS20wTE9zNDV4NHV3SGw0bW9qc3J3?oc=5",
+      "date": "2026-11-22T05:11:54Z"
+    },
+    {
       "title": "Attack from Iran on 2 US bases in Bahrain! Bahrain applies to UNSC - Haberler.com",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNekU3c0pNRjhVWGM2bk9rQWhfb2NZemN0cHA2bUpIUzdobzlMU1lBSUw5Rm5oTmxXR2FaWGRkdno0VUtxdDNVWDhtMTl0YXZkVGZrWE1sbVF1VWtxVEdLaWdseE0zU0FjRkNKcV9IbEJ6WFh4QjQxZ3h0MFVnSTgwWnNKcHVPLTQ4bGc?oc=5",
       "date": "2026-11-22T04:33:18Z"
+    },
+    {
+      "title": "Middle East latest: Bahrain says civilian industrial facility damaged in Iran attack - The National",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUHN2cW4tcHM0SnF6VTliWkZvYnptOHl1T19RT0p4TlZKNUd0VlNQd3hWR2lNbUh4UEN2cmZzZGNnTjRya1FJOV9WZmd3dkU1bmNJdFZwVEhIMmhhT0hkZkYtWVZ3QXU5R25JRTVNTVVpaFp6VHNQaW9rV3hsYVR1UjAwclM0NWhqZkE?oc=5",
+      "date": "2026-11-22T04:21:28Z"
     },
     {
       "title": "Bahrain Confirms Iranian Strike At Key Industrial Facility; Fire Sends Residents Running - The Times of India",
@@ -24,6 +34,11 @@
       "title": "Bahrain says an Iranian attack set a plant on fire, and two tankers were hit near Hormuz - astig.ph",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9vV3VSUHZCakdzc3Z3LXBuUnM3VWYtdjE0blVkbjlxS1hyalhwMGt0MjMyTHlndUk3ai1Xc0pYS0o0UU9qSWdsNWRXMGhrOXVxNTl5aG5PbGlySFgtYUlnd2RjVlhQOTY0SDZfd2hkWGFKSVlsRWZvOUoxSQ?oc=5",
       "date": "2026-11-22T03:36:20Z"
+    },
+    {
+      "title": "Portal holding sensitive records remains offline over Holidays - Court officials repeatedly blamed “Maintenance” despite cyberattack warning - Westside Seattle",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxORU9hN21pNkJqSVNMX0VvTUZ1djJ4ZUQxWDhGZm9CaGgtMXFCc2drR293Wk9Obi1BSkF2Ni1GcUhTRk1jU2hhUWRxcGZCbjlvcTgwdUZGbzZMQzkxR1Z5U1llNDRzNUhfd19Rbjk1ZFNVZy1oMFJzOThKSWpTWmNsRVhBNGJsY19Sc0wta3I3VEJJWFk1UkpIZ0dfTk9ub0JnYmRWVFI5cnY1aVRGNTJ0ejN3SlpEcUpYRVFWaHpLci1HSXNueEE?oc=5",
+      "date": "2026-11-22T03:10:42Z"
     },
     {
       "title": "Pezeshkian: Iran is engaged in 'silent' economic war - chinadailyhk",
@@ -1216,9 +1231,19 @@
       "date": "2026-11-20T04:29:06Z"
     },
     {
+      "title": "AI is changing what a data breach costs, but are organizations keeping up? - IBM",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBEcVBmb1JnZXZlR0loTjRENFVEazZCTmNlSVppVGdDajY5RmJpbFJKUllSNzlDdE9QdXR6WEQ4UWh6Nk9FcTVRc3ZxQ3dNOGl6YXhkdUNtYXRGSmE3MEE5Rld2NVZsMHRnZ21EV0E3UTFJdFBhVTFaZko4RVlBLUE?oc=5",
+      "date": "2026-11-20T04:08:21Z"
+    },
+    {
       "title": "Employer Solutions Staffing Group Data Breach Investigation: Edelson Lechtzin LLP Probes Class Action Claims After Employee Data Is Exposed - WBOC TV",
       "link": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdk9ZMmhGbUFtbDB2d1N2YkhSMHBFQ1REMV9HdlpBLUZPZUg2eGloTEhvbHIyMVBnektzY1pHeEU3eHV2SnNQU25TUVNicmFmc3ZuVElDb0lkbHlyZnBKYW5kYWhUZkwwZDljQjBFUF9oeDVzN3RKWjFBXzVVdExwZFBSZ0YyTEVUUFlZSmZDY2ZxLXY5RmRRSWd3dVRxZXdxZ2dwd2xSTjdFMjNmbGxqY1IwZDBudGNIZXg3VXJFX1RNYnd6Qno1bjFJaGdndjNOelNvOW9ZX0ZqNjBlcmtPYVhPejhZb1lzakxqZGFkZ01TYUhkMElwZjhkTjRxbHN4dDdOT0lMckJiUGEwejlHVDBVODg1RTJkUU5xMVduQ21Hc0FZSUZUQTVTYVNKNDBLYVlPbDJkd0ZsQVk?oc=5",
       "date": "2026-11-20T04:06:52Z"
+    },
+    {
+      "title": "618,000-Passenger Data Breach Forces Travelers to Ticket Counters - Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYnJkd2VibzFTOWcxVXFoR0RVeldEX3RlUzVaNXk1MGc0UkJ3VmR3X0lfQjJxS1k5TmZsYzBCeXB5ZlRGeG9LbU9PTDRPeGNFRkV4aG85SlNsdDU5QjRCejd5WUtJdVBxdFU1MGpVeHpSZ2dhN3BINHk3b2V5enMyMlo4ZXhLRFF3NlA5RXkxeTYyTTBMREhz?oc=5",
+      "date": "2026-11-20T04:03:00Z"
     },
     {
       "title": "The Atlantic Federal Credit Union Data Breach Investigation: Edelson Lechtzin LLP Probes Class Action Claims After Member Data Is Exposed - Carroll County Mirror-Democrat",
@@ -2046,6 +2071,11 @@
       "date": "2026-11-19T05:30:00Z"
     },
     {
+      "title": "Cyberattack hits the Commission - POLITICO.eu",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOd2xQX3pHTktzYlVNUjdPSmxhZzdNang1X3hBdEUyeU1wbXNjVC1ySUtnVkxjV0JRSm52ZVpfc192MVROQ1lLWlNGb3NXblo3UFBnWXAyZ21ub05aYTVmVkdVNDhYa1lJVkI3TnhjR3ZXaHZKRHNtN2NSMTRxMU15UGFfZ0lod244dU5DM3ZR?oc=5",
+      "date": "2026-11-19T05:26:00Z"
+    },
+    {
       "title": "Iran casts reports on ‘dual-use’ dams, ‘dirty bomb’ as pretext for renewed war - Amwaj.media",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOaTRNak4yTGpyYWFTSW9ZQmszTEdjZnFWWmhmbFpuT1FyUDNwMnQtV2lZUUsxeDRjUExNNzdxSGV0b2g5Yl9sNzNVWEowSWtqYm1oeVpPcXpyWVpvMzZtMGZCMTVERFFGbVREYm5qOUluckVJNkpLcktkSW95djBnbzVnSjllYTd1NzBESXpiRDg3NkJORXFnWUJwS2JWcjM4bGduRmlrbVBXTGxZbk1n?oc=5",
       "date": "2026-11-19T04:11:10Z"
@@ -2339,6 +2369,11 @@
       "title": "Farmers Supply Cooperative Data Breach Lawsuit Investigation - Claim Depot",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNzAza3Z0blhHNWZKcGc5WnZMWXd1Q0p5VldqSEFFS1F0Y1g0SFNCa0ZDMFVMT3hfNXNObGVHTFNRNTdWZmxQbnRxaXlWSldlTjAybXlaOUdYaVg4R0htMDN3RkpDQ2VhQjFLd2c1Q25jSmhKZzhsTkdFUExkSHVnaXFQQm92Yy1DWHRSc2F3?oc=5",
       "date": "2026-11-18T19:50:41Z"
+    },
+    {
+      "title": "What is a dirty bomb? Iran's reported Washington plot explained - The Jerusalem Post",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1TSjlycDNURlBPWkdTRm4wd09fbTVDMlFIRi1JZ2JOejNoT3NuOXl2WkFITGVNY3B6UmlqeHRQdTVHQUkxTU5SMGJGNHltWnN2RG1LNjFpdndTNTRodGVN?oc=5",
+      "date": "2026-11-18T19:49:14Z"
     },
     {
       "title": "San Francisco International Airport ground stop brings departing flights to a screeching halt - Yahoo",
@@ -3389,6 +3424,11 @@
       "title": "Washington Takes Threat of Iranian Dirty Bomb ‘Very Seriously’ - الحرة",
       "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5qSlpEa1JLWDQ1SkVXemQzUFNObW85aXFvX1pYeE9QOUg4ODd3MXlJaFlnRzNueXQyOGpCSWlRZzY4Zw?oc=5",
       "date": "2026-11-17T23:55:19Z"
+    },
+    {
+      "title": "Intelligence reports reveal Iran may be planning dirty bomb in Washington D.C. - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb2VVdzV0alA3bmg0RHZydEk4bHpiQlNVRVlwc2lHeWFYZjZlT2JwRjMyaDZfNkw1VjlBQWl5Z1FDRGtxU0ZyUU9iTUJYQjh0ZmNudFBDUElTLXRGcUZqaGJWUTJoeVVTaDMwNjJQeUlCUzRiQ0dMOThDV2toU3lZei16bEVvRjB1RkhVeTJPd0pJaWRnRTlOVUZSLTFucHJUNmt6M0N0QVpBUlFuMUEzUlhWRWJHZllKZGc?oc=5",
+      "date": "2026-11-17T23:46:00Z"
     },
     {
       "title": "Cyberattack hits 178 websites, spreading malware as major services falter - WKRC",
@@ -6641,6 +6681,11 @@
       "date": "2026-11-15T09:37:00Z"
     },
     {
+      "title": "What forced the US to ground all planes? A router switch, we now know - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNS3JsSXplR0tkbHNXWnB1TWlEZEFiTHRWaXNtWG54aUNRejRBdUtZb2xZNDg4VUhPOVB0VVBvUFNyODN1dFFLdFF3WUNtQ2pLMmlHcG8wUXhzYkRkSFBHT0hiZ0VfaGdsa1JCV0NiX0VxckozNVFPWEtTWjFfZFBmQ002U2Q2ODNRRUhZVFkzNVJzXzdZcmxEU2JSS0JvTW55RUVwRGtFTHR0dDZFZ2fSAbMBQVVfeXFMTkpzaTFRVmFaR3hVNUVkZkd6cmF0VmFJYnRhM29xUUdCLU0xZjhIc2tsaXpqWXk0emJOTzBmNllETGNIVGVCZ2Vvcng2SVhMc3FlMkg5ODBiZnhmZjlmS2t1U2c4UmtaaFBvSXZSSDIwcG1MeUFVTGdJbFM1eFMzLTJRX1M0Z2tRZ3RRRDdQb1JYa3FoUE96OEhUX0Q1aHNuMDRoQXpDVEJjclJxTUpzRVBuR28?oc=5",
+      "date": "2026-11-15T09:20:42Z"
+    },
+    {
       "title": "Iran attacks US base in Bahrain - Punch Newspapers",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9hWWVRQ3laRUN6cFFubkpmVHRHX1lKNWZjRWV0anYya1MyaERlUXFzNzlBa0pkNUdzZEpyQzRGTnZZQkVVSnhsLVh3cjlHNFBwMUJUaDdlOWp5dVd5Y19XRnhB?oc=5",
       "date": "2026-11-15T09:16:05Z"
@@ -6669,11 +6714,6 @@
       "title": "Bahrain issues first threat alerts since September as Iran says it attacked U.S. base - The Japan Times",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBIU1hvek5UekhCd1p5dmtXLWE0SkpCTzhTajNXWGo1TUViSXdHNnJLQVJxcHlJX3lWU1M2dnZHWUduOUNoWWhJellScWd0dTV3X2t2SWxzNVdJSGFTbFJOcm9WMWhnV29MS0g5aUNHdmItR0l1bGFDOF8wM3VhSnM?oc=5",
       "date": "2026-11-15T06:46:00Z"
-    },
-    {
-      "title": "Nationwide flight grounding disrupts football games this weekend - WCVB",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOc2ZDQ2FRZ2o3a3VFWFRZbk9OcEcxQkNnRDRYT2pZcXdEbnR2VHR3aWVxUzgzc3FuQnE5aDlsR0JqMm1TWE1vazdCbDkyb0x6aEVaWDNFeGlLcGYtWTdfZkNLQnZpeGRZU1ZqaXNieWd0ZjFIVWFUbUVNd0xGVF81YnpXOVRQM2RKdHdkTUJBTG1xSWs?oc=5",
-      "date": "2026-11-15T05:31:00Z"
     }
   ]
 }
