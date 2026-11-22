@@ -1,24 +1,18 @@
 {
- "updated_at": "2026-11-22T06:18:18.799540+00:00",
+ "updated_at": "2026-11-22T07:29:32.171621+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384882,
-  "out": 743,
-  "pct": 0.01,
-  "source_updated": "2026-11-22T06:06:39+00:00",
+  "out": 1512,
+  "pct": 0.02,
+  "source_updated": "2026-11-22T07:26:52+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 1699953,
-    "out": 697,
-    "pct": 0.04
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 918775,
-    "out": 39,
-    "pct": 0.0
+    "out": 1505,
+    "pct": 0.09
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -47,6 +41,12 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 918775,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-22T06:06:38+00:00",
+  "source_updated": "2026-11-22T07:26:51+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
