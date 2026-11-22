@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-22T11:19:19.356361+00:00",
+ "updated_at": "2026-11-22T11:57:45.484840+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384882,
   "out": 463,
   "pct": 0.01,
-  "source_updated": "2026-11-22T11:17:01+00:00",
+  "source_updated": "2026-11-22T11:46:22+00:00",
   "name": "New York",
   "utilities": [
    {
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-22T11:17:00+00:00",
+  "source_updated": "2026-11-22T11:46:20+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
