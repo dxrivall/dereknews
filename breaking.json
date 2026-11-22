@@ -1,11 +1,9 @@
 {
  "active": false,
  "severity": null,
- "updated_at": "2026-11-22T16:04:23.565972+00:00",
+ "updated_at": "2026-11-22T16:49:35.790737+00:00",
  "first_seen": null,
  "expires_at": null,
  "item": null,
- "cooldowns": {
-  "nationwide-ground-stop": "2026-11-15T16:37:23.754655+00:00"
- }
+ "cooldowns": {}
 }
