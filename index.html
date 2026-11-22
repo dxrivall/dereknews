@@ -894,11 +894,6 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .alert-instr{font-size:14px;line-height:1.6;margin:8px 0 0;color:#1d2a30;background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:10px 12px;white-space:pre-wrap}
 .alert-src{font-size:12px;color:#64748b;margin:8px 0 0}
 .wxalerts-err{margin:14px auto 0;max-width:680px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:8px;padding:10px 12px;text-align:center;font-size:13px;line-height:1.5;display:none}
-.drought-note{margin:14px auto 0;max-width:680px;text-align:left;background:#fff;color:#1d2a30;border-left:7px solid #d97706;border-radius:10px;padding:14px 16px 16px;box-shadow:var(--shadow)}
-.drought-note h3{font-size:18px;font-weight:700;line-height:1.25;margin:0;color:#92400e}
-.drought-note p{font-size:14px;line-height:1.6;margin:8px 0 0;color:#334155}
-.drought-note .drought-src{font-size:12px;color:#64748b;margin:8px 0 0}
-.drought-note .drought-src a{color:#0b46d6;text-decoration:underline}
 .wxsec{font-size:19px;text-align:left;margin:38px 0 16px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .hourly{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scroll-snap-type:none}
 .hour{flex:0 0 auto;scroll-snap-align:start;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 14px;text-align:center;min-width:86px;color:#fff}
@@ -1043,7 +1038,6 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-weather .day,#view-weather .hour,#view-weather .wdet{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.28)}
 #view-weather .wx-hero-hourly .hour,#view-weather .days .day{scroll-snap-align:start}
 #view-weather .wx-hero-hourly,#view-weather .days{scroll-snap-type:x mandatory}
-#view-weather .drought-note{border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.22)}
 #view-weather .radar{border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.28)}
 #view-weather .storm-card{border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.22)}
 #view-weather .wxdetails-toggle .wxsec{margin:0}
@@ -1055,9 +1049,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 .wx-hour-curve{position:absolute;top:2px;left:0;pointer-events:none}
 #view-weather .wx-hero-hourly .hour{margin-top:52px}
 #view-weather .day,#view-weather .hour,#view-weather .wdet,#view-weather .wxtrend,#view-weather .outage,#view-weather .wxday-detail,#view-weather .snowday.slim{border-radius:24px;box-shadow:0 12px 32px rgba(0,0,0,.24)}
-.day .wx-range{position:relative;height:4px;border-radius:99px;background:rgba(255,255,255,.28);margin:9px 10px 0}
+.day .wx-range{position:relative;height:4px;border-radius:99px;background:rgba(0,0,0,.35);margin:9px 10px 0}
 .day .wx-rangefill{position:absolute;top:0;bottom:0;border-radius:99px}
-.day .wx-rangemark{position:absolute;top:50%;width:8px;height:8px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 0 2px rgba(0,0,0,.3)}
+.day .wx-rangemark{position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 0 1px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.3)}
 #view-weather .day .d{font-size:13px;font-weight:600;letter-spacing:.02em}
 #view-weather .day .hi{font-size:16px}
 #view-weather .day .lo{font-size:15px}
@@ -1096,11 +1090,6 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     <div id="wxAlertsList"></div>
   </div>
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
-  <div class="drought-note" id="droughtNote" role="note">
-    <h3>Drought Watch — Onondaga County</h3>
-    <p>Onondaga County is under a Drought Watch from the NYS Department of Environmental Conservation (issued Nov 19, 2026) — low rainfall and declining stream and groundwater levels. No mandatory restrictions; conserve water where you can.</p>
-    <p class="drought-src">Source: <a href="https://dec.ny.gov/environmental-protection/water/water-quantity/drought" target="_blank" rel="noopener">NYSDEC</a></p>
-  </div>
   <div class="wxhero-top">
     <div class="wxhero-main"><div class="temp" id="wxTemp">&mdash;&deg;</div><div class="wxhero-cond"><div class="wxhero-icon" id="wxIcon" aria-hidden="true">🌡️</div><div class="wxhero-condword" id="wxDesc">Loading live weather…</div></div></div>
     <p class="wxhero-feels" id="wxFeelsLine"></p>
@@ -3755,6 +3744,10 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
      interpolated): a day's range bar runs from its low's colour to its
      high's colour, so the gradient reflects the actual temperatures. */
   function wxTempColor(f){var A=[[0,222],[32,200],[50,160],[65,95],[75,55],[85,25],[95,0]];if(f<=A[0][0])return 'hsl('+A[0][1]+',85%,55%)';for(var i=1;i<A.length;i++){if(f<=A[i][0]){var p=(f-A[i-1][0])/(A[i][0]-A[i-1][0]);var h=A[i-1][1]+(A[i][1]-A[i-1][1])*p;return 'hsl('+Math.round(h)+',85%,55%)';}}return 'hsl(0,85%,55%)';}
+  /* Softer variant for the daily range bars (Apple-quiet): same hue
+     anchors as wxTempColor, lower saturation and a touch lighter — the
+     85% version is too loud on the dark day cards. */
+  function wxTempColorSoft(f){var A=[[0,222],[32,200],[50,160],[65,95],[75,55],[85,25],[95,0]];if(f<=A[0][0])return 'hsl('+A[0][1]+',55%,62%)';for(var i=1;i<A.length;i++){if(f<=A[i][0]){var p=(f-A[i-1][0])/(A[i][0]-A[i-1][0]);var h=A[i-1][1]+(A[i][1]-A[i-1][1])*p;return 'hsl('+Math.round(h)+',55%,62%)';}}return 'hsl(0,55%,62%)';}
   function wxTrendChartSvg(hi,lo,pp,days){
     var W=680,H=232,PL=18,PR=18,PT=28,PB=30,PW=W-PL-PR,PH=H-PT-PB,n=hi.length;
     var yMin=Math.min.apply(null,lo)-4,yMax=Math.max.apply(null,hi)+4,yRg=(yMax-yMin)||1;
@@ -3893,7 +3886,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       var dLo=Math.round(d.daily.temperature_2m_min[i]),dHi=Math.round(d.daily.temperature_2m_max[i]);
       var bL=Math.max(0,Math.min(100,(dLo-gLo)/gRg*100)),bW=Math.max(6,Math.min(100-bL,(dHi-dLo)/gRg*100));
       var curMark='';if(i===0&&cur&&cur.temperature_2m!=null){var cm=Math.max(0,Math.min(100,(Math.round(cur.temperature_2m)-gLo)/gRg*100));curMark='<span class="wx-rangemark" style="left:'+cm.toFixed(1)+'%"></span>';}
-      html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div><div class="wx-range"><span class="wx-rangefill" style="left:'+bL.toFixed(1)+'%;width:'+bW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColor(dLo)+','+wxTempColor(dHi)+')"></span>'+curMark+'</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'<div class="tap-hint">Tap for detail</div></button>';
+      html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div><div class="wx-range"><span class="wx-rangefill" style="left:'+bL.toFixed(1)+'%;width:'+bW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColorSoft(dLo)+','+wxTempColorSoft(dHi)+')"></span>'+curMark+'</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'<div class="tap-hint">Tap for detail</div></button>';
     });
     document.getElementById('wxDays').innerHTML=html;
     renderWxTrend(d);
