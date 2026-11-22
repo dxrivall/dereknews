@@ -1,5 +1,11 @@
 {
- "updated_at": "2026-11-22T20:44:06.491330+00:00",
+ "updated_at": "2026-11-22T21:27:55.002339+00:00",
  "source": "CNY Central (cnycentral.com) school closings, fetched server-side",
- "closings": []
+ "closings": [
+  {
+   "name": "St. Luke's Adult Day Care",
+   "status": "Closed",
+   "detail": "Medical"
+  }
+ ]
 }
