@@ -494,7 +494,7 @@ body>.teams-overlay{z-index:2000}
    Weather-hero only. The old .wx-pin element is removed from the hero
    markup; the rule below is a belt-and-braces hide if it ever returns. */
 #view-weather .wx-pin{display:none!important}
-.wx-locbar-wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin:-16px auto 4px;z-index:8}
+.wx-locbar-wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin:0 auto 4px;z-index:8}
 .wx-locbar{appearance:none;display:inline-flex;align-items:center;gap:8px;max-width:100%;background:rgba(6,18,26,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.55);color:#fff;font:inherit;font-size:18px;font-weight:600;line-height:1.2;border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.28);text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .wx-locbar .dn-loc-ic{flex:none;opacity:.95}
 .wx-locbar .wxloc{font-size:18px;font-weight:600;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 3px rgba(0,0,0,.5)}
@@ -978,7 +978,9 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxpair-right .wxsec{margin:0 0 12px;font-size:16px}
 .wxpair .snowday{width:100%;max-width:none;margin:0}
 .radar.seamless{position:relative;border:0;border-radius:18px;background:transparent;box-shadow:none;margin-top:26px}
-.radar-cover{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;border:0;border-radius:18px;background:rgba(6,18,26,.45);color:#fff;font:inherit;font-size:15px;font-weight:700;cursor:pointer;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.radar-cover{position:absolute;inset:0;z-index:2;display:block;border:0;border-radius:18px;background:transparent;color:transparent;font-size:0;cursor:pointer;-webkit-backdrop-filter:none;backdrop-filter:none}
+.radar-confirm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(6,18,26,.88);color:#fff;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;pointer-events:none;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.radar-confirm[hidden]{display:none}
 .radar-cover[hidden]{display:none}
 .radar.seamless iframe{border-radius:18px;height:340px}
 .wxloc-controls{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin:12px auto 0}
@@ -1049,9 +1051,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 .wx-hour-curve{position:absolute;top:2px;left:0;pointer-events:none}
 #view-weather .wx-hero-hourly .hour{margin-top:52px}
 #view-weather .day,#view-weather .hour,#view-weather .wdet,#view-weather .wxtrend,#view-weather .outage,#view-weather .wxday-detail,#view-weather .snowday.slim{border-radius:24px;box-shadow:0 12px 32px rgba(0,0,0,.24)}
-.day .wx-range{position:relative;height:4px;border-radius:99px;background:rgba(0,0,0,.35);margin:9px 10px 0}
-.day .wx-rangefill{position:absolute;top:0;bottom:0;border-radius:99px}
-.day .wx-rangemark{position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 0 1px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.3)}
+/* Daily temp range bar removed (Derek, Nov 22, 2026) — hi/lo numbers stay. */
 #view-weather .day .d{font-size:13px;font-weight:600;letter-spacing:.02em}
 #view-weather .day .hi{font-size:16px}
 #view-weather .day .lo{font-size:15px}
@@ -1128,14 +1128,8 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     <div class="wxtrend-legend" aria-hidden="true"><span><span class="wxtrend-dot" style="background:#ff7a70"></span>High</span><span><span class="wxtrend-dot" style="background:#3ce882"></span>Low</span><span><span class="wxtrend-barswatch"></span>Precip chance</span></div>
     <div class="wxtrend-stats" id="wxTrendStats"></div>
   </section>
-    <div class="radar seamless">
-    <iframe id="wxRadar" title="Live weather map" src="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" loading="lazy" allowfullscreen></iframe>
-    <button type="button" class="radar-cover" id="radarCover" aria-label="Radar is frozen — tap to interact with the map">🔒 Radar frozen — tap to explore</button>
-  </div>
-  <script>(function(){var c=document.getElementById('radarCover');if(!c)return;c.addEventListener('click',function(){c.hidden=true;});})();</script>
-  <div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><span class="wxradio-mini-label">NOAA Weather Radio · WXL31</span><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div>
-  <button type="button" class="wxdetails-toggle" id="wxDetailsToggle" aria-expanded="false" aria-controls="wxDetailsPanel"><span class="wxsec">📋 Today&rsquo;s Details</span><span class="wxdetails-chev" aria-hidden="true">▾</span></button>
-  <div class="wxdetails-panel" id="wxDetailsPanel" hidden>
+  <button type="button" class="wxdetails-toggle" id="wxDetailsToggle" aria-expanded="true" aria-controls="wxDetailsPanel"><span class="wxsec">📋 Today&rsquo;s Details</span><span class="wxdetails-chev" aria-hidden="true">▾</span></button>
+  <div class="wxdetails-panel" id="wxDetailsPanel">
   <div class="wdetails" id="wxDetails" aria-label="Today's weather details"></div>
   </div>
   <script>
@@ -1149,6 +1143,14 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     });
   })();
   </script>
+    <div class="radar seamless">
+    <iframe id="wxRadar" title="Live weather map" src="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" loading="lazy" allowfullscreen></iframe>
+    <button type="button" class="radar-cover" id="radarCover" aria-label="Radar map — tap once to confirm, then tap again to move the map"></button>
+    <span class="radar-confirm" id="radarConfirm" hidden>Tap again to move the map</span>
+  </div>
+  <script>(function(){var c=document.getElementById('radarCover'),m=document.getElementById('radarConfirm');if(!c)return;var armed=false,t=null;function disarm(){armed=false;if(m)m.hidden=true;c.setAttribute('aria-label','Radar map — tap once to confirm, then tap again to move the map');if(t){clearTimeout(t);t=null;}}c.addEventListener('click',function(){if(!armed){armed=true;if(m)m.hidden=false;c.setAttribute('aria-label','Tap again to move the map');t=setTimeout(disarm,4000);return;}disarm();c.hidden=true;});})();</script>
+  <div class="wxradio-mini"><button class="wxradio-mini-btn" id="wxRadioBtn" type="button" aria-pressed="false" aria-label="Play NOAA Weather Radio — WXL31 Syracuse"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><span class="wxradio-mini-label">NOAA Weather Radio · WXL31</span><p class="wxradio-mini-status" id="wxRadioStatus" role="status"></p><audio id="wxRadioAudio" preload="none" src="https://wxradio.org/NY-Syracuse-WXL31"></audio></div>
+
   <section class="snowday slim" id="snowDayWidget" aria-label="Snow day calculator">
     <div class="snowday-dialrow"><div class="snowday-dial" id="snowDayDial"><svg viewBox="0 0 200 200" role="presentation" aria-hidden="true"><defs><linearGradient id="snowDialGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="55%" stop-color="#a5f3fc"/><stop offset="100%" stop-color="#ffffff"/></linearGradient></defs><circle class="ring-bg" cx="100" cy="100" r="88"></circle><circle class="ring-fg" id="snowDayDialRing" cx="100" cy="100" r="88" stroke-dasharray="552.9" stroke-dashoffset="552.9"></circle></svg><div class="snowday-pct" id="snowDayPct">&mdash;</div></div></div>
     <div class="snowday-text"><div class="snowday-label" id="snowDayLabel">Snow Day Chance</div><p class="snowday-line" id="snowDayLine">Checking the live forecast&hellip;</p>
@@ -1296,9 +1298,11 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-news .nfeed-thumb,#view-sports .nfeed-thumb,#view-weather .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
 #view-news .nfeed-more{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:13px 2px 4px;cursor:pointer;min-height:44px}
 #view-news .nfeed-refresh-row{display:flex;align-items:center;gap:10px;margin:10px 0 0}
-#view-news .nfeed-refresh{appearance:none;border:1.5px solid var(--border);background:var(--panel);color:var(--ink);font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:7px 14px;cursor:pointer}
+#view-news .nfeed-refresh{appearance:none;border:1.5px solid var(--border);background:var(--panel);color:var(--ink);font:inherit;font-size:18px;font-weight:700;border-radius:50%;width:36px;height:36px;min-height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1}
 #view-news .nfeed-refresh:active{opacity:.7}
 #view-news .nfeed-refresh:disabled{opacity:.55;cursor:default}
+#view-news .nfeed-refresh.spin{animation:nfeedSpin .8s linear infinite}
+@keyframes nfeedSpin{to{transform:rotate(360deg)}}
 #view-news .nfeed-more:active{opacity:.7}
 #view-news .nfeed-updated,#view-sports .nfeed-updated,#view-weather .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
 #view-news .nfeed-updated:empty,#view-sports .nfeed-updated:empty,#view-weather .nfeed-updated:empty{display:none}
@@ -1383,6 +1387,8 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-news .et-prep-list{list-style:none;margin:8px 0 0;padding:0}
 #view-news .et-prep-list li{font-size:14px;line-height:1.6;color:var(--ink);padding:8px 0;border-bottom:1px solid var(--border)}
 #view-news .et-prep-list li:last-child{border-bottom:0}
+/* How to prepare list hidden for now (Derek, Nov 22, 2026) — markup kept so it can come back. */
+#view-news .et-prep{display:none}
 #view-news .et-headlines .et-h{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin:0 0 4px}
 #view-news .et-hl{display:block;padding:11px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
 #view-news .et-hl:last-child{border-bottom:0}
@@ -1448,7 +1454,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
      the header to expand/collapse. Headlines still load and refresh
      exactly as before — only the presentation changes. The count
      updates as headlines render. The How to prepare list below is
-     always visible and is not touched. */
+     hidden for now (Nov 22, 2026) — see the .et-prep rule. */
   (function(){
     var b=document.getElementById('etHeadlinesToggle'),p=document.getElementById('etRiskHeadlinesList');
     if(!b||!p)return;
@@ -1471,7 +1477,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
       <button type="button" class="nchip" data-nfeed="nationwide" role="tab" aria-selected="false">Nationwide</button>
       <button type="button" class="nchip" data-nfeed="global" role="tab" aria-selected="false">Global</button>
     </div>
-    <div class="nfeed-refresh-row"><button type="button" class="nfeed-refresh" id="newsFeedRefresh">↻ Refresh feed</button></div>
+    <div class="nfeed-refresh-row"><button type="button" class="nfeed-refresh" id="newsFeedRefresh" aria-label="Refresh feed">↻</button></div>
     <p class="nnote nfeed-note" id="newsFeedNote">Straight news only — AP, Reuters &amp; wires. No opinion and no partisan quote pieces.</p>
     <p class="lstatus" id="newsFeedStatus">Loading top stories…</p>
     <div class="nfeed" id="newsFeedList"></div>
@@ -2103,8 +2109,13 @@ body.on-sports footer{color:#d8b8b2!important}
     <button type="button" class="sport-row" data-sport="hockey"><span class="emoji">🏒</span><span class="sport-main"><b>Hockey</b><span class="sport-sub">All NHL teams</span></span><span class="sport-live" data-live="nhl"></span><span class="dn-dot" data-sportdot="hockey" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="ufc"><span class="emoji">👊</span><span class="sport-main"><b>UFC</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="boxing"><span class="emoji">🥊</span><span class="sport-main"><b>Boxing</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
-    <button type="button" class="sport-row" data-sport="betsim"><span class="emoji">🎲</span><span class="sport-main"><b>Parlays</b><span class="sport-sub">Bet Simulator</span></span></button>
   </div>
+  <section class="acard" id="propsCheatSheet" aria-label="Player Props cheat sheet">
+  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <p class="astatus" id="propsCheatStatus">Loading today&rsquo;s player props&hellip;</p>
+  <div id="propsCheatList"></div>
+  <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </section>
   <section class="acard" aria-label="Sports news">
   <div class="ahead"><h2>📰 Sports News</h2></div>
   <p class="astatus" id="sportsNewsStatus">Loading sports news…</p>
@@ -2327,36 +2338,6 @@ body.on-sports footer{color:#d8b8b2!important}
   <a class="team-btn" href="https://www.dazn.com/en-US/news/boxing/pacheco-fulghum-rws-how-to-watch-combat-sports-weekend-t3r/qvrum1kxeuu11np12ht34vb2c" target="_blank" rel="noopener">This weekend&rsquo;s fights on DAZN &rarr;</a>
   </section>
   </div>
-  <div class="sport-panel" id="sport-betsim" hidden data-pick="">
-  <button type="button" class="back-btn" data-sport-back>&larr; Back to Sports</button>
-  <div class="betsport-picker" role="group" aria-label="Pick a sport">
-    <p class="betsport-pick-label">🎟️ All sports — tap one to filter</p>
-    <div class="betsport-btns"><button type="button" class="betsport-btn" data-betsport="all" aria-pressed="true">All</button><button type="button" class="betsport-btn" data-betsport="nba" aria-pressed="false">🏀 NBA<span class="dn-dot" data-betdot="nba" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nfl" aria-pressed="false">🏈 NFL<span class="dn-dot" data-betdot="nfl" aria-hidden="true"></span></button><button type="button" class="betsport-btn" data-betsport="nhl" aria-pressed="false">🏒 NHL<span class="dn-dot" data-betdot="nhl" aria-hidden="true"></span></button></div>
-  </div>
-  <style>
-  #liveParlaySection[hidden]{display:none!important}
-  .live-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff;animation:livePulse 1.6s ease-in-out infinite}
-  @keyframes livePulse{0%,100%{opacity:1}50%{opacity:.3}}
-  </style>
-  <section class="acard" id="liveParlaySection" hidden aria-label="Live Parlay — real-odds model from games in progress">
-  <div class="ahead"><h2>🔴 Live Parlay</h2><span class="league-pill" style="background:#b42318"><span class="live-pulse" aria-hidden="true"></span> LIVE</span></div>
-  <div id="liveParlayList"></div>
-  <p class="astatus" id="liveParlayStamp" style="font-size:12px"></p>
-  </section>
-  <section class="acard" aria-label="Parlays of the Day — featured simulated parlays from today's games only">
-  <div class="ahead"><h2>🎟️ Parlays of the Day</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" id="parlayStatus">Loading parlays&hellip;</p>
-  <div id="parlayList"></div>
-  <p class="asrc" id="parlayStamp">Legs: ESPN / DraftKings moneylines &amp; SIM props from live ESPN season averages &middot; Today&rsquo;s games only — a sport with no game today gets no parlays</p>
-  </section>
-  <section class="acard" aria-label="Winning parlays the simulator recommended">
-  <div class="ahead"><h2 id="winnersTitle">🏆 Yesterday's Winners</h2><span class="league-pill">SIMULATION</span></div>
-  <p class="astatus" id="winnersStatus">Checking yesterday's slips…</p>
-  <div id="winnersList"></div>
-  <p class="asrc">Yesterday's winning slips, saved on this device when the simulator built them — checked against the final scores. Per-visitor only.</p>
-  </section>
-  </div>
-
 </main>
 <!-- FAITH / RELIGION -->
 <main class="wrap view" id="view-faith">
@@ -3747,7 +3728,6 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   /* Softer variant for the daily range bars (Apple-quiet): same hue
      anchors as wxTempColor, lower saturation and a touch lighter — the
      85% version is too loud on the dark day cards. */
-  function wxTempColorSoft(f){var A=[[0,222],[32,200],[50,160],[65,95],[75,55],[85,25],[95,0]];if(f<=A[0][0])return 'hsl('+A[0][1]+',55%,62%)';for(var i=1;i<A.length;i++){if(f<=A[i][0]){var p=(f-A[i-1][0])/(A[i][0]-A[i-1][0]);var h=A[i-1][1]+(A[i][1]-A[i-1][1])*p;return 'hsl('+Math.round(h)+',55%,62%)';}}return 'hsl(0,55%,62%)';}
   function wxTrendChartSvg(hi,lo,pp,days){
     var W=680,H=232,PL=18,PR=18,PT=28,PB=30,PW=W-PL-PR,PH=H-PT-PB,n=hi.length;
     var yMin=Math.min.apply(null,lo)-4,yMax=Math.max.apply(null,hi)+4,yRg=(yMax-yMin)||1;
@@ -3884,9 +3864,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       var dt=new Date(t+'T12:00:00'), di=info(d.daily.weather_code[i]);
       var ppmax=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[i]!=null)?Math.round(d.daily.precipitation_probability_max[i]):null;
       var dLo=Math.round(d.daily.temperature_2m_min[i]),dHi=Math.round(d.daily.temperature_2m_max[i]);
-      var bL=Math.max(0,Math.min(100,(dLo-gLo)/gRg*100)),bW=Math.max(6,Math.min(100-bL,(dHi-dLo)/gRg*100));
-      var curMark='';if(i===0&&cur&&cur.temperature_2m!=null){var cm=Math.max(0,Math.min(100,(Math.round(cur.temperature_2m)-gLo)/gRg*100));curMark='<span class="wx-rangemark" style="left:'+cm.toFixed(1)+'%"></span>';}
-      html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div><div class="wx-range"><span class="wx-rangefill" style="left:'+bL.toFixed(1)+'%;width:'+bW.toFixed(1)+'%;background:linear-gradient(90deg,'+wxTempColorSoft(dLo)+','+wxTempColorSoft(dHi)+')"></span>'+curMark+'</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'<div class="tap-hint">Tap for detail</div></button>';
+      html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'<div class="tap-hint">Tap for detail</div></button>';
     });
     document.getElementById('wxDays').innerHTML=html;
     renderWxTrend(d);
@@ -4667,6 +4645,12 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   /* Current NBA/NHL season END year for the ESPN core API (the
      2026-27 season is year 2027): from July on it is next year. */
   function seasonEndYear(){var q=todayStr().split('-');var y=+q[0],m=+q[1];return m>=7?y+1:y;}
+  /* Bet Simulator UI off (Derek, Nov 22, 2026): the betting UI is
+     replaced by a Player Props cheat sheet. While this is on, the
+     slip-building code never runs and nothing is saved to
+     localStorage — the model data loaders below still feed the
+     cheat sheet. */
+  window.__BETSIM_OFF=true;
   var LEAGUES=[
     {key:'nba',label:'🏀 NBA',path:'basketball/nba',days:[0,1,2],cap:14,avgMode:'perGame',cats:[['Points','Pts'],['Rebounds','Reb'],['Assists','Ast']]},
     {key:'nfl',label:'🏈 NFL',path:'football/nfl',days:[0,1,2,3,4,5,6],cap:16,avgMode:'total',cats:[['Passing Yards','Pass Yds'],['Rushing Yards','Rush Yds'],['Receiving Yards','Rec Yds']]},
@@ -5749,6 +5733,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   var DN_SLIPS_KEY='dnBetSimSlips';
   function dnLoadSavedSlips(){try{var v=JSON.parse(localStorage.getItem(DN_SLIPS_KEY)||'{}');return (v&&typeof v==='object')?v:{};}catch(e){return {};}}
   function dnSaveLeagueSlips(lg,parlays){
+    if(window.__BETSIM_OFF)return;
     if(!parlays||!parlays.length)return;
     try{
       var all=dnLoadSavedSlips(),tk=todayStr();
@@ -5763,6 +5748,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     }catch(e){}
   }
   function dnRenderWinners(){
+    if(window.__BETSIM_OFF)return;
     var st=document.getElementById('winnersStatus'),list=document.getElementById('winnersList'),ttl=document.getElementById('winnersTitle');
     if(!st||!list)return;
     function quiet(){st.textContent='No winning parlays to feature yet — check back tomorrow.';list.innerHTML='';}
@@ -5801,6 +5787,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
 
   function renderParlays(res){
+    if(window.__BETSIM_OFF)return Promise.resolve();
     var list=document.getElementById('parlayList'),pst=document.getElementById('parlayStatus');
     if(!list)return Promise.resolve();
     var tk=todayStr();
@@ -5900,6 +5887,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   var loading=false;
   function render(){
+    if(window.__BETSIM_OFF)return;
     if(loading)return;loading=true;
     var st=document.getElementById('betSimStatus'),box=document.getElementById('betSimGames');
     if(st)st.textContent='Simulating games from live data…';
@@ -5968,7 +5956,48 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){navigator.clipboard.writeText(txt).then(done).catch(function(){fbCopy(txt);done();});}
     else{fbCopy(txt);done();}
   });
-  render();
+  /* ---- Player Props cheat sheet (Nov 22, 2026) --------------------
+     Betting UI is off — this is the replacement: a cheat sheet only.
+     Top player props by model hit % (player, prop line, model %).
+     No slips, no parlay building, no Copy/Playbook buttons, no
+     WON/LOST tracking, no localStorage writes. Uses the same model
+     data loaders as the old simulator (loadLeague + enrichModel +
+     modelPropProb), so injured/blocked players are still excluded. */
+  function renderPropsCheat(){
+    var box=document.getElementById('propsCheatList'),st=document.getElementById('propsCheatStatus');
+    if(!box)return;
+    Promise.all(LEAGUES.map(loadLeague)).then(function(res){
+      var jobs=[];
+      LEAGUES.forEach(function(lg,li){if(lg.key==='nba'||lg.key==='nhl')jobs.push(enrichModel(lg,res[li]||[]));});
+      return Promise.all(jobs).then(function(){return res;});
+    }).then(function(res){
+      var h='',any=false;
+      LEAGUES.forEach(function(lg,li){
+        var games=res[li]||[];
+        var seen={},rows=[];
+        games.forEach(function(g){
+          (g.allProps||[]).forEach(function(pr){
+            var k=pr.name+'-'+pr.label;if(seen[k])return;seen[k]=1;
+            rows.push({pr:pr,prob:modelPropProb(pr).prob,game:g});
+          });
+        });
+        rows.sort(function(a,b){return b.prob-a.prob;});
+        rows=rows.slice(0,8);
+        if(!rows.length)return;
+        any=true;
+        h+='<p class="brk-conf">'+lg.label+'</p>';
+        rows.forEach(function(r){
+          var pr=r.pr,g=r.game;
+          h+='<div class="parlay-leg"><span><b>'+esc(pr.name)+'</b> — Over '+esc(String(pr.line))+' '+esc(pr.label)+'<span class="p-sub">'+esc(g.away.abbr)+' at '+esc(g.home.abbr)+' \u00b7 '+esc(fmtWhen(g.date))+' \u00b7 season avg '+esc(String(pr.avg))+'/gm</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
+        });
+      });
+      box.innerHTML=h;
+      if(st)st.textContent=any?'Top props by model hit % \u2014 today\u2019s games only.':'No player props could be priced from today\u2019s games right now.';
+    }).catch(function(){
+      if(st)st.textContent='Player props could not load right now \u2014 reopen Sports to try again.';
+    });
+  }
+  renderPropsCheat();
 })();
 </script>
 <script>
@@ -6350,6 +6379,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   var liveLoading=false;
   function renderLive(){
+    if(window.__BETSIM_OFF)return;
     if(liveLoading)return;liveLoading=true;
     Promise.all(LEAGUES.map(loadLiveLeague)).then(function(res){
       liveLoading=false;lastByLeague={};
@@ -7001,13 +7031,17 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       return;
     }
     if(c.error){
-      if(statusEl)statusEl.textContent=sec.err;
-      listEl.innerHTML='';
-      if(updEl)updEl.textContent=c.fetchedAt?fmtUpdated(c.fetchedAt):'';
-      return;
+      /* Refresh failure must not blank the feed (Nov 22, 2026 fix):
+         keep showing the last good stories when we have them. */
+      if(!c.items||!c.items.length){
+        if(statusEl)statusEl.textContent=sec.err;
+        listEl.innerHTML='';
+        if(updEl)updEl.textContent=c.fetchedAt?fmtUpdated(c.fetchedAt):'';
+        return;
+      }
     }
     var items=c.items||[];
-    if(statusEl)statusEl.textContent=items.length?'':sec.empty;
+    if(statusEl)statusEl.textContent=items.length?(c.error?'Couldn\u2019t refresh right now \u2014 showing the last stories.':''):sec.empty;
     var vis=expanded?items.length:Math.min(10,items.length);
     listEl.innerHTML=items.slice(0,vis).map(feedRow).join('');
     if(moreBtn&&items.length>10){
@@ -7061,10 +7095,19 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   var refreshBtn=document.getElementById('newsFeedRefresh');
   if(refreshBtn)refreshBtn.addEventListener('click',function(){
     if(refreshBtn.disabled)return;
-    newsFileCache=null;cache={};inFlight={};newsForceBust=true;
-    refreshBtn.disabled=true;refreshBtn.textContent='Refreshing\u2026';
-    renderFeed();
-    fetchSection(active).then(function(){refreshBtn.disabled=false;refreshBtn.textContent='\u21bb Refresh feed';});
+    /* Refresh fix (Nov 22, 2026): the old handler wiped the whole
+       in-memory cache BEFORE the fetch, so any failure (stale
+       news.json + a flaky rss2json fallback) blanked the feed with
+       an error — and when the file had not changed, the identical
+       re-render looked like nothing happened. Now the old stories
+       stay on screen while the file re-fetches; only the shared
+       file cache is busted, and a failure keeps the last good
+       stories (see renderFeed). The spinning glyph, the
+       Refreshing status, and the Updated line make it visible. */
+    newsFileCache=null;inFlight={};newsForceBust=true;
+    refreshBtn.disabled=true;refreshBtn.classList.add('spin');refreshBtn.setAttribute('aria-label','Refreshing…');
+    if(statusEl)statusEl.textContent='Refreshing…';
+    fetchSection(active).then(function(){refreshBtn.disabled=false;refreshBtn.classList.remove('spin');refreshBtn.setAttribute('aria-label','Refresh feed');});
   });
   document.querySelectorAll('#newsFeedCard .nchip').forEach(function(ch){
     ch.addEventListener('click',function(){selectSection(ch.getAttribute('data-nfeed'));});
