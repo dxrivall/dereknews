@@ -935,7 +935,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 /* Weather hero — ORIGINAL photo layout (pre-widget-restyle). The page background
    is the live-condition photo on #wxBg with its dark overlay; the hero itself is
    transparent and centered. No gradient, no card, no widget styling here. */
-.wxhero .wxloc{font-size:20px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.wxhero .wxloc{font-size:20px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.65),0 0 16px rgba(0,0,0,.4)}
 .wxhero .current>div{text-align:center}
 .wxhero .current .hl{font-size:15px;font-weight:600;margin-top:8px;opacity:.95;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .wxhero .current .hl:empty{display:none}
@@ -1011,11 +1011,11 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxradio-mini-status{font-size:11.5px;opacity:.92;margin:0;line-height:1.35;text-align:center;max-width:150px}
 .wxradio-mini-status:empty{display:none}
 .wxradio-mini-label{font-size:13px;font-weight:600;opacity:.92;text-align:center}
-.wxhero-main .temp{font-size:clamp(96px,30vw,148px);font-weight:200;line-height:.95;letter-spacing:-.02em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.wxhero-main .temp{font-size:clamp(96px,30vw,148px);font-weight:200;line-height:.95;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55),0 0 30px rgba(0,0,0,.35)}
 .wxhero-cond{text-align:center;padding-top:16px;flex:none}
 .wxhero-icon{font-size:clamp(50px,14vw,70px);line-height:1}
-.wxhero-condword{font-size:clamp(19px,5vw,24px);font-weight:300;margin-top:8px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.55)}
-.wxhero-feels{font-size:clamp(17px,4.6vw,21px);font-weight:300;text-align:left;margin:12px 0 0;color:#fff;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.55)}
+.wxhero-condword{font-size:clamp(19px,5vw,24px);font-weight:300;margin-top:8px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.65),0 0 16px rgba(0,0,0,.4)}
+.wxhero-feels{font-size:clamp(17px,4.6vw,21px);font-weight:300;text-align:left;margin:12px 0 0;color:#fff;line-height:1.4;text-shadow:0 1px 6px rgba(0,0,0,.65),0 0 16px rgba(0,0,0,.4)}
 .wxpair{display:block;margin:0}
 .snowday.slim{width:100%;max-width:680px;margin:26px auto 0;aspect-ratio:auto;flex-direction:row;justify-content:flex-start;text-align:left;gap:20px;padding:16px 20px;border-radius:18px}
 .snowday.slim .snowday-dialrow{margin:0;flex:none}
@@ -1033,7 +1033,10 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-weather .wx-herolabel{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin:34px 0 12px}
 #view-weather .wxsec{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin:34px 0 12px;text-shadow:none}
 #view-weather .wxhero{margin:0 -20px;padding:28px 20px 40px}
-#view-weather .wxhero-top{background:linear-gradient(180deg,rgba(10,25,35,.42),rgba(10,25,35,.28));border:1px solid rgba(255,255,255,.22);border-radius:24px;padding:22px 18px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+/* Hero unboxed (Nov 22, 2026): Apple Weather has no box around the hero —
+   the temp/condition/feels/H-L float directly on the photo. Text-shadow
+   only for legibility; no background, scrim, or box. */
+#view-weather .wxhero-top{background:none;border:0;border-radius:0;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
 #view-weather .wxhero-main .temp{font-weight:100;letter-spacing:-.03em}
 #view-weather .wxhero-condword{font-weight:200}
 #view-weather .day,#view-weather .hour,#view-weather .wdet,#view-weather .wxtrend,#view-weather .outage,#view-weather .wxday-detail,#view-weather .snowday.slim{border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
@@ -1063,12 +1066,12 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-weather .wdet .wdet-ic{margin:6px 0}
 .wx-compass{display:block}
 .wx-sunarc{display:block}
-#view-weather .wxhero-main{flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:14px 0 2px;gap:0}
+#view-weather .wxhero-main{flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:26px 0 2px;gap:0}
 #view-weather .wxhero-main .temp{font-size:clamp(110px,32vw,164px);font-weight:100;letter-spacing:-.03em;line-height:.92}
 #view-weather .wxhero-cond{padding-top:8px;text-align:center}
 #view-weather .wxhero-icon{font-size:clamp(44px,12vw,60px)}
 #view-weather .wxhero-condword{font-weight:200}
-#view-weather .wxhero-hl{font-size:17px;font-weight:400;text-align:center;margin:4px 0 0;color:#fff;opacity:.95;text-shadow:0 1px 4px rgba(0,0,0,.55)}
+#view-weather .wxhero-hl{font-size:17px;font-weight:400;text-align:center;margin:4px 0 0;color:#fff;opacity:.95;text-shadow:0 1px 6px rgba(0,0,0,.65),0 0 16px rgba(0,0,0,.4)}
 #view-weather .wxhero-feels{text-align:center}
 #view-weather .wxhero-feels{margin-top:10px}
 #view-weather .wx-precip60{border-radius:22px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.28);padding:14px 16px 12px}
