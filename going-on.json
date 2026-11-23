@@ -1,10 +1,40 @@
 {
-  "updated_at": "2026-11-23T15:48:44.780328Z",
+  "updated_at": "2026-11-23T16:42:55.542755Z",
   "tension": {
     "attacks_7d": 8,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Non-breach privacy liability is the gap most cyber programs miss - Insurance Business",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNaUFFdHdOVm9RVEF1X2paNWpraURYS0Z0QzRFZEVmUEgwWHd3TjNNSW5LWnNhS29XcWV5ZHRxZXNBR2NjS1FTQlNuejh3U29TQTZYTkxMZ1ZsOTNyOU5hSlNBVFZLZjl3emZGendxWlZidjVzbmNYcnV5R1Z2OWJpTDg0c2tsT2xDMGlZQjFEUHNwTjNjVU9CR0gtV2dFcU5rTkE2OXdwaU0yaHJMUWlDaHAzWHZ6Y1lzZUNEaXl6WjFXbjcwQ2ZrOXg1NTZvZmt1RVE?oc=5",
+      "date": "2026-11-23T16:26:23Z"
+    },
+    {
+      "title": "Middle East latest: Eisenkot says no immediate Iran threat requiring Israeli military action - The National",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQZDlXbXpiU2cwRGZTckR6TUc1RXMyUlBoS1hGd0NBdmEzYTZOQ3hLdElPbkVlU1lfX2g3RGJ4UnZVOFRCY3drMURtdGRBU1FCcDdRVm1RVkNZRS1GRlVUOHhqYmxPRXlvM1FIUzk2ejU4N0xrRW5VOWVZVUVmVFUwTEp3?oc=5",
+      "date": "2026-11-23T16:16:10Z"
+    },
+    {
+      "title": "Home state exception requires dismissal of healthcare data breach class action - Michigan Lawyers Weekly",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeWU4YXUyOHp3WklHMkZuak80OW9ZYmFHUDFkNGtSZTNKcVprTWFtcWdtZHZTWkpyS1RmRkREZWQ3aUt3a2tqdE52UkNpSDdaUnVwd2VlT2ZDaHRxS0hjdTFsdVQ0SS1WTDRCZ1NwQ1YzTlJMbWNlNTdhRnpaRGp0VkVPdVprQTZDdDh1YTc0eHJSSFRTUV9mTzlOaVVWaTBJYUlCMTBnWlFfXzBjbm5tRFR2dlRYY0VoaC1vbVgzRHQ?oc=5",
+      "date": "2026-11-23T16:10:48Z"
+    },
+    {
+      "title": "HelloNation Explains What Happens During a Ransomware Attack, Featuring IT Expert Nick Kammerdiener - PR Newswire",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNem1tWnVNV2NnaEpneU0tYlQ5MGo0WFFRY2VqbTVBUkMzc0FvQWJGUWlWLXc0aDdVM3AzOXYyYVNtWV9saUt0c285Y0hzcmxzYnBRVUthZHlBWFh3Z3hfRVJ3NXBXN25hU2lNU2dvZ0lrcFRUZlUwVDhiNWJJeTlDeG9uR0FLS1F6dmFDZE9CVnFLRTRRYVdiV2dzZ3N6TEZXd18yQ1ZLcTY0ZG45S0N6azB2MWk2RFhncy01ejQ4SnRjUlRxMkFuZWZRVWppWWdPYjRRblJwcDlsSG1CQms4eXFnMjc2cEtqZ0E?oc=5",
+      "date": "2026-11-23T15:56:00Z"
+    },
+    {
+      "title": "Iran's courts order US to pay $290 billion in damages - AOL.co.uk",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1yWE03dllvbU5LaE5lVmxwUmZpajhBb0FXZkRUcE9MUVJIcGxGMk1YTk1YQXhNa2ZQblZ0cTV5ZWRmNVhoY1pEc1A2d3h3WUpTRVJqQ1lPSUxnc2RGalRvNVlCU1NUX09wZkdLN1hVeHpSMG9iVmh2Y0cyRQ?oc=5",
+      "date": "2026-11-23T15:50:11Z"
+    },
+    {
+      "title": "Hackers steal bank cards data as fraud fears mount - Cybernews",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSGxHVlJIMDJ4TDN2eV9GNmNqeVlERE15MGN5emRjclE2QW16RGdMbDN6akp1Y1JmRTNfY2Z5dGdUTnJoWGYxWnJhb1RZbzJpVnBPSE81YjZGa29Ocy1GYzlvZGdXQVBxUHpIZ1FJWDJsUXY5ekFLU0UxYWxlZUFCRU10SEg?oc=5",
+      "date": "2026-11-23T15:49:13Z"
+    },
     {
       "title": "Aviation regulator DGCA issues show cause notice to SpiceJet over grounded fleet and flight cancellations - Prop News Time",
       "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQWjM2aDkxZWxWTE1EeVVRaEttcFVEamx4ZG9OTmR2ODgwSjVZb3VTWTlMYjFaYXBOTm5KdDV5YjFtSzVKMW5DR1VVZkJjQ01FazVCNm4tQXpjZjNzZkg3Qzk1Tm1DUi1DcXZ3TUJYZ0hHamxZdXNJdlUwZDlqb3M0UHBvcmdGSmR2RG02djJqc05QQk9jc2xXQTh2QjQyRGt4OWxJNnZYMDg3MUl2VThOYUU3V0ZtYnVkeHRUN1gxQ2lpSlRNb2RXYWhjTTlzVk9oZV9WUmwwelZDVDdhemh1aXNOQUxDMFhzZk5rVFJB?oc=5",
@@ -44,6 +74,11 @@
       "title": "LaLiga data breach hits fan platform and club data - Cybernews",
       "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE44c3YwX0pNRnk2bDYzeHR0ZWJSLTl0Mm5sR1dyT25uSEpIdlpkNlp5ZnFBUktaZTFQcmtXWWhwSjVVMnF4U0tYVHFaR0t6TE53TU14RTA1MFFHVVFHTnJzMV9zc2RYVmx5TUJEbEZZNVZoVm8?oc=5",
       "date": "2026-11-23T14:42:50Z"
+    },
+    {
+      "title": "Microsoft Entra Connect Health Breach Exposes Tenant Metadata and Admin Details - Security Affairs",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPSHFkQ1UzR2Y0LWlaeUZRQThsTWpIZGlrYWE2TWZIVHJESktMcXdkdnpSTEhMczJhZGZZZ3I2N0RPcmU5bFhrbW03clFBRXYtZHkwd3ZGU1ZXaXVYOHFSOFZXc2duaXE3SXFOUmNtR2JaWElEZW50bHhTMms5OFN3aTFMbTN3eUZHUWVmTUR4UEdQazN4cDY5Q3pCS2haSFFmZEctMV9ReFF1dTZxREtodVNmaEtGUy1ZYkgxenktNzlzOThvWVE1TFMtQdIB0AFBVV95cUxNREZqckdJaERPd1lSR2ZMUUZlbVZSUzRNQ2VLV3RQdm5ON19GNG9zb0Q0QXZ1MUZQUExKYnhjUjFQRUNLXzhXQVFpSzk3UmZYRFQ0QnJJRjRndzh1UW9vMmdGT3oxc3JPRTdaNENxOXNDZjUzRmlXTnl4TFJFbE9Tb2pXanNWaG53amVESlVEbWZ3dV9pUElSQTh0WXBIUkhhVlFxejBETTNhcGZIakU4dG1nNHZOYWExaHdJMGozN3BwT1c5UTdHNTFTTFUtc25o?oc=5",
+      "date": "2026-11-23T14:38:32Z"
     },
     {
       "title": "Bell says cybersecurity incident affected customers at Virgin Plus, Lucky Mobile - CBC",
@@ -161,6 +196,11 @@
       "date": "2026-11-23T11:55:06Z"
     },
     {
+      "title": "Next investigates cyberattack at online supplier - The Times",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUWtsZzdMVjNjc1VwLWtWN2lnRXVwUjNBZlR3d2JPTGlKVWxPUmc2d0hVV0lwNXN6TjZZWDFwUkVnMzlITEZSR2hVQS1nMXpHNkZzYm5IeGhBWHpBZE1hN2ItNFRVc3E3MC1Gb1Jud1U3bTFtR0Z0bUtjc3ppdGtwTTJQcGtLVHZhV3Z2U0t6eHBIVUJ3eXo5eUlTOVlxTnZpYk5fVlNvNDNpcXVISzlxazB2TWprU3lIMlpIRmpOVUkwRU94Q3c?oc=5",
+      "date": "2026-11-23T11:52:40Z"
+    },
+    {
       "title": "Next says some data accessed in cyber incident affecting online supplier - Yahoo Finance UK",
       "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOV254LTIxQnpKc0wyN0hZNzQyNDVhVWdYUzNvNVNkMkR3eVpFTzFteXFpMXVuNUJKR3B4cWZSbWt3c3psUFhlVy1uTUFIeVVLWWtXcW5jMUtraUdxMzFfZW43V2d3dzU3NGhwOVktUHRnMVE3VUs0bW5IMlAwWGVXdDQ3UDE?oc=5",
       "date": "2026-11-23T11:37:25Z"
@@ -178,6 +218,11 @@
     {
       "title": "Flights grounded in Belgium due to austerity measures strike - BBC",
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBIaS1qSmRWVHVJZGhfNlhRS24waW9kSWtIN2RhRS1LR2NFVHpzRVZnWGdDaHlzeW43WW03MzJ5R2dhOEZHSlFqdGFMM250YWdVamM0bG41N0JnSmc?oc=5",
+      "date": "2026-11-23T11:26:12Z"
+    },
+    {
+      "title": "Flights cancelled in Belgium due to cost-of-living strike - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1MM1EzTWwydXdteGEzclVvNmVXQ0c2cEpja1BDNEdMc1M3VEJaQ3lneWJweFFhWDBhQXVLamw1QVRzN09Cc21EZkFJem5lMTNwZWFGb19JaWZCcjJXT1E?oc=5",
       "date": "2026-11-23T11:26:12Z"
     },
     {
@@ -221,6 +266,11 @@
       "date": "2026-11-23T10:45:02Z"
     },
     {
+      "title": "GoFundMe confirms data breach, donors' private data exposed - Cybernews",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAwN0VYZE4yejlfTThMMXZabWNvMTN1SHVOOS1DOEY0SjhzY3FiV2FnaV9POUhQaFMxTkVua3JlbzlRT3JibkZlcjRPNk5pXzFNSGFXRkZtRHRWQ1J1dDgzV29n?oc=5",
+      "date": "2026-11-23T10:39:13Z"
+    },
+    {
       "title": "Attackers exploited Microsoft Entra Connect Health flaw to access tenant data - Help Net Security",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVWNCQV9UNXB4azZwVXBJMkM4Njd5SlNyVjhPbzU3WVg5XzJlM3kwa29iVjVEUUNQeEwzMEdXNlp6X1FpckM1YkdtOU5KclNYZzA0TVlvQnlPeW5KZWF5MTNLdkZuLUFIYWR0SzU5WmdINWE0WXU4RG9KeUR1WTFyRDl3dTBoRjZOb3ktdE4zU3c4d0lRMU1KT1FhZm1RQW43MFE?oc=5",
       "date": "2026-11-23T10:34:01Z"
@@ -239,6 +289,11 @@
       "title": "How Long Does Ransomware Recovery Take? - DIGIT.FYI",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Kc1gtemtNTXduMGJITjB3cUFUV2hJOHR2cXZ4Vld0M2E2QzdfaFlGSTZGdzg5djg0WjdpWHhIU1B1VUdoajNLcTZxQm9meW83RWVUTA?oc=5",
       "date": "2026-11-23T10:29:47Z"
+    },
+    {
+      "title": "Bulgaria Discovers Massive Government Breach After Five Years of Undetected Spying - Security Affairs",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRnpKZk43ZUh0ZFJVcVRDcUYwaUlkdzBaMzN0SmxHcURYQnRSOGVhTm8xSkJ6REVZSUExejJwMm9VdDVfWV9QcS1odHhJSmVhYWo4aGlCYWtQNDdQLXNWeUNHRGdxR3p5eDk5VDhWNkcwVFdwTlRsdVRsYTZBQkJZNmVmWGwxeE1JQm8wbERpMmRoeXd6UVdTbEk4ZU9QQkJKTUdvTnpDSTBtbWR3bHFEN3hheEp5NGtWTWtZaEt4cVpEVWQ5S2tHb1ZvM21IckJF0gHWAUFVX3lxTFB0Q3hHMFlCa2VlQ1k1dHFabC1CQ2syby1pcnNBMVY3ZnJWRTdiWG9aLXVvTUhQS1I5eTRHa1hzaTBNSXAzZzVfcDJlOXd4TjBsTGZJZ20xNXRETjlsOEdUUVNCdnBTRUp5dkRuR2w0Y0dFVWJZaHNnNUxfR3d1MlpKd0M4Z2JSWXRsT1ladmxHckhkelpMOTBNYWJJSEpaVWtvcjlJcTRnbzNRSFVDTHVWTDg4bXVwWmdocG5tNkNMNGprTGI5eUFRVHQxWXZLT3pwd2ZfOGc?oc=5",
+      "date": "2026-11-23T09:52:03Z"
     },
     {
       "title": "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
@@ -764,6 +819,11 @@
       "title": "IRGC Aerospace Force targets US military positions in Bahrain in missile and drone operation - خبرگزاری بین المللی قدس",
       "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9qOTk5Tm1HbHR6NUJOQjdpYVM5ZEZkYlRmNENrUXJjSm9pS1lEMmZHREVDc3E4VjNhTnZYRmpOWU5BZw?oc=5",
       "date": "2026-11-22T08:09:40Z"
+    },
+    {
+      "title": "Hackers breach Austrian Foreign Ministry website, access diplomats' contact details - The Record from Recorded Future News",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5NLTJRU1VlLTlZRG5GRVZCc1VIYTRHSEdHSzNlZVo3VTcxQVZ6emdfWEM0TGFmVkI0TmhVQnNIY3NLN2FHbWZkTHNGXzlRUzFTMTFjUDROcmpSWTdOcmRJdTEwa1dZZzJsTlhBa0pUM1BUVnBwaWNnYQ?oc=5",
+      "date": "2026-11-22T08:00:00Z"
     },
     {
       "title": "Bahrain denies IRGC claim of attack on US bases after civilian facility catches fire - Khaleej Times",
@@ -1356,6 +1416,11 @@
       "date": "2026-11-21T11:24:00Z"
     },
     {
+      "title": "‘Cancelled Flights Still on Sale’: SpiceJet Crisis Deepens as Passengers Await Refunds, DGCA Issues 7-Day Notice - Republic World",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNYWx6d1lUMUtydlJpbnVmdE9iNmJPOVl2QmZBS1NKUWZXNWYtT1VCanVzQkxnanJjUndCVTVmRkY4MGdQNTJFaVU5X2pwZ01VZUlRU19wclhvQUlIMHB1UHRqZDNZVG05bjBiaEhQNlYxZlNRTUtRYWJNeDVvdkdxLTZNcGNyZGFraW9WeTA5TUdhR1NVZ1ByemRkRm1vZm44bWxwaUxQN2ppc2Z3T1YybEpHdFZqdjBzbWVuS1d0X2xjRzRVcW9raklNSVZhTWNUeGdZeXFndVlYWEpoVXNqSTdtVHZHR3ZXWUIxbm4yR2ZkTVF00gH6AUFVX3lxTE1OZ2lzZVdwOHMwZGttRzZBOUUyQzgtRE9CUE14MzVuN1BQMjhJcmQ3eWt3VUh6UlRIaHJnM2hyMDV1TmVzTTJ2SklxQUtYUGN5NHVSS0hHbHFQTU5VeE5yd1g1eXdGazVyUzZPdTlmdk1waHo2c0VTakZ1aHV2MjlIU2s3M1JOUTdvcjlZS20wQ3piZHpHSjdZV1dOWmd6ZEZUMjBGYzFPb19ZQUhta1hnOXNtM2VIQW42Qnd4UkZfQ0VkUzZWR05PNVhJUE41Zzc0NXVYby1Kb0h1ZXFTTy1aTWpPdC15QjBJUHRpZ1gxeGVRNVpEZmQza1E?oc=5",
+      "date": "2026-11-21T11:09:47Z"
+    },
+    {
       "title": "20 flights cancelled at Ranchi airport due to bad weather triggered by cyclone 'Akvan' - The New Indian Express",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPeDJDZmRzaXVEQnlzZEdCYnFEOXc1bzhKR3dMdHV3OFl2Q0hRbmZYSlU3SGhoejZ2UWVRVW9NQkdoN2FRcUtvM2VfTGlzQ0M3X0JZQmhhR0pxdWFnTlR1Mk5KdVVjR2VRMTFzVFJQd0xRZGZYOExhRktLNU5wVjJGRGRQUVhTdk4xN2hwcDhQTDV0SkZPR2xJZHNjWWhpN01YcmxScVoyNnRFVllTaEU4eFdhVHczSWxDd3dGN3J0OFJ6RmdlWGlzRXlwa2NBX0w2Umd30gHgAUFVX3lxTE9BalY2LXAzUUw2V282c20xMHdjR2FpM0xXTGJMcVZVT1JtZWI4YjhkUEgzLUYwNEpLUGZ3c1paWGJ3a1hHNWlsMzJ3aDNsX2JocXJUV3E4dTZsSWhxbFhHVDcyT3ZUTHlXSkVGd3dzMnJwUXZaMWgwZE9NcGR5eWppdHhkR0c4VEhVR0toNm5CeV8yeWtYa1h0VzlpaTdtWmgzMHVWUDFCLVNEOXBKRHc4Q2ptdmN6azRvN2pGVEZWVlE2bFdDTFJrcC1rbEpjeUZkVENkZ29rOGZmZWU1bWtH?oc=5",
       "date": "2026-11-21T10:50:28Z"
@@ -1679,6 +1744,11 @@
       "title": "Eskenazi reports data breach involving patient electronic health information - WTHR",
       "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQdVNZaFNJUU5KQTZQZGVnZ04zS052MTlhVTdxTVI0alk5NWVxYWFHckw4Q2E1cm9DdEdBMllMeGUxYkpCV0NxOGJsMkZnOGZGWlhZSlZERldFcUtrLVdheUhNMjkwaFllM3VZNzgyczBTRHFCc19rdUsxZF9UVS1RTjFSbnJOYkdQVVdNdmNSXzdiSlFNZ01XeGlKOVZXc0Nudm9NeUxfYVpKYW5uSURBcUhYdlFkNFJteThHX3YwR0FYQndxMkFhZWZEOWZPNTN2Ulg1WWhnS2tIZDR2MUs0cF9kNG9mNXFyUnlteWUxUm5RaHdpSE9aWnZ1OVBITGtsT0tzU2loX29vdVNkN05BQmRB?oc=5",
       "date": "2026-11-20T22:26:00Z"
+    },
+    {
+      "title": "Otter Tail County hit by cyberattack, personal information breached - InForum",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORFBqbU9UbUVZaGthcGZ0aGF3ZTFMY0YwVUFPX0ZPNjU3dG42bTloa082djBrYVdXYmUyQmZWVkJ2VTZ3TXlkb1AzeGdLb3g5T0toa3liYWd3WllwdFVyX0EtcTNUdDJxSnBYOTV1Unl1cENyLU9LMG9uRlFmclB2R0hfeGZCVXhrRFExYThoZ1JCbUVDUzlibFlUbjhvMmRYeHViVkJ1VVI?oc=5",
+      "date": "2026-11-20T22:25:00Z"
     },
     {
       "title": "Hackers Breach NYC Court Database to Access Retiree Data - GovTech",
@@ -6336,6 +6406,11 @@
       "date": "2026-11-17T08:00:00Z"
     },
     {
+      "title": "Nationwide EAS Test Coming November 17, 2026 - Legal 500",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdG9zUEs2TVVEUHV0R3ZLM05HZWpuVnB1cDIybTR2WW8zM2dpUVhRMmdsQ21rb0NCWktCbnBiWjljZGl6N2N2S18tODdxdGJzTlJKRGRoaG5yZUpkd2JBdEk0V1FRS0hYdjR6WHN4ZjZHTmZOcHRKRHA0OXVQQVdWdjNTVlVjbjJiazhOSW5wM0l0eENwcUZndHJMVWhrTVNadkszNnN5SFVUQi1sQnRYWTZGWDN2U2dKVGdfTXY2bU5XSjZBUXc?oc=5",
+      "date": "2026-11-17T08:00:00Z"
+    },
+    {
       "title": "Iran reportedly planning ‘dirty bomb’ attack in Washington, US intelligence warns - Gulf Business",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRXBrajJieEVRclVVT2Y5UndWMndqN3VOSFFmMC1jNy0wRjRfdzNZZUtuTXpSQVp3TDQxYkx2YzNMUUlEV2l6d2RnNmR1WWJFR2FpZnpJQ0dZYlpHOFRxS09xOVBEaVYwT0o4aTFHM3U5SGRMWlYzclJ5NWFNMi15WmdFclI2dHEtT0Z2RGdzTVhkWDdhc09BQTBiaXJtckxzNmg2RTZ1SjJ2X1ZaTEhid2M2SkpIMUlv?oc=5",
       "date": "2026-11-17T07:52:57Z"
@@ -7529,116 +7604,6 @@
       "title": "North Dakota woman buys Ford Bronco, drives 27 hours home after flights grounded - CBS News",
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPaXA1WVdQX2s3X1RlVm8wS0RmcDJKZlBiVGIwVlFEU0ZTRXRrWkpHWHlScGlBUEU4SzBmSDJmMFA2WDQzNWJkS0dXMEgwOEdhZWhIZ3RvTU5OVUlhd1NnOXdRMXFrbEE2MlFWYkhjZHhlRnBWUGJUSUwzdHZBaldOeUxXSzVsN0ozSjNEaEtwTDdpLTkz?oc=5",
       "date": "2026-11-16T16:45:38Z"
-    },
-    {
-      "title": "Why Planes Were Grounded Friday & What's Next - Thrifty Traveler",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOakNoM2tGNER3elVyT05kdVlTWTIwTHVGamhuTEFqQzhuQVpjbnJVczI3V3I3aTA5WElza05yckVpeFpaS21jenhDN1JXZzlxLUl2b2pTYjl1OFhnYWlIcUkzcDU0YWFrTjU2eGpZRmowU1piZHpfYXJvZm9LY1E5WUNTejBPaGlTSUpkd2RsT3QtM05i?oc=5",
-      "date": "2026-11-16T16:19:32Z"
-    },
-    {
-      "title": "What Binance hack tells us about cyber recruitment vulnerabilities - ICAEW.com",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaHJIZ2g4R1hYTUNhbHI4TDNIcDlpSWw3Y3N5RFZhZGtFb3I1VGFvYkx3X2EwQzBxR0xpT3pKLXRXSTZ0Mng1T1czVGtWMnRtMDh4TW8zNWhLV3BYbXhJOUp1aEYyNTBnUTFqWWU1alNsUXlIcEJ1QjB0VldXaFJQeFo4eDRRWU02QkphaFBzNVlmZXZxUnBQWmp1N3VGdVZESHpGWmtWZDlIY2FYaHNhRmpOT2tZRXdoNGFBQnA4M3ptRGVQVFZPcnhvTnUzVFE?oc=5",
-      "date": "2026-11-16T16:19:17Z"
-    },
-    {
-      "title": "US Flights Grounded Nationwide: What Went Wrong With Air Traffic Control? - The New Indian Express",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNTW9XSXhrcndmamNDbXNxaGN2LUJ3Qk5FbWNoN0F2cE5wUHljZ1I0dnpwYTRUUFNHbld5dEpNeldrbE9pZ00zenBkWjlrM0VFNWVRdUVVSUFLZTRjREJPbjAxd011dmNHb1VsZlJIdlY0X3hOV1MxNTYzUlhxZVJ4NjdqMGFuNkE5YktWb0ZHbXdRODRqM0wydTAxejRlbk8tSEpWeWpjY0tmWjMxSXhIMWlzVFBkZFBMeUpURXdDa2xjMDZueUR2WUhBYnhNZkRL0gHeAUFVX3lxTE9DY3hkV1pvdFN2VlZINU4wc0VqMzVPMi1RYWlXbjFLcUJGcFRYS3VyeDJUQ1lCRUtMckdJQy0tLTlzRHdWU3VlbkVDSnNLZmJDbXNJejhRMmtnMFk2eDBJSVhFRkFSQzdnTmxqSm9hWnlCR0tDWXNUSHZIb1MwMmdNZzlNaEZYR0lGaFZFb2ZaVURMYUhEQ1BwUjh0TDVOcXhlWG11NkQwQndwemc0QjJfU2k5enlmVjdxN2lqZjJmMTlEVFI2SDUzOWV5T2FoZDZCZlBHS3kzalp1Tl8wdw?oc=5",
-      "date": "2026-11-16T16:18:21Z"
-    },
-    {
-      "title": "BeiGene Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQRnNrRkE3UkxpTGp2Vlk2X0d6Q2Q5RVU3NnRBR3VHV25aSFVqR3RwZmJmVXFtZklQTHJtOXU1MTZSNERIZ2YxYkxoSmhDRWZ1UUk2ZGJHLWU5WC1sVW8weEstRUlyVV9WeTdzd0RkbXB2X1dQanlyRUpwczRGYWFvR2F6WmxuSWN5V0Nn?oc=5",
-      "date": "2026-11-16T16:14:44Z"
-    },
-    {
-      "title": "Servier Laboratories... Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdGZmY0h1Wk01VzlfVl9DX18wU0ltYnhyaTVqYjhFUEhhMFdGXzV2cWtJbUVXRG9nNFk2cC15UzA0eV9Tb1Y5ZFlkM0NEVmw2UXYyVGtCdzdRNjhmYzhHdzh6ZUJydjROcDVFM2FMQlNmZks0TFdYbjRRUE9qZjdXMTdxU2VWQ0dtZk05ZWhJaFU1NHFUQXBDMk8tNUdKZEVKaW9PZm5RRk5URzIxSkozdDFOS0dTWFBKeVpZNUpB?oc=5",
-      "date": "2026-11-16T16:14:44Z"
-    },
-    {
-      "title": "Azurity Pharmaceutica... Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWm9pUTdRR3JxNWJETFNObTFGQzFkUWY1b3cwdXJ5Mnk5aWUwSE45cDdUU0xEdTRmU3kwUGlNdlZEYnF4RkFUaW1TcEtBVVg1cEllZnRxSXUzcnRJbUlFU0xDZjhLZENNcHYweWlNajRCMmNzS3pHY0hQUlRWd0djN3lqa0NaQW1FVkMyN002azRPVHBDQ2J1VGxURDFGV1JZcVMwN0tB?oc=5",
-      "date": "2026-11-16T16:14:43Z"
-    },
-    {
-      "title": "Patagonia, Inc. Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNaEozSDJ2c1NCaHlZNk1NNGhvZmdXSzhYa2NFMTNtbktmeTRBRDQ0VEpiNmM0bWpVODNWRnpnLWtja2t5WVF2WE1URFNvTUFfTW4tQXR3enRBTXZpUVpFZ2I2ZDFUVWRVWFhBckJSSVFnbTZ2MVUxZUJhM1NuZ2pNNG03ZHVlUDl6NmQxYXJCNEZLbkU?oc=5",
-      "date": "2026-11-16T16:14:43Z"
-    },
-    {
-      "title": "Eli Lilly and Company Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPbWNiYXlNU25SM1c5dHJUSm5rclhzREM3TnlTSjFEV3JsZHhUdjJnaUJaSFVEX0tJUXFRd2ZWMXVFMWpwTEpVYXkxYWRDaVZ1c0tRTG0wT29CQnkySEFJRG5Jb09sZjVGWjBnT0txMkpKcTJrLW1JZW9SMXlyc3c2UExEZFhVS0FWcDNMN1AwcWkxM2l1OWM4Y0JqRzh4dw?oc=5",
-      "date": "2026-11-16T16:14:43Z"
-    },
-    {
-      "title": "iHerb LLC Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPOVRLQ0JZWjU3NU5GWDg4bGJpNEtFNkhDY2Q4eVVVcW9xa0JWbTE5S1AzQ2JqVnFlRVl0cUk5dm5MRVJkVkRud0s4SWYwVGxhT2cyaTBFZTNVaTdqeWdfZ0Mtb29wZDBXaHh1MmFYVWdQZElqVVBlQUMtYVpBRExqZjVjMTF2ejVTOGpEYnFn?oc=5",
-      "date": "2026-11-16T16:14:42Z"
-    },
-    {
-      "title": "Block Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUGJvVVVWODVxVHZFSFEwWWRMczdtaG0zT2tTbDdjRzBCM0Rlc2ZOUWJkNUhwUGJ4XzJNZEtBNU9LdnpNc29qbmpNR1ZhVEdFbTdiZ3hqR3VQbGRlaElFQlNVY09PRmp5aXdVdlZmYlVWM0xiU3FqSzU3Y21NVEEzWlcyZHU0Z0Fs?oc=5",
-      "date": "2026-11-16T16:14:42Z"
-    },
-    {
-      "title": "BIOARCH Ransomware Attack by Thegentlemen - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPYjgwSjJRM3lERWxzYnZDekhLTW9zclgwTk9TM1lIWndzbTJQWHViSGRaTkNhRTlfZGhlUTVDWmJBdU52RGU1a1pIMXJxZ293SlFyRURZVnViNGliNnl1QXdkY09xcC1VQlFybkNaYWNGa2tjZEkzX3gyYlVrT1dxREVlSDdhSjk0SElaWWFtSTkyZkNUVGNF?oc=5",
-      "date": "2026-11-16T16:14:38Z"
-    },
-    {
-      "title": "Acudor Ransomware Attack by Play Ransomware - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQTUVkNnBlLUVjdkw4Qm9xLW1TSDZnVERmMnVGdkNyZFBDYjFraGttY2lTaEtLcExiS1VPeDJ1cWFkdnh5RXY2Mm43a0szS0stcXlmLVBMZTU0Nk81QWxCWTdaenpGMFRkdUNMMVd4cG1wZkswRnNUeUszbTk1R1VlMDZLQWdKZFBpNEZzODR6TDlWbk1fWTVuSER3?oc=5",
-      "date": "2026-11-16T16:14:36Z"
-    },
-    {
-      "title": "Vir Biotechnology, Inc. Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaEZUQ1BBUzB5R0d3bTNHRFhPU3BtQ1RCZGtiQk5UdDRUMFBiQ0dUZ2JGdGZXTG1CNEw3eEFPcUhBbWNicEZaS3BhVE9vUVZrZUtRcXlGMFJzekROQndJOFotU0JSSmdTLUtDLWEyX1BwSzdFelJzN0VsOW9pWUp3dG9PcGxyRUJkb240TDRmck5BRkNyLWY2V08yeFBoQQ?oc=5",
-      "date": "2026-11-16T16:14:32Z"
-    },
-    {
-      "title": "Atara Biotherapeutics... Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQ00wa19GcnVreVJ6REtaX2l4T1R2eU5EUzRhYTBNYWtDMVFPTVRlXzdNVV85WEhUSEpQWTlxOHRTbkJRaXF5N2hFWkNLTmJsNmdkb1V5WGNYbEhnQXYxZ3lRWWRvTDRwU1ZVWjJ5R3Y0LVZkb2RJYllTU0xzU0JxeGtjUFB4LXI1ODhnMHM5Y0dSNnktWnN3d01SdW9Ta0FvMnE0?oc=5",
-      "date": "2026-11-16T16:14:31Z"
-    },
-    {
-      "title": "Pharvaris N.V. Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNS0swRm5ZblpkQ0ZqV0xwdjdVQ0p2UDA3c243UzRIR3JQZjdRdFdOUF84dnZjMjFFMTlNR05GSHBUV2pkZnc1UEM1b0h4QjYyN1VleWJaWkg2am5xMmZzQk95eTdNN3NERHpoV0owdUZPdGlNelNpOG9sUUdQVE9kaTVKZUxyeDIyODdrbjBaUXRSTnc?oc=5",
-      "date": "2026-11-16T16:14:29Z"
-    },
-    {
-      "title": "Chiesi Farmaceutici S... Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWDllX1lnOVBhU2E0WFVwTEU1MDdoTHlOc25QRDBCWXEyMGQtSzlRdURLU3BfTlBwMFdyUHpXaXBzcG9VTEMzVmQ0NkJzY0ZTUFc0bHB4c2JWc3hYR2JMNktsaW43N2NmOE13MlNITjhQMmtEUTUtcGR6VjJNRXVybC1UOFJKYXptN2tRSWRaT3BvSENhSDFvZzR0T2JjMXVkeXN3?oc=5",
-      "date": "2026-11-16T16:14:29Z"
-    },
-    {
-      "title": "Vanda Pharmaceuticals Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTGlRRDRuTW4tLVRLLXZqdUFFR21LUk0zOGpaZWhPOXcyd1FRYWdNaURVRndBWWdaSzR5QXhuaWFMMnJGYWtvWDZuaGFCbk9SXzhOSkp6SlpSS1c1X1B6OWl3aHpGZzBFSXFxZndfMjdocXF6TzltRGdPNGNVVXZacW1Rb0FBb2M4eHZNS2NhVWhicTVTYkp1ZmNhdGhVZw?oc=5",
-      "date": "2026-11-16T16:14:29Z"
-    },
-    {
-      "title": "Exelixis, Inc. Ransomware Attack by N0n - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOX0g1eUc4ZEUza2JoTkE5T1dwOXFfbkJydERick9Sbm9POEFRWTBGS1pqa3NNcEUyWU9NTU9xeVFQTjk1LUJtZVhhdndXbFBhRFhaR0kzeEI3cGpaSGNIdnBGVDhnbmFIRE9oN2ZOc2NTcHR5bFNyeFJPZUxlcmVTcG5rczFyV29FNFFvVmpPc3pBdw?oc=5",
-      "date": "2026-11-16T16:14:21Z"
-    },
-    {
-      "title": "Nationwide EAS Test Coming November 17, 2026 - Legal 500",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdG9zUEs2TVVEUHV0R3ZLM05HZWpuVnB1cDIybTR2WW8zM2dpUVhRMmdsQ21rb0NCWktCbnBiWjljZGl6N2N2S18tODdxdGJzTlJKRGRoaG5yZUpkd2JBdEk0V1FRS0hYdjR6WHN4ZjZHTmZOcHRKRHA0OXVQQVdWdjNTVlVjbjJiazhOSW5wM0l0eENwcUZndHJMVWhrTVNadkszNnN5SFVUQi1sQnRYWTZGWDN2U2dKVGdfTXY2bU5XSjZBUXc?oc=5",
-      "date": "2026-11-16T16:12:14Z"
-    },
-    {
-      "title": "The FAA ground stop started with a problem IT pros recognize all too well - Spiceworks",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVkxJd2hkbEE1RXAtQUxXS3Y3SWU2aDBxS2hma3pwZmRESHhpaHFySkh1bnpYR0dtQUNIRVg1UXVldEhZdF9BYWZVR2pXYzQ5TGtnTXFZcVJRZFdrazlCd29VbmcteldCQ2oxeU50UWdCc1JyTVdMYTQ5dmZLVHRjdF9sVlJDQWlDNGZiSkJQQzVNbXgxNk5PT1ZkREI1RGFGNmJEeFpiVXNYS1pFRTNV?oc=5",
-      "date": "2026-11-16T16:09:47Z"
-    },
-    {
-      "title": "After the US aviation shutdown triggered mass cancellations, analysts estimate the four largest airlines - The Times of India",
-      "link": "https://news.google.com/rss/articles/CBMijANBVV95cUxNeVFJWWtBdEltMmlRcnYzM1NER0xDajNsZXgwZjd1Zm9mQk5rbWJoSzRnZ1dvUGhrSDRhZlNUVUR6dkM2X3F4MURhZGl1VnFIN1JORzBGS1F2UndGLVBXNFhybndGQ3BObmlIQWdvWjdKMmdQOURZaGJYeGlZT2RzQXpOQUxlbWlZeVFhNEZ6WVpWZTFuM29TNG0yNEZVcWtsWHZDaE0yU2t4UTZzY1gwOE1oeG4xc3F1ZWstbFhMeFV1UVZGVlVrQWl1NzlhTkM2cXNEal9HYm9VX193VTdjM0otdzVQN19MWXlKMnUyVUJ5WFpGTTdoTE1BUjdlbFFaU2JPVHR5RlVBYVBfRzVnVkxVYncySGRXQWd0ZlZPOG5DMHBSYmNVdHhYS3R4Ynh2TUgzVC1YTFNzQ2tWVHRyN3hiVXlFNXpZODNURGE2SmM1NmYyOU9xbDg1YnNSemtCNWFIb2dka2xiUWhTZXp3WXVkVkRCTzJvbjRtSGdKVUtzbzRlUUhQcXVNaTbSAZIDQVVfeXFMUHZNVlhSR0dJQXRjWWpzcHBkTUVoQnNJakRidUpmUDdYR3oyY21aTXd3SmlsVTdNVi1lbXRmWkZKeXRMa2dBekt2bjI5TzVYRzNZRjRrcEh6QV8wSERTdnBhSk16Zlh6a2g4VUh0UE9pSU1DU1RZbmpIeExXTWh4ajQ0WGNQdmNRVi1nMlBwSDZLblFzaUtJaTlSTE9FRzdMOGQwU1RUMDREUFBNbFUwZWJqMzIySTFXNE5hTUVoYlEwbnFibzVDR2k4Y1FkMmdIc2dXR0puM2xHcDE4YUMzUFFxZ1NPZ0pWcFNfVjc1Vk93d2ItNEY0X094c3VWRHpHMEx5TGJWQ05JVkNUUTdkZUVGdUlCMHhJWHE2c2g0bDVtR3VrQnBGeUJfTkZqSDNudkt6NXdoalF0NmgwYTFUSHpYd3NVN01fRDFackJSalEyUHVIWGFsdV9Ybk9zblg5d2xUb25jVGRWZWlLQV9KSUFSSkpNQmtlVmxsZkJCSE41V053Vjd1Yy0tZVVzQmZkb21n?oc=5",
-      "date": "2026-11-16T15:57:00Z"
-    },
-    {
-      "title": "NFU warns of growing ransomware threat - Fruitnet",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWDhqRHU1aVVkOEZVY3h1ZFpGRGQ3Q2NHOGMzcXNSdXpmNW9UUVE0UkxDZnc4V1VwWFpnQ0g2SXRtajV4cnIxeHNCMHJiNmZsYXMtZWttUHJZTTlOdEFWU1I0amxKWE5TUFlnY0tULWZZVEhPSHA3LTdrTnlOWldNS1N4SGRsaGNRQUVjQ2tDa211QnlXZHhOSWdvcnBrQ0J4OWc?oc=5",
-      "date": "2026-11-16T15:55:08Z"
     }
   ]
 }
