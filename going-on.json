@@ -1,10 +1,35 @@
 {
-  "updated_at": "2026-11-23T10:09:40.596846Z",
+  "updated_at": "2026-11-23T11:15:27.654670Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Ransomware Recovery Takes Median 20 Days - Wisevoter",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNS1dldGhzZS1QMUZLVDRTanM0bEM5SHNFbTlaLTA2Qmh6TzRkLXZSZEJLNHRVTWYtZnZ5R2tscmpVWXltQ1R4ZFVULTFITTZTYkxDU0h2NVA0ejJKVm1INmFBT3RpNUlIaGpUZmpabWJTdFpHVWFBMTUzS1pFTVJ5b0FUaGI3d2c?oc=5",
+      "date": "2026-11-23T11:04:42Z"
+    },
+    {
+      "title": "Flights grounded at Brussels Airport due to national strike - Travel Gossip",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdnlZSXJMQm9Fam83X2tDRm01aHlqSVlYRFB4djM4RU1sQzJENTBnMXd3RnAtZlZiWlEyX0hpeFluN3JKek1pSnVnMGlDd1lsREFrTGF6OXUzVnJKQm81UmR5ZXZWMS1yNUxaODJzNnN3enQ0VHdJY3NYLWppTmhPZlhMdWJEeFpEUlkySnM1dnV6alYteHBYLU80MXZOeXM?oc=5",
+      "date": "2026-11-23T10:53:56Z"
+    },
+    {
+      "title": "GoFundMe data breach exposes donors’ personal details - Cybernews",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAwN0VYZE4yejlfTThMMXZabWNvMTN1SHVOOS1DOEY0SjhzY3FiV2FnaV9POUhQaFMxTkVua3JlbzlRT3JibkZlcjRPNk5pXzFNSGFXRkZtRHRWQ1J1dDgzV29n?oc=5",
+      "date": "2026-11-23T10:30:00Z"
+    },
+    {
+      "title": "What happens if your bank goes down again? 5 things experts say to do now - Cleveland.com",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxObnQ0anRLWFBybGkyUXhKUGszRWdKek9xVlNxLTNQOXhnU0d1dEc5VzI0VW1nTjdmdTRhUkVfNlZwV3o2eUlzMl9pU3Y3dmllMTVUallMWjRFZE1naDM2MFRkQVBxUFFyZ21zS1NnTkxoZm5Qemd0OGtaRDRtWkloZHVhNTRYVG50YmFwTFA2MjBTWUxhUzBhRHZGbW8yOXVSVDRnT2paWEtPMGVZaVdPTU5ZQnZEejDSAcsBQVVfeXFMTnhGZ00yMTdOT0tTaW1iVFhzb0ZpTWk3TTd2WUM4VWk5MHBXSlZoVkM1RUtIMlBOSDZXc2lDUDZNN0s2REJ4NnVDa09PaUFCQ3ZCVjdaY25pUFhoUFg3V2NFcU5KYU5VblRpUmc5WG9HU0V2OU1CU1JvR2ZHSF8tUFVvei1JZVNlTjM2VmVULTRBN01wQlQ2MjVRRGxtaUtlbmEtdWQ1RVVfMDRRQ0tZdWdFV0hMZmxkdno1MGhzYjMzQU5xRDRmVXFfN28?oc=5",
+      "date": "2026-11-23T10:30:00Z"
+    },
+    {
+      "title": "How Long Does Ransomware Recovery Take? - DIGIT.FYI",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Kc1gtemtNTXduMGJITjB3cUFUV2hJOHR2cXZ4Vld0M2E2QzdfaFlGSTZGdzg5djg0WjdpWHhIU1B1VUdoajNLcTZxQm9meW83RWVUTA?oc=5",
+      "date": "2026-11-23T10:29:47Z"
+    },
     {
       "title": "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG1va3lsUlcwMFFERVpqdzdqZVMtT3VTRjhHUVRIeUZSd2hUMkxSZURYdkY2VVBUUkk3RUxDWmx2S3NkZkVkdXNDR0dEMFdwbE1EZWJ3VWJqT2NWanZxVko2UzVwVmhyN0xYaTFlRWNieDV0YzRKMXpUbnl0UnZYYWRSRE1OMXpHN3pGUVUyWk9vcWtBYVJhNTJSUFhhS2RGMVZtRkhjaFl1aUZXMGNTT2JUMA?oc=5",
@@ -24,6 +49,11 @@
       "title": "Trump signals he may resume war on Iran in 2027 if talks fail, blames Teheran for Midterm defeat - The Business Times",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbHRjQ3NjVjRQd21sSmtNdU9KbnA0MEM1d3dZaUd1ODlVNG5XWWFYZWlXV04yRDdPdmllTS1NRjE1US12SmpFekJLWnJUOGJRZFY2ajZrdlR5Rkt6UmFvNFhjWEI0NVY3R2NhcTRxQmk0UTR0MjFTU213SldrNU5aSWl5MzlwX0RrT2d4SmZZUHdNV0lUaGNwYm8tOHF4Y0pWS240OGFyTl9CT0lTdW1ILW9yZVRlYVRqQnZkeURLejEzeFVta2VsTldYMDQ?oc=5",
       "date": "2026-11-23T07:59:00Z"
+    },
+    {
+      "title": "Samsung Securities confirms data breach affecting 8,241 clients - Crypto News",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1hQjBVWDZyWGVScUVhR3dpNEp3aXZhVnNaeGNmZFd4WDFGNHRXUm8wa3czS1JfSk5DMGJ1STVvOGxhRWQzLVdub0hXQ0s1UWVDNzRqNWk3ZXRkOFpGV1pkd0xOMHZVZ0czMU4zSmNud1Vvc05f?oc=5",
+      "date": "2026-11-23T07:55:00Z"
     },
     {
       "title": "Iran Claims 2 US Patriot Radars Hit in Bahrain, Bahrain Says Civilian Site - https://houseofsaud.com/",
@@ -296,6 +326,11 @@
       "date": "2026-11-22T15:43:04Z"
     },
     {
+      "title": "3,500 Delta Air Lines flights delayed at multiple airports due to yet another outage - AOL.co.uk",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4waS05RnpyQ3U4YjNpeTlhS2owcHhhWU44M25haUo3Q0ZhWnJBOWlWN1Q4cE9CV2hTVkhHQlBnSklDRldtY3BFbUNXdEZjQlJRNWotY3U3a181SXlPSFNXckJPbXlGU0Fsdkg5OXBVSGhKUzhwUnc?oc=5",
+      "date": "2026-11-22T15:10:00Z"
+    },
+    {
       "title": "Iran prepares major non-missile surprise for US as 40,000 American troops stand in the kill zone - Bankingnews",
       "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPb2VjcTc5ZnJob00tc3pzRDhibUMzUU1wR1d3aUdFUzVnXzRabWwwTk5TanZpWkp2QURDcFljYm1iOHctSkVVOFU3b1dCbEZzaVpLVlhaLUxES2tDdms0My1GN0k2ZEctNFBqMlc2bFBTUDVDWVJJSHZFVlo1X09rMmxjM29WUHZHcHk2Um9hRGxycGR2Uk1OQjcybWIycDNZSlZMOTk2ZEZCVzBDWmU1d3VHTzNGVjFzb3hjanRhcEpjanc1UmdMaDhRb1B3d295RTdPU2c2bnRBaWVpUVJZcg?oc=5",
       "date": "2026-11-22T14:44:26Z"
@@ -549,6 +584,11 @@
       "title": "Bahrain says an Iranian attack set a plant on fire, and two tankers were hit near Hormuz - astig.ph",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9vV3VSUHZCakdzc3Z3LXBuUnM3VWYtdjE0blVkbjlxS1hyalhwMGt0MjMyTHlndUk3ai1Xc0pYS0o0UU9qSWdsNWRXMGhrOXVxNTl5aG5PbGlySFgtYUlnd2RjVlhQOTY0SDZfd2hkWGFKSVlsRWZvOUoxSQ?oc=5",
       "date": "2026-11-22T03:36:20Z"
+    },
+    {
+      "title": "YMCA Singapore data breach may have exposed details of over 13,000 youth programme participants - Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcU9ndEZPd2hkYmU1eVBidU15VUtPTUJpYkkwN0RVLXFacXhtZHZwc29HWnlUTEZJTkkySFZVSS1GNkhtNnBoNlo3ZE1Oamhjc1JGTGFVZ2dIVmFXRzd6SV9TcEZfSWtDSmdxZTBEeGRlTWZuVmlRamlJQVlTTnpmSW50dw?oc=5",
+      "date": "2026-11-22T03:33:00Z"
     },
     {
       "title": "Iran claims to have attacked two US military bases in Bahrain. - Vietnam.vn",
@@ -1049,6 +1089,11 @@
       "title": "AI Agent Swarm Executes Rapid Ransomware Attack on Company - OECD AI Policy Observatory",
       "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5MbHFhSUR3NHBtR1RJVGdIdmMwejB4b0hGa3ZXUHFJWW8zd3pSOHpRelIwVE9JbUU0djBWdFREMlVrbWgtWFJaUWlzU2l4T1NBUnlaSm13Yw?oc=5",
       "date": "2026-11-21T08:13:08Z"
+    },
+    {
+      "title": "We Will Not Allow That To Happen: Trump On Reported Iranian Dirty Bomb Plot - theunionstar.com",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQalUtRVFCdXp2clBGZFVfckdqQVFlWHFhWmxNS0ZPMHhjNXI2UlVKTDRoMXBKRjRnaG93Vmo1ZXpMcGc4dDFldll3ZFBxSllkZ0NicjZGWDNuSnpxRktjaTY2U2ZaVmZRck45TEVoWE5JWVRsTmlLdENNNVhSN21hdVJnbmwycmVMYlRJRThGMDJ4SG5hY3pnejR5NFQ4M2xKajBlT0RKUQ?oc=5",
+      "date": "2026-11-21T08:00:00Z"
     },
     {
       "title": "Uber drivers' licenses exposed in Fireworks AI data breach - Mashable",
@@ -7369,31 +7414,6 @@
       "title": "Questions swirl around FAA's new SMART AI system, though officials say no link to ground stop - AP News",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUENIeGFqX0FwQk9Vcm5VekZSY0xES05yc3k2bHFqY1JDZ0Y2cG0wWTl0QXNqZ1lJR3N0VUZYM0hGR3R5NVR4dGlXZ0JzMGFESDdVZi1hR3dBREM2SmsxODAwQmItd2xtS2RFdkVvZjQ1LUNWOV9OZkdTSVJfQ3piTkVZYlVMdw?oc=5",
       "date": "2026-11-16T11:19:00Z"
-    },
-    {
-      "title": "Data breach at AI provider leads to malware at Cursor - Techzine Global",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcFhVcnNfMjVaRFgzNERVNkwtbzNHOEFWam41aHZqOVN3YnhHT3FxWW5UVURLWTk0TWZDOFVCU0VHVUhyWm5pcUI5WXdhQ1V6al95QVRka3NzVFRrY2xMeDFDX21hcjE4LU50T2lmbFZ0SnFmb0tZazdpQ3FGYk1TcHhlTTBCZ0JmdjVGVFRxU0NRbEswRVFaZ2dNaTBhYWoz?oc=5",
-      "date": "2026-11-16T11:09:19Z"
-    },
-    {
-      "title": "Uber Data Breach Impacts 150,000 People - SecurityWeek",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9GTWI4ZFJkRFlkZU5RTU11ckkxZTlhYjBuY0JvT3FIN3E1cWs4ZFNZZWtWbUpBc2h0czEzLWlRSk9WMUZPV0lRNUR0dFhrYWxwSWxuOUFteEFyUllNTFU1ZHhzTlVGQ2ZONHZhT0hxd2IwRHJaaV9V?oc=5",
-      "date": "2026-11-16T11:02:48Z"
-    },
-    {
-      "title": "Is everything broken? Grounded jets, Microsoft outage, AI chaos make some wonder - https://www.nxsmediawire.com/",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU1pDWDVJSWR1MnY4Y0RBZGxDQmo5SG0zUnhVUGZqWTZiVzd4TVJIbjJqVXROMnJobEJJZjdvUjRJRUoxVVhTdUxlVVhHdjUyTVMtSDJ1QXdlZmtiUFhJbl9hNFg0RGhndDREQ0JHeVEzVExlbEt4S08yLXNEMVF0MV9QbHBOdU9wVTc3WFFYc0NRR0JENHFPQ3g3Y1B1SkY3RU50TjlKdURsa1pTSFBOYVFn?oc=5",
-      "date": "2026-11-16T10:47:00Z"
-    },
-    {
-      "title": "Check Point finds ransomware at record levels as n0n rises into top three and high-risk GenAI prompts increase - Industrial Cyber",
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQbk13aXpKT3VMZWZpMWE0QXVGeEF1b05jeFBQWW1PaGota0x5RkNuVlJ0aWZsTE5LWE9oZDdQa0lITi1WZVppVzFyZWVhSmxFazN6ajU0ek9CRXNBRWY4dHFHVVp1V3ZqVDRYRHBrdWFILU5XczZGcnlfV3ZEemthaUdpVzB3R3RxR2JXd1YxOW1DTFYtSkFHQVVVczEta1V3MGVnVVdmS0pxR1NpVTFJTkNWbHVuMHE4WXFPeGNIOTgtWjRKWFhNUTdXdjJGNDRJajFpeV9lT0xSeW8yQ1VIVmtqZw?oc=5",
-      "date": "2026-11-16T10:31:35Z"
-    },
-    {
-      "title": "Russia denies orchestrating cyberattack on Romanian institution - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNcFhIYktpNWRIcVNMUzd1a2ppV2VxMXNpb0dKZUhSS2NZZmV2NjN2blpzdDAtWnBmT3F4Z1FURzZxN2lQbFR3UHlSM29DaGxKLU9HYTM2NFBPTllKWVhqaExWZDRQTHRDV2VrcEI0UFZzOEprYy0xbFZ3LTZtb0VTOVJSZUlER2FNNHJnaV9jb1Z4blBEM0N4cGxPNFFULUFFNXlqNg?oc=5",
-      "date": "2026-11-16T10:27:38Z"
     }
   ]
 }
