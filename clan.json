@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T11:19:07Z",
-  "fetched_at": "2026-11-23T11:19:07.373Z",
+  "updated_at": "2026-11-23T12:21:03Z",
+  "fetched_at": "2026-11-23T12:21:03.656Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -52,7 +52,7 @@
         "league": "Legend League",
         "leagueTier": "Electro League 33",
         "donations": 92,
-        "donationsReceived": 0,
+        "donationsReceived": 30,
         "clanRank": 1,
         "previousClanRank": 1
       },
@@ -65,7 +65,7 @@
         "trophies": 0,
         "league": "Unranked",
         "leagueTier": "Titan League 27",
-        "donations": 206,
+        "donations": 324,
         "donationsReceived": 119,
         "clanRank": 2,
         "previousClanRank": 2
@@ -290,7 +290,7 @@
         "league": "Unranked",
         "leagueTier": "Unranked",
         "donations": 88,
-        "donationsReceived": 268,
+        "donationsReceived": 356,
         "clanRank": 18,
         "previousClanRank": 18
       }
@@ -306,9 +306,9 @@
     "clan": {
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
-      "stars": 5,
-      "destructionPercentage": 35.2,
-      "attacks": 2,
+      "stars": 8,
+      "destructionPercentage": 55.2,
+      "attacks": 4,
       "members": [
         {
           "tag": "#P22YG2PJU",
@@ -365,9 +365,18 @@
           "mapPosition": 3,
           "th": 17,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
-          "attacksComplete": false
+          "warAttacks": [
+            {
+              "stars": 1,
+              "pct": 79
+            },
+            {
+              "stars": 3,
+              "pct": 100
+            }
+          ],
+          "attackCount": 2,
+          "attacksComplete": true
         }
       ]
     },
