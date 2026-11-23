@@ -874,7 +874,7 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .current{display:flex;align-items:center;justify-content:center;gap:clamp(18px,6vw,56px);flex-wrap:wrap;margin:46px 0 22px;text-align:center}
 .current .temp{font-size:clamp(62px,13vw,80px);font-weight:500;line-height:1}.current .desc{font-size:19px;margin-top:10px}.current .meta{font-size:14px;opacity:.9;margin-top:6px}
 .days{display:flex;flex-direction:row;flex-wrap:nowrap;gap:12px;margin:42px 0 8px;overflow-x:auto;overflow-y:hidden;padding:6px 4px 14px 2px;-webkit-overflow-scrolling:touch;scroll-snap-type:none;overscroll-behavior-x:contain}.days::after{content:"";flex:0 0 8px;width:8px}.days .day{flex:0 0 104px;width:104px;max-width:104px;box-sizing:border-box;overflow:hidden}
-.day{background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 6px 16px;text-align:center;font:inherit;color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent}.day .d{font-size:16px;font-weight:500;white-space:nowrap;overflow:hidden}.day .ic{font-size:26px;margin:6px 0}.day .hi{color:#ff7a70;font-weight:700;font-size:17px}.day .lo{color:#3ce882;font-size:16px}.day.today{outline:2px solid rgba(255,255,255,.65);outline-offset:-2px}.day.selected{outline:2px solid #fff;outline-offset:-2px;background:rgba(0,0,0,.55)}.day:focus-visible{outline:3px solid #7dd3fc;outline-offset:2px}.day .tap-hint{font-size:10px;opacity:.75;margin-top:5px}
+.day{background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 6px 16px;text-align:center;font:inherit;color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent}.day .d{font-size:16px;font-weight:500;white-space:nowrap;overflow:hidden}.day .ic{font-size:26px;margin:6px 0}.day .hi{color:#ff7a70;font-weight:700;font-size:17px}.day .lo{color:#3ce882;font-size:16px}.day.today{outline:2px solid rgba(255,255,255,.65);outline-offset:-2px}.day.selected{outline:2px solid #fff;outline-offset:-2px;background:rgba(0,0,0,.55)}.day:focus-visible{outline:3px solid #7dd3fc;outline-offset:2px}
 
 .wxstamp{text-align:center;font-size:13px;opacity:.88;margin-top:22px}.wxerr{background:rgba(120,20,10,.55);border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:12px;text-align:center;margin-top:16px;display:none}
 .wxalerts{margin:22px auto 0;max-width:680px;text-align:left}
@@ -1104,7 +1104,6 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 <h3 class="wx-herolabel">7-day outlook</h3>
   <div class="days" id="wxDays" aria-label="7-day forecast"></div>
   <div class="wxday-detail" id="wxDayDetail" hidden role="region" aria-label="Day detail" aria-live="polite"></div>
-  <p style="text-align:center;font-size:12px;opacity:.85;margin:6px 0 0">Tap a day above for the full detail.</p>
   <section class="leo-card" id="leoForecast" aria-label="Leonida forecast — GTA VI">
     <div class="leo-head"><h3>🌴 Leonida Forecast</h3><span class="leo-tag">GTA VI · Vice City</span></div>
     <p class="leo-sub">The Weather Channel × Rockstar — a real forecast for a fictional state. The same team that forecasts your weather just forecasted Leonida.</p>
@@ -2751,6 +2750,39 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 .cs-size{border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:4px 12px;font-weight:700;color:#fff}
 .cs-war-live{flex:none;background:#e74c3c;color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:6px 12px;letter-spacing:.06em}
 .coc-featured{margin-top:18px;border-color:rgba(46,204,113,.55);box-shadow:0 0 0 1px rgba(46,204,113,.25)}
+/* Game-style live war scoreboard + war events (#cocFeaturedWar, Nov 22 2026) */
+.cw-score{display:flex;align-items:stretch;gap:8px;background:linear-gradient(180deg,#3d3d3d,#262626);border:1px solid rgba(0,0,0,.6);border-radius:10px;padding:12px 10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.cw-side{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.cw-badge{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))}
+.cw-badge-fb{font-size:34px;line-height:40px}
+.cw-name{font-weight:900;font-size:16px;letter-spacing:.04em;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,.6);white-space:nowrap}
+.cw-starbar{display:flex;align-items:center;gap:6px;width:100%}
+.cw-star{color:#ffd94a;font-size:18px;text-shadow:0 0 6px rgba(255,217,74,.6);flex:none}
+.cw-track{flex:1;height:12px;background:rgba(0,0,0,.55);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.18)}
+.cw-fill{display:block;height:100%;width:0;background:linear-gradient(180deg,#ffe066,#f5a623);border-radius:999px}
+.cw-count{font-weight:900;font-size:18px;color:#fff;flex:none;min-width:14px;text-align:center}
+.cw-att{font-size:12.5px;color:#cfd8dc;white-space:nowrap}
+.cw-mid{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:88px;text-align:center}
+.cw-vs{font-weight:900;font-size:14px;color:#ffd94a;letter-spacing:.08em;text-shadow:0 2px 2px rgba(0,0,0,.6)}
+.cw-timelabel{font-size:11px;color:#b8c8d0;line-height:1.2}
+.cw-time{font-weight:800;font-size:15px;color:#ff6b5e;line-height:1.2;text-transform:uppercase}
+.cw-day{font-weight:800;font-size:11.5px;color:#ff6b5e;letter-spacing:.03em}
+.cw-live{flex:none;background:#e74c3c;color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:5px 10px;letter-spacing:.06em;margin-top:4px}
+.cw-remain{text-align:center;margin-top:10px;font-size:14px;color:#e8eef0}
+.cw-remain b{color:#ffd94a}
+.cw-events{margin-top:12px;background:#efece2;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.35)}
+.cw-ribbon{background:linear-gradient(180deg,#d43d2a,#a82318);color:#fff;text-align:center;padding:10px 8px;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.cw-ribbon-score{font-weight:900;font-size:19px;letter-spacing:.03em;text-shadow:0 2px 2px rgba(0,0,0,.45)}
+.cw-ribbon-dest{font-size:12.5px;font-weight:700;color:#ffd9d4;margin-top:2px}
+.cw-ev{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;border-bottom:1px solid rgba(0,0,0,.12);color:#222;font-size:14.5px}
+.cw-ev:last-child{border-bottom:0}
+.cw-ev-att{font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cw-ev-stars{white-space:nowrap;font-size:15px}
+.cw-ev-stars b{color:#222}
+.cw-st-gold{color:#e8a100}
+.cw-st-dim{color:#9a9a9a}
+.cw-ev-none{padding:14px;text-align:center;color:#666;font-size:14px}
+.cw-started{text-align:center;font-weight:900;font-size:15px;color:#333;padding:12px;border-top:2px solid rgba(0,0,0,.15);letter-spacing:.02em}
 .cs-member{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 2px;font-size:15px}
 .cs-member:last-child{border-bottom:0}
 .cs-m-name{font-weight:700;color:#fff}
@@ -2777,9 +2809,33 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 </style>
   <div class="hero"><h1>⚔️ Clash of Clans</h1></div>
   <section class="cs-war coc-featured" id="cocFeaturedWar" aria-label="War in progress" hidden>
-    <div class="cs-war-top"><span>🛡️ WAR II</span><span id="cocFeatOppTop">N.∆.Z.I 🛡️</span></div>
-    <div class="cs-war-mid"><div class="cs-war-side"><div class="cs-war-score" id="cocFeatUs">0 ⭐</div><div class="cs-war-pct" id="cocFeatUsPct">0%</div></div><div class="cs-war-live" id="cocFeatLive">LIVE</div><div class="cs-war-side"><div class="cs-war-score" id="cocFeatThem">⭐ 0</div><div class="cs-war-pct" id="cocFeatThemPct">0%</div></div></div>
-    <div class="cs-war-bot"><span class="cs-size" id="cocFeatSize">5v5</span><span id="cocFeatTime">—</span></div>
+    <div class="cw-score">
+      <div class="cw-side">
+        <img class="cw-badge" src="https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png" alt="WAR II clan badge" loading="lazy">
+        <div class="cw-name">WAR II</div>
+        <div class="cw-starbar"><span class="cw-star">★</span><span class="cw-track"><span class="cw-fill" id="cocFeatUsFill"></span></span><span class="cw-count" id="cocFeatUs">0</span></div>
+        <div class="cw-att"><span id="cocFeatUsAtt">0/10</span> attacks</div>
+      </div>
+      <div class="cw-mid">
+        <div class="cw-vs">VS</div>
+        <div class="cw-timelabel" id="cocFeatTimeLabel">Battle ends in</div>
+        <div class="cw-time" id="cocFeatTime">—</div>
+        <div class="cw-day" id="cocFeatDay">Battle Day</div>
+        <div class="cw-live" id="cocFeatLive">LIVE</div>
+      </div>
+      <div class="cw-side">
+        <span class="cw-badge-fb" id="cocFeatThemBadge">🛡️</span>
+        <div class="cw-name" id="cocFeatOppTop">MEMY</div>
+        <div class="cw-starbar"><span class="cw-count" id="cocFeatThem">0</span><span class="cw-track"><span class="cw-fill" id="cocFeatThemFill"></span></span><span class="cw-star">★</span></div>
+        <div class="cw-att"><span id="cocFeatThemAtt">0/10</span> attacks</div>
+      </div>
+    </div>
+    <div class="cw-remain">⚔️ Attacks remaining: <b id="cocFeatRemain">10</b></div>
+    <div class="cw-events" id="cocFeatEvents" hidden>
+      <div class="cw-ribbon"><div class="cw-ribbon-score" id="cocFeatRibbonScore">WAR II 0-0 MEMY</div><div class="cw-ribbon-dest" id="cocFeatRibbonDest">0.00% Total Destruction 0.00%</div></div>
+      <div id="cocFeatEventList"></div>
+      <div class="cw-started">War started</div>
+    </div>
   </section>
   <section class="cs-clan" aria-label="WAR II clan info">
     <div class="cs-head">
@@ -2916,6 +2972,24 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     var mc=document.getElementById('cocMemberCount');if(mc)mc.textContent=list.length+' / 50';
   }
   renderMembers(FALLBACK);
+  /* War Events rows for the featured card. clan.json warAttacks carry
+     only {stars, pct} per attack (no defender tag, no timestamps), so
+     rows show attacker + stars + destruction only, latest first per
+     attacker, attackers in map order. Never invent times/defenders. */
+  function starStr(n){var s='';for(var i=0;i<3;i++)s+=i<n?'<span class="cw-st-gold">★</span>':'<span class="cw-st-dim">☆</span>';return s;}
+  function renderWarEvents(war){
+    var list=document.getElementById('cocFeatEventList');if(!list)return;
+    var members=((war.clan&&war.clan.members)||[]).slice().sort(function(a,b){return (a.mapPosition||99)-(b.mapPosition||99);});
+    var rows=[];
+    members.forEach(function(m){
+      var atts=(m.warAttacks||[]).slice().reverse();
+      atts.forEach(function(a){
+        var st=a.stars||0,pc=(a.pct!=null?a.pct:(a.destructionPercentage!=null?a.destructionPercentage:0));
+        rows.push('<div class="cw-ev"><span class="cw-ev-att">'+esc((m.mapPosition||'')+'. '+m.name)+'</span><span class="cw-ev-stars">'+starStr(st)+' <b>'+pc+'%</b></span></div>');
+      });
+    });
+    list.innerHTML=rows.length?rows.join(''):'<div class="cw-ev-none">No attacks yet.</div>';
+  }
   /* live clan.json */
   function load(){
     fetch('clan.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
@@ -2957,14 +3031,34 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
         set('homeWarOpp',war.opponent.name);
         set('homeWarSub',sub);
         set('homeWarTime',timeTxt);
-        set('cocFeatOppTop',war.opponent.name+' 🛡️');
-        set('cocFeatUs',war.clan.stars+' ⭐');
-        set('cocFeatUsPct',(war.clan.destructionPercentage!=null?war.clan.destructionPercentage:0)+'%');
-        set('cocFeatThem','⭐ '+war.opponent.stars);
-        set('cocFeatThemPct',(war.opponent.destructionPercentage!=null?war.opponent.destructionPercentage:0)+'%');
-        set('cocFeatSize',(war.teamSize||5)+'v'+(war.teamSize||5));
-        set('cocFeatTime',timeTxt);
+        /* featured CoC war scoreboard — game-style (badges, star bars,
+           attacks used, time left). Home widget sets above untouched. */
+        var maxStars=(war.teamSize||5)*3,perSide=(war.teamSize||5)*(war.attacksPerMember||2);
+        var usStars=war.clan.stars||0,thStars=war.opponent.stars||0;
+        var usPct=war.clan.destructionPercentage!=null?war.clan.destructionPercentage:0;
+        var thPct=war.opponent.destructionPercentage!=null?war.opponent.destructionPercentage:0;
+        set('cocFeatOppTop',war.opponent.name);
+        set('cocFeatUs',String(usStars));
+        set('cocFeatThem',String(thStars));
+        set('cocFeatUsAtt',(war.clan.attacks||0)+'/'+perSide);
+        set('cocFeatThemAtt',(war.opponent.attacks||0)+'/'+perSide);
+        var uf=document.getElementById('cocFeatUsFill');if(uf)uf.style.width=(maxStars?Math.min(100,usStars/maxStars*100):0)+'%';
+        var tf=document.getElementById('cocFeatThemFill');if(tf)tf.style.width=(maxStars?Math.min(100,thStars/maxStars*100):0)+'%';
+        set('cocFeatTimeLabel',inWar?'Battle ends in':'Battle starts in');
+        set('cocFeatTime',inWar?fmtLeft(endMs-Date.now()):fmtLeft(startMs-Date.now()));
+        set('cocFeatDay',inWar?'Battle Day':'Preparation Day');
+        set('cocFeatRemain',String(Math.max(0,perSide-(war.clan.attacks||0))));
         var lv=document.getElementById('cocFeatLive');if(lv)lv.textContent=inWar?'LIVE':'SOON';
+        var ob=document.getElementById('cocFeatThemBadge');
+        var obUrl=war.opponent.badgeUrls?(war.opponent.badgeUrls.medium||war.opponent.badgeUrls.small||war.opponent.badgeUrls.large):null;
+        if(ob)ob.innerHTML=obUrl?('<img class="cw-badge" src="'+esc(obUrl)+'" alt="'+esc(war.opponent.name)+' badge">'):'🛡️';
+        var ev=document.getElementById('cocFeatEvents');
+        if(ev)ev.hidden=!inWar;
+        if(inWar){
+          set('cocFeatRibbonScore',war.clan.name+' '+usStars+'-'+thStars+' '+war.opponent.name);
+          set('cocFeatRibbonDest',usPct.toFixed(2)+'% Total Destruction '+thPct.toFixed(2)+'%');
+          renderWarEvents(war);
+        }
       }
       var rd=document.getElementById('cocRaid');
       if(rd&&d.capital&&d.capital.state==='ended'&&d.capital.capitalTotalLoot!=null){
@@ -3894,7 +3988,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       var dt=new Date(t+'T12:00:00'), di=info(d.daily.weather_code[i]);
       var ppmax=(d.daily.precipitation_probability_max&&d.daily.precipitation_probability_max[i]!=null)?Math.round(d.daily.precipitation_probability_max[i]):null;
       var dLo=Math.round(d.daily.temperature_2m_min[i]),dHi=Math.round(d.daily.temperature_2m_max[i]);
-      html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'<div class="tap-hint">Tap for detail</div></button>';
+      html+='<button type="button" class="day'+(i===0?' today':'')+'" data-wxday="'+i+'" aria-expanded="false" aria-controls="wxDayDetail"><div class="d">'+(i===0?'Today':dt.toLocaleDateString('en-US',{weekday:'short'}))+'</div><div class="ic">'+di[0]+'</div><div class="hi">'+dHi+'°</div><div class="lo">'+dLo+'°</div>'+(ppmax!=null&&ppmax>0?'<div class="pp">💧 '+ppmax+'%</div>':'<div class="pp">&nbsp;</div>')+'</button>';
     });
     document.getElementById('wxDays').innerHTML=html;
     renderWxTrend(d);
