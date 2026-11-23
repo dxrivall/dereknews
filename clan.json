@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T18:42:13Z",
-  "fetched_at": "2026-11-23T18:42:13.180Z",
+  "updated_at": "2026-11-23T19:47:50Z",
+  "fetched_at": "2026-11-23T19:47:50.442Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -146,7 +146,7 @@
         "role": "admin",
         "th": 11,
         "expLevel": 76,
-        "trophies": 0,
+        "trophies": 28,
         "league": "Unranked",
         "leagueTier": "Wizard League 10",
         "donations": 0,
@@ -308,7 +308,7 @@
       "tag": "#2JQVGQRC9",
       "stars": 14,
       "destructionPercentage": 95.2,
-      "attacks": 6,
+      "attacks": 7,
       "members": [
         {
           "tag": "#P22YG2PJU",
@@ -335,8 +335,13 @@
           "mapPosition": 4,
           "th": 14,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
+          "warAttacks": [
+            {
+              "stars": 0,
+              "pct": 44
+            }
+          ],
+          "attackCount": 1,
           "attacksComplete": false
         },
         {
