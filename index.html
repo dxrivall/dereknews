@@ -1881,6 +1881,17 @@ body.on-sports footer{color:#d8b8b2!important}
 #view-sports .team-btn{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:12px;box-shadow:none}
 #view-sports .other-grid a{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:12px;box-shadow:none}
 .acard{background:rgba(8,22,54,.78);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:24px 18px;margin-top:30px;box-shadow:0 8px 28px rgba(0,0,0,.28);color:#fff}
+.props-toggle{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-align:left}
+.props-toggle-title{font-weight:800;font-size:18px}
+.props-toggle-right{display:flex;align-items:center;gap:8px;flex:none}
+.props-count{font-size:12px;font-weight:700;color:#9fb2bd;background:rgba(255,255,255,.08);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.props-count:empty{display:none}
+.props-chev{font-size:16px;color:#9fb2bd;transition:transform .2s}
+.props-toggle[aria-expanded="true"] .props-chev{transform:rotate(180deg)}
+.props-body{margin-top:12px}
+.props-filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.props-filters label{font-size:12.5px;font-weight:700;color:#9fb2bd;display:flex;flex-direction:column;gap:4px;flex:1;min-width:120px}
+.props-filters select{font:inherit;font-size:14px;color:#fff;background:#1c2733;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 6px}
 .acard h2{color:#fff;text-align:center;font-size:20px;margin:0 0 10px}
 .ahead{display:flex;align-items:center;gap:10px;margin-bottom:18px}
 .ahead h2{margin:0;text-align:left;font-size:24px}
@@ -2111,12 +2122,6 @@ body.on-sports footer{color:#d8b8b2!important}
     <button type="button" class="sport-row" data-sport="ufc"><span class="emoji">👊</span><span class="sport-main"><b>UFC</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="ufc" aria-hidden="true"></span></button>
     <button type="button" class="sport-row" data-sport="boxing"><span class="emoji">🥊</span><span class="sport-main"><b>Boxing</b><span class="sport-sub">Weekend fights</span></span><span class="dn-dot" data-sportdot="boxing" aria-hidden="true"></span></button>
   </div>
-  <section class="acard" id="propsCheatSheet" aria-label="Player Props cheat sheet">
-  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
-  <p class="astatus" id="propsCheatStatus">Loading today&rsquo;s player props&hellip;</p>
-  <div id="propsCheatList"></div>
-  <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
-  </section>
   <section class="acard" aria-label="Sports news">
   <div class="ahead"><h2>📰 Sports News</h2></div>
   <p class="astatus" id="sportsNewsStatus">Loading sports news…</p>
@@ -2178,10 +2183,12 @@ body.on-sports footer{color:#d8b8b2!important}
   <p class="asrc" id="mlbLiveStamp">Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard" id="mlbPropsCard" aria-label="MLB Player Props cheat sheet">
-  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <button type="button" class="props-toggle" id="mlbPropsToggle" aria-expanded="false" aria-controls="mlbPropsBody"><span class="props-toggle-title">📋 Player Props</span><span class="props-toggle-right"><span class="props-count" id="mlbPropsCount"></span><span class="props-chev" aria-hidden="true">▾</span></span></button>
+  <div class="props-body" id="mlbPropsBody" hidden>
   <p class="astatus" id="mlbPropsStatus">Loading player props&hellip;</p>
   <div id="mlbPropsList"></div>
   <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </div>
   </section>
 
   <script>(function(){var c=document.getElementById('mlbGamesCard');if(!c)return;var now=new Date();var show=new Date(2027,1,16);if(now<show)c.style.display='none';})();</script>
@@ -2222,10 +2229,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <p class="asrc" id="nbaLiveStamp">Live data: ESPN · All NBA teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard" id="nbaPropsCard" aria-label="NBA Player Props cheat sheet">
-  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <button type="button" class="props-toggle" id="nbaPropsToggle" aria-expanded="false" aria-controls="nbaPropsBody"><span class="props-toggle-title">📋 Player Props</span><span class="props-toggle-right"><span class="props-count" id="nbaPropsCount"></span><span class="props-chev" aria-hidden="true">▾</span></span></button>
+  <div class="props-body" id="nbaPropsBody" hidden>
+  <div class="props-filters"><label>Team<select id="nbaPropsTeam" aria-label="Filter by team"><option value="">All teams</option></select></label><label>Stat<select id="nbaPropsStat" aria-label="Filter by stat"><option value="">All stats</option></select></label></div>
   <p class="astatus" id="nbaPropsStatus">Loading player props&hellip;</p>
   <div id="nbaPropsList"></div>
   <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </div>
   </section>
 
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NBA standings view"><button type="button" role="tab" data-std="nba:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nba:div" aria-selected="false">Divisions</button></div></section>
@@ -2267,10 +2277,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <p class="asrc" id="nflLiveStamp">Live data: ESPN &middot; All NFL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard" id="nflPropsCard" aria-label="NFL Player Props cheat sheet">
-  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <button type="button" class="props-toggle" id="nflPropsToggle" aria-expanded="false" aria-controls="nflPropsBody"><span class="props-toggle-title">📋 Player Props</span><span class="props-toggle-right"><span class="props-count" id="nflPropsCount"></span><span class="props-chev" aria-hidden="true">▾</span></span></button>
+  <div class="props-body" id="nflPropsBody" hidden>
+  <div class="props-filters"><label>Team<select id="nflPropsTeam" aria-label="Filter by team"><option value="">All teams</option></select></label><label>Stat<select id="nflPropsStat" aria-label="Filter by stat"><option value="">All stats</option></select></label></div>
   <p class="astatus" id="nflPropsStatus">Loading player props&hellip;</p>
   <div id="nflPropsList"></div>
   <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </div>
   </section>
 
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NFL standings view"><button type="button" role="tab" data-std="nfl:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nfl:div" aria-selected="false">Divisions</button></div></section>
@@ -2317,10 +2330,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <p class="asrc" id="nhlLiveStamp">Live data: ESPN &middot; All NHL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
   <section class="acard" id="nhlPropsCard" aria-label="NHL Player Props cheat sheet">
-  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <button type="button" class="props-toggle" id="nhlPropsToggle" aria-expanded="false" aria-controls="nhlPropsBody"><span class="props-toggle-title">📋 Player Props</span><span class="props-toggle-right"><span class="props-count" id="nhlPropsCount"></span><span class="props-chev" aria-hidden="true">▾</span></span></button>
+  <div class="props-body" id="nhlPropsBody" hidden>
+  <div class="props-filters"><label>Team<select id="nhlPropsTeam" aria-label="Filter by team"><option value="">All teams</option></select></label><label>Stat<select id="nhlPropsStat" aria-label="Filter by stat"><option value="">All stats</option></select></label></div>
   <p class="astatus" id="nhlPropsStatus">Loading player props&hellip;</p>
   <div id="nhlPropsList"></div>
   <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </div>
   </section>
 
   <section class="acard" aria-label="Eastern Conference standings">
@@ -2770,6 +2786,9 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 .cw-live{flex:none;background:#e74c3c;color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:5px 10px;letter-spacing:.06em;margin-top:4px}
 .cw-remain{text-align:center;margin-top:10px;font-size:14px;color:#e8eef0}
 .cw-remain b{color:#ffd94a}
+.cw-odds{text-align:center;margin-top:6px;font-size:14px;color:#e8eef0}
+.cw-odds b{color:#ffd94a;font-size:16px}
+.cw-odds-note{font-size:11.5px;color:#9fb2bd}
 .cw-events{margin-top:12px;background:#efece2;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.35)}
 .cw-ribbon{background:linear-gradient(180deg,#d43d2a,#a82318);color:#fff;text-align:center;padding:10px 8px;box-shadow:0 2px 0 rgba(0,0,0,.25)}
 .cw-ribbon-score{font-weight:900;font-size:19px;letter-spacing:.03em;text-shadow:0 2px 2px rgba(0,0,0,.45)}
@@ -2831,6 +2850,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       </div>
     </div>
     <div class="cw-remain">⚔️ Attacks remaining: <b id="cocFeatRemain">10</b></div>
+    <div class="cw-odds" id="cocFeatOdds" hidden><span id="cocFeatOddsName">WAR II</span> — <b id="cocFeatOddsPct">–</b> to win <span class="cw-odds-note">· model estimate</span></div>
     <div class="cw-events" id="cocFeatEvents" hidden>
       <div class="cw-ribbon"><div class="cw-ribbon-score" id="cocFeatRibbonScore">WAR II 0-0 MEMY</div><div class="cw-ribbon-dest" id="cocFeatRibbonDest">0.00% Total Destruction 0.00%</div></div>
       <div id="cocFeatEventList"></div>
@@ -2990,6 +3010,71 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     });
     list.innerHTML=rows.length?rows.join(''):'<div class="cw-ev-none">No attacks yet.</div>';
   }
+  /* Live war win odds (Nov 22, 2026) — model estimate, computed from
+     clan.json on every load. FORMULA: each attack's stars are modeled
+     as Binomial(3, lam/3) — 3 stars up for grabs per attack, each earned
+     with probability lam/3. lam (expected stars/attack) is a shrinkage
+     blend of the side's actual rate in this war and a prior:
+     lam = (stars + 3*prior) / (attacks + 3); a side with no attacks yet
+     uses the prior alone. The prior is WAR II's historical stars/attack
+     from the war log (non-CWL wars in the current war's format;
+     fallback 1.4), used for BOTH sides — an unknown opponent is assumed
+     to be as good as WAR II on average. Each side's final-stars
+     distribution is the exact convolution of its remaining attacks,
+     capped at teamSize*3. P(win) = P(usStars > themStars) +
+     P(tie) * pTie, where pTie is 0.65 if WAR II leads on destruction,
+     0.35 if behind, 0.5 if tied — the destruction lead is a real but
+     noisy tiebreak signal, so the tilt is modest. Deterministic (no
+     randomness): the same clan.json gives the same %. Display is
+     clamped to 1–99% unless the math truly decides it (e.g. 15 stars
+     vs a max possible below that). Shown only once battle starts —
+     before any attack both sides are identical by construction (50%),
+     so there is no forecast to show. */
+  function warHistRate(d, war){
+    var items=(d&&d.warLog&&d.warLog.items)||[];
+    var ts=war.teamSize||5,apm=war.attacksPerMember||2;
+    var s=0,a=0,s2=0,a2=0;
+    items.forEach(function(it){
+      if(!it||it.isCwl||!it.us||typeof it.us.stars!=='number')return;
+      var n=(it.teamSize||0)*(it.attacksPerMember||0);
+      if(n>0){s2+=it.us.stars;a2+=n;}
+      if(it.teamSize===ts&&it.attacksPerMember===apm){s+=it.us.stars;a+=n;}
+    });
+    if(a>0)return s/a;
+    if(a2>0)return s2/a2;
+    return 1.4;
+  }
+  function warFinalDist(cur, rem, lam, cap){
+    var p=Math.max(0,Math.min(1,lam/3)),q=1-p;
+    var atk=[q*q*q,3*p*q*q,3*p*p*q,p*p*p];
+    var dist=new Array(cap+1).fill(0);
+    dist[Math.min(cap,cur)]=1;
+    for(var i=0;i<rem;i++){
+      var nd=new Array(cap+1).fill(0);
+      for(var s=0;s<=cap;s++){
+        if(!dist[s])continue;
+        for(var k=0;k<=3;k++){nd[Math.min(cap,s+k)]+=dist[s]*atk[k];}
+      }
+      dist=nd;
+    }
+    return dist;
+  }
+  function warWinPct(war, histRate){
+    var cap=(war.teamSize||5)*3,perSide=(war.teamSize||5)*(war.attacksPerMember||2);
+    function lam(side){
+      var att=side.attacks||0,st=side.stars||0;
+      return att>0?(st+3*histRate)/(att+3):histRate;
+    }
+    var us=war.clan,th=war.opponent;
+    var du=warFinalDist(us.stars||0,Math.max(0,perSide-(us.attacks||0)),lam(us),cap);
+    var dt=warFinalDist(th.stars||0,Math.max(0,perSide-(th.attacks||0)),lam(th),cap);
+    var ud=us.destructionPercentage!=null?us.destructionPercentage:0;
+    var td=th.destructionPercentage!=null?th.destructionPercentage:0;
+    var pTie=ud>td?0.65:(ud<td?0.35:0.5);
+    var p=0;
+    for(var a=0;a<=cap;a++)for(var b=0;b<=cap;b++){p+=du[a]*dt[b]*(a>b?1:(a<b?0:pTie));}
+    return p;
+  }
   /* live clan.json */
   function load(){
     fetch('clan.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
@@ -3054,10 +3139,18 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
         if(ob)ob.innerHTML=obUrl?('<img class="cw-badge" src="'+esc(obUrl)+'" alt="'+esc(war.opponent.name)+' badge">'):'🛡️';
         var ev=document.getElementById('cocFeatEvents');
         if(ev)ev.hidden=!inWar;
+        var od=document.getElementById('cocFeatOdds');
+        if(od)od.hidden=!inWar;
         if(inWar){
           set('cocFeatRibbonScore',war.clan.name+' '+usStars+'-'+thStars+' '+war.opponent.name);
           set('cocFeatRibbonDest',usPct.toFixed(2)+'% Total Destruction '+thPct.toFixed(2)+'%');
           renderWarEvents(war);
+          /* win odds — model estimate, recomputed from clan.json on
+             every load; hidden in preparation (no in-war signal yet). */
+          var wp=warWinPct(war,warHistRate(d,war));
+          var wpct=wp>=1?100:Math.min(99,Math.max(1,Math.round(wp*100)));
+          set('cocFeatOddsName',war.clan.name);
+          set('cocFeatOddsPct',wpct+'%');
         }
       }
       var rd=document.getElementById('cocRaid');
@@ -6088,52 +6181,139 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
      data loaders as the old simulator (loadLeague + enrichModel +
      modelPropProb), so injured/blocked players are still excluded. */
   /* Shared props data (Nov 22, 2026): one load of all leagues,
-     reused by the main cheat sheet, the per-sport cheat sheets
-     and the team-sheet props view — no duplicate fetches. */
+     reused by the per-sport cheat sheets and the team-sheet props
+     view — no duplicate fetches. */
+  var dnSpecialsDone={},dnTdBackupsDone={};
   var dnPropsCache=null;
   function dnLoadPropsData(){
     if(dnPropsCache)return dnPropsCache;
     dnPropsCache=Promise.all(LEAGUES.map(loadLeague)).then(function(res){
       var jobs=[];
-      LEAGUES.forEach(function(lg,li){if(lg.key==='nba'||lg.key==='nhl')jobs.push(enrichModel(lg,res[li]||[]));});
+      LEAGUES.forEach(function(lg,li){
+        if(lg.key==='nba'||lg.key==='nhl'){
+          jobs.push(enrichModel(lg,res[li]||[]));
+          /* 3PM (NBA) / SOG (NHL) specials: the per-sport props
+             dropdowns filter by stat line, so the specials load up
+             front here instead of lazily on the team sheet — same
+             loader the team sheet uses, run once per league
+             (dnSpecialsDone) so it never duplicates. */
+          if(!dnSpecialsDone[lg.key]){dnSpecialsDone[lg.key]=1;jobs.push(enrichSpecials(lg,res[li]||[]).catch(function(){}));}
+        }
+      });
       return Promise.all(jobs).then(function(){return res;});
     }).catch(function(e){dnPropsCache=null;throw e;});
     return dnPropsCache;
   }
-  /* Top-8 prop rows for one league, same row format as the main
-     cheat sheet. Returns {html, count}. */
-  function dnLeaguePropsRows(lg,games){
-    var seen={},rows=[];
+  /* Stat filter display names: the model labels are terse
+     (Pts, Reb, Ast, SOG, TD) — the filter shows full words. */
+  var dnStatDisplay={'Pts':'Points','Reb':'Rebounds','Ast':'Assists','3PM':'3-Pointers','SOG':'Shots on Goal','TD':'Anytime TD','Pass Yds':'Pass Yds','Rush Yds':'Rush Yds','Rec Yds':'Rec Yds','Goals':'Goals','Assists':'Assists','Points':'Points'};
+  /* Per-sport props state, keyed by league: the full sorted prop
+     list for the league plus the element ids for its dropdown. */
+  var dnSportPropsData={};
+  function dnPropsTeamAbbr(games,teamId){
+    var abbr=null;
     (games||[]).forEach(function(g){
-      (g.allProps||[]).forEach(function(pr){
-        var k=pr.name+'-'+pr.label;if(seen[k])return;seen[k]=1;
-        rows.push({pr:pr,prob:modelPropProb(pr).prob,game:g});
+      if(String(g.home.id)===String(teamId))abbr=g.home.abbr;
+      if(String(g.away.id)===String(teamId))abbr=g.away.abbr;
+    });
+    return abbr||('Team '+teamId);
+  }
+  /* Full sorted prop list for one league (no slice): yardage/stat
+     props from allProps, 3PM (NBA) / SOG (NHL) specials, and Anytime
+     TD (NFL, from tdPlayers). Same model probabilities as the
+     team-sheet view — nothing re-priced here. Sorted by model %
+     desc, deduped by player+label. */
+  function dnCollectPropsRows(lg,games){
+    var seen={},rows=[];
+    function add(pr,prob,game){
+      if(!pr||!pr.name)return;
+      var k=pr.name+'-'+pr.label;if(seen[k])return;seen[k]=1;
+      rows.push({pr:pr,prob:prob,game:game});
+    }
+    (games||[]).forEach(function(g){
+      (g.allProps||[]).forEach(function(pr){add(pr,modelPropProb(pr).prob,g);});
+      (g.threeProps||[]).forEach(function(sp){
+        var line3=simLine(sp.avg);
+        add({name:sp.name,id:sp.id,label:'3PM',line:line3,avg:sp.avg,teamId:sp.teamId},modelPropProb({avg:sp.avg,line:line3,l5:sp.l5,hitRate:sp.hitRate}).prob,g);
+      });
+      (g.sogProps||[]).forEach(function(sp){
+        var lineS=simLine(sp.avg);
+        add({name:sp.name,id:sp.id,label:'SOG',line:lineS,avg:sp.avg,teamId:sp.teamId},modelPropProb({avg:sp.avg,line:lineS,l5:sp.l5,hitRate:sp.hitRate}).prob,g);
+      });
+      (g.tdPlayers||[]).forEach(function(tp){
+        if(!tp.gp||tp.td<=0)return;
+        var rate=tp.td/tp.gp;
+        var prob=tp.hitRate!=null?tp.hitRate:(1-Math.exp(-rate));
+        prob=Math.max(0.15,Math.min(0.85,prob));
+        add({name:tp.name,id:tp.id,label:'TD',td:tp.td,gp:tp.gp,teamId:tp.teamId,backup:!!tp.backup,backupNote:tp.backupNote||''},prob,g);
       });
     });
     rows.sort(function(a,b){return b.prob-a.prob;});
-    rows=rows.slice(0,8);
-    if(!rows.length)return{html:'',count:0};
-    var h='<p class="brk-conf">'+lg.label+'</p>';
-    rows.forEach(function(r){
-      var pr=r.pr,g=r.game;
-      h+='<div class="parlay-leg"><span><b>'+esc(pr.name)+'</b> — Over '+esc(String(pr.line))+' '+esc(pr.label)+'<span class="p-sub">'+esc(g.away.abbr)+' at '+esc(g.home.abbr)+' · '+esc(fmtWhen(g.date))+' · season avg '+esc(String(pr.avg))+'/gm</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
-    });
-    return{html:h,count:rows.length};
+    return rows;
   }
-  function renderPropsCheat(){
-    var box=document.getElementById('propsCheatList'),st=document.getElementById('propsCheatStatus');
+  /* Top-8 rows after the current team/stat filters. Pure: same
+     rows in, filtered top-8 out. */
+  function dnFilterPropsRows(rows,teamId,statLabel){
+    return (rows||[]).filter(function(r){
+      if(teamId&&String(r.pr.teamId)!==String(teamId))return false;
+      if(statLabel&&r.pr.label!==statLabel)return false;
+      return true;
+    }).slice(0,8);
+  }
+  /* One prop row — same format as the old cheat sheet (player,
+     prop line, matchup + date + season avg, model % only). TD rows
+     read "Anytime TD" with the season TD count instead of a line. */
+  function dnPropsRowHtml(r){
+    var pr=r.pr,g=r.game;
+    var lineHtml,subHtml;
+    if(pr.label==='TD'){
+      lineHtml='Anytime TD';
+      subHtml=esc(g.away.abbr)+' at '+esc(g.home.abbr)+' · '+esc(fmtWhen(g.date))+' · '+esc(String(pr.td))+' TDs in '+esc(String(pr.gp))+' games';
+    }else{
+      lineHtml='Over '+esc(String(pr.line))+' '+esc(pr.label);
+      subHtml=esc(g.away.abbr)+' at '+esc(g.home.abbr)+' · '+esc(fmtWhen(g.date))+' · season avg '+esc(String(pr.avg))+'/gm';
+    }
+    return '<div class="parlay-leg"><span><b>'+esc(pr.name)+'</b> — '+lineHtml+'<span class="p-sub">'+subHtml+'</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
+  }
+  /* Re-render one league's dropdown list from its stored rows and
+     the current filter selections. */
+  function dnRenderSportPropsList(lgKey){
+    var st=dnSportPropsData[lgKey];if(!st)return;
+    var box=document.getElementById(st.boxId),stEl=document.getElementById(st.stId);
     if(!box)return;
-    dnLoadPropsData().then(function(res){
-      var h='',any=false;
-      LEAGUES.forEach(function(lg,li){
-        var r=dnLeaguePropsRows(lg,res[li]||[]);
-        if(r.count){any=true;h+=r.html;}
-      });
-      box.innerHTML=h;
-      if(st)st.textContent=any?'Top props by model hit % — today’s games only.':'No player props could be priced from today’s games right now.';
-    }).catch(function(){
-      if(st)st.textContent='Player props could not load right now — reopen Sports to try again.';
-    });
+    var teamSel=document.getElementById(st.teamSelId),statSel=document.getElementById(st.statSelId);
+    var team=teamSel?teamSel.value:'',stat=statSel?statSel.value:'';
+    var rows=dnFilterPropsRows(st.rows,team,stat);
+    if(!rows.length){
+      box.innerHTML='';
+      if(stEl)stEl.textContent='No props for that team/stat right now.';
+      return;
+    }
+    var h='<p class="brk-conf">'+st.lg.label+'</p>';
+    rows.forEach(function(r){h+=dnPropsRowHtml(r);});
+    box.innerHTML=h;
+    if(stEl)stEl.textContent='Top props by model hit % — today’s games only.';
+  }
+  /* Build the team + stat filter options from the actual loaded
+     props — only teams/stats that have props appear, so a selection
+     never leads to a dead end unless the data genuinely has none. */
+  function dnBuildPropsFilters(lgKey){
+    var st=dnSportPropsData[lgKey];if(!st)return;
+    var teamSel=document.getElementById(st.teamSelId),statSel=document.getElementById(st.statSelId);
+    if(teamSel){
+      var teams={};
+      st.rows.forEach(function(r){var tid=String(r.pr.teamId);if(!teams[tid])teams[tid]=dnPropsTeamAbbr(st.games,tid);});
+      var opts=Object.keys(teams).map(function(tid){return{tid:tid,abbr:teams[tid]};}).sort(function(a,b){return a.abbr.localeCompare(b.abbr);});
+      teamSel.innerHTML='<option value="">All teams</option>'+opts.map(function(o){return '<option value="'+esc(o.tid)+'">'+esc(o.abbr)+'</option>';}).join('');
+      if(!teamSel.dataset.wired){teamSel.dataset.wired='1';teamSel.addEventListener('change',function(){dnRenderSportPropsList(lgKey);});}
+    }
+    if(statSel){
+      var stats={};
+      st.rows.forEach(function(r){stats[r.pr.label]=1;});
+      var sopts=Object.keys(stats).sort();
+      statSel.innerHTML='<option value="">All stats</option>'+sopts.map(function(s){return '<option value="'+esc(s)+'">'+esc(dnStatDisplay[s]||s)+'</option>';}).join('');
+      if(!statSel.dataset.wired){statSel.dataset.wired='1';statSel.addEventListener('change',function(){dnRenderSportPropsList(lgKey);});}
+    }
   }
   function renderSportProps(lgKey,boxId,stId){
     var box=document.getElementById(boxId),st=document.getElementById(stId);
@@ -6143,23 +6323,35 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       var lg=null,li=-1;
       LEAGUES.forEach(function(x,i){if(x.key===lgKey){lg=x;li=i;}});
       if(!lg||li<0){if(st)st.textContent='No player props for this sport right now.';return;}
-      var r=dnLeaguePropsRows(lg,res[li]||[]);
-      box.innerHTML=r.html;
-      if(st)st.textContent=r.count?'Top props by model hit % — today’s games only.':'No player props could be priced from today’s games right now.';
+      var games=res[li]||[];
+      var rows=dnCollectPropsRows(lg,games);
+      dnSportPropsData[lgKey]={lg:lg,games:games,rows:rows,boxId:boxId,stId:stId,teamSelId:lgKey+'PropsTeam',statSelId:lgKey+'PropsStat'};
+      var cnt=document.getElementById(lgKey+'PropsCount');
+      if(cnt)cnt.textContent=rows.length?rows.length+' props':'';
+      dnBuildPropsFilters(lgKey);
+      dnRenderSportPropsList(lgKey);
     }).catch(function(){if(st)st.textContent='Player props could not load right now — reopen Sports to try again.';});
   }
-  renderPropsCheat();
+  /* Props dropdown toggles (per-sport, collapsed by default). */
+  ['mlb','nba','nfl','nhl'].forEach(function(k){
+    var btn=document.getElementById(k+'PropsToggle'),body=document.getElementById(k+'PropsBody');
+    if(!btn||!body)return;
+    btn.addEventListener('click',function(){
+      var open=body.hidden;
+      body.hidden=!open;
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
   renderSportProps('nba','nbaPropsList','nbaPropsStatus');
   renderSportProps('nfl','nflPropsList','nflPropsStatus');
   renderSportProps('nhl','nhlPropsList','nhlPropsStatus');
   renderSportProps('mlb','mlbPropsList','mlbPropsStatus');
   /* Team-sheet props (Nov 22, 2026): the next game's model props
      for one team, exposed on window because the team sheet lives
-     in a separate script block. 3PM/SOG props (NBA/NHL) and TD
-     backups (NFL) are enriched lazily, once per league, only when
-     a team's props are actually opened — the main cheat sheet
-     does not pay for them. */
-  var dnSpecialsDone={},dnTdBackupsDone={};
+     in a separate script block. 3PM/SOG specials are already loaded
+     by dnLoadPropsData for the per-sport dropdowns (dnSpecialsDone);
+     TD backups (NFL) are still enriched lazily, once per league,
+     only when a team's props are actually opened. */
   window.__dnTeamProps=function(lgKey,teamId){
     return dnLoadPropsData().then(function(res){
       var lg=null,li=-1;
