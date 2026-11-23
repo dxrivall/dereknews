@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T22:27:36Z",
-  "fetched_at": "2026-11-23T22:27:36.094Z",
+  "updated_at": "2026-11-23T23:25:26Z",
+  "fetched_at": "2026-11-23T23:25:26.919Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -397,9 +397,9 @@
     "opponent": {
       "name": "MEMY",
       "tag": "#8PGG2CGR",
-      "stars": 0,
-      "destructionPercentage": 0,
-      "attacks": 0,
+      "stars": 6,
+      "destructionPercentage": 40,
+      "attacks": 2,
       "members": [
         {
           "tag": "#QGQGQ28V",
