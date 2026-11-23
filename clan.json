@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T00:12:53Z",
-  "fetched_at": "2026-11-23T00:12:53.766Z",
+  "updated_at": "2026-11-23T01:35:48Z",
+  "fetched_at": "2026-11-23T01:35:47.997Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -62,11 +62,11 @@
         "role": "leader",
         "th": 18,
         "expLevel": 210,
-        "trophies": 154,
+        "trophies": 183,
         "league": "Unranked",
         "leagueTier": "Titan League 27",
         "donations": 206,
-        "donationsReceived": 0,
+        "donationsReceived": 89,
         "clanRank": 2,
         "previousClanRank": 2
       },
@@ -93,7 +93,7 @@
         "trophies": 0,
         "league": "Unranked",
         "leagueTier": "Golem League 20",
-        "donations": 0,
+        "donations": 1,
         "donationsReceived": 0,
         "clanRank": 4,
         "previousClanRank": 4
@@ -289,7 +289,7 @@
         "trophies": 0,
         "league": "Unranked",
         "leagueTier": "Unranked",
-        "donations": 0,
+        "donations": 88,
         "donationsReceived": 268,
         "clanRank": 18,
         "previousClanRank": 18
@@ -297,7 +297,7 @@
     ]
   },
   "currentWar": {
-    "state": "preparation",
+    "state": "inWar",
     "teamSize": 5,
     "attacksPerMember": 2,
     "preparationStartTime": "20261122T003239.000Z",
@@ -306,9 +306,9 @@
     "clan": {
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
-      "stars": 0,
-      "destructionPercentage": 0,
-      "attacks": 0,
+      "stars": 5,
+      "destructionPercentage": 35.2,
+      "attacks": 2,
       "members": [
         {
           "tag": "#P22YG2PJU",
@@ -316,9 +316,18 @@
           "mapPosition": 2,
           "th": 18,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
-          "attacksComplete": false
+          "warAttacks": [
+            {
+              "stars": 2,
+              "pct": 76
+            },
+            {
+              "stars": 3,
+              "pct": 100
+            }
+          ],
+          "attackCount": 2,
+          "attacksComplete": true
         },
         {
           "tag": "#GL80JCCU2",
