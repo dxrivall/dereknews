@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T01:35:48Z",
-  "fetched_at": "2026-11-23T01:35:47.997Z",
+  "updated_at": "2026-11-23T01:52:51Z",
+  "fetched_at": "2026-11-23T01:52:51.947Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -408,7 +408,12 @@
           "mapPosition": 2,
           "th": 18
         }
-      ]
+      ],
+      "badgeUrls": {
+        "small": "https://api-assets.clashofclans.com/badges/70/qOJthn3mPfRRTWAetzFCjkVB32fcRftJ3pnCyuuYGKo.png",
+        "medium": "https://api-assets.clashofclans.com/badges/200/qOJthn3mPfRRTWAetzFCjkVB32fcRftJ3pnCyuuYGKo.png",
+        "large": "https://api-assets.clashofclans.com/badges/512/qOJthn3mPfRRTWAetzFCjkVB32fcRftJ3pnCyuuYGKo.png"
+      }
     }
   },
   "warLog": {
