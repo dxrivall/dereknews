@@ -1,29 +1,23 @@
 {
- "updated_at": "2026-11-23T08:16:42.349339+00:00",
+ "updated_at": "2026-11-23T09:38:46.711169+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8384879,
-  "out": 727,
-  "pct": 0.01,
-  "source_updated": "2026-11-23T08:06:01+00:00",
+  "out": 186,
+  "pct": 0.0,
+  "source_updated": "2026-11-23T09:35:53+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "PSEG Long Island",
-    "tracked": 1159562,
-    "out": 521,
-    "pct": 0.04
-   },
-   {
     "name": "New York State Electric & Gas",
     "tracked": 918776,
-    "out": 175,
+    "out": 156,
     "pct": 0.02
    },
    {
-    "name": "National Grid",
-    "tracked": 1699953,
-    "out": 21,
+    "name": "PSEG Long Island",
+    "tracked": 1159562,
+    "out": 19,
     "pct": 0.0
    },
    {
@@ -35,6 +29,12 @@
    {
     "name": "Con Edison",
     "tracked": 3626606,
+    "out": 1,
+    "pct": 0.0
+   },
+   {
+    "name": "National Grid",
+    "tracked": 1699953,
     "out": 1,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-23T08:05:59+00:00",
+  "source_updated": "2026-11-23T09:35:51+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
