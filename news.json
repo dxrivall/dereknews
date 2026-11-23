@@ -1,27 +1,83 @@
 {
-  "updated_at": "2026-11-23T15:50:11.157017Z",
+  "updated_at": "2026-11-23T16:41:45.267396Z",
   "sections": {
     "top": [
+      {
+        "title": "Czech Republic faces lower fish stocks, including traditional Christmas carp, after drought",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/czech-republic-faces-lower-fish-stocks-including-traditional-christmas-carp-after-drought-95b3d385b3344ab2a2d8300ab1ca6ce5",
+        "published": "2026-11-23T08:31:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.-wUTx9fYWgODc1KZZvniqQ&pid=News"
+      },
+      {
+        "title": "Wall St roars back as Jensen Huang returns to Nvidia as CEO",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23/",
+        "published": "2026-11-23T08:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.PmR2z9L5RAmYKPDkWfSJ_g&pid=News"
+      },
+      {
+        "title": "Maresca dice que las dificultades del City son “normales” tras la salida de Guardiola",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/man-city-champions-league-maresca-fd807325d61bc898b9e7bd27e37ffd14",
+        "published": "2026-11-23T08:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.FYPRodD-kyXr2br3kap6Vg&pid=News"
+      },
+      {
+        "title": "WHO director-general visits Cuba as healthcare system breaks down",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/cuba-who-director-general-health-system-tedros-4432aa03abf3f5fc8b6f2e480f451b8c",
+        "published": "2026-11-23T08:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.B9GXSOWhIDR688sQyms0Fw&pid=News"
+      },
+      {
+        "title": "Ukraine sinks Russian warship in Libya as conflict spreads beyond Europe",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship-2026-11-23/",
+        "published": "2026-11-23T08:10:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "José Mourinho says players must accept the risks and demands that come with soccer’s high salaries",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/jose-mourinho-real-madrid-kane-doue-3ff9dedb6cba2ed6309fcff90637020f",
+        "published": "2026-11-23T08:08:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.AMEdo-mAvJNORJ759WRFqw&pid=News"
+      },
+      {
+        "title": "AP Player of the Week: Nebraska QB Colandrea had a hand in 4 TDs in breakthrough win over Buckeyes",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/anthony-colandrea-nebraska-player-of-week-5470369f6a49b00c61e654170dae28f4",
+        "published": "2026-11-23T08:07:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.obew4TxBw-eA6j73kZEOAg&pid=News"
+      },
+      {
+        "title": "‘Grand Theft Auto VI’ lives up to its hype with compelling characters and spectacular action",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/grand-theft-auto-vi-6-video-game-82404adf585e7242e61fb42e8aa05481",
+        "published": "2026-11-23T08:03:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.G4upocWFkLjuWIpePLknnA&pid=News"
+      },
+      {
+        "title": "Fintech festival attendees voice excitement, concern over agentic AI",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW959519112026RP1/",
+        "published": "2026-11-23T07:43:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.A2B95m_krzmX2XhDON9k6w&pid=News"
+      },
+      {
+        "title": "Moscow accuses Estonia of hostile actions on 'verge of triggering open war'",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/moscow-accuses-estonia-hostile-actions-verge-triggering-open-war-2026-11-23/",
+        "published": "2026-11-23T07:39:00Z",
+        "thumb": ""
+      },
       {
         "title": "Philadelphia Union’s Cavan Sullivan wins MLS Young Player of the Year award",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/mls-cavan-sullivan-young-player-award-6a037b0a367b53b6bb661b03dcb5adb7",
         "published": "2026-11-23T07:32:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.aeiqlOE2T2P0ZIV0rgWZog&pid=News"
-      },
-      {
-        "title": "Wall St roars back as Jensen Huang returns to Nvidia as CEO",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23/",
-        "published": "2026-11-23T07:21:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.PmR2z9L5RAmYKPDkWfSJ_g&pid=News"
-      },
-      {
-        "title": "Lawmakers criticize Nvidia decision to reinstate Huang as CEO",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/lawmakers-criticize-nvidia-decision-reinstate-huang-ceo-2026-11-23/",
-        "published": "2026-11-23T07:15:00Z",
-        "thumb": ""
       },
       {
         "title": "AI rally set to add $2 trillion to Nasdaq-100 as Huang returns to Nvidia helm",
@@ -31,46 +87,11 @@
         "thumb": "http://www.bing.com/th?id=ONUT.o0PRJalsEQkqOSKxwLq9Sw&pid=News"
       },
       {
-        "title": "Ukraine sinks Russian warship in Libya as conflict spreads beyond Europe",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship-2026-11-23/",
-        "published": "2026-11-23T07:07:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Why Russia's Kaliningrad exclave is a potential flashpoint with NATO",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/aerospace-defense/why-russias-kaliningrad-is-potential-flashpoint-with-nato-2026-11-23/",
-        "published": "2026-11-23T07:07:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.qd45fQoJ2Xoq4c-kyD6BFA&pid=News"
-      },
-      {
         "title": "Small US trucking firms scramble to survive mounting diesel costs",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/diesel-prices-trucking-companies-war-trump-c12e9c30ebf2c170cdee2bd8ba4e313b",
         "published": "2026-11-23T07:07:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.jiajuTUIxgJFDhXgUOgSpw&pid=News"
-      },
-      {
-        "title": "Bukele reveals circumstances in which 3 Salvadoran soldiers died fighting gangs in Haiti",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/haiti-el-salvador-bukele-gangs-killed-a8e4b6c757733cc05d01a0f3809528b5",
-        "published": "2026-11-23T07:06:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.RHGGyyWPY_lu4bL6dqAIRg&pid=News"
-      },
-      {
-        "title": "Ukraine’s attack on Russian vessel in Libya opens new theater in broader confrontation",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/libya-russia-ukriane-war-benghazi-ship-drone-cbd82b965a111dcf4605b8b2d0493780",
-        "published": "2026-11-23T06:58:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.TD91aKk1lCMtY14WR2CsSg&pid=News"
-      },
-      {
-        "title": "Hungary’s Magyar says he will visit Ukraine in a sign of mending relations",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/hungary-magyar-ukraine-visit-564457bace8a9053b948d3182235cc1f",
-        "published": "2026-11-23T06:49:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.A5fmq3tLDD5M8p5F737G3g&pid=News"
       },
       {
         "title": "VIEW Nvidia reinstates Jensen Huang as CEO, igniting tech surge",
@@ -85,30 +106,23 @@
         "link": "https://www.reuters.com/video/watch/idRW062223112026RP1/",
         "published": "2026-11-23T06:42:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.vCECACDDRNbqJwpPmA5aGg&pid=News"
-      },
-      {
-        "title": "Ancient site, modern makeover: A mothballed museum on the Acropolis gets a high-tech lease of life",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/greece-acropolis-museum-makeover-ancient-history-c293699f4b395cdd1edc5f8598886e0d",
-        "published": "2026-11-23T06:42:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.XTw_pHVMRMLvmL5vsRVRDQ&pid=News"
-      },
-      {
-        "title": "Trump will address a Justice Department transformed by his pursuit of political adversaries",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-justice-department-speech-blanche-5fff1865550ea7699667120234f2ebd4",
-        "published": "2026-11-23T06:36:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.uOaA5rDOrlmNK1-7VkWd9w&pid=News"
-      },
-      {
-        "title": "Real Madrid says striker Endrick will be sidelined with a muscle injury",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/real-madrid-endrick-7f0e1199f9709610ec4011ba84bbc556",
-        "published": "2026-11-23T06:31:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.BHuKThcUkVC_x3df28kRNQ&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "Volunteers needed for Salvation Army holiday programs",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/local-news/volunteers-needed-for-salvation-army-holiday-programs/",
+        "published": "2026-11-23T16:38:42Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2022/12/Salvation-Army.jpg?w=900"
+      },
+      {
+        "title": "What caused the halo around the moon Sunday night?",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/weather/what-causes-a-ring-halo-around-the-moon/",
+        "published": "2026-11-23T15:55:31Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/moon-halo.jpg?w=540"
+      },
       {
         "title": "NYS announces student loan relief for nurses and farmers",
         "source": "LocalSYR",
@@ -135,7 +149,7 @@
         "source": "LocalSYR",
         "link": "https://www.localsyr.com/news/local-news/erie-canal-museums-gingerbread-gallery-is-here-whats-in-store-for-this-year/",
         "published": "2026-11-23T11:54:44Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/shared-image-edited-1.jpg?w=900"
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/shared-image.jpg?w=900"
       },
       {
         "title": "TSA shares protocols on traveling with food for the holidays",
@@ -164,122 +178,101 @@
         "link": "https://www.localsyr.com/news/business/ap-business/ap-issue-with-automation-system-causes-delta-flight-delays-in-atlanta/",
         "published": "2026-11-23T00:47:10Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b038879596822.27075988.jpeg?w=900"
-      },
-      {
-        "title": "Bills improve to 9-1 for first time since 1991 with win over Miami",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/local-news/bills-improve-to-9-1-for-first-time-since-1991-with-win-over-miami/",
-        "published": "2026-11-22T23:43:04Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/AP26326696953890.jpg?w=900"
-      },
-      {
-        "title": "Get rich quick, or lose it all: The shared fun and frustration of Monopoly's capitalist world",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/national/get-rich-quick-or-lose-it-all-the-shared-fun-and-frustration-of-monopolys-capitalist-world/",
-        "published": "2026-11-22T14:00:00Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/monopoly-game-e1795192028540.jpg?w=900"
       }
     ],
     "nationwide": [
       {
-        "title": "Lawmakers criticize Nvidia decision to reinstate Huang as CEO",
+        "title": "AP Player of the Week: Nebraska QB Colandrea had a hand in 4 TDs in breakthrough win over Buckeyes",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/anthony-colandrea-nebraska-player-of-week-5470369f6a49b00c61e654170dae28f4",
+        "published": "2026-11-23T08:07:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.obew4TxBw-eA6j73kZEOAg&pid=News"
+      },
+      {
+        "title": "Virginia, Oregon sue Musk's SpaceX over Grok AI's creation of child sexual abuse images and videos",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/lawmakers-criticize-nvidia-decision-reinstate-huang-ceo-2026-11-23/",
-        "published": "2026-11-23T07:15:00Z",
+        "link": "https://www.reuters.com/legal/government/virginia-oregon-sue-musks-spacex-over-grok-ais-creation-child-sexual-abuse-2026-11-23/",
+        "published": "2026-11-23T04:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.-te3WNAkWLTUJK8bRpUk5w&pid=News"
+      },
+      {
+        "title": "After decades, Texas Democrats have political capital. This is how they plan to spend it",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/us/after-decades-texas-democrats-have-political-capital-this-is-how-they-plan-spend-2026-11-23/",
+        "published": "2026-11-23T03:01:00Z",
         "thumb": ""
-      },
-      {
-        "title": "Bukele reveals circumstances in which 3 Salvadoran soldiers died fighting gangs in Haiti",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/haiti-el-salvador-bukele-gangs-killed-a8e4b6c757733cc05d01a0f3809528b5",
-        "published": "2026-11-23T07:06:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.RHGGyyWPY_lu4bL6dqAIRg&pid=News"
-      },
-      {
-        "title": "Trump will address a Justice Department transformed by his pursuit of political adversaries",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-justice-department-speech-blanche-5fff1865550ea7699667120234f2ebd4",
-        "published": "2026-11-23T06:36:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.uOaA5rDOrlmNK1-7VkWd9w&pid=News"
-      },
-      {
-        "title": "In Missouri, this couple will be the last in the family to farm the land",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/family-farming-climate-change-agriculture-ba3658dd3a7a064150f721b0ce2bcba6",
-        "published": "2026-11-23T06:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.cWbhL6OheEbKGAMyPAXekw&pid=News"
       }
     ],
     "global": [
+      {
+        "title": "Czech Republic faces lower fish stocks, including traditional Christmas carp, after drought",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/czech-republic-faces-lower-fish-stocks-including-traditional-christmas-carp-after-drought-95b3d385b3344ab2a2d8300ab1ca6ce5",
+        "published": "2026-11-23T08:31:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.-wUTx9fYWgODc1KZZvniqQ&pid=News"
+      },
+      {
+        "title": "Wall St roars back as Jensen Huang returns to Nvidia as CEO",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23/",
+        "published": "2026-11-23T08:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.PmR2z9L5RAmYKPDkWfSJ_g&pid=News"
+      },
+      {
+        "title": "Maresca dice que las dificultades del City son “normales” tras la salida de Guardiola",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/man-city-champions-league-maresca-fd807325d61bc898b9e7bd27e37ffd14",
+        "published": "2026-11-23T08:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.FYPRodD-kyXr2br3kap6Vg&pid=News"
+      },
+      {
+        "title": "WHO director-general visits Cuba as healthcare system breaks down",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/cuba-who-director-general-health-system-tedros-4432aa03abf3f5fc8b6f2e480f451b8c",
+        "published": "2026-11-23T08:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.B9GXSOWhIDR688sQyms0Fw&pid=News"
+      },
+      {
+        "title": "Ukraine sinks Russian warship in Libya as conflict spreads beyond Europe",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship-2026-11-23/",
+        "published": "2026-11-23T08:10:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "José Mourinho says players must accept the risks and demands that come with soccer’s high salaries",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/jose-mourinho-real-madrid-kane-doue-3ff9dedb6cba2ed6309fcff90637020f",
+        "published": "2026-11-23T08:08:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.AMEdo-mAvJNORJ759WRFqw&pid=News"
+      },
+      {
+        "title": "‘Grand Theft Auto VI’ lives up to its hype with compelling characters and spectacular action",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/grand-theft-auto-vi-6-video-game-82404adf585e7242e61fb42e8aa05481",
+        "published": "2026-11-23T08:03:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.G4upocWFkLjuWIpePLknnA&pid=News"
+      },
+      {
+        "title": "Fintech festival attendees voice excitement, concern over agentic AI",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW959519112026RP1/",
+        "published": "2026-11-23T07:43:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.A2B95m_krzmX2XhDON9k6w&pid=News"
+      },
+      {
+        "title": "Moscow accuses Estonia of hostile actions on 'verge of triggering open war'",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/moscow-accuses-estonia-hostile-actions-verge-triggering-open-war-2026-11-23/",
+        "published": "2026-11-23T07:39:00Z",
+        "thumb": ""
+      },
       {
         "title": "Philadelphia Union’s Cavan Sullivan wins MLS Young Player of the Year award",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/mls-cavan-sullivan-young-player-award-6a037b0a367b53b6bb661b03dcb5adb7",
         "published": "2026-11-23T07:32:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.aeiqlOE2T2P0ZIV0rgWZog&pid=News"
-      },
-      {
-        "title": "Wall St roars back as Jensen Huang returns to Nvidia as CEO",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23/",
-        "published": "2026-11-23T07:21:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.PmR2z9L5RAmYKPDkWfSJ_g&pid=News"
-      },
-      {
-        "title": "AI rally set to add $2 trillion to Nasdaq-100 as Huang returns to Nvidia helm",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/ai-rally-set-add-2-trillion-nasdaq-100-huang-returns-nvidia-helm-2026-11-23/",
-        "published": "2026-11-23T07:07:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.o0PRJalsEQkqOSKxwLq9Sw&pid=News"
-      },
-      {
-        "title": "Ukraine sinks Russian warship in Libya as conflict spreads beyond Europe",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/europe/zelenskiy-says-ukraine-sank-russian-corvette-near-libyas-coast-hit-cargo-ship-2026-11-23/",
-        "published": "2026-11-23T07:07:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Why Russia's Kaliningrad exclave is a potential flashpoint with NATO",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/aerospace-defense/why-russias-kaliningrad-is-potential-flashpoint-with-nato-2026-11-23/",
-        "published": "2026-11-23T07:07:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.qd45fQoJ2Xoq4c-kyD6BFA&pid=News"
-      },
-      {
-        "title": "Small US trucking firms scramble to survive mounting diesel costs",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/diesel-prices-trucking-companies-war-trump-c12e9c30ebf2c170cdee2bd8ba4e313b",
-        "published": "2026-11-23T07:07:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.jiajuTUIxgJFDhXgUOgSpw&pid=News"
-      },
-      {
-        "title": "Ukraine’s attack on Russian vessel in Libya opens new theater in broader confrontation",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/libya-russia-ukriane-war-benghazi-ship-drone-cbd82b965a111dcf4605b8b2d0493780",
-        "published": "2026-11-23T06:58:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.TD91aKk1lCMtY14WR2CsSg&pid=News"
-      },
-      {
-        "title": "Hungary’s Magyar says he will visit Ukraine in a sign of mending relations",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/hungary-magyar-ukraine-visit-564457bace8a9053b948d3182235cc1f",
-        "published": "2026-11-23T06:49:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.A5fmq3tLDD5M8p5F737G3g&pid=News"
-      },
-      {
-        "title": "VIEW Nvidia reinstates Jensen Huang as CEO, igniting tech surge",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/view-nvidia-reinstates-jensen-huang-ceo-igniting-tech-surge-2026-11-23/",
-        "published": "2026-11-23T06:47:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.63bt1zwBOlgvlz80qcXfLw&pid=News"
-      },
-      {
-        "title": "Nvidia reinstates Huang as CEO, citing no national security risk",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW062223112026RP1/",
-        "published": "2026-11-23T06:42:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.vCECACDDRNbqJwpPmA5aGg&pid=News"
       }
     ]
   }
