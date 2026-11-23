@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T07:33:10Z",
-  "fetched_at": "2026-11-23T07:33:10.039Z",
+  "updated_at": "2026-11-23T08:59:08Z",
+  "fetched_at": "2026-11-23T08:59:08.330Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -14,10 +14,10 @@
     "warFrequency": "moreThanOncePerWeek",
     "isWarLogPublic": true,
     "league": "Silver League I",
-    "capitalLeague": "Bronze League III",
+    "capitalLeague": "Bronze League II",
     "clanPoints": 16700,
     "clanBuilderPoints": 12959,
-    "clanCapitalPoints": 359,
+    "clanCapitalPoints": 403,
     "requiredTownhallLevel": 1,
     "requiredTrophies": 5500,
     "type": "closed",
@@ -618,12 +618,12 @@
     "participationAvailable": true,
     "startTime": "20261120T070000.000Z",
     "endTime": "20261123T070000.000Z",
-    "state": "ongoing",
+    "state": "ended",
     "capitalTotalLoot": 10606,
     "raidsCompleted": 1,
     "totalAttacks": 10,
     "enemyDistrictsDestroyed": 4,
-    "offensiveReward": 0,
+    "offensiveReward": 86,
     "defensiveReward": 0,
     "members": [
       {
