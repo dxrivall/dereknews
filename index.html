@@ -2064,6 +2064,8 @@ body.on-sports footer{color:#d8b8b2!important}
 .team-sheet-card h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#c9cdd6;margin:18px 0 8px}
 .ts-game{display:flex;justify-content:space-between;gap:12px;padding:10px 2px;border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px}
 .ts-game:last-child{border-bottom:0}
+.team-sheet-propsbtn{display:block;width:100%;box-sizing:border-box;text-align:center;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:13px 16px;margin:2px 0 0;font:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.team-sheet-propsbtn[aria-expanded="true"]{background:rgba(255,255,255,.16)}
 #sportsHome .sport-list{display:flex;flex-direction:column;margin-top:38px}
 #sportsHome .sport-list::before{content:"Browse Sports";font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ff6b61;margin-bottom:10px}
 #sportsHome .sport-row{position:relative;display:flex;align-items:center;gap:13px;width:100%;box-sizing:border-box;text-align:left;min-height:66px;padding:11px 14px;background:rgba(38,34,36,.78);border:1px solid rgba(255,255,255,.13);border-radius:18px;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;font:inherit;transition:transform .12s ease}
@@ -2176,6 +2178,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <div class="aerr" id="mlbLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.mlb.com/" target="_blank" rel="noopener">MLB.com</a> and reload.</div>
   <p class="asrc" id="mlbLiveStamp">Live data: ESPN · All MLB teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
+  <section class="acard" id="mlbPropsCard" aria-label="MLB Player Props cheat sheet">
+  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <p class="astatus" id="mlbPropsStatus">Loading player props&hellip;</p>
+  <div id="mlbPropsList"></div>
+  <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </section>
+
   <script>(function(){var c=document.getElementById('mlbGamesCard');if(!c)return;var now=new Date();var show=new Date(2027,1,16);if(now<show)c.style.display='none';})();</script>
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="MLB standings view"><button type="button" role="tab" data-std="mlb:conf" aria-selected="true">League</button><button type="button" role="tab" data-std="mlb:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="mlbConfCard" aria-label="MLB standings">
@@ -2213,6 +2222,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <div class="aerr" id="nbaLiveErr" hidden>Couldn&rsquo;t load games right now — check the <a href="https://www.nba.com/lakers" target="_blank" rel="noopener">Lakers</a> or <a href="https://www.nba.com/suns" target="_blank" rel="noopener">Suns</a> on NBA.com and reload.</div>
   <p class="asrc" id="nbaLiveStamp">Live data: ESPN · All NBA teams · Your favorites first · Times in Eastern · Auto-refreshes every 60 seconds</p>
   </section>
+  <section class="acard" id="nbaPropsCard" aria-label="NBA Player Props cheat sheet">
+  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <p class="astatus" id="nbaPropsStatus">Loading player props&hellip;</p>
+  <div id="nbaPropsList"></div>
+  <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </section>
+
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NBA standings view"><button type="button" role="tab" data-std="nba:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nba:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="nbaWestCard" aria-label="Western Conference standings">
   <h2>Western Conference</h2>
@@ -2251,6 +2267,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <div class="aerr" id="nflLiveErr" hidden>Couldn&rsquo;t load games right now — check your teams on <a href="https://www.nfl.com/" target="_blank" rel="noopener">NFL.com</a> and reload.</div>
   <p class="asrc" id="nflLiveStamp">Live data: ESPN &middot; All NFL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
+  <section class="acard" id="nflPropsCard" aria-label="NFL Player Props cheat sheet">
+  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <p class="astatus" id="nflPropsStatus">Loading player props&hellip;</p>
+  <div id="nflPropsList"></div>
+  <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </section>
+
   <section class="acard std-togcard" aria-label="Standings view"><div class="std-tog" role="tablist" aria-label="NFL standings view"><button type="button" role="tab" data-std="nfl:conf" aria-selected="true">Conference</button><button type="button" role="tab" data-std="nfl:div" aria-selected="false">Divisions</button></div></section>
   <section class="acard" id="nflAfcCard" aria-label="AFC standings">
   <h2>American Football Conference</h2>
@@ -2294,6 +2317,13 @@ body.on-sports footer{color:#d8b8b2!important}
   <div class="aerr" id="nhlLiveErr" hidden>Couldn&rsquo;t load games right now — check <a href="https://www.nhl.com/" target="_blank" rel="noopener">NHL.com</a> and reload.</div>
   <p class="asrc" id="nhlLiveStamp">Live data: ESPN &middot; All NHL teams &middot; Your favorites first &middot; Times in Eastern &middot; Auto-refreshes every 60 seconds</p>
   </section>
+  <section class="acard" id="nhlPropsCard" aria-label="NHL Player Props cheat sheet">
+  <div class="ahead"><h2>📋 Player Props</h2><span class="league-pill">CHEAT SHEET</span></div>
+  <p class="astatus" id="nhlPropsStatus">Loading player props&hellip;</p>
+  <div id="nhlPropsList"></div>
+  <p class="asrc">Model hit % from each player&rsquo;s actual game-by-game record (season blended with last-5). Cheat sheet only — no slips, no parlays.</p>
+  </section>
+
   <section class="acard" aria-label="Eastern Conference standings">
   <h2>Eastern Conference</h2>
   <p class="astatus" id="nhlEastStatus">Loading standings…</p>
@@ -4754,7 +4784,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
           }
           var avg=(lg.avgMode==='perGame')?v:(tm.gp>0?v/tm.gp:null);
           if(avg==null||avg<=0)return;
-          var rec={name:nm,id:String(ld.athlete.id||''),label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10};
+          var rec={name:nm,id:String(ld.athlete.id||''),label:cat[1],line:simLine(avg),avg:Math.round(avg*10)/10,teamId:tm.id};
           if(!all.some(function(a){return a.name===nm&&a.label===cat[1];}))all.push(rec);
           if(lg.key==='nfl'&&(cat[1]==='Rush Yds'||cat[1]==='Rec Yds')&&tm.gp>0){
             var mm=String(ld.displayValue||'').match(/(\d+)\s*TD\b/);
@@ -5425,12 +5455,12 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(lg.key==='nba'){
       var seen={},list=[];
       gamesToday.forEach(function(g){(g.allProps||[]).forEach(function(pr){if(pr.label==='Pts'&&pr.id&&!seen[pr.id]){seen[pr.id]=1;list.push({g:g,pr:pr});}});});
-      return Promise.all(list.slice(0,20).map(function(it){return coreStatAvg('basketball','nba',it.pr.id,'avgThreePointFieldGoalsMade').then(function(avg){if(avg!=null){(it.g.threeProps=it.g.threeProps||[]).push({name:it.pr.name,id:it.pr.id,avg:Math.round(avg*10)/10});}});})).then(function(){});
+      return Promise.all(list.slice(0,20).map(function(it){return coreStatAvg('basketball','nba',it.pr.id,'avgThreePointFieldGoalsMade').then(function(avg){if(avg!=null){(it.g.threeProps=it.g.threeProps||[]).push({name:it.pr.name,id:it.pr.id,avg:Math.round(avg*10)/10,teamId:it.pr.teamId});}});})).then(function(){});
     }
     if(lg.key==='nhl'){
       var seen2={},list2=[];
       gamesToday.forEach(function(g){(g.allProps||[]).forEach(function(pr){if(pr.id&&!seen2[pr.id+'-'+g.id]){seen2[pr.id+'-'+g.id]=1;list2.push({g:g,pr:pr});}});});
-      return Promise.all(list2.slice(0,16).map(function(it){return coreStatAvg('hockey','nhl',it.pr.id,'avgShots').then(function(avg){if(avg!=null){(it.g.sogProps=it.g.sogProps||[]).push({name:it.pr.name,id:it.pr.id,avg:Math.round(avg*10)/10});}});})).then(function(){});
+      return Promise.all(list2.slice(0,16).map(function(it){return coreStatAvg('hockey','nhl',it.pr.id,'avgShots').then(function(avg){if(avg!=null){(it.g.sogProps=it.g.sogProps||[]).push({name:it.pr.name,id:it.pr.id,avg:Math.round(avg*10)/10,teamId:it.pr.teamId});}});})).then(function(){});
     }
     return Promise.resolve();
   }
@@ -5963,41 +5993,163 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
      WON/LOST tracking, no localStorage writes. Uses the same model
      data loaders as the old simulator (loadLeague + enrichModel +
      modelPropProb), so injured/blocked players are still excluded. */
-  function renderPropsCheat(){
-    var box=document.getElementById('propsCheatList'),st=document.getElementById('propsCheatStatus');
-    if(!box)return;
-    Promise.all(LEAGUES.map(loadLeague)).then(function(res){
+  /* Shared props data (Nov 22, 2026): one load of all leagues,
+     reused by the main cheat sheet, the per-sport cheat sheets
+     and the team-sheet props view — no duplicate fetches. */
+  var dnPropsCache=null;
+  function dnLoadPropsData(){
+    if(dnPropsCache)return dnPropsCache;
+    dnPropsCache=Promise.all(LEAGUES.map(loadLeague)).then(function(res){
       var jobs=[];
       LEAGUES.forEach(function(lg,li){if(lg.key==='nba'||lg.key==='nhl')jobs.push(enrichModel(lg,res[li]||[]));});
       return Promise.all(jobs).then(function(){return res;});
-    }).then(function(res){
+    }).catch(function(e){dnPropsCache=null;throw e;});
+    return dnPropsCache;
+  }
+  /* Top-8 prop rows for one league, same row format as the main
+     cheat sheet. Returns {html, count}. */
+  function dnLeaguePropsRows(lg,games){
+    var seen={},rows=[];
+    (games||[]).forEach(function(g){
+      (g.allProps||[]).forEach(function(pr){
+        var k=pr.name+'-'+pr.label;if(seen[k])return;seen[k]=1;
+        rows.push({pr:pr,prob:modelPropProb(pr).prob,game:g});
+      });
+    });
+    rows.sort(function(a,b){return b.prob-a.prob;});
+    rows=rows.slice(0,8);
+    if(!rows.length)return{html:'',count:0};
+    var h='<p class="brk-conf">'+lg.label+'</p>';
+    rows.forEach(function(r){
+      var pr=r.pr,g=r.game;
+      h+='<div class="parlay-leg"><span><b>'+esc(pr.name)+'</b> — Over '+esc(String(pr.line))+' '+esc(pr.label)+'<span class="p-sub">'+esc(g.away.abbr)+' at '+esc(g.home.abbr)+' · '+esc(fmtWhen(g.date))+' · season avg '+esc(String(pr.avg))+'/gm</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
+    });
+    return{html:h,count:rows.length};
+  }
+  function renderPropsCheat(){
+    var box=document.getElementById('propsCheatList'),st=document.getElementById('propsCheatStatus');
+    if(!box)return;
+    dnLoadPropsData().then(function(res){
       var h='',any=false;
       LEAGUES.forEach(function(lg,li){
-        var games=res[li]||[];
-        var seen={},rows=[];
-        games.forEach(function(g){
-          (g.allProps||[]).forEach(function(pr){
-            var k=pr.name+'-'+pr.label;if(seen[k])return;seen[k]=1;
-            rows.push({pr:pr,prob:modelPropProb(pr).prob,game:g});
-          });
-        });
-        rows.sort(function(a,b){return b.prob-a.prob;});
-        rows=rows.slice(0,8);
-        if(!rows.length)return;
-        any=true;
-        h+='<p class="brk-conf">'+lg.label+'</p>';
-        rows.forEach(function(r){
-          var pr=r.pr,g=r.game;
-          h+='<div class="parlay-leg"><span><b>'+esc(pr.name)+'</b> — Over '+esc(String(pr.line))+' '+esc(pr.label)+'<span class="p-sub">'+esc(g.away.abbr)+' at '+esc(g.home.abbr)+' \u00b7 '+esc(fmtWhen(g.date))+' \u00b7 season avg '+esc(String(pr.avg))+'/gm</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
-        });
+        var r=dnLeaguePropsRows(lg,res[li]||[]);
+        if(r.count){any=true;h+=r.html;}
       });
       box.innerHTML=h;
-      if(st)st.textContent=any?'Top props by model hit % \u2014 today\u2019s games only.':'No player props could be priced from today\u2019s games right now.';
+      if(st)st.textContent=any?'Top props by model hit % — today’s games only.':'No player props could be priced from today’s games right now.';
     }).catch(function(){
-      if(st)st.textContent='Player props could not load right now \u2014 reopen Sports to try again.';
+      if(st)st.textContent='Player props could not load right now — reopen Sports to try again.';
     });
   }
+  function renderSportProps(lgKey,boxId,stId){
+    var box=document.getElementById(boxId),st=document.getElementById(stId);
+    if(!box)return;
+    if(lgKey==='mlb'){if(st)st.textContent='No MLB player props right now — the season starts Feb 19, 2027.';return;}
+    dnLoadPropsData().then(function(res){
+      var lg=null,li=-1;
+      LEAGUES.forEach(function(x,i){if(x.key===lgKey){lg=x;li=i;}});
+      if(!lg||li<0){if(st)st.textContent='No player props for this sport right now.';return;}
+      var r=dnLeaguePropsRows(lg,res[li]||[]);
+      box.innerHTML=r.html;
+      if(st)st.textContent=r.count?'Top props by model hit % — today’s games only.':'No player props could be priced from today’s games right now.';
+    }).catch(function(){if(st)st.textContent='Player props could not load right now — reopen Sports to try again.';});
+  }
   renderPropsCheat();
+  renderSportProps('nba','nbaPropsList','nbaPropsStatus');
+  renderSportProps('nfl','nflPropsList','nflPropsStatus');
+  renderSportProps('nhl','nhlPropsList','nhlPropsStatus');
+  renderSportProps('mlb','mlbPropsList','mlbPropsStatus');
+  /* Team-sheet props (Nov 22, 2026): the next game's model props
+     for one team, exposed on window because the team sheet lives
+     in a separate script block. 3PM/SOG props (NBA/NHL) and TD
+     backups (NFL) are enriched lazily, once per league, only when
+     a team's props are actually opened — the main cheat sheet
+     does not pay for them. */
+  var dnSpecialsDone={},dnTdBackupsDone={};
+  window.__dnTeamProps=function(lgKey,teamId){
+    return dnLoadPropsData().then(function(res){
+      var lg=null,li=-1;
+      LEAGUES.forEach(function(x,i){if(x.key===lgKey){lg=x;li=i;}});
+      if(!lg||li<0)return{league:null};
+      var games=res[li]||[];
+      var g=null;
+      games.forEach(function(gg){if(String(gg.away.id)===String(teamId)||String(gg.home.id)===String(teamId)){if(!g||new Date(gg.date)<new Date(g.date))g=gg;}});
+      if(!g)return{league:lg,game:null};
+      var extra=[];
+      if((lg.key==='nba'||lg.key==='nhl')&&!dnSpecialsDone[lg.key]){dnSpecialsDone[lg.key]=1;extra.push(enrichSpecials(lg,games).catch(function(){}));}
+      if(lg.key==='nfl'&&g.blockedTd&&!dnTdBackupsDone[lg.key]){dnTdBackupsDone[lg.key]=1;extra.push(enrichTdBackups(lg,games).catch(function(){}));}
+      return Promise.all(extra).then(function(){return dnTeamPropsRows(lg,g,teamId);});
+    });
+  };
+  function dnTeamPropsRows(lg,g,teamId){
+    var rows=[];
+    (g.allProps||[]).forEach(function(pr){
+      if(String(pr.teamId)!==String(teamId))return;
+      if(dnBlockedForGame(g,pr.id,pr.name))return;
+      rows.push({kind:'prop',name:pr.name,label:pr.label,line:pr.line,avg:pr.avg,prob:modelPropProb(pr).prob});
+    });
+    (g.threeProps||[]).forEach(function(sp){
+      if(String(sp.teamId)!==String(teamId))return;
+      if(dnBlockedForGame(g,sp.id,sp.name))return;
+      var line3=simLine(sp.avg);
+      rows.push({kind:'prop',name:sp.name,label:'3PM',line:line3,avg:sp.avg,prob:modelPropProb({avg:sp.avg,line:line3,l5:sp.l5,hitRate:sp.hitRate}).prob});
+    });
+    (g.sogProps||[]).forEach(function(sp){
+      if(String(sp.teamId)!==String(teamId))return;
+      if(dnBlockedForGame(g,sp.id,sp.name))return;
+      var lineS=simLine(sp.avg);
+      rows.push({kind:'prop',name:sp.name,label:'SOG',line:lineS,avg:sp.avg,prob:modelPropProb({avg:sp.avg,line:lineS,l5:sp.l5,hitRate:sp.hitRate}).prob});
+    });
+    (g.tdPlayers||[]).forEach(function(tp){
+      if(String(tp.teamId)!==String(teamId))return;
+      if(dnBlockedForGame(g,tp.id,tp.name))return;
+      if(!tp.gp||tp.td<=0)return;
+      var rate=tp.td/tp.gp;
+      var prob=tp.hitRate!=null?tp.hitRate:(1-Math.exp(-rate));
+      prob=Math.max(0.15,Math.min(0.85,prob));
+      rows.push({kind:'td',name:tp.name,label:'TD',td:tp.td,gp:tp.gp,prob:prob,backup:!!tp.backup,backupNote:tp.backupNote||''});
+    });
+    rows.sort(function(a,b){return b.prob-a.prob;});
+    var vs=(String(g.away.id)===String(teamId))?'at '+g.home.abbr:'vs '+g.away.abbr;
+    return{league:lg,game:g,rows:rows.slice(0,12),vs:vs,when:fmtWhen(g.date)};
+  }
+  /* Team-sheet season stats fallback (Nov 22, 2026): when the
+     model has no props for a team, show roster players' season
+     averages from their game logs — never a guessed %. */
+  window.__dnTeamSeasonStats=function(lgKey,teamId,path){
+    var lg=null;
+    LEAGUES.forEach(function(x){if(x.key===lgKey)lg=x;});
+    var defs=lg?STREAK_STATS[lg.key]:null;
+    if(!lg||!defs||!path)return Promise.resolve({rows:[],league:lg});
+    var fakeLg={key:lg.key,path:path};
+    return fetchJSON('https://site.api.espn.com/apis/site/v2/sports/'+path+'/teams/'+encodeURIComponent(teamId)+'/roster').then(function(roster){
+      var cands=[];
+      (roster.athletes||[]).forEach(function(gr){
+        if(lg.key==='nfl'&&gr.position!=='offense')return;
+        (gr.items||[]).forEach(function(a){
+          if(!a.id||!a.displayName)return;
+          cands.push({id:String(a.id),name:a.displayName});
+        });
+      });
+      cands=cands.slice(0,10);
+      return Promise.all(cands.map(function(c){
+        return dnGamelog(fakeLg,c.id).then(function(d){
+          if(!d)return null;
+          var stats=[];
+          Object.keys(defs).forEach(function(k){
+            var series=dnSeriesFromGamelog(d,defs[k],20);
+            if(!series||series.length<3)return;
+            var avg=series.reduce(function(a,b){return a+b;},0)/series.length;
+            if(avg>0)stats.push({label:k,avg:Math.round(avg*10)/10});
+          });
+          if(!stats.length)return null;
+          return{name:c.name,stats:stats};
+        }).catch(function(){return null;});
+      })).then(function(res){
+        return{rows:res.filter(function(r){return !!r;}),league:lg};
+      });
+    }).catch(function(){return{rows:[],league:lg};});
+  };
 })();
 </script>
 <script>
@@ -8115,6 +8267,12 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       <button type="button" class="team-sheet-x" data-team-close aria-label="Close">&times;</button>
       <h2 id="teamSheetName">Team</h2>
       <p class="team-sheet-stats" id="teamSheetStats"></p>
+      <button type="button" class="team-sheet-propsbtn" id="teamSheetPropsBtn" aria-expanded="false">📋 Player Props</button>
+      <div class="team-sheet-props" id="teamSheetProps" hidden>
+      <h3>Player Props</h3>
+      <p class="astatus" id="teamSheetPropsStatus">Loading player props&hellip;</p>
+      <div id="teamSheetPropsList"></div>
+      </div>
       <h3>Upcoming games</h3>
       <div id="teamSheetUpcoming"><p class="astatus">Loading upcoming games&hellip;</p></div>
       <h3>Last 5</h3>
@@ -8126,10 +8284,20 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
      stats, upcoming games and last-5 form (ESPN team schedule). */
   (function(){
     var sheet=document.getElementById('teamSheet');if(!sheet)return;
+    var curTeam={id:null,lg:null};
     var PATH={nba:'basketball/nba',nfl:'football/nfl',nhl:'hockey/nhl',mlb:'baseball/mlb'};
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
     function fmtDay(iso){try{var d=new Date(iso);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}catch(e){return '';}}
     function fmtTime(iso){try{var d=new Date(iso);return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+    function teamPropRow(r,res){
+      var sub=res.vs+' · '+res.when+' · ';
+      if(r.kind==='td'){
+        sub+='season avg '+(r.td/r.gp).toFixed(1)+' TD/gm · '+r.td+' TD in '+r.gp+' games'+(r.backup&&r.backupNote?' · '+r.backupNote:'');
+        return '<div class="parlay-leg"><span><b>'+esc(r.name)+'</b> — Anytime TD<span class="p-sub">'+esc(sub)+'</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
+      }
+      sub+='season avg '+r.avg+'/gm';
+      return '<div class="parlay-leg"><span><b>'+esc(r.name)+'</b> — Over '+esc(String(r.line))+' '+esc(r.label)+'<span class="p-sub">'+esc(sub)+'</span></span><span class="p-prob">'+Math.round(r.prob*100)+'%</span></div>';
+    }
     function close(){sheet.hidden=true;document.body.style.overflow='';}
     sheet.querySelectorAll('[data-team-close]').forEach(function(b){b.addEventListener('click',close);});
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)close();});
@@ -8142,6 +8310,12 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       document.getElementById('teamSheetStats').textContent=tr.getAttribute('data-stats')||'';
       document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Loading upcoming games&hellip;</p>';
       document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Loading recent form&hellip;</p>';
+      curTeam={id:id,lg:lg};
+      var ppBtn=document.getElementById('teamSheetPropsBtn'),ppBox=document.getElementById('teamSheetProps');
+      if(ppBtn)ppBtn.setAttribute('aria-expanded','false');
+      if(ppBox)ppBox.hidden=true;
+      var ppList0=document.getElementById('teamSheetPropsList');if(ppList0){ppList0.innerHTML='';ppList0.dataset.loaded='';}
+      var ppSt0=document.getElementById('teamSheetPropsStatus');if(ppSt0)ppSt0.textContent='Loading player props…';
       sheet.hidden=false;document.body.style.overflow='hidden';
       fetch('https://site.api.espn.com/apis/site/v2/sports/'+PATH[lg]+'/teams/'+encodeURIComponent(id)+'/schedule').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
         var evs=(d&&d.events)||[];
@@ -8160,6 +8334,40 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
         document.getElementById('teamSheetUpcoming').innerHTML='<p class="astatus">Couldn\u2019t load upcoming games right now.</p>';
         document.getElementById('teamSheetForm').innerHTML='<p class="astatus">Couldn\u2019t load recent form right now.</p>';
       });
+    });
+    var propsBtn=document.getElementById('teamSheetPropsBtn');
+    if(propsBtn)propsBtn.addEventListener('click',function(){
+      var box=document.getElementById('teamSheetProps'),st=document.getElementById('teamSheetPropsStatus'),list=document.getElementById('teamSheetPropsList');
+      if(!box)return;
+      var open=box.hidden;
+      box.hidden=!open;
+      propsBtn.setAttribute('aria-expanded',open?'true':'false');
+      if(!open||!curTeam.id||!curTeam.lg)return;
+      if(list&&list.dataset.loaded===curTeam.lg+'-'+curTeam.id)return;
+      if(st)st.textContent='Loading player props…';
+      if(list)list.innerHTML='';
+      if(typeof window.__dnTeamProps!=='function'){if(st)st.textContent='Player props aren’t available right now.';return;}
+      window.__dnTeamProps(curTeam.lg,curTeam.id).then(function(res){
+        if(!res||!res.league){if(st)st.textContent='No player props for this team right now.';return;}
+        if(!res.game||!res.rows||!res.rows.length){loadSeasonStats();return;}
+        if(st)st.textContent='Next game · model hit % from each player’s actual game-by-game record.';
+        if(list)list.innerHTML=res.rows.map(function(r){return teamPropRow(r,res);}).join('');
+        if(list)list.dataset.loaded=curTeam.lg+'-'+curTeam.id;
+      }).catch(function(){if(st)st.textContent='Player props could not load right now.';});
+      function loadSeasonStats(){
+        if(typeof window.__dnTeamSeasonStats!=='function'){if(st)st.textContent='No player props for the next game.';return;}
+        window.__dnTeamSeasonStats(curTeam.lg,curTeam.id,PATH[curTeam.lg]).then(function(sr){
+          if(!sr||!sr.rows||!sr.rows.length){
+            if(st)st.textContent=curTeam.lg==='mlb'?'No MLB player props right now — the season starts Feb 19, 2027.':'No player props for the next game.';
+            return;
+          }
+          if(st)st.textContent='No player props for the next game — season averages below.';
+          if(list)list.innerHTML=sr.rows.map(function(r){
+            return '<div class="parlay-leg"><span><b>'+esc(r.name)+'</b><span class="p-sub">'+esc(r.stats.map(function(x){return x.label+' '+x.avg+'/gm';}).join(' · '))+'</span></span></div>';
+          }).join('');
+          if(list)list.dataset.loaded=curTeam.lg+'-'+curTeam.id;
+        }).catch(function(){if(st)st.textContent='No player props for the next game.';});
+      }
     });
   })();
   </script>
