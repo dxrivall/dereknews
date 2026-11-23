@@ -1,10 +1,20 @@
 {
-  "updated_at": "2026-11-23T01:53:36.273989Z",
+  "updated_at": "2026-11-23T02:48:35.619800Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Data breach at NC medical supply company affects more than 44,000 South Carolinians - WLTX",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNZGRDS3Y5Tnd5RS1nVlE5aEg3ZUo1ZXZPbmY1LTJsVFVTWTU4N2hKSEh3TFZLZk5UM0pObmpKVlA0cC1OcHB2SVFoTkktdnYxTW1abVY0UWhuNldfMHh6SzNmRk83UzVTOWthTFRoenpYZFVKR0xSczhiSkQ1eWJxaGtmX1QxTEpqOUhENWdOSzgzVEZWUnk5VkhGd1VQLWU0cGVpYmxvRWRRXzVCU0Y0bV9sUHF2Y1lYbU5acWlWTjJKeUZGakZxQ2U2bEI1RjVwemhGMjRVYURXSUtMVmdSazliRzdDOFYyYnU4?oc=5",
+      "date": "2026-11-23T02:43:00Z"
+    },
+    {
+      "title": "Microsoft discloses data breach involving Entra Connect Health service - SC Media",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVHJvTmFjYW5yVktOZXhGSnRzQzMtbldGc0Z3OEtYOGxkUWdEcFpvMHNWR0FiUldIMkhrXzBaM3Z0azNRVkxhS2JsVEVqY19PajdFUUtzYkhmNVdId1JQUXNKU2thelVYUUxBcm9PVHNTbGhZYjh4TVg5dDZVcjVrbzR3c2xpUGRpXzJYX1Z5Wk5ZenFwUHdkRm53WERBQ0RjZ3c?oc=5",
+      "date": "2026-11-23T02:24:47Z"
+    },
     {
       "title": "Brussels Airport cancels flights as Belgium strike shuts air traffic control - Beinsure",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaGZ1dzJJUnVTTWp3QTZ2cURKczVsVWZtUjROOUxWN01EWk13cndFU3pjY3VSYWpJb0I3VzNROU9LMVYybERDcDZVU2hzakYwNHFkLUl6MHpPV3Fhbk0xS1hTWXZSQ2ZWcGZDeEpVSkZPa0JFMkdIR3I0bHR4TW1mekxrZw?oc=5",
@@ -249,6 +259,11 @@
       "title": "Bahrain says an Iranian attack hit an industrial facility - MLQ.ai",
       "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOUnBrMHJGcXUxZmNvbVhfY3hlSE5jbi1mTTNGSERjYzU3MjlWOU1IX2w3dldYRmFlRTdFM2hScEZvRjRXYWNOcE9XSFJDN2J2WlE4VVplY0lyOVhfZG53eUJCaktFWTdnT0JaRnRHRkdCY3RVTDdVS2ZnVWctZnpNNHR4NUQ?oc=5",
       "date": "2026-11-22T10:40:16Z"
+    },
+    {
+      "title": "KEPCO reports another massive data breach, exposing info of 1.52 mln people - Yonhap News Agency",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBPeVd1cU1oTzVxckZEbFN1Z29hUEtWSXI1ZTZodnlwMTR2RUlYOXRjMjdDZVNiaFZ4LWFBOFpkY2c4X1ItNGRtbGhqa3NwY2RIUC1BMUlNZ1JBZw?oc=5",
+      "date": "2026-11-22T10:37:45Z"
     },
     {
       "title": "East-West Center’s participant database target of cyberattack - Honolulu Star-Advertiser",
@@ -1668,6 +1683,11 @@
     {
       "title": "MSU Password Reset: BYOD Claims 1.3M Students [2026] - shattered.io",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX2lOMjd5YVZHY0ZIeGF3cnRDdlJ3RUVualVfT0Q4N0drcWFIOGNmRUM1bV9YcDFjbzBKZFEtSndOanlzTWZFMk9HQVNkLU84MnViTFZVMm5OekhRdU9KSXF2UGh6TzE1SW8yN1BPVmp3TVJuUUpRVnk0T3FpenI2RGpQVmtpLTdhSUFlMGlvVjV4WmtsLXA0?oc=5",
+      "date": "2026-11-20T08:00:00Z"
+    },
+    {
+      "title": "Opinion | How Trump decimated America’s cybersecurity - MS NOW",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9tay14cVRobDNjeVBaLXBHUHAyd2JmVzlYc3gzUXkxV2JjVHNtN0ptWnRoOEVqOEdwZ0MzU3JJN0lLRVpYUjhnWlBlQXdCLWF4QUYwS3MwMnV0YkFoWndpOFM2aGJ2djFFdWRTdlBNRkxKX1ItaUtB?oc=5",
       "date": "2026-11-20T08:00:00Z"
     },
     {
@@ -4384,6 +4404,11 @@
       "title": "Vanderbilt Faces Class-Action Lawsuit Over Data Breach - GovTech",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMHlkY3ZCTTNfZjNsWkdOSjBLQ3dpWk9aRC1lQzl2WXRlQVlZQm5JOUE5SExHM2MtcHptU1B3NGZTaG5OeHEwY25SRmZtaTczRE1aekdZdWpuMXJSdlRDMzJLLVo1NUFLMERFMTNKRlBCYXJwcU56OVBSdElFVDVoMk9EcEVtSXBobGRGRlJXRWtkNkZUa2twUV9aTFRZQTA?oc=5",
       "date": "2026-11-17T20:09:36Z"
+    },
+    {
+      "title": "Dozens of credit union branches hit by data breach - RTE.ie",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQSTdLaHdRYXFGaDdjN1kweXFjNTdOX1hwVHNzTm42Uk9JZnFwa2VlVmxqQm5CMktfZUdNaGpVSU90T2ZUTDFKU0FtZVE5ajJaeXFOajFURHVXSnA2eXZSZzVaMnRaQkg3RHhrdm5ZWEgzU1gxZmN2ZUljZEU2eHViN01nQUpTRVlBcVhWdkc4ZE5HYlk?oc=5",
+      "date": "2026-11-17T20:08:41Z"
     },
     {
       "title": "Major Cyberattack Targets 178 Organizations, Millions of Credit Card Users at Risk - All About Cookies",
@@ -7184,26 +7209,6 @@
       "title": "Iran Update, November 15, 2026 - Institute for the Study of War",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNYkpGTlg3ekg1dWVwU1BicDN1WWxTTFpxRENpaGxnQ0IzaFFaVEt4SHF1UjhXSE5aNk84UlF5TXZhQ2QxYjhVSFdLQnJyV2RJVFhsMXNJOVJMZmp3YXVDV2lsaXBoWnJfbEpQM0ZPTW0tUERzc2xRMGhCb3FYOTR0N2RqanhzUQ?oc=5",
       "date": "2026-11-16T02:57:35Z"
-    },
-    {
-      "title": "Iran warns it will not wait for another US attack - Hürriyet Daily News",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ2hDZkdaTDY2UFVzMTFwRVhhSjZwNGEtRmFKUEFEOGZDdmNhbERvdDJIVmExTnpNWlJLanJUbEdkSnB0cnBvZUJfX0w5cEtQNTVGV2JlcjhTZkh3STlEVXZOci1TV1ZYTzFaY2kyT1pMOEVNbzZZekxPT25tTWZ4Vlp5UlhTX3k2c3hrVTl1am43cW5O?oc=5",
-      "date": "2026-11-16T02:45:00Z"
-    },
-    {
-      "title": "What to Know About the Cause of the FAA’s Nationwide Ground Stop - The New York Times",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMmF2d1V5VkpBcDNvMElYVlpBdk1acDJnNmgyZzdlYno3MDQ5REdvUjRNWUNMVXVFZHQ1LTUwNTAzSGExZ1J2OEx0bXdIZFBkVkQ3dFdtSFM1TV8zOHRpbkhBRFJDWGM0UXA4QVp1MjBueTRYaXhBeVNrV1dNMzZXTTZQc09aejBJ?oc=5",
-      "date": "2026-11-16T02:29:00Z"
-    },
-    {
-      "title": "How Could a Router Lead to a Nationwide Ground Stop? - The New York Times",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMmF2d1V5VkpBcDNvMElYVlpBdk1acDJnNmgyZzdlYno3MDQ5REdvUjRNWUNMVXVFZHQ1LTUwNTAzSGExZ1J2OEx0bXdIZFBkVkQ3dFdtSFM1TV8zOHRpbkhBRFJDWGM0UXA4QVp1MjBueTRYaXhBeVNrV1dNMzZXTTZQc09aejBJ?oc=5",
-      "date": "2026-11-16T02:29:00Z"
-    },
-    {
-      "title": "Iran targets Bahrain twice after months of quiet, claiming retaliation against U.S. - The Washington Post",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcDJzX3ZZUmk0ZHJvY3hHNFpBbDRfQlBpT25MWEZNNGY1QUsxWnlRVkl2WXNFN3puTS1ra2pHc2ZkeDI5WUxZcm9yZ1JheGRQYXlGM0VfMVRmY01UdmVDc1R1UDYyUk9MWGpKTzQ0bzFKOGJQS3VhMDhJdzkyaDQwanNLTFMzVU5vRVdUbVRudjQtQ0NCZXdleUJOeWwxaEVXQ3c0TEs1dkNZSTY4RnAxc1I3c1JhY3dNNy1JRFR4cmJnWHNl?oc=5",
-      "date": "2026-11-16T02:18:13Z"
     }
   ]
 }
