@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T11:18:58.263089+00:00",
+  "updated_at": "2026-11-23T12:20:54.993068+00:00",
   "games": [
     {
       "series": "KXNBAGAME",
@@ -87,8 +87,8 @@
       "event": "nhl-lak-mon-2026-11-23",
       "title": "Kings vs. Canadiens",
       "teams": {
-        "Kings": 42,
-        "Canadiens": 58
+        "Kings": 40,
+        "Canadiens": 60
       }
     },
     {
@@ -177,8 +177,8 @@
       "event": "nba-bos-was-2026-11-24",
       "title": "Celtics vs. Wizards",
       "teams": {
-        "Celtics": 78,
-        "Wizards": 22
+        "Celtics": 79,
+        "Wizards": 21
       }
     },
     {
@@ -366,8 +366,8 @@
       "event": "nba-phx-hou-2026-11-25",
       "title": "Suns vs. Rockets",
       "teams": {
-        "Suns": 24,
-        "Rockets": 76
+        "Suns": 22,
+        "Rockets": 78
       }
     },
     {
@@ -519,8 +519,8 @@
       "event": "nhl-van-phi-2026-11-27",
       "title": "Canucks vs. Flyers",
       "teams": {
-        "Canucks": 32,
-        "Flyers": 68
+        "Canucks": 30,
+        "Flyers": 70
       }
     },
     {
@@ -582,8 +582,8 @@
       "event": "nba-phi-ind-2026-11-27",
       "title": "76ers vs. Pacers",
       "teams": {
-        "76ers": 64,
-        "Pacers": 36
+        "76ers": 60,
+        "Pacers": 40
       }
     },
     {
@@ -663,8 +663,8 @@
       "event": "nba-den-uta-2026-11-27",
       "title": "Nuggets vs. Jazz",
       "teams": {
-        "Nuggets": 76,
-        "Jazz": 24
+        "Nuggets": 80,
+        "Jazz": 20
       }
     },
     {
@@ -708,8 +708,8 @@
       "event": "nba-bkn-cha-2026-11-28",
       "title": "Nets vs. Hornets",
       "teams": {
-        "Nets": 31,
-        "Hornets": 69
+        "Nets": 32,
+        "Hornets": 68
       }
     },
     {
@@ -717,8 +717,8 @@
       "event": "nhl-tb-fla-2026-11-28",
       "title": "Lightning vs. Panthers",
       "teams": {
-        "Lightning": 54,
-        "Panthers": 46
+        "Lightning": 55,
+        "Panthers": 45
       }
     },
     {
@@ -753,8 +753,8 @@
       "event": "nhl-wpg-nj-2026-11-28",
       "title": "Jets vs. Devils",
       "teams": {
-        "Jets": 35,
-        "Devils": 65
+        "Jets": 34,
+        "Devils": 66
       }
     },
     {
@@ -762,8 +762,8 @@
       "event": "nhl-ott-car-2026-11-28",
       "title": "Senators vs. Hurricanes",
       "teams": {
-        "Senators": 32,
-        "Hurricanes": 68
+        "Senators": 31,
+        "Hurricanes": 69
       }
     },
     {
@@ -781,7 +781,7 @@
       "title": "Islanders vs. Flyers",
       "teams": {
         "Islanders": 55,
-        "Flyers": 45
+        "Flyers": 46
       }
     },
     {
@@ -789,8 +789,8 @@
       "event": "nba-ind-chi-2026-11-28",
       "title": "Pacers vs. Bulls",
       "teams": {
-        "Pacers": 46,
-        "Bulls": 54
+        "Pacers": 47,
+        "Bulls": 53
       }
     },
     {
@@ -798,8 +798,8 @@
       "event": "nba-okc-mil-2026-11-28",
       "title": "Thunder vs. Bucks",
       "teams": {
-        "Thunder": 77,
-        "Bucks": 23
+        "Thunder": 75,
+        "Bucks": 25
       }
     },
     {
@@ -807,8 +807,8 @@
       "event": "nhl-utah-dal-2026-11-28",
       "title": "Utah vs. Stars",
       "teams": {
-        "Utah": 38,
-        "Stars": 62
+        "Utah": 39,
+        "Stars": 61
       }
     },
     {
@@ -843,8 +843,8 @@
       "event": "nhl-edm-sea-2026-11-28",
       "title": "Oilers vs. Kraken",
       "teams": {
-        "Oilers": 56,
-        "Kraken": 44
+        "Oilers": 55,
+        "Kraken": 45
       }
     },
     {
@@ -879,8 +879,8 @@
       "event": "nfl-nyg-ind-2026-11-29",
       "title": "Giants vs. Colts",
       "teams": {
-        "Giants": 74,
-        "Colts": 26
+        "Giants": 75,
+        "Colts": 25
       }
     },
     {
@@ -906,8 +906,8 @@
       "event": "nhl-min-chi-2026-11-29",
       "title": "Wild vs. Blackhawks",
       "teams": {
-        "Wild": 70,
-        "Blackhawks": 30
+        "Wild": 71,
+        "Blackhawks": 29
       }
     },
     {
@@ -915,8 +915,8 @@
       "event": "nba-lal-mem-2026-11-29",
       "title": "Lakers vs. Grizzlies",
       "teams": {
-        "Lakers": 52,
-        "Grizzlies": 48
+        "Lakers": 51,
+        "Grizzlies": 49
       }
     },
     {
@@ -951,8 +951,8 @@
       "event": "nfl-sea-sf-2026-11-29",
       "title": "Seahawks vs. 49ers",
       "teams": {
-        "Seahawks": 40,
-        "49ers": 60
+        "Seahawks": 39,
+        "49ers": 61
       }
     },
     {
@@ -969,8 +969,8 @@
       "event": "nhl-van-bos-2026-11-29",
       "title": "Canucks vs. Bruins",
       "teams": {
-        "Canucks": 26,
-        "Bruins": 74
+        "Canucks": 23,
+        "Bruins": 77
       }
     },
     {
@@ -978,8 +978,8 @@
       "event": "nba-mia-cle-2026-11-29",
       "title": "Heat vs. Cavaliers",
       "teams": {
-        "Heat": 50,
-        "Cavaliers": 50
+        "Heat": 52,
+        "Cavaliers": 48
       }
     },
     {
@@ -1023,8 +1023,8 @@
       "event": "nfl-ne-lac-2026-11-30",
       "title": "Patriots vs. Chargers",
       "teams": {
-        "Patriots": 49,
-        "Chargers": 51
+        "Patriots": 51,
+        "Chargers": 49
       }
     },
     {
@@ -1041,8 +1041,8 @@
       "event": "nba-min-sac-2026-11-29",
       "title": "Timberwolves vs. Kings",
       "teams": {
-        "Timberwolves": 77,
-        "Kings": 23
+        "Timberwolves": 76,
+        "Kings": 24
       }
     },
     {
