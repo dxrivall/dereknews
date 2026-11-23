@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T20:36:47.307770+00:00",
+  "updated_at": "2026-11-23T21:30:27.232138+00:00",
   "games": [
     {
       "series": "KXNBAGAME",
@@ -15,8 +15,8 @@
       "event": "nba-por-phi-2026-11-23",
       "title": "Trail Blazers vs. 76ers",
       "teams": {
-        "Trail Blazers": 44,
-        "76ers": 56
+        "Trail Blazers": 42,
+        "76ers": 57
       }
     },
     {
@@ -33,8 +33,8 @@
       "event": "nba-okc-ind-2026-11-23",
       "title": "Thunder vs. Pacers",
       "teams": {
-        "Thunder": 68,
-        "Pacers": 32
+        "Thunder": 66,
+        "Pacers": 34
       }
     },
     {
@@ -177,8 +177,8 @@
       "event": "nba-bos-was-2026-11-24",
       "title": "Celtics vs. Wizards",
       "teams": {
-        "Celtics": 76,
-        "Wizards": 24
+        "Celtics": 77,
+        "Wizards": 23
       }
     },
     {
@@ -267,8 +267,8 @@
       "event": "nhl-stl-nyi-2026-11-25",
       "title": "Blues vs. Islanders",
       "teams": {
-        "Blues": 46,
-        "Islanders": 54
+        "Blues": 47,
+        "Islanders": 53
       }
     },
     {
@@ -303,8 +303,8 @@
       "event": "nba-min-okc-2026-11-25",
       "title": "Timberwolves vs. Thunder",
       "teams": {
-        "Timberwolves": 50,
-        "Thunder": 50
+        "Timberwolves": 49,
+        "Thunder": 51
       }
     },
     {
@@ -312,8 +312,8 @@
       "event": "nhl-van-det-2026-11-25",
       "title": "Canucks vs. Red Wings",
       "teams": {
-        "Canucks": 31,
-        "Red Wings": 69
+        "Canucks": 32,
+        "Red Wings": 68
       }
     },
     {
@@ -349,7 +349,7 @@
       "title": "Utah vs. Wild",
       "teams": {
         "Utah": 42,
-        "Wild": 58
+        "Wild": 57
       }
     },
     {
@@ -357,8 +357,8 @@
       "event": "nhl-nsh-dal-2026-11-25",
       "title": "Predators vs. Stars",
       "teams": {
-        "Predators": 39,
-        "Stars": 61
+        "Predators": 40,
+        "Stars": 60
       }
     },
     {
@@ -492,8 +492,8 @@
       "event": "nhl-det-cbj-2026-11-27",
       "title": "Red Wings vs. Blue Jackets",
       "teams": {
-        "Red Wings": 45,
-        "Blue Jackets": 55
+        "Red Wings": 47,
+        "Blue Jackets": 53
       }
     },
     {
@@ -528,8 +528,8 @@
       "event": "nhl-col-min-2026-11-27",
       "title": "Avalanche vs. Wild",
       "teams": {
-        "Avalanche": 44,
-        "Wild": 56
+        "Avalanche": 45,
+        "Wild": 55
       }
     },
     {
@@ -645,8 +645,8 @@
       "event": "nba-dal-phx-2026-11-27",
       "title": "Mavericks vs. Suns",
       "teams": {
-        "Mavericks": 42,
-        "Suns": 58
+        "Mavericks": 41,
+        "Suns": 59
       }
     },
     {
@@ -663,8 +663,8 @@
       "event": "nba-den-uta-2026-11-27",
       "title": "Nuggets vs. Jazz",
       "teams": {
-        "Nuggets": 85,
-        "Jazz": 15
+        "Nuggets": 86,
+        "Jazz": 14
       }
     },
     {
@@ -672,8 +672,8 @@
       "event": "nba-nop-lac-2026-11-27",
       "title": "Pelicans vs. Clippers",
       "teams": {
-        "Pelicans": 40,
-        "Clippers": 60
+        "Pelicans": 39,
+        "Clippers": 61
       }
     },
     {
@@ -735,8 +735,8 @@
       "event": "nhl-tor-pit-2026-11-28",
       "title": "Maple Leafs vs. Penguins",
       "teams": {
-        "Maple Leafs": 47,
-        "Penguins": 53
+        "Maple Leafs": 46,
+        "Penguins": 54
       }
     },
     {
@@ -762,8 +762,8 @@
       "event": "nhl-ott-car-2026-11-28",
       "title": "Senators vs. Hurricanes",
       "teams": {
-        "Senators": 29,
-        "Hurricanes": 71
+        "Senators": 30,
+        "Hurricanes": 70
       }
     },
     {
@@ -789,8 +789,8 @@
       "event": "nba-ind-chi-2026-11-28",
       "title": "Pacers vs. Bulls",
       "teams": {
-        "Pacers": 47,
-        "Bulls": 53
+        "Pacers": 48,
+        "Bulls": 52
       }
     },
     {
@@ -969,8 +969,8 @@
       "event": "nhl-van-bos-2026-11-29",
       "title": "Canucks vs. Bruins",
       "teams": {
-        "Canucks": 24,
-        "Bruins": 76
+        "Canucks": 25,
+        "Bruins": 75
       }
     },
     {
