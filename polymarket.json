@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T22:26:39.298247+00:00",
+  "updated_at": "2026-11-23T23:24:37.563012+00:00",
   "games": [
     {
       "series": "KXNBAGAME",
@@ -15,8 +15,8 @@
       "event": "nba-por-phi-2026-11-23",
       "title": "Trail Blazers vs. 76ers",
       "teams": {
-        "Trail Blazers": 42,
-        "76ers": 57
+        "Trail Blazers": 50,
+        "76ers": 50
       }
     },
     {
@@ -33,8 +33,8 @@
       "event": "nba-okc-ind-2026-11-23",
       "title": "Thunder vs. Pacers",
       "teams": {
-        "Thunder": 68,
-        "Pacers": 32
+        "Thunder": 62,
+        "Pacers": 38
       }
     },
     {
@@ -267,8 +267,8 @@
       "event": "nhl-stl-nyi-2026-11-25",
       "title": "Blues vs. Islanders",
       "teams": {
-        "Blues": 47,
-        "Islanders": 53
+        "Blues": 46,
+        "Islanders": 54
       }
     },
     {
@@ -294,8 +294,8 @@
       "event": "nba-cle-nyk-2026-11-25",
       "title": "Cavaliers vs. Knicks",
       "teams": {
-        "Cavaliers": 30,
-        "Knicks": 70
+        "Cavaliers": 34,
+        "Knicks": 66
       }
     },
     {
@@ -357,8 +357,8 @@
       "event": "nhl-nsh-dal-2026-11-25",
       "title": "Predators vs. Stars",
       "teams": {
-        "Predators": 39,
-        "Stars": 61
+        "Predators": 40,
+        "Stars": 60
       }
     },
     {
@@ -645,8 +645,8 @@
       "event": "nba-dal-phx-2026-11-27",
       "title": "Mavericks vs. Suns",
       "teams": {
-        "Mavericks": 41,
-        "Suns": 59
+        "Mavericks": 39,
+        "Suns": 61
       }
     },
     {
@@ -663,8 +663,8 @@
       "event": "nba-den-uta-2026-11-27",
       "title": "Nuggets vs. Jazz",
       "teams": {
-        "Nuggets": 86,
-        "Jazz": 14
+        "Nuggets": 85,
+        "Jazz": 15
       }
     },
     {
@@ -690,8 +690,8 @@
       "event": "nhl-mon-las-2026-11-28",
       "title": "Canadiens vs. Golden Knights",
       "teams": {
-        "Canadiens": 48,
-        "Golden Knights": 52
+        "Canadiens": 47,
+        "Golden Knights": 53
       }
     },
     {
@@ -717,8 +717,8 @@
       "event": "nhl-tb-fla-2026-11-28",
       "title": "Lightning vs. Panthers",
       "teams": {
-        "Lightning": 54,
-        "Panthers": 46
+        "Lightning": 52,
+        "Panthers": 48
       }
     },
     {
@@ -762,8 +762,8 @@
       "event": "nhl-ott-car-2026-11-28",
       "title": "Senators vs. Hurricanes",
       "teams": {
-        "Senators": 29,
-        "Hurricanes": 71
+        "Senators": 28,
+        "Hurricanes": 72
       }
     },
     {
@@ -789,8 +789,8 @@
       "event": "nba-ind-chi-2026-11-28",
       "title": "Pacers vs. Bulls",
       "teams": {
-        "Pacers": 47,
-        "Bulls": 53
+        "Pacers": 46,
+        "Bulls": 54
       }
     },
     {
@@ -798,8 +798,8 @@
       "event": "nba-okc-mil-2026-11-28",
       "title": "Thunder vs. Bucks",
       "teams": {
-        "Thunder": 76,
-        "Bucks": 24
+        "Thunder": 74,
+        "Bucks": 26
       }
     },
     {
@@ -843,8 +843,8 @@
       "event": "nhl-edm-sea-2026-11-28",
       "title": "Oilers vs. Kraken",
       "teams": {
-        "Oilers": 56,
-        "Kraken": 44
+        "Oilers": 57,
+        "Kraken": 42
       }
     },
     {
@@ -969,8 +969,8 @@
       "event": "nhl-van-bos-2026-11-29",
       "title": "Canucks vs. Bruins",
       "teams": {
-        "Canucks": 24,
-        "Bruins": 76
+        "Canucks": 25,
+        "Bruins": 75
       }
     },
     {
@@ -1006,7 +1006,7 @@
       "title": "Nuggets vs. Raptors",
       "teams": {
         "Nuggets": 57,
-        "Raptors": 42
+        "Raptors": 43
       }
     },
     {
@@ -1014,8 +1014,8 @@
       "event": "nba-nop-por-2026-11-29",
       "title": "Pelicans vs. Trail Blazers",
       "teams": {
-        "Pelicans": 26,
-        "Trail Blazers": 74
+        "Pelicans": 25,
+        "Trail Blazers": 75
       }
     },
     {
@@ -1023,8 +1023,8 @@
       "event": "nfl-ne-lac-2026-11-30",
       "title": "Patriots vs. Chargers",
       "teams": {
-        "Patriots": 50,
-        "Chargers": 50
+        "Patriots": 51,
+        "Chargers": 49
       }
     },
     {
