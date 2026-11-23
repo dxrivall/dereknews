@@ -1,22 +1,22 @@
 {
- "updated_at": "2026-11-23T07:59:15.292520+00:00",
+ "updated_at": "2026-11-23T13:46:34.361557+00:00",
  "source": "ESPN BPI (fitt v3 powerindex), fetched server-side",
  "teams": [
   {
    "id": "24",
    "abbr": "SA",
    "name": "San Antonio Spurs",
-   "winDiv": 90.1,
+   "winDiv": 90.6,
    "playoff": 100.0,
-   "top6": 99.9,
-   "playIn": 0.1
+   "top6": 100.0,
+   "playIn": 0.0
   },
   {
    "id": "2",
    "abbr": "BOS",
    "name": "Boston Celtics",
-   "winDiv": 54.8,
-   "playoff": 100.0,
+   "winDiv": 55.3,
+   "playoff": 99.9,
    "top6": 99.2,
    "playIn": 0.8
   },
@@ -24,181 +24,181 @@
    "id": "25",
    "abbr": "OKC",
    "name": "Oklahoma City Thunder",
-   "winDiv": 41.8,
+   "winDiv": 39.5,
    "playoff": 99.3,
-   "top6": 94.7,
-   "playIn": 5.3
+   "top6": 94.4,
+   "playIn": 5.7
   },
   {
    "id": "8",
    "abbr": "DET",
    "name": "Detroit Pistons",
-   "winDiv": 83.4,
+   "winDiv": 84.7,
    "playoff": 99.8,
-   "top6": 97.6,
-   "playIn": 2.4
-  },
-  {
-   "id": "18",
-   "abbr": "NY",
-   "name": "New York Knicks",
-   "winDiv": 32.6,
-   "playoff": 99.9,
-   "top6": 98.4,
-   "playIn": 1.6
+   "top6": 97.8,
+   "playIn": 2.2
   },
   {
    "id": "10",
    "abbr": "HOU",
    "name": "Houston Rockets",
-   "winDiv": 9.8,
+   "winDiv": 9.4,
    "playoff": 99.1,
-   "top6": 93.7,
-   "playIn": 6.3
+   "top6": 94.3,
+   "playIn": 5.7
+  },
+  {
+   "id": "18",
+   "abbr": "NY",
+   "name": "New York Knicks",
+   "winDiv": 30.2,
+   "playoff": 99.8,
+   "top6": 98.0,
+   "playIn": 2.0
   },
   {
    "id": "16",
    "abbr": "MIN",
    "name": "Minnesota Timberwolves",
-   "winDiv": 47.6,
-   "playoff": 99.4,
-   "top6": 95.2,
-   "playIn": 4.8
+   "winDiv": 50.1,
+   "playoff": 99.5,
+   "top6": 95.5,
+   "playIn": 4.5
   },
   {
    "id": "22",
    "abbr": "POR",
    "name": "Portland Trail Blazers",
-   "winDiv": 6.4,
-   "playoff": 90.5,
-   "top6": 61.7,
-   "playIn": 38.0
-  },
-  {
-   "id": "13",
-   "abbr": "LAL",
-   "name": "Los Angeles Lakers",
-   "winDiv": 87.5,
-   "playoff": 94.8,
-   "top6": 77.3,
-   "playIn": 22.6
+   "winDiv": 6.5,
+   "playoff": 90.9,
+   "top6": 63.4,
+   "playIn": 36.4
   },
   {
    "id": "5",
    "abbr": "CLE",
    "name": "Cleveland Cavaliers",
-   "winDiv": 16.6,
-   "playoff": 96.0,
-   "top6": 74.5,
-   "playIn": 25.5
+   "winDiv": 15.3,
+   "playoff": 95.4,
+   "top6": 73.6,
+   "playIn": 26.4
+  },
+  {
+   "id": "13",
+   "abbr": "LAL",
+   "name": "Los Angeles Lakers",
+   "winDiv": 85.3,
+   "playoff": 94.4,
+   "top6": 76.5,
+   "playIn": 23.4
   },
   {
    "id": "20",
    "abbr": "PHI",
    "name": "Philadelphia 76ers",
-   "winDiv": 12.2,
-   "playoff": 99.1,
-   "top6": 92.3,
-   "playIn": 7.7
+   "winDiv": 14.2,
+   "playoff": 99.4,
+   "top6": 93.2,
+   "playIn": 6.8
   },
   {
    "id": "7",
    "abbr": "DEN",
    "name": "Denver Nuggets",
-   "winDiv": 4.2,
-   "playoff": 86.1,
-   "top6": 50.6,
-   "playIn": 48.6
-  },
-  {
-   "id": "1",
-   "abbr": "ATL",
-   "name": "Atlanta Hawks",
-   "winDiv": 49.0,
-   "playoff": 87.2,
-   "top6": 47.7,
-   "playIn": 52.2
+   "winDiv": 3.9,
+   "playoff": 83.4,
+   "top6": 45.5,
+   "playIn": 53.8
   },
   {
    "id": "14",
    "abbr": "MIA",
    "name": "Miami Heat",
-   "winDiv": 49.5,
-   "playoff": 87.0,
-   "top6": 47.9,
-   "playIn": 52.0
+   "winDiv": 51.3,
+   "playoff": 87.1,
+   "top6": 49.8,
+   "playIn": 50.1
+  },
+  {
+   "id": "1",
+   "abbr": "ATL",
+   "name": "Atlanta Hawks",
+   "winDiv": 46.8,
+   "playoff": 85.6,
+   "top6": 47.3,
+   "playIn": 52.6
   },
   {
    "id": "29",
    "abbr": "MEM",
    "name": "Memphis Grizzlies",
    "winDiv": 0.0,
-   "playoff": 43.2,
-   "top6": 10.0,
-   "playIn": 81.0
+   "playoff": 43.9,
+   "top6": 10.5,
+   "playIn": 80.0
   },
   {
    "id": "21",
    "abbr": "PHX",
    "name": "Phoenix Suns",
    "winDiv": 1.3,
-   "playoff": 15.6,
-   "top6": 1.2,
-   "playIn": 62.3
+   "playoff": 14.8,
+   "top6": 1.4,
+   "playIn": 60.5
   },
   {
    "id": "6",
    "abbr": "DAL",
    "name": "Dallas Mavericks",
    "winDiv": 0.0,
-   "playoff": 11.4,
+   "playoff": 11.1,
    "top6": 0.9,
-   "playIn": 51.5
+   "playIn": 53.0
   },
   {
    "id": "19",
    "abbr": "ORL",
    "name": "Orlando Magic",
-   "winDiv": 1.4,
-   "playoff": 21.7,
-   "top6": 1.3,
-   "playIn": 86.1
+   "winDiv": 1.9,
+   "playoff": 21.6,
+   "top6": 2.0,
+   "playIn": 85.4
   },
   {
    "id": "28",
    "abbr": "TOR",
    "name": "Toronto Raptors",
-   "winDiv": 0.5,
-   "playoff": 87.2,
-   "top6": 40.4,
-   "playIn": 59.5
+   "winDiv": 0.4,
+   "playoff": 86.2,
+   "top6": 38.0,
+   "playIn": 61.8
   },
   {
    "id": "27",
    "abbr": "WSH",
    "name": "Washington Wizards",
    "winDiv": 0.0,
-   "playoff": 1.6,
+   "playoff": 1.3,
    "top6": 0.0,
-   "playIn": 17.1
+   "playIn": 14.6
   },
   {
    "id": "11",
    "abbr": "IND",
    "name": "Indiana Pacers",
    "winDiv": 0.0,
-   "playoff": 19.4,
-   "top6": 0.7,
-   "playIn": 83.0
+   "playoff": 23.0,
+   "top6": 1.2,
+   "playIn": 86.6
   },
   {
    "id": "9",
    "abbr": "GS",
    "name": "Golden State Warriors",
-   "winDiv": 11.2,
-   "playoff": 60.4,
-   "top6": 14.8,
-   "playIn": 79.5
+   "winDiv": 13.4,
+   "playoff": 63.6,
+   "top6": 17.8,
+   "playIn": 77.0
   },
   {
    "id": "12",
@@ -216,16 +216,16 @@
    "winDiv": 0.0,
    "playoff": 0.4,
    "top6": 0.0,
-   "playIn": 4.6
+   "playIn": 4.3
   },
   {
    "id": "30",
    "abbr": "CHA",
    "name": "Charlotte Hornets",
    "winDiv": 0.0,
-   "playoff": 0.7,
+   "playoff": 0.5,
    "top6": 0.0,
-   "playIn": 7.3
+   "playIn": 6.3
   },
   {
    "id": "26",
@@ -252,7 +252,7 @@
    "winDiv": 0.0,
    "playoff": 0.0,
    "top6": 0.0,
-   "playIn": 0.1
+   "playIn": 0.2
   },
   {
    "id": "15",
