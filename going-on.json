@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T19:39:51.819384Z",
+  "updated_at": "2026-11-24T20:32:01.618487Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
@@ -9,6 +9,11 @@
       "title": "Middle East latest: Eleven injured in Houthi attack on Riyadh financial centre tower - The National",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSXhnd0U5NHV1U0V6RmlPTGhnMlM3WFFQWWdJQjlTRFBkVUJreHQ3VVZKZnFtNmNpTGZucTZrbHRzZHVmd0JlN3ljLWlIWU8wWUJuZ0V1ZHBVT2FuYVVpUTJnQ1MzSkg3V3VQcFd3VkItQUNLTDJtM0ZORHBKbWJZUllENjdhZzZuSzR2T3ItTlBvRnhSQ09HTQ?oc=5",
       "date": "2026-11-24T19:22:33Z"
+    },
+    {
+      "title": "Manchester Public Schools investigating apparent data breach of server - WTNH.com",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVHFKQjhIVnJiX1hOS2lZT2toMlVNbkZoRVN2bTdXUGRiZ3Q0M1ZuVFB3b2Z0bklhQ3dKZVFpZUhYZ2JlVFdJU2l6YktXNFVKX3VSaUxsV2FDOVBJOEk5clN1TWlIeVN1Y2swRURzMU43T1hkUl93Rk5YQk16SlZJWTFlcnYtc1lsdXZrTkpsZFFxcjk2ZzJMX3NxZEhIZUpJSC1oY0dpTlBaaGZ1YTcxWlRHMWE5NEJ2ZmfSAb8BQVVfeXFMT0VfSFVYVjRyT1JNYlhPWkhNQWRnUDR0ZjZ0c2s5RmlQWUJhUnRGU3lSeDZ2dUUwaUdMWWJPTHdmd0pReUVuN3NTVUMtR01aMWIxbnEtMWFHQkNHVmp3NWVadkQwMmNiRGJwekY0ak9nSjZtS3I3dGNYTzhfeTJRZ1NHUUZaZkJua2ZXYVNfWEhmUlJDazZVdThfUTRWZGZMQ0dmQXBnN1JBQm9rckFYNjdubGNpMk5sQ25CMGFVX1U?oc=5",
+      "date": "2026-11-24T18:44:36Z"
     },
     {
       "title": "Securian Financial Data Breach Exposed Protected Health Information - Claim Depot",
@@ -436,6 +441,11 @@
       "date": "2026-11-24T00:14:49Z"
     },
     {
+      "title": "Article | EU Commission confirms personal data leak after cyberattack, warns of further disruption - POLITICO Pro",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQYlh0azgzS1dTdU1IbkY2TUItVXpJMDF0djVsTDN5dkJ5V0h0S2pEY2dXWHFRX01Ec3FCMUY1ZXVXdy1lUnJUXzlUeWF0eG94eHM1WUVSdVZIVzVnNDN5ZEpIRC05VzVlNDNxdEl4QzBWNlE1QVhYcjg2RHZCX2tvTm82ZTV1RVBKSl9kVjJZUDRadDR6aVp1SG1XcG9xLWM4dG5WMWtLdmE3ZkljS0JrRnlYVzFEblA4V0EzR0xnbDJmcVNvU05ZMHV3Q1QtY1hDejRfWWNlTmt6SjdrRmoycQ?oc=5",
+      "date": "2026-11-24T00:09:00Z"
+    },
+    {
       "title": "Exclusive | U.S. Eyes Iran as Possible Culprit in Dozens of New Cyberattacks Against Ships - WSJ",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOaDNLV040WjYxakp4SFpkLW1ZSWo1M3dJOE8xV3pZTmRDZ0EwclVFclVWQlZpazJiRTJwNWtCdmZGeTZkcmJqQUlWbVo5ME92cFZXSUFFOUkyUmp3SldOYmR5S2xXZUVHR1lSZXgzSEFWdHhkTm5HeEM4NVEyc0djNFNrTW9GTFh5WW1j?oc=5",
       "date": "2026-11-24T00:06:01Z"
@@ -794,6 +804,11 @@
       "title": "Thousands of Samsung Securities customers affected by data breach - Qazinform",
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZXFUMzQ4LWp5eTdzdFRVQTNGVW5xUXAyVVJjMmpsTWZLTU5uMkNlZ0NpemV4VmJFa3JhblFUMjlSenRobURVdEJjZGxHd0FrZWxuY0UzYzFqalZmaFlTdHh2blI5WnVEUk5kYzItVVpqVVBXRGtmd0REX1NhR3duY2xZSTBDUFJDRVhzLU1wSlhacXVia3h2RXl5NmU2aFBU0gGgAUFVX3lxTE5ydzVvTm5GVlBwMWw0S2VOcnlWRTB5V05XQ0otX1U2NEZyVnFNd25mOHR4aEQ3ZGZ3S2VzOHQ4NEt3RjRDa0ZDQTZaQmJuckRJZGtNaGd0S1ZvcXc1SS1FRGVzT0dOZWY2T2tldzdLeDJodlQ2WjZyWm82M3E2d3BGVjZ5RVpHUFNhOU9rejI5UE5pSW5nSHlCY2pzUlpVN2g?oc=5",
       "date": "2026-11-23T15:20:46Z"
+    },
+    {
+      "title": "99 IPs but a C2 ain’t one: An Active Intrusion Campaign Against Check Point Security Management Servers - GreyNoise",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYzJZZTlIUERoRllxcmtnYi05VVM0Yl9vRnlGZXg0eFBTZVZxcDlGa01fdTF2TmxoOGdWQ1JQRmJ2SWN2bTB1QmVRbTQ4SDlIck9ITFdOeElCaWQtLWVTcldORzRNMFhIa0JRSlYxSFM0bXBDcTcxdlNyNGhiMlhDVkFYTVVYVzRCOXF2N21fQzhQUQ?oc=5",
+      "date": "2026-11-23T15:14:12Z"
     },
     {
       "title": "Cleverbridge Data Breach Exposes Credit Card Numbers and Security Codes - All About Cookies",
@@ -4331,6 +4346,11 @@
       "date": "2026-11-19T08:00:00Z"
     },
     {
+      "title": "This Volkswagen EV was hacked to record its driver's conversation - Cybernews",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZFh0TERIVmR2MzhGUmpKRkRVZ3BtTTkzU0thWDZIYnpnaENVMmR6SU41UFVHUENZTGtrTmdHaGpJQ1VGdW9SNi1uMXpSc2NDa1lvUDgwaGZidVhMaGZpX3ZGYkhOQjFOVkpQd2xmNGljNHgwNFZORlBNRWgwVWF6bWg4WQ?oc=5",
+      "date": "2026-11-19T08:00:00Z"
+    },
+    {
       "title": "Nationwide emergency alert test set for Nov 29 - NST Online",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQ3ptMGxpNlJUblhSMHg4OE96eFQ1VC1aQXZtbHFNblpkZFd3OVlwd1VDNWRXN2dKWnBoYWJjZ3NraXFqWXRfVXpfR2d1MXhTZGNySkI5OGxGbnltTTdsWWhCdXRVZktuWkZVZmRUUWx1VkJSdERNVDFRV2F6ZmJHcXgyQlFsQnVRNWZZcl9WN1BudnNGQ3IybdIBngFBVV95cUxPQUxJRDZMeWgtZ3Y2WUJ5Q3NPcnlyVUxFX055TjM4dVlRRG5TV3hmaHpGZ005V0tNNGRwbHUyRWs0d0Rha0Vfd2hhNXM1akZqOWNOd2pmNWRZU3l5RzVPTkIyTlhCMDlTdzhMV1dJYk8tOEE4Zk56RzItWkFFMWxQbjdRRngzOHdjVzNhTHhleXE5NXNUcEU1R1F4TmlqQQ?oc=5",
       "date": "2026-11-19T07:50:51Z"
@@ -5521,6 +5541,11 @@
       "date": "2026-11-18T10:50:00Z"
     },
     {
+      "title": "Gulf countries under fire after US hits Iranian island - Bangkok Post",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObDhMcE10aHd4Z2piTnVOdVhIRHZySHloLWx6N0lDT0dzTUJUSGpzMXUxOFplSlI1UzRKM09pZUN3NExuMWpMcm9uNXBvd0hEQktQNG1Sek9KYkRVTk44enBaY3NfSDk3Y2hySWNkR1FaNlFlWFVTNU9jVlk2VXVDUkNtVXZzU2haMjlfckM0TWR4QnRmSmNzVENFWTU?oc=5",
+      "date": "2026-11-18T10:45:00Z"
+    },
+    {
       "title": "Trump responds to report of Iranian dirty bomb plot in Washington - qz.com",
       "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1KemFxdDJuV2drTldhWS1oTWc1dklYN2NSemFKdWowUXhCaFloTWxzRDJFNHRnbkwydWNXUWdmbjBqSU4teUh2d1NKRFFXR2JGQWdoNDZ3UDVkcElJZFIyQUdsY0ZaRFd4WmRBN3N1dERBUEUwV0xVNlRB?oc=5",
       "date": "2026-11-18T10:35:48Z"
@@ -5668,6 +5693,11 @@
     {
       "title": "Emergency alert test in Canada: Alert Ready to issue nationwide test on November 18, 2026 - Toronto Star",
       "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPbWxjdE9NczdPbWJYdDFqSEV0THJWNjV0OFByd2ZRSVdxUHVDN2lFdENVaVlKVWVtamU3cHZQLXk1b2JhUUhHQkM2Tlp1eEd6Ykd2czJ3WkNsNUhyUmJhWnZFVnZrdWVyS1JzZVJTeE8zV1NwcEdBdWdsUXIxWUZldDViMVRjckR4b2lSMVp3UGJReVlmWElRbUozOUIzdlROcUlsemFkUEY4bVZQcGNGSjRQbko0Zkt5dnkwVmF0QjB1c2pOYUtFek5hdmVBdG5Nd3pHSGdIdU5xSEhlV1BCUThydlJFdEtGTElYZlBhZEtNZWk3Vm9GRmFIaWhXR2lueGp3aUln?oc=5",
+      "date": "2026-11-18T08:00:00Z"
+    },
+    {
+      "title": "Kuwait condemns repeated Iranian attacks, reserves right to respond - NewsCord",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBDSWhISlVrVElxamxwcVNGd0RsSjExdDdkVllnVWtqdE1leDVvcXRBaDQ2aHBrY2JHU0dlZDJNV1RsekxYYnN5LV9rb3dCZER6R3JuM2pjXzlFVUxIbExGVk53a3ctYWRvUm81ZE00cFl1UTJ0ckpBb2hmSWs1TFk?oc=5",
       "date": "2026-11-18T08:00:00Z"
     },
     {
@@ -6296,6 +6326,11 @@
       "date": "2026-11-17T21:58:00Z"
     },
     {
+      "title": "Why does everything keep going down? Every major U.S. tech outage in November - Cleveland.com",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNaDV6MHNCQm5FcmloXzZQZEJiWlRLMzg1YVFHaHcyMVBpTTdRR0dNd05PVUJsMTV6NjlacFR6cVJyUkhJeEEzQ1NiNmpHWWtZZUhvaG1SMGs4WURSTFpuOG51aHRmaU5HcldSZXJWMXVpXzdBeWExMUpiZHg4N09lek11cHB6MkR4NVFEaEExV05QQjlPZTFoNDFEMFd0QTlSYnlkbVFZOFpZT0xaeHlfTzRWUjgtZl9YUFHSAc4BQVVfeXFMUEtXWmlHT19xTXY5bWg4VFZJLTlZMXVkbnFyYkd2RXpjbUJiT1pWRnBIOWUxMHpRbVBzZ3YtMGpTLXVnWFo5OC1RVmwyT0o2bi1YbnVwclNmeV9odk5ma3R3eGN0ZjJXdjVsTnUwNDlrZGQtdXl0LVRWME5ZbHN5U0lfbkpEcWZCelE2R2NWaFRmMk1NVnFFMFZ0V1ZFZ1VZOENUZkhHaHh6d2RKUUZNMWZTUFpBZnMtb3VhOUQtcEtLaG4zOEtSVk11ZlNocWc?oc=5",
+      "date": "2026-11-17T21:58:00Z"
+    },
+    {
       "title": "Cyberattack targets Optimizely, third-party software used by major websites - ClickOnDetroit | WDIV Local 4",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbDJWSFN6eGEwZ1k3X01HVGU1U29mX3k4M3JwRTJlQThpZXVrcjdvUUdQWjhWUWRuRENHMFRCcUg0d0stbjdXREdvWENfaWpSSWNsUTEtMzF1UHJ3UXdJYnpsb0g3WXdXQnhpeWtjRmV2eWxaZDUwT1V1dURGdld0Z3dRcUpUTktsdDJvb1NYMDBpWUhRa0kwbndJME82UTloeUlhcGY1V2ptY2lra3lxT0wyTXJadjk4a21ELU1qV3JDZVdZVEdN?oc=5",
       "date": "2026-11-17T21:56:47Z"
@@ -6499,141 +6534,6 @@
       "title": "US carries out self-defense strike on IRGC missile launch site on Qeshm Island - Fox News",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOTG9kZzBHLUh5a0NaWTV4T0hhdnlMdkFyd0hpbkxyamFkdFpCVFJaNFItRmNMS0VEYk5mNmFtRE9HQnplMDl4cWxaTjJXSWhvdmJ0dUIwNmo0MjVsS2FLSjlpaWhVeVFVQzBGVEEwUTFTNDFvUkZQRGlnNTdQLXNmQkQzd1RIQjMtZGdWSUpQX0VhRmlsM2RBSGhjcHZramNEemdzONIBqgFBVV95cUxNc01PempfalBNWW9CU3dJUk5vbUlWQkFJdjF1bWNwRVVrcF9YSG50YV9XdzdSN1daY1ZOSEJTYmpfVmNlQXhya1NwdkNFUWR3d0xuWGo4RUhVVmZiRlJqU0x1Y2pGQW9TNktkLUs1a0JsbE5mNGNBSnlmQlF2WDZJV25rUjBXNkdVU0Fsa3ZEN01LQXljVlZlazFjZVFkV1ZSc3Y5RXNfYUk4dw?oc=5",
       "date": "2026-11-17T20:32:27Z"
-    },
-    {
-      "title": "New England Orthopedic Surgeons Data Breach? Lawyers Investigate - ClassAction.org",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdEM5NVpHRFBFTlptek5TQ19Pa1V5UFFUUGN6Szc3TTJiUmNVaEZMdTlobnZLa0VGZlBaZF9HTjQ0dW1DRDNoWnNWR3BEY0h2Sjh1T2hlZkVJZEpWUTNNWkx5NjZUTE1fNWRVTWdCVTVpTUNpLTEyLTVRUDgyMmEzYU84elk1MlZYYjUwMHV2bDhnS1V0VlRzbzdR?oc=5",
-      "date": "2026-11-17T20:26:11Z"
-    },
-    {
-      "title": "Nationwide emergency alert test set for Wednesday afternoon - Calgary Herald",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUnFZS1B1al94MWxQb1NqNlZrMUZrcV9RWkg1QnpEdHpsYTZHUWRSM0RFeDlUNV9sSGxveThBVFNFaENPYk1tak8wMmFWTEUwbEtBY0xCY29WVDBJUXBaSHRfLWY3VTdNMjhaVHpGOG5VUG9zTFcxRElqcXhob24tQW1YUlVRdw?oc=5",
-      "date": "2026-11-17T20:21:53Z"
-    },
-    {
-      "title": "What to know about Iran’s ‘dirty bomb’ threat - The Hill",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRjFKQ2lCY3laTXVhdjI0ZkJYTkdfT3J1NC1TeEd3TWhtNVBUcmE1SWd6aXZIYjRnTXVLSG1KSlh3NkZEWDB6YnZFM1hwOTg1VmpxMnBOSDZkVlFWZ2dlQjVhYkhzTGgyX3YtcXpOaEY3VGh4SW5wNE53Wmc2M2g3b1JCRkRBdzc4X3VWQ1lxY0zSAZYBQVVfeXFMTlpVbnphdnZvQXNUVXQ0SHNXN09yQWhzV1drRVZSLV95RGRiRXVNTTN6ejhrT09MdWI2QTJSM1NXRU9URmc4VWRZMk00Q1F1a1M4cUlLQnNESkVOdU1fQk0zb1ZNeFVxWi1MTGl2cUlyRWdpVmRfckFBRmdRUzM4ckhZcExSZlhIVHFXUnp5YmNRcDRBd01R?oc=5",
-      "date": "2026-11-17T20:15:00Z"
-    },
-    {
-      "title": "Trump says report of Iran bomb plot against D.C. is being taken ‘very seriously’ - Los Angeles Times",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPeDhQLXlSMWVRdGEwZExDcmVFcTRLM0M2U3NFRXVfSzdUaVM1aEh6T0hkanhycW1WeUs5aXdkcGZnMTdIWVlMV3JXYzZOUlE4LWNnSm1MTDBzcVprMXZTTUhRWXV1R2dzZS14cWhDREpVX1hSUllTX2d6Mkpsd1ZMbHRxYXNJUjJUYkFhWENqcGYzZlMzTEN5c3VLZThnRHJweEpXdmJwME9ocGRid1ZFNnBlSUtsSTcwaS02U2trSmNMMkk?oc=5",
-      "date": "2026-11-17T20:14:01Z"
-    },
-    {
-      "title": "‘Malicious’ Cyberattack on 178 Major Websites Tried to Steal Credit Cards and Crypto — Here's What You Should Do Immediately - Entrepreneur",
-      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQakw5QUtVU3Ftd3ZTU3BBSVhZaVk1d0pzUEg4akd4X25TcDVOdWNpUmpVZVVuZk5weGp3Y1B3Y0NTcWFBTzNiemdncmNydHNIWmtCczJKSUtNRlhLZDhGZHIxa25LVUJUN0Y4QTRvdWNZV2xBM2I0V0VIVmpjalJSWEQ4VUlwLXZ5b2s5TGpNeFZnVURZQ3dqaDdyVGNkUUpvNDBpZ2VrNFJhSzJUNGRHd3BjZ0pwWW1yOWxvUGs1NUJoMjNSVklIM3BWbVNYZGFMVlFXa2RIVlQwMFIyVGw1cDNsdHhyVVFiTFVTSmdaOWJIYUx6?oc=5",
-      "date": "2026-11-17T20:10:10Z"
-    },
-    {
-      "title": "Vanderbilt Faces Class-Action Lawsuit Over Data Breach - GovTech",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMHlkY3ZCTTNfZjNsWkdOSjBLQ3dpWk9aRC1lQzl2WXRlQVlZQm5JOUE5SExHM2MtcHptU1B3NGZTaG5OeHEwY25SRmZtaTczRE1aekdZdWpuMXJSdlRDMzJLLVo1NUFLMERFMTNKRlBCYXJwcU56OVBSdElFVDVoMk9EcEVtSXBobGRGRlJXRWtkNkZUa2twUV9aTFRZQTA?oc=5",
-      "date": "2026-11-17T20:09:36Z"
-    },
-    {
-      "title": "Dozens of credit union branches hit by data breach - RTE.ie",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQSTdLaHdRYXFGaDdjN1kweXFjNTdOX1hwVHNzTm42Uk9JZnFwa2VlVmxqQm5CMktfZUdNaGpVSU90T2ZUTDFKU0FtZVE5ajJaeXFOajFURHVXSnA2eXZSZzVaMnRaQkg3RHhrdm5ZWEgzU1gxZmN2ZUljZEU2eHViN01nQUpTRVlBcVhWdkc4ZE5HYlk?oc=5",
-      "date": "2026-11-17T20:08:41Z"
-    },
-    {
-      "title": "Major Cyberattack Targets 178 Organizations, Millions of Credit Card Users at Risk - All About Cookies",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ta0t4UF93S0k1VWYyQ19KT2h0MVZrQUlpWE92NkRDZDQtUW90aU5vcnlVRkpYOEo4RXVMb3BXRmZ2bDd5SFZvblY4d1pfWWFyV1N4S1JVb25tdlkyQWo2aTRzNjRtaDlkcGVDUVdzZ2VVdFVVc0NhWk82bEhQX00?oc=5",
-      "date": "2026-11-17T20:08:00Z"
-    },
-    {
-      "title": "Why does everything keep going down? Every major U.S. tech outage in November - Cleveland.com",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNaDV6MHNCQm5FcmloXzZQZEJiWlRLMzg1YVFHaHcyMVBpTTdRR0dNd05PVUJsMTV6NjlacFR6cVJyUkhJeEEzQ1NiNmpHWWtZZUhvaG1SMGs4WURSTFpuOG51aHRmaU5HcldSZXJWMXVpXzdBeWExMUpiZHg4N09lek11cHB6MkR4NVFEaEExV05QQjlPZTFoNDFEMFd0QTlSYnlkbVFZOFpZT0xaeHlfTzRWUjgtZl9YUFHSAc4BQVVfeXFMUEtXWmlHT19xTXY5bWg4VFZJLTlZMXVkbnFyYkd2RXpjbUJiT1pWRnBIOWUxMHpRbVBzZ3YtMGpTLXVnWFo5OC1RVmwyT0o2bi1YbnVwclNmeV9odk5ma3R3eGN0ZjJXdjVsTnUwNDlrZGQtdXl0LVRWME5ZbHN5U0lfbkpEcWZCelE2R2NWaFRmMk1NVnFFMFZ0V1ZFZ1VZOENUZkhHaHh6d2RKUUZNMWZTUFpBZnMtb3VhOUQtcEtLaG4zOEtSVk11ZlNocWc?oc=5",
-      "date": "2026-11-17T20:08:00Z"
-    },
-    {
-      "title": "All the recent mass outages in the US from NSA to Apple and air travel - The Independent",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQTlhGbmYxNTNLYkozUjllVGhYSVJ4U21TbjF2UkZNVEtmZW15MnpHZ2JYdGJpUFJaTWdvelZDbHNVX3VnSjhOVDdWcGJZcjlJbnUxMGZ5andvQmc3aVJtVFg3OXp5Rzc2VzNyWjZPVGdGYmdEczcxdlpROFBYakN6SGt1UFNnYmxtT0MwSmtpdk91bUcyaGdZc1Q0TDRqUmdfVGVxUDVoWVlDajV6?oc=5",
-      "date": "2026-11-17T20:08:00Z"
-    },
-    {
-      "title": "Qatar warns Iran’s attack on US base in Bahrain threatens peace talks - アラブニュース",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcE5ZLWlLRnlPUjdKS2xNT0Q3bjRLNklTRExvMUtaRUZaU25qbk5sMWNqUi1ITjY4QVRxWmg4S3dEeng4eHlVdkl1TTdET3lOeUZBX2hFbnYyVF9TdlgtT1FuQms1UHNsaGVSMWNWRG8zbzNzUkRpR1JZWXdqSTJlT0FIV092M1hER0FCc29OaW9sQS1PT3Y2eUdoVzM0OU5nSDlUVTE1QnhrdE1Qd3h6bGRSQ2Z2UQ?oc=5",
-      "date": "2026-11-17T20:07:53Z"
-    },
-    {
-      "title": "Technical glitches or ‘malicious cyber actors’ at work? It’s getting harder to tell them apart - CNN",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE83MkJFZktKT2pSa1h5eVQzdzduOUUxQUlEa011UWFKZWF6WENTaGpGQzhYeWUyU1BxTXI4UHBQZWZoQXNtWDV2b3dYNzgyUU5OZVJVVk44OVNuYTk5TUNjT2c0RVctWEU3Qkp1cFRJMW51LWRUSm5PRQ?oc=5",
-      "date": "2026-11-17T20:06:24Z"
-    },
-    {
-      "title": "Cyberattack or no, parade of tech outages highlight need for resilient systems, CISA acting director says - CyberScoop",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kaElzTHQzM0djT09lSmJ5VDd5WXFQU3lCZWVYOHllckdwbG9NUWpVejluekVsb0huc1NiUXhVZnZxMUw0aUJXckZtSi1JVl9WMVc2RzhLeW5XOGt0UWdFSExkLXlSTEFkdDc2UlAxd3FTbGpGUEE?oc=5",
-      "date": "2026-11-17T20:02:11Z"
-    },
-    {
-      "title": "Third-Party Vendor Linked to Eli Lilly Is Hit by Data Breach - Barron's",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPQWxrYTB1a3FDOV95T19WOXdlZ2Fid0hUMDFGUV84QTFyXzhvNDVsak1XSHhQVjF1ZW1NZ1ZVaDhDMHE0c0lOMV9BUVktSTRnVllnUm04VHlXV1VMdDRxTXU5Qk9IaUN2OEJEcm95TVhtNVd2MFVDc3ZucUJvX25aUTlB?oc=5",
-      "date": "2026-11-17T20:02:00Z"
-    },
-    {
-      "title": "Hamilton East Public Library requires PIN resets after vendor data breach - LarryInFishers",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQY0N5dEFuZU9rYVEtMmZJcU9YYWRvY0tENS1NbnAzZjBVczN5MWJQZkR0MzRVenZPSXVGYlFXOU1PNS1rOFpXcUEtTGJkY2hUemZ1M0dSZ2lRVFo1NkM4UEJ2Nlh4NkNMdGlFR2RMSEhadm9mWVk1Q2lGaFRVaHZsOWtCeDNFZzF5NWdN?oc=5",
-      "date": "2026-11-17T20:01:24Z"
-    },
-    {
-      "title": "First National EAS Test Since 2023 Gets Early Thumbs Up. - Insideradio.com",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPd0VmUFVteWl0NlZTTnA5clZPQWR6Z29vNXhyS1lkYnJzQlphUUFyd3hwYnMxVV84Tk11SUdmRmswQnJyOUszbGZBcVI2aWwyN1FtNGk3N3o1YzZOQndxUHhLOFJWa2ZwLWxYemFOczZjV0gyTGVUeGlmblA4Ni1iczZJNHI3QW9xdVF6MTR2VWhCWHpBQ3p0VEp2aW5pR1ZaRFpBQnR0WEppQWFmVGlGWDNiUjdWY2dHVTJUeDMwZnE0WUp6Q054V1BjeUtfX1RXTndIZA?oc=5",
-      "date": "2026-11-17T20:00:00Z"
-    },
-    {
-      "title": "FEMA to begin nationwide emergency alert test - KVOA",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNmRha2pQUUtJSWY5WElrWWVxaVh3VzZOR2hNQXBuaUx4SE1TVkRMWmxsbzFRc2pLSEdURUxudVVXc0hEOGp0a0pMaERJMTF6NlVWbW9DY0I3WGhqUExHVHVxUWp3LXJNZzNMeHFQM2pBUnpGU2hnNTQ5R0ZsTnYtVnluRVlQUDhHdnRxX0J2ekF4a3pDcjNDcHlkbU9zb0RYRm82WUxIRkl4ZVpzZnQzU2pjN25FUGlsYkhwWQ?oc=5",
-      "date": "2026-11-17T19:58:00Z"
-    },
-    {
-      "title": "Apple outage today: iCloud and App Store down after a week of big outages - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQdEUtVFNUUnlmNlZfdS16TnNIaVpxaHEzY3F6VUVlZnZkZnVrOUttdlFmTEdnWExQbjlkQzlKQ0I0UW9iR2x4TENvVENYQUhfY1pYNDBKNnlFSHJoYk9lQ1V0bXRXcnRpem9uQUZjdE9QTVU5czl6RFpWbEtlUHhTajRtQl9XYjlEMGY5VjE0OTBXams1ajBzSklGUUZRMWZnWlNzUk4ySG9SbS03a0RRRERGQnQxcUFwQ2tj?oc=5",
-      "date": "2026-11-17T19:57:41Z"
-    },
-    {
-      "title": "Alberta emergency alert test planned for Wednesday - Edmonton Journal",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBNYm1Ta0dMYkZ5NXA3blc3bHVqLW9SVzhjYlp6aTB3SjEzNW1nTE4xZW9FZl84cldmLUZDYngtQW5rcnVqSXp2S01SU3d0aE9fYVQ3VVJ6ekp5TGozWV95SlhNTUZKTmdfYUpIM2huZHp5QVh5M2FhTDJn?oc=5",
-      "date": "2026-11-17T19:56:40Z"
-    },
-    {
-      "title": "US fighter jets strike Iranian missile site on Qeshm Island after attack in Bahrain - Ynetnews",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE11Z0dWbklLeGlKQnpYMkNES2Z1MnoyVElzb3hNS1llX3A2V2otcF9ZRjdFQmZIVXBBWlg4eWxHX0VNeWdONUZJcDhqYnM2bzN1X1Rsd1BjNA?oc=5",
-      "date": "2026-11-17T19:53:35Z"
-    },
-    {
-      "title": "Behavior Intervention Services Data Breach? Attorneys Investigate - ClassAction.org",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcmtHdkZBbkp0elNTMFFBcEV2NGd3MlpOZUR6STRCVWdzV0lKY183OWFrQXZ0T3JhbG5YQ1VBVWVKelJHbU44UjhXdWxIR3llSmxoY0tOYVRNSlVCaFFtTzJmb3ZfaWVOSF95ZXFEREZsVEN2aHNJYzJyT0NON0Z1aVJucGFyR3BVRkNacUZGMzk5TENRSTFHNg?oc=5",
-      "date": "2026-11-17T19:53:00Z"
-    },
-    {
-      "title": "Classified US communication network back up after outage hit system - New York Post",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNY2pLM2tRU2VEaElMS1hhbXNvLUNjR1RDdks2NnlhT2FVWU9ObTlfZ3JsbDc0bE5fN3hYVHNEQUx6UmN6Z0psZVJCakZldUtvemFwX0l1QURxVzJtRHZPRWRQT284eDdoZkNOTllTYVlWaHhMblN2MG1SNlZUSHFLZVFMYmV1eHhyWWJ1VDNqR1BLbkNKblN0WnZVOThHNkRjazQzSW9TRm5aMjc1Sk1QdDJJeTdCWkNTX09qNWlKRFFHUVJuSTloV1Nn?oc=5",
-      "date": "2026-11-17T19:50:33Z"
-    },
-    {
-      "title": "Not a cyberattack: Apple revealed what caused the company’s global outage - Українські Національні Новини (УНН)",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbC1fMUdMRVBUWTZlWTF0Vk9hRi0ySHFyUDR2ZU43dGFacDNMaWxSMi1nUEJvUktBNVlyVHc2NUluVHRVbTFlT0N3cGUwUHJVWW5EOUExbUhXUlVJLWdhaGUzYTVZMHFxYi1ubGt3aE1FRFdvMVQzTWItQzE3N1JJWENoQnVEMDJYTlpLQ2dpcDNTdGFsLWpJddIBlwFBVV95cUxNeU1uTGRiSFJGaVRzeW1LZmZhWmI1WnpCS3NyZUJCN2V5eVV5dUJqTnViU2pWTUNRMGx1X0dabzJIZVpIal9zQlZBSW1OSktSS0R1SDRPcFVfLXhQRXdpQUNFU1JXS2RkRXplZHRVUUFzTUVlNms4cExySG5WZlFEenFPZFIxVzZqdU5pQmpFWGpOd2xqb3JZ?oc=5",
-      "date": "2026-11-17T19:49:57Z"
-    },
-    {
-      "title": "Streetlight Financial Data Breach Exposes Financial Account Information - Claim Depot",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBIQ3hmd1ZfT0xlNXY1UkhXMXpDNTBqU0JkOTN3YTA3c1kyanRwcWQ3bmx5X2tqZ1RMRjVuOGh5c2JMOTNCUFQyNHduMkhIbjUtMVBTS0dGUC1MbnRPNWlVSGN2ekplekxEVmtoUkZhSVVWUFQyUGl3?oc=5",
-      "date": "2026-11-17T19:49:52Z"
-    },
-    {
-      "title": "Apple services down: Company confirms outage, as thousands of users report problems on App Store, Apple M - The Times of India",
-      "link": "https://news.google.com/rss/articles/CBMizwJBVV95cUxOdjYzZEk1M0xnVDdzRFVYVzVFdHNMUW5rOVRwS2xhMjZzNVA1NnNLNmh1RmNMVzNIZ3dYdDhqVko2SXNEVFY3WTFuczY5LWJsblFTV1RUTXpZZk9lX2FVV1RlcVpVdzdFUTJOZTJnbFVfTWxqd0phZGVaQVlUSDBSdW96S01xTTNXTWY2U2l2SEpHSVFHTFc2U3dWUE5KYlotVEhjUndSWTZtTm9aRjhXZ3lBdW1wcTlRVlZqeEoyWURCTHZCelhYTHFjLUZ0ZUNqZ09pd2NHbUVURXpPcndUOGVBTzRyMFFoblZ4WXZCcjZ2Zmw5b1VIY1hBcGYzeUJ0b2N6bVJlTHVia3V1c1FrVV9aeFQwVkRQNVJFdHdZWndKaHRnc09KUVA3SzAwUkxaczFOWk93VFBjUHhMLWJTVERGbkdSWXpNRzhpbk1VUdIB1AJBVV95cUxNZFdSZi1oaDcxa2lMNE12WVltU2dnbjE3QW83UTNVYkRkSTRiM3h2bFhWVmpGZnhnb19wUmlBMGFIbU5OMjhFLUtvRnlWNTNmQ3BqVnZYTGY3TGdPZ2d2cUtTU0dGREZycHI2NTFYT0ZDV0Ywb1FiMWdFakZ2M1JuTDMxLTN6NlNYOVZYekFtanVpTDJabHRrQ295SUgzWGFWUjh1QTBjYWNUZHRjaUV3RHFJVFdXNzhhc3dEYV9DUG1JSklzTTByUk8xWEhOOU5paGNVa3ZNRXNPNnpvaGJ6b2Y0azltQWR3WWdYYjJIeVlLOU4wdjZOWEN2YmFDcmtxYlI3VU9NSXpyNVFuNnVuVUpvZDIzZGVSSkNNSGhvejBrNC1OZC1mOGVWY25CS0puY2lVcmZzWElJNk1CXzJxcXdsZ3ZIOGtBTFJqSVRvU05OMHFH?oc=5",
-      "date": "2026-11-17T19:48:00Z"
-    },
-    {
-      "title": "Apple Addresses Outages Affecting Apple Pay, iCloud and Apps - The New York Times",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVVdkd0RiSEp5RzQ2WmNEZWNRM1JoYlhOekYzajU3amxGNXJLa2xVUUdFLUYtTmEyMTZqQXpfZk9KbExPbXYtZ1cySjlKQkdNOU1Wdkc1N19XOVV0d2dFUGJCNklJTVFxa0lEd1l3aDdZZE9ONWFDZW9CbjVqeUFHaw?oc=5",
-      "date": "2026-11-17T19:46:36Z"
-    },
-    {
-      "title": "How to Tell If It’s a Cyberattack or Just an Outage - WIRED",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNUVRiZUNSNVJhVVpYYTRHdGktNWY2UWc3eV81emd3bGw5eEhNVmZ2cTdoTnlzN2oxeWZyLTIzVmZSMS1JeGRSNXZhcThfdEFOc3psQUVhelRWdWtUT2pzZ0IzTXBWRUgwaHpBQWtPZkhlU05HVmYxZEhPUGRxVFpNY1o1RUUxUQ?oc=5",
-      "date": "2026-11-17T19:40:57Z"
     }
   ]
 }
