@@ -1,54 +1,48 @@
 {
- "updated_at": "2026-11-24T17:33:55.512124+00:00",
+ "updated_at": "2026-11-24T18:23:30.170021+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
-  "tracked": 8385174,
-  "out": 1514,
-  "pct": 0.02,
-  "source_updated": "2026-11-24T17:26:34+00:00",
+  "tracked": 8385965,
+  "out": 1060,
+  "pct": 0.01,
+  "source_updated": "2026-11-24T18:17:20+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "National Grid",
-    "tracked": 1699953,
-    "out": 915,
-    "pct": 0.05
+    "tracked": 1700744,
+    "out": 582,
+    "pct": 0.03
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 315,
-    "pct": 0.03
+    "out": 240,
+    "pct": 0.02
    },
    {
     "name": "New York State Electric & Gas",
     "tracked": 918872,
-    "out": 137,
+    "out": 102,
     "pct": 0.01
-   },
-   {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315545,
-    "out": 81,
-    "pct": 0.03
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 58,
+    "out": 60,
     "pct": 0.0
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315545,
+    "out": 48,
+    "pct": 0.02
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392208,
-    "out": 4,
-    "pct": 0.0
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 2,
-    "pct": 0.0
+    "out": 26,
+    "pct": 0.01
    },
    {
     "name": "Tri-County Rural Electric Coop",
@@ -65,6 +59,12 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
     "out": 0,
     "pct": 0.0
    },
@@ -95,16 +95,16 @@
   ]
  },
  "county": {
-  "tracked": 212912,
-  "out": 14,
-  "source_updated": "2026-11-24T17:26:33+00:00",
+  "tracked": 213051,
+  "out": 15,
+  "source_updated": "2026-11-24T18:17:19+00:00",
   "pct": 0.01,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
-    "tracked": 204758,
-    "out": 14,
+    "tracked": 204897,
+    "out": 15,
     "pct": 0.01
    },
    {
