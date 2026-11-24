@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-24T06:45:29Z",
-  "fetched_at": "2026-11-24T06:45:29.934Z",
+  "updated_at": "2026-11-24T08:12:58Z",
+  "fetched_at": "2026-11-24T08:12:58.735Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -16,7 +16,7 @@
     "league": "Silver League I",
     "capitalLeague": "Bronze League II",
     "clanPoints": 16700,
-    "clanBuilderPoints": 12970,
+    "clanBuilderPoints": 13009,
     "clanCapitalPoints": 403,
     "requiredTownhallLevel": 1,
     "requiredTrophies": 5500,
@@ -48,7 +48,7 @@
         "role": "coLeader",
         "th": 19,
         "expLevel": 247,
-        "trophies": 0,
+        "trophies": 3,
         "league": "Legend League",
         "leagueTier": "Electro League 33",
         "donations": 122,
