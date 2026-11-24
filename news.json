@@ -1,34 +1,34 @@
 {
-  "updated_at": "2026-11-24T01:45:04.362379Z",
+  "updated_at": "2026-11-24T02:40:09.106066Z",
   "sections": {
     "top": [
+      {
+        "title": "Ty Francis scores 17 to lead Le Moyne to 68-58 victory over D-II’s Mansfield",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/mansfield-le-moyne-basketball-score-ebcaa472d0d3a7d2ca81f92ccff99040",
+        "published": "2026-11-23T18:30:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Man with Alzheimer’s rescued in Amazon rainforest after surviving for 11 days, park ranger reveals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/brazil-survival-amazon-alzheimer-patient-rescue-6559d53225fca47244d4355f76791662",
+        "published": "2026-11-23T18:29:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.PwAQSlq-0VOrhQ4U9EakIQ&pid=News"
+      },
+      {
+        "title": "Saints lament slow starts and ‘a handful of plays’ costing them games",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/new-orleans-saints-analysis-fcbfaa64cf469022e8872f595e2f02b4",
+        "published": "2026-11-23T18:12:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.sqpuqM8UHS-Esqe_BNuOoA&pid=News"
+      },
       {
         "title": "Vance and Rubio meet with Qatari PM as uncertainty mounts over Trump’s intentions with Iran",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/vance-rubio-qatar-iran-war-16e0c2cb05347cfcac068ec4aebb363f",
         "published": "2026-11-23T17:27:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.FohLwd-TJXrVcA4hTYq-ig&pid=News"
-      },
-      {
-        "title": "Pyke scores 20 as Arkansas State defeats Southern Utah 104-102",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/southern-utaharkansas-state-score-1658b26ec86142bc107baf4856d2f881",
-        "published": "2026-11-23T17:24:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "Lions hope to ride momentum as they prepare to host the Bears on a short week",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/lions-analysis-thanksgiving-bears-cefc06d81dce6aba4fbe215c4af55128",
-        "published": "2026-11-23T17:15:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ZmnS0M1deCiXBamDAkSwrA&pid=News"
-      },
-      {
-        "title": "The Southeastern Conference, in a new federal court filing, is again threatening to kick LSU out",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/lsu-sec-lawsuit-expulsion-threat-ed1cf06e411b19d950113d25ea8f4881",
-        "published": "2026-11-23T17:01:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.w9pF9StHBIyUOSEYFtqJEQ&pid=News"
       },
       {
         "title": "Chandler leads charge in 2nd half as No. 19 BYU rallies past Washington 83-77 at Maui Invitational",
@@ -38,18 +38,25 @@
         "thumb": "http://www.bing.com/th?id=ONUT.VBFQbeppRLX7kjplz-o5eg&pid=News"
       },
       {
-        "title": "Wall Street rebounds as Jensen Huang returns as Nvidia CEO",
+        "title": "At AI speed, Nvidia's Jensen Huang finds exoneration",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23/",
-        "published": "2026-11-23T16:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.PmR2z9L5RAmYKPDkWfSJ_g&pid=News"
+        "link": "https://www.reuters.com/legal/legalindustry/ai-speed-nvidias-jensen-huang-finds-exoneration-2026-11-24/",
+        "published": "2026-11-23T16:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.vYToVY0a6gu1AwlyoVTsbQ&pid=News"
+      },
+      {
+        "title": "Singapore investigating Nvidia-linked Megaspeed after US blacklisting",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/singapore-investigating-nvidia-linked-megaspeed-after-us-blacklisting-2026-11-24/",
+        "published": "2026-11-23T16:00:00Z",
+        "thumb": ""
       },
       {
         "title": "Jodie Foster says 'Hexed' explores female power through witches",
         "source": "Reuters",
         "link": "https://www.reuters.com/video/watch/idRW073123112026RP1/",
         "published": "2026-11-23T16:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.b6Hdd-8VXhXgZlj2EtB3Bg&pid=News"
+        "thumb": "http://www.bing.com/th?id=ONUT.6FVSP-J1FkmeAXWYzViJug&pid=News"
       },
       {
         "title": "Teamsters urge US lawmakers to quickly pass Chinese car ban",
@@ -59,20 +66,6 @@
         "thumb": ""
       },
       {
-        "title": "Dollar climbs as renewed AI euphoria fuels Fed hike bets",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/dollar-climbs-renewed-ai-euphoria-fuels-fed-hike-bets-2026-11-24/",
-        "published": "2026-11-23T16:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.fZcd_WD74TMwbm_agK7tvA&pid=News"
-      },
-      {
-        "title": "South Korea says suspected North Korean aircraft breached island’s airspace",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/south-north-korea-tensions-airspace-ulleung-island-a0347d1dda863d8189bbdf21c320ee3b",
-        "published": "2026-11-23T15:30:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
         "title": "Australia's Pauline Hanson faces biggest test as debt and anger align in state vote",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/asia-pacific/australias-pauline-hanson-faces-biggest-test-debt-anger-align-state-vote-2026-11-23/",
@@ -80,31 +73,38 @@
         "thumb": ""
       },
       {
-        "title": "Why Donald Trump believed he needed to get Jensen Huang back on top at AI behemoth Nvidia",
+        "title": "Fury in Congress over Huang’s reinstatement as lawmakers move forward with hearings",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-huang-nvidia-china-spies-affairs-e5ab261b27bf80d1562a345923bf6a59",
-        "published": "2026-11-23T15:04:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.pYZswm8roSHp3o9LJnEErQ&pid=News"
+        "link": "https://apnews.com/article/nvidia-jensen-huang-48a005a1415549e69ec69400024aa797",
+        "published": "2026-11-23T13:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.4UrPmNakjCBI1khazNI7qA&pid=News"
       },
       {
-        "title": "Texas drops lawsuits that accused doctors of illegally providing transgender youth care",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/transgender-care-doctors-ken-paxton-texas-216f594bb043e456b705eb152d1e15d3",
-        "published": "2026-11-23T14:17:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.2gzsYdYJtHi2Y1NTpSfVSA&pid=News"
-      },
-      {
-        "title": "Switzerland's Clariant, CD&R in talks to buy chemicals firm Ashland",
+        "title": "US blacklists Megaspeed cloud company linked to Nvidia scandal",
         "source": "Reuters",
-        "link": "https://www.reuters.com/legal/transactional/switzerlands-clariant-cdr-talks-buy-chemicals-firm-ashland-2026-11-23/",
-        "published": "2026-11-23T13:51:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.FEWB2En31r2_5S1q9zfd5Q&pid=News"
+        "link": "https://www.reuters.com/business/us-blacklist-megaspeed-chip-firm-linked-nvidia-scandal-source-says-2026-11-23/",
+        "published": "2026-11-23T12:51:00Z",
+        "thumb": ""
       },
       {
         "title": "Huang's stunning Nvidia return sparks relief for battered AI trade",
         "source": "Reuters",
         "link": "https://www.reuters.com/legal/transactional/huangs-stunning-nvidia-return-sparks-relief-battered-ai-trade-2026-11-23/",
         "published": "2026-11-23T12:35:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Mikaela Shiffrin channels Killington triumphs over trauma in return to ski hill where she crashed",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/killington-ski-racing-shiffrin-f4919dfe6f1f88f9e66f4c0e51efaa71",
+        "published": "2026-11-23T11:26:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.wxAjq4v28ek8PU-mXSN3hQ&pid=News"
+      },
+      {
+        "title": "Anthropic options post solid debut, trailing SpaceX record",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/anthropic-options-debut-with-brisk-volume-2026-11-23/",
+        "published": "2026-11-23T08:24:00Z",
         "thumb": ""
       }
     ],
@@ -182,13 +182,6 @@
     ],
     "nationwide": [
       {
-        "title": "Pyke scores 20 as Arkansas State defeats Southern Utah 104-102",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/southern-utaharkansas-state-score-1658b26ec86142bc107baf4856d2f881",
-        "published": "2026-11-23T17:24:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
         "title": "Chandler leads charge in 2nd half as No. 19 BYU rallies past Washington 83-77 at Maui Invitational",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/washington-byu-score-ddf2ae5b77d38d695b172c6be41cd7df",
@@ -203,25 +196,11 @@
         "thumb": ""
       },
       {
-        "title": "Texas drops lawsuits that accused doctors of illegally providing transgender youth care",
+        "title": "Fury in Congress over Huang’s reinstatement as lawmakers move forward with hearings",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/transgender-care-doctors-ken-paxton-texas-216f594bb043e456b705eb152d1e15d3",
-        "published": "2026-11-23T14:17:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.2gzsYdYJtHi2Y1NTpSfVSA&pid=News"
-      },
-      {
-        "title": "What to know about US Army plans to blow up a stockpile of lead azide in Iowa",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/us/what-know-about-us-army-plans-blow-up-stockpile-lead-azide-iowa-2026-11-23/",
-        "published": "2026-11-23T12:02:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.usDG_uf4J0u5rTYfp5W2sw&pid=News"
-      },
-      {
-        "title": "Measles-related deaths in Pennsylvania rise to nine",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/healthcare-pharmaceuticals/pennsylvania-reports-nine-measles-related-deaths-2026-11-23/",
-        "published": "2026-11-23T11:17:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.EMvHFa1US25013tOHnTGBA&pid=News"
+        "link": "https://apnews.com/article/nvidia-jensen-huang-48a005a1415549e69ec69400024aa797",
+        "published": "2026-11-23T13:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.4UrPmNakjCBI1khazNI7qA&pid=News"
       },
       {
         "title": "US lawmakers criticize Nvidia decision to reinstate Huang as CEO",
@@ -229,16 +208,30 @@
         "link": "https://www.reuters.com/business/lawmakers-criticize-nvidia-decision-reinstate-huang-ceo-2026-11-23/",
         "published": "2026-11-23T07:15:00Z",
         "thumb": ""
-      },
-      {
-        "title": "Virginia, Oregon sue Musk's SpaceX over Grok AI's creation of child sexual abuse images",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/government/virginia-oregon-sue-musks-spacex-over-grok-ais-creation-child-sexual-abuse-2026-11-23/",
-        "published": "2026-11-23T04:09:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.-te3WNAkWLTUJK8bRpUk5w&pid=News"
       }
     ],
     "global": [
+      {
+        "title": "Ty Francis scores 17 to lead Le Moyne to 68-58 victory over D-II’s Mansfield",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/mansfield-le-moyne-basketball-score-ebcaa472d0d3a7d2ca81f92ccff99040",
+        "published": "2026-11-23T18:30:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Man with Alzheimer’s rescued in Amazon rainforest after surviving for 11 days, park ranger reveals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/brazil-survival-amazon-alzheimer-patient-rescue-6559d53225fca47244d4355f76791662",
+        "published": "2026-11-23T18:29:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.PwAQSlq-0VOrhQ4U9EakIQ&pid=News"
+      },
+      {
+        "title": "Saints lament slow starts and ‘a handful of plays’ costing them games",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/new-orleans-saints-analysis-fcbfaa64cf469022e8872f595e2f02b4",
+        "published": "2026-11-23T18:12:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.sqpuqM8UHS-Esqe_BNuOoA&pid=News"
+      },
       {
         "title": "Vance and Rubio meet with Qatari PM as uncertainty mounts over Trump’s intentions with Iran",
         "source": "Associated Press News",
@@ -247,46 +240,25 @@
         "thumb": "http://www.bing.com/th?id=ONUT.FohLwd-TJXrVcA4hTYq-ig&pid=News"
       },
       {
-        "title": "Lions hope to ride momentum as they prepare to host the Bears on a short week",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/lions-analysis-thanksgiving-bears-cefc06d81dce6aba4fbe215c4af55128",
-        "published": "2026-11-23T17:15:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ZmnS0M1deCiXBamDAkSwrA&pid=News"
-      },
-      {
-        "title": "The Southeastern Conference, in a new federal court filing, is again threatening to kick LSU out",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/lsu-sec-lawsuit-expulsion-threat-ed1cf06e411b19d950113d25ea8f4881",
-        "published": "2026-11-23T17:01:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.w9pF9StHBIyUOSEYFtqJEQ&pid=News"
-      },
-      {
-        "title": "Wall Street rebounds as Jensen Huang returns as Nvidia CEO",
+        "title": "At AI speed, Nvidia's Jensen Huang finds exoneration",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23/",
-        "published": "2026-11-23T16:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.PmR2z9L5RAmYKPDkWfSJ_g&pid=News"
+        "link": "https://www.reuters.com/legal/legalindustry/ai-speed-nvidias-jensen-huang-finds-exoneration-2026-11-24/",
+        "published": "2026-11-23T16:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.vYToVY0a6gu1AwlyoVTsbQ&pid=News"
+      },
+      {
+        "title": "Singapore investigating Nvidia-linked Megaspeed after US blacklisting",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/singapore-investigating-nvidia-linked-megaspeed-after-us-blacklisting-2026-11-24/",
+        "published": "2026-11-23T16:00:00Z",
+        "thumb": ""
       },
       {
         "title": "Jodie Foster says 'Hexed' explores female power through witches",
         "source": "Reuters",
         "link": "https://www.reuters.com/video/watch/idRW073123112026RP1/",
         "published": "2026-11-23T16:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.b6Hdd-8VXhXgZlj2EtB3Bg&pid=News"
-      },
-      {
-        "title": "Dollar climbs as renewed AI euphoria fuels Fed hike bets",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/dollar-climbs-renewed-ai-euphoria-fuels-fed-hike-bets-2026-11-24/",
-        "published": "2026-11-23T16:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.fZcd_WD74TMwbm_agK7tvA&pid=News"
-      },
-      {
-        "title": "South Korea says suspected North Korean aircraft breached island’s airspace",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/south-north-korea-tensions-airspace-ulleung-island-a0347d1dda863d8189bbdf21c320ee3b",
-        "published": "2026-11-23T15:30:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "thumb": "http://www.bing.com/th?id=ONUT.6FVSP-J1FkmeAXWYzViJug&pid=News"
       },
       {
         "title": "Australia's Pauline Hanson faces biggest test as debt and anger align in state vote",
@@ -296,18 +268,18 @@
         "thumb": ""
       },
       {
-        "title": "Why Donald Trump believed he needed to get Jensen Huang back on top at AI behemoth Nvidia",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-huang-nvidia-china-spies-affairs-e5ab261b27bf80d1562a345923bf6a59",
-        "published": "2026-11-23T15:04:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.pYZswm8roSHp3o9LJnEErQ&pid=News"
+        "title": "US blacklists Megaspeed cloud company linked to Nvidia scandal",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/us-blacklist-megaspeed-chip-firm-linked-nvidia-scandal-source-says-2026-11-23/",
+        "published": "2026-11-23T12:51:00Z",
+        "thumb": ""
       },
       {
-        "title": "Switzerland's Clariant, CD&R in talks to buy chemicals firm Ashland",
+        "title": "Huang's stunning Nvidia return sparks relief for battered AI trade",
         "source": "Reuters",
-        "link": "https://www.reuters.com/legal/transactional/switzerlands-clariant-cdr-talks-buy-chemicals-firm-ashland-2026-11-23/",
-        "published": "2026-11-23T13:51:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.FEWB2En31r2_5S1q9zfd5Q&pid=News"
+        "link": "https://www.reuters.com/legal/transactional/huangs-stunning-nvidia-return-sparks-relief-battered-ai-trade-2026-11-23/",
+        "published": "2026-11-23T12:35:00Z",
+        "thumb": ""
       }
     ]
   }
