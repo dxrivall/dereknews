@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-24T11:27:42Z",
-  "fetched_at": "2026-11-24T11:27:42.167Z",
+  "updated_at": "2026-11-24T12:31:35Z",
+  "fetched_at": "2026-11-24T12:31:35.635Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -296,7 +296,117 @@
       }
     ]
   },
-  "currentWar": null,
+  "currentWar": {
+    "state": "preparation",
+    "teamSize": 5,
+    "attacksPerMember": 2,
+    "preparationStartTime": "20261124T113719.000Z",
+    "startTime": "20261125T103719.000Z",
+    "endTime": "20261126T103719.000Z",
+    "clan": {
+      "name": "WAR II",
+      "tag": "#2JQVGQRC9",
+      "stars": 0,
+      "destructionPercentage": 0,
+      "attacks": 0,
+      "members": [
+        {
+          "tag": "#GL80JCCU2",
+          "name": "not real 315",
+          "mapPosition": 3,
+          "th": 14,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#GUVC2U9Q",
+          "name": "Nastypu",
+          "mapPosition": 1,
+          "th": 19,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#GQ2YJQQ0J",
+          "name": "unstoppablepeka",
+          "mapPosition": 5,
+          "th": 9,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#Q8YV0JYUG",
+          "name": "Icy",
+          "mapPosition": 4,
+          "th": 14,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        },
+        {
+          "tag": "#P8VGJCLY",
+          "name": "dxrival",
+          "mapPosition": 2,
+          "th": 17,
+          "attackLimit": 2,
+          "warAttacks": [],
+          "attackCount": 0,
+          "attacksComplete": false
+        }
+      ]
+    },
+    "opponent": {
+      "name": "GAMMARAHOTEL",
+      "tag": "#2CYJP9RPU",
+      "stars": 0,
+      "destructionPercentage": 0,
+      "attacks": 0,
+      "members": [
+        {
+          "tag": "#2YCVP8URG",
+          "name": "MeRCoN_",
+          "mapPosition": 2,
+          "th": 15
+        },
+        {
+          "tag": "#PR9LL80VY",
+          "name": "muh ilham",
+          "mapPosition": 5,
+          "th": 13
+        },
+        {
+          "tag": "#R0RJYVGYL",
+          "name": "Zoel",
+          "mapPosition": 3,
+          "th": 17
+        },
+        {
+          "tag": "#QGC8JP08Q",
+          "name": "_WS_",
+          "mapPosition": 4,
+          "th": 14
+        },
+        {
+          "tag": "#92L8PYQYL",
+          "name": "Azward Reynold",
+          "mapPosition": 1,
+          "th": 19
+        }
+      ],
+      "badgeUrls": {
+        "small": "https://api-assets.clashofclans.com/badges/70/TTPFmAOkvBsMgcp1lsejcJXKkHW5WY9MQDSrOGESekU.png",
+        "medium": "https://api-assets.clashofclans.com/badges/200/TTPFmAOkvBsMgcp1lsejcJXKkHW5WY9MQDSrOGESekU.png",
+        "large": "https://api-assets.clashofclans.com/badges/512/TTPFmAOkvBsMgcp1lsejcJXKkHW5WY9MQDSrOGESekU.png"
+      }
+    }
+  },
   "warLog": {
     "record": {
       "wins": 4,
