@@ -1,10 +1,25 @@
 {
-  "updated_at": "2026-11-24T11:13:46.836939Z",
+  "updated_at": "2026-11-24T12:15:37.367281Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "State shuts down myColorado app after data breach; up to 150,000 people may be affected - Kiowa County Press",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMmRVdFdxakpiSUFKSGlfNkptNF9EZm9mOFdBemVTS1FCRnU3eXM4b3NHUUdWSm4yS0t4NlgwYUNxYTdITWlkanBJY0FLLXIwVXBhLUdxZnJpM25XOG9YWGtKSE9LdGN4eWEwR1hZQkVheE5VbVMxNUNHdG81QXFPZ3hBMDFBUnVIYllZLWFxWEFTdkp5Z0JXQUwtNVFGU3FhQWJ2cmJhZXd2Nk9qZUF0N3BQRFFxenM?oc=5",
+      "date": "2026-11-24T12:01:00Z"
+    },
+    {
+      "title": "Rapid7: How NEXT Data Breach Exposes Retail Supplier Risk - Cyber Magazine",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRmUzSmRwemFaZnpnRXJ6dUdid0w1dkdTUFJNWHVwNTktVlVFTjNtZ19rOW05cU84emF0bmJnTTd1cW4zQVJaZm1RbDRIbnNsYWFtQWF4bWFJdXZyTzkzX1dBRVgyN1VtemhqUmFaM3FFdWd4TWFQdEl6OElmRGJvckNlYTZNUVQ1NWZr?oc=5",
+      "date": "2026-11-24T11:56:25Z"
+    },
+    {
+      "title": "Belgium national strike halts flights and cripples Brussels transport - https://www.thetraveler.org/",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOTEpkX1hsZUxINWZYa3FCVU5zLVlIU0h1alhFaUJmMW52SWw0MXhpemFuNjNtaDA3d01RZFZlbUhEZW85WmU1YXRpd05EYnRGVE5DdGdNMDF4bUV6UWZmOEhCRHVoaTBVMmFmelc2WEFsaGxRTTdzakVRc0pYQ2xvX0lzaVRvWlZXMHZqY2pQN0Jyb2p0NVFqNTRFZGJCZkE?oc=5",
+      "date": "2026-11-24T11:20:39Z"
+    },
     {
       "title": "Colla Health Data Breach Affects 336K Individuals - The HIPAA Journal",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZm1JQ2hLNGlGN0JfZ0gwdS14WFplTXU1RnBWd3d6eERQVVFnM2ZTbGhJSmU1eTR6ZmpVZWk0RkVJUUFiMkprbVJMUVRTU2pFTTB5SEtaazBldUM1RnlyazhYOGR6NkdVUFc0MWhPVXQxMWFXYlNmSDJPaU0waWhhWGxMbjFhbFpKU0NlOWxR?oc=5",
@@ -2971,6 +2986,11 @@
       "date": "2026-11-20T08:00:00Z"
     },
     {
+      "title": "Visa, Mastercard And JPMorgan Customers Hit By Ransomware Attack Through Third-Party Vendors - The Logical Indian",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE51RjJYZzVmNC1YWFRJMUxTM0hGbzh1RGZMLXZDUDB5bkNGVkFhdDBPb2Q5MFNwTVY2cGNpQ3BFeDE1dlYzQVozcXFERl9fei1GdnRQcGtiUmdXN3J2d085RE9WaUlMb2lodlBsVmhHVDZGNklHYWVZbVFR?oc=5",
+      "date": "2026-11-20T07:59:15Z"
+    },
+    {
       "title": "Cyber-attack stopped - Equinor",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9RSzV1NnNoclpOVGR6SkdLZlZaOHg2bzlQVjVzSzNwZERSRklTVXJsc3RZQTN3ZHZlX2VSV1Zrd1lFV0ZXVW1JQmViUmRBU1c4Ml9wSmN2VE9BZ3FwQTNyVnVEVlRIcWhjdnJyZDBEMnFQWXV6MkE?oc=5",
       "date": "2026-11-20T07:55:00Z"
@@ -5851,6 +5871,11 @@
       "date": "2026-11-17T21:06:00Z"
     },
     {
+      "title": "US strikes Iran’s Qeshm Island after Tehran attacks American radar site in Bahrain - The Times of Israel",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdThpZ3JaWFVQM1JOc0hsUlg3bUJyY3BVNDNTQ044Y0pVdERhRlo0VHc4Skh6VDNtT2pSUEVWdG8tN2w3MUFpaHB1OGpJcHZudFpuV2tPa3dUVU5XZWpITUZYN3MxREVWbjQ2d3M1czJEQ0ZlNXRPRUo1dWNrc2N3Z19IZnFkbjV0SjRfSmE0cU5jVTRSSHNyeXZEV0kzcXpsaTZwck5hallwTVhRZXY3U05R0gG3AUFVX3lxTFBRTnVKWFJkVFl0TnZRMFNOc2ZkY3g5ejZGZ25US1NYTW5nQlVYcGY3RmM4Q0pXYWRyeG12OHVSWXVoTDdKdHAyQ1l5b1FpOC1pdzNjbFV6aVFmWXN0SWUwNFdvdzZMemswclJSX2FKSWNjZEpFbWY1R2ZYOHRMMlA5VWk5R3pJYndvMVd6Nnk4ZDNqLXltWHBUNWlzck5NTEwyeTRnQW42cHptTEgtZzY5MnMxbjZXSQ?oc=5",
+      "date": "2026-11-17T21:04:00Z"
+    },
+    {
       "title": "Fireworks AI Breach Exposes Uber Data and Highlights Supply Chain Risks - Security Affairs",
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYnlvdVp4MFVDejdwVHhORHhKNTVLOUk0SU53dGxET3AzYTBvTC1pTFF6am9YT2w0V3dTcTF3b2dNWnJGNDhhRHB6c2std1BlNVg1R1RqdUZUMlBOaVl3Z2FOMlczUHE1SkZtcnAwUEJmT25HZGdfYko2ZGNGSVJyaWhLa1Rldy16Rk0tekpYNWhqc00zel9GcUZ3ZW9VZ3BvZmZqWVVCdU5QREtreER6ZU9IcWp2VnZBQ3V1VU1Jdy3SAcYBQVVfeXFMTmtQRWxHMmw4UmVLVFpXckgxWm5FX0FfZ1ZtcXVNaVNBNkd4TktNaTRodThZa2FUenpDcjcyZkhzb1VyY3BJVGFnT05zUlhKRVdWQTktODFvVUx2Y0tDMUJUWkFwT3VWTi1heWhIRXpueWh4NnVVMVQ4OC15cnM4VmJKNUpzejZpZm1RS0NWTlFfWEFlRUxwZjBlNmhNYkFiUXNYS3RaTzdDVTNuWmRER3o4OFRhRzFYSE0wczJsUEkzOERUUzl3?oc=5",
       "date": "2026-11-17T20:55:14Z"
@@ -6409,6 +6434,11 @@
       "title": "National Emergency Alert test planned this afternoon - LimaOhio.com",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZ3h1SjdwT09mN2gwVVRnRTlqXzhhbGtlanBQZjgtQ05tSG4tdTc3RnVrNHRrVE5FODUzVElVbWVtR1NvNTNDYUZTVlFyV1FybFUwTGhCUEZ4TWlmeWEySVA4bXNjSktaUmh5RjVkSXNxcVlfZmZ1bUxYLXFVZ3ZIQWJWZGJDRzBPWU1vWlJDN2EtQ20wX2lsVkRn?oc=5",
       "date": "2026-11-17T17:21:57Z"
+    },
+    {
+      "title": "Rubio Says No Imminent Threat To Washington After Report Of Possible Iranian Dirty Bomb Plot - HuffPost",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONTQ5OUhkZTBlQjRGal9Td2Y4QXZxdGl4RFVWaFZFZHEyVWxCSGQ3c21PU01fam94Wmxoa3NDZGxCQldKVWpvU0o0RnR4VW5maWtsSWVvbjBRdU4wYzJkRWNyc3EtUG5iNVRQb3dhSndrcUFHVnFtSnZvQXFXdmpOd0NjQTJXMFhZYTRQQVJR0gGTAUFVX3lxTE1WZmo4bWpkcEU3TXJhTy1QdmM5VnhGd3hUcHc4X0x5cEQ4cTNvb3EwVWNxdWFUV1IwaENjSlNLUVg4dmdIYXR3SV96VEpxU24zd2FTMjI4d1Z4NkJrMUNSM0k0bGk5QktST1IyT1VETGlUcFBoenJLRmJDTVlSXzF4TU9kRGZkOHJXX0VSWkYwMlJ5TQ?oc=5",
+      "date": "2026-11-17T17:21:56Z"
     },
     {
       "title": "Former CIA official says Iran 'dirty bomb' threat should be taken 'very seriously' - WJLA",
@@ -7234,91 +7264,6 @@
       "title": "Trump says US taking seriously report of possible Iranian dirty bomb plot in Washington - Internazionale",
       "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxONkxzSVd1RlFKdjIzbkZmWnNsTWk0dTJ0by0yRkR3cVowMXUzR2NHcE5GeXlWaDY3WTZfZzJxNzBhQlo2dGpIQjVMS05NVllIS2FjT01RemFzTWVqQXozeW5sM00yZm1VY3MtalZ4OFR2b1U1WTU4M3JpRWR2cFRHal91aVVMdDVWOTNkc0Q1M2lXaGRYVFRlSzRpbHlXcVpmRm9WR2Nna1F2cG5NV0psdnJFb3dYRVM4eU1ib1ItR2tCWUFrbWJ1MmR3Y3k4RGZLcWdCUXdvVmhfUm1oQ05sNDMycw?oc=5",
       "date": "2026-11-17T12:16:17Z"
-    },
-    {
-      "title": "US intelligence indicates Iran developing dirty bomb plans for Washington - Audacy",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcDk5ZG5sMXVWMzFEdXB4NjZIWTFjX3pLTzdTaURXY3ZZLWVJZXpYMXZweGJtempHZlhPTHQ1b09xUUhXaVRseWZIbm9JQ3hIZExCeEQ5LUpCeFRzQmtKa09taU1na2dYYm15TENvRUZiTnBtVjQ2anYxNWtJRjRlU3hHeVhLbjhKYllCSEd2Snd0eW14aDBNYkJBdXFVeWVPU0tic2huTlVnNlpJcDFWMUlR?oc=5",
-      "date": "2026-11-17T12:15:00Z"
-    },
-    {
-      "title": "Russia's third-largest web hosting provider experienced a service outage - UA.NEWS",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNExnUFJNSjM0ZUxPZVVWZmUxa3l2cC1zaFBFenFvSm1kNXUtNWlnOE54SEpNMmRzeXdUYUlreWsxdUFBRkJTLWZKcERvamxHNTEyWXlrVzI4TEdZbkx2ZE5udklGVk14NjJYbDhOSm1aSWJkRTdJakdJcGd6eGMtaVk3Q1QzTXVZLVhZZjVGTWRVX3hPVHVkWXFCQ1kzVTNHVXMzVWRBTm0?oc=5",
-      "date": "2026-11-17T12:14:33Z"
-    },
-    {
-      "title": "FEMA to conduct emergency alert test Tuesday afternoon - KVUE",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdkw1Z25CRXBrY0ZLbno1QXBHZzVDaWM5MGFDYXo0TEJ2d3c0SXVfNEpEUG1qaTZxTktMZTViSDlIWmhnNXhxbzVBLUdqODVpMllqeG44SHFFbFlBa24xVlRMay1PbnNadXpReXNtODZfZGpmcVRWM3MteDRZNWw0UHg2Q2h4Yi1hQzJqMDkzZENJdTh0TXo0QkVlZklJOUJlSUFRY2dmYldfSm84cXkxOURuM2NmVGlEcVJEeml3?oc=5",
-      "date": "2026-11-17T12:14:28Z"
-    },
-    {
-      "title": "Rubio says no imminent threat to Washington after report of possible Iranian dirty bomb plot - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQVVnUzJMMDJJUTh1NTl4Vy1VU2U0bjEzVkRGWFBtamliVkRZQkZud2VuZ25YSDc0VzM5aXhQWWN2YTBFSTRaV1BSNUE3aWp5bmpsV0ZSMDMyT2YxcW5LekhIVEt6Tm9Od1ItNUs1U0ZOd2tfeTJSdkJhVVEtbUFzV2d0Z1NGa0doNGljVlhVOUJNS1UwYXFjVVRxMEY2OTRGY1lHQzcxRTlXR2VnVkh3QjRENEd0VTFPMjRJdmk3bVpXUEVWS3RV?oc=5",
-      "date": "2026-11-17T12:07:00Z"
-    },
-    {
-      "title": "US rejects Iran's claim of radar strike as Bahrain reports drone interceptions - Gulf News",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONFNlOGVoS3I5M1EzZmdKUzRUY0xFN3A2NXhLRnVJTTZrOXNQZHhsejdVWThKQ010TVlZUHF6V05aNXAzSmpRLTdoTmpDWkNoYUJWYnhWRW9uUmRkdmI2Ulo4ejA3bE4wQUg1djlVSzk3ZzFxbWlhckxFN05wNTJNT2tKMk5teHJHSVVEX1VrUlFFUTNSbVNUcnp3WHA0aVpqY2FGQVBheWppd1JQUkJYNXpqVmk4Rk8yb3FWeUdB0gHQAUFVX3lxTE0wcUUxdENCSlBIVjN1QW9VOFhuMDhqMU9OWHpHYWlSVnF3WWNvbXFLMjNldEZ0V0hWTGtNTWl4WWIwaFUtN1lPLVJtRjF5bVBoYm9kcER3My1UVFNXQUYzN3RfcjRMN18zakcxZ3ZPSzZzU0hlZ0xnUzFNbmJZNWVaT0pKcjBPcnkyMVU2RmRoakhOcVBtMHduYVoyWVlkR0Y0b2FEV3h6elJ0WThpeWxkNEZYaWNqOU42dTZJZHU4X3lTaVd3cHFXSFNXRHFkbVQ?oc=5",
-      "date": "2026-11-17T12:05:06Z"
-    },
-    {
-      "title": "Trump says U.S. is looking into possible Iran plot against Washington - Washington Times",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPSHBFRnYyMnZEbXVYNlFsMWF6Ni0yQ3FUYnZPMkoyOUwwdTZ0dDJ2MzhWVk9lRElUQ1BWQW5KbHh4cnZKeU1qTVllYzctdWNsMDZYMGRGS200ODRCS3YtalBZUE9VR242ejJBMENXaHNsb081TjVaREZGYjZ1dm9lT0xWaHJfcDcyNEZ4OWFEZ3dPSUVtWG1YMEg5a2FSMFhGUFZsWkhIb1l3bWdw?oc=5",
-      "date": "2026-11-17T12:03:05Z"
-    },
-    {
-      "title": "Trump has arrived in Asia. Here’s what he said about Iran and Deutsche Bank - CNBC",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1iTTljelZnTWRCVXlnRXdrTjcwSHZQVWM5R1lST0E2M1MydDRzT1kwUm50QWp4VFU3R01wNGRNTFpQaV9UV1lPNHdKLXNkSlA1T3JWb1Y0dlNzT0NwZ1hESzF3RVZ2UXdOVDVxS3B6WU_SAXZBVV95cUxNZkphOC1LVmFVUFhKeF9fdThBb0ZYNlhSZXhILWtLSDRLTjFuZ3ZIODVMSUxlblJqTEhqSkdPSV9Gbm5vclR5SE9obFhtOUVva1NUcVl4Wkl0QXl5OVdCbUpySm1mNTJOUDBHdmh4REhCWDk3UDhn?oc=5",
-      "date": "2026-11-17T12:01:29Z"
-    },
-    {
-      "title": "National EAS test planned for Tuesday - AdVantageNews.com",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSEN1YjJVMkNMempfYm1LNmhEOFlhOVpTU3duNFp2RmxXRTFZRkR0eTlod3FkTWp2YVFhbUxjSWlhVnNmM0ZpWVVDZWUwanR5MVJGZGl5X0hfNWFWV0J4ZU5ja1h6YzduUU1oVTgwZF90Zy1fWjdORmJLTFlsc1dmYVJUQkNuY09Lbkd6LVRQN2EybFU4VzVFcTV6QVlOVU9jT2pSR2RGeWVIVzdhV2JkUWNlalBESWNwd1hvemtTSnVNcTd4elJF?oc=5",
-      "date": "2026-11-17T12:00:00Z"
-    },
-    {
-      "title": "FEMA and FCC to Conduct Nationwide Emergency Alert Test Tuesday at 2:20 p.m. - IONTB",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdFQzZXdkQ2xPRnpTVWVORmtFM3ZFaXVvZnlSaEw2VU1YTVF2RG1rRFFUbmRBM2J2Uk1HLXVZamRMMjFSMG5jOXEycnVrN2luYmlFdU1xNklfZ1BGazZ4dUxPb3R4ZEhxXzdLNmMzM0x0cnM0YWFROVhtN1ZoS25adUJ4bTNWdEZtYTBQejRzeVpORGRaVjJvNw?oc=5",
-      "date": "2026-11-17T11:57:46Z"
-    },
-    {
-      "title": "Another Geisinger Data Breach Affects Nearly 2,000 Patients | - 1070 WKOK",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVGlCbjZSQnZZclQ4YURiWGlsN0lYSmFwVVM1VnplWHNTX21QN0dwQmRtR0RRUUFZWC1kaFdlSGo2ZUs1SWZSbFFjRXAtdU9XUXg3MzFmQ3VFcXE3YzVNbW1LVEdvczZNRFBWNDFwQlJYdEZ6emZCQzhraU1tQXdCSUFpeHUzREk?oc=5",
-      "date": "2026-11-17T11:57:18Z"
-    },
-    {
-      "title": "Nationwide emergency alert test planned Tuesday: What to expect - WSFA",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxONDczMTVxTVgwXzVIeUlJOE1pY243eEZFQ3BPaWlQN0RfTG1HSE5FcUpuVjZLWEE4Z0xWRU9FclkyNDhBQnlUWlYzUUVNaUYxMnVzRDVUa01BbXZfNTJsQnJvMm5nbDlzSWJDcVFWSTR4RzBySzNSNjJZZXpZOWhscHJLdWJtb2tUTWdVdU9YQndseFdmdUtZ0gGrAUFVX3lxTE90cjN0U2VxYXVLRUxOSEdVYU5oMnFFTUM3YTlFUy1HRUJZN2Q0QXpHSThKRkRFa055UE5UalhiWUZpbFZnUTRaVHJPLVptdG9QWGJyY0o0NjNxaThaek0xZ2tqZFA1bmdVLWIyR3FCMDBQOGxmczZRdEszZjZCd2dnZEJSc1ZYcHl6OWdXVWx6dE5NdEFUdHk3cGI2YUlwVFUzelJvdFhSR1ZIRQ?oc=5",
-      "date": "2026-11-17T11:54:00Z"
-    },
-    {
-      "title": "Iran denies plan to detonate dirty bomb in Washington - Iran International",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE41czVDUDRPSlpaSjlRUjZzaGJHQy1LTkRaaXlrZTExaUdTUkllcmRTeUxtX0lzbUZlUzJvS2NmQUV6WU55RXBKSkhVUlM1dngtYkE?oc=5",
-      "date": "2026-11-17T11:48:12Z"
-    },
-    {
-      "title": "Iran’s Alleged Dirty Bomb Plot in Washington: What International Law Says - Diplomacy and Law",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9RNElLWHcxWUNENWQ4UURSNzlfUFAtcVlkd1JuZWZwTnFiMDNmd1AwM2E0cmZzenFNdVllaEdtMm1vTDRwdUpjcWdfdmkxVFIzejZSSTR6Sy1PLVJ3Skx4ZF9B?oc=5",
-      "date": "2026-11-17T11:46:28Z"
-    },
-    {
-      "title": "Tehran denies report of a potential Iranian plan to detonate dirty bomb in Washington - The Times of Israel",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNR1FmcU5ZYTBMTGMwckNWQWRmT2RKdk5ReU9GQ09YZlZheG5kT093MWg3SG9fTUdSS2VLSU9IcWIxOWFYZDBEbDU3VUM4R05OelNNRlVNWjU5TjcxTjg4dV90X2JldXdUWVhTMjN0Q2ZIQWlHb0o5c0hBNGwxTHczRlJ1ZzB4bU1rTGR0UHRzUjNQZGphdUtaNnJhcEdiTG5XRXg2Z05DcWxJSXBxTVg5bk5PM2ljLW80Z0ctYmRmU0ItWkktNzJVZjFNOA?oc=5",
-      "date": "2026-11-17T11:43:41Z"
-    },
-    {
-      "title": "A 2-month lull ends with Iran’s third strike on U.S. targets in Bahrain - NBC News",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQOG1QMmRxQXdlZ2VBcTViV3VwM0NfT0stMUdpVUZnNFlteUFka2l2dXZSN1MzRkhCWmtHVjhUNUpiX3dfTGl6bVlBTmJiT281ZnlKendCaDlUejRxNHd3NkRxYndMQk1Vdmx4TzN6RXFMNHRYT1BLS3ZUTVRDUFBEdnBHTQ?oc=5",
-      "date": "2026-11-17T11:33:52Z"
-    },
-    {
-      "title": "Visa Confirms Third-Party Cyberattack as Hackers Claim JPMorgan Breach - The 420.in",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vT0llSWdsZFBtdW05X0t2THhpSUV3WG91VElfSTRMeUhXUW5qOXVCOXZaRDBIa3JxZFpWeGs0SURNLW40Z0wxajRVS2s0cHFKQzk5TUw0eW5SdVM4R3JGTkJrbEloR2Jwb2RTUE84WQ?oc=5",
-      "date": "2026-11-17T11:29:58Z"
-    },
-    {
-      "title": "'We take it very seriously': Trump responds to reported dirty bomb threat for DC - CNN",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPckw5MFpwU1otYm1LTjBNekVqcWhKdXRTeVdHLVdUMEg0UGVqOU5zMXF0ZE0wNy02NGV3Ny16MzNob0VMaW9XV2Y4Zmk3UlB3emJyTlpkaF82aXhtY1lFcWFod1VwSmJLSXZfRXhEcUV5cnN2bEtOSDYzUGdsVW1vRF8tbFJUVTlXNUsyY05JbXFfck5PaGRZRGoyWHFrbElETXhz?oc=5",
-      "date": "2026-11-17T11:24:10Z"
     }
   ]
 }
