@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-24T10:42:13.421543+00:00",
+ "updated_at": "2026-11-24T11:38:43.056711+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8385173,
-  "out": 4,
+  "out": 85,
   "pct": 0.0,
-  "source_updated": "2026-11-24T10:36:23+00:00",
+  "source_updated": "2026-11-24T11:26:08+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 3,
+    "out": 84,
     "pct": 0.0
    },
    {
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 212912,
   "out": 0,
-  "source_updated": "2026-11-24T10:36:22+00:00",
+  "source_updated": "2026-11-24T11:26:07+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
