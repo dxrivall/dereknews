@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-24T18:50:22Z",
-  "fetched_at": "2026-11-24T18:50:22.185Z",
+  "updated_at": "2026-11-24T19:52:09Z",
+  "fetched_at": "2026-11-24T19:52:09.422Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -145,8 +145,8 @@
         "name": "NightHawk",
         "role": "admin",
         "th": 11,
-        "expLevel": 76,
-        "trophies": 56,
+        "expLevel": 77,
+        "trophies": 96,
         "league": "Unranked",
         "leagueTier": "Wizard League 10",
         "donations": 0,
