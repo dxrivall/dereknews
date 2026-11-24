@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-24T01:19:50.214099Z",
+  "updated_at": "2026-11-24T02:28:56.940732Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers - Mashable",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQVBkbEFXVEVTaEdreU93UTVjVmhkQUVyUFJHMDJjX29hSjR5dFRkRXZoM05zRXVPZGpJMVdDWVdSYU9pemVYYWxzZWZNSU5RaC1fWHhVeDIxVzI4ZUQxaW9YVy1RVmpMdkRicU9KZE41bjNQQ01nWW1BcTBaQ0pDMS1RWGFoamYwV0oxSHltem96UQ?oc=5",
+      "date": "2026-11-24T01:37:12Z"
+    },
     {
       "title": "South Korea probes data breach affecting 1.52 million at KEPCO - upi",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMkxQUnFZTURsX1B2dVg5aXdKTjNORERkeVpSeUZGRG1YWUVEX3g4MkJJQnFlWmlQNmk2bVJVUTh1Y1lXSUVLWVVnNEZZT1BDSjZtb3BqeXpVOFJPcVBIZmtrRkF6SnoxaEVzX19IWTNwdjRaY1ZzeGVxMkF0MVcwOG01NGplU1E5eXFWYm5JM0dKN0h3MjZaYUFpU29FUdIBowFBVV95cUxPaWd1dmRMVDJXc25TZU9pcUNyVkk5RjlQU3c3WnVHUlV1RUNxbklnTDduQmlNMWlweEZKcVhqYUZnWUswZ1hOUEtqdHYzcXdCd1hjajJwVjBXTTdhdVRPQlcyTTJJcTYxUmZJYUwwOFZZeDlGN0g4ZGh6c0Vra3htdTFhc0lMbmZYVlpWckpUcDRnTllUSVhLT2l2MnlWdGtOSEE4?oc=5",
@@ -19,6 +24,16 @@
       "title": "Suspected cyberattack targets City of El Cajon - NBC 7 San Diego",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2tGSlo5OTZYa3JBcllSYjZ5NjV0U1k5UzZqaXZKU0VNVFNJbXM4M1NXaFlnWldLOWZFNUVNbHFCWGhnUzRxNUMyMjVDT1hDOWJOVy1JYS04N005aTZDSmtlSXhHcDYtQnp4d1NMWk9iUDFIaW9STXotcThTMzdpQmFDMHJHVXc2dkJSZGxMald4bWZhY3fSAZ4BQVVfeXFMUFNUeFRlQmd4NnEzQ2RIUTg1d2I1TlBfV1lPcFRFMGtDXzFKdk5jMkkxTjRCbmM5d2FXazQ4bmhFeExtLTFvUjBJVzE2ME5xTHk3S2F2OWY1dGFod0I1ZGNNWkRsdHV4dHNqR1ZOTjJsODNwazFpZjJ2R3c1bjRrbHd4Tm5TTERDSkU2Y05rVkVmQU1vSUNhTlg3WE43NEE?oc=5",
       "date": "2026-11-24T00:26:03Z"
+    },
+    {
+      "title": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWGxDWWVnZnFZdVIwa0hpYi1hTVNsVEo1eGtmS3cyVVVOanA3N0RvU1ZGcjR1YkxOOE5fdVNjMWhCNWIwSVJEYUk2MUxjTkd3bWdUMjFlT2htZlZwSEhNcFFDblZ0RTZPb1N3NDU4NzRPR2t5U1FUcVVteHBMMDFOZlQ2VGhMTXdnd1E?oc=5",
+      "date": "2026-11-24T00:15:42Z"
+    },
+    {
+      "title": "Dealership Group Sues Insurer Over $1M Ransomware Coverage - Wisevoter",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOT1k4MVF5akpld3ZwTjBPMkpERzNLZnBFakpVNFB0ckkwZElCQmxhMm5NWFdyU2w0RzloSkh6V2c3LWVmY01Ma25xU3ltSTBJUXp2cDZzNkktYnFJa2hEamFlejdoNnpVWERhaVVGZHJQN3Q5enltWUFPZmNORlBfRHUzcXAybk1EdjVubUVBQ09wMkFHblFZVElXUFE?oc=5",
+      "date": "2026-11-24T00:14:49Z"
     },
     {
       "title": "News - Caribbean Airlines becomes latest airline hit by Amadeus data breach - teiss",
@@ -58,6 +73,11 @@
     {
       "title": "Queens Public Library restores most services nearly 3 weeks after ransomware attack - Gothamist",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQjFWOW95MEo4b2pHYkdubGhHalpKQS0yeU5XZkRZVWI2UjVON0stT0xnSlR6T290QjdrVm1qeGtIZlFoMlVwWWJOanY2azdKM3Zhc1dQY2hKemMzZk1YYjQweUNwTVphMlp2Q2txMWJFMUxGM0w1VmpIelRwNThmX2RlQldxd1RJb2hzTFI0OXlNVndPQUwwMUJTM3MyTGV4ZHdJZm5tU2pfdlhyanBj?oc=5",
+      "date": "2026-11-23T21:38:00Z"
+    },
+    {
+      "title": "Brief ground stop at Chicago O'Hare Airport for staffing rattles ahead of Thanksgiving holiday - CBS News",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOeWJ4NHdCRFBiUDZ2VmMwX3lXbnVsNTM0UzR1NE53Q0lDVDdmbUkteGJLU3RDVHd4YlZiZHRDNS1MUTdxYUZ1OTRNeEJmR0N5QU56VW1PQllabWVodTF0RUpTc3RoLUpZR3hBaTJmeVV5OUw5eFhaLTNNRDh5VjJNVHo1MHNjVGc?oc=5",
       "date": "2026-11-23T21:38:00Z"
     },
     {
@@ -299,6 +319,11 @@
       "title": "LaLiga data breach exposed personal information of fans and clubs - Cybernews",
       "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE44c3YwX0pNRnk2bDYzeHR0ZWJSLTl0Mm5sR1dyT25uSEpIdlpkNlp5ZnFBUktaZTFQcmtXWWhwSjVVMnF4U0tYVHFaR0t6TE53TU14RTA1MFFHVVFHTnJzMV9zc2RYVmx5TUJEbEZZNVZoVm8?oc=5",
       "date": "2026-11-23T15:49:13Z"
+    },
+    {
+      "title": "Samsung Securities Breach Hits 8,241 Clients via VOC - shattered.io",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdGhDTXZJOGJPal9TSENGU2ptM3JPclhkLXVDNEU3MFNXUGNuZUROVWJxUEhrN1VnTTA0SWV6Y1NXV0ZTa1FrTzR2c21wQ0wzc0psVzJUekctakpzU1lOdFFvRC1wMFkwRzIxclRsWk1kT25HNF9WNjN5NUpnU2haaGZR?oc=5",
+      "date": "2026-11-23T15:47:40Z"
     },
     {
       "title": "Aviation regulator DGCA issues show cause notice to SpiceJet over grounded fleet and flight cancellations - Prop News Time",
@@ -2621,6 +2646,11 @@
       "date": "2026-11-20T09:50:46Z"
     },
     {
+      "title": "DGCA sends show cause notice to SpiceJet, flags violations, grounded fleet - India Today",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNcDFVZmM2d04zdkROT0M5Qk1BVEtldTRVVXVBeEhVZmE3V0lUWWdOMEMtaE1oTW9UT3doOGE5M2hMdWMtX3N0akFmWnlCdzZNcU9EUGF5QWRVT2hhd29LSmRHVmhwRVFnc0tQaERsUl80bVF3WmhIN1BPUWhhcEZRNDZqZS1pOEpabENOMVA1WEpXMFQydE1hd05naVp1VXJZREdSaGcyUTRCR1pDeWUtblVxcHJ3cXRNcFNwb0o1ekt4OWZvV0xN0gHHAUFVX3lxTE1wMVVmYzZ3TjN2RE5PQzlCTUFUS2V1NFVVdUF4SFVmYTdXSVRZZ04wQy1oTWhNb1RPd2g4YTkzaEx1Yy1fc3RqQWZaeUJ3Nk1xT0RQYXlBZFVPaGF3b0tKZEdWaHBFUWdzS1BoRGxSXzRtUXdaaEg3UE9RaGFwRlE0NmplLWk4SlpsQ04xUDVYSlcwVDJ0TWF3TmdpWnVVcllER1JoZzJRNEJHWkN5ZS1uVXFwcndxdE1wU3BvSjV6S3g5Zm9XTE0?oc=5",
+      "date": "2026-11-20T09:31:35Z"
+    },
+    {
       "title": "‘We’ve Got Time’: Trump Suggests Iran War Will Continue Into 2027 - Time Magazine",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQjZGUzREbXRjRmtjM2dNZXc5eXVvVEJJOUdFdkpRNnZXVngwcDItZE9JYnJQc0diN3dRU1p3OGMzY0RQRkw4Q244ckR3UWVFWVc3ZkJHeThzU09aWnE4SHhxcVJqdld4bUtrdmdaVjA0QUdWT3dySkwzc0VVZXRDcWlHaTBZNERRWTUxbG1ZMzk?oc=5",
       "date": "2026-11-20T09:30:09Z"
@@ -4501,6 +4531,11 @@
       "date": "2026-11-18T14:47:59Z"
     },
     {
+      "title": "Tech blackout? Outages hit banks, airlines and government agencies - NewsNation",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNazhKY0FTLUU5aGctWVdVWWFxSTA2U2ZMelRuMnlVZEtyVG42bmpoUXhXR0NQMHJWX0ZIZmxnTlZfZzA2UjJsOVlKVGpmcnE0QXJuUmZMTUJPS21CMWJsZEc5UXAxOXJWcVJidEdkVTYxWF9pNXEwRHlSUlZUdWllSTh6VTJJSk1nTU8yNzFEeDQ2dE9pR0VTR0RIXzhOX3R1aWxj?oc=5",
+      "date": "2026-11-18T14:40:41Z"
+    },
+    {
       "title": "‘Status quo’ between US and Iran could break out into war, analysts warn - Al Jazeera",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbGNDR0Z2Z005TDhGUFhZRXRTU3FkWTUxUmdURHFsaTYzYTBDbF8tUjFvLVJSWUgxa25pbnBZZjFUMUd5Rks2T0VRYVpZendaTThLWUZISlA3NVIzQ25ZdjFya1dEV2NvTUdtZkx0a1dPWV90RUQxSlk5aHdUTjRvZU9sWXduVHJnOXcxZTVPRkFrSGJyZm82OG0weTNydlBIcXNtUEpDc2kycGN6d1h5ONIBtgFBVV95cUxQWnFkWE9kZXQyLXJYaFNYRlFnbUdCZ2tSck9NRlhJcmF3R0lXRGpuTlBOM3ZkQm53c0lVYmoxQ3pUTlJuQ1VJbFViX2QzV01aMkU1U2hsc2RLbjhQcFp5Z3FCQi1RbnpkQTV3UW96dG5qbnl6Z19sVjhGeFpubFJjNGlpQmlWRlZsUnRTbFc5cnNzM29JbGxJQzEtVjhJMTNwSWNYRzhqc2ZlbVpPTDdpdjlmMHdlUQ?oc=5",
       "date": "2026-11-18T14:40:16Z"
@@ -5356,6 +5391,11 @@
       "date": "2026-11-17T22:11:00Z"
     },
     {
+      "title": "Chase Bank Bug Fixed After Online Banking Transaction Delays - JournalArta",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPY3FPRHRKV21LSmo4dDdTczhQbGx5ejlxeFF2aEctd2FhNmltQTRVY05vWF9ZalY3dzFHd0RQQ2JpNDFpNTBRSE5Ecmhiem5mUEl5ODliNFhrV3hxSzR6d1hZU19ZYnBuRmJ2YzVGaXdobFU1cTN4b094Z1REQjFLU1M0VGNjMXNNWVpZN1Q1N0dKQQ?oc=5",
+      "date": "2026-11-17T22:08:39Z"
+    },
+    {
       "title": "\"This is not a cyberattack and this is not a coordinated effort by a nation-state\" - DNI Jay Clayton - The White House (.gov)",
       "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMktrdnhIYUpNVWtlUXcydk1jd3VBbldDcWk1WVFYYTZ6ZzRHV045R3RHWTAzaTdnT3FmWmFlWmxNSEEtcjBzYnQzem9GRXJraTg5VXBpdnk2U3JPaWFydjhOcy1OQjlIVWJiN0dLeU9zWW1sRWtNTno2d01TTDJOU2x1LUp4cnlSUk5sd2JDNHhNYVpTeDByUWJMU3YzdGxmTzhvWEg4YmJYLUZKZUJuX2duY2stQVllWXdhTTA2SFQ1NGtiZ05Hdko4dw?oc=5",
       "date": "2026-11-17T22:00:45Z"
@@ -5384,6 +5424,11 @@
       "title": "Cyberattack targets Optimizely, third-party software used by major websites - ClickOnDetroit | WDIV Local 4",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbDJWSFN6eGEwZ1k3X01HVGU1U29mX3k4M3JwRTJlQThpZXVrcjdvUUdQWjhWUWRuRENHMFRCcUg0d0stbjdXREdvWENfaWpSSWNsUTEtMzF1UHJ3UXdJYnpsb0g3WXdXQnhpeWtjRmV2eWxaZDUwT1V1dURGdld0Z3dRcUpUTktsdDJvb1NYMDBpWUhRa0kwbndJME82UTloeUlhcGY1V2ptY2lra3lxT0wyTXJadjk4a21ELU1qV3JDZVdZVEdN?oc=5",
       "date": "2026-11-17T21:56:47Z"
+    },
+    {
+      "title": "Is America under attack? Trump insiders and experts sound the alarm - Daily Mail",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOTThzWGxvWVNfZWJ6aVA4NUhnNkJiSHp2aG1uTTd2TzRjZVJOdl91dkpYaHNqcTZGaC0tTHRCdkRMbmdpZTNmYkc3eUtvY3liN3ZBcTRGdFl6QjdxX0RqY3UzSF9PZkhfN1RsVXMxbm40WE4xN3hXWDNxMEh3Z3psdXMwWE1aMm9KYkJub3IyMWE1MW8tN0RoMjUydjMzYjFORDJj?oc=5",
+      "date": "2026-11-17T21:55:19Z"
     },
     {
       "title": "HSBC, Associated sites briefly affected by cyberattack - American Banker",
@@ -5849,6 +5894,11 @@
       "title": "Iran launches a third round of strikes on Bahrain, host of U.S. Navy's 5th Fleet - NPR",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA3RGxpNDRlLU9XRVNDenV4bWMzQU03QzRvRlc0eEN0aFF5aV9OYkg3VGZtT3M1UUNyRnpWVmFnbDdRbmRKazhsQnNmVjh2MFJUNk45dmVIaUtucWh5bW9haDR0Z2ZIZjBfMU1QVVhFc05BMlVIZnB4RUF0WQ?oc=5",
       "date": "2026-11-17T18:34:31Z"
+    },
+    {
+      "title": "Major U.S. banks hit by outage days after FAA ground stop and Microsoft shutdown - Irish Star",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9zeVVqM2lvdjEtbFRVYW9QZk94NE1wSjZRcVNSMFo5N0U3N0hRYXFFdW9jU3FON0lFdXRRZ01fb0huZUxMT2x3QndGSXZTS1N1U2t3YzJfUkRLZURxUnNtNkVNMVkzaHctMXlHQVRCTEp3Z1l1aU1ESkVFZFc3d9IBgwFBVV95cUxQalhFOXVNTVNtUG15QmJPVXhJb0JRaG9YdWZVLUNscHNaaVNOUWRVUHNsMkJiQTl1MFdhaGZpbTR1OXlsSExvbmkybVZtWGZXbDRCbkxaamozX3N4Mk1PXy1sc2V1YUNPTFhOSTBNbEt4SVN5WnBJSkJXS3pxRjFJNTFGVQ?oc=5",
+      "date": "2026-11-17T18:32:00Z"
     },
     {
       "title": "Technical issue at JPMorgan Chase triggers online banking delays for major US banks - WKYC",
@@ -6901,6 +6951,11 @@
       "date": "2026-11-17T10:11:01Z"
     },
     {
+      "title": "A technical issue at JPMorgan Chase triggers online banking delays for major US banks - Tech Xplore",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcmhKcXFRNEhLaU9OTFpLRjNHelAxaGN3VVpzeXJQSmJ2MGl3aUVPeUNTVjVZc3R2SVZRMVk4ellHNzZXZVpQakI3N2VXckVJVzJqaGVvSHF0TlctRFh1dThtY01jOE5hRW0xTkEzNjhrWnA4YU9Fa2lLcjVKVkhUMTZaakRldEhn?oc=5",
+      "date": "2026-11-17T10:10:15Z"
+    },
+    {
       "title": "Nationwide emergency alert test set for Tuesday. What time will it happen? - Democrat and Chronicle",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdWdsTnZRM2pnWllWZGNseW04T0ZFTGRldzJKVFkwNlhsSFYzOWFRNjhqZDE5ZmFkajhhY3U0dTYteW9RenRKbTJFa3RpM0pXOGRiaUo1ZDNxMWJZRVdUanZEc0E2MndSWFFVbWRVMWFZaFRKX0FjYlA4Z01kZGV2Qkp1bzVsWU85MXVoeHFrT0tQdEp2ZDduekNNbW9wbGxoQzZwVDBXMjkxVzhhcGQ4SnBsamU?oc=5",
       "date": "2026-11-17T10:08:15Z"
@@ -7051,6 +7106,11 @@
       "date": "2026-11-17T07:15:02Z"
     },
     {
+      "title": "Chase bank outage resolved after software bug delays US transactions - fish4news.co.uk",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNYnFLRWNJcVFtVXpOLTRLSGgtRGc5SGg2WlBSQVNUT19EMVV0QUZRbWlIdVBIb1N5M1FLRDlQUXp5UFdpV0tOWkpoVWswMXB2SmptblVZbV9fRUhaVWh5UGJjVVVITHRVQTFqQk5DeG5BTU5iTGdLaF9xZkJNTXYwejdxTjVIRVBDbncwNVpjN090V3VSc0E?oc=5",
+      "date": "2026-11-17T07:04:24Z"
+    },
+    {
       "title": "'Technical issue' at JPMorgan Chase sparks online banking delays at major US banks - WEAR-TV",
       "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxQTmwtZm1MOXVUR0tMMFJmZWVtUkkxbHFqMjE2ajlhYmVNbVRwaUxuY3VRX1UweUN4ejFuOGJhLVh3VVlpcHJHclZVckVSSkU4XzhxTGgxcnZqOW9MU05wVXNxUzJTOWxtNWpBOGNBZmxGcFZZQ3hLYWx6N3NDYVpQR1ZjN2NLb282OTMwNWZfMXBWb2VtcV96M3JVdV9mdllzTjJrVDk5RVdCUzRQSnp3eXRHVmhTM1NPSXJib2lDYVB0bDl5cUtzUGNNLVNHd3dSVVBHZlF2Q3NjcEdPOHEteG5MdjJKQlY5aUVITkRzdzFlWlVnZHlzUlp4LUc5MEg4cDFSaTNvczRPWklsbmJPT0pSUi05RmVWVHJ3Y0dwN1BFamZ3d1o5dXVaYWk1ZUJlNlhWUjJ4U00zWUlkUVBPSDliSXdqZU1HYWhnTU5ZM1A?oc=5",
       "date": "2026-11-17T07:01:38Z"
@@ -7106,9 +7166,19 @@
       "date": "2026-11-17T05:49:19Z"
     },
     {
+      "title": "Navy Federal, Amex appear to be down for some users after US banks reportedly face online service outages | Hindustan Times - Hindustan Times",
+      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPTVlKUWVCaWlvSk1FN004S0tUbmhEb0ltWmdjYnZCR2xiX1NQaldMdGpMMEhEenZzVFh2U2JzWVFmM094YUtRQ2I4REctRU9RejFsOElZX3NWQnRGLW1uSHNrNGs3a0pudnB0Y1d1TFdjNThyaktVbFJFanRQS1F6THQ5Mk4xWjZFUFdobEhhWFpjQ2lCRlN2VElxUXItQTJSOS1YM1RmNE1tS3dPajR6bnc0cEZfUTBNN3pSRXZwM3I5azZvdzJYWVdpYVhSbXh0VDhtRGNJdlZHUmg3VDdwbE1zZ1lTNWdzaU95WTZ6enppUzZENFdpdF9DanFMeW9yQ1BiZDFn0gGLAkFVX3lxTE5COFQwaTRyV3ljOXM0ZFExWnFKSWk3UzRLcWtaQmxUdUh3TXpHS0dNc2RqY01LOE9meEpTWXFqcVhPMWUxYXd5UTJ5ZDVQdkh0ZjdaU2Zlc3FZd3BkeVhGWHdObVFUQTRSekhEWmVrMVBtWW1Zd1g1dllOakJ2QTJlOVdwbEREZGM1Zlh6ejZIWTNiWl93dkRuY25EVmtzNU5fQzdieXdQcWFJdFAyNjVzN1A4dC1XTVZaSi15aFZBdllwdmlSSUt6THNwMjJyS2hzTHNHMWlqUmVmbzBlZWxVcS0tT0lfdzNQYk1YRm5yRkNXNXlSZWpiNGJQVUNDSHV2S2tkVWRhMl9aOA?oc=5",
+      "date": "2026-11-17T05:44:43Z"
+    },
+    {
       "title": "‘This is only a test’: Tuesday’s emergency alert test comes at anxious moment in the US - KESQ",
       "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPS25PM1hxQTVmWF9JV29SRGt0RzgxZk1XR3ZBTXZZZmJrc3BtODJURkhBTGdMODE5MmVpeUt4b2N6VTFGdDhRQlg3aDQxYktwUUJESDJDMHdSMXg2d1ZOV2lPX3RDemhNTXUxaEpoWGRjdF91WXhReUg4U3h5Nlo1VFFTT3R0YnI4Q28tLXNZLXFUOFF1UE9SZWxyN256MEZ0U3ZoTFZGR1o4cDVGZ1o1YzQwN2w4eHZOcnprdzVLQUx6NFJCYV9pbG9IYllJX2hWWWdURk1kWQ?oc=5",
       "date": "2026-11-17T05:34:38Z"
+    },
+    {
+      "title": "U.S. Hit by Another Massive Outage as Major Banks Go Down - NewsBreak: Local News & Alerts",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTVl2SVNUSUlqZzVLSzNHUlhLNTdhUFlDVk1RNTFpaUFhbkpQd0MzZWZydHdMLWhWNXFVMXVoemF6TEZNd2ZMSU1vRTJIME1qZjgzRHc5Mmg1Z0UxNkkxT08wbVN0NnJWb1NSa2p0ZlZYT0Y5NXVDZktITFU0SjREZkdhdE12dVZST01ZVnV5SEZrRFVIY3ZPNE1kSWZkWC1DQm50UGdUMzE1cERtOENxbkNScGJPOEls?oc=5",
+      "date": "2026-11-17T05:28:03Z"
     },
     {
       "title": "US bank outage: What caused Chase problems and Zelle payment delays? - Al Jazeera",
@@ -7274,111 +7344,6 @@
       "title": "Nationwide emergency alert test will interrupt Bay Area TV and radio - San Francisco Chronicle",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbGZmOFRhMFZEaUlxU1pwUXpfTmE3WlU0V0hTbEZ6cjR4RTc2aWp4M041TEFJNm5IQ2xVa3pQTlo2TWFKSmRGdUlMczBMa0xVOFB6WGN0NkVpcVZ1MWxIdlVSN3pvRlhyTFpkVmMtSWhkcGRUcFJ0YmpWSXh4ZndKLXpJbVlvUGhlUWxGMDBTNUNJUQ?oc=5",
       "date": "2026-11-17T02:32:49Z"
-    },
-    {
-      "title": "Why Are US Banks Reporting Outages? JPMorgan Rules Out Cyberattack, Blames Software Bug - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQUJ1YjM5SGU5WHJuMVY0aFpHZF9zcWN2VGVPNGJ0RllUZVpmSy16M2drVHI3YlJDcTI3ZHVKQlZvYTQ2WFd2Sm1oUVAxWFAzRkE4VVRjRWRneUw1RDduREp3UlNOaUxpdlRhRFVSXzJKd3JUaU1TTHVTcDZhbERFSThPX1dncWQzUmxFZHllMUh0NHJ2ODU1OThiWQ?oc=5",
-      "date": "2026-11-17T02:25:40Z"
-    },
-    {
-      "title": "JP Morgan 'confirms' outage; says: Some customer transactions to take longer than usual due to a temporar - The Times of India",
-      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPY05RcERqMm83T1BlUjFZazVMSTdGcFpQNDZudmppMzZ5aUp1VTk0ZmZLdVMtbmpYeXJmVmU3QlRWc1V5aEVlZUdqSmR5cEo4ZG1JSkc5cE1Bd0NoQWFiMVBSSXJDa2E2Vko2OTNFRndvZmdBZmNPeGpnSmJIUWhqQ1E1bHd4d3h2ZUlYaVpMYklEMFk4V2d1Tk1DQXlpTmItcE9GcEtKcW1jQy15QW9XWFA4Zk5STEdGeTFkNTctNUp2eFRIZEp4UVFxeENlUVZIa1lwMTdhUFRQUVZrUUpxVTlOS3BGLTFfN09yb1lEQUJGeDk0c21laHI5dXN2TG12LTlzMUN0bDJNU2FQMWZ3cXBqMXNZUndrcGfSAZ8CQVVfeXFMTlZpZFYzdW9vY0FjMUgwcnl3RGtxVjdTRmpWRmFlT1RDMHl5VzZLTmQ3TXJaSTJLZ0EtQkI4TXZSMDEtQUllaFRJT3REbG9MNnREX09WbkVWdnR5QW45VjZYVXhpam1mUmxla2U5WWJxYzNsczRWNFZUdUFsMDBJODlmQ2RBN3VIRURUYkJVTmZVVmZ6RDR0S2k4SGNxRTFzOGlEdE9Jb2Vkb0xKSmlzaVg5VmRDeTNKZkxKSmxCbkgzMml6dkZKUmlKZW94MnFzVG1yakRpeVd4MjJubUhvWENtdHdCcGlIWHpIb2xaTF9YS2xkaU0xVDNTa1M2eW1zS2tTRkdmRElQWmI4X19CWUFHSmlLem13THV5a2xMUVE?oc=5",
-      "date": "2026-11-17T02:23:00Z"
-    },
-    {
-      "title": "Gorcon Inc. Ransomware Attack by ShadowByt3 - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUHhnZ3JydGRCektsTDJCa0lPeHpqdlJSUnFiWWpldWVIckF4SFg2ZE5QRC1HNXB4OW1QeU54V1NxTVB5VlFZVnk0a2xyMzlJSVQzZ1BkUWZrcTBmaFpwMUdJYUh4d0VnZnhkX0lqSmFlbTZJeDFmdUVSMEtlamVlM09MWG90M1hzVk95T1hlNWFfTU9ZanBjRg?oc=5",
-      "date": "2026-11-17T02:21:27Z"
-    },
-    {
-      "title": "Chevron Ransomware Attack by ShadowByt3 - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNODhZa2dBbTZORXQyS1hJY2JCSHhYdDBBLThIcUFnbGl3YWRKN0huam1KSnZyY2FVWWFCYnlLS2dVX0sxelh6My0wTlZLQWJ6cWd2d2NwRmZwRFZ6dkhlaXp3SW5iNU1vWkwxLUxpdVZFb2w0TEs2N195MnpORGFOeGt3SjdoWDR3ZHdwamtMMXUzUUFt?oc=5",
-      "date": "2026-11-17T02:21:27Z"
-    },
-    {
-      "title": "The Universit... Ransomware Attack by ShadowByt3 - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNEQxUGpmSmpaU2RTbXo3Q3gwNlJlVU82LTgzS2VYV2h4SnBfdjJKZWxEcDZleUlRU2VEaXlRZzhkajhicDBuZnFMbGFyYUxmRWlfVVVjQkVOVUp5aU1keEU4UDdQSUVFMTIwbFFoUGliemJrbzdEZVZ5dkZsUldYQXpnWXRJZkVTUkc2dHFXMVgtS25ObUNKMlZPdFJLZC1pdy1CcjVhakdEcDlLSzlSVGZjQUlMcVY4?oc=5",
-      "date": "2026-11-17T02:21:27Z"
-    },
-    {
-      "title": "Perimeter Tec... Ransomware Attack by ShadowByt3 - SOCRadar",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMmVOZ09GMnhUZGMtbF9NUWtWMWxCR2x0ZGVfaEp1U1BUMzk4SHZGcmh5aUZmTVNZdUFTRjUtOGFDY3RtWkZhbzg4eHp5bFVmTDZnMGJHR0dkWnBUSDJLOFFBNjN4NDh5bHl5QnN1OHpJeERlSldjc2FLOTRQUzNXYVl4c0dxREZmOWdyb1BfRl9mSlY4TmEtaUFfWGRzRHJvbWZpcjY5UmFWY2V3Nmc?oc=5",
-      "date": "2026-11-17T02:21:27Z"
-    },
-    {
-      "title": "A technical issue at JPMorgan Chase triggers online banking delays for major US banks - Oregon Public Broadcasting - OPB",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNM0JOTXRlVWxtei15eS1Pa3BaSHl5WlJZSGtHdVlJX1ZZZ0FvVmtWQU43WFkzTi0ybUI4ejg0clIxWFQ2NDNSVVhhMk5GNjdKRW1ZQ1B2ZDhESEY3VjNwaVV5UVpWSzJWSFFkQTYta1EzRU5KSDI2VTJoRmQ1TWxIYm5QVmtheVc5R2ZaM0JrWGxPSURpOTdnZ1Yzc2x6SmFTODlaLUNBNlRxZlJ4cGRWM2RxZXV2bWFXNm9aZVVuTExxUXhHQkVz?oc=5",
-      "date": "2026-11-17T02:20:34Z"
-    },
-    {
-      "title": "JPMorgan Chase: 'Software bug' triggers outage affecting other banks - Modern Ghana",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1iZTk2OUtwZFltOVdycUVUQWpNVl9iR1RfOUstLXZadkcxMkN4UlhQb0lEUlQ3MnZJbncxUXFUZC1zNDlzOWk3ZUM5a0k3cGlVenN4R2UtYzlOWW53SFBV0gFcQVVfeXFMTzBPVGdWendoMlFYWjI5VlJkTW01MWVjWWZKU29fdE40MGJzdDVkZkQ3dDM2b1BYQlVxYk9hYjlhS1BLXzZZVGJHcnFWTW1Ydk5Cd3dCVFdoMDZwUVA?oc=5",
-      "date": "2026-11-17T02:20:00Z"
-    },
-    {
-      "title": "United Airlines resolves widespread system outage issues - Ticker News",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMHNWS3BYcHJVb3BBelRlU0JUZE9tVDZQVXhhbVBBamREbEV1LWMydU44YndNQzVEZFZiNEFQUUFudFBHNnVhU3hVN0ZHa1FmNlM4STFUaEdBenZJeXNGMjVBNlpQNUpiNjlUbjlHOVYzQUl3bDh5ZndzZHhuT0JNenQ0MmYwQQ?oc=5",
-      "date": "2026-11-17T02:17:08Z"
-    },
-    {
-      "title": "Bank outage reports spike: JPMorgan says issues are resolved, blames internal software bug for transaction delays - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQNU1QbEJGZHVYRmotQVhadjM1bWtqMnVpZk9jSFZDc0lMMjZuQVhMWEFSenVMelpyVlhEWVc2c1RHMzNfTDVSY0Z3UVgtRjI4OE1zcVVXVTZXZmNDcFhhdFVxUk9teFBGRUk2UmlFNXQ5SVdiNGRadVFLQ3J4ZHM0bVhhR0JTMFcyeElLbXVEOTljbl9maGRSbXdUVUg5LTZhRlpQV092MElLNGVzUGZhYzRSRF9GNlBoNTVqaEpwb3M1TF9pYjRCTUFPNE9lWTQ?oc=5",
-      "date": "2026-11-17T02:11:00Z"
-    },
-    {
-      "title": "United Airlines reports widespread system outage just days after nationwide ground stop - KEYE",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVWFBUHozR2pjYVRlZU8tdHhWNm5ZRHJrVUxicF9FVU41MlBaWDE4Q29Kdm92X0tfUXg0cEJscWw5dm5iQms4OWdPVmpZSWdXZVpSejdiLTROVUJuY3JleWFNeThUVTJFRTdpWW5VckpXLU1aNW81ekhneEJhMm1pS3RWUFdqRERkQzI5TE5GUmxHaUZKSkVscjY2dVFVRTVwTDZoWFdNOUNaSGg5cXBRcVhEeU5BR2xUZTZuZQ?oc=5",
-      "date": "2026-11-17T02:10:41Z"
-    },
-    {
-      "title": "Planned EAS test set for 11:20 a.m. Pacific; officials stress it is not an emergency - KRXI2",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPR3pYS2tLeDR3SGtfbVF0cXFXQ3pwVU83bVdZMUd1c1dXMnBWSW9QTGJhVVlOWUdqY0RIUlQ3bXBpZGFmZGN0R09VR01MWDdxX0xhUVNoYkR2aV95SzdSRFNVcGE5OVJfR0V3R25lUnYtVWQwak1sRWI5Sk5YQ09GaklhOGJOR3RHR05JVVJEbG9MTUs2LWFRdkhFYVNITDlNVGNVZkM2eURIUV9zOVZyRQ?oc=5",
-      "date": "2026-11-17T01:56:46Z"
-    },
-    {
-      "title": "United Airlines says it has fixed ‘technology issue’ that kept flights grounded - KFOR",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTFJRWWFxVDc5cFduXzI2ZE5aQVhUazF3aEZlQUkzOUZRYmtpZ3M1c0dERHNjWmp6eFlUdUdJalprd3V4SVo3SVRCZWlDSXp5SGhYNmg3elFjMXJZWTFCUTMxQnpWWTAwNksyQW5hcnphazVOazJoT1B0YjVlWXhWOUllN1ZXckNsQnJWZ2xmbmRGWE5oS1B2cFdOYUJDMjdEUDZndGx4VVhveE1HUlHSAbMBQVVfeXFMT0U4WE5OY25EUHRhRFg1LXNJRUhMcFE1TzNtNWhOT0ZHbmZFMDg4NHJYMHJJbnBEOUx0cC1rQ05iMWxXVjEyREV3c2lnV1B3WTJuRFhhM3dRUHFKeUNqTUNGUFdpV1QybHBSM3ZwekQzZEh3UjFJWG42SURjLUdENlJzV0NrQ0xxTGpJWmFKVDk0YmwzYTBHQXBJNjR2ZklnZk9fbl9rR3kzUTFXU19hVTc4eE0?oc=5",
-      "date": "2026-11-17T01:51:13Z"
-    },
-    {
-      "title": "Major US banks face online outages; JPMorgan Chase, Bank of America, Wells Fargo affected - Here’s what happened - Livemint",
-      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNN3pZZWVtZm5vdTg0ZzBVcVpDYVdkMVpPaUJsdjA3SHNWcWY0QlhoaXptSDFnRzVWV3RaZFprLS1UQk1jVnRxOEd4cUJSX0JINHlaT054MGVicnZITnpicnh1eDZVanhNLWtRR08wanZ5bVpjTzI1X3RDUTJsdjhSal9nWEZBVmphWXoxb0RwRXgwZ215Q0pWOG5oVEV5ak5UQWs2XzE3RlJIdURCT0xfb2tWa3U2cS1GNkVqLTJ2VWVMT2NuSVg1dUk4aV93ZFhZbFBvak1vZTBKVklreXN5VUdveVp1S1JYZTl0LW9fRW8yZmlJcEVlRtIB_gFBVV95cUxNZlNsQ3lzRFMtazJrNnNFbXNwT0J5dFZ4ZWJ3MU56ZHpoZFZvSU9wbzVMcWxyUC1pRG5rMDQ5UFVXX0pXR2RCUG1KcngteVhraHE2bDlIa1hMN2p3d0dSd3pLQm13c2RqMHhYajA3d2RGLWpOSDAyc0FYa3lSZlpQZ0I1UTk2aVNHVFZ2TTQ4R1psamZqU0FoQ200bFF0NUZCT3FMU0t2RXBZVTlZRm42YS1JeWo0MFluTjdkeTZqcGZReTk4UW9yUklveWM1SGJWWHViM0gwbFVlTFFmSWYwUl9aQ3F2S2YxbWFqY0E0R1RkSTBrakN4UjdOM0Q3UQ?oc=5",
-      "date": "2026-11-17T01:38:48Z"
-    },
-    {
-      "title": "Uber says nearly 150,000 impacted by third-party breach - The Record from Recorded Future News",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE56cFZYcHZuNlpNWlhyc1NZRW44OWF4Z1hYZkpDNE96dV9FemhLVlJjelVFSEdVYUp4aVBhd3E0TWJoTTVtcVVRcGh1MTFvTmRZZ0xWODQ3dW1VMTFqMUZMQWRnNms0eDZDTHVFWmhzcW55YTFBbFBn?oc=5",
-      "date": "2026-11-17T01:34:07Z"
-    },
-    {
-      "title": "Iran plans to strike US with dirty bomb: report - Nine.com.au",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcmI0NUFIcmpYd2t4SzJBTWZabmktLUVKNmJkaEw3TS1OMFNvV0FKYlFuZWRjQ09IUVBoVDlpMWF6eEtHV2YtTlI1azJER2dfUTRib2FHMlpoMlZLS0tpUm9rNmpfRHhrNk1mT01FOTEwSnlEeTA3YnRmNkxQVGFwMEhZTEdmWklyYlZGU2tNMWtRUGhXMzVLOVhIQV9qLTBSNzAxOFNRRUM?oc=5",
-      "date": "2026-11-17T01:32:13Z"
-    },
-    {
-      "title": "US Bank Outage: What Went Wrong, Which Banks Were Affected And Is Your Money Safe? All You Need To Know - NDTV Profit",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVzZOakRTaHFsRFZrLVVicUMtYjBTU0ppbU5pb05KWHlKWlhoWjltLThnOWF1dUpzQkFmODZKM0E1dXEzS2JORmVoU1hjdVdSN04xWEZZUy1mdDFFb1owSzNfNHJLclV0NVlYTTFEekFJanN1NHM5bkVuN2xXNktCeGx3TERRTnFuak5PaDAzWVR0WTM2Qmt0S2FQTEtXanNfZ3JiOXpyLWEwREJmLVBIXzN2UmRJd0ZRWnpTRHgxT0phSkZPSU5VSnlPSnJhck1EY01DbWtjTHZ1QQ?oc=5",
-      "date": "2026-11-17T01:30:15Z"
-    },
-    {
-      "title": "Customers at nation’s largest banks report difficulty accessing accounts - NewsNation",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1iQUpYekdtNkNKV0lkRFhTMTMySVJULTg1dDZzdVNFTHhOU015THR6Z1NTZ2Y5Q0NZZE5zYlN3bTJvOG9KN0lDOFVPLWpfdERGTWg0Zlk5Z0JSWWJqUzZnMmJCOUYyZjF4TVB6elRINkZiU1V6amtZU28xOVN3d9IBgwFBVV95cUxPWk1lNnhKVHRQNjNIYXd3dURlUVVOZU5Jd1RsU3JHTDVVRVFJTEVRWmhqRnN1MFppZDhmT21XbnBMZ2NCU3NQVTNaLUljMWtWcWlnaHA3c0NlRzdyQzhEdHFCVEdZUkFRTGgwUERDYjF5ZURpcWtOWWs5ODN2SkU1UDdxQQ?oc=5",
-      "date": "2026-11-17T01:27:49Z"
-    },
-    {
-      "title": "US intelligence accuses Iran of planning 'dirty bomb' attack on Washington — report - TRT World",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1yRkZjZHZPeE5zX3hwamJjQ2dvQVhuWkllNmJtQXlBbmtRR2E1ajQ1LWlQclhPS1lHbFM3bDFzN2U5T1FQSkI2OTBfa1ZsUHI3cGFETGtjT00?oc=5",
-      "date": "2026-11-17T01:26:20Z"
-    },
-    {
-      "title": "JPMorgan Chase systems recovering following hourslong nationwide technical outage - Fox Business",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWVZfSXNOWnJZcEdKbVhSSTZkcGJUT1BfMUhKQW9pQ1hSSGJHNjgtTTJTNGxnYk9NLU81T3hLOFVlWk9hdjM5a0hxRUlqVHhib2NRYTN2Wm5NZDJoTThLSm9pVnVlN2xWRlFhV0Myc043czN4dDZ5WnhGY1JQREZGbmUyYUZxZUlOZ2ptSHJMQ25ydms1Nk1vRkN2RkU4NTJodTJSSFJnVXpQWTlfSVRKeXJpSklDQdIBuwFBVV95cUxOSDd0dE0yYzJBQmNiTzNpc2lNUHV6VHltSmVHVHZDUkw0ZElfY3ZrVko3T0s1UUlOOGptTXRGdi16RkZCWEVfZTg2RHd6VW1kWTZvS2tqQkViMHJoRFBJd0lwVHJVSkV2ejQweTNZa0NqMUp5X0tKbjNncW9HRjJZMDdDbW5Ua0dPcG5rNnVFbERSWkdKbllfa2UtazByMXkwY01rM3d0a3c0MmtpbjFTOGYtbUFMMnBieWpJ?oc=5",
-      "date": "2026-11-17T01:25:00Z"
-    },
-    {
-      "title": "Four major US outages in five days and none was a cyberattack - Insurance Business",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVXdmZkhrTWxsUTctLVRHNUVDUVFsb1FTbUxFWE56RkRXZjRpelVLa0VlajRxOVlhbW5PbUl3Q1I0S1FTbGxfX2pkSDhxQWtkWEJqQ2dGa1dVTVRrOXVCMkc3ZUdxYVBQY0I4a0FxTjhtNFVJdDR4S0N2RDktaGZ6b192WVVpd3pEUWo4YWd6clZiRTBsRmhJTkk4eVZRbTlaM3dqMGNRb18zenhxMHRGbnp6ODRLQU1tUUpTUjhoUFNHQQ?oc=5",
-      "date": "2026-11-17T01:21:46Z"
     }
   ]
 }
