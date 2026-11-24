@@ -1,34 +1,76 @@
 {
-  "updated_at": "2026-11-24T20:21:57.728549Z",
+  "updated_at": "2026-11-24T21:16:59.151166Z",
   "sections": {
     "top": [
       {
-        "title": "Fraga Alves",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/authors/fraga-alves/",
-        "published": "2026-11-24T12:19:00Z",
-        "thumb": ""
+        "title": "Tribunal: Empresas de redes sociales no son responsables de tiroteo en mercado de Buffalo en 2022",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/buffalo-tiroteo-2022-redes-sociales-gendron-5e2e68d43dfb87b28a40ab370df8e9ba",
+        "published": "2026-11-24T13:02:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.eye8O39rjaaKf9pOO3JnSw&pid=News"
       },
       {
-        "title": "Leafs-Islanders anthem singer who got ‘O Canada’ lyrics wrong apologizes for the mistake",
+        "title": "Goalie Remi Poirier’s carousel around the NHL spins again as the Capitals reclaim him",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/o-canada-lyrics-wrong-islanders-maple-leafs-65e0542a4bd7cfa91b1de3d25246c8ac",
-        "published": "2026-11-24T11:59:00Z",
+        "link": "https://apnews.com/article/remi-poirier-waivers-b09798f739620a6249d8350ed1207714",
+        "published": "2026-11-24T13:02:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.kcAdyL05dWRzHfQdjoFRZA&pid=News"
+      },
+      {
+        "title": "Ellen Nimmons, longtime AP editor committed to quality and far-flung colleagues, dies at 78",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/obituary-ellen-nimmons-associated-press-7b654984d65b50188f2f92446d0a662a",
+        "published": "2026-11-24T13:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.gm1P0kShmsxFQkjmIMjAmA&pid=News"
+      },
+      {
+        "title": "Deion Sanders shrugs off hot-seat chatter as Colorado prepares for UCF amid coach’s uncertain future",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/deion-sanders-colorado-football-236a37b5f5fc3c37f5e841e4e13a43d4",
+        "published": "2026-11-24T12:55:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.N10VwlFpxUfLB6lX38yuwg&pid=News"
+      },
+      {
+        "title": "Oriol’s 34 lead Akron past Belmont 87-64",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/belmontakron-score-09d72a71f9c2d86cf62818a4382baf3c",
+        "published": "2026-11-24T12:54:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "West Virginia AG asks to drop lawsuit after pushback from environmental groups and federal judge",
+        "title": "Myles Garrett, Micah Parsons ready for spotlight when Rams host Packers on Thanksgiving Eve",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/west-virginia-climate-probe-jb-mccuskey-lawsuit-dfe1c86b211bca20a48ba6682484c314",
-        "published": "2026-11-24T11:55:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.T0HEsw-mcqwwUts-Wf9HQw&pid=News"
+        "link": "https://apnews.com/article/rams-packers-preview-269f10fbf5ae8329fdfeef9ebc889c16",
+        "published": "2026-11-24T12:34:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.L9tP9TdlThlWGhiUbolgHA&pid=News"
       },
       {
-        "title": "IndyCar adds Kansas Speedway race to May schedule alongside NASCAR Cup weekend",
+        "title": "An unclassified CIA system was breached in a cyberattack, AP source says",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/indycar-kansas-speedway-31de44f2ae1433a9b48c4443fb9c499a",
-        "published": "2026-11-24T11:47:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.zL5Km85ZNYOsE5kI0c0-JA&pid=News"
+        "link": "https://apnews.com/article/cia-cyberattack-unclassified-system-bfa6d3b02e3b0e2779dfb613c900bd77",
+        "published": "2026-11-24T12:33:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "East Coast storm to bring rain, strong winds on US Thanksgiving",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/environment/east-coast-storm-bring-rain-strong-winds-us-thanksgiving-2026-11-24/",
+        "published": "2026-11-24T12:32:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Mike Tomlin embraces NBC’s ‘Sunday Night Football’ spotlight after years leading the Steelers",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/nfl-tomlin-nbc-steelers-fa390669f79cdc1b1a7788e77230eba7",
+        "published": "2026-11-24T12:20:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.NAaClA8to7MEjFTEmOi3QA&pid=News"
+      },
+      {
+        "title": "China's Huawei convicted in sprawling US criminal trial over Iran business",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/legal/litigation/chinas-huawei-convicted-us-criminal-trial-stemming-iran-business-2026-11-24/",
+        "published": "2026-11-24T12:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.uDK1s8rOiTu_2lFNwU3whg&pid=News"
       },
       {
         "title": "US CIA, ODNI suffer cybersecurity breach of some unclassified information, NYT reports",
@@ -38,18 +80,11 @@
         "thumb": ""
       },
       {
-        "title": "Man United: Levantan la suspensión a Yoro por roja “injusta” ante Liverpool",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/leny-yoro-roja-manchester-united-8bd91eb160adea1a7ce1e1f17638fcd5",
-        "published": "2026-11-24T11:46:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Right-hander Kaima Taira and Toronto Blue Jays agree to $80 million, 5-year contract, AP source says",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/kaima-taira-blue-jays-c167614b055ac8162db454e23f92af38",
-        "published": "2026-11-24T11:43:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.4Kgoq-6rANLEE3xQP_vAaQ&pid=News"
+        "title": "Egg-ceptional! Chefs compete in France's egg mayo world championship",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW095524112026RP1/",
+        "published": "2026-11-24T11:44:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.--8OlNDxrQ-r8zbyP2cjfg&pid=News"
       },
       {
         "title": "Nvidia board joins Jensen Huang under scrutiny after reinstating embattled CEO",
@@ -57,13 +92,6 @@
         "link": "https://apnews.com/article/nvidia-board-jensen-huang-reinstated-trump-7b0af450cb10c489ae00c51ae14af58a",
         "published": "2026-11-24T11:31:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.wMqAw1Q-zGHdAteQUtsvLg&pid=News"
-      },
-      {
-        "title": "Intelligence sharing offers a path to easing US-Mexico tensions, experts say",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mexico-us-sheinbaum-trump-drones-el-chapo-isidro-cartel-sinaloa-3bd25b8390134f0f7911cff8e321631c",
-        "published": "2026-11-24T11:24:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.YdH0lcTvnEeuS8slYyzA8A&pid=News"
       },
       {
         "title": "US attorney general describes Nvidia as a 'good corporate citizen'",
@@ -78,37 +106,16 @@
         "link": "https://www.reuters.com/video/watch/idRW096124112026RP1/",
         "published": "2026-11-24T10:49:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.Jbo8Zpu60fpjt6UPSq36yw&pid=News"
-      },
-      {
-        "title": "US lawmakers raise alarm at FAA decision to deploy aviation AI tool nationally",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/government/us-lawmakers-raise-alarm-faa-decision-deploy-aviation-ai-tool-nationally-2026-11-24/",
-        "published": "2026-11-24T08:07:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.S2kbi-6xS-Ra8-VHST2dUw&pid=News"
-      },
-      {
-        "title": "House Democrats investigate Trump Jr.'s firm and related companies",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/government/house-democrats-investigate-trump-jrs-firm-related-companies-2026-11-24/",
-        "published": "2026-11-24T07:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.X0r51VDAgytWdfKgI2UXOw&pid=News"
-      },
-      {
-        "title": "'Awaiting the king's return': Taiwan celebrates Huang's return to Nvidia",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/asia-pacific/taiwan-is-psyched-that-jensen-huang-is-back-drivers-seat-nvidia-2026-11-24/",
-        "published": "2026-11-24T07:51:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.HzNaYw3el7geHAwoYwO16w&pid=News"
-      },
-      {
-        "title": "Michigan drops plans to hire new AD Trev Alberts, decision will cost Wolverines at least $21 million",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trev-alberts-michigan-5a257c37bd41da3d5309fd466765f196",
-        "published": "2026-11-24T07:39:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "Two teens ejected from vehicle after collision with parked car in Cayuga County; four total taken to hospitals",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/local-news/two-teens-ejected-from-car-after-crash-four-to-hospitals/",
+        "published": "2026-11-24T20:23:28Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/10/GettyImages-943697000-1-1-3-2-2-e1697928619486-1-e1698682964713-1_92da3b-e1743430271414_864bd0_33791a.jpg?w=800"
+      },
       {
         "title": "New York institutes five-year ban on AI chatbot toys",
         "source": "LocalSYR",
@@ -117,11 +124,11 @@
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/AdobeStock_1199847017.jpeg?w=900"
       },
       {
-        "title": "Cold, sunshine developing this afternoon",
+        "title": "CNY prepares for coldest night of fall season",
         "source": "LocalSYR",
         "link": "https://www.localsyr.com/weather/cold-sunshine-developing-this-afternoon/",
         "published": "2026-11-24T17:30:00Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2025/07/sun-clouds.jpg?w=900"
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/Pompeycam_3b5ec2.jpg?w=900"
       },
       {
         "title": "Urgent guide to pet-friendly Thanksgiving treats",
@@ -171,50 +178,36 @@
         "link": "https://www.localsyr.com/news/local-news/syracuse-lawmakers-approve-more-axon-cameras/",
         "published": "2026-11-23T22:21:35Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/Screenshot-2026-11-23-164329.png?w=900"
-      },
-      {
-        "title": "Pedestrian in critical condition after St. Lawrence County crash, state police say",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/local-news/pedestrian-critical-condition-after-st-lawrence-co-crash/",
-        "published": "2026-11-23T21:39:01Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/new-york-state-police-roadway-for-web-wwti-2-3_2f47f1_5430d0.jpg?w=640"
       }
     ],
     "nationwide": [
       {
-        "title": "Leafs-Islanders anthem singer who got ‘O Canada’ lyrics wrong apologizes for the mistake",
+        "title": "Tribunal: Empresas de redes sociales no son responsables de tiroteo en mercado de Buffalo en 2022",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/o-canada-lyrics-wrong-islanders-maple-leafs-65e0542a4bd7cfa91b1de3d25246c8ac",
-        "published": "2026-11-24T11:59:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "link": "https://apnews.com/article/buffalo-tiroteo-2022-redes-sociales-gendron-5e2e68d43dfb87b28a40ab370df8e9ba",
+        "published": "2026-11-24T13:02:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.eye8O39rjaaKf9pOO3JnSw&pid=News"
       },
       {
-        "title": "West Virginia AG asks to drop lawsuit after pushback from environmental groups and federal judge",
+        "title": "Goalie Remi Poirier’s carousel around the NHL spins again as the Capitals reclaim him",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/west-virginia-climate-probe-jb-mccuskey-lawsuit-dfe1c86b211bca20a48ba6682484c314",
-        "published": "2026-11-24T11:55:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.T0HEsw-mcqwwUts-Wf9HQw&pid=News"
+        "link": "https://apnews.com/article/remi-poirier-waivers-b09798f739620a6249d8350ed1207714",
+        "published": "2026-11-24T13:02:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.kcAdyL05dWRzHfQdjoFRZA&pid=News"
       },
       {
-        "title": "IndyCar adds Kansas Speedway race to May schedule alongside NASCAR Cup weekend",
+        "title": "Deion Sanders shrugs off hot-seat chatter as Colorado prepares for UCF amid coach’s uncertain future",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/indycar-kansas-speedway-31de44f2ae1433a9b48c4443fb9c499a",
-        "published": "2026-11-24T11:47:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.zL5Km85ZNYOsE5kI0c0-JA&pid=News"
+        "link": "https://apnews.com/article/deion-sanders-colorado-football-236a37b5f5fc3c37f5e841e4e13a43d4",
+        "published": "2026-11-24T12:55:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.N10VwlFpxUfLB6lX38yuwg&pid=News"
       },
       {
-        "title": "Michigan drops plans to hire new AD Trev Alberts, decision will cost Wolverines at least $21 million",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trev-alberts-michigan-5a257c37bd41da3d5309fd466765f196",
-        "published": "2026-11-24T07:39:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "Army says there’s no reason to panic over plan to blow up US stockpile of lead azide despite fears",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/lead-azide-detonation-army-iowa-trump-83f1492cc5c3e358557f1170ea2a2d40",
-        "published": "2026-11-24T06:57:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.TM1vc7Fi4TDrtmiFr9NeVw&pid=News"
+        "title": "East Coast storm to bring rain, strong winds on US Thanksgiving",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/environment/east-coast-storm-bring-rain-strong-winds-us-thanksgiving-2026-11-24/",
+        "published": "2026-11-24T12:32:00Z",
+        "thumb": ""
       },
       {
         "title": "Trump gives the Medal of Freedom to Giuliani, a fierce political ally who led New York through 9/11",
@@ -247,11 +240,46 @@
     ],
     "global": [
       {
-        "title": "Fraga Alves",
+        "title": "Ellen Nimmons, longtime AP editor committed to quality and far-flung colleagues, dies at 78",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/obituary-ellen-nimmons-associated-press-7b654984d65b50188f2f92446d0a662a",
+        "published": "2026-11-24T13:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.gm1P0kShmsxFQkjmIMjAmA&pid=News"
+      },
+      {
+        "title": "Oriol’s 34 lead Akron past Belmont 87-64",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/belmontakron-score-09d72a71f9c2d86cf62818a4382baf3c",
+        "published": "2026-11-24T12:54:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Myles Garrett, Micah Parsons ready for spotlight when Rams host Packers on Thanksgiving Eve",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/rams-packers-preview-269f10fbf5ae8329fdfeef9ebc889c16",
+        "published": "2026-11-24T12:34:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.L9tP9TdlThlWGhiUbolgHA&pid=News"
+      },
+      {
+        "title": "An unclassified CIA system was breached in a cyberattack, AP source says",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/cia-cyberattack-unclassified-system-bfa6d3b02e3b0e2779dfb613c900bd77",
+        "published": "2026-11-24T12:33:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Mike Tomlin embraces NBC’s ‘Sunday Night Football’ spotlight after years leading the Steelers",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/nfl-tomlin-nbc-steelers-fa390669f79cdc1b1a7788e77230eba7",
+        "published": "2026-11-24T12:20:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.NAaClA8to7MEjFTEmOi3QA&pid=News"
+      },
+      {
+        "title": "China's Huawei convicted in sprawling US criminal trial over Iran business",
         "source": "Reuters",
-        "link": "https://www.reuters.com/authors/fraga-alves/",
-        "published": "2026-11-24T12:19:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/legal/litigation/chinas-huawei-convicted-us-criminal-trial-stemming-iran-business-2026-11-24/",
+        "published": "2026-11-24T12:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.uDK1s8rOiTu_2lFNwU3whg&pid=News"
       },
       {
         "title": "US CIA, ODNI suffer cybersecurity breach of some unclassified information, NYT reports",
@@ -261,18 +289,11 @@
         "thumb": ""
       },
       {
-        "title": "Man United: Levantan la suspensión a Yoro por roja “injusta” ante Liverpool",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/leny-yoro-roja-manchester-united-8bd91eb160adea1a7ce1e1f17638fcd5",
-        "published": "2026-11-24T11:46:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Right-hander Kaima Taira and Toronto Blue Jays agree to $80 million, 5-year contract, AP source says",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/kaima-taira-blue-jays-c167614b055ac8162db454e23f92af38",
-        "published": "2026-11-24T11:43:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.4Kgoq-6rANLEE3xQP_vAaQ&pid=News"
+        "title": "Egg-ceptional! Chefs compete in France's egg mayo world championship",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW095524112026RP1/",
+        "published": "2026-11-24T11:44:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.--8OlNDxrQ-r8zbyP2cjfg&pid=News"
       },
       {
         "title": "Nvidia board joins Jensen Huang under scrutiny after reinstating embattled CEO",
@@ -282,39 +303,11 @@
         "thumb": "http://www.bing.com/th?id=ONUT.wMqAw1Q-zGHdAteQUtsvLg&pid=News"
       },
       {
-        "title": "Intelligence sharing offers a path to easing US-Mexico tensions, experts say",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mexico-us-sheinbaum-trump-drones-el-chapo-isidro-cartel-sinaloa-3bd25b8390134f0f7911cff8e321631c",
-        "published": "2026-11-24T11:24:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.YdH0lcTvnEeuS8slYyzA8A&pid=News"
-      },
-      {
         "title": "US attorney general describes Nvidia as a 'good corporate citizen'",
         "source": "Reuters",
         "link": "https://www.reuters.com/video/watch/idRW097024112026RP1/",
         "published": "2026-11-24T11:14:00Z",
         "thumb": ""
-      },
-      {
-        "title": "Lanterns illuminate the sky for Thailand's largest light festival",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW096124112026RP1/",
-        "published": "2026-11-24T10:49:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.Jbo8Zpu60fpjt6UPSq36yw&pid=News"
-      },
-      {
-        "title": "US lawmakers raise alarm at FAA decision to deploy aviation AI tool nationally",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/government/us-lawmakers-raise-alarm-faa-decision-deploy-aviation-ai-tool-nationally-2026-11-24/",
-        "published": "2026-11-24T08:07:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.S2kbi-6xS-Ra8-VHST2dUw&pid=News"
-      },
-      {
-        "title": "House Democrats investigate Trump Jr.'s firm and related companies",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/government/house-democrats-investigate-trump-jrs-firm-related-companies-2026-11-24/",
-        "published": "2026-11-24T07:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.X0r51VDAgytWdfKgI2UXOw&pid=News"
       }
     ]
   }
