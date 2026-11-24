@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-24T04:36:45.546901Z",
+  "updated_at": "2026-11-24T05:37:43.789983Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "JetBlue Airbus A321neo Still Grounded At LAX After Late-Night Tail Strike Caught On Camera - Simple Flying",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxORmNETW5RTUdrQWJaNTdoR29Xb3pMdVhEQjBpczZGTE9kTG5DNktKTzZZeV9QbDhKT1g3UmpYU0hqUEJGS3YyV0p3N0RHSktQZXhqeUUxOEF3eFpuMWV2VERaTUxWUDJkeThGM25Kd0FNZGZ0dTl5QnpoZm9tU1VDOGF3MjBQTDk2R243NmdjRk4xMXlG?oc=5",
+      "date": "2026-11-24T05:00:25Z"
+    },
     {
       "title": "Bahrain can't escape responsibility for easing US aggression - Mehr News Agency",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQeHFQMnU5WkdYUm5qRXFCdm5RTTM2UlZwNERETmhkNXB2NVM5TGp5TmtBWEhTSE9ZeFdodE1iVW1BTEZCNWpWc2dfbzlnMXY4VWljRHVmQ1F1WUVWTDhhR2JlMHlzVDFTYUllNThDYnF2QWQ1V2RyU1p2YTZhdHNUOVZ5WjJ4WkhiamlHckoyRFhUYTI2NllOTEZrUzY?oc=5",
@@ -41,9 +46,19 @@
       "date": "2026-11-24T00:42:55Z"
     },
     {
+      "title": "Dam cyberattack attempt raises concerns about infrastructure security - ABC7 Chicago",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9DQTBMQU1NWWJxTVN1bGtFM1Z6SXhLbVJYMHRMQ1RnSkQ1RHdZRjNLVTdyVEQxc3RHaHU5NElwTmNCNWZPcEtCRzVFdkRtUWhCb2tnZDZ3?oc=5",
+      "date": "2026-11-24T00:40:51Z"
+    },
+    {
       "title": "Suspected cyberattack targets City of El Cajon - NBC 7 San Diego",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2tGSlo5OTZYa3JBcllSYjZ5NjV0U1k5UzZqaXZKU0VNVFNJbXM4M1NXaFlnWldLOWZFNUVNbHFCWGhnUzRxNUMyMjVDT1hDOWJOVy1JYS04N005aTZDSmtlSXhHcDYtQnp4d1NMWk9iUDFIaW9STXotcThTMzdpQmFDMHJHVXc2dkJSZGxMald4bWZhY3fSAZ4BQVVfeXFMUFNUeFRlQmd4NnEzQ2RIUTg1d2I1TlBfV1lPcFRFMGtDXzFKdk5jMkkxTjRCbmM5d2FXazQ4bmhFeExtLTFvUjBJVzE2ME5xTHk3S2F2OWY1dGFod0I1ZGNNWkRsdHV4dHNqR1ZOTjJsODNwazFpZjJ2R3c1bjRrbHd4Tm5TTERDSkU2Y05rVkVmQU1vSUNhTlg3WE43NEE?oc=5",
       "date": "2026-11-24T00:26:03Z"
+    },
+    {
+      "title": "AI-powered Bell hack a sign of things to come, Winnipeg cybersecurity firm says - CBC",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTVc1MEk4NXpZRTJlYkhQVjlXX1ZrMjJhc3NZUEdFZHFEVUdIWnR6SkNENm1iNUh2UmhlMnd2N29lNkRDdlREMjVENnB4SXg0cktwdVdINkhxT0ZuRFdiNlAyb2dfZGE4eUNFckxVZDlWQS1GYVg5OTJnMDF4NVZyR2NTNmJMR2Nfa2hfekFR?oc=5",
+      "date": "2026-11-24T00:26:00Z"
     },
     {
       "title": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
@@ -594,6 +609,11 @@
       "title": "Data breach notice in your mailbox? Why ignoring it could cost you - Boston 25 News",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUlFMZ0JFdnVQTG95RGNVd3dhVUF1NE93a2JlU2VGVm1wcXZkZVN6U3N3OTd2ZVRxWHlnUkFkOGhsekE0YmNvQ0psR0dlblM0cDMtTU1GYnV6anltRmE2MXZ4RVVBNjB6NnZUNGUtNmNYOTBUdlduUTIxMGRoNlVpSE1WTzNzZ0F3QVlQZXFqZ1liQVB0VkZYRk9tR2k3dHZXVHV5U0VzT0pnaE52ZTNIeVVTYkRkOWhCakdUM1NmQnRpN0ttSFB5YnRR0gHeAUFVX3lxTE9UbFNudzdpaXdqbmRKTlBDcURZTENzWDRqRkFLcXBZczBWNnFLazN4czJCWFdXczBIbnNtVWRoMnNmd3RCNTZLMUZDQ0dwcGptUWlBcXBZMkd2eVhmNEYzQkZ1bUZfSVZCbEZGVmRhWGlKUG9RVG90anRnZ3BSNzVQTjBIUEhoeG5sVHFRTE9FZlcyV2toNlZ4Uld2TnhiM3Rldm4tWHVUaXdkeExVdUIyM3NQQ1BLWVBzQzVobmdYTU9WaFozYVlHYk82UFZib1FOMEg3NDFUSzZqY2pHdw?oc=5",
       "date": "2026-11-23T11:15:20Z"
+    },
+    {
+      "title": "TUI fly preserves 20 flights by rescheduling around Belgian strike - Aviation24.be",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQTzYzc2dDUU9BbDNUQ0cyRnJxamNydzZuTFBpaXEyNG5xSG11Sk8xWEhlT2U2U1l3RTV2blFsWnJGWHIxV2R0VHR5aGJWMHg3bkNjc3dfVlZGWnh2SWdvZG1MQ1UyTFRiQmd3cFZMeG15RnowbHBVNkZNOThmUkc0cnFUUWl2NXBnanBoNWlNZUM0aEpaREVrTndTdjl3MkhEVlFYazg5MUJQUkJNMlptTWpzaGtCLWlzSllhaW15aDdPZG1Xbm90MXVOYw?oc=5",
+      "date": "2026-11-23T11:10:37Z"
     },
     {
       "title": "Ransomware Recovery Takes Median 20 Days - Wisevoter",
@@ -1744,6 +1764,11 @@
       "title": "IRGC Rejects US Claims of Planned Chemical Attack in Washington - caspiannews.com",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPWnRsY2dCQnJ6M2NnWm92aXRvQnptUEx6VFlRcG9FZHNYbm42NFh2U001TC1MaWNGamJ4SzdOcm05OFVLOERKd041Uzh1bFRERlJSYTFoNEU2OFQ0OWJWN2d6d2ZzTWNYd3VKbmRMUHpXWG9oZHY4TjR2eGtYZU5nVzcyZXVWem9NWnk5ajdpbGVfLWs5N1BwT3BoNnI0Z2J6UTRFRHVWRHQ2NFpFbVNXLUt4aTk?oc=5",
       "date": "2026-11-21T14:07:36Z"
+    },
+    {
+      "title": "Nissan cyberattack disrupts repairs and replacement keys - DysruptionHub",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ybElGdUhMdWdpLXNEWTJMVHVDY05CT1U4LWlBZUh6WGtTUjVIaTdHb3Vfd0swc1phODNaaWJlMkROYXB6RHVqS2JFVWpJLUR4ZGZrRUhOVkVXM0o4TTh0QkVTalFENVdHMEV0TEMzeDdpSGZxbzZrRDdR?oc=5",
+      "date": "2026-11-21T13:45:21Z"
     },
     {
       "title": "Staples Canada Breach: 5 Days, 6 Data Types, 0 Counts - shattered.io",
@@ -3221,6 +3246,11 @@
       "date": "2026-11-19T19:25:26Z"
     },
     {
+      "title": "Energy briefs–no letup in Iran’s attacks - Oklahoma Energy Today",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9FRHRDV3gtTUxaT2FORXlKeE9aZjhwNUlJejAxX3RxZERfMVg0NTJWU0tWeW8yRnoyWXlDamw1em5DYVlMOU5aNHNBLTRmLTZqTnU5b2NnX2hQeHloYUxTa2t0bS1GZ3pmRjdkVWhrRnNGWGx1VVVEZ2JuaHpEMVE?oc=5",
+      "date": "2026-11-19T19:10:07Z"
+    },
+    {
       "title": "JPMorgan Chase reports cyberattack on third-party service platforms - upi",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16ejBjNzhGeUhBWnhVTkRHZ2sxRE4xUXZ3RVhiNTMwZlU4MUx1LUxVcG1xbi0zV1RFTzhVamxHOXd6MTFWVG5jVmctUDZQcF84U3UzcGNlbjFOQjlHX3lyQXFZYmdjNWM2UGtoM1ZVbkxzWFFDNHBwTTV5cW56UnfSAYQBQVVfeXFMUElHd25xekpscWFKV18xeHM0VUw4N1YyN0JRUFVOYmlSTGduZ0s1d2Jvc3ZFeXZBRzlDdlM1cnhuOXhCYWlid0ZSakZ2b1ljUTY2QmlaeXU0UXZrQzJISTYtWkF2Z0xMb3ZKRkg4aDlPQUhlNDdYR19pcWJtc0g2WnhQcW5W?oc=5",
       "date": "2026-11-19T19:07:44Z"
@@ -4149,6 +4179,11 @@
       "title": "Bay Area storm grounds flights at San Francisco International Airport - The Mercury News",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTEs5STV1Z3k2NEI5QmkxLWViSjVqdkpsQzcyOXN1UFcxalo4enBFYUFLbEs2YkF4NVY0Y2YxRWR4VG82X3AyZU1peDhUMGNobGFjUlpSZU9vM3pBSlFwdGNWalNPQWstc0RIQ0hEMVNlcUR6cm50Nkt2WXVka0NYeVlRbUdXSDhncTMtNTRjT2ttdGk4THlhdk9nZU5oczB4Z1dUWmdYTEE1Mk0?oc=5",
       "date": "2026-11-18T19:43:20Z"
+    },
+    {
+      "title": "Wells Fargo Outage Today: Is Wells Fargo Down in the US? Users Report Online Banking, Mobile App Login, Account Balance, Payment Transfer & Transaction Issues | Check Latest Downdetector Status - The Sunday Guardian",
+      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNQ1RJa2Fyb20zaFNjck9rZ3FSV3lGbXByOTBVQk9BbWpkZl8tTFEtUUkzTVVrU2o1SllsazVzTE85UjVUNkdnRWxOM0hKbjJlUFBSNU5fdmNUMW54TkFNVnJwZUFfNTRTMFh0UlVocVh0ekZQbnJYNW9lV3lBNm9ZbHJGeHQyWll1VkRRdXdlOS02c3R2QjlPSTJKM01fTlR3U1F0Zy1OcFFnQWdYVFBFZmJmaC1yb1VyUWJzaGRyMlJqZmxna2NuSmpuNm10SUhDZ1RsT1VhRjJKRzI0aTV1MmNyYlZxeFdKM0V6MVRIN0NnS2V4NFNDa0U0SllFd0JvV21PQWFzVkpKSTg1RU0yVEc5ajNITklBVXplbnFCanNCMW1hcElISW9tdkp0SDF1cFJjSTd5RmJyanBJTkJmbHBZZ0JMWUUwbEtaeXFTMWNFQdIB1wJBVV95cUxPT2Z1OC1BV2k3OGozamNWVDN5dmZuQmNFRE5qMTM3V3dLNEdZUzMxSTRsR0FtTVRKX2lBNTdSdGhrMVh5aGx2Rm5TNkVReXlqOHY4b0dPN0tBU0U2elVKMEJDQVRFMExoMVJ4REs1aWxlR25DY250eF9kczFPSHc2b3ZHVF9rTmJSOHNCLW4zSUk1VU1pV3RTWnc5MmVzZWhUMnQzamVzVklaUVBMODYzWTdpT1lxcUtRelcwdndVNENGX3dIcXFKZDVBWWJNQ2ExbjNnRF9ybU1LNndJaFVPVTdSVzIxektKSWhCM0ZpQ3djQnFrcnYwbVltZ2t3dUxZeDl6RWhqVndnTEFORzZGUFlldEcxc3kyOUREZ2FXMVhoNm9JRER1M0ppMjhJcEUtYUxLRWhOWE5IQmUxY2s0M2ZyUkFTVTNOdG9XVFV5V2xvUEQxMDY0?oc=5",
+      "date": "2026-11-18T19:41:05Z"
     },
     {
       "title": "Data breach impacts 40 Irish credit unions in reported IT provider hack - BleepingComputer",
@@ -5526,6 +5561,11 @@
       "date": "2026-11-17T21:34:02Z"
     },
     {
+      "title": "Alberta-wide emergency alert test scheduled for Wednesday - StrathmoreNow",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRTEzUlpzMlZMWWNyenkzc0xTZGY4TWVrY1pJME51QWVWT0Eyc1p0ek1PZFFCWGpRVUhLY0xVT2V0OEc5THQwaEowUWlvZGROX2hvOVpUbzZBNl9DSmk5WjRCcVJ3aFNUX3lsTjlmV2tyTjZ2Vkdta2J5T0hWeTk1V2w5ek9taUFRaTBKV1E4QXdYYUU0allN?oc=5",
+      "date": "2026-11-17T21:32:35Z"
+    },
+    {
       "title": "Iran widens Gulf attacks after US strikes missile launch site - CNN",
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Vb0RmWXNaMXVnWXAxb0ZrSUlJWU8wOU9TMXJ4NFljc3FiVzBhWm1CcHRMMWRvN1haNkk3OXU3TWsycUtyQnA4MEVqSkpYNk1JWVJ2U2w0LWg1cjVaLXFuV0NnQm9GenJyUDRONGF3c3VYMG9qM0dz?oc=5",
       "date": "2026-11-17T21:26:06Z"
@@ -5911,6 +5951,11 @@
       "date": "2026-11-17T18:43:42Z"
     },
     {
+      "title": "Nationwide Emergency Alert System test set for Nov. 17 - Laredo Morning Times",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNTkcwS3E4Z2kxTXk1aDZLOEZUMFVOOFpqMUFNcnpuYjViMlJsSWIyZzFOX01vUHk5SWY2ZzVSUEVJMzkwaEd0Y2hDQ3k3X1NrSzFhXy1pX2RrV2RvUFdGc2tGdy1xakRzQ3YzZ0NFUnJ4QjZ4ak5iTEVTTDVCN1pZVVdXdlBPamh0Si02bGI5SG1ySzNKQmxoeU15ZE56N0h2aS04?oc=5",
+      "date": "2026-11-17T18:42:14Z"
+    },
+    {
       "title": "Nationwide emergency alert test set for 2:20 p.m. today - WAGM",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWU9ZY0tabHJTdXROUnk0dW85THhIcEh5WXdSYURXQ1F0YVNHSkVCdzRqZXVlbVdIUGxFbi1CYkVkMlNIMko5NHY1ZEwzcVpxN3M3WlptcXU2Qm1KLTJUbDAtTDJnbGlJOVpZOVZ6SVJieF9BdjNhZDJGejJpckNldUg4M2k2bkh2OEVr0gGfAUFVX3lxTE9mSWwwYll1RzJtS3FWbmpmTXJib3R0Wkd0dzJwWVMtbDRjcVBoRkRUUlhGX0I2SE1xQUxPQTFhekZ2Z2xvLWF5RERyTHh4eVNRTkZPU2ViOVlqOTZhQU1pUVJOb3FYOExSdElxVFdfVGVfakcyRkhhZXB3N3YzZ0NRZjhVaHhldjR6YXpwdndhOEloLTctcVRzVk03RXBaSQ?oc=5",
       "date": "2026-11-17T18:42:00Z"
@@ -6009,6 +6054,11 @@
       "title": "Suspected data breach at 43 credit unions could affect hundreds of thousands of members - The Irish Times",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPT3k2R25WTGxHVzdnbngyLTZQNXNzcUtya0tTRlh3ODZPRHBBbDUxbGQxWko2RlVkOXhDUVIxOHpPV2U1ZUtROE9UUWplaVphVEdGdE4xc0NKcVJBTE1yeFVYR19ITERPbTg3UndfUU5CUUJ5N2V4UUVVUTlwUDlNRzdwOUcxenl3cWpHS3QyUnlUVkUzeDNXUllwczBCWlBObEFfY2didi05SmlvQzl5WVd3bC1SbGdsOHE3LVpjdjBLX1NZV21uVjAtUHhMSHZvdGZJ?oc=5",
       "date": "2026-11-17T18:14:52Z"
+    },
+    {
+      "title": "Apple Pay Outage Today: Is Apple Pay Down in the US? Users Report Payment Failures, Wallet App, Transaction, Card Verification and Contactless Payment Issues | Check Latest Downdetector Status - The Sunday Guardian",
+      "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxQeVVvNEt5SmRBdUhfc0kzTGplVm9JamQzTGdsczRINmFyblM0dUxDdlZIOGszNXdnZlcwMTk4eXpnX3NZQzBmVjgzODFHU0xtZjIxbnU3MzNDNjV3b0J4MVFfQUVMaXdOYndaR1NoYnNKQWhIOUtrOTBSWVZNdHYxYktWMFF2dm5ET0FMX2R1YVZTTU9COTBGMEZnS1ZlNWZ4bnBUSTNKY2ZxTGFZSXd1OWluY3IyVjhnU0U0eUNIZzktT3RxRU0zMkdYQThiR0dEMmJKRHFhdi05OTBhQ1RHc1hxU3BRVkxLUGczNTktRFFPc2VjSGNmT0NJejUzQy1ua3FSYzlNV0xybTZfQkl6WXAwUzBYTmFGZTJSeFhxM0xxM3lPYnUzYlFlcnB4MkNOWFFGc2hGaXUzaF9ZX2hTM3lxeEFKTDF1Yk1QSUJleFlvajDSAdgCQVVfeXFMTTBmX3FpNzUzMUZmUjdQQ20xMVVIMU5NTW1sYmlxYVhVZ1NVbm5OaTFDd0xMWW5kWmRaMTh1UlJRMFJZSlg5NlY5ODFQcGUtaEJwREQ3OG5RdjBnY1lzNi1ITFIyeGY1S05xWnlCWmJFWG10Tl84b0lZVGQ4eXlocUc3b0E2cVNvWmhmUEJOdVcxUjRPX0hibFJVdzZJRXhGRVRBTXRsOW5tMUllTHRqWE9yNmJEMHVzV1BmRHd0NnJzQ200YnJKajdUb1N0RVc4bE9pWVliUFZZVEIwc0FYb3FpY0ozdk42LUhQZldXU3VlcEpwbm9KbEJiR0hUb3poQ3ZrVExNYWQweENLMVNiTDNHVnRNc2ZKRlM1V2hkUFRsSF91Ui1iNV9RSGhGQnFoUWtzcjFZTVlRVW1NYmhqSVZsSUN5WW83djBiQVFaaUtDeTE3YjdXaWY?oc=5",
+      "date": "2026-11-17T18:13:13Z"
     },
     {
       "title": "Emergency alert test today: TV and radio at 2:20 p.m. - WS Chronicle",
@@ -6149,6 +6199,11 @@
       "title": "Nationwide emergency alert test will interrupt TV and radio programming Tuesday - WRAL",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeEhMUGliT2loOEsyblk1YUQ1bm81NDZkODRoc0thbk91bkRpRWVSeWRwSUk1YjVwa254S0RIYTVFd2R3eU4wbkk0eHc2dXpLdEVGdW9MYjZUc3ZwOGRtaHNoX0dmcXZEcGZGMHVSMUp1NmhNZ1JVS2Z6a05BczdOVDNyVEs2NE92?oc=5",
       "date": "2026-11-17T17:14:27Z"
+    },
+    {
+      "title": "‘This is only a test’: Tuesday’s emergency alert test comes at anxious moment in the US - East Idaho News",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNTVDWDEyeVA3MmdfcUpEVEJYdXhPdXhMZTNqd0tEUUhDT05mZGVNbnJvX3o3cjZheXVsenRKbmN3X0hfX0xmQnBYWXhtc1hBa0dMbWNQRjdITnJnbWRYbzdxdS1vWkpldjhZUm95ZVExTzF0aXJNWDRfd1oxejJmSTNNQ3p3Q1dpWmEwTy02bk82ZkRnaXdKUFlmT2lNSmdpbXcxMmpkQ0x3SktheHNZTjVtOS1JeTFtempIUHAzZw?oc=5",
+      "date": "2026-11-17T17:07:00Z"
     },
     {
       "title": "Visa Confirms Third-Party Cyberattack as Ransomware Gang \"n0n\" Targets Financial Giants - OODA Loop",
@@ -6546,6 +6601,11 @@
       "date": "2026-11-17T14:40:22Z"
     },
     {
+      "title": "Trump Sounds Off On Iran Dirty Bomb Report - newsradio 1040 who",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRVlJQ3dKYmRVc0RQaVMtVE1iSnVYVjZlbnI5elBnYTVjT0lCMS10bXpzOVVyajNLMVhGSUZMR1pCZ0h0RHNkVzA5Z183aFE0RDVHWk00RjFSZ0NrTkktMTVfbDJ1N1ZqdHJLTGdXV2hhOFhCcjR4QVplZU00bkw5Z2tndkJxTGdVanZPbWcySTBLazA2SDZoM0xlSzhCbHNHMFRrTWN4Y1AwWXIzR0trU1A5LWY?oc=5",
+      "date": "2026-11-17T14:40:00Z"
+    },
+    {
       "title": "Geisinger Notifies Nearly 2,000 Patients of Data Breach - Audacy",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNcVBXaEZRV2RvWW1xTUduMWNDOXZWU3ZIREU0UlpsOFBQMWxINFFfLVVMZnZxMThsZXFuT0U5VFNxOU1XaEtCUHdlUlJsYlpkdFk3dVlBbGEta1VwX0RQdjZkbzhGLXd0MFB5U3VhdHlkT2RCNmVicGl4Z0x2X3c3bW5XOTFzX0szMnZKWU5n?oc=5",
       "date": "2026-11-17T14:39:00Z"
@@ -6644,6 +6704,11 @@
       "title": "National EAS Test Scheduled For This Afternoon - WHKY",
       "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Jd3JDZjNsQmVRRnVtODQ0cW5KY3lVTTI3S1dDU2dHUHRXeGRILUd2czNoSzctNnJ4ZVNnODdZUGtLaVFPYW41MWdUZ0hwNXlUcmJJUHNaZllkQ1paVnlUU2REeUluNUx4YUZveDAzX3QwZw?oc=5",
       "date": "2026-11-17T13:49:20Z"
+    },
+    {
+      "title": "FEMA to conduct nationwide emergency alert test amid major tech outages - Fox News",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5JRGtUb2pJRHVfeDItcFk5UmZUZWF4S1VNY3NRcUt1eEJwNkNPWnFaVWJzREg5N1pJbUtDdmhublBrQTlTb2Z0bjYtM09VaE5xT2d6Q0tn?oc=5",
+      "date": "2026-11-17T13:47:20Z"
     },
     {
       "title": "Iran rejects CNN report of 'dirty bomb' plot in Washington, calls claims 'fabricated' - The Times of India",
@@ -6841,6 +6906,11 @@
       "date": "2026-11-17T12:28:18Z"
     },
     {
+      "title": "Emergency Alert Test Tuesday, Nov. 17: What Time It Airs on TV and Radio and Why It’s Not a ‘Blackout’ - Men's Journal",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5tN3o2bmE0c3VCR2lJNjh3dFhKdzZ2LUVQRUQ0UG41TTNIOEd6a1RNTnVEUnNtOVhoV0NqVVpPZ3FGRURWM2VVc2pFTmViSWdTV3pkX29Ib1laaGtldDJxdUo2NlVMVDlKeGE2Unc3UzZuVHNrakJhU3Z3?oc=5",
+      "date": "2026-11-17T12:28:05Z"
+    },
+    {
       "title": "FEMA to conduct nationwide emergency alert test Tuesday - WSPY NEWS",
       "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQZjhsRlowUjhqRjlPZlU1YjRTX2pFUnM3RVNvNXJhWVB6RHBZVEh0NnA2eVp1cjFQRmJfamlpQlVZYlhuRkZIYV9ZM0tGaFVKU3pfTnRPYlhWYTVneGcyWjRxV00tUHlqQVh4V0pKWXZDc0NZVWhKam10ZThiTXd2bzE5Vm1fZGZiT2c3cDZvejhOTGVBclRnZkxhQWM1NTFPU0dlZzBfczFEdExOYWdNZnRQMlI3QmowTzJ6cGE1dmR2eWF5WE01T3RGbHh6OHRyc3NucGZ3TWM?oc=5",
       "date": "2026-11-17T12:27:00Z"
@@ -6984,6 +7054,11 @@
       "title": "Qatar warns Iran’s attack on US base in Bahrain threatens peace talks - Arab News",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZ2trOW1OeVpHOEo2ZWw5Z0x3Nnd2ZnNXclFxT3ZON0lJdEg0c0RPb3VabDBjcExEc1BoLUZMMVFoYXVvVmhleEc5Y0pzdl9NT1ZmeHhfMENXcVIyTW1PX3QwdlZpa0MzbFhjUmlVSnJnVWdDbFZveW1TOHE3N0tVdFJBdXBsTGtjUmI0TW9ZY3BFODNTdkRKeUhRcnpSYUVNTFlGSklxb1o1T3lZcUJ2V25sUQ?oc=5",
       "date": "2026-11-17T10:52:47Z"
+    },
+    {
+      "title": "Four major US outages in five days and none was a cyberattack - Insurance Business",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd3lhVGhNV3lTWEtiNVFhazZGVTJ1Z0xJdGFYWC1lUFZwczdoNzRFdUp4c2s0ZnNJYlEydV9GZnJRd3dHUHoxLWg1OHQxQXhuZXB0OUUtcS1NV1R5ZEZfN2FvaTQxM0FjcG5CZktkR1lmOWJKVlVYQjR5R3dyM2pWODUyX3JkVVhTam5OYzE2VUhXOUJLY1NZSkhrbENLT3lCdWRxZlBraEdvU0NTM1BCSUJzd28wU2Y0cXVsS01CeFlyRzNt?oc=5",
+      "date": "2026-11-17T10:34:56Z"
     },
     {
       "title": "Flying to Dubai? 16 airlines have suspended services - Time Out Dubai",
@@ -7244,56 +7319,6 @@
       "title": "Chase app down: Major US banks hit by widespread outages - ARYnews.tv",
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9DS25yQlpGekFVd3hiV3RERjc2N3ljRnU4Zm1oeGV1WkNBUncyWFN6XzR4OGJiTU1tcllVc3ZVaUUydWtUSG51RExkMVNtek9DdzJsaFd0UWY0ZWJXSE1TMk54LUtLRE5ZSjdTbWJlY2YyRjl6eklQcDd1SGQxRXM?oc=5",
       "date": "2026-11-17T05:43:04Z"
-    },
-    {
-      "title": "‘This is only a test’: Tuesday’s emergency alert test comes at anxious moment in the US - KESQ",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPS25PM1hxQTVmWF9JV29SRGt0RzgxZk1XR3ZBTXZZZmJrc3BtODJURkhBTGdMODE5MmVpeUt4b2N6VTFGdDhRQlg3aDQxYktwUUJESDJDMHdSMXg2d1ZOV2lPX3RDemhNTXUxaEpoWGRjdF91WXhReUg4U3h5Nlo1VFFTT3R0YnI4Q28tLXNZLXFUOFF1UE9SZWxyN256MEZ0U3ZoTFZGR1o4cDVGZ1o1YzQwN2w4eHZOcnprdzVLQUx6NFJCYV9pbG9IYllJX2hWWWdURk1kWQ?oc=5",
-      "date": "2026-11-17T05:34:38Z"
-    },
-    {
-      "title": "U.S. Hit by Another Massive Outage as Major Banks Go Down - NewsBreak: Local News & Alerts",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTVl2SVNUSUlqZzVLSzNHUlhLNTdhUFlDVk1RNTFpaUFhbkpQd0MzZWZydHdMLWhWNXFVMXVoemF6TEZNd2ZMSU1vRTJIME1qZjgzRHc5Mmg1Z0UxNkkxT08wbVN0NnJWb1NSa2p0ZlZYT0Y5NXVDZktITFU0SjREZkdhdE12dVZST01ZVnV5SEZrRFVIY3ZPNE1kSWZkWC1DQm50UGdUMzE1cERtOENxbkNScGJPOEls?oc=5",
-      "date": "2026-11-17T05:28:03Z"
-    },
-    {
-      "title": "US bank outage: What caused Chase problems and Zelle payment delays? - Al Jazeera",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMnRKR3BzVFRWWGh6ZWtPN0lRd0hxRFlVdVFQY1VPYk14eHhzZHZtUmJjT0wzUFJvWXFjYWttdnZZdG9vWVloLWxrRWh3RGdfSFVueGFNb3E5VHA2ZU9yODBISF9CQlpxRmJNeVZZSzVnV01janZqTEJmeV9oOGkzOXdESy10VkFBdlBCM2YxT3JqXzJrRjFld05TUnBpWFRURlVicUcwT2VEcDJv0gGyAUFVX3lxTE5hVFdLclpia0Z1X2pETDI2ejFzNkdnRGZpaW8zSy02bFU1cVBSaVhjN1NuZnhrUzd6YTVHU0VlVGptYUJ0QlBkNTUxTWlLMGNFcmg1TW1FSjJxeG4tUjkweE5iR0JBYkhlUlRBYjRNZnJNaDgzTjh5dXlfaFpkYVl0UF8tTHBBMzIwaGlXSk5OMWFVc2xON1dzUHQzeUdlaHhWTHpBaF9NakM3UVBJQjVUbVE?oc=5",
-      "date": "2026-11-17T05:26:16Z"
-    },
-    {
-      "title": "Uber data breach exposes 150,000 drivers - Escudo Digital",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOclpkUngxcDJGLURlVjFQcWhod3BEWUllODJJNWNvcUU3MUwzX2p4ZldQMmNQYUR1VXlxWEpiVGI0TkhrV25QUTNGUmNydEo4S3lXY2tIRHIyS1hvbkJnYnhKNl9KQU9nazJYTkdHTHVOTTUtVWc0Ums1RDdEblg4V2YyYk9HeWRRS0ZzbEdtd09QYy1TRGc?oc=5",
-      "date": "2026-11-17T05:10:02Z"
-    },
-    {
-      "title": "United Airlines rocked by ‘widespread system outage’ days after US flights grounded - News24",
-      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPM1VwMmxxclBpY2dNTTRsaEN0QlRsaF9mQ2gzbkI4eGpMUnA5dGpNOEtIZlNiVjJxY3U3U2VOMWJmN0tvX1VqYTFoOUdSVkg2d0pWcnpHR1gtQjZmSlhVWkxWc1pDTjJHTVAxNkg1S3huRUVaRDdfek9oUXVzc2ZuSUhBSkU5bnZkTVlrYjBNd0RPYkg0Vk04TUt0bjdiMUM0OWxMLXFJcm9HMzdhU3dzZ2t6THZnUkgybkFCem5JT3VZcmhNN2ZiX1ZEYVk4RzNRU0NBY1hTc2g3NE9BcVZZakJQVGNacEYwM1V4cnVFVTRlZlo0X0FTa01R0gH_AUFVX3lxTE5BLV9xT3VPSmoyZVZSRnE5TGxlTFVQR2M3SzROa0x2TzJ2Y01kT2hLNUgxbGVLOWRLeEtobDZja01NT25aN0lyOW1WU1pCTzE4ZFVNMkJwOGp6WUVLMjE4YjlvZFV0ck9UdzQxMWlva0FhQzRjQjJybHQ5WjZ6N1Q5TGYxNDZ0T3ZkWHRHbDU5V1UwcmZENUVoYmhiOW95a19rbW9qVUxhVWxhaldWa0V3T0oyMTd1NzRXc3ZVMzVYSW95dld6YUNfNU16RHZWVDRnNVlVUXJTVkN2Q1NBdTJEb0xuems1RnRDVG4xS2hVcnNFdnVQZ3FhcmQ4NFJtWQ?oc=5",
-      "date": "2026-11-17T05:08:42Z"
-    },
-    {
-      "title": "Chase says services are back to normal after 'software bug' triggers online banking delays - cbs19.tv",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQa1F0Rno3bElLSmh2S1RKRmI4UjJqdE1Cc1E4Z0hBU3VXTlpVeDNPUloyNG0wSVFBN1BudVZKUEo2cm1GY3ItSVlfelRNa3RSLWlXeGN2V2w3bXE5cldRdDRNX1AyUUh4c1NVdkJMTktvdGM4U2JDT3h1dmtsMG1fUzRIOE1MZ1pkYzlQR2F6SkxMaC01OFBPLTNpX0dDNjhKQXgzMERZbXZrS0lPaHItN3BuOTN5QU90WGFvT196cw?oc=5",
-      "date": "2026-11-17T05:05:38Z"
-    },
-    {
-      "title": "‘Ridiculous obsession with men in women’s sports’: JD Vance blames trans athletes debate for flight issues - Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTnJrMTRVQ1BKYms4Y0pabUxaVENyYmpNOENqekZEYk00R1BULUdEb194VkNwZ1NTdHAwZThQQnV4UzZtN19Id1pKR2dsUUs3OTJRTkp1UnVMUGdjY2Jrbm5YblljcTJKbk5RMnJKcGNfZ3ZmVWdLVUlQUnlDY194MzJFVElvWjMtLXlDa0lsUEpZbXRUZFpDYXpINkpFdw?oc=5",
-      "date": "2026-11-17T04:56:00Z"
-    },
-    {
-      "title": "Trump Says Iran Will ‘Pay A Price’ If There Was DC Dirty Bomb Plot - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZzF1ek5uVmItR0ZubEdaaUlKX1k2UFd1SnlULXB6U0F6WUJKNDhRUzNqbkpGbTczWU1vYWp0RTRNQjNkVHJzc1UzcjU5X3JaYlVtRUM2dTRwTWtseDFfZHNSMGhQQTRzcjlBa0Q4UGFseFEteS1fQnlIMGRPalFCNFVqZElOUEFwMFRObzR0Wk5wcUNfNi1Ud1JuM1NvcFU?oc=5",
-      "date": "2026-11-17T04:55:00Z"
-    },
-    {
-      "title": "How credible is the reported Iran ‘dirty bomb’ threat to Washington DC? - The i Paper",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZDNscDNqd3JVS3RzaUUxYjJRZ1lvUVpYUzhxNEdYYmFHdXJkMnh0YUR6S00yUExRU0w3N2Q5SkNyTy05bHNSazN6cXJxZ1ZlYmpxSTZlb0lnazdXd1VuT1R1MlVYRWF4MVNiYlNoaEJ6a3lKYzZzazRrbnotQkVNdVNmUW8wb3pi?oc=5",
-      "date": "2026-11-17T04:48:54Z"
-    },
-    {
-      "title": "Manufacturing hit by surge in ransomware attacks - Food & Beverage Industry News",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTFU5bTZnazFCYUVCcGgxb3lwZHVLYVpndDVHcDJObFVxdEtseXl4ajZqdzkxUjVyQmU4Qm9BTFRxdTRtQ2dDcnJOUm1fVzIzOUhqQmVHU0RLaDkwRjYzR2hhdlZJOHFqSzFYZUVEZExBbDdNcnpNRE1sZkliMHhHc05R?oc=5",
-      "date": "2026-11-17T04:43:46Z"
     }
   ]
 }
