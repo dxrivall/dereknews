@@ -1,20 +1,27 @@
 {
-  "updated_at": "2026-11-24T16:50:09.632414Z",
+  "updated_at": "2026-11-24T17:38:10.511007Z",
   "sections": {
     "top": [
+      {
+        "title": "Cachorros suman al zurdo Trevor Rogers y al japonés Teruaki Sato",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/chicago-cachorros-trevor-rogers-189c87440e7762a82e9f1c6371437f6e",
+        "published": "2026-11-24T09:30:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.hB7rZftBVYfPYd5Rwtqa0Q&pid=News"
+      },
+      {
+        "title": "A huge new London Museum tells the city’s story from the Romans to Banksy",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/london-museum-smithfield-market-23c142f20b5e0f4db10d5f604d1864d4",
+        "published": "2026-11-24T09:22:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.ND7xkMAWSqRmtolIYgZVKQ&pid=News"
+      },
       {
         "title": "Possible Tesla merger could aid SpaceX's S&P 500 entry, ⁠J.P. Morgan says",
         "source": "Reuters",
         "link": "https://www.reuters.com/legal/government/possible-tesla-merger-could-aid-spacexs-sp-500-entry-jp-morgan-says-2026-11-24/",
         "published": "2026-11-24T08:29:00Z",
         "thumb": ""
-      },
-      {
-        "title": "No. 4 Illinois’ Andrej Stojakovic named AP national player of the week after epic showing at Duke",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/ap-mens-college-basketball-player-of-week-6b1a2b5fd5ea79daf9193f116307c64b",
-        "published": "2026-11-24T08:17:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.GoLho0mdhxoDO2HiM4tPYw&pid=News"
       },
       {
         "title": "Microsoft declares 'Code Red' after historic outage, internal memos show",
@@ -99,13 +106,6 @@
         "link": "https://www.reuters.com/business/retail-consumer/nvidias-huang-returns-cheers-china-political-hurdles-mount-2026-11-24/",
         "published": "2026-11-24T05:30:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.HIFEdSsHB27EkA5yu8wMRw&pid=News"
-      },
-      {
-        "title": "2 men arrested over suspected burglary at Prince William and Kate’s country home in eastern England",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/britain-prince-william-catherine-home-broken-into-ece0bfe1e1c9bb626fde429a7b29dc16",
-        "published": "2026-11-24T04:30:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.YrZoRBEP3W94RjJiXbGp9g&pid=News"
       }
     ],
     "local": [
@@ -113,8 +113,8 @@
         "title": "Cold, sunshine developing this afternoon",
         "source": "LocalSYR",
         "link": "https://www.localsyr.com/weather/much-cooler-and-breezy-monday/",
-        "published": "2026-11-24T15:00:00Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2023/11/AP23301761326264-e1700163127966.jpg?w=800"
+        "published": "2026-11-24T17:30:00Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2025/07/sun-clouds.jpg?w=900"
       },
       {
         "title": "Urgent guide to pet-friendly Thanksgiving treats",
@@ -182,13 +182,6 @@
     ],
     "nationwide": [
       {
-        "title": "No. 4 Illinois’ Andrej Stojakovic named AP national player of the week after epic showing at Duke",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/ap-mens-college-basketball-player-of-week-6b1a2b5fd5ea79daf9193f116307c64b",
-        "published": "2026-11-24T08:17:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.GoLho0mdhxoDO2HiM4tPYw&pid=News"
-      },
-      {
         "title": "US to host Copa America for second successive tournament in 2028",
         "source": "Reuters",
         "link": "https://www.reuters.com/sports/soccer/us-host-copa-america-2028-2026-11-24/",
@@ -217,25 +210,11 @@
         "thumb": "http://www.bing.com/th?id=ONUT.HIFEdSsHB27EkA5yu8wMRw&pid=News"
       },
       {
-        "title": "Key takeaways from AP findings that the DEA allowed 1.4 million fentanyl pills to go unseized",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/fentanyl-unseized-walking-new-mexico-dea-takeaways-f8a2c4cf802a811cc6126ffca0a245ef",
-        "published": "2026-11-24T03:03:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0ZfRXtvVsVxhwxuSYI25wA&pid=News"
-      },
-      {
         "title": "Pentagon sharply rebukes Canada over defense spending and the F-35 fighter jet review",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/canada-us-defense-spending-hegseth-pentagon-2ce983323fc56d21db88db5401422fde",
         "published": "2026-11-23T15:49:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.t0lNnEuXBs2YJA4qczUA4Q&pid=News"
-      },
-      {
-        "title": "Fury in Congress over Huang’s reinstatement as lawmakers move forward with hearings",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/nvidia-jensen-huang-48a005a1415549e69ec69400024aa797",
-        "published": "2026-11-23T13:09:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.4UrPmNakjCBI1khazNI7qA&pid=News"
       },
       {
         "title": "Big Ten takes a beating, no teams in AP top 5 for 1st time since 2021 as Georgia, Utah hold steady",
@@ -246,6 +225,20 @@
       }
     ],
     "global": [
+      {
+        "title": "Cachorros suman al zurdo Trevor Rogers y al japonés Teruaki Sato",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/chicago-cachorros-trevor-rogers-189c87440e7762a82e9f1c6371437f6e",
+        "published": "2026-11-24T09:30:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.hB7rZftBVYfPYd5Rwtqa0Q&pid=News"
+      },
+      {
+        "title": "A huge new London Museum tells the city’s story from the Romans to Banksy",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/london-museum-smithfield-market-23c142f20b5e0f4db10d5f604d1864d4",
+        "published": "2026-11-24T09:22:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.ND7xkMAWSqRmtolIYgZVKQ&pid=News"
+      },
       {
         "title": "Possible Tesla merger could aid SpaceX's S&P 500 entry, ⁠J.P. Morgan says",
         "source": "Reuters",
@@ -301,20 +294,6 @@
         "link": "https://www.reuters.com/business/us-agency-expects-screen-176-million-air-travelers-over-thanksgiving-holiday-2026-11-24/",
         "published": "2026-11-24T07:19:00Z",
         "thumb": ""
-      },
-      {
-        "title": "In Costa Rica, simple rope bridges offer sloths a lifeline as forests disappear",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/sloths-conservation-costa-rica-bridges-trees-deforestation-dbcd14078154c7ea4bfc39f695ced1c2",
-        "published": "2026-11-24T06:15:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.W3mlnDHO6E4yQodF_QsDEg&pid=News"
-      },
-      {
-        "title": "2 men arrested over suspected burglary at Prince William and Kate’s country home in eastern England",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/britain-prince-william-catherine-home-broken-into-ece0bfe1e1c9bb626fde429a7b29dc16",
-        "published": "2026-11-24T04:30:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.YrZoRBEP3W94RjJiXbGp9g&pid=News"
       }
     ]
   }
