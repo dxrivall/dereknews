@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25T10:53:21Z",
-  "fetched_at": "2026-11-25T10:53:21.112Z",
+  "updated_at": "2026-11-25T11:52:48Z",
+  "fetched_at": "2026-11-25T11:52:48.363Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -90,7 +90,7 @@
         "role": "coLeader",
         "th": 16,
         "expLevel": 136,
-        "trophies": 0,
+        "trophies": 40,
         "league": "Unranked",
         "leagueTier": "Golem League 20",
         "donations": 1,
