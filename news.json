@@ -1,41 +1,62 @@
 {
-  "updated_at": "2026-11-25T19:03:27.636300Z",
+  "updated_at": "2026-11-25T19:56:39.174220Z",
   "sections": {
     "top": [
       {
-        "title": "Charlotte earns 85-72 win over Northern Iowa",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/charlottenorthern-iowa-score-7b4a6bda01fcb586d9157c6b8a5da2d7",
+        "title": "Explainer: How China got access to Nvidia's AI chips despite rules to stop them",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/how-china-got-access-nvidias-ai-chips-despite-rules-stop-them-2026-11-25/",
+        "published": "2026-11-25T11:37:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Pakistan's PIA to shift UK flights to own fleet after Norse Atlantic suspension",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/aerospace-defense/pakistans-pia-shift-uk-flights-own-fleet-after-norse-atlantic-suspension-2026-11-25/",
+        "published": "2026-11-25T11:28:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Fed survey shows continued growth and sticky inflation in recent weeks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/fed-survey-shows-continued-growth-sticky-inflation-recent-weeks-2026-11-25/",
+        "published": "2026-11-25T11:19:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Reports: Yankees hire Brandon Hyde as bench coach",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/reports-yankees-hire-brandon-hyde-bench-coach--flm-2026-11-25/",
+        "published": "2026-11-25T11:09:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "S&P Global places Nvidia rating on 'CreditWatch Negative' on rising management and governance risks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/sp-global-places-nvidia-rating-creditwatch-negative-rising-management-governance-2026-11-25/",
         "published": "2026-11-25T10:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "thumb": ""
       },
       {
-        "title": "Oklahoma State extends Eric Morris’ contract to 2032 after coach’s successful debut, reports say",
-        "source": "Associated Press",
-        "link": "https://apnews.com/article/oklahoma-state-morris-contract-094943ea5c121160e8f4ec360f8fac9c",
-        "published": "2026-11-25T10:55:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.mmKOxZ5K4OQW4ckCCEAuxw&pid=News"
-      },
-      {
-        "title": "Dar scores 15 in Rice’s 82-74 victory over Ohio",
+        "title": "Gordon Ramsay to take the lead in revival of BBC’s flagship motoring program Top Gear",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/ohiorice-score-74c1123466f37eb82c1b379199de4a97",
-        "published": "2026-11-25T10:54:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "link": "https://apnews.com/article/top-gear-britain-ramsay-bbc-revival-fc864f37fdd3a94f0ced6a3885b5d626",
+        "published": "2026-11-25T10:51:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.qUhYb7wJfMmXmR3Ef0LqYw&pid=News"
       },
       {
-        "title": "Britain’s nuclear revival as new Sizewell C plant takes shape",
+        "title": "Fighting in eastern Congo forces Ebola workers to evacuate, threatening outbreak response",
         "source": "Associated Press News",
-        "link": "https://apnews.com/video/britains-nuclear-revival-as-new-sizewell-c-plant-takes-shape-2be28922ca174dfa89aecd45b3e1896b",
-        "published": "2026-11-25T10:54:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.T32oLV7F72WwGL-GWYAAvw&pid=News"
+        "link": "https://apnews.com/article/ebola-congo-who-fighting-rebels-evacuation-ff1890d63ca7f3c3a8beeb127727e5cd",
+        "published": "2026-11-25T10:50:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.sp4qdpSs9FuBJ6SauY3JlA&pid=News"
       },
       {
         "title": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/king-tides-flooding-sea-level-rise-climate-change-0f7fad0f90d229560b0840a4ff18bcc9",
         "published": "2026-11-25T10:21:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.JsCtmD6ie5IAIhyV3zbCtA&pid=News"
+        "thumb": "http://www.bing.com/th?id=ONUT.RDwnEEbRmDXACyCNfOVsGQ&pid=News"
       },
       {
         "title": "Dozens of countries call on Russia to halt alleged use of riot agent in Ukraine war",
@@ -45,18 +66,18 @@
         "thumb": ""
       },
       {
-        "title": "Nigeria seizes $220 million worth of meth and arrests 5 Mexican suspects in a major drug bust",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/nigeria-drug-trafficking-mexicans-ndlea-enugu-db49b4b7cc43247fd65a49cb96579d7e",
-        "published": "2026-11-25T10:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
         "title": "Mexico’s most powerful cartels adapt as arrests and leadership battles reshape their ranks",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/mexico-chapo-isidro-sinaloa-jalisco-cartels-violence-los-mayos-chapitos-283effc36b3ecf5c796e0228a84b8b3b",
         "published": "2026-11-25T10:08:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.M728knDEKCGbaAa4cd-C7Q&pid=News"
+        "thumb": "http://www.bing.com/th?id=ONUT.Ca6_WzQqRRxHN_MAjnY07Q&pid=News"
+      },
+      {
+        "title": "Vance is serving up turkey to Air Force troops at an Ohio base pitched as Space Academy home",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/vance-trump-thanksgiving-ohio-space-academy-b15211aafa25c8f5610bd5f39580ace0",
+        "published": "2026-11-25T09:49:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.Vju4hB7m-16oVmqTJZvdWg&pid=News"
       },
       {
         "title": "Puerto Rico Supreme Court cancels key power contract as many wonder what’s next",
@@ -64,6 +85,13 @@
         "link": "https://apnews.com/article/puerto-rico-luma-supreme-court-power-energy-e45076fdebfe5c07de142dcb05f771c2",
         "published": "2026-11-25T09:48:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Major League Baseball sues players’ union, asking court to declare lockout is legal",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/mlb-lockout-5fd6e937eb4f3a67c0ccdb19b0fca3bf",
+        "published": "2026-11-25T09:43:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.W0PcjDT4QhD7gWqutxsPEg&pid=News"
       },
       {
         "title": "Volatility-weary investors hammered as tariff mayhem adds to tech pain",
@@ -78,43 +106,43 @@
         "link": "https://www.reuters.com/business/us-justice-department-did-not-open-probe-into-jensen-huang-before-reinstatement-2026-11-25/",
         "published": "2026-11-25T09:30:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.ihxy_vrBZoyEOvozqDAugQ&pid=News"
-      },
-      {
-        "title": "Kenya cult leader found guilty of new assault and cruelty charges",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/kenya-cult-leader-paul-mackenzie-conviction-e4024cd1ff2e2ddce24b89ee0756b2c4",
-        "published": "2026-11-25T09:28:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.FN71-HJVdPzTPzY8GZD_bA&pid=News"
-      },
-      {
-        "title": "The average US 30-year mortgage rate eases to 7.21%, not far from 2026 high",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mortgages-housing-inflation-interest-rates-1e8162cf0344617b916427033f7aece7",
-        "published": "2026-11-25T09:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.483LQNvG43zyoaqU1B_C8A&pid=News"
-      },
-      {
-        "title": "Families say they cannot locate dead relatives in Congo Ebola outbreak",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW127525112026RP1/",
-        "published": "2026-11-25T09:06:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.qxYr8L6tea1AyoGXloGSIw&pid=News"
-      },
-      {
-        "title": "Smoke rises after controlled detonation of explosives in Iowa",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW127225112026RP1/",
-        "published": "2026-11-25T08:36:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.azjyUx644ME2KvEEDXth0w&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "Rain, wind, and it feels like the 20s for Bills vs. Chiefs Thanksgiving night",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/buffalo-bills/rain-wind-and-it-feels-like-the-20s-for-bills-vs-chiefs-thanksgiving-night/",
+        "published": "2026-11-25T19:36:24Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/Bills_Folding_Table_Forecast.png?w=900"
+      },
+      {
+        "title": "Your Stories Q&A: Why do gas prices vary from station to station?",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/your-stories/your-stories-qa-why-do-gas-prices-vary-from-station-to-station/",
+        "published": "2026-11-25T19:25:14Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/10/AP22057172152994-e1761311936159.jpg?w=800"
+      },
       {
         "title": "Police: Missing 50-year-old man found dead in City of Cortland",
         "source": "LocalSYR",
         "link": "https://www.localsyr.com/news/local-news/police-missing-50-year-old-man-found-dead-in-city-of-cortland/",
         "published": "2026-11-25T18:35:03Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/image000000.png?w=464"
+      },
+      {
+        "title": "The Latest: All 5 tons of lead azide were successfully destroyed in Iowa detonation, Army says",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/national/ap-the-latest-army-plans-to-detonate-us-stockpile-of-lead-azide-in-iowa/",
+        "published": "2026-11-25T18:32:36Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b072a384a8ff0.57926123.jpeg?w=900"
+      },
+      {
+        "title": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/science/ap-science/ap-what-are-king-tides-these-exceptionally-high-tides-are-increasingly-flooding-coastal-communities/",
+        "published": "2026-11-25T18:20:01Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b072893a51ba2.43262711.jpeg?w=900"
       },
       {
         "title": "Upstate disease expert urges flu awareness as cases pile up",
@@ -150,57 +178,36 @@
         "link": "https://www.localsyr.com/weather/cold-sunshine-developing-this-afternoon/",
         "published": "2026-11-25T16:06:17Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/09/Towercam_a2a239.jpg?w=900"
-      },
-      {
-        "title": "Where to find Christmas light displays this holiday season in CNY",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/central-new-york-winter-guide/where-to-find-christmas-light-displays-this-holiday-season-in-cny/",
-        "published": "2026-11-25T15:06:05Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2024/12/GettyImages-170199283-e1732589115905.jpg?w=800"
-      },
-      {
-        "title": "Plug-in solar bill could prevent predicted power shortfalls in New York",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/state-news/plug-in-solar-bill-could-prevent-predicted-power-shortfalls-in-new-york/",
-        "published": "2026-11-25T14:14:03Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/689f6906159d34.90653764.jpeg?w=900"
-      },
-      {
-        "title": "What is 'NeeDoh hunting' and why are parents lining up for hours to buy this viral squishy?",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/national/what-is-needoh-hunting-and-why-are-parents-lining-up-for-hours-to-buy-this-viral-squishy/",
-        "published": "2026-11-25T14:01:56Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/nedoh.jpg?w=900"
-      },
-      {
-        "title": "Destiny USA announces extended Thanksgiving, Black Friday hours: When can you visit?",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/local-news/destiny-usa-holiday-2026/",
-        "published": "2026-11-25T14:00:00Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2024/12/Screenshot-2024-12-27-104506-e1735314500478.png?w=900"
       }
     ],
     "nationwide": [
       {
-        "title": "Charlotte earns 85-72 win over Northern Iowa",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/charlottenorthern-iowa-score-7b4a6bda01fcb586d9157c6b8a5da2d7",
-        "published": "2026-11-25T10:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "title": "Explainer: How China got access to Nvidia's AI chips despite rules to stop them",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/how-china-got-access-nvidias-ai-chips-despite-rules-stop-them-2026-11-25/",
+        "published": "2026-11-25T11:37:00Z",
+        "thumb": ""
       },
       {
-        "title": "Oklahoma State extends Eric Morris’ contract to 2032 after coach’s successful debut, reports say",
-        "source": "Associated Press",
-        "link": "https://apnews.com/article/oklahoma-state-morris-contract-094943ea5c121160e8f4ec360f8fac9c",
-        "published": "2026-11-25T10:55:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.mmKOxZ5K4OQW4ckCCEAuxw&pid=News"
+        "title": "Fed survey shows continued growth and sticky inflation in recent weeks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/fed-survey-shows-continued-growth-sticky-inflation-recent-weeks-2026-11-25/",
+        "published": "2026-11-25T11:19:00Z",
+        "thumb": ""
       },
       {
-        "title": "Dar scores 15 in Rice’s 82-74 victory over Ohio",
+        "title": "Reports: Yankees hire Brandon Hyde as bench coach",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/reports-yankees-hire-brandon-hyde-bench-coach--flm-2026-11-25/",
+        "published": "2026-11-25T11:09:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Vance is serving up turkey to Air Force troops at an Ohio base pitched as Space Academy home",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/ohiorice-score-74c1123466f37eb82c1b379199de4a97",
-        "published": "2026-11-25T10:54:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "link": "https://apnews.com/article/vance-trump-thanksgiving-ohio-space-academy-b15211aafa25c8f5610bd5f39580ace0",
+        "published": "2026-11-25T09:49:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.Vju4hB7m-16oVmqTJZvdWg&pid=News"
       },
       {
         "title": "Puerto Rico Supreme Court cancels key power contract as many wonder what’s next",
@@ -217,6 +224,20 @@
         "thumb": "http://www.bing.com/th?id=ONUT.azjyUx644ME2KvEEDXth0w&pid=News"
       },
       {
+        "title": "Nvidia faces questions from top Senate antitrust Democrat",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/legal/government/nvidia-faces-questions-top-senate-antitrust-democrat-2026-11-25/",
+        "published": "2026-11-25T08:29:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.xDUVbbY4_qJxG1Sap8VqHw&pid=News"
+      },
+      {
+        "title": "A father, a son, and a remarkable 70-season Michigan football streak that has come to an end",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/michigan-football-deaf-fan-streak-af53be2525108d8423ebdba46ccfba09",
+        "published": "2026-11-25T08:28:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.nt-nvhOTWtLLwf7oRQ6kUw&pid=News"
+      },
+      {
         "title": "Trump tariffs live: US proposes raising duties on China, India and other major trading partners",
         "source": "Reuters",
         "link": "https://www.reuters.com/live/live-trump-proposes-raising-tariffs-china-india-other-major-trading-partners-2026-11-25/",
@@ -224,41 +245,48 @@
         "thumb": "http://www.bing.com/th?id=ONUT.uAEpwaDx-cnLi_NcpyXLrA&pid=News"
       },
       {
-        "title": "The US Army will be detonating a 5-ton stockpile of lead azide in Iowa. Here’s what to know",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/lead-azide-detonation-army-iowa-bcf34962047409a8b770208c71c0d5bb",
-        "published": "2026-11-24T15:55:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ZIHgXesurF_7iegHuGx-2A&pid=News"
-      },
-      {
         "title": "AP Top 25: South Carolina remains unanimous No. 1 in women’s poll ahead of UConn matchup",
         "source": "The Associated Press",
         "link": "https://www.ap.org/news-highlights/spotlights/2026/ap-top-25-south-carolina-remains-unanimous-no-1-in-womens-poll-ahead-of-uconn-matchup/",
         "published": "2026-11-23T04:06:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.zJqaVVGTpSLe5per5UrWJQ&pid=News"
-      },
-      {
-        "title": "Big Ten takes a beating, no teams in AP top 5 for 1st time since 2021 as Georgia, Utah hold steady",
-        "source": "The Associated Press",
-        "link": "https://www.ap.org/news-highlights/spotlights/2026/big-ten-takes-a-beating-no-teams-in-ap-top-5-for-1st-time-since-2021-as-georgia-utah-hold-steady/",
-        "published": "2026-11-22T04:48:00Z",
-        "thumb": ""
       }
     ],
     "global": [
       {
-        "title": "Britain’s nuclear revival as new Sizewell C plant takes shape",
+        "title": "Pakistan's PIA to shift UK flights to own fleet after Norse Atlantic suspension",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/aerospace-defense/pakistans-pia-shift-uk-flights-own-fleet-after-norse-atlantic-suspension-2026-11-25/",
+        "published": "2026-11-25T11:28:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "S&P Global places Nvidia rating on 'CreditWatch Negative' on rising management and governance risks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/sp-global-places-nvidia-rating-creditwatch-negative-rising-management-governance-2026-11-25/",
+        "published": "2026-11-25T10:56:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Gordon Ramsay to take the lead in revival of BBC’s flagship motoring program Top Gear",
         "source": "Associated Press News",
-        "link": "https://apnews.com/video/britains-nuclear-revival-as-new-sizewell-c-plant-takes-shape-2be28922ca174dfa89aecd45b3e1896b",
-        "published": "2026-11-25T10:54:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.T32oLV7F72WwGL-GWYAAvw&pid=News"
+        "link": "https://apnews.com/article/top-gear-britain-ramsay-bbc-revival-fc864f37fdd3a94f0ced6a3885b5d626",
+        "published": "2026-11-25T10:51:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.qUhYb7wJfMmXmR3Ef0LqYw&pid=News"
+      },
+      {
+        "title": "Fighting in eastern Congo forces Ebola workers to evacuate, threatening outbreak response",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/ebola-congo-who-fighting-rebels-evacuation-ff1890d63ca7f3c3a8beeb127727e5cd",
+        "published": "2026-11-25T10:50:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.sp4qdpSs9FuBJ6SauY3JlA&pid=News"
       },
       {
         "title": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/king-tides-flooding-sea-level-rise-climate-change-0f7fad0f90d229560b0840a4ff18bcc9",
         "published": "2026-11-25T10:21:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.JsCtmD6ie5IAIhyV3zbCtA&pid=News"
+        "thumb": "http://www.bing.com/th?id=ONUT.RDwnEEbRmDXACyCNfOVsGQ&pid=News"
       },
       {
         "title": "Dozens of countries call on Russia to halt alleged use of riot agent in Ukraine war",
@@ -268,18 +296,18 @@
         "thumb": ""
       },
       {
-        "title": "Nigeria seizes $220 million worth of meth and arrests 5 Mexican suspects in a major drug bust",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/nigeria-drug-trafficking-mexicans-ndlea-enugu-db49b4b7cc43247fd65a49cb96579d7e",
-        "published": "2026-11-25T10:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
         "title": "Mexico’s most powerful cartels adapt as arrests and leadership battles reshape their ranks",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/mexico-chapo-isidro-sinaloa-jalisco-cartels-violence-los-mayos-chapitos-283effc36b3ecf5c796e0228a84b8b3b",
         "published": "2026-11-25T10:08:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.M728knDEKCGbaAa4cd-C7Q&pid=News"
+        "thumb": "http://www.bing.com/th?id=ONUT.Ca6_WzQqRRxHN_MAjnY07Q&pid=News"
+      },
+      {
+        "title": "Major League Baseball sues players’ union, asking court to declare lockout is legal",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/mlb-lockout-5fd6e937eb4f3a67c0ccdb19b0fca3bf",
+        "published": "2026-11-25T09:43:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.W0PcjDT4QhD7gWqutxsPEg&pid=News"
       },
       {
         "title": "Volatility-weary investors hammered as tariff mayhem adds to tech pain",
@@ -294,27 +322,6 @@
         "link": "https://www.reuters.com/business/us-justice-department-did-not-open-probe-into-jensen-huang-before-reinstatement-2026-11-25/",
         "published": "2026-11-25T09:30:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.ihxy_vrBZoyEOvozqDAugQ&pid=News"
-      },
-      {
-        "title": "Kenya cult leader found guilty of new assault and cruelty charges",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/kenya-cult-leader-paul-mackenzie-conviction-e4024cd1ff2e2ddce24b89ee0756b2c4",
-        "published": "2026-11-25T09:28:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.FN71-HJVdPzTPzY8GZD_bA&pid=News"
-      },
-      {
-        "title": "The average US 30-year mortgage rate eases to 7.21%, not far from 2026 high",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mortgages-housing-inflation-interest-rates-1e8162cf0344617b916427033f7aece7",
-        "published": "2026-11-25T09:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.483LQNvG43zyoaqU1B_C8A&pid=News"
-      },
-      {
-        "title": "Families say they cannot locate dead relatives in Congo Ebola outbreak",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW127525112026RP1/",
-        "published": "2026-11-25T09:06:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.qxYr8L6tea1AyoGXloGSIw&pid=News"
       }
     ]
   }
