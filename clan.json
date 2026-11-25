@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25T11:52:48Z",
-  "fetched_at": "2026-11-25T11:52:48.363Z",
+  "updated_at": "2026-11-25T13:01:58Z",
+  "fetched_at": "2026-11-25T13:01:58.227Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -367,9 +367,9 @@
       "name": "GAMMARAHOTEL",
       "tag": "#2CYJP9RPU",
       "badge": "https://api-assets.clashofclans.com/badges/200/TTPFmAOkvBsMgcp1lsejcJXKkHW5WY9MQDSrOGESekU.png",
-      "stars": 0,
-      "destructionPercentage": 0,
-      "attacks": 0,
+      "stars": 6,
+      "destructionPercentage": 40,
+      "attacks": 2,
       "members": [
         {
           "tag": "#2YCVP8URG",
