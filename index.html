@@ -109,7 +109,7 @@ html,body{overflow-x:hidden}
 .pager-track{display:flex;flex-direction:row;align-items:flex-start;width:100%;will-change:transform}
 .pager-track>.view{display:block;flex:0 0 100%;width:100%;max-width:none;margin:0;min-width:0;visibility:hidden}
 .pager-track>.view.pg-on{visibility:visible}
-/* NEWS RE-ENABLED (Nov 13) — tab + bottom-bar button restored; 7 tabs with Clash of Clans (see tabOrder) */
+/* NEWS RE-ENABLED (Nov 24, 2026) — tab + bottom-bar button restored after users noticed it gone; 6 tabs, CoC tab still deactivated (see tabOrder) */
 .pager-track.pg-settling{transition:transform .38s cubic-bezier(.32,.72,0,1)}
 .pager-viewport.pg-settling{transition:height .38s cubic-bezier(.32,.72,0,1)}
 .tab-pill.pg-settling{transition:transform .38s cubic-bezier(.32,.72,0,1),width .38s cubic-bezier(.32,.72,0,1)}
@@ -692,7 +692,7 @@ body>.teams-overlay{z-index:2000}
 </div>
 
 <div id="wxBg" aria-hidden="true" data-mode="cloudy"><div class="wxbg-sun"></div><div class="wxbg-clouds"></div><canvas id="wxBgCanvas"></canvas></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="dn-dot" data-navdot="home" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="dn-dot" data-navdot="weather" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="dn-dot" data-navdot="sports" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="dn-dot" data-navdot="faith" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="dn-dot" data-navdot="christmas" aria-hidden="true"></span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="dn-dot" data-navdot="home" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="dn-dot" data-navdot="weather" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="news" aria-label="News" title="News" aria-selected="false"><span class="tab-ic" aria-hidden="true">📰</span><span class="dn-dot" data-navdot="news" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="dn-dot" data-navdot="sports" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="dn-dot" data-navdot="faith" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="dn-dot" data-navdot="christmas" aria-hidden="true"></span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -872,8 +872,8 @@ body>.teams-overlay{z-index:2000}
     <div id="homeNflGames"><p class="hw-status">Loading Football games…</p></div>
     </div>
   </section>
-  <!-- News widget: the News tab's feed, on Home (Derek, Nov 24, 2026) —
-       News tab deactivated; this shows Top Stories + Local only, no
+  <!-- News widget: the News tab's feed, also on Home (Derek, Nov 24, 2026) —
+       section chips (Top Stories, Local, Nationwide, Global), no
        politics and no war info. -->
   <section class="hwidget" id="homeNewsWidget" aria-label="News widget">
     <div class="hwidget-head"><h2>📰 News</h2></div>
@@ -1377,7 +1377,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 
 </main>
 <!-- NEWS -->
-<main class="wrap view" id="view-news" hidden>
+<main class="wrap view" id="view-news">
 <style>
 #view-news .nhero{text-align:left;padding:38px 4px 2px}
 #view-news .nhero h1{font-size:clamp(34px,8vw,46px);font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.05}
@@ -3368,18 +3368,19 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News<div style="font-size:11.5px;opacity:.65;margin-top:5px">Last updated <span id="footerUpdated"></span></div></footer>
 <script>
 (function(){
-  var views={home:1,weather:1,sports:1,faith:1,christmas:1};
-  /* NEWS DEACTIVATED (Derek, Nov 24, 2026) and COC DEACTIVATED
-     (Derek, Nov 24, 2026): 5 tabs in order — Home, Weather, Sports,
-     Faith, Christmas. The News tab markup stays in the file (hidden)
-     and its feed now lives on Home; the CoC tab markup stays in the
-     file (hidden) and its live war scoreboard now lives on Home.
-     Snapshots are in archives/2026-11-24-news-tab.html and
-     archives/2026-11-24-coc-tab.html. The slides, the bottom-bar
-     buttons (filtered + sorted by this same list) and the selection
-     pill are all derived from tabOrder, so pager and pill stay in
-     sync. */
-  var tabOrder=['home','weather','sports','faith','christmas'];
+  var views={home:1,weather:1,news:1,sports:1,faith:1,christmas:1};
+  /* NEWS RE-ENABLED (Derek, Nov 24, 2026) — tab + bottom-bar button
+     restored after users noticed it gone; its feed still also lives
+     on Home as a widget. COC DEACTIVATED (Derek, Nov 24, 2026):
+     6 tabs in order — Home, Weather, News, Sports, Faith, Christmas.
+     The CoC tab markup stays in the file (hidden) and its live war
+     scoreboard now lives on Home. Snapshots are in
+     archives/2026-11-24-news-tab.html, archives/2026-11-24-coc-tab.html
+     and archives/2026-11-24-no-news-tab.html. The slides, the
+     bottom-bar buttons (filtered + sorted by this same list) and the
+     selection pill are all derived from tabOrder, so pager and pill
+     stay in sync. */
+  var tabOrder=['home','weather','news','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
