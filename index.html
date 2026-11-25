@@ -872,35 +872,30 @@ body>.teams-overlay{z-index:2000}
     <div id="homeNflGames"><p class="hw-status">Loading Football games…</p></div>
     </div>
   </section>
-  <!-- News widget: the News tab's feed, also on Home (Derek, Nov 24, 2026) —
-       section chips (Top Stories, Local, Nationwide, Global), no
-       politics and no war info. -->
+  <!-- News teaser: the full feed lives on the News tab now; Home
+       (Derek, Nov 24, 2026) shows just the top 3 Top Stories to make
+       people tap through — no politics and no war info. -->
   <section class="hwidget" id="homeNewsWidget" aria-label="News widget">
-    <div class="hwidget-head"><h2>📰 News</h2></div>
-    <div class="nfeed-chips" role="tablist" aria-label="News sections">
-      <button type="button" class="nchip is-active" data-hnfeed="top" role="tab" aria-selected="true">Top Stories</button>
-      <button type="button" class="nchip" data-hnfeed="local" role="tab" aria-selected="false">Local</button>
-      <button type="button" class="nchip" data-hnfeed="nationwide" role="tab" aria-selected="false">Nationwide</button>
-      <button type="button" class="nchip" data-hnfeed="global" role="tab" aria-selected="false">Global</button>
-    </div>
+    <div class="hwidget-head"><h2>📰 News</h2><button class="hw-go" data-go="news">See News →</button></div>
     <div class="nfeed" id="homeNewsList"><p class="hw-status">Loading news…</p></div>
     <p class="nfeed-updated" id="homeNewsUpdated"></p>
   </section>
   <script>(function(){
-    /* Home News widget with sections (Derek, Nov 24, 2026) — Top Stories,
-       Local, Nationwide, Global chips, same as the old News tab. Each
-       section shows its own newest 6 (politics/war filtered out), from
-       the one news.json fetch; switching chips re-renders from cache. */
+    /* Home News teaser (Derek, Nov 24, 2026) — the full feed lives on the
+       News tab now. Home shows just the top 3 Top Stories (politics/war
+       filtered out) to make people tap through: tapping a headline or
+       See News opens the News tab. Refreshes every 4 minutes. */
     var list=document.getElementById('homeNewsList'),upd=document.getElementById('homeNewsUpdated');
     if(!list)return;
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
     function agoStr(ts){var s=Math.floor((Date.now()-ts)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
     var SKIP=/trump|biden|vance|harris|obama|clinton|senate|congress|democrat|republican|\bgop\b|white house|capitol|election|midterm|impeachment|speaker|pelosi|schumer|mcconnell|\bwar\b|iran|ukraine|russia|gaza|israel|hamas|missile|airstrike|invasion|military|pentagon|troops|ceasefire|nato/i;
-    var cur='top',cache=null,updAt=0;
+    var cache=null,updAt=0;
+    function goNews(){var t=document.querySelector('.bottomnav .tab[data-go="news"]');if(t)t.click();}
     function render(){
       if(!cache){list.innerHTML='<p class="hw-status">Loading news…</p>';return;}
       var seen={},items=[];
-      (cache[cur]||[]).forEach(function(it){
+      (cache.top||[]).forEach(function(it){
         if(!it||!it.title||!it.link||seen[it.link])return;
         var ts=Date.parse(it.published||'');
         if(isNaN(ts))return;
@@ -909,12 +904,13 @@ body>.teams-overlay{z-index:2000}
         items.push({title:it.title,source:it.source||'',link:it.link,thumb:it.thumb||'',ts:ts,when:agoStr(ts)});
       });
       items.sort(function(a,b){return b.ts-a.ts;});
-      items=items.slice(0,6);
+      items=items.slice(0,3);
       if(!items.length){list.innerHTML='<p class="hw-status">No stories right now.</p>';if(upd)upd.textContent='';return;}
       list.innerHTML=items.map(function(a){
         var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
-        return '<a class="nfeed-item" href="'+esc(a.link)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' · '+esc(a.when):'')+'</span></span>'+img+'</a>';
+        return '<button type="button" class="nfeed-item"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' · '+esc(a.when):'')+'</span></span>'+img+'</button>';
       }).join('');
+      list.querySelectorAll('.nfeed-item').forEach(function(b){b.addEventListener('click',goNews);});
       if(upd)upd.textContent=updAt?('Updated '+new Date(updAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'):'';
     }
     function load(){
@@ -926,13 +922,6 @@ body>.teams-overlay{z-index:2000}
         if(!cache)list.innerHTML='<p class="hw-status">Couldn\u2019t load news right now.</p>';
       });
     }
-    document.querySelectorAll('#homeNewsWidget [data-hnfeed]').forEach(function(ch){
-      ch.addEventListener('click',function(){
-        cur=ch.getAttribute('data-hnfeed')||'top';
-        document.querySelectorAll('#homeNewsWidget [data-hnfeed]').forEach(function(c){var on=c===ch;c.classList.toggle('is-active',on);c.setAttribute('aria-selected',on?'true':'false');});
-        render();
-      });
-    });
     load();
     setInterval(load,4*60*1000);
   })();</script>
@@ -1419,11 +1408,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #homeNewsWidget .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
 #homeNewsWidget .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
 #homeNewsWidget .nfeed-updated:empty{display:none}
-#homeNewsWidget .nfeed-chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-#homeNewsWidget .nfeed-chips::-webkit-scrollbar{display:none}
-#homeNewsWidget .nchip{appearance:none;flex:0 0 auto;border:1.5px solid var(--border);background:rgba(255,255,255,.35);color:var(--ink);font:inherit;font-size:13.5px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:38px}
-#homeNewsWidget .nchip.is-active{background:#b42318;border-color:#b42318;color:#fff}
-#homeNewsWidget .nchip:active{opacity:.75}
+#homeNewsWidget button.nfeed-item{appearance:none;background:none;border:0;border-bottom:1px solid var(--border);font:inherit;text-align:left;width:100%;cursor:pointer}
 /* Home war risk widget (Derek, Nov 24, 2026) — percent + level only */
 #homeWarRiskWidget .hw-risk-num{font-size:52px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
 #homeWarRiskWidget .hw-risk-num.bd-safe{color:#1e7e34}
@@ -1633,8 +1618,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
    the market composite (P(US invades Iran) + (100 - P(US-Iran
    ceasefire by Dec 31))) / 2, averaged with an attack score from
    going-on.json — each attack in the last 7 days adds 10 points
-   (capped at 70) — so a sustained exchange climbs the number even
-   when the betting markets are slow to move. Without an attack
+   (capped at 40, lowered from 70 on Nov 24, 2026: with the market
+   pricing a ceasefire at 87%, the 70 cap let attacks pin the risk
+   near 40% even as traders priced de-escalation). Without an attack
    count (feed missing/stale) the number is the market composite
    alone, never a guessed attack count. Computed live from the two
    Polymarket Gamma prices plus going-on.json. If either market
@@ -1697,7 +1683,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
       var cease=evs[1]?pickPrice(evs[1],WATCH[1].pick):null;
       if(invade===null||cease===null){fail();return;}
       var market=(invade+(100-cease))/2;
-      var attackScore=(attacks===null)?null:Math.min(attacks*10,70);
+      var attackScore=(attacks===null)?null:Math.min(attacks*10,40);
       var risk=(attackScore===null)?market:(market+attackScore)/2;
       var b=riskBand(risk);
       var num=document.getElementById('etRiskNum');
