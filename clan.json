@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25T03:52:31Z",
-  "fetched_at": "2026-11-25T03:52:31.618Z",
+  "updated_at": "2026-11-25T04:58:09Z",
+  "fetched_at": "2026-11-25T04:58:09.444Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -306,6 +306,7 @@
     "clan": {
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
+      "badge": "https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png",
       "stars": 0,
       "destructionPercentage": 0,
       "attacks": 0,
@@ -365,6 +366,7 @@
     "opponent": {
       "name": "GAMMARAHOTEL",
       "tag": "#2CYJP9RPU",
+      "badge": "https://api-assets.clashofclans.com/badges/200/TTPFmAOkvBsMgcp1lsejcJXKkHW5WY9MQDSrOGESekU.png",
       "stars": 0,
       "destructionPercentage": 0,
       "attacks": 0,
