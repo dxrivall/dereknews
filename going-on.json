@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-25T06:47:18.440131Z",
+  "updated_at": "2026-11-25T08:18:48.375886Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Texas DSO data breach affects more than 341K people - DrBicuspid.com",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcl84bEtkOGh1czNnNWFVMHp4aUpyWTREYUlzME5ZUG4tbWNVR2oyZkxsUTc2OVNiMkI3a3A3TDFOd004eDhROUdrRzF3dXpnQnpsZ3pUZVhlMW51ZmVVNVgyeGhVX2stcjREdFJyR0VZckNUeHU4TFpDUW02ckZiR014bUFrNEN6SVlINTVnSmVJRXRlQmE3bWJoN2ZSRUFsWmxZT2RrN2xOYnNFUkk3UGZ4Z210NjJZQTgwWnlkd1NSUUVDRmpia2NJZXZEc185RGJMQlg2SUc?oc=5",
+      "date": "2026-11-25T07:31:27Z"
+    },
     {
       "title": "CIA And ODNI Say Cyberattack Exposed Unclassified Open-Source Intelligence Data: who 23 outlets blamed - NewsCord",
       "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOVGQ1US1BS0pIV3cwZ3VXUENPY0pVVk1yS1R0ekpDd2R2WlAycjdGUDlLaE9ab2t3cEJnYzFtNXQ3WDU1NVJkanFLUUpCOHpibzdOYVZLUi1fSW1fbktxU2dhYVByWVVkMzVvcU44azBydzNEVlowcHdmSzlveTF0dVVua05xQ1BOelFIT3c0UnowQUpzMHM0dFpzeUk2UVlySXpsams5N0tmY2NFMTdZVXNfSVVxeVEyRU1LaVBuSE56MEgyVHM2X09oRVg3aDRneVB1LVA5eFpqZ2I2dlRzUTFBd21IMnBO?oc=5",
@@ -84,6 +89,11 @@
       "title": "Data Breach Notification Palestine: 2026 Guide - Global Advisory Experts",
       "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTlhkQ01PLUJkZE41UFhFMVVuTEFoenV0b3IycjdSV04xeVNvYnBWV3FuaFF5R1lOZzNQRDRnRWNManRVdEhEQXBDNG9wdDhrNV9UUkRvVTF5U0ZpU0VMV1Z4R3FWSGNHbUpmRG5NYl90NnkwczFydlNvUjFQTHNPamY5VURUWmF4RlRPR0NKRkh5Q1djQjRTSA?oc=5",
       "date": "2026-11-25T00:09:17Z"
+    },
+    {
+      "title": "City of El Cajon Suffers CyberAttack: Data Reportedly Posted on Ransomware Site - East County Magazine",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUlo5d1ZweDRIdnBTWEx4LV9MM0QzMXA0RmhXejRXZVVSSlFKWEpGVjJTZFoxanRvWTdRTFZiemcxR1MxODFNZElrN1Z0VTNPeVk4bmJWbWtla3RRWG1qaHVMMWhheWdKRF81Uk1rY29BVWppY3ZUZTVGMUdJeDZoMkJCQlZwOW05VEIxOWFxNjBXOGRHeTR5Yk9WM0RWdmZmZ0g3a01aY1o2ekRwX0xR?oc=5",
+      "date": "2026-11-25T00:07:49Z"
     },
     {
       "title": "Hackers breach CIA intelligence network in latest US cyberattack - TradingView",
@@ -364,6 +374,11 @@
       "title": "Airport customers hit by payment data breach - Yahoo",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNUl5aDZ0VUtwSGdJb0REYXZJTllWTGV4eHhmbWtHY292ZkdQTUVScEM3TEx0NTYyazYwT21nN0JYS1FkLWI2bm8tMHBUc0l0MWF6d2o0eUlmRW9iSGhIS2NYZVZGbldYYVdibU9IWVdqdUw0TGk4bExhLWtTWkROeFdXYnJYMF9XekN1WWtndm5mUGg3UEE?oc=5",
       "date": "2026-11-24T16:25:31Z"
+    },
+    {
+      "title": "European Commission confirms data theft in EU Academy breach - BleepingComputer",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObDhhb05Ed3pMY0s5emJ6dlJGSDVKYlYyZ3Z0QW42eVlmRWxaZXN2QzB1MENaUlZpT3JqTE1HeG1yd05NWllUQWo1NGFfOGVrQ29ITDY0UUpXOURrbEZlTGlhNUs2TUVoQ3dDMmxaN0FTNUhVRkZVOV9NUGFXUEpzR2EzaVZ6cDVTTVVSN1NjNXVlMm84aldnUlp5ZTc4Vlk2TmdnZFVfMU1mTkZ40gGyAUFVX3lxTFBnT195cW9sTU8xb0FObWNRUlVOWFE0SV9uZ1dsMUV4RmJGem1GSTRDRDRfX2I1T1FfWEhtMGtPbXRUSHFpc2w2Y19QZW52NFJoZjZwc2pUb3JvUzdMT0pLNm9TM0t1Sk9zWUJUR2tGV1JVS0h6QklMc1NrbHRPUzBzQnZwaTQxNU9LLVhhTEJjMHFkb0w5V0R4aElWQXFSVmNmcUx3Z1ZKdW1UTk9qTXBsb1E?oc=5",
+      "date": "2026-11-24T16:22:44Z"
     },
     {
       "title": "Decathlon data breach leaves customers at risk - Cybernews",
@@ -1679,6 +1694,11 @@
       "title": "Brussels Airport cancels flights as Belgium strike shuts air traffic control - Beinsure",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaGZ1dzJJUnVTTWp3QTZ2cURKczVsVWZtUjROOUxWN01EWk13cndFU3pjY3VSYWpJb0I3VzNROU9LMVYybERDcDZVU2hzakYwNHFkLUl6MHpPV3Fhbk0xS1hTWXZSQ2ZWcGZDeEpVSkZPa0JFMkdIR3I0bHR4TW1mekxrZw?oc=5",
       "date": "2026-11-22T23:08:37Z"
+    },
+    {
+      "title": "Etihad, Air India Extend Saudi Flight Suspensions as Flights Between UAE and Saudi Arabia Remain Disrupted - Avi-Go",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1yZmtkLTNwNzF2bUVwbEN6ejh4S21keGh4aUowSzJla3ZNTy1EZml6eFNVRERZLWg0djJuZHJPRE4wR1NDbWpQN2tCS1JfcjltRER2bmlEVm1mZU5PU2IxMm9lckJvN0J6ZnN1VlEtQ2Y3NWM?oc=5",
+      "date": "2026-11-22T22:55:13Z"
     },
     {
       "title": "Glitch delayed Delta flights in Atlanta as Thanksgiving travel ramps up - USA Today",
@@ -6354,101 +6374,6 @@
       "title": "What to Know About the Global Ransomware Attack - Time Magazine",
       "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBtODExYUtsWXBla1BJbTVJbEUtWGZReHdzT01IdHY2TDAyMmVGSUxTaWdFVDZ0NTBYaVYtTjVuVk1FUUQ2SXVZ?oc=5",
       "date": "2026-11-18T08:30:52Z"
-    },
-    {
-      "title": "Martin Lewis warns Brits to prep bank accounts for doomsday with simple tip - Metro.co.uk",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaVNuRGF3aHU0WTNsTU4zLUh4QUF5WW5ZbFRNaDhBNjhpbjQ4czVvWkItUjRpcDhkbldBLTlEZFlSV2NoVUJjQ1Y2cHhrV2w3UXhyYTRya000Z3RQdU5JQzhLcE8xWlVvQ19Ga0V2M3AyTUpNU2tLeGdLT3puRThHNEk3TVpGSV91SGhVeFNscVdFZmtfdEdjaWlDQzFod2hmdkxIYnZuZ9IBrAFBVV95cUxOdmRxaG10RlduWXE4enA0YXRVcFdLaFNpUEdmeFA5dlV5ZnUtaDF1cHRoVVp5X0NEcl9uV1NOMTd6U2xMYUpRQ3Y2RHVval9uRUF0eW5WeERnX0tjd0JJclc3dDJrcDVrdmtEbUx6bVhwWXFoN3ZPLXJBM01Nbm9hYXg0NDk3dl82Zk1hOFc2am1VMGJUOWdTVjZTNVNWOGh1MGViQ1FYcmU2UE5H?oc=5",
-      "date": "2026-11-18T08:15:00Z"
-    },
-    {
-      "title": "Gulf states intercept Iranian missiles after US Qeshm strike - Israel Hayom",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOVU5YjNibkhycGlZZGMxOHRmd3dfdFVqb3RGVXdxYzdoclNOMjgxa1Q0Tnd5a0R5ejg5R3dzOXBBNVF4OGZVc2hZTVZ0SzRwTnQ2MS1JdVFDLW85dGVfUF9keFdTV0p4VmFrTW45STE3ck84NUFHMkRjTEFnY2IyMmhGVzNOeFN6Y0E?oc=5",
-      "date": "2026-11-18T08:13:50Z"
-    },
-    {
-      "title": "Finland calls emergency alert test a success despite missed messages - Yle",
-      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5BZUdEWnhWN0V1LVdlV002SndqOVREMVlCdWVRT0xuRjhOaHF0M19FaHlzYkx4ZlhjSGJITjJFSFl6QQ?oc=5",
-      "date": "2026-11-18T08:09:44Z"
-    },
-    {
-      "title": "Trump says US taking ‘Dirty Bomb’ threat in Washington ‘very seriously’ - Times Kuwait",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbk5GQXF2NWIzN2t3Y1M4ZEtzbDE5RlNhVGpjR0dKUDJqMV9fZUJ4MVY1THRRZHhjQ2JTeWgySTdNbUdzcHJnWTAxZ2dodUVxWEVaeU5fYzFwMmM4WjRVQ1IxMTdneEJsUnJZT0NyLUxMTzI5X2JCRzJpOUttbFQyeHVyRGRhRzY0ZUhhcDFJcUJSTXZESUxB?oc=5",
-      "date": "2026-11-18T08:08:03Z"
-    },
-    {
-      "title": "What Is Ransomware? How Attacks Work, Real Cases and Defences - MLQ.ai",
-      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9uOEpXellEVVRqUjduZ05JODBOdVlnNVltcm1OdkFFRENrTHF0WnEzalZvWEFsUUFsQk9PNXhmSVlWazRHNzZwSjY0NA?oc=5",
-      "date": "2026-11-18T08:00:00Z"
-    },
-    {
-      "title": "Emergency alert test in Canada: Alert Ready to issue nationwide test on November 18, 2026 - Toronto Star",
-      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPbWxjdE9NczdPbWJYdDFqSEV0THJWNjV0OFByd2ZRSVdxUHVDN2lFdENVaVlKVWVtamU3cHZQLXk1b2JhUUhHQkM2Tlp1eEd6Ykd2czJ3WkNsNUhyUmJhWnZFVnZrdWVyS1JzZVJTeE8zV1NwcEdBdWdsUXIxWUZldDViMVRjckR4b2lSMVp3UGJReVlmWElRbUozOUIzdlROcUlsemFkUEY4bVZQcGNGSjRQbko0Zkt5dnkwVmF0QjB1c2pOYUtFek5hdmVBdG5Nd3pHSGdIdU5xSEhlV1BCUThydlJFdEtGTElYZlBhZEtNZWk3Vm9GRmFIaWhXR2lueGp3aUln?oc=5",
-      "date": "2026-11-18T08:00:00Z"
-    },
-    {
-      "title": "Kuwait condemns repeated Iranian attacks, reserves right to respond - NewsCord",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBDSWhISlVrVElxamxwcVNGd0RsSjExdDdkVllnVWtqdE1leDVvcXRBaDQ2aHBrY2JHU0dlZDJNV1RsekxYYnN5LV9rb3dCZER6R3JuM2pjXzlFVUxIbExGVk53a3ctYWRvUm81ZE00cFl1UTJ0ckpBb2hmSWs1TFk?oc=5",
-      "date": "2026-11-18T08:00:00Z"
-    },
-    {
-      "title": "Iran dismisses report of alleged ‘dirty bomb’ attack on Washington - Inquirer.net",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcDVqT1QtcGllMGt6MWUyaTJwb3B3WmdRUWpoRFhlaElmbFlKcGx4NlFobmlGaDVOVlJ1aFVjUDVmd2xrT3c0Sl9IUGRFdmx2aHk3Nld3OUtNMm5aU3ROUFl4TEpWNVVzdnF0dnF6TW5nZHBQWS0yYmMyMzJQWUIxd0RONndQYlFzd2hrZmN2bUI0ZjhwLUt5MWRNRDByVldsbzRHYWFFZEZKVWZrN1HSAa4BQVVfeXFMTnA1ak9ULXBpZTBrejFlMmkycG9wd1pnUVFqaERYZWhJZmxZSnBseDZRaG5pRmg1TlZSdWhVY1A1Zndsa093NEpfSFBkRXZsdmh5NzZXdzlLTTJuWlN0TlBZeExKVjVVc3ZxdHZxek1uZ2RwUFktMmJjMjMyUFlCMXdETjZ3UGJRc3doa2Zjdm1CNGY4cC1LeTFkTUQwclZXbG80R2FhRWRGSlVmazdR?oc=5",
-      "date": "2026-11-18T07:45:43Z"
-    },
-    {
-      "title": "US Strikes IRGC Site on Qeshm Island as Iran War Flares Anew - Bloomberg.com",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMy04aVlmWEc4cksxcmFWZTdRek9UOGtuZXRQT3VCYUZuNDZwYjFjTEhDRzNDSEM3LTY5dUF3YlpKOExncVR1aFZ3Z2dlM0c1ajN2ZHJUSFdNOW1mZmZiNXc4V0Jqa1BQc3ItYmxOamIxX3FieWc4QldOTFUxRER6bnc1YnVESzhnUXV2VUcwVkstcmdGNkhGRDYtcTNGX29maFV3MmZZR3piZmxDVm9DSVd5M3FoQQ?oc=5",
-      "date": "2026-11-18T07:40:00Z"
-    },
-    {
-      "title": "Nationwide emergency alert test scheduled for today at 11:20 a.m. - Santa Ynez Valley Star",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcXlxQmNsc0ZTOTZVc2V3ZHJOQXkxQk5Mb0g4dW9UYXB1MWtIdlVyblRJTUxIUDJ5SFNzZTNMU3RnaXZoNFpQbDZXWTZTR2tuXzFMRGhtYmF2MENUMGVDQThDR3IzMS1OZnZEd0tKQUx2ZEpzdklsQ3FNNG9aWV9XcURsc1p2TjVCTmtIcVppTlFrQTlxa2x0c2JhUXc?oc=5",
-      "date": "2026-11-18T07:39:52Z"
-    },
-    {
-      "title": "Iranian Army Drones Hit US Air Base in Kuwait - تسنیم",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNNnVqZmNCcWgxQlBwY2NKMnF1cjhubEFMbjlRY1ZDMDQ1eHNhUm1najFTNGl0QnFYVGxLanNEVEFYVjVJdnJCMWNmaW15ejhUUkJjbWprQkxtNEp1Z2RGeGZLTEUxMmRmUnM5Sm15dUNJZ1Rvb2JTLWhRUmEyQWx3MWxmZXpzZGtsYXV1RWF1NHY5T0UzM3pTUUNENGpkLTTSAaQBQVVfeXFMT3JpNWNuTmQ0bGZRVzB2dXNPbWRFV1JPczRNWi1PVFZPVVNtSUExSXliSWZBLUZLdXc1UUlDQlpLTUtuTllCZGZHbkxJVXptdGZPdzZpMU1EQXhURFNuaWlDVGVnQklNel9rVkJNa2x3Z0RFSzREN25LOWJLR0VZZ0FiQ2FlN3FndXQ3ZlBnbDZhRkZjbGRwWlBUMHd5OWdwV1VYT3E?oc=5",
-      "date": "2026-11-18T07:38:34Z"
-    },
-    {
-      "title": "Trump takes reports of potential Iranian plans to use a \"dirty bomb\" in Washington seriously - جريدة القدس",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPbFdCV3JyOVZTWG9vcGc3Z1M0MGtJcmxqbUhKT0RQQWxTdTN2TWtDTTVqQTRvWWtjVmJCLUl0TGYzejFzNWlrYnp2UzdjYzhqemhwWnhxRVpKNWFPLUdSZTZ3S05LWm1jY1lGdlo1SDRLcHd5WFRIa2Q1TjJBS1FvdVRQODZ5ZUx3LS1QazVLSXBNOGlLZFM1aGtzRVhaQlZnckQyc210d3J6dFN5ZFFyUy0xTFVDQQ?oc=5",
-      "date": "2026-11-18T07:37:41Z"
-    },
-    {
-      "title": "Riyadh Airport updates: Riyadh Air to resume flights to three destinations next week - Time Out Riyadh",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9iOFk1X3lPWG1ObEtyRWVWVHBaNGZYZE9HNUVhbzB3MXl6cWgzMjZ1YjhhWVRodGFtM2tvVmdJaXc4V1NKY1hMZWtPSFZzYXlKV2k3ek9ZZXZvdWF2WjU2NDFUeWR2UVhJQjhIOThuRWdNMWtMWGR5TXJ3?oc=5",
-      "date": "2026-11-18T07:37:25Z"
-    },
-    {
-      "title": "Dubai and Middle East flight disruption: Bahrain, Kuwait and Saudi Arabia face fresh attacks as escalations continue - Condé Nast Traveller Middle East",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPaFpHY2ZpZFJZUHN3X2xYakdpS1JacUEzOHV4c2pUQmZrc0tvaEZiSlJoaVZ4Y3FnVUpNTGRnZTRhclBncU96YmNfMTA3SWpDT0ZrcFloeE0tekJ2cF8tQ3JGZ052UG1ZMk10VTh4X2NfNXNWQ0RJSTBzNEY3X3JRX2JsRkl5Y0RuSUNGbVR4LTVUZi0wMVFHc1JmM1JHT1lFYkEwVTNBUGg1WVRZZkdSU2xLcVUwNlUtZWNHekl4Y1k2d0d0dnc2aDQ0OHoxd0MzTzJ0M3Z0Rm5wb0IzUVl0eU5oQXU?oc=5",
-      "date": "2026-11-18T07:26:30Z"
-    },
-    {
-      "title": "Cause of communications outage that grounded 18,000 US flights still elusive, transportation secretary says - finance.biggo.com",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE53dlR6MHRydUpEMVE1NW1vVktPZTRlRVpkYWdHSm9IUl9VcFVjam9lbmlnWnJIcGhMTXp2X016NXdGc05Fd0c5TW9HSHhOVWxYeUxObUZieTBYRkhiOFoxUWQ0ZjRQb3p3TzM1b3lhWHF5UnFqSWc?oc=5",
-      "date": "2026-11-18T07:25:00Z"
-    },
-    {
-      "title": "Global blackout rumors grow as USA prepares for Emergency Alert test on November 17 - Soap Central",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYUY5VFQxZTBXTUZ1QlZUSU4wcnBxeldaVkVoWlMweWM2ZFdnLU9MYnJQUE9qVDhpQjdIRUVvQmlhUG43X09Tamh2OHFnNThaZmwwb1o1RE9ETWZ5UDdEbDlQMGdmZ3N6RjJ4dUV6TEczbUZKdU40WTVPRGo1dEpiaV93azd4WG1UZ1Y0cHdRcTR1dkQzVnVydTNvVi1LczUxMXgwV2JfU1F5NWcyZmphU2RXMy13Vzhk?oc=5",
-      "date": "2026-11-18T07:19:00Z"
-    },
-    {
-      "title": "Health Management Academy details hospital cyberattacks, leading to care disruption and prolonged system outages - Industrial Cyber",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQYjR5TWpXcmdMdDZPWTg2RkdtWEZQYU9QWFNENzNoOFA2VjRtNkFfa1FiTFJhMnEtTzQ2OHdGS1VXcHgtZ3Q1U0hleHR6RmtuUWZUMnhMRmNaQWU0eWN1N2Z2YzNHOU5VblEtWnpmVTVzV3AxNGRtR2ZTY3hFcmNHMzU4UVNXVEc5cm9RVTlMelBpYkNFQW5jNlRxZ1FKSXoyRHNhS2ZtZVhfc3BhbGpFMGZGUUZqSWk2MmNfN2QtRGUxRmZmTlo2UDZXZTRxOGFzNTF6X1QwSHkwZkpuYVUwYQ?oc=5",
-      "date": "2026-11-18T07:16:59Z"
-    },
-    {
-      "title": "Cabinet urges caution, calls for oversight of data breach notifications - Focus Taiwan",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE90eTVmSzk1UFQxSTVHNUVmM1dnRmp5amNQTTl2SVp4RlJjTlEtLWFPTkRaZFBwbjZwRktkWnZYbzVVcHVRc3hGc2gtZTVzY0hfbktwT2MxSQ?oc=5",
-      "date": "2026-11-18T06:57:00Z"
-    },
-    {
-      "title": "Who Conducted Cyberattack on France? Iran, or Israel and Ukraine? - تسنیم",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMlhNR01PUmlkb3VGNFZXQkVvUERvR2RJdS1MX3RDYnp2NEJLYWVIR2JwcWZXZE90bk5MVjFMRmZwcnY2SWhtdmpZaldValRsWFF5VDJUZTVzX3RrZzl2TG9CMFFJY21sVF9lS1ZyRWJSSkFHckxBVXd4cG8tcHhDLXJTODBtSG5QX3F1dGU5ZWF0WDQtVjBiTk1EMEFSNFB1UG9yNGdLMmJXTkZyLUU0eUdaV1dMQdIBuwFBVV95cUxQeDZlUWh2VE9UZThXcGdVOEpwb3NYV1ZiV0hYTEd0dVUycFoydktXMmp3SERFSUVsdUdJb2g1djRPcmhFYkdfRG1HQzZVVVltcmZCQ2JNLURRQi1TQkdKWlY2bFE3VjdRWEVOb3FaOUE0cHc2VEJvUUpPQnNiaTEzcjZQWGhOUWdjSGItZkZ4Vzhkb0Mza0pMdUEyeTVrSml0NnJOeWo3Y0lLVXo4cFp0ZFRQV2ZTNlFlRXJJ?oc=5",
-      "date": "2026-11-18T06:54:34Z"
     }
   ]
 }
