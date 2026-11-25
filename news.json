@@ -1,114 +1,128 @@
 {
-  "updated_at": "2026-11-25T10:22:43.512792Z",
+  "updated_at": "2026-11-25T11:21:43.912660Z",
   "sections": {
     "top": [
+      {
+        "title": "AP Top Stories November 25",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/ap-top-stories-november-25-a3754d307b034b78b93848979a5fa65e",
+        "published": "2026-11-25T03:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.tWYUg56E49lyNvN76NoI0A&pid=News"
+      },
+      {
+        "title": "Stray Kids look ahead to ‘Run It’ tour",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/stray-kids-look-ahead-to-run-it-tour-1f1ab9e149c6419dacf0dbb72abbe057",
+        "published": "2026-11-25T03:12:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.bbPXC2tfhKhQM3z3Ifkxjg&pid=News"
+      },
+      {
+        "title": "AP picks for rivalry week: Michigan-Ohio State, Texas-Texas A&M and more as regular season wraps up",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/ap-college-football-picks-f4430c1e8b78a9cc0cbae49a004ddb18",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.8jARFg3q66_ih0Pb4N90kA&pid=News"
+      },
+      {
+        "title": "No. 7 Tennessee looks for win over Vanderbilt to help lock down CFP game, perhaps at home",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/tennessee-vanderbilt-rivalry-e4f9a5920c057fefc9af2a430d813b8d",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.34fbICU8J-sAVVr3I2-SoQ&pid=News"
+      },
+      {
+        "title": "Texas Tech looks to join Utah in Big 12 title game, and BYU hopes to still have a chance",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/big-12-preview-utah-texas-tech-byu-ce61b9b90282976522afcd5ee462f61b",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.9SkCq4GzYLfwsYQ7QL8nBA&pid=News"
+      },
+      {
+        "title": "Big Ten championship game berths remain up for grabs as the regular season enters its final weekend",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/big-ten-f6648c7cd4a2fd703bec735fa05efb90",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.6NLNpEepF8GPTQs1kBGXEA&pid=News"
+      },
+      {
+        "title": "Wiaan Mulder strikes for South Africa to leave Bangladesh trailing by 294 runs at lunch on day three",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/south-africa-bangladesh-2nd-test-cricket-mulder-19ea54030d1d29884a02f397581a25f5",
+        "published": "2026-11-25T03:06:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.KQ4LyCXpZErT_UhF9aZ5JQ&pid=News"
+      },
+      {
+        "title": "Canada's foreign student restrictions test Carney's push to attract research talent",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/americas/canadas-foreign-student-restrictions-test-carneys-push-attract-research-talent-2026-11-25/",
+        "published": "2026-11-25T03:04:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Thanksgiving weekend sports: Here are the key matchups in a made-for-TV spread",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/thanksgiving-sports-nfl-nba-ncaa-c73e0a85cbee632be640d5c402dd2547",
+        "published": "2026-11-25T03:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.SJVCyDJOIbGxL-cEf72G0g&pid=News"
+      },
+      {
+        "title": "Cambodia hosts Chinese military for largest Golden Dragon joint exercise yet",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/cambodia-china-military-army-naval-base-45c1eb364c82c346340916e6174ea8e3",
+        "published": "2026-11-25T03:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.x3d35K8MgjJIGFcT4xG7Aw&pid=News"
+      },
+      {
+        "title": "Auriemma fumes after UConn’s loss to South Carolina: ‘Incredibly frustrating’",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/auriemma-uconn-frustration-7f7d4c2ce05368caf64e78b8ec70c8c8",
+        "published": "2026-11-25T02:59:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.FAudop7Fs1zLzYvLleVYcQ&pid=News"
+      },
       {
         "title": "Alice Huang-linked firms listed $270 million in AI servers in China, records show",
         "source": "Reuters",
         "link": "https://www.reuters.com/business/finance/alice-huang-linked-firms-listed-270-million-ai-servers-china-records-show-2026-11-25/",
-        "published": "2026-11-25T02:09:00Z",
+        "published": "2026-11-25T02:46:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
       },
       {
-        "title": "UK police charge 2 men over a break-in at Prince William and Princess Catherine’s country home",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/prince-william-kate-home-break-police-3d46c539369cd1d397f3303dfac0bfdb",
-        "published": "2026-11-25T02:09:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage",
+        "title": "Closing manufacturing’s skills gap starts with the workforce you have",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/iran-says-ships-hit-mines-hormuz-warns-vessels-coordinate-passage-2026-11-25/",
-        "published": "2026-11-25T02:06:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/plus/closing-manufacturings-skills-gap-starts-with-the-workforce-you-have",
+        "published": "2026-11-25T02:46:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT._wndaUl9w7_7giQwSLdnFg&pid=News"
       },
       {
-        "title": "Bollywood union asks Modi to bar Netflix's Pakistani series in India",
+        "title": "EU postpones discussion to approve Tesla's self-driving tech",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/media-telecom/bollywood-union-asks-modi-bar-netflixs-pakistani-series-india-2026-11-25/",
-        "published": "2026-11-25T02:02:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Eurostar cancels Paris-London trains after staff go on unannounced strike",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/eurostar-train-disruptions-strike-london-paris-2ff8838e93231546aa50f7e96c53f840",
-        "published": "2026-11-25T02:02:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ywif3lN4QJlQMIjY7su3NQ&pid=News"
-      },
-      {
-        "title": "What to say if a holiday meal comes with a side dish of unwelcome career questions",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/job-questions-holiday-gatherings-family-handle-fedfdef9349a350da0f7836256b86f0a",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.gOxwq46Zwp_YAeLAOwIVXQ&pid=News"
-      },
-      {
-        "title": "As US strikes hit Venezuela, I knew right then that I was living through history",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/support-the-ap-venezuela-strikes-letter",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.wXNLuqr6apq654PkNxVOfQ&pid=News"
-      },
-      {
-        "title": "How I uncovered ICE’s plan to arm agents with shock gloves",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/support-the-ap-ice-shock-gloves-letter",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ruXzeByQX53P8gRVbuMvsQ&pid=News"
-      },
-      {
-        "title": "I trekked through Nepal to report the impacts of USAID cuts",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/support-the-ap-nepal-usaid-letter",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.cCYN2EL-3WqtZYPSPNf8nA&pid=News"
-      },
-      {
-        "title": "Alice Huang-linked firms helped fund China AI sector, probe shows",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW107225112026RP1/",
-        "published": "2026-11-25T01:55:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.6Rq74OA0UyL2zkpidWaRBg&pid=News"
-      },
-      {
-        "title": "Pope Leo laments failure of COP31 talks, urges action to address climate change",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sustainability/cop/pope-leo-laments-failure-cop31-talks-urges-action-address-climate-change-2026-11-25/",
-        "published": "2026-11-25T01:52:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.MhKZBQ4NVi_Cb-8xKwRDfA&pid=News"
-      },
-      {
-        "title": "Return of the wolf divides the densely populated Netherlands",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/video/return-of-the-wolf-divides-the-densely-populated-netherlands-674fdc25068e4b58bf77edffa3602915",
-        "published": "2026-11-25T01:34:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.HbnsDp5JGMjTpG2lcHscRQ&pid=News"
-      },
-      {
-        "title": "Australia passes online safety law, putting Big Tech at risk of multibillion-dollar fines",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/australia-digital-duty-care-law-tech-harm-b3f044575e9d8106f30a14eee2b89a81",
-        "published": "2026-11-25T01:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.SSUkqnI9siGa7leIH3RWrQ&pid=News"
+        "link": "https://www.reuters.com/business/autos-transportation/eu-postpones-discussion-approve-teslas-self-driving-tech-2026-11-25/",
+        "published": "2026-11-25T02:46:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.jnYm35rxlr02OlVjDRtcIg&pid=News"
       },
       {
         "title": "EasyJet's profit plunges ahead of Apollo takeover as fuel costs soar",
         "source": "Reuters",
         "link": "https://www.reuters.com/business/easyjet-posts-annual-profit-miss-fuel-costs-ahead-apollo-takeover-2026-11-25/",
-        "published": "2026-11-25T01:08:00Z",
+        "published": "2026-11-25T02:38:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.AiAHReqMUmBofJ1fniZqLQ&pid=News"
-      },
-      {
-        "title": "Thanksgiving travelers weigh risks, relief after US travel chaos",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW108425112026RP1/",
-        "published": "2026-11-25T00:53:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.w7y1vWzv5gl90l86yg-oyA&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "To make way for East Adams redevelopment, tenants from two public housing blocks will have to move by summer 2027",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/local-news/east-adams-relocation/",
+        "published": "2026-11-25T11:15:00Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/09/Screenshot-2026-09-29-161638.png?w=638"
+      },
+      {
+        "title": "'They don't like them': Syracuse lawmaker ready for a new bike-share company partnership as Veo announces changes",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/local-news/they-dont-like-them-syracuse-lawmakers-ready-for-a-new-bike-share-company-partnership/",
+        "published": "2026-11-25T11:00:00Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/VEO-BIKES.jpg?w=900"
+      },
       {
         "title": "Empire Fiber Internet CEO on high-speed internet's arrival in Madison County",
         "source": "LocalSYR",
@@ -164,23 +178,51 @@
         "link": "https://www.localsyr.com/news/local-news/urgent-guide-to-pet-friendly-thanksgiving-treats/",
         "published": "2026-11-24T12:00:00Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/AdobeStock_460849396.jpeg?w=900"
-      },
-      {
-        "title": "Measles surge has parents asking: Should babies get vaccinated earlier?",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/national/measles-surge-has-parents-asking-should-babies-get-vaccinated-earlier/",
-        "published": "2026-11-24T11:45:00Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/measles_mumps_rubella_vaccine_mmr_06102026_AP26161619525773-1-e1795449058599.jpg?w=900"
-      },
-      {
-        "title": "Fran Brown addresses the media ahead of SU's last regular season game",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/orange-nation/fran-brown-addresses-the-media-ahead-of-sus-last-regular-season-game/",
-        "published": "2026-11-24T11:30:00Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/FRAN-BROWN.png?w=900"
       }
     ],
     "nationwide": [
+      {
+        "title": "AP Top Stories November 25",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/ap-top-stories-november-25-a3754d307b034b78b93848979a5fa65e",
+        "published": "2026-11-25T03:16:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.tWYUg56E49lyNvN76NoI0A&pid=News"
+      },
+      {
+        "title": "Stray Kids look ahead to ‘Run It’ tour",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/stray-kids-look-ahead-to-run-it-tour-1f1ab9e149c6419dacf0dbb72abbe057",
+        "published": "2026-11-25T03:12:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.bbPXC2tfhKhQM3z3Ifkxjg&pid=News"
+      },
+      {
+        "title": "AP picks for rivalry week: Michigan-Ohio State, Texas-Texas A&M and more as regular season wraps up",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/ap-college-football-picks-f4430c1e8b78a9cc0cbae49a004ddb18",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.8jARFg3q66_ih0Pb4N90kA&pid=News"
+      },
+      {
+        "title": "No. 7 Tennessee looks for win over Vanderbilt to help lock down CFP game, perhaps at home",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/tennessee-vanderbilt-rivalry-e4f9a5920c057fefc9af2a430d813b8d",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.34fbICU8J-sAVVr3I2-SoQ&pid=News"
+      },
+      {
+        "title": "Texas Tech looks to join Utah in Big 12 title game, and BYU hopes to still have a chance",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/big-12-preview-utah-texas-tech-byu-ce61b9b90282976522afcd5ee462f61b",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.9SkCq4GzYLfwsYQ7QL8nBA&pid=News"
+      },
+      {
+        "title": "Auriemma fumes after UConn’s loss to South Carolina: ‘Incredibly frustrating’",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/auriemma-uconn-frustration-7f7d4c2ce05368caf64e78b8ec70c8c8",
+        "published": "2026-11-25T02:59:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.FAudop7Fs1zLzYvLleVYcQ&pid=News"
+      },
       {
         "title": "San Francisco braces for coastal flooding during Thanksgiving week",
         "source": "Reuters",
@@ -189,11 +231,11 @@
         "thumb": "http://www.bing.com/th?id=ONUT.SKU9U-qHYmQLnSvuj9530A&pid=News"
       },
       {
-        "title": "Plane crash off the coast of Mississippi kills 6, including 2 children",
+        "title": "US stockpile of unstable and dangerous lead azide scheduled for detonation in Iowa",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/plane-down-gulf-of-mexico-a1dfde1b2e73ef5862a4786db9644046",
-        "published": "2026-11-24T22:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "link": "https://apnews.com/article/iowa-lead-detonation-714e040baedc1cd90c2ba688be76cfc7",
+        "published": "2026-11-24T21:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.wJlkFxywUU2BYpmxhVp1DQ&pid=News"
       },
       {
         "title": "Big Ten takes a beating, no teams in AP top 5 for 1st time since 2021 as Georgia, Utah hold steady",
@@ -205,67 +247,67 @@
     ],
     "global": [
       {
+        "title": "Big Ten championship game berths remain up for grabs as the regular season enters its final weekend",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/big-ten-f6648c7cd4a2fd703bec735fa05efb90",
+        "published": "2026-11-25T03:10:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.6NLNpEepF8GPTQs1kBGXEA&pid=News"
+      },
+      {
+        "title": "Wiaan Mulder strikes for South Africa to leave Bangladesh trailing by 294 runs at lunch on day three",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/south-africa-bangladesh-2nd-test-cricket-mulder-19ea54030d1d29884a02f397581a25f5",
+        "published": "2026-11-25T03:06:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.KQ4LyCXpZErT_UhF9aZ5JQ&pid=News"
+      },
+      {
+        "title": "Canada's foreign student restrictions test Carney's push to attract research talent",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/americas/canadas-foreign-student-restrictions-test-carneys-push-attract-research-talent-2026-11-25/",
+        "published": "2026-11-25T03:04:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Thanksgiving weekend sports: Here are the key matchups in a made-for-TV spread",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/thanksgiving-sports-nfl-nba-ncaa-c73e0a85cbee632be640d5c402dd2547",
+        "published": "2026-11-25T03:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.SJVCyDJOIbGxL-cEf72G0g&pid=News"
+      },
+      {
+        "title": "Cambodia hosts Chinese military for largest Golden Dragon joint exercise yet",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/cambodia-china-military-army-naval-base-45c1eb364c82c346340916e6174ea8e3",
+        "published": "2026-11-25T03:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.x3d35K8MgjJIGFcT4xG7Aw&pid=News"
+      },
+      {
         "title": "Alice Huang-linked firms listed $270 million in AI servers in China, records show",
         "source": "Reuters",
         "link": "https://www.reuters.com/business/finance/alice-huang-linked-firms-listed-270-million-ai-servers-china-records-show-2026-11-25/",
-        "published": "2026-11-25T02:09:00Z",
+        "published": "2026-11-25T02:46:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
       },
       {
-        "title": "UK police charge 2 men over a break-in at Prince William and Princess Catherine’s country home",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/prince-william-kate-home-break-police-3d46c539369cd1d397f3303dfac0bfdb",
-        "published": "2026-11-25T02:09:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage",
+        "title": "Closing manufacturing’s skills gap starts with the workforce you have",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/iran-says-ships-hit-mines-hormuz-warns-vessels-coordinate-passage-2026-11-25/",
-        "published": "2026-11-25T02:06:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/plus/closing-manufacturings-skills-gap-starts-with-the-workforce-you-have",
+        "published": "2026-11-25T02:46:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT._wndaUl9w7_7giQwSLdnFg&pid=News"
       },
       {
-        "title": "Bollywood union asks Modi to bar Netflix's Pakistani series in India",
+        "title": "EU postpones discussion to approve Tesla's self-driving tech",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/media-telecom/bollywood-union-asks-modi-bar-netflixs-pakistani-series-india-2026-11-25/",
-        "published": "2026-11-25T02:02:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/business/autos-transportation/eu-postpones-discussion-approve-teslas-self-driving-tech-2026-11-25/",
+        "published": "2026-11-25T02:46:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.jnYm35rxlr02OlVjDRtcIg&pid=News"
       },
       {
-        "title": "Eurostar cancels Paris-London trains after staff go on unannounced strike",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/eurostar-train-disruptions-strike-london-paris-2ff8838e93231546aa50f7e96c53f840",
-        "published": "2026-11-25T02:02:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ywif3lN4QJlQMIjY7su3NQ&pid=News"
-      },
-      {
-        "title": "What to say if a holiday meal comes with a side dish of unwelcome career questions",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/job-questions-holiday-gatherings-family-handle-fedfdef9349a350da0f7836256b86f0a",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.gOxwq46Zwp_YAeLAOwIVXQ&pid=News"
-      },
-      {
-        "title": "As US strikes hit Venezuela, I knew right then that I was living through history",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/support-the-ap-venezuela-strikes-letter",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.wXNLuqr6apq654PkNxVOfQ&pid=News"
-      },
-      {
-        "title": "How I uncovered ICE’s plan to arm agents with shock gloves",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/support-the-ap-ice-shock-gloves-letter",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ruXzeByQX53P8gRVbuMvsQ&pid=News"
-      },
-      {
-        "title": "I trekked through Nepal to report the impacts of USAID cuts",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/support-the-ap-nepal-usaid-letter",
-        "published": "2026-11-25T02:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.cCYN2EL-3WqtZYPSPNf8nA&pid=News"
+        "title": "EasyJet's profit plunges ahead of Apollo takeover as fuel costs soar",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/easyjet-posts-annual-profit-miss-fuel-costs-ahead-apollo-takeover-2026-11-25/",
+        "published": "2026-11-25T02:38:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.AiAHReqMUmBofJ1fniZqLQ&pid=News"
       },
       {
         "title": "Alice Huang-linked firms helped fund China AI sector, probe shows",
