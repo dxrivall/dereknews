@@ -1,40 +1,34 @@
 {
- "updated_at": "2026-11-25T09:24:42.515880+00:00",
+ "updated_at": "2026-11-25T10:28:49.255984+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386668,
-  "out": 114,
+  "out": 35,
   "pct": 0.0,
-  "source_updated": "2026-11-25T09:16:00+00:00",
+  "source_updated": "2026-11-25T10:26:05+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 62,
-    "pct": 0.0
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159562,
-    "out": 35,
+    "out": 17,
     "pct": 0.0
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 15,
-    "pct": 0.0
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919522,
-    "out": 1,
-    "pct": 0.0
+    "out": 16,
+    "pct": 0.01
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
+    "out": 1,
+    "pct": 0.0
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159562,
     "out": 1,
     "pct": 0.0
    },
@@ -53,6 +47,12 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919522,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 213051,
   "out": 0,
-  "source_updated": "2026-11-25T09:15:59+00:00",
+  "source_updated": "2026-11-25T10:26:04+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
