@@ -692,7 +692,7 @@ body>.teams-overlay{z-index:2000}
 </div>
 
 <div id="wxBg" aria-hidden="true" data-mode="cloudy"><div class="wxbg-sun"></div><div class="wxbg-clouds"></div><canvas id="wxBgCanvas"></canvas></div>
-<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="dn-dot" data-navdot="home" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="dn-dot" data-navdot="weather" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="dn-dot" data-navdot="sports" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="dn-dot" data-navdot="faith" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="dn-dot" data-navdot="christmas" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="coc" aria-label="Clash of Clans" title="Clash of Clans" aria-selected="false"><span class="tab-ic" aria-hidden="true">⚔️</span></button></div></nav>
+<nav class="bottomnav" aria-label="Derek News sections"><div class="tabs" role="tablist"><span class="tab-pill" id="tabPill" aria-hidden="true"></span><button class="tab" role="tab" data-go="home" aria-label="Home" title="Home" aria-selected="true"><span class="tab-ic" aria-hidden="true">🏠</span><span class="dn-dot" data-navdot="home" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="weather" aria-label="Weather" title="Weather" aria-selected="false"><span class="tab-ic" aria-hidden="true">🌦️</span><span class="dn-dot" data-navdot="weather" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="sports" aria-label="Sports" title="Sports" aria-selected="false"><span class="tab-ic" aria-hidden="true">🏟️</span><span class="dn-dot" data-navdot="sports" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="faith" aria-label="Faith" title="Faith" aria-selected="false"><span class="tab-ic" aria-hidden="true">🙏</span><span class="dn-dot" data-navdot="faith" aria-hidden="true"></span></button><button class="tab" role="tab" data-go="christmas" aria-label="Christmas" title="Christmas" aria-selected="false"><span class="tab-ic" aria-hidden="true">🎄</span><span class="dn-dot" data-navdot="christmas" aria-hidden="true"></span></button></div></nav>
 <!-- HOME -->
 <main class="wrap view active" id="view-home">
 <style>
@@ -822,12 +822,39 @@ body>.teams-overlay{z-index:2000}
     <button type="button" class="wxd-fullbtn" data-go="weather">Full forecast →</button>
   </section>
   <script>(function(){var p=document.getElementById('homeLocBar'),pop=document.getElementById('homeLocPop');if(!p||!pop)return;function close(){pop.hidden=true;p.setAttribute('aria-expanded','false');}p.addEventListener('click',function(e){e.stopPropagation();if(pop.hidden){pop.hidden=false;p.setAttribute('aria-expanded','true');}else{close();}});p.addEventListener('keydown',function(e){e.stopPropagation();});pop.addEventListener('click',function(e){e.stopPropagation();});pop.addEventListener('keydown',function(e){e.stopPropagation();});document.addEventListener('click',function(){if(!pop.hidden)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});})();</script>
-  <!-- Clan War widget: live war score from clan.json — only shown while a war is active -->
+  <!-- Clan War widget: the CoC tab's live war scoreboard, on Home
+       (Derek, Nov 24, 2026) — matches #cocFeaturedWar; the CoC tab
+       is deactivated, so this is where the live war lives now. -->
   <section class="hwidget coc-war-widget" id="homeWarWidget" aria-label="Clan War widget" hidden>
-    <div class="hwidget-head"><h2>⚔️ Clan War — <span id="homeWarState">Live</span></h2><button class="hw-go" data-go="coc">See War →</button></div>
-    <div class="hw-war-teams"><span class="hw-war-team">WAR II</span><span class="hw-war-score" id="homeWarScore">0★ – 0★</span><span class="hw-war-team" id="homeWarOpp">N.∆.Z.I</span></div>
-    <div class="hw-war-sub" id="homeWarSub">0% vs 0% destruction</div>
-    <div class="hw-war-time" id="homeWarTime">—</div>
+    <div class="hwidget-head"><h2>⚔️ Clan War</h2></div>
+    <div class="cw-score">
+      <div class="cw-side">
+        <img class="cw-badge" src="https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png" alt="WAR II clan badge" loading="lazy">
+        <div class="cw-name">WAR II</div>
+        <div class="cw-starbar"><span class="cw-star">★</span><span class="cw-track"><span class="cw-fill" id="homeFeatUsFill"></span></span><span class="cw-count" id="homeFeatUs">0</span></div>
+        <div class="cw-att"><span id="homeFeatUsAtt">0/10</span> attacks</div>
+      </div>
+      <div class="cw-mid">
+        <div class="cw-vs">VS</div>
+        <div class="cw-timelabel" id="homeFeatTimeLabel">Battle ends in</div>
+        <div class="cw-time" id="homeFeatTime">—</div>
+        <div class="cw-day" id="homeFeatDay">Battle Day</div>
+        <div class="cw-live" id="homeFeatLive">LIVE</div>
+      </div>
+      <div class="cw-side">
+        <span class="cw-badge-fb" id="homeFeatThemBadge">🛡️</span>
+        <div class="cw-name" id="homeFeatOppTop">MEMY</div>
+        <div class="cw-starbar"><span class="cw-count" id="homeFeatThem">0</span><span class="cw-track"><span class="cw-fill" id="homeFeatThemFill"></span></span><span class="cw-star">★</span></div>
+        <div class="cw-att"><span id="homeFeatThemAtt">0/10</span> attacks</div>
+      </div>
+    </div>
+    <div class="cw-remain">⚔️ Attacks remaining: <b id="homeFeatRemain">10</b></div>
+    <div class="cw-odds" id="homeFeatOdds" hidden><span id="homeFeatOddsName">WAR II</span> — <b id="homeFeatOddsPct">–</b> to win <span class="cw-odds-note">· model estimate</span></div>
+    <div class="cw-events" id="homeFeatEvents" hidden>
+      <div class="cw-ribbon"><div class="cw-ribbon-score" id="homeFeatRibbonScore">WAR II 0-0 MEMY</div><div class="cw-ribbon-dest" id="homeFeatRibbonDest">0.00% Total Destruction 0.00%</div></div>
+      <div id="homeFeatEventList"></div>
+      <div class="cw-started">War started</div>
+    </div>
   </section>
   <section class="hwidget" id="homeSportsWidget" aria-label="Sports widget">
     <div class="hwidget-head"><h2>🏟️ Sports — Live &amp; Next</h2><button class="hw-go" data-go="sports">See Sports →</button></div>
@@ -2846,7 +2873,7 @@ body.on-christmas{color-scheme:light}
     </div>
   </section>
   </main>
-<main class="wrap view" id="view-coc">
+<main class="wrap view" id="view-coc" hidden>
 <style>
 body.on-coc{background:linear-gradient(180deg,#0a0f14 0,#0d1620 45%,#0a0f14 100%);color:#eef5f7}
 body.on-coc{--ink:#eef5f7;--soft:#b8c8d0;--link:#7fb8e8;--panel:#111a22;--border:rgba(255,255,255,.18);--nav:#0d141b;--green:#7fc97f}
@@ -3140,8 +3167,8 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
      rows show attacker + stars + destruction only, latest first per
      attacker, attackers in map order. Never invent times/defenders. */
   function starStr(n){var s='';for(var i=0;i<3;i++)s+=i<n?'<span class="cw-st-gold">★</span>':'<span class="cw-st-dim">☆</span>';return s;}
-  function renderWarEvents(war){
-    var list=document.getElementById('cocFeatEventList');if(!list)return;
+  function renderWarEvents(war,listId){
+    var list=document.getElementById(listId||'cocFeatEventList');if(!list)return;
     var members=((war.clan&&war.clan.members)||[]).slice().sort(function(a,b){return (a.mapPosition||99)-(b.mapPosition||99);});
     var rows=[];
     members.forEach(function(m){
@@ -3250,53 +3277,52 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(active){
         var inWar=war.state==='inWar';
         var endMs=parseWarTime(war.endTime||war.battleEndTime),startMs=parseWarTime(war.startTime||war.battleStartTime);
-        var timeTxt=inWar?('Battle ends in '+fmtLeft(endMs-Date.now())):('Battle starts in '+fmtLeft(startMs-Date.now()));
-        var used=(war.clan.attacks||0)+(war.opponent.attacks||0);
-        var total=(war.teamSize||5)*(war.attacksPerMember||2)*2;
-        var score=war.clan.stars+'★ – '+war.opponent.stars+'★';
-        var sub=(war.clan.destructionPercentage!=null?war.clan.destructionPercentage+'% vs '+war.opponent.destructionPercentage+'% destruction':'')+' · '+used+'/'+total+' attacks used';
         var set=function(id,t){var el=document.getElementById(id);if(el)el.textContent=t;};
-        set('homeWarState',inWar?'Live':'Starts soon');
-        set('homeWarScore',score);
-        set('homeWarOpp',war.opponent.name);
-        set('homeWarSub',sub);
-        set('homeWarTime',timeTxt);
-        /* featured CoC war scoreboard — game-style (badges, star bars,
-           attacks used, time left). Home widget sets above untouched. */
+        /* Live war scoreboard — game-style (badges, star bars, attacks
+           used, time left, win odds, war events). The same markup lives
+           on Home (#homeWarWidget, homeFeat*) and on the CoC tab
+           (#cocFeaturedWar, cocFeat*); update both so they always
+           match. The CoC tab is deactivated (Nov 24, 2026) — Home is
+           where the live war lives now. */
         var maxStars=(war.teamSize||5)*3,perSide=(war.teamSize||5)*(war.attacksPerMember||2);
         var usStars=war.clan.stars||0,thStars=war.opponent.stars||0;
         var usPct=war.clan.destructionPercentage!=null?war.clan.destructionPercentage:0;
         var thPct=war.opponent.destructionPercentage!=null?war.opponent.destructionPercentage:0;
-        set('cocFeatOppTop',war.opponent.name);
-        set('cocFeatUs',String(usStars));
-        set('cocFeatThem',String(thStars));
-        set('cocFeatUsAtt',(war.clan.attacks||0)+'/'+perSide);
-        set('cocFeatThemAtt',(war.opponent.attacks||0)+'/'+perSide);
-        var uf=document.getElementById('cocFeatUsFill');if(uf)uf.style.width=(maxStars?Math.min(100,usStars/maxStars*100):0)+'%';
-        var tf=document.getElementById('cocFeatThemFill');if(tf)tf.style.width=(maxStars?Math.min(100,thStars/maxStars*100):0)+'%';
-        set('cocFeatTimeLabel',inWar?'Battle ends in':'Battle starts in');
-        set('cocFeatTime',inWar?fmtLeft(endMs-Date.now()):fmtLeft(startMs-Date.now()));
-        set('cocFeatDay',inWar?'Battle Day':'Preparation Day');
-        set('cocFeatRemain',String(Math.max(0,perSide-(war.clan.attacks||0))));
-        var lv=document.getElementById('cocFeatLive');if(lv)lv.textContent=inWar?'LIVE':'SOON';
-        var ob=document.getElementById('cocFeatThemBadge');
         var obUrl=war.opponent.badgeUrls?(war.opponent.badgeUrls.medium||war.opponent.badgeUrls.small||war.opponent.badgeUrls.large):null;
-        if(ob)ob.innerHTML=obUrl?('<img class="cw-badge" src="'+esc(obUrl)+'" alt="'+esc(war.opponent.name)+' badge">'):'🛡️';
-        var ev=document.getElementById('cocFeatEvents');
-        if(ev)ev.hidden=!inWar;
-        var od=document.getElementById('cocFeatOdds');
-        if(od)od.hidden=!inWar;
+        var wp=null,wpct=null;
         if(inWar){
-          set('cocFeatRibbonScore',war.clan.name+' '+usStars+'-'+thStars+' '+war.opponent.name);
-          set('cocFeatRibbonDest',usPct.toFixed(2)+'% Total Destruction '+thPct.toFixed(2)+'%');
-          renderWarEvents(war);
           /* win odds — model estimate, recomputed from clan.json on
              every load; hidden in preparation (no in-war signal yet). */
-          var wp=warWinPct(war,warHistRate(d,war));
-          var wpct=wp>=1?100:Math.min(99,Math.max(1,Math.round(wp*100)));
-          set('cocFeatOddsName',war.clan.name);
-          set('cocFeatOddsPct',wpct+'%');
+          wp=warWinPct(war,warHistRate(d,war));
+          wpct=wp>=1?100:Math.min(99,Math.max(1,Math.round(wp*100)));
         }
+        ['cocFeat','homeFeat'].forEach(function(p){
+          set(p+'OppTop',war.opponent.name);
+          set(p+'Us',String(usStars));
+          set(p+'Them',String(thStars));
+          set(p+'UsAtt',(war.clan.attacks||0)+'/'+perSide);
+          set(p+'ThemAtt',(war.opponent.attacks||0)+'/'+perSide);
+          var uf=document.getElementById(p+'UsFill');if(uf)uf.style.width=(maxStars?Math.min(100,usStars/maxStars*100):0)+'%';
+          var tf=document.getElementById(p+'ThemFill');if(tf)tf.style.width=(maxStars?Math.min(100,thStars/maxStars*100):0)+'%';
+          set(p+'TimeLabel',inWar?'Battle ends in':'Battle starts in');
+          set(p+'Time',inWar?fmtLeft(endMs-Date.now()):fmtLeft(startMs-Date.now()));
+          set(p+'Day',inWar?'Battle Day':'Preparation Day');
+          set(p+'Remain',String(Math.max(0,perSide-(war.clan.attacks||0))));
+          var lv=document.getElementById(p+'Live');if(lv)lv.textContent=inWar?'LIVE':'SOON';
+          var ob=document.getElementById(p+'ThemBadge');
+          if(ob)ob.innerHTML=obUrl?('<img class="cw-badge" src="'+esc(obUrl)+'" alt="'+esc(war.opponent.name)+' badge">'):'🛡️';
+          var ev=document.getElementById(p+'Events');
+          if(ev)ev.hidden=!inWar;
+          var od=document.getElementById(p+'Odds');
+          if(od)od.hidden=!inWar;
+          if(inWar){
+            set(p+'RibbonScore',war.clan.name+' '+usStars+'-'+thStars+' '+war.opponent.name);
+            set(p+'RibbonDest',usPct.toFixed(2)+'% Total Destruction '+thPct.toFixed(2)+'%');
+            renderWarEvents(war,p+'EventList');
+            set(p+'OddsName',war.clan.name);
+            set(p+'OddsPct',wpct+'%');
+          }
+        });
       }
       var rd=document.getElementById('cocRaid');
       if(rd&&d.capital&&d.capital.state==='ended'&&d.capital.capitalTotalLoot!=null){
@@ -3342,15 +3368,18 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 <footer style="position:relative;text-align:center;color:var(--soft);font-size:13px;padding:28px 16px 118px">Derek News<div style="font-size:11.5px;opacity:.65;margin-top:5px">Last updated <span id="footerUpdated"></span></div></footer>
 <script>
 (function(){
-  var views={home:1,weather:1,sports:1,faith:1,christmas:1,coc:1};
-  /* NEWS DEACTIVATED (Derek, Nov 24, 2026): 6 tabs in order — Home,
-     Weather, Sports, Faith, Christmas, Clash of Clans. The News tab
-     markup stays in the file (hidden) and its feed now lives on Home;
-     the snapshot is in archives/2026-11-24-news-tab.html. The slides,
-     the bottom-bar buttons (filtered + sorted by this same list) and
-     the selection pill are all derived from tabOrder, so pager and
-     pill stay in sync. */
-  var tabOrder=['home','weather','sports','faith','christmas','coc'];
+  var views={home:1,weather:1,sports:1,faith:1,christmas:1};
+  /* NEWS DEACTIVATED (Derek, Nov 24, 2026) and COC DEACTIVATED
+     (Derek, Nov 24, 2026): 5 tabs in order — Home, Weather, Sports,
+     Faith, Christmas. The News tab markup stays in the file (hidden)
+     and its feed now lives on Home; the CoC tab markup stays in the
+     file (hidden) and its live war scoreboard now lives on Home.
+     Snapshots are in archives/2026-11-24-news-tab.html and
+     archives/2026-11-24-coc-tab.html. The slides, the bottom-bar
+     buttons (filtered + sorted by this same list) and the selection
+     pill are all derived from tabOrder, so pager and pill stay in
+     sync. */
+  var tabOrder=['home','weather','sports','faith','christmas'];
   var currentTab='home';
   var currentIdx=0;
   var reduceMotion=false;
