@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25T13:01:58Z",
-  "fetched_at": "2026-11-25T13:01:58.227Z",
+  "updated_at": "2026-11-25T14:26:34Z",
+  "fetched_at": "2026-11-25T14:26:34.493Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -16,7 +16,7 @@
     "league": "Silver League I",
     "capitalLeague": "Bronze League II",
     "clanPoints": 16700,
-    "clanBuilderPoints": 12990,
+    "clanBuilderPoints": 12977,
     "clanCapitalPoints": 403,
     "requiredTownhallLevel": 1,
     "requiredTrophies": 5500,
@@ -48,7 +48,7 @@
         "role": "coLeader",
         "th": 19,
         "expLevel": 247,
-        "trophies": 17,
+        "trophies": 96,
         "league": "Legend League",
         "leagueTier": "Electro League 33",
         "donations": 122,
@@ -307,9 +307,9 @@
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
       "badge": "https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png",
-      "stars": 0,
-      "destructionPercentage": 0,
-      "attacks": 0,
+      "stars": 5,
+      "destructionPercentage": 36.4,
+      "attacks": 2,
       "members": [
         {
           "tag": "#GL80JCCU2",
@@ -327,9 +327,18 @@
           "mapPosition": 1,
           "th": 19,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
-          "attacksComplete": false
+          "warAttacks": [
+            {
+              "stars": 2,
+              "pct": 82
+            },
+            {
+              "stars": 3,
+              "pct": 100
+            }
+          ],
+          "attackCount": 2,
+          "attacksComplete": true
         },
         {
           "tag": "#GQ2YJQQ0J",
