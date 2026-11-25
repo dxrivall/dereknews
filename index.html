@@ -850,41 +850,62 @@ body>.teams-overlay{z-index:2000}
        politics and no war info. -->
   <section class="hwidget" id="homeNewsWidget" aria-label="News widget">
     <div class="hwidget-head"><h2>📰 News</h2></div>
+    <div class="nfeed-chips" role="tablist" aria-label="News sections">
+      <button type="button" class="nchip is-active" data-hnfeed="top" role="tab" aria-selected="true">Top Stories</button>
+      <button type="button" class="nchip" data-hnfeed="local" role="tab" aria-selected="false">Local</button>
+      <button type="button" class="nchip" data-hnfeed="nationwide" role="tab" aria-selected="false">Nationwide</button>
+      <button type="button" class="nchip" data-hnfeed="global" role="tab" aria-selected="false">Global</button>
+    </div>
     <div class="nfeed" id="homeNewsList"><p class="hw-status">Loading news…</p></div>
     <p class="nfeed-updated" id="homeNewsUpdated"></p>
   </section>
   <script>(function(){
+    /* Home News widget with sections (Derek, Nov 24, 2026) — Top Stories,
+       Local, Nationwide, Global chips, same as the old News tab. Each
+       section shows its own newest 6 (politics/war filtered out), from
+       the one news.json fetch; switching chips re-renders from cache. */
     var list=document.getElementById('homeNewsList'),upd=document.getElementById('homeNewsUpdated');
     if(!list)return;
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
     function agoStr(ts){var s=Math.floor((Date.now()-ts)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
     var SKIP=/trump|biden|vance|harris|obama|clinton|senate|congress|democrat|republican|\bgop\b|white house|capitol|election|midterm|impeachment|speaker|pelosi|schumer|mcconnell|\bwar\b|iran|ukraine|russia|gaza|israel|hamas|missile|airstrike|invasion|military|pentagon|troops|ceasefire|nato/i;
+    var cur='top',cache=null,updAt=0;
+    function render(){
+      if(!cache){list.innerHTML='<p class="hw-status">Loading news…</p>';return;}
+      var seen={},items=[];
+      (cache[cur]||[]).forEach(function(it){
+        if(!it||!it.title||!it.link||seen[it.link])return;
+        var ts=Date.parse(it.published||'');
+        if(isNaN(ts))return;
+        if(SKIP.test(it.title))return;
+        seen[it.link]=1;
+        items.push({title:it.title,source:it.source||'',link:it.link,thumb:it.thumb||'',ts:ts,when:agoStr(ts)});
+      });
+      items.sort(function(a,b){return b.ts-a.ts;});
+      items=items.slice(0,6);
+      if(!items.length){list.innerHTML='<p class="hw-status">No stories right now.</p>';if(upd)upd.textContent='';return;}
+      list.innerHTML=items.map(function(a){
+        var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
+        return '<a class="nfeed-item" href="'+esc(a.link)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' · '+esc(a.when):'')+'</span></span>'+img+'</a>';
+      }).join('');
+      if(upd)upd.textContent=updAt?('Updated '+new Date(updAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'):'';
+    }
     function load(){
       fetch('news.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
         if(!d||!d.sections)throw new Error('bad news.json');
-        var seen={},items=[];
-        ['top','local'].forEach(function(k){
-          (d.sections[k]||[]).forEach(function(it){
-            if(!it||!it.title||!it.link||seen[it.link])return;
-            var ts=Date.parse(it.published||'');
-            if(isNaN(ts))return;
-            if(SKIP.test(it.title))return;
-            seen[it.link]=1;
-            items.push({title:it.title,source:it.source||'',link:it.link,thumb:it.thumb||'',ts:ts,when:agoStr(ts)});
-          });
-        });
-        items.sort(function(a,b){return b.ts-a.ts;});
-        items=items.slice(0,6);
-        if(!items.length){list.innerHTML='<p class="hw-status">No stories right now.</p>';if(upd)upd.textContent='';return;}
-        list.innerHTML=items.map(function(a){
-          var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
-          return '<a class="nfeed-item" href="'+esc(a.link)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' · '+esc(a.when):'')+'</span></span>'+img+'</a>';
-        }).join('');
-        if(upd)upd.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
+        cache=d.sections;updAt=Date.now();
+        render();
       }).catch(function(){
-        list.innerHTML='<p class="hw-status">Couldn\u2019t load news right now.</p>';
+        if(!cache)list.innerHTML='<p class="hw-status">Couldn\u2019t load news right now.</p>';
       });
     }
+    document.querySelectorAll('#homeNewsWidget [data-hnfeed]').forEach(function(ch){
+      ch.addEventListener('click',function(){
+        cur=ch.getAttribute('data-hnfeed')||'top';
+        document.querySelectorAll('#homeNewsWidget [data-hnfeed]').forEach(function(c){var on=c===ch;c.classList.toggle('is-active',on);c.setAttribute('aria-selected',on?'true':'false');});
+        render();
+      });
+    });
     load();
     setInterval(load,4*60*1000);
   })();</script>
@@ -904,6 +925,15 @@ body>.teams-overlay{z-index:2000}
     <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
     <div class="xmas-row"><div class="xmas-big" id="homeXBig"><span id="homeXDays">—</span><span id="homeXSuffix"> days until Christmas</span></div></div>
     <a class="santa-link" href="https://santatracker.google.com/" target="_blank" rel="noopener">Track Santa with Google →</a>
+  </section>
+  <!-- War risk widget, bottom of Home (Derek, Nov 24, 2026) — percent
+       + level only, plus the two market odds with their deadlines. -->
+  <section class="hwidget" id="homeWarRiskWidget" aria-label="Iran war risk">
+    <div class="hwidget-head"><h2>⚠️ Iran War Risk</h2></div>
+    <div class="hw-risk-num" id="homeWarRiskNum">—</div>
+    <div class="hw-risk-level" id="homeWarRiskLevel">—</div>
+    <p class="hw-risk-market" id="homeWarRiskMarket">Polymarket: —</p>
+    <p class="hw-risk-updated" id="homeWarRiskUpdated"></p>
   </section>
   </div>
 </main>
@@ -1362,6 +1392,30 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #homeNewsWidget .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
 #homeNewsWidget .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
 #homeNewsWidget .nfeed-updated:empty{display:none}
+#homeNewsWidget .nfeed-chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#homeNewsWidget .nfeed-chips::-webkit-scrollbar{display:none}
+#homeNewsWidget .nchip{appearance:none;flex:0 0 auto;border:1.5px solid var(--border);background:rgba(255,255,255,.35);color:var(--ink);font:inherit;font-size:13.5px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:38px}
+#homeNewsWidget .nchip.is-active{background:#b42318;border-color:#b42318;color:#fff}
+#homeNewsWidget .nchip:active{opacity:.75}
+/* Home war risk widget (Derek, Nov 24, 2026) — percent + level only */
+#homeWarRiskWidget .hw-risk-num{font-size:52px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
+#homeWarRiskWidget .hw-risk-num.bd-safe{color:#1e7e34}
+#homeWarRiskWidget .hw-risk-num.bd-moderate{color:#b26a00}
+#homeWarRiskWidget .hw-risk-num.bd-caution{color:#c2410c}
+#homeWarRiskWidget .hw-risk-num.bd-high{color:#b42318}
+#homeWarRiskWidget .hw-risk-num.bd-likely{color:#8f1d14}
+#homeWarRiskWidget .hw-risk-num.bd-prepare{color:#7f1d1d}
+#homeWarRiskWidget .hw-risk-level{font-size:15px;font-weight:800;letter-spacing:.04em;margin-top:6px;color:var(--ink)}
+#homeWarRiskWidget .hw-risk-level.bd-safe{color:#1e7e34}
+#homeWarRiskWidget .hw-risk-level.bd-moderate{color:#b26a00}
+#homeWarRiskWidget .hw-risk-level.bd-caution{color:#c2410c}
+#homeWarRiskWidget .hw-risk-level.bd-high{color:#b42318}
+#homeWarRiskWidget .hw-risk-level.bd-likely{color:#8f1d14}
+#homeWarRiskWidget .hw-risk-level.bd-prepare{color:#7f1d1d}
+#homeWarRiskWidget .hw-risk-market{font-size:13px;font-weight:700;color:var(--soft);margin:10px 0 0;line-height:1.5}
+#homeWarRiskWidget .hw-risk-market:empty{display:none}
+#homeWarRiskWidget .hw-risk-updated{font-size:12.5px;color:var(--soft);margin:4px 0 0}
+#homeWarRiskWidget .hw-risk-updated:empty{display:none}
 #view-news .brk-toggle{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:11px 2px 2px;cursor:pointer;min-height:40px}
 #view-news .brk-toggle:active{opacity:.7}
 #view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
@@ -1559,7 +1613,8 @@ svg.wx-fog-ic{vertical-align:-0.14em}
    Polymarket Gamma prices plus going-on.json. If either market
    fails to load it shows "—", never a guessed number. The
    individual market rows stay hidden. Refreshes every 5 minutes
-   while the News tab is open. */
+   while Home (or the News tab) is open. Also drives the small
+   war-risk widget at the bottom of Home. */
 (function(){
   var marketEl=document.getElementById('etRiskMarket');
   if(!marketEl)return;
@@ -1598,6 +1653,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     marketEl.textContent='Polymarket: —';
     var num=document.getElementById('etRiskNum');if(num){num.textContent='—';num.className='et-risk-num';}
     var lv=document.getElementById('etRiskLevel');if(lv){lv.textContent='—';lv.className='et-risk-level';}
+    var hnum=document.getElementById('homeWarRiskNum');if(hnum){hnum.textContent='—';hnum.className='hw-risk-num';}
+    var hlv=document.getElementById('homeWarRiskLevel');if(hlv){hlv.textContent='—';hlv.className='hw-risk-level';}
+    var hm=document.getElementById('homeWarRiskMarket');if(hm)hm.textContent='Polymarket: —';
   }
   function fetchMarket(){
     var attacksP=fetch('going-on.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad going-on');return r.json();}).then(function(d){
@@ -1624,14 +1682,26 @@ svg.wx-fog-ic{vertical-align:-0.14em}
       marketEl.textContent='US invades Iran '+fmt1(invade)+'% \u00b7 Ceasefire by Dec 31: '+fmt1(cease)+'%'+(attacks===null?'':' \u00b7 '+attacks+' attack'+(attacks===1?'':'s')+' in 7 days');
       var up=document.getElementById('etRiskUpdated');
       if(up)up.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET \u00b7 Polymarket';
+      var hnum=document.getElementById('homeWarRiskNum');
+      if(hnum){hnum.textContent=fmt1(risk)+'%';hnum.className='hw-risk-num bd-'+b.cls;}
+      var hlv=document.getElementById('homeWarRiskLevel');
+      if(hlv){hlv.textContent=b.word.toUpperCase();hlv.className='hw-risk-level bd-'+b.cls;}
+      var hm=document.getElementById('homeWarRiskMarket');
+      if(hm)hm.textContent='US invades Iran before 2027: '+fmt1(invade)+'% \u00b7 Ceasefire by Dec 31: '+fmt1(cease)+'%';
+      var hup=document.getElementById('homeWarRiskUpdated');
+      if(hup)hup.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET \u00b7 Polymarket';
     }).catch(fail);
   }
   function newsOpen(){
     var v=document.getElementById('view-news');
     return !!(v&&v.classList.contains('pg-on'));
   }
+  function homeOpen(){
+    var v=document.getElementById('view-home');
+    return !!(v&&v.classList.contains('pg-on'));
+  }
   fetchMarket();
-  setInterval(function(){if(newsOpen())fetchMarket();},5*60*1000);
+  setInterval(function(){if(homeOpen()||newsOpen())fetchMarket();},5*60*1000);
 })();
 </script>
 <script>
