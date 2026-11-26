@@ -1,48 +1,90 @@
 {
-  "updated_at": "2026-11-26T17:39:44.313309Z",
+  "updated_at": "2026-11-26T18:28:27.412092Z",
   "sections": {
     "top": [
       {
+        "title": "EU leaders divided over budget spending as they weigh a $49 billion loan to Ukraine",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/eu-leaders-divided-over-budget-spending-as-they-weigh-a-49-billion-loan-to-ukraine-fca0060ae0ee43a9956c8eca569342b3",
+        "published": "2026-11-26T10:23:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.VR30tsNZitNtX2LkKnUqUg&pid=News"
+      },
+      {
+        "title": "Guinea-Bissau’s military junta postpones elections until 2028, extending its rule by two years",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/bissau-elections-guineabissau-2d79de9288a79740c0bce093c004a14c",
+        "published": "2026-11-26T10:11:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Lions edge rusher DJ Wonnum, safety Chuck Clark and Bears DB Kyler Gordon inactive with injuries",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/detroit-lions-chicago-bears-699e3da91ffa9e140bed47dfe810a327",
+        "published": "2026-11-26T10:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.ZvudtwzabeCq8mmzhZJl9Q&pid=News"
+      },
+      {
+        "title": "Trump's new tariffs aim to prise global trade from China's grip",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/trumps-new-tariffs-aim-prise-global-trade-chinas-grip-2026-11-26/",
+        "published": "2026-11-26T10:01:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
+        "published": "2026-11-26T10:01:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.2uUmIOpccprfocBnSDWZqA&pid=News"
+      },
+      {
+        "title": "The Macy’s Thanksgiving parade is postponed. What happens to its expansive roster of performers?",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/macys-thanksgiving-parade-nyc-manhattan-e3a17dee62d5847e37edf5fa21ed0ec1",
+        "published": "2026-11-26T09:57:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.zGsztpcbXtiP0UpChh9RRw&pid=News"
+      },
+      {
+        "title": "UniCredit pushes for Commerzbank management shake-up with CEO Orcel as chair",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/finance/unicredit-seeks-commerzbank-shareholder-vote-it-completes-process-take-control-2026-11-26/",
+        "published": "2026-11-26T09:44:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/middle-east/turkish-elections-be-held-2028-ruling-alliance-agrees-erdogan-candidacy-vice-2026-11-26/",
+        "published": "2026-11-26T09:41:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Communities rebuilding three months on since devastating floods in Nepal",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/communities-rebuilding-three-months-on-since-devastating-floods-in-nepal-61e4d57e7fe84f9c91098055212623a4",
+        "published": "2026-11-26T09:39:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.YjDTAGR87NtHfcEhk3c8Lg&pid=News"
+      },
+      {
         "title": "Germany’s Christmas markets are in full swing",
-        "source": "Associated Press",
+        "source": "Associated Press News",
         "link": "https://apnews.com/video/germanys-christmas-markets-are-in-full-swing-716f05903c974ce9a1d7213cc25848f9",
         "published": "2026-11-26T09:35:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.AShUUmFf0A8YYc49vqv4RA&pid=News"
       },
       {
-        "title": "Euro countries pick Spain's De Cos as ECB chief, Costa says",
+        "title": "Turkey aims to meet MSCI requirements by December after funds crisis, Simsek says",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/europe/euro-countries-pick-spains-de-cos-ecb-chief-costa-says-2026-11-26/",
-        "published": "2026-11-26T09:27:00Z",
+        "link": "https://www.reuters.com/world/middle-east/turkey-aims-meet-msci-requirements-by-december-after-funds-crisis-simsek-says-2026-11-26/",
+        "published": "2026-11-26T09:33:00Z",
         "thumb": ""
       },
       {
-        "title": "Iraq closes two border crossings in Kurdistan region with Syria and Iran",
+        "title": "The Bangladeshi workers caught in limbo as wage dispute drags on",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/middle-east/iraq-closes-two-border-crossings-kurdistan-region-with-syria-iran-2026-11-26/",
-        "published": "2026-11-26T09:24:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Haas retiene a Oliver Bearman para la temporada 2027 tras demoras con su contrato",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/formula-uno-f1-haas-oliver-bearman-121194b4fa8f34b920963d9cd48b7d7d",
-        "published": "2026-11-26T09:20:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.L9hewNfCqfl7ozFrl5KUdA&pid=News"
-      },
-      {
-        "title": "Gingerbread city in London creates a tasty town in miniature",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/video/gingerbread-city-in-london-creates-a-tasty-town-in-miniature-bdb2445bf5714c38a426b2ea3e6e8f46",
-        "published": "2026-11-26T09:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.9bqDPGRnWjpfNIzHq_BMxA&pid=News"
-      },
-      {
-        "title": "Poland's Diagnostyka profit falls, revenue and test volumes grow",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/healthcare-pharmaceuticals/polands-diagnostyka-profit-falls-revenue-test-volumes-grow-2026-11-26/",
-        "published": "2026-11-26T09:10:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/video/watch/idRW154126112026RP1/",
+        "published": "2026-11-26T09:30:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.WMWsrp1qpOByOLbbtf5hzQ&pid=News"
       },
       {
         "title": "No. 16 Arizona’s Noah Fifita heads into home finale with his legacy secured",
@@ -52,13 +94,6 @@
         "thumb": "http://www.bing.com/th?id=ONUT.WPqQYOvu-lV-QTV6xMU_4Q&pid=News"
       },
       {
-        "title": "Sweden's Centre leader backs right-wing prime minister, in major shift",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/finance/swedens-centre-leader-backs-right-wing-prime-minister-major-shift-2026-11-26/",
-        "published": "2026-11-26T09:03:00Z",
-        "thumb": ""
-      },
-      {
         "title": "Frances Tiafoe gives thanks after a breakthrough tennis season. He’s aiming for the top 5 in ’27",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/frances-tiafoe-tennis-afeb54e78af61c600f9c7d20eb61ba37",
@@ -66,46 +101,11 @@
         "thumb": "http://www.bing.com/th?id=ONUT.F1nkPSDnGh6TazH9Re9y-Q&pid=News"
       },
       {
-        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
-        "published": "2026-11-26T08:37:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.2uUmIOpccprfocBnSDWZqA&pid=News"
-      },
-      {
-        "title": "The Steelers are turning to Mason Rudolph to salvage their season. It’s not the first time",
+        "title": "Trump calls the pre-election GDP figures ‘fake’ and demands an investigation of Commerce Department",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/steelers-broncos-preview-mason-rudolph-aaron-rodgers-a8a28a21c2fa415bdb141b3bf04b357d",
-        "published": "2026-11-26T08:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ebC8g-UkWysr03PihLnong&pid=News"
-      },
-      {
-        "title": "Floats stationary as Macy’s Thanksgiving Day Parade is postponed due to bad weather",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/video/floats-stationary-as-macys-thanksgiving-day-parade-is-postponed-due-to-bad-weather-6acce0f7336a4fa9b2ba3dcf108ee2ba",
-        "published": "2026-11-26T07:54:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.jzYNj-_u8YwAHx3PcgmcYA&pid=News"
-      },
-      {
-        "title": "Leaders choose Spain’s former central bank head as next European Central Bank president",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/ecb-eurozone-pablo-hernandez-de-cos-lagarde-d308b6cfbe6399b131255f2a678b10e4",
-        "published": "2026-11-26T07:50:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.Zc2ZHLvSZNnh3WfqsIwKbg&pid=News"
-      },
-      {
-        "title": "Russell says Verstappen taunts were ‘amusing’ but F1 isn’t the place to make friends",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/max-verstappen-george-russell-f1-qatar-a76af85ddf0496b8ae33e044f3f334a7",
-        "published": "2026-11-26T07:48:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.rsZDkJC3IW14MsiMgNZxPg&pid=News"
-      },
-      {
-        "title": "Tense EU budget talks: Le Pen factor looms over trillion dollar meeting",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/video/watch/idRW150826112026RP1/",
-        "published": "2026-11-26T07:44:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.Kf9iexfKsCtO84sJ0X6exA&pid=News"
+        "link": "https://apnews.com/article/trump-gdp-economy-midterms-4fd800b44005ae11f950f96ff62f876e",
+        "published": "2026-11-26T08:08:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.3y0NsqFrvFKQBHzKimnL2w&pid=News"
       }
     ],
     "local": [
@@ -182,25 +182,32 @@
     ],
     "nationwide": [
       {
-        "title": "No. 16 Arizona’s Noah Fifita heads into home finale with his legacy secured",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/noah-fifita-arizona-football-0f868ed632a70196d51db54d44f01932",
-        "published": "2026-11-26T09:08:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.WPqQYOvu-lV-QTV6xMU_4Q&pid=News"
+        "title": "Trump's new tariffs aim to prise global trade from China's grip",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/trumps-new-tariffs-aim-prise-global-trade-chinas-grip-2026-11-26/",
+        "published": "2026-11-26T10:01:00Z",
+        "thumb": ""
       },
       {
         "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
-        "published": "2026-11-26T08:37:00Z",
+        "published": "2026-11-26T10:01:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.2uUmIOpccprfocBnSDWZqA&pid=News"
       },
       {
-        "title": "Trump's new tariffs aim to prise global trade from China's grip",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/china/trumps-new-tariffs-aim-prise-global-trade-chinas-grip-2026-11-26/",
-        "published": "2026-11-25T23:03:00Z",
-        "thumb": ""
+        "title": "The Macy’s Thanksgiving parade is postponed. What happens to its expansive roster of performers?",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/macys-thanksgiving-parade-nyc-manhattan-e3a17dee62d5847e37edf5fa21ed0ec1",
+        "published": "2026-11-26T09:57:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.zGsztpcbXtiP0UpChh9RRw&pid=News"
+      },
+      {
+        "title": "No. 16 Arizona’s Noah Fifita heads into home finale with his legacy secured",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/noah-fifita-arizona-football-0f868ed632a70196d51db54d44f01932",
+        "published": "2026-11-26T09:08:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.WPqQYOvu-lV-QTV6xMU_4Q&pid=News"
       },
       {
         "title": "Big Ten takes a beating, no teams in AP top 5 for 1st time since 2021 as Georgia, Utah hold steady",
@@ -212,53 +219,67 @@
     ],
     "global": [
       {
+        "title": "EU leaders divided over budget spending as they weigh a $49 billion loan to Ukraine",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/eu-leaders-divided-over-budget-spending-as-they-weigh-a-49-billion-loan-to-ukraine-fca0060ae0ee43a9956c8eca569342b3",
+        "published": "2026-11-26T10:23:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.VR30tsNZitNtX2LkKnUqUg&pid=News"
+      },
+      {
+        "title": "Guinea-Bissau’s military junta postpones elections until 2028, extending its rule by two years",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/bissau-elections-guineabissau-2d79de9288a79740c0bce093c004a14c",
+        "published": "2026-11-26T10:11:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Lions edge rusher DJ Wonnum, safety Chuck Clark and Bears DB Kyler Gordon inactive with injuries",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/detroit-lions-chicago-bears-699e3da91ffa9e140bed47dfe810a327",
+        "published": "2026-11-26T10:09:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.ZvudtwzabeCq8mmzhZJl9Q&pid=News"
+      },
+      {
+        "title": "UniCredit pushes for Commerzbank management shake-up with CEO Orcel as chair",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/finance/unicredit-seeks-commerzbank-shareholder-vote-it-completes-process-take-control-2026-11-26/",
+        "published": "2026-11-26T09:44:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/middle-east/turkish-elections-be-held-2028-ruling-alliance-agrees-erdogan-candidacy-vice-2026-11-26/",
+        "published": "2026-11-26T09:41:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Communities rebuilding three months on since devastating floods in Nepal",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/communities-rebuilding-three-months-on-since-devastating-floods-in-nepal-61e4d57e7fe84f9c91098055212623a4",
+        "published": "2026-11-26T09:39:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.YjDTAGR87NtHfcEhk3c8Lg&pid=News"
+      },
+      {
         "title": "Germany’s Christmas markets are in full swing",
-        "source": "Associated Press",
+        "source": "Associated Press News",
         "link": "https://apnews.com/video/germanys-christmas-markets-are-in-full-swing-716f05903c974ce9a1d7213cc25848f9",
         "published": "2026-11-26T09:35:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.AShUUmFf0A8YYc49vqv4RA&pid=News"
       },
       {
-        "title": "Euro countries pick Spain's De Cos as ECB chief, Costa says",
+        "title": "Turkey aims to meet MSCI requirements by December after funds crisis, Simsek says",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/europe/euro-countries-pick-spains-de-cos-ecb-chief-costa-says-2026-11-26/",
-        "published": "2026-11-26T09:27:00Z",
+        "link": "https://www.reuters.com/world/middle-east/turkey-aims-meet-msci-requirements-by-december-after-funds-crisis-simsek-says-2026-11-26/",
+        "published": "2026-11-26T09:33:00Z",
         "thumb": ""
       },
       {
-        "title": "Iraq closes two border crossings in Kurdistan region with Syria and Iran",
+        "title": "The Bangladeshi workers caught in limbo as wage dispute drags on",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/middle-east/iraq-closes-two-border-crossings-kurdistan-region-with-syria-iran-2026-11-26/",
-        "published": "2026-11-26T09:24:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Haas retiene a Oliver Bearman para la temporada 2027 tras demoras con su contrato",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/formula-uno-f1-haas-oliver-bearman-121194b4fa8f34b920963d9cd48b7d7d",
-        "published": "2026-11-26T09:20:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.L9hewNfCqfl7ozFrl5KUdA&pid=News"
-      },
-      {
-        "title": "Gingerbread city in London creates a tasty town in miniature",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/video/gingerbread-city-in-london-creates-a-tasty-town-in-miniature-bdb2445bf5714c38a426b2ea3e6e8f46",
-        "published": "2026-11-26T09:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.9bqDPGRnWjpfNIzHq_BMxA&pid=News"
-      },
-      {
-        "title": "Poland's Diagnostyka profit falls, revenue and test volumes grow",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/healthcare-pharmaceuticals/polands-diagnostyka-profit-falls-revenue-test-volumes-grow-2026-11-26/",
-        "published": "2026-11-26T09:10:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Sweden's Centre leader backs right-wing prime minister, in major shift",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/finance/swedens-centre-leader-backs-right-wing-prime-minister-major-shift-2026-11-26/",
-        "published": "2026-11-26T09:03:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/video/watch/idRW154126112026RP1/",
+        "published": "2026-11-26T09:30:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.WMWsrp1qpOByOLbbtf5hzQ&pid=News"
       },
       {
         "title": "Frances Tiafoe gives thanks after a breakthrough tennis season. He’s aiming for the top 5 in ’27",
@@ -266,20 +287,6 @@
         "link": "https://apnews.com/article/frances-tiafoe-tennis-afeb54e78af61c600f9c7d20eb61ba37",
         "published": "2026-11-26T09:00:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.F1nkPSDnGh6TazH9Re9y-Q&pid=News"
-      },
-      {
-        "title": "The Steelers are turning to Mason Rudolph to salvage their season. It’s not the first time",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/steelers-broncos-preview-mason-rudolph-aaron-rodgers-a8a28a21c2fa415bdb141b3bf04b357d",
-        "published": "2026-11-26T08:10:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.ebC8g-UkWysr03PihLnong&pid=News"
-      },
-      {
-        "title": "Floats stationary as Macy’s Thanksgiving Day Parade is postponed due to bad weather",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/video/floats-stationary-as-macys-thanksgiving-day-parade-is-postponed-due-to-bad-weather-6acce0f7336a4fa9b2ba3dcf108ee2ba",
-        "published": "2026-11-26T07:54:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.jzYNj-_u8YwAHx3PcgmcYA&pid=News"
       }
     ]
   }
