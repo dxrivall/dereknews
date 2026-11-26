@@ -1,54 +1,54 @@
 {
- "updated_at": "2026-11-26T20:23:42.478066+00:00",
+ "updated_at": "2026-11-26T21:16:41.503919+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386682,
-  "out": 6304,
-  "pct": 0.08,
-  "source_updated": "2026-11-26T20:15:40+00:00",
+  "out": 7396,
+  "pct": 0.09,
+  "source_updated": "2026-11-26T21:05:30+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 2500,
-    "pct": 0.22
-   },
-   {
-    "name": "Con Edison",
-    "tracked": 3626606,
-    "out": 1260,
-    "pct": 0.03
+    "out": 2397,
+    "pct": 0.21
    },
    {
     "name": "New York State Electric & Gas",
     "tracked": 919482,
-    "out": 981,
-    "pct": 0.11
+    "out": 1507,
+    "pct": 0.16
    },
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 858,
-    "pct": 0.05
+    "out": 1433,
+    "pct": 0.08
+   },
+   {
+    "name": "Con Edison",
+    "tracked": 3626606,
+    "out": 1084,
+    "pct": 0.03
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392293,
-    "out": 486,
-    "pct": 0.12
-   },
-   {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315545,
-    "out": 125,
-    "pct": 0.04
+    "out": 549,
+    "pct": 0.14
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 71,
-    "pct": 0.03
+    "out": 238,
+    "pct": 0.1
+   },
+   {
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315545,
+    "out": 165,
+    "pct": 0.05
    },
    {
     "name": "Delaware County Electric Coop",
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 213051,
-  "out": 33,
-  "source_updated": "2026-11-26T20:15:39+00:00",
+  "out": 34,
+  "source_updated": "2026-11-26T21:05:29+00:00",
   "pct": 0.02,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204897,
-    "out": 33,
+    "out": 34,
     "pct": 0.02
    },
    {
