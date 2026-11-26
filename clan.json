@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-26T05:48:03Z",
-  "fetched_at": "2026-11-26T05:48:02.962Z",
+  "updated_at": "2026-11-26T06:48:40Z",
+  "fetched_at": "2026-11-26T06:48:40.049Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -65,7 +65,7 @@
         "trophies": 93,
         "league": "Unranked",
         "leagueTier": "Titan League 27",
-        "donations": 324,
+        "donations": 500,
         "donationsReceived": 119,
         "clanRank": 2,
         "previousClanRank": 2
@@ -290,7 +290,7 @@
         "league": "Unranked",
         "leagueTier": "Unranked",
         "donations": 88,
-        "donationsReceived": 386,
+        "donationsReceived": 562,
         "clanRank": 18,
         "previousClanRank": 18
       }
@@ -307,9 +307,9 @@
       "name": "WAR II",
       "tag": "#2JQVGQRC9",
       "badge": "https://api-assets.clashofclans.com/badges/200/JQwgSULiPlCrIIhzSOzd8yd227E-KtZWh4Pmm2Antn8.png",
-      "stars": 11,
-      "destructionPercentage": 76.4,
-      "attacks": 4,
+      "stars": 14,
+      "destructionPercentage": 96.4,
+      "attacks": 6,
       "members": [
         {
           "tag": "#GL80JCCU2",
@@ -375,9 +375,18 @@
           "mapPosition": 2,
           "th": 17,
           "attackLimit": 2,
-          "warAttacks": [],
-          "attackCount": 0,
-          "attacksComplete": false
+          "warAttacks": [
+            {
+              "stars": 3,
+              "pct": 100
+            },
+            {
+              "stars": 0,
+              "pct": 40
+            }
+          ],
+          "attackCount": 2,
+          "attacksComplete": true
         }
       ]
     },
