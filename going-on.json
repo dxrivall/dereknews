@@ -1,10 +1,35 @@
 {
-  "updated_at": "2026-11-26T08:15:23.849486Z",
+  "updated_at": "2026-11-26T09:33:11.347516Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "RBI ransomware attack claim puts Burger King data at risk - Cybernews",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFemFYX0NJNV8yZDFBbnJsZHZwdDNKOGxmQzMxUEJyNVE4RWJiaW5vYzdpeTFaZnJaZWo0TG9UUGRZTWYtdTRFd1k3Ym91eFFSUjZ0UmRaNHNjbVNQRzFVNXRyNVRyY1hHa1pIMjhUcF9ub1d5clE?oc=5",
+      "date": "2026-11-26T09:00:54Z"
+    },
+    {
+      "title": "myColorado Data Breach: App Offline, 150,000 at Risk - shattered.io",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOd2hxS0RrU3YwVEtuM3JDeUVYWlNpMkNUVlNHc2stcEZfUGpUUWNMMTR5ZUhwQmpFWkRqYkZRQmNzbExtVWdJX2RPU3hfZ2Uwd3R0NGNROExudTJkdVJNM2ZraFA5WTk2M1hha3ZLTjY3MVVqbnYzQkg4c2Fnd0FRTGlHaw?oc=5",
+      "date": "2026-11-26T08:49:36Z"
+    },
+    {
+      "title": "1Password Breach Exposes Customer Data, Internal Source Code - SecurityWeek",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUDJzb3RxdDh6SFRhcW5NazRCS2VVNk1iSlNjeTFVRmI5TGFxZ1JvVTVoRTBudjdQQkJBamNhdFB4Q2NsUHp1Qm5xT1FCZTNsbmdBQkZtSGtNLTh6N2VhVU5CVWp4ci1ZMS1yWDhZcVNJZExOblp5bklyczI3bWxwTUFmc014WF9fUV85blJ5N3paSFU?oc=5",
+      "date": "2026-11-26T08:32:10Z"
+    },
+    {
+      "title": "Keio says ransomware attack may have exposed data on 10.6 million people - MLQ.ai",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNajBjVGZOalo0b0VUTFlOdTM4YkhJd284LXloR1VhRk9waTM4ZUI2R00xSzZVQ2dfVjNYM0tFblh4eG9RWHVXR1RhcXRROWZYMi1jYllrSjRtdE1DR2NwWTNETXZnQWNtb01YZ2o5X1RldG52R2gyRC0yMEVBb0Z0SUdCbmdoMm02ekVuQVV5SnhOdk9INklz?oc=5",
+      "date": "2026-11-26T08:24:13Z"
+    },
+    {
+      "title": "Kaspersky, VDC Strategy Warn Ransomware Attacks Could Cost Companies Over $470,000 - Brand Icon Image",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTzNhRHdEbUhXUndFdkZqTUhiVVAtbzB1VVhMWkN3RTUybnFrSVpQelRKdjNNTHdrNE4tSjh0OUE3Wk0tZzVkeDktZTU2RDFLaUdlRmZvdUJlSmJjMUNRci1zWk5waFJyNEhSVW1TYXBYYTlkLWNGVDlVUDVZZ0dENQ?oc=5",
+      "date": "2026-11-26T07:35:00Z"
+    },
     {
       "title": "Qilin Leaks Ipsos Documents in Ransomware Attack - Wisevoter",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSUNkQXRSWFVSMDMwRDNMbVRneEc0NE81UzZWMlptYUhldUhqSWY1X0FzQ3gzN1cxWjlFaHNpeTdNd0hVSGhISFBMZ2JialZ3eEEybF9NZmpySUk1c0R5ek1mZmZpV0FzWVN6aE44aV8tOXE4bHBvSGszSll5a0JleGFySGRDdTFGa3JLeg?oc=5",
@@ -24,6 +49,11 @@
       "title": "YCC deploys NTT Docomo Business AI security service after ransomware attack - Telecompaper",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWM1LWNMWFR5dEZkVS1sR19DNlFxcjMyZzRmR2E3R25NV3M4dm5YWTNBLUx6bHcyd1Q1b25xQ0NFMmNiM29nYlF6QWVMZ3VvQk4wakFHX2tFUjlhZ1NNS0pJaXR1VFE3bkRsbWNxV2FvaF9uSjdiTWIwckJwemc0TmVUY25ybl9PN2Y5TFhaYi01Y1NHS0xIVzcxSm41bWJfV0NGclBXUU1vcEFYd3QtbWRmYzVLQmI2aFE?oc=5",
       "date": "2026-11-26T06:31:48Z"
+    },
+    {
+      "title": "RansomwareRadar — Real-Time Ransomware Tracker & Threat Intelligence - SOCRadar",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YNFJ1aWhUNmVnUjRkM2pyZ3FmOHhQS1NiNzAwRENXaGgxRnlfNG84bGhrcUNqZWwxdGU2U2o5WDVVS1RlbVd3WlBmWnYtZURUUlFKV0kwZkJNakI2amttV1ZyRnY?oc=5",
+      "date": "2026-11-26T06:26:07Z"
     },
     {
       "title": "IndiGo flight grounded for two months at Delhi airport finally takes off | The Morning Standard - newspaper - Magzter",
@@ -169,6 +199,11 @@
       "title": "United Airlines briefly has 'systemwide' disruption to departing flights - ABC News - Breaking News, Latest News and Videos",
       "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUVZyN2R0UTkxamlYbkVMdm5hTmg3MWxXcXRYRHNKZWJtUzBNdVlpRXh1MDJncVp2WldRY2NaYTdvX3ZYX0Q3SjBkUVBTcGJ4cERRekVSSERDS2xCODBoUldYUERKQ0pmU01UbWktQVlUZzRjZGhZS3lFdFIxeWpGZHJsejNSdjhGR3oyWl9HM0o2X2xMN2lBa3BsUnBGRy1YLVdFQVBmNmrSAa4BQVVfeXFMUDQ1R0UtRDJDVmxZUEJ4eTZQang4VUZ6WXFKV1dIdWJMYlMtZUtRSExQSXFGWU45SFl3Tm9QbktJbS14cklZTUpjZnFuNlZGYTcxREZzcUducTRhT0NnTURaZW1lUmtmUnh0SW9lTW9OZEMtdGtRNzlpWlVKNWp5QjdPdzF1R0RBYnJzX3dUTnV5WW1FMEY4bjBnUHVPRUtkazlrTzBjc3hXQTZEZUZR?oc=5",
       "date": "2026-11-25T21:13:10Z"
+    },
+    {
+      "title": "FIFA says hackers accessed ‘limited set of personal and business information’ - The Record from Recorded Future News",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE96ckxnTDBVNUM3bGJVSGJxaXlHYmMwNTAwLWNtWUxkTkUxcnVQZlNQSW9VSTNXWjE4U0Y0ZzNTT1d0SkxtZG5VM1ZhS1hmMzVhcTBxaGVkQ3V6RjlS?oc=5",
+      "date": "2026-11-25T21:00:35Z"
     },
     {
       "title": "Sheriff's Office advises caution with deep frying turkeys this Thanksgiving - NewsBreak: Local News & Alerts",
@@ -1196,6 +1231,11 @@
       "date": "2026-11-24T14:21:56Z"
     },
     {
+      "title": "‘Petty, vile revenge’. In 2021, Belarus grounded a Ryanair flight to arrest a journalist and his girlfriend. Five years later, Roman Protasevich has tricked Sofia Sapega into filming material for his pro-regime show. - Новая газета Европа",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE44VlRlU0twMVkwZ3FCSXk4ekoySGdlajhxS3M5cXdxd0hBYm9wM0VsYV9kbm5PZkFkRElaczFPbDZwSENOcXBoZEFmUFBoSmtqNVdSbHF2YkRuLXd4UFdmU2tLeXR5SGo0NDZxd2Fva0g4aWtxbjRz0gF8QVVfeXFMTU03TFlrcUtac1hXeXMzb05qbm94M3FBYnFzSkdrNlctaFFoNDA2T0hfSno2dWRvZmI3cDFOajdqSDE3LXpISUlLc240dk9mV0J0eWJaRFEzRFFNbGVGWDFjc3lFd2hNYjZNeDlCc2JtSDF0X2Zyc2RDUnBpSw?oc=5",
+      "date": "2026-11-24T14:19:05Z"
+    },
+    {
       "title": "Queens Public Library restores nearly all services after ransomware attack - Spectrum News NY1",
       "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQc2VwSjRfVzZncG10TE5Hbmp5TUZoOV9lcmNvZzZyalQxVHZtSVZZRk1GUVhtelllcm1kM0NxdmJKa05tUnduOEljZDF4UDJDNWo3bDhJaHlORGdleUw4OE5QcVJqMGhQN25BdGNkTmRUQk82TWczNTlEWTkxTnV0cm9uUks3NE1PMHdkdGVydmwxSFk5VHR3NDNuMk00U0NIQW9Heml0YXZ6bmRmVWJTUjVDWnlxLVBYS1RiMC1jbGRUWjlRLVVlOHRaOFNUbHBkVnc?oc=5",
       "date": "2026-11-24T14:10:00Z"
@@ -1604,6 +1644,11 @@
       "title": "LaLiga reports data breach affecting fan services platform - SC Media",
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbDJPVFpram9aVlQxdWNlYmtRcjZtV1prU0VwSUxNclYwR1NnMWxGb010WDF3QXZ6eENsQ1lGV0g2U01jU1pUS2thOE5wbkxRQTlNQkJ6T011cWludjZ6TTk1aHh5YmRlam5SSjZwek0wUlJnQ0NubTZibW93blhEYk41b1JZX1BRNE9TUjZKbm5uQQ?oc=5",
       "date": "2026-11-23T22:54:05Z"
+    },
+    {
+      "title": "UK's Next flags cyber breach at online supplier, says no customer data compromised - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNaTNseWZyOVhUckRBOGpXWnlrejNKY1MwSG85UmpiLUJ5ODZnZUt3SHFJTkNXS3BIai1SM1dfNExaMnliQTVDRlNQX09LQVcxTGk1c2JqYjNGZUxYRDJpUGJIUWt3Nkg3X3NYdC0zY2t3ODI5Zzd3bHJkaW9SOHIyeGo2OVpCN2h6LTQ1eF9DUDR1Z0hWSXJ6RkExV2M4eVp3MTdqSUtWb1JPdXV6eU55ak9feHdDaldDdGZxMDFsZU41STUwWTJuWW9B?oc=5",
+      "date": "2026-11-23T22:44:09Z"
     },
     {
       "title": "Boston Scientific Corporation Data Breach - Federman & Sherwood",
@@ -6009,46 +6054,6 @@
       "title": "Trump says Iran is ‘looking at biological weapons and gases’ after DC dirty bomb claims - The Independent",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNaVRuVzdXNXBoSzItMnFkS1NGRGVEZ0JFMGxzcnhNdDYzXzlIc0Ryb1FIbXFTVm9MYlZQT25EV2pjVUo1QUpxX1pYNWtmbk5qY1BCVXhDb3Z2bmI4Vm5ERlhSbkZ1TnB2X1V5VlZsVkJIRWgwN080anF5el8yLWxBVkxxZVlNbmdDWGQyQjFBY2swRW1odkJ2WnFiRXc4S2pSek85MXF4dXdHdGgzcFFPdjRaUWJjV28?oc=5",
       "date": "2026-11-19T09:42:00Z"
-    },
-    {
-      "title": "‘Unbelievably serious’: Iran’s alleged ‘dirty nuclear bomb attack’ on Washington dissected - News24",
-      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOelZKV0ROYXE1VXlaUmtRSTlkX2xlVDJUMFZ4Q0tfbndjbC1CSldMSHUyVUwwZzNyZHk2NUE1TlF3cU5VVE4za0RvOFJpQ3lCVjBtc1p5QkJfcVRBZ0M5d1R6YTZBVjM4TldEaEZpelNfcWRGejBtWjlzamVkY1YzOFNyODU4Y3BtZmhhQ1hFUkJuc1lKREpvX2JPZ2dDc3EyeVE0TnBLa19JdkZEV1BadGxHUlkwVVVrdXVGS3d2ZFZjRkFnX2lCTjI3NXJ6WldHSkEwVE16Q0hEYlpVcFVkb0N3bExJQ2lUX2d4dkRIY1VSUFdTSDl3ZTFlT2NUVDjSAYQCQVVfeXFMUGpSNk1Wc2NPRWQ5ZmRfZTMzOEJyeE9vc2xKZG9STXNhWWtGclpsaXZUbUJmeEtiN0sxQjF2ZUk5VzBxXy1CTDVwMVphUC1TZnUtQzlhT1ZHMHpUOThuT05kemREdGYyM1ctdW83ZEZoMHNDbzE3WFhfc3RJUWNpVlQ5LURQWDhZbFo3N0tRNFBHNnFjc2FLV2wwZG0zdUpIYzhTVXg4cDhpbFpqUThPNEtnWWZPbWJMeERLOHppRDA3NHZCSFIwMHAwLUJKRTBlblQtUnVmX1dqNHVwY1hUcU9xdUQ4UVdkZXE1VmQtRm8xWlRYMjBfRm8wYjBsNy0wcS1fNVY?oc=5",
-      "date": "2026-11-19T09:28:31Z"
-    },
-    {
-      "title": "Ransomware group The Gentlemen threatens to leak Nvidia data following alleged cyberattack - Escudo Digital",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPOGNqMGJFU1ZfZFUwZTNyMnhlWWVYZjhfUk1KZ2d5MktTRVNBeVhLWnRwN3FFY2dWN3hvdERUNFg4eTdKT1U1SE5NQWpiUDBjZXNTaHJRZ0RESUdpQU9Ea0VVaUFTVERMUzI4ZVJldWRYdDVBd2xnN0VBNzZQczltWWhmelRwNG1EeGpKT3FMS19Fa0d0ZzBZRVYyazJzRHhOTzI2YlNCSDZDOFhCYVg4ODJxSmd1NGtESm5FeUtrU25DWlk1cGFzY3NGdzktU1pLM3plMFNGeWNBZw?oc=5",
-      "date": "2026-11-19T09:24:48Z"
-    },
-    {
-      "title": "NVIDIA investigating Gentlemen ransomware breach claims - BleepingComputer",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOM3ZNbDdsZmU2ODg5MjV3VTc3UTdVeThPbjFiWlRMOWRCZ0dLMjltTDhocnpHUW5VV3hJRTl5M1U3OW5KamhBZDNSQnBFd1ZxR1pYaFd0Mm4tcVQ0bHVPUjNfYkt1R1BVVHJSWFJaRDYwRHhHMVNNSmpVeG5CX2RMaVVrU1QxUk9KVTFKNDBfN0xqbGRXalI1cnRONXdlQlByTlNKM3VR0gGrAUFVX3lxTE11bnVnNEN5MnNDYVFoUlM1bGhfNExneWs0OWJuOXN4WTN0Wi1DV2ppX1pFamRuX0d3MUZEWEVJU1VyZ0Zha25oNFFBYXRJQ0x5VjlhSjVyOWdranZDQjVCWU52VGxaaGd1QkJxeEE1dEFFWUlyR29VN1dXaXYtb05LX1pGY1NnYndkdnp4TU5IOHVqOWU1NU40ZWQzZG1ZN0NzOFQxSjJsSVlPQQ?oc=5",
-      "date": "2026-11-19T09:23:21Z"
-    },
-    {
-      "title": "Del Monte Foods Data Breach: What Information Was Exposed? - Legal 500",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYWNpMjNPRUNySHR0WGZrSXRCNTlFOWlickJfSGpBbEZxMEh0bVZPSnZ3OTRHekMwWXZVQm5EdVpvS1FNMHg1LTUtVmVkVDI0RFdGblZieTZiU3F1akxKQ3paQWFGN3ZUUEdiR0pkc0FrUG10MEdSZjBRazFSdTFSdVp2TjczNnNRU0dQNUJ1Ykgwb0FLVzZVNnNmUzBnVGFqRlhVZDREYzgyYnBDMXMxMzdJTEMyNGM?oc=5",
-      "date": "2026-11-19T09:15:59Z"
-    },
-    {
-      "title": "Morning Digest: Northeast Ohio library systems hit by data breach - News 5 Cleveland WEWS",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOR29XVFlOTUR6ZUdCa2tZc3ZWdm90NVBzR3Q5eWQ1TkpBV3NnWXp4U3pvbi1EeWZVVk5YZUVoRE14OGFoRDNNRm5fSVZxbTNpc1dfV2xEaUxsNlVUUGNxQjlybTFlaE5xNHhLRHR3YTZDNjBEa2x3dUljbWx0NlhXZTZpX3BBTTNUd2JNUHF1NDFBQVFnNHpNT3ZEeXIxdFFXcnJjbndNT1I4cVk4LUhpMDBVejF5QQ?oc=5",
-      "date": "2026-11-19T09:00:03Z"
-    },
-    {
-      "title": "‘He’s My Friend’: Trump Greets Putin Ahead of Bilateral Talks - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZDg4VVg2T2JfOEZZZkp6ZVhuMXhVQ3pnTDNBTG5tcXBtN0l2QTladnJJaXF4cGt5ZFhucmtHRjVDcldwMWl5WGRJMnlZMS1CZ2hEX21Nd0pDU3ZVbGc1OGM2cVRaU25NTzdNc0dpY2phTlZxbl9HQU84WWVaUkY1WGtaMHM1OTVEdGdFX2txWFNrM2s?oc=5",
-      "date": "2026-11-19T08:52:15Z"
-    },
-    {
-      "title": "Rubio says no imminent threat to Washington after report on potential Iran ‘dirty bomb’ plot - The Times of Israel",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQb3cwNW9ab0FmUEpaenBheFN2ZVFJMG8wVDNqWEFGZ0dYYkRvTTh4eUNORnkxS0p0NFE0TTJQUG1jRktJU0VpM29ramtuY3owbmxOQTFfNDRUUTVEM3piMDNyRUdiQUhPUE1CT203Rmx2b28yQ3dsd0hqZlA1R01RZW5TSUs1cGgwOFhuc1JLd0s3Uk1TVm1aTGFZa3FobTh6QmpmN0NvS1NBMHVOWTlFeHdRcWxXeFcwWUtLUzVHM3J6TzJneHNJT1QyMkJlRlp4UkE?oc=5",
-      "date": "2026-11-19T08:38:14Z"
-    },
-    {
-      "title": "FCA issues cyberattack warning as three advice groups hit - Citywire",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTTdCYlppbnd5RzctbnZwSTJBb1N5YzdUeks5NXAxTkxpWXZNQ003QmU5OHMxLTVkWEI1dy1YZk9Da3RPenIyZDlGazNmd1BRaWRpWUFpTkFGdHpJZ0w2SW1sVUoyVXBhb1dKUXRWRzQ5ZnR3MTN6WW5kaFV4ZXQzZ0JlbFQyTnBFdTdsQVQ1R3BRSGFCTWdGRzBjVEM0NmU5dXBTMjlvLS1qa29qNjU4?oc=5",
-      "date": "2026-11-19T08:37:19Z"
     }
   ]
 }
