@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-26T20:42:12.061444+00:00",
+ "updated_at": "2026-11-26T21:33:34.177835+00:00",
  "level": 5,
  "label": "Normal Activity",
- "as_of": "Nov 26, 2026, 8:33 PM UTC",
+ "as_of": "Nov 26, 2026, 9:33 PM UTC",
  "venues": [
   {
    "name": "Extreme Pizza",
@@ -10,15 +10,15 @@
   },
   {
    "name": "District Pizza Palace",
-   "vs_usual": -25
+   "vs_usual": -40
   },
   {
    "name": "Nighthawk Brewery & Pizza",
-   "vs_usual": -45
+   "vs_usual": -53
   },
   {
    "name": "Pizzato Pizza",
-   "vs_usual": -44
+   "vs_usual": -50
   },
   {
    "name": "Domino's Pizza",
