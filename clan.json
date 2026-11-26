@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-26T10:38:45Z",
-  "fetched_at": "2026-11-26T10:38:45.787Z",
+  "updated_at": "2026-11-26T11:38:00Z",
+  "fetched_at": "2026-11-26T11:38:00.361Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -297,7 +297,7 @@
     ]
   },
   "currentWar": {
-    "state": "inWar",
+    "state": "warEnded",
     "teamSize": 5,
     "attacksPerMember": 2,
     "preparationStartTime": "20261124T113719.000Z",
