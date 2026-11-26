@@ -1,10 +1,25 @@
 {
-  "updated_at": "2026-11-26T05:45:37.961549Z",
+  "updated_at": "2026-11-26T06:46:46.523504Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Ransomware recovery costing SA firms up to US$1.4m per attack - Africa Business Communities",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORzdMaTlyTGxVZWZwUkhGOFhtV1o2MkVSTzRvcGVJWlFpSWo4dUo1d255NFh2emZfeU1XanZUa0xmYVdXdTU5eFhpNWtjSV9WVF9HQVczekpwMVZuMi0xOEhubzgxeGJQdUJLWkJrdy1yNHluU2xFUllGcUwxTk9WMVppR2xvb051TzNhcHBlT2VzeFJwZ3NpMVhDREdzZzduNm96TGY1QlpGbzA?oc=5",
+      "date": "2026-11-26T06:34:13Z"
+    },
+    {
+      "title": "YCC deploys NTT Docomo Business AI security service after ransomware attack - Telecompaper",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWM1LWNMWFR5dEZkVS1sR19DNlFxcjMyZzRmR2E3R25NV3M4dm5YWTNBLUx6bHcyd1Q1b25xQ0NFMmNiM29nYlF6QWVMZ3VvQk4wakFHX2tFUjlhZ1NNS0pJaXR1VFE3bkRsbWNxV2FvaF9uSjdiTWIwckJwemc0TmVUY25ybl9PN2Y5TFhaYi01Y1NHS0xIVzcxSm41bWJfV0NGclBXUU1vcEFYd3QtbWRmYzVLQmI2aFE?oc=5",
+      "date": "2026-11-26T06:31:48Z"
+    },
+    {
+      "title": "US charges data recovery company co-founder in ransomware recovery fraud - Social News XYZ",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdGFFOUpZZzFQZ1JQZUx4bkNPbE5PaEI2MkxjZzN3TDJHX1YwWWJmTF82RTdqeHlJUkIwZ0dXYndLd2MtbVJIdHR5V2pSRkdYTVZSb0dxdGJEYXp4aHg3TFk5ZURxX05MYzYyVVJSaXktSF9POUJfWDlFcm8wRGF0QnQ2ZjdkSHdwaG82d1ltd0h3WVlIaGk3STVKYmhKci1NU2JxR25pY2tZY3dsWHJBZFBKWGVyQdIBtgFBVV95cUxOdGFFOUpZZzFQZ1JQZUx4bkNPbE5PaEI2MkxjZzN3TDJHX1YwWWJmTF82RTdqeHlJUkIwZ0dXYndLd2MtbVJIdHR5V2pSRkdYTVZSb0dxdGJEYXp4aHg3TFk5ZURxX05MYzYyVVJSaXktSF9POUJfWDlFcm8wRGF0QnQ2ZjdkSHdwaG82d1ltd0h3WVlIaGk3STVKYmhKci1NU2JxR25pY2tZY3dsWHJBZFBKWGVyQQ?oc=5",
+      "date": "2026-11-26T04:59:04Z"
+    },
     {
       "title": "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdlVKVU13R09JUmtRV0ZpMW5yVkdhT1MxQzJhdDdjNDFUdDVWSlJPOWl3R2tGYzU4ZWFuMldlcjNCVnVKYTlqUlhPaUJoNlVkVXdhOWxmeTdqaDltWDl3QTF6cDlXYTlZeExiTkZsQmNSdE8wRXp6eS1iNWNDQzFxbTRKZEZYdHZzV2RGQkNwZmNxUHhCdjU4T3ozc0VYV1JzbWt6eWNKTVhpc3NE?oc=5",
@@ -31,6 +46,11 @@
       "date": "2026-11-26T04:20:15Z"
     },
     {
+      "title": "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach - The Hacker News",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqREJfa09NT3hsLU1TUjlCQlFJRlFvTjlNSU1uZGtEVm92T3RINFJYT3pNVWpHYk1DcjdlYWMwWnhaWTdiQWJiN3h0LTZZQUM2T190MFBfSW9XWElaSFVWdEo0QTh3TkI0c21nQmZFTll3ZXFrSngtM0ZESmVHUQ?oc=5",
+      "date": "2026-11-26T04:20:00Z"
+    },
+    {
       "title": "PNG's Air Niugini rejigs ops over grounded B767-300ER - ch-aviation",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQT2ZvbUgybWNEYWlJTlVlNFV0bE5yaVhoSnJJV1BxRGhOZ3dOUzEtdUFGT09pSlpXRzhDOWhodU5NQkNjQ09kdnAwVmVmMjNVUFVJdzE2bTJYRUYzYU1KSjREUUgyX1NPNUhMcm9QVmlja2NJelpCbzRSZXQ4NWIxeTE5TFJzZ2lZUlhkWnJYbE41OTBaM19Z?oc=5",
       "date": "2026-11-26T04:10:34Z"
@@ -39,6 +59,16 @@
       "title": "Flights grounded at major US airport after cargo plane veers off runway - Daily Star",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQT0JzZy1BVUs3Mzdxa1hHWUx2bTFCaHA1T2ZOeTZXNGxWWlUxbk5zOEFrY01OcWRTYlhfZER3bEdPWXJFSVdqR1ItTWFfQWxRWUJ3WHVTaWhRdGgwTl90RC1KWFRMYnhNeS05TUpWdFYtYUlDWEFEeGQwVndXRnJFWnVDNFF4bkZ6bldxdGlXbmwzRHk1X3c?oc=5",
       "date": "2026-11-26T04:09:00Z"
+    },
+    {
+      "title": "Flights grounded at Miami airport after cargo plane veers off runway as travellers face chaos before Thanksgiving - Daily Star",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQT0JzZy1BVUs3Mzdxa1hHWUx2bTFCaHA1T2ZOeTZXNGxWWlUxbk5zOEFrY01OcWRTYlhfZER3bEdPWXJFSVdqR1ItTWFfQWxRWUJ3WHVTaWhRdGgwTl90RC1KWFRMYnhNeS05TUpWdFYtYUlDWEFEeGQwVndXRnJFWnVDNFF4bkZ6bldxdGlXbmwzRHk1X3c?oc=5",
+      "date": "2026-11-26T04:09:00Z"
+    },
+    {
+      "title": "FedEx plane overshoots Miami runway, causing temporary ground stop at airport - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE45bUpwdlMwTTBqVE5uMnQ0TXQyQ0hnLUVlU1B2akk2bmxaMTQyUG9BOG1xaFE4RUpERmlMS3NQVGJ6ek84Um1UX25PTWJ5Z0Jzd1FaamtsWlZjcjg?oc=5",
+      "date": "2026-11-26T03:27:33Z"
     },
     {
       "title": "FedEx cargo plane skids off runway at MIA; incoming, outgoing flights are grounded, according to FAA - WSVN",
@@ -2871,6 +2901,11 @@
       "date": "2026-11-22T09:28:26Z"
     },
     {
+      "title": "US denies reports that Iran shot down an F-16; Gulf region subjected to new attacks. - Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPbE1rVzN2bUs3dzY5QlMwQzZYX3h1WGhFaEk5RURFcGdXdUV5anVGNWE0SkhPR3F1b3k0bV9aSmh3YVdub2ZvZTR4TzNsUEFrREZ5V2lOMUNNQUxNejNDamhEbFpvb0xxZDZxS0dmOVE1dXFPUDdRcG13VE5DTkNCR2VlMXkzMWpTTXJqMTRSSkgxbGs?oc=5",
+      "date": "2026-11-22T09:16:10Z"
+    },
+    {
       "title": "Breaking News Topic: Latest Updates and Key Developments - JFeed",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0zbjdQbFpHd0JLVmlmQkJjVXBvMWoxazNpUW9ZamVfMnhYbzl4TnFhZGZXa0dZdGZULTVnUFR5Y2dVMmM5NDVPeUM5b3JLUEhlWm1OOEUwU3RnSkhINGdKVW5n?oc=5",
       "date": "2026-11-22T08:49:00Z"
@@ -4641,6 +4676,11 @@
       "date": "2026-11-20T09:22:59Z"
     },
     {
+      "title": "Gavin Newsom Wants California to Have Power to Shut Down ‘Rogue’ AI - Newsweek",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYWlJWGtvWGtQQ2lsdjVma0JUcUV1cnpSWC12clh6ZDRLV3IxVmFRbzVTaWxMMUVuZk5Pd1l5UW84Z3RWX1Q2aEcteUFIemk5TzJHZTJRVnR4ZDhNVDlEdzAzNzdGaDFMdTNwNmZLenM4Qkx2eURDMWFCT0Q1V0ExWW10ZDRZa1lmd3NaNjl5ajA1R19rdUNvc2p4R3VMdw?oc=5",
+      "date": "2026-11-20T09:19:41Z"
+    },
+    {
       "title": "Trump says nuclear arms deal with China, Russia difficult, weighs next steps on Iran - سانا",
       "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5Ldmk0WE1HMF82QjdmeUg3T0FHZy10YTh6QzdpOXRvbUJ2dmV5RjQ1cmJsbHBDUFk2XzNWVXljbzRVYW40R0VRZzFpUXppMDFkV25Z?oc=5",
       "date": "2026-11-20T09:19:04Z"
@@ -6024,51 +6064,6 @@
       "title": "US-Israel-Iran War Latest News: Trump Renews Annihilation Threat Towards Iran Amid Fears of Dirty Bomb Plot, Claims ‘We Didn’t Start This War’ - The Sunday Guardian",
       "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPckgxd3o0UVd4YU5ZOFdCbWdMQXZ5Z1gxWXRUeDZfVWIxSHNRZ29IZ3VhS3Rkb2VObFFWMlg5ZTZUU2pzTXQ0dGppdmQ5NW8xaHJIZ3R2bUVURnhMU1g0b3FMNHNRUDBCN25OX1VZcXRKNlBIdXFuVXFOeGZBQmNsQzdFXzM5elBHaFpzQm1rNTNteUhRRlNKek1JUjVjMW52Q2R3bU8tMXIxV1A1UnFVNHF1cWpfMmRoSVFIVnFuYWFNMklSakFlcExnZ1lSczAwVlg1c2wyYW9SbTBaVG0xMGZidW1nbkpEaUdMNzZPX2VhMDVjTjVQVFhxQVZKNDNmdF9KekQ4ZjBTUVJLNEFR0gGUAkFVX3lxTE1DTEdXNmYyMTZSMU5ZSmhxT0dfT1VMblJMR2k4RzFLcW0xYkczTnMzUjdPemZEdDFsTnpaMEZuTVBEaFZyWTFtVjNiVUNxc3lWMC0yRVRmVkU3SVBwRm51aEdMZTdWSFZNa0ZVenZqdDJVd241UnpqcFd3cEFxTk5YbDdLNVlrRTA1dzB1Y1g2MDV3M3JWT0EzSG9pampJeTFWMUd3UDhuN2txOUtwendsVjhBbnNUekViRDFmNmhtQlYySzc3cmZIa1FJYnc2bFlFcGl6Rl9qYWluM25nbUFmWDhnWGJZMW82c2g4MDRPMm1ZYmRvZzJyX3BQd0RBaHZ2U2hLV1QtelpYQi1wRHU2dGVhVg?oc=5",
       "date": "2026-11-19T06:57:33Z"
-    },
-    {
-      "title": "Flights, banks, and email keep going down — here’s how to tell if it’s an outage or a cyberattack - Tom's Guide",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOaTlLdWdnd3RVcjA5aXFpb1dKSVVjNGVZZlhJemdvMlRLLW42OVBvUFBjbEVXN2RaNC0zYTBPMnltWnQzWkFVNHUwcmdsdXNMSEtqRldSZUhVNHpSLTUwN19Ia3JNMEk3U1NnWlg2b0dCcVZ6UXN2TFlURGcwbmZ6R21RVnI3MTZsSEpSN2JYZjlkWGdSdy1pOU1Bb0paaXBwLU43Wk5zSks5bWZnYk1TOTY1WGQ1V1VYcHRxR3NJakVzUUZUMHRGazNVYWRPVVE3QkNSY1otajB2Y1E?oc=5",
-      "date": "2026-11-19T06:45:00Z"
-    },
-    {
-      "title": "MCMC to conduct nationwide emergency alert test on Nov 29 - The Malaysian Reserve",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRk9nOVNsSE8tYjQySWZOWFk2QUtsbUcxTVd3eDVDQzJmRzJMeUdrYmNGTXlSS09tNTN5TFF5Nnh3dHpaMzVwMmpWQjB1ZzJvT18wbk1LV3hpb3pBeG0yTDZYSWZabS1zbjZmaVF3LUpsNmxKNmlBRjhHeWJTVnctUWJXVlZUUld2MWF2WE1rTWxIemJ1OTBtblpJNkdKTGd1U0VZ?oc=5",
-      "date": "2026-11-19T06:36:05Z"
-    },
-    {
-      "title": "Iran fires on US air base in Kuwait - Nagaland Post",
-      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA3ZlJOWmo2MWxtMUVVUmtSXzB6czhUejFwTU9xZXM0NHZUbmxMaTlQWE43Q3VOQWJfbzB2aXpldnI5ZzB1VEg5eXFxWDhKTk1KT1ZvTGVOT29OVW9TT2hTMEd3allRS08zUVd6MzFB?oc=5",
-      "date": "2026-11-19T06:36:03Z"
-    },
-    {
-      "title": "Ransomware Attacks Jump 20%; Experts Warn Businesses Face A New Threat Baseline - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPS25fQjc5RmFhZzA4WTNUMjhNRnNsWml5Q0V2VEM4N1JMVG5mdk1SQU9BdVBBSlJiVkNVOHE4Y0xDTXl6MHZ0U0hlZkdrY3dhejIyRmFiMXQzWnNPUVJNS1FrNEJMMDlaS3YzbnQ1R296WFdEeTFFVEU1M01QUzVUZEd2Q0ZZeVNZR1FsNUhPaVUzVnl1ZUhqM0VTV2YxT0VjVWhNc3F1RzZ3S2UxVUNSVkRPamZ5MmZ1R1dvdk9oeFk0aHlwMFpQYWpjU0xmaFU?oc=5",
-      "date": "2026-11-19T06:31:00Z"
-    },
-    {
-      "title": "DHC Reports Data Breach Affecting 19.11 Million Customer Records in Japan - Global Cosmetics News",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOaHNVcFdPRm1MUlNSZVBCYlh6WnpPcHUyanBfOHdhUzRXV19FUWlJOW4zUUJUZWNvcjR6aHBRTmlkQUYzVGo4cTBKcUJyTF9OYmQwaFpGZTJlMGdWSENnejFMT0M0TTJndElPeDgtbjRyc0s4ZW03MEZNUnFIM04yX2JUeEZCei1Dc0phQWF0dUh3Tjc3LTRJaWYtZTBfYU5xNUs4dU1kekVLbnlTODJz?oc=5",
-      "date": "2026-11-19T06:10:23Z"
-    },
-    {
-      "title": "Apology letters sent after hospital data breach - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1kR1M5QVVwM3QtM21iaU03a0lUeGhpc0ZQQzVDOGIwdDlnSUxHcEdKbC1Hc05jd2tLWVFnbHBrVE5vR1B3QmRyMnRaSDhjMGxTS0dKOHZ2VFdicmM?oc=5",
-      "date": "2026-11-19T06:06:31Z"
-    },
-    {
-      "title": "US/Israel-Iran war: What UAE residents need to know today (Nov. 19, 2026) - Gulf News",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcjZVeURGd1VYMjF2Mk1JWFNkajZjVHdzbFBPNkprTGd4anJWOFE4b1ZtaHRMZml3alMxWk43MFV0b3owRmFjUzJzcFRhV29VMk9NdHZOVU45WTNtSjZUOElfT1BqQXhrYU9lb1c4aTU1R3B1V2xLSGlZU21ZSVBtc3NyYTBhdXdQQl9ZLVIyTXlkR3NqamFGQjdUTlVTYlpsYzBWaDljY9IBtwFBVV95cUxPWDZ4Q093Ui05dDlLVVJoV2dPcVpzcXRFWlpZTUx5WDQxY0tlLXlUNXhLSy1LVWRfcEdlMzVhM1otZzNVM2dRc0lhQkdiMF9HYVg0TDZrLUN5X1B4SE8tSkYzWGpDa1hRV1VFWjhrNDdnQzZTaGROb2pURHhBT2JiY2pNWVpwRXdtTFl1bXQ1eXpHN25kcjZ5UzVIc3JoRWI4VnJKTUZxd1M5UGpsTjdlNEhfbjZZOHc?oc=5",
-      "date": "2026-11-19T05:56:16Z"
-    },
-    {
-      "title": "The Gentleman Ransomware Group claims NVIDIA Hack - Cybersecurity Insiders",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPclktMDZsaml3UHl4NUZoNi02MXp1cWJ5UWQyUWpoS29ZS1AyLU90MGZjTVJoM3pPVGRZNFRqT3ZWSDhkZmZ4WjF1SnVXVVl4YjdnRTFpVnRjWlZhVjdQbGVTZ1FyZHNQRkxzQTM1ZmpNVC14UXJ5TVdmLTJxM3dlVzQ2c1NndVh3RTVyM005dHA4Qjg?oc=5",
-      "date": "2026-11-19T05:54:46Z"
-    },
-    {
-      "title": "Pentagon launches new strikes on Iran - World Socialist Web Site",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9PaG9URVpxb1Z3Y1gzaEdIYXp0YmFKb0NmOVJwcnA4azgwckxpSXZVVGgzVUY1Um1KX1dMOWU0Sy0xd1VZX2c1d3RtSGNvQnNMaDkycFpRX25KTzZlQTg0VzFvR3BkY0J4?oc=5",
-      "date": "2026-11-19T05:53:10Z"
     }
   ]
 }
