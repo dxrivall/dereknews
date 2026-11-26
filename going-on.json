@@ -1,10 +1,25 @@
 {
-  "updated_at": "2026-11-26T10:35:04.155285Z",
+  "updated_at": "2026-11-26T11:30:30.393075Z",
   "tension": {
-    "attacks_7d": 10,
+    "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Heathrow Airport third runway plans 'should be grounded' - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9RaWpQZVZjcW13V01CVk1SWGp6NzFHYUxlekZrbG5VU1BzWXkxWmdhUk4tTGJUSWNqTGI1aF9KX3Flb3MtOGY2VTlxbDl3U3lsOHZYaEFwLUdsMllGN3c?oc=5",
+      "date": "2026-11-26T11:29:08Z"
+    },
+    {
+      "title": "Heathrow third runway plans should be ‘grounded for now’, rules UK transport committee - FlightGlobal",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMkkzZldlWmJBTEFmcVpJXzRPWXo5Z2UxRDJWMnYxQ2lEZzhQeGFNVXB3bFItY2JvLXhUcFd6NWV6ZExkQmVBNTVpZFBVWVFVdnZ6TnB6NVNvZHJFSE9WX1FwZUlHVUk0b0RqRlJXNDZFX0NCaXJhSWVkXzJpLTBacXBZXzhlODcteXBOTVRfbXR0a0lUNE5DaGlkYWJBRnRnVXgzbWphNURfaXI2aTJ0NWs2cmdrc29xb0doNEZEWHBsN0E3NVlfYjln?oc=5",
+      "date": "2026-11-26T11:14:28Z"
+    },
+    {
+      "title": "FIFA subject of cyberattack, has ‘personal and business information’ stolen - The New York Times",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9PUDluVHNvYzEwbG1SSlkyWVFfZkY4QTM3Ylc4MzJqU19scXJBVkJ5am1KZXVBWVZwaHNUNFF2dXJVSXNZZmxjTWZzZ2x6d2sxMEVUUVd2NkwzNm56VjhrQ1MzbFJQbVpGcklxX1o4Q0pMS3B6V2UtNE9yUGNFSjQ?oc=5",
+      "date": "2026-11-26T10:41:57Z"
+    },
     {
       "title": "What are your rights after Norse Atlantic Airways cancels ALL flights - and how to get your money back - The Sun",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPNHgyQ0pCUlFla0NWaTFtX1F1NW9NWUJfTXN3REVoRHgwRC1JbmJhNGhwSUJvVTJMelZ4d1ozb01XRnJGM0VfOXVaNnZFWTRNUlB4VzdTanRiSW5VYWhQeWVQWWRIcExFdFUya1pyVHJGTllIRWV4aGxUZWZmRkF0TWR6aXFyMFQ4elE?oc=5",
@@ -41,7 +56,17 @@
       "date": "2026-11-26T09:17:55Z"
     },
     {
+      "title": "European airline suspends ALL flights amid fears of closure - The Irish Sun",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWTNYX09FdEpGSENsdjMwSDNNNFRTa3ZtampQWEFWYmZVODlmc0M1YWliYzFuTm1zNl95MGwyUnNxUmFlSFloeWZFZ0VNYUowWkktVVhyUlo3UEtETnRYV1hIbW9jSk9XSkFKekFYS3hlcG42UHMxdGtkeXN5QnNoSUNBTGtRRFExYl9GSHBBZnhMZw?oc=5",
+      "date": "2026-11-26T09:12:51Z"
+    },
+    {
       "title": "European airline grounds ALL flights and cancels all operations - The Sun",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdlBza1F1cGNnaFdmLWo5b2czdTRBY2UtT3czT3dEdTgzVnQwZmFETVF0Ql93NG4yUktXZGxERnYwYXphUUVyRkF5OFg4aWR5OHg5ejRQeWxNZjY2TnRxcVFBeG1wdFN3QUZadXgxQkhVVlktSVVnOE5UOFpMODhVSG1hYkxwZE5SQjJKalZlcXpDWGNrRXc?oc=5",
+      "date": "2026-11-26T09:07:00Z"
+    },
+    {
+      "title": "European airline grounds ALL flights and cancels operations - leaving thousands stranded abroad - The Sun",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdlBza1F1cGNnaFdmLWo5b2czdTRBY2UtT3czT3dEdTgzVnQwZmFETVF0Ql93NG4yUktXZGxERnYwYXphUUVyRkF5OFg4aWR5OHg5ejRQeWxNZjY2TnRxcVFBeG1wdFN3QUZadXgxQkhVVlktSVVnOE5UOFpMODhVSG1hYkxwZE5SQjJKalZlcXpDWGNrRXc?oc=5",
       "date": "2026-11-26T09:07:00Z"
     },
@@ -66,6 +91,11 @@
       "date": "2026-11-26T08:24:13Z"
     },
     {
+      "title": "Kaspersky and VDC Strategy: ransomware incidents could cost each affected company over $470,000 - Kaspersky",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQ1lrS2xnMW1DM1diYm1HQlZ0X1oxRlBSN0MwZGtMVFNnU0Y2TkxFWVVhRURKR0N5bjFPT1haQVhDOEJReGNtVlZ3ekoyYVVmaWxuT1ZOa21Zdl95bFRSTGxNSTlLS3AyWWg5MVdhMVF0czNkbW5vSWlRRUZ0MS1RdkdtTGs1dDlVQlU4NmhZZTd3cFFoUnNtcHE0eFpFeUR4bG1LcjZGbUxxZkdqQlIwMS1fTXppTEdscFduZ1hKbTU1MjQ4YUVTQ2E1WmRpRTNkc2pZOTlB?oc=5",
+      "date": "2026-11-26T08:01:20Z"
+    },
+    {
       "title": "Kaspersky, VDC Strategy Warn Ransomware Attacks Could Cost Companies Over $470,000 - Brand Icon Image",
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTzNhRHdEbUhXUndFdkZqTUhiVVAtbzB1VVhMWkN3RTUybnFrSVpQelRKdjNNTHdrNE4tSjh0OUE3Wk0tZzVkeDktZTU2RDFLaUdlRmZvdUJlSmJjMUNRci1zWk5waFJyNEhSVW1TYXBYYTlkLWNGVDlVUDVZZ0dENQ?oc=5",
       "date": "2026-11-26T07:35:00Z"
@@ -79,6 +109,11 @@
       "title": "Flights grounded at major US airport after FedEx cargo plane veers off runway - Daily Express",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVzR1WDBvdl91cXhkY0VMbDdrM29QMVlPWElITS1qeDlKNTFnREdON25QTG5WaGNueEpyMzF3SVJaQnNvbkU2MU91SGFZckN2WkdtRWRfaXQ0NjFhTEhRNlVaNVBFY0JRd1h0VVdRVWxuSFU0dHJ6UzN0OVA3NW1LaXVFcFN1WEha0gGOAUFVX3lxTE4tM3BJV25HWmxzR3pGWGF4LVhuNUFfNjA5YnFtMHg3VGFOM3dTempqMmgtSDhra3Bxa0JScTRVcjM3NDI1RzBfdXA5RThpazVMbk5tcS1OWGpSYVJtYjN0djdJQ2ZLV2R6elg2WUFLcVBJQXhmTF9hdDRTaUJIaVpfclhpQ0U4cVlfZDU2U2c?oc=5",
       "date": "2026-11-26T07:02:00Z"
+    },
+    {
+      "title": "Air Zimbabwe Resumes London Flights Today After Securing New Operating Partner - iHarare News",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNRjgwLXFGcGRlQWROajY1TGhpTVFncDZsWnZGRHdrN3gtWUM3bEhVck9hTmY1Y1A2cnJjc3BFdWVDbnN5b2N1aDlvUnljcjdfejFYQzdtQnlpV09aNjVMSXZhOThMc1V2OHFnc3NWSnJBSkhhRXhrVm94SHRJdENMRk9jWWlid1FkekFPZllfd29tT3FIWFdubjNQWXpaVGRf?oc=5",
+      "date": "2026-11-26T06:52:46Z"
     },
     {
       "title": "DOJ accuses ransomware recovery executive of paying ransomware gangs to decrypt files - Neowin",
@@ -99,6 +134,11 @@
       "title": "YCC deploys NTT Docomo Business AI security service after ransomware attack - Telecompaper",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWM1LWNMWFR5dEZkVS1sR19DNlFxcjMyZzRmR2E3R25NV3M4dm5YWTNBLUx6bHcyd1Q1b25xQ0NFMmNiM29nYlF6QWVMZ3VvQk4wakFHX2tFUjlhZ1NNS0pJaXR1VFE3bkRsbWNxV2FvaF9uSjdiTWIwckJwemc0TmVUY25ybl9PN2Y5TFhaYi01Y1NHS0xIVzcxSm41bWJfV0NGclBXUU1vcEFYd3QtbWRmYzVLQmI2aFE?oc=5",
       "date": "2026-11-26T06:31:48Z"
+    },
+    {
+      "title": "UK airline suspends Cape Town flights - Time Out Worldwide",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUkN1ZG8yOUJjUzgtMmZNSWstM3dOWDZuZlJoSlVXMTR0SzNoeldzYy1tc1BLNGo5NVFla21IUUZlN25FRWc0N0lEdEQ4ckNza2hFRVF5VzI1bUZ1blpQTkR0d3lMWlF5ODFlbG5QOHlDU29CUE1YSjVzRXBPanVQblliU2cxQmo4Mmkw?oc=5",
+      "date": "2026-11-26T06:29:00Z"
     },
     {
       "title": "RansomwareRadar — Real-Time Ransomware Tracker & Threat Intelligence - SOCRadar",
@@ -2056,6 +2096,11 @@
       "date": "2026-11-23T15:36:18Z"
     },
     {
+      "title": "Kilauea Volcano Roars Back to Life With Lava Soaring 650 Feet - Newsweek",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWG5HY2xHYlhqTEtCU25KcWdMYU1JeEFZa0VUQXFIZlhtVElxOVRNdGI3amN6VFRTX211QkJ5RnBma2lHMnBqdmlvNTBxaVpHd2NaNHFwZXNwdXlVVkZmYWtwV3d1dXRGeWs3c3NndUNkSGZ0d0pVMWIzWUN4LV92Q0RMUk9fT1RoTm1hUk8zdS1LdmxlQ2dEXw?oc=5",
+      "date": "2026-11-23T15:36:15Z"
+    },
+    {
       "title": "Aviation regulator DGCA issues show cause notice to SpiceJet over grounded fleet and flight cancellations - Prop News Time",
       "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQWjM2aDkxZWxWTE1EeVVRaEttcFVEamx4ZG9OTmR2ODgwSjVZb3VTWTlMYjFaYXBOTm5KdDV5YjFtSzVKMW5DR1VVZkJjQ01FazVCNm4tQXpjZjNzZkg3Qzk1Tm1DUi1DcXZ3TUJYZ0hHamxZdXNJdlUwZDlqb3M0UHBvcmdGSmR2RG02djJqc05QQk9jc2xXQTh2QjQyRGt4OWxJNnZYMDg3MUl2VThOYUU3V0ZtYnVkeHRUN1gxQ2lpSlRNb2RXYWhjTTlzVk9oZV9WUmwwelZDVDdhemh1aXNOQUxDMFhzZk5rVFJB?oc=5",
       "date": "2026-11-23T15:30:48Z"
@@ -2448,6 +2493,11 @@
     {
       "title": "Cyberattack - Britannica",
       "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9RVEFsMGVKdm1Bbnc5ZkVsM2EtU21yZFhVOUt1TU14WjVmT0VYZ29adGhPMWM5M05UdC1QSkFWNTQzT25SUUNFcEtoZ2dseUxQNmxYNGZuZw?oc=5",
+      "date": "2026-11-23T08:00:00Z"
+    },
+    {
+      "title": "Brain Cipher Ransomware Group: Victims, Leak Site, TTPs & IOCs - SOCRadar",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNa3NORjZQRVF4VHkxdW15elRzdlg3cTNnaWNFcjBmempkN0t0dXlNaDByZTlleDJDLUNkcFR6bjlrRURyQnFxNlMwT1BUa3lRUDlIVmxmeVJoNGV0WlVVX29SN2V4MzhndzdQeUt4TTI2MDB1eTNCS1lnMnUzUmNVWGxMYzRiUXJsMXhkVnNn?oc=5",
       "date": "2026-11-23T08:00:00Z"
     },
     {
@@ -3088,6 +3138,11 @@
     {
       "title": "N0N Ransomware Group: Victims, Leak Site, TTPs & IOCs - SOCRadar",
       "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAxU3p6Tmw4bkRxX3FTY0I0VzN3RjRVelJtXy1RMFppTVFIaWpzUUJuOTZ4M3BQeVlBRVc2OEtWY19KWndoVFI5Z29iV2l3SkJNZmRNRG5pV2tPTzhIRzk2dnZhUG40RGQ5LWwteWNVaFN6QTQ?oc=5",
+      "date": "2026-11-22T08:00:00Z"
+    },
+    {
+      "title": "Deadlock Ransomware Group: Victims, Leak Site, TTPs & IOCs - SOCRadar",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9yREhXZjJNbUZzZ1B1YUE5ME5Fa29CMmh2MHpTdl9RS2FhYjh2V1Z5aGZsLW9vNF9PY2tTY0pFeVliaGw2M0haUmcyMHM3V1hjOVVNNk5Va3NpVXI2TWNRbW9DbmZpejhUOUlWdHptaTlsazdxTjBSYzRB?oc=5",
       "date": "2026-11-22T08:00:00Z"
     },
     {
@@ -4656,6 +4711,11 @@
       "date": "2026-11-20T13:08:29Z"
     },
     {
+      "title": "My Daughter’s Fevers Kept Coming Back. Tests Revealed Our Worst Nightmare - Newsweek",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTGNwanNfNkY1d3gzblpXamVydmJaTXRiTlprazNxU1VxUzJUQW5Jd19PY0hBM0RvUmJCX29hZXJmdmZtWHNHdG1yMGMxS3pHcVE2VUFHekdrbjhSMGpPR2ZZcUVTbEpuMHZvTGh6NlM5UGc1NndjZlZPLTF5dFdWbnNQQTJIQkduQlJJYWhjZy05dlZ4MW5yMFZjN293cWs5d1AtSll3?oc=5",
+      "date": "2026-11-20T13:07:57Z"
+    },
+    {
       "title": "The FAA grounded her flight. Airbnb kept her money anyway. - Elliott Report",
       "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORzZTRGZtb1NHWDBGeTR0U1hPZXZvS2loZFg1RVpTYjJ5SmZGOG5MZTNTY1FGVWhkdVJQYTJCUERoWkl4Ym03eXI1QUdtN1dDcFhJTndjb0tKVXBTQ0dHZVRyMi1IR0MzRkt4T3c5bjVTaGMyblkyNFpBMV9LTEQwN1V2NzNOOC1ycF9oVFg2amVwUVdhaENfLUl2NFVhZ3J0TS15dUc4dw?oc=5",
       "date": "2026-11-20T13:01:47Z"
@@ -4928,6 +4988,11 @@
     {
       "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict - Britannica",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
+      "date": "2026-11-20T08:00:00Z"
+    },
+    {
+      "title": "Benefit concert for ‘Meals,’ pantry Nov. 29 - Pascack Press & Northern Valley Press",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE91Q0lfbFF4R3NXY3dTOTA3U3YzMTBpa0ZtTzdVSU9IR2xSN0dqdUw2RFRBSFItaXRlUGtsVi1LOTY1Rk51QVVSV2c3TlRMcUJ4UE5ER2VEZ1MtMXAxWWtSVEFBcmZtRk9HUndfR0FsWDIxT1lO?oc=5",
       "date": "2026-11-20T08:00:00Z"
     },
     {
@@ -6059,36 +6124,6 @@
       "title": "Cyberattack on service provider exposes payee data at 40 Irish credit unions - The Register",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNkcwd3ZCZTM4TzdaMnVra1g5V3dSWXAtWUVORHo0NHh3ZWR4Nkd5ZXRrTUJLWEl5LXFVa0RZS0RzQ3hVbHU0R0JrY3ZzYmhKdy1vUlNDdHJFcW05Sll1c0Y4R0ozMVU0N1hkSmNUYnh0b0NCTXRPZE9XWGdqTE5rSWpReWJIcjJ3alYwTDZGVkpWVnRZVjhQZmlhX29tTFNPcTFWdlYxa3U4blJHRXN0bDVlM2tTRHFMWmpuVHRQOUk2dVYxbWJqR0tMbzU?oc=5",
       "date": "2026-11-19T11:45:00Z"
-    },
-    {
-      "title": "Nigel Farage Plays GTA 6 To Stop Boats In English Channel - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTGhMRHU1Rk5Kd01SNUFIQm5iN19ublFYVjBObHFIVGpWc1pzS3lfa1JvV2JWUDhyUWxWUlJ1cW8xSVRjSHVDUkRqb1hQR3Z5U2FvMGcwOWpzUWluUHd4Y0RZR0QzZUVyTEZQdlU5Qld1enl4bVcyT0VKTXg3WmtJRjk2ek1vV0tMRE4zQXN3UWhzMEE?oc=5",
-      "date": "2026-11-19T11:26:42Z"
-    },
-    {
-      "title": "Iran Drones Target U.S. Patriots in Kuwait After Qeshm Strike - SOFREP",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTUMtMUY3RFZUeTc0aFZhTXNCZzUxOVNGbnZfbC1jeHNUQWNESllpOFBSRnBlRXFfX2xBVzdrblBhM0lYZnZQZDg3VmZaS3llelFDenl6TEZBYXZjcTl2TUtRLXhDLVdYdHhKQ2pMRUI2T2J2azR3QU05OGFxUlBzM196c1JLdlJvX3lfbHhQWFBXelFQZ1BXWXM0WTBLZTNS?oc=5",
-      "date": "2026-11-19T11:00:57Z"
-    },
-    {
-      "title": "US declares there are many ways to prevent Iran from pursuing nuclear weapons - Laodong.vn",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONHMzUG1vZHhqbkg4d3RSWUlYdm8xMHFScm96bTRPRWR2eUtIV1hIdUpwU2IyNV9OUE9QR1VIU2twb21kbm9Zd0xGUF9GUi1wM3daOE9VdVhyejVhYTgzeW1WVmsxUUY0QmprbWVndkRsMEUwMXRhbFcyaHMyZ3piOHpGUTBjdFg2RmRZV0dvanNZU3dsZXBMOGxVcVlUMTNJNEhMNktOR1BaU1U?oc=5",
-      "date": "2026-11-19T11:00:00Z"
-    },
-    {
-      "title": "US Army urgently seeking new reinforced bunkers for Middle East bases - The Jerusalem Post",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9lTm5GeXpYMDM4RmxhcFFmcUhLS195SzhTZkRiMVp1YmVVakw0NVZGLVJnN09vZDdkWWdMekpnZzhGUlkzeUpBN2hiUF9xWGlrbG9uOU5JUW5fYXpGLUJVekdyMA?oc=5",
-      "date": "2026-11-19T10:57:51Z"
-    },
-    {
-      "title": "Trump, Xi & Putin Position Themselves As Leaders of Whole World at Meeting - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbTRLcnlZRjhTQ2RmRHd2aHc1cUEzUlVDWWhFMzlpcEN2TjZ6Qks5Q1V2T3VPUFl3UzJrLXoxcWZhWURIM0JpU3ZPZV81bGplNjdWUEduRkYta0U4QkVHV2hwVXNQTTA4c29KU3p1STJWRTdqVjdNcy00d2FGbFdSeU1MZE9jbV9LalpaRmJCcEVUcFhSelc1ZFZZNmN2enlRNE1YdnVR?oc=5",
-      "date": "2026-11-19T10:57:45Z"
-    },
-    {
-      "title": "EU Commission hit by large-scale cyberattack with data leakage unknown - Euronews.com",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTnc3TnFUdzNhcHR4Qnh4YkZRbGl1UWdLVE5sYXNXZV9LeTZrY2I3eUhoRi1DUFl2cHFmOG1zOXdBVWRFUnpwdHgycU5tVlNMUktURWVZS1dwc3k0THBRYVJhZ2cyNGp0YV9SX245MVZLY3dsUjI0WWhWWFRUcElLQy1LMk5SRDNrUmhqaWdVVlpBRGI0NlJEaHFLdzFCaEF4YndTUGNCVk5Wdw?oc=5",
-      "date": "2026-11-19T10:38:31Z"
     }
   ]
 }
