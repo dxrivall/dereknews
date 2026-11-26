@@ -362,6 +362,7 @@ body>.teams-overlay{z-index:2000}
 #homeThanksgivingWidget .tg-big{color:#92400e;font-size:clamp(15px,4.6vw,18px);line-height:1.15;font-weight:700;white-space:nowrap;letter-spacing:-.01em}
 @media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-big{color:#fcd9a0}}
 #homeThanksgivingWidget .tg-big.detailed{white-space:normal;font-size:clamp(13px,3.9vw,15px)}
+#homeThanksgivingWidget .tg-big.tg-day{font-size:clamp(30px,9vw,46px);white-space:normal;text-align:center;line-height:1.1;letter-spacing:.01em}
 #homeChristmasWidget .xmas-big.detailed{font-size:17px}
 .xmas .big.detailed{font-size:clamp(19px,5vw,27px)}
 .betsport-picker{margin:0 0 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px;color:#fff}
@@ -755,7 +756,7 @@ body>.teams-overlay{z-index:2000}
 #view-home .tlogo-fb.f{width:36px;height:36px;font-size:11px}
 </style>
   <div class="wxalerts" id="homeAlerts" hidden role="alert" aria-live="polite">
-    <div class="wxalerts-head"><span aria-hidden="true">⚠️</span><span>Weather Alerts — Cicero, NY</span><span class="count" id="homeAlertsCount"></span></div>
+    <button type="button" class="wxalerts-head" aria-expanded="false"><span aria-hidden="true">⚠️</span><span>Weather Alerts — Cicero, NY</span><span class="count" id="homeAlertsCount"></span><span class="wxalerts-chev" aria-hidden="true">▾</span></button>
     <div id="homeAlertsList"></div>
   </div>
   <div class="wxalerts-err" id="homeAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener">weather.gov</a> for the latest.</div>
@@ -971,6 +972,10 @@ body.on-weather .bottomnav{background:rgba(255,255,255,.66)}
 .wxstamp{text-align:center;font-size:13px;opacity:.88;margin-top:22px}.wxerr{background:rgba(120,20,10,.55);border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:12px;text-align:center;margin-top:16px;display:none}
 .wxalerts{margin:22px auto 0;max-width:680px;text-align:left}
 .wxalerts-head{background:#b42318;color:#fff;font-weight:700;font-size:17px;padding:12px 16px;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:8px;line-height:1.3}
+button.wxalerts-head{width:100%;border:0;cursor:pointer;text-align:left;font:inherit}
+.wxalerts-chev{margin-left:auto;font-size:18px;line-height:1;transition:transform .2s ease}
+.wxalerts.collapsed .wxalerts-chev{transform:rotate(-90deg)}
+.wxalerts.collapsed #homeAlertsList,.wxalerts.collapsed #wxAlertsList{display:none}
 .wxalerts-head .count{background:#fff;color:#b42318;border-radius:999px;padding:2px 10px;font-size:14px}
 .alert-card{background:#fff;color:#1d2a30;border-left:7px solid #b42318;padding:14px 16px 16px;margin-top:0}
 .alert-card+.alert-card{border-top:2px solid #e5e7eb}
@@ -1178,7 +1183,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
   </div>
   <script>(function(){var p=document.getElementById('wxLocBar'),pop=document.getElementById('wxLocPop');if(!p||!pop)return;function close(){pop.hidden=true;p.setAttribute('aria-expanded','false');}p.addEventListener('click',function(e){e.stopPropagation();var open=pop.hidden;if(open){pop.hidden=false;p.setAttribute('aria-expanded','true');}else{close();}});pop.addEventListener('click',function(e){e.stopPropagation();});document.addEventListener('click',function(){if(!pop.hidden)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});})();</script>
   <div class="wxalerts" id="wxAlerts" hidden role="alert" aria-live="polite">
-    <div class="wxalerts-head"><span aria-hidden="true">⚠️</span><span>Weather Alerts — Cicero, NY</span><span class="count" id="wxAlertsCount"></span></div>
+    <button type="button" class="wxalerts-head" aria-expanded="false"><span aria-hidden="true">⚠️</span><span>Weather Alerts — Cicero, NY</span><span class="count" id="wxAlertsCount"></span><span class="wxalerts-chev" aria-hidden="true">▾</span></button>
     <div id="wxAlertsList"></div>
   </div>
   <div class="wxalerts-err" id="wxAlertsErr">Couldn&rsquo;t check for weather alerts right now — check <a href="https://www.weather.gov/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">weather.gov</a> for the latest.</div>
@@ -3665,7 +3670,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     var tgSuffix=document.getElementById('homeTGSuffix');if(tgSuffix)tgSuffix.textContent=tgDetailed?' until Thanksgiving':' days until Thanksgiving';
     var tgBig=document.getElementById('homeTGBig');
     if(tgBig&&tgIsDay)tgBig.textContent='HAPPY THANKSGIVING!';
-    if(tgBig)tgBig.classList.toggle('detailed',!!tgDetailed);
+    if(tgBig){tgBig.classList.toggle('detailed',!!tgDetailed);tgBig.classList.toggle('tg-day',tgIsDay);}
     var tgW=document.getElementById('homeThanksgivingWidget');
     if(tgW){var tgRelevant=tgIsDay||tgDays<=60;tgW.style.display=tgRelevant?'':'none';}
   }
@@ -4329,6 +4334,15 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(hl) hl.innerHTML=html;
     if(hc) hc.textContent=feats.length+(feats.length===1?' active':' active');
     if(ha) ha.hidden=false;
+    [document.getElementById('homeAlerts'),document.getElementById('wxAlerts')].forEach(function(box){
+      if(!box||box.dataset.dnAlertToggle)return; box.dataset.dnAlertToggle='1';
+      box.classList.add('collapsed');
+      var head=box.querySelector('.wxalerts-head');
+      if(head){head.setAttribute('aria-expanded','false');head.addEventListener('click',function(){
+        var isCollapsed=box.classList.toggle('collapsed');
+        head.setAttribute('aria-expanded',isCollapsed?'false':'true');
+      });}
+    });
   }).catch(function(){severeAlertsFailed=true;var e=document.getElementById('wxAlertsErr');if(e)e.style.display='block';var he=document.getElementById('homeAlertsErr');if(he)he.style.display='block';});
 })();
 </script>
