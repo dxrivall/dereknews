@@ -1,47 +1,41 @@
 {
- "updated_at": "2026-11-26T02:24:09.890601+00:00",
+ "updated_at": "2026-11-26T03:21:22.928084+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386660,
-  "out": 107,
+  "out": 125,
   "pct": 0.0,
-  "source_updated": "2026-11-26T02:15:42+00:00",
+  "source_updated": "2026-11-26T03:16:37+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 48,
-    "pct": 0.0
+    "out": 58,
+    "pct": 0.01
    },
    {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392293,
-    "out": 32,
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315545,
+    "out": 26,
     "pct": 0.01
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919482,
+    "out": 21,
+    "pct": 0.0
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 20,
+    "out": 18,
     "pct": 0.0
    },
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 4,
-    "pct": 0.0
-   },
-   {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315545,
     "out": 2,
-    "pct": 0.0
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
-    "out": 1,
     "pct": 0.0
    },
    {
@@ -57,14 +51,20 @@
     "pct": 0.0
    },
    {
-    "name": "New York State Electric & Gas",
-    "tracked": 919482,
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
     "out": 0,
     "pct": 0.0
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5163,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392293,
     "out": 0,
     "pct": 0.0
    },
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 213051,
-  "out": 1,
-  "source_updated": "2026-11-26T02:15:41+00:00",
+  "out": 0,
+  "source_updated": "2026-11-26T03:16:35+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204897,
-    "out": 1,
+    "out": 0,
     "pct": 0.0
    },
    {
