@@ -1,53 +1,59 @@
 {
- "updated_at": "2026-11-26T15:41:00.673664+00:00",
+ "updated_at": "2026-11-26T16:44:48.981714+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386661,
-  "out": 1184,
-  "pct": 0.01,
-  "source_updated": "2026-11-26T15:35:29+00:00",
+  "out": 1963,
+  "pct": 0.02,
+  "source_updated": "2026-11-26T16:35:40+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919482,
-    "out": 910,
-    "pct": 0.1
-   },
-   {
-    "name": "Otsego Electric Coop",
-    "tracked": 5164,
-    "out": 93,
-    "pct": 1.8
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159562,
-    "out": 73,
-    "pct": 0.01
+    "out": 1403,
+    "pct": 0.15
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 57,
+    "out": 181,
     "pct": 0.0
+   },
+   {
+    "name": "Otsego Electric Coop",
+    "tracked": 5164,
+    "out": 120,
+    "pct": 2.32
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 110,
+    "pct": 0.05
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159562,
+    "out": 105,
+    "pct": 0.01
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392293,
-    "out": 34,
+    "out": 26,
     "pct": 0.01
    },
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 14,
+    "out": 16,
     "pct": 0.0
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 3,
+    "out": 2,
     "pct": 0.0
    },
    {
@@ -59,12 +65,6 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 213051,
   "out": 0,
-  "source_updated": "2026-11-26T15:35:28+00:00",
+  "source_updated": "2026-11-26T16:35:39+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
