@@ -1,35 +1,41 @@
 {
- "updated_at": "2026-11-26T10:44:37.282548+00:00",
+ "updated_at": "2026-11-26T11:37:37.438229+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386661,
-  "out": 944,
-  "pct": 0.01,
-  "source_updated": "2026-11-26T10:35:54+00:00",
+  "out": 1790,
+  "pct": 0.02,
+  "source_updated": "2026-11-26T11:25:42+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "Rochester Gas & Electric Corp",
-    "tracked": 392293,
-    "out": 603,
-    "pct": 0.15
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159562,
-    "out": 322,
-    "pct": 0.03
-   },
-   {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 19,
-    "pct": 0.01
+    "out": 886,
+    "pct": 0.28
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 0,
+    "out": 492,
+    "pct": 0.01
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159562,
+    "out": 380,
+    "pct": 0.03
+   },
+   {
+    "name": "Rochester Gas & Electric Corp",
+    "tracked": 392293,
+    "out": 25,
+    "pct": 0.01
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919482,
+    "out": 7,
     "pct": 0.0
    },
    {
@@ -47,12 +53,6 @@
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "New York State Electric & Gas",
-    "tracked": 919482,
     "out": 0,
     "pct": 0.0
    },
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 213051,
   "out": 0,
-  "source_updated": "2026-11-26T10:35:53+00:00",
+  "source_updated": "2026-11-26T11:25:41+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
