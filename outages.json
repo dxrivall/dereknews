@@ -1,30 +1,36 @@
 {
- "updated_at": "2026-11-26T11:37:37.438229+00:00",
+ "updated_at": "2026-11-26T12:39:15.258472+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386661,
-  "out": 1790,
-  "pct": 0.02,
-  "source_updated": "2026-11-26T11:25:42+00:00",
+  "out": 718,
+  "pct": 0.01,
+  "source_updated": "2026-11-26T12:35:43+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "Central Hudson Gas & Electric Corp",
-    "tracked": 315545,
-    "out": 886,
-    "pct": 0.28
-   },
-   {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 492,
+    "out": 475,
+    "pct": 0.01
+   },
+   {
+    "name": "Orange & Rockland Utilities Inc",
+    "tracked": 242447,
+    "out": 75,
+    "pct": 0.03
+   },
+   {
+    "name": "New York State Electric & Gas",
+    "tracked": 919482,
+    "out": 67,
     "pct": 0.01
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 380,
-    "pct": 0.03
+    "out": 51,
+    "pct": 0.0
    },
    {
     "name": "Rochester Gas & Electric Corp",
@@ -33,9 +39,15 @@
     "pct": 0.01
    },
    {
-    "name": "New York State Electric & Gas",
-    "tracked": 919482,
-    "out": 7,
+    "name": "Central Hudson Gas & Electric Corp",
+    "tracked": 315545,
+    "out": 19,
+    "pct": 0.01
+   },
+   {
+    "name": "National Grid",
+    "tracked": 1700744,
+    "out": 6,
     "pct": 0.0
    },
    {
@@ -47,18 +59,6 @@
    {
     "name": "FirstEnergy",
     "tracked": 3815,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "National Grid",
-    "tracked": 1700744,
-    "out": 0,
-    "pct": 0.0
-   },
-   {
-    "name": "Orange & Rockland Utilities Inc",
-    "tracked": 242447,
     "out": 0,
     "pct": 0.0
    },
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 213051,
-  "out": 0,
-  "source_updated": "2026-11-26T11:25:41+00:00",
+  "out": 1,
+  "source_updated": "2026-11-26T12:35:42+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204897,
-    "out": 0,
+    "out": 1,
     "pct": 0.0
    },
    {
