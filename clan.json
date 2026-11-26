@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-26T16:10:31Z",
-  "fetched_at": "2026-11-26T16:10:31.750Z",
+  "updated_at": "2026-11-26T17:20:55Z",
+  "fetched_at": "2026-11-26T17:20:54.978Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -89,7 +89,7 @@
         "name": "WRAndrew",
         "role": "coLeader",
         "th": 16,
-        "expLevel": 136,
+        "expLevel": 137,
         "trophies": 40,
         "league": "Unranked",
         "leagueTier": "Golem League 20",
@@ -146,7 +146,7 @@
         "role": "admin",
         "th": 11,
         "expLevel": 77,
-        "trophies": 96,
+        "trophies": 124,
         "league": "Unranked",
         "leagueTier": "Wizard League 10",
         "donations": 0,
