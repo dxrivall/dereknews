@@ -1,82 +1,82 @@
 {
- "updated_at": "2026-11-26T22:09:24.841370+00:00",
+ "updated_at": "2026-11-26T23:01:44.563499+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
-  "tracked": 8386682,
-  "out": 11910,
-  "pct": 0.14,
-  "source_updated": "2026-11-26T22:06:05+00:00",
+  "tracked": 8386681,
+  "out": 22286,
+  "pct": 0.27,
+  "source_updated": "2026-11-26T22:55:38+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919482,
-    "out": 3474,
-    "pct": 0.38
-   },
-   {
-    "name": "PSEG Long Island",
-    "tracked": 1159562,
-    "out": 2751,
-    "pct": 0.24
+    "out": 6515,
+    "pct": 0.71
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 2171,
-    "pct": 0.06
+    "out": 4591,
+    "pct": 0.13
+   },
+   {
+    "name": "PSEG Long Island",
+    "tracked": 1159562,
+    "out": 4489,
+    "pct": 0.39
    },
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 1239,
-    "pct": 0.07
+    "out": 3544,
+    "pct": 0.21
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 836,
-    "pct": 0.34
+    "out": 1235,
+    "pct": 0.51
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 828,
-    "pct": 0.26
+    "out": 1198,
+    "pct": 0.38
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392293,
-    "out": 530,
-    "pct": 0.14
-   },
-   {
-    "name": "Sussex REC",
-    "tracked": 202,
-    "out": 58,
-    "pct": 28.71
+    "out": 570,
+    "pct": 0.15
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5357,
-    "out": 23,
-    "pct": 0.43
+    "out": 66,
+    "pct": 1.23
    },
    {
-    "name": "FirstEnergy",
-    "tracked": 3815,
-    "out": 0,
-    "pct": 0.0
+    "name": "Sussex REC",
+    "tracked": 202,
+    "out": 60,
+    "pct": 29.7
+   },
+   {
+    "name": "Steuben Rural Electric Coop",
+    "tracked": 6709,
+    "out": 10,
+    "pct": 0.15
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5164,
-    "out": 0,
-    "pct": 0.0
+    "out": 8,
+    "pct": 0.15
    },
    {
-    "name": "Steuben Rural Electric Coop",
-    "tracked": 6710,
+    "name": "FirstEnergy",
+    "tracked": 3815,
     "out": 0,
     "pct": 0.0
    },
@@ -96,16 +96,16 @@
  },
  "county": {
   "tracked": 213051,
-  "out": 59,
-  "source_updated": "2026-11-26T22:06:04+00:00",
-  "pct": 0.03,
+  "out": 870,
+  "source_updated": "2026-11-26T22:55:37+00:00",
+  "pct": 0.41,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204897,
-    "out": 33,
-    "pct": 0.02
+    "out": 844,
+    "pct": 0.41
    },
    {
     "name": "New York State Electric & Gas",
