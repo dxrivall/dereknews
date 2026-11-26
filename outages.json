@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-26T08:51:32.917529+00:00",
+ "updated_at": "2026-11-26T09:53:35.335574+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386661,
-  "out": 26,
+  "out": 25,
   "pct": 0.0,
-  "source_updated": "2026-11-26T08:45:32+00:00",
+  "source_updated": "2026-11-26T09:45:38+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 20,
+    "out": 19,
     "pct": 0.01
    },
    {
@@ -97,7 +97,7 @@
  "county": {
   "tracked": 213051,
   "out": 0,
-  "source_updated": "2026-11-26T08:45:30+00:00",
+  "source_updated": "2026-11-26T09:45:36+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
