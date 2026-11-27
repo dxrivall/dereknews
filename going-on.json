@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T02:48:53.998070Z",
+  "updated_at": "2026-11-27T03:45:07.300772Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
@@ -89,6 +89,11 @@
       "title": "FIFA confirms personal, business data stolen in cyberattack - Field Level Media",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNV2RzUVIzZnRLM0RxcjdmSmxBMmkzX09lYXFDQWZWUEZuYUdZYjlDNTdFZFFzVGlnd04tZEI4ZDRHMnZ3OFlZTnVDX3VTc3YwbWk2ajVKWDFQVnVKWV9rdFd0UXpkSUxUczkzdGsyMHktR0YtS1MtY0NRT2hzUmJLOG5QR0FpSTZWa19YT0ptVzJicHZOV3E0?oc=5",
       "date": "2026-11-26T22:58:13Z"
+    },
+    {
+      "title": "Africa ransomware cost averages $368,000 per company, Kaspersky says - DNE Africa",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBXWjdkOW9SbXNsUkhTVHNlVnpnNldSM29pMkVpX0lIYkFUejhYNjBrODgxQmIyS0NaNG9lbTBPSnRjUV9TX1U5Rml0aENnalh3bTBjM0F1d0cwNktfNlYzalE1aW1aQ2Q3?oc=5",
+      "date": "2026-11-26T22:16:00Z"
     },
     {
       "title": "RansomwareHelp just paid off crooks and tacked on a fee - Boing Boing",
@@ -2291,6 +2296,11 @@
       "date": "2026-11-24T10:42:25Z"
     },
     {
+      "title": "Peninsula Energy Halts Trading After Cyber Incident Hits US Uranium Mine - SecurityWeek",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUDFjSVpwZkpadkJPbDd5MlVqUjZaeWtqMFZwLUxRR3VraFdBLUZXYzVrWEFXS093a3R3UldJWWZTdXlKYW43T0c3OGpEbl9vWjJfREN6QlpVODZ4UklvcG5xT3ZQbGtRamtERHhIODFEM0xJY0hiUVRydXZsdEFjSHJfVmdzaE51R1hzandyNFNYTFd2akY1M0M1TUxSZ01pWUEtZA?oc=5",
+      "date": "2026-11-24T10:35:04Z"
+    },
+    {
       "title": "Bank name rule as 'money was first to go' in UK 2026 outages - Devon Live",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPX3ZqY1Jsa1pJakJYVG1FRHJBV2dfX1V0NTBjekJkOE1JaTFHb0Z5NXdWVXpnWFRORTRCRzlUcEk0UVhReERham5rWFRwdHBEUmI4UzBtNWtoVmMwWUdoaW5abEphVEtqNGJoWTVyZ0NLUmR3U0NodmxDT3MyV3IwNUlKbjh6RTYtMUhictIBjAFBVV95cUxPX3ZqY1Jsa1pJakJYVG1FRHJBV2dfX1V0NTBjekJkOE1JaTFHb0Z5NXdWVXpnWFRORTRCRzlUcEk0UVhReERham5rWFRwdHBEUmI4UzBtNWtoVmMwWUdoaW5abEphVEtqNGJoWTVyZ0NLUmR3U0NodmxDT3MyV3IwNUlKbjh6RTYtMUhicg?oc=5",
       "date": "2026-11-24T10:31:08Z"
@@ -3343,6 +3353,11 @@
     {
       "title": "Brain Cipher Ransomware Group: Victims, Leak Site, TTPs & IOCs - SOCRadar",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNa3NORjZQRVF4VHkxdW15elRzdlg3cTNnaWNFcjBmempkN0t0dXlNaDByZTlleDJDLUNkcFR6bjlrRURyQnFxNlMwT1BUa3lRUDlIVmxmeVJoNGV0WlVVX29SN2V4MzhndzdQeUt4TTI2MDB1eTNCS1lnMnUzUmNVWGxMYzRiUXJsMXhkVnNn?oc=5",
+      "date": "2026-11-23T08:00:00Z"
+    },
+    {
+      "title": "What to Know About the Bomb Threats Rattling Europe - The New York Times",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUHJyYmpzdkRWbjlkQzEzRVdEc3Vyb3Z3QkExbkZVbk02Sm1GMmxuMjVhbi1pdUd4M3I0QUJVM2wydmVTQWxQRERPZDhhOTEzOUhsMTNGRldpWXhmd3VOQnpxM3RveGZYM0JMV3Vxb00xSjlqamlTT0lfRmFER3h4N1lGQTRtQnNjXzhSckFxQVAtQQ?oc=5",
       "date": "2026-11-23T08:00:00Z"
     },
     {
@@ -4644,6 +4659,11 @@
       "title": "The Flight Grounding Wasn’t a Cyberattack. Let’s Act Like It Was - Bloomberg.com",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbGN5Ul96alRtdHl4eWlWZVFSeUJQV0VjdXNsQ0w5WUFpanZfdjB1Y2dWMWUxTHgyU1lzUlRrRFZZdEFTLXFHbnZjVklJVlI0UlZTSVh5NTNvQ1VjYTJXOE5wVllIZUIwLTlDdWttcEZDQ0VCQ083czliMTNVZEpUMGhDN18wZjgtLXY0SjM2S0ltSGx4aGRRMDMwQzlCbzZvOTIzM0RFb3FGdlhBcENuOXV5Tmw?oc=5",
       "date": "2026-11-21T13:00:17Z"
+    },
+    {
+      "title": "Is That Site Down, or Is It Just Me? How to Decipher Downdetector During an Outage - CNET",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9INkpkVDZ6SlU5ZU4wV2Juc2p6dTE1MDU2WlZETWtUblJtVkdQWGk2OERiMmZlRWdNR19LTnlPVjBmbGlfUWFXZHNuN1V6dzJKSEstMi1oanFrc0duM3hPTGRGRWhnc2dPc3hwNWQ3YmZqMmE5SE9Jbw?oc=5",
+      "date": "2026-11-21T13:00:09Z"
     },
     {
       "title": "Chase reveals vendor cyberattack days after customers faced major outage - Yahoo",
@@ -6079,41 +6099,6 @@
       "title": "Visa, Mastercard, JPMorgan customer data exposed in ransomware attack - Business Standard",
       "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNaUw3ZFJsb1IxbDJhbUVzTWNadUp3eEcwMXN1MnR4d05xV2tzQkQ3V01QWlp6RlFrVmh6U3NCcHlFcUVsMFRaQ1k1a25uYnY0N2puOS1GeE9TRFFoaTN0MnprSF9XNVJJTVlXOVh5Vk8xSGtndW5pYjFTa3V0dFRmUENSN1ZRODJKLVI1RGwyTElraXFWM0JfRzhqVXZjMlp4LXhkVjFKc0NCRWtlZU9lZl9CTFhybHNxSGpPeHgzVTN6YjEtb1pOZWlhcW0yc0RLaWfSAdcBQVVfeXFMTThNWWk2c3BJcjN4SkJuUVE2ZE1YY0tXSkxqaHhPSnVnRlV6cTJzcFF0NGNtWFhodTlXbHBtUGd6QTlRa0JwQ3R6UUVpd2JjU09WS1RnOGpQZC13N3UyeFBydENGWTF2eTFlRjAyUi1aWDBFWHZvTjZiMW9pU3hmWEZJdEFtdUNRWm1MbzBqdEtMcG9vUUtJejRFbEhqUjVwWTdQUXRjeGp2dnFLV3BieFZlOGZqMkFsajdnRENKMDM1TV8zbUhTdUxuVlkwYktVam0xVFgzc0U?oc=5",
       "date": "2026-11-20T03:54:00Z"
-    },
-    {
-      "title": "Major US banks face cyberattack after hackers claim theft of 16,000 customer details - Interesting Engineering",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPXzN5UGVXd2tGT01aTFR6X1ZVNzM4N1BELVNVM052MTkwOEtUZGdKM1diVU1XUkZXWTBWTEMzdkhndGtPcEZwUnZ6QzBDZ3ZMaTJLM0FIQW1XMm5VVTF4MjJnOHI2X0FnaXVMNkpHZ3dkc0JtT0I0VGdqMC1MUmF1REVLUlJwVDZGVDRtaVhn?oc=5",
-      "date": "2026-11-20T03:42:00Z"
-    },
-    {
-      "title": "StubHub International Confirms Authorities Notified Following Customer Data Breach - TicketNews",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBwR2xsYmtxdFZXUlg2X1FjbkE0MVRMV0FfcllhVFVYZ2NpSlBXN0lmaWdjX1otRV9QdG1VdGVhZ01MeW9MQ0xQZS04dGY0elp4MGs2RWFEZE9udURiaTVrS1pWbFRRTGEzaGZxbWNvZXlHdFNCTUUwSEdzYUdkN1k?oc=5",
-      "date": "2026-11-20T03:40:24Z"
-    },
-    {
-      "title": "With 80 per cent of its fleet grounded, SpiceJet is breaking records for all the wrong reasons - Airline Ratings",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOdUIxRmx3dUl5OU0tRWM1NHBVelprbTVhZTR1SWpXb2xyNGE3YjROdXJWREVhSjlna2tGUnVtZExpdkt4RjRhcnktTmVDMlRHSVhhTFJPX0VZUkY1Q2dUU0c0M1dUMUtFR1RseHNtNzgyVDVNa1JLQ2RvNHZLSHNCTFV5bGVETHhIS3VPbUhSakZrZ01OTkVFandiNmJURl9aWm1mMDVaajlvV2ZrMXZMLS1oaGNtVk5hV1ROSEZfRl8tY0ROUzdSYWlsUFY3Zw?oc=5",
-      "date": "2026-11-20T03:24:34Z"
-    },
-    {
-      "title": "NYC Retiree Data Breach: Up to 4,000 Workers Exposed - shattered.io",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSy1BNmRQLTE4endURlQwYnR6TExzajJITUdHTmpUV2tCTmVLbldGUFNGX0hVSnpJQTZsbXNUREF3WG5pZ2pmblZPSkRXRmZlMElyS256ek1EbWNzWlpMR292OHhmNVI2RExBZHh4Yi1Qd0N2eTFJTE9LaF80ZXpPU0dfVFJKSW9P?oc=5",
-      "date": "2026-11-20T03:23:49Z"
-    },
-    {
-      "title": "Ransomware now a geopolitical disruption, says BlueVoyant VP - ET Datacenters",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZG5pNE1IRndrcFlGc0VhQVZxdFZfaWtPVTlaYzY1ZC0yRWtfRWlkMUJOd0RVQnk0TDNTUXZxRzU5MWR4QUo3X0dJWTFtMjRCUGljV2ZwTDlpRG4wcWtsRjNDRkl5b0xGcDg5S01xVDVXUTVYeGhWLXpTYTRYWGlfcDN5QnFLTWgyVDFpNmlzcG5ENjU0cWsyR0kxUG51a01LVWpoa0N6V3ZxRWdvalQ4SmxmQVNpdEFfbnVDYXRaNEcyUjJNcHBQcU9KdzNUbDZjMXFqNFFqaWVGMjFTR2fSAeIBQVVfeXFMTTdjUmdZR1pHQ3JrOXdIQXJQQXNYMFlWV1F1TFZOZHNoV3NBb1o1SVVtUnR4OU1MZm96TG00TkZJd1pQTjdOWUMySXZibXh6cnRJa3diTkRTVlpOQXRfa1R5NzN1anhLN05Ucm15dmhzbkItLUhTSlkweGVodEdvZEtNdDQ3OVVQSWoySjN1cnlZTW5NeGp4dzBQT1pLSlI3Tk9VNFFXbm9HSG10ZUtjM1VZSzB1NG9maGprZE85TG9GRS0tTWtBTjBPOEFCalpVMjY3ajdFdkpoZ3lQQ1k1eWRUUQ?oc=5",
-      "date": "2026-11-20T03:16:21Z"
-    },
-    {
-      "title": "Ransomware Attacks Jump 38% Amid Rising Software Flaws - Security Today",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcTZfMWFPMEx1dVNOZVlNWFFiYVNOTVNtYXZJd19hQzIycFdPZHkySFJhZERQSnlPcXQwbktqQXl0QjdkNkhjaGdoNS1jNDkxYWlzUUVUWV94azMzNzhUdVc1UDBFX2xyelVvVjltZnZBNU11MWVzbk5uWHVKMFpQTy0zOEphMEtOazVESjh0VWZKOEhnUXZJVDRrZm5LV1k5WlRfcEtrWQ?oc=5",
-      "date": "2026-11-20T03:11:15Z"
-    },
-    {
-      "title": "Trump eyes 2027 to ‘see what happens’ with Iran - NewsCord",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9GbVE5VEppUXpqYkJIUkxxTUNKUFZNYi1NVWROMDlOWE9CTFlpdVRuQmNhMUFXM0Q0OFZpbEktblVZM0E4QU1jb2d2RlBQa0JCenVZckxlaTJwcmdTREtWeUlRR0JfRlRrZ3VKOW1aUVhIaWhwY3ZWaExZQkhjQXc?oc=5",
-      "date": "2026-11-20T02:58:51Z"
     }
   ]
 }
