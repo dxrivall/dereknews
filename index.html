@@ -345,14 +345,13 @@ body>.teams-overlay{z-index:2000}
 @media(prefers-color-scheme:dark){.faith-prayer{background:rgba(0,0,0,.3)}}
 .faith-prayer[hidden]{display:none!important}
 .faith-prayer p{margin:0}
-#homeChristmasWidget{background:linear-gradient(160deg,#fdf3f0 0%,#fdeceb 40%,#e9f5ec 100%);border:2px solid #b42318;overflow:hidden;position:relative}
-@media(prefers-color-scheme:dark){#homeChristmasWidget{background:linear-gradient(160deg,#3d1a16 0%,#33201c 45%,#16301f 100%);border-color:#e05244}}
-#homeChristmasWidget::before{content:"";position:absolute;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#b42318 0 26px,#14532d 26px 52px);opacity:.9}
-#homeChristmasWidget::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.95) 1.6px,transparent 2.2px),radial-gradient(circle,rgba(255,255,255,.7) 1.2px,transparent 1.8px);background-size:90px 70px,60px 55px;background-position:8px 18px,34px 44px;opacity:.55}
-#homeChristmasWidget>*{position:relative;z-index:1}
-#homeChristmasWidget .xmas-big{color:#b42318}
-@media(prefers-color-scheme:dark){#homeChristmasWidget .xmas-big{color:#ff9d94}}
-#homeChristmasWidget .santa-link{background:#14532d;border-color:#b42318}
+/* Home Christmas widget — clean minimal Apple-style (Nov 27, 2026):
+   plain widget card, thin big number, small inline play button. */
+#homeChristmasWidget .xmas-row{display:flex;align-items:center;gap:12px}
+#homeChristmasWidget .xmas-big{flex:1;min-width:0;font-weight:300;line-height:1.05;letter-spacing:-.01em}
+#homeChristmasWidget #homeXDays{font-size:clamp(40px,11vw,48px);font-weight:300}
+#homeChristmasWidget #homeXSuffix{font-size:15px;font-weight:600;opacity:.75}
+#homeChristmasWidget .xmas-big.detailed #homeXDays{font-size:clamp(20px,5.5vw,26px);font-weight:600}
 /* == Thanksgiving Home widget — warm autumn treatment, same widget
    family as Christmas; shown only in its 60-day window (JS below). == */
 #homeThanksgivingWidget{background:linear-gradient(160deg,#fdf6ec 0%,#fbeed3 45%,#f6e0bd 100%);border:2px solid #b45309;overflow:hidden;position:relative}
@@ -363,8 +362,7 @@ body>.teams-overlay{z-index:2000}
 @media(prefers-color-scheme:dark){#homeThanksgivingWidget .tg-big{color:#fcd9a0}}
 #homeThanksgivingWidget .tg-big.detailed{white-space:normal;font-size:clamp(13px,3.9vw,15px)}
 #homeThanksgivingWidget .tg-big.tg-day{font-size:clamp(30px,9vw,46px);white-space:normal;text-align:center;line-height:1.1;letter-spacing:.01em}
-#homeChristmasWidget .xmas-big.detailed{font-size:17px}
-.xmas .big.detailed{font-size:clamp(19px,5vw,27px)}
+.xmas .big.detailed{font-size:clamp(20px,5.5vw,28px);font-weight:600}
 .betsport-picker{margin:0 0 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px;color:#fff}
 .betsport-pick-label{font-weight:800;font-size:15px;margin:0 0 10px}
 .betsport-btns{display:flex;gap:8px;flex-wrap:wrap}
@@ -380,12 +378,10 @@ body>.teams-overlay{z-index:2000}
 .wxradio-mini-btn svg{display:block!important;margin:0!important;padding:0!important;transform:none!important}
 #view-weather .wxradio-mini-btn{display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:0!important;margin:0 auto!important}
 #view-weather .wxradio-mini-btn svg{display:block!important;margin:0!important;padding:0!important;transform:none!important}
-#homeChristmasWidget .xmas-big{font-size:24px;line-height:1.25;font-weight:700}
-#homeChristmasWidget .xmas-row{display:block}
 .xmas-radio{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:14px}
 @media(max-width:560px){.xp-row{flex-wrap:wrap}.xp-btn{width:100%;text-align:center}.xmas-panel .xmas-radio{margin-left:auto}}
-.xmas-radio-btn{appearance:none;width:68px;height:68px;min-height:68px;padding:0!important;line-height:0;border-radius:50%;border:1.5px solid #14532d;background:#fff;color:#14532d;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(11,61,32,.22)}
-.xmas-radio-btn svg{display:block;margin:0!important;padding:0!important;transform:none!important}
+.xmas-radio-btn{appearance:none;width:36px;height:36px;min-height:36px;flex:none;padding:0!important;line-height:0;border-radius:50%;border:1.5px solid #14532d;background:#fff;color:#14532d;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(11,61,32,.22)}
+.xmas-radio-btn svg{display:block;width:18px!important;height:18px!important;margin:0!important;padding:0!important;transform:none!important}
 .xmas-radio-status{font-size:13.5px;line-height:1.5;color:#3a4a40;margin:0;min-height:20px}
 /* Christmas tab additions (Nov 27, 2026): advent calendar, tappable
    checklist, Home widget play-button layout, thumbnail guard. */
@@ -399,7 +395,6 @@ body>.teams-overlay{z-index:2000}
 .xcheck input{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:#14532d;cursor:pointer}
 .xcheck input:checked+span{text-decoration:line-through;opacity:.55}
 .xp-advent{align-items:flex-start}
-#homeChristmasWidget .xmas-big{flex:1;min-width:0}
 img.nfeed-thumb[src=""],img.nfeed-thumb:not([src]){display:none}
 #wxBg{overflow:hidden;background:linear-gradient(180deg,#3d5266 0%,#5d7387 55%,#7d93a7 100%)}
 #wxBg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(rgba(8,20,28,.20),rgba(8,20,28,.40));pointer-events:none}
@@ -819,7 +814,7 @@ img.nfeed-thumb[src=""],img.nfeed-thumb:not([src]){display:none}
   <!-- Christmas widget: first on Home (Nov 27, 2026) — countdown + play button only -->
   <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
     <div class="hwidget-head"><h2>Christmas</h2></div>
-    <div class="xmas-row"><div class="xmas-big" id="homeXBig"><span id="homeXDays">—</span><span id="homeXSuffix"> days until Christmas</span></div><button class="xmas-radio-btn" id="homeXmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button></div>
+    <div class="xmas-row"><div class="xmas-big" id="homeXBig"><span id="homeXDays">—</span><span id="homeXSuffix"> days until Christmas</span></div><button class="xmas-radio-btn" id="homeXmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button></div>
   </section>
   <!-- Thanksgiving widget: above the weather widget -->
   <section class="hwidget" id="homeThanksgivingWidget" aria-label="Thanksgiving widget">
@@ -2787,8 +2782,14 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 #view-christmas .hero h1{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
 #view-christmas .dateline{color:#fff;background:#14532d;display:inline-block;padding:6px 14px;border-radius:999px;border:2px solid #fff;font-weight:700}
 #view-christmas .card{background:rgba(255,255,255,.96);border-color:#14532d}
-.xmas{background:linear-gradient(160deg,#7a1710,#b42318 45%,#14532d);border:2px solid #fff;border-radius:20px;padding:34px 22px;margin-top:34px;color:#fff;text-align:center;box-shadow:var(--shadow)}
-.xmas .big{font-size:clamp(44px,10vw,68px);font-weight:700;line-height:1;margin:10px 0}.xmas h2{color:#14532d;background:#fff;border:2px solid #14532d;border-radius:10px;padding:10px 12px;font-style:italic;margin:0;font-size:clamp(26px,5vw,34px)}
+.xmas{background:#fff;border:1px solid rgba(20,83,45,.25);border-radius:20px;padding:26px 22px 22px;margin-top:34px;color:#0f2419;text-align:center;box-shadow:var(--shadow)}
+.xmas .xmas-count-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.xmas .xmas-count-main{flex:0 1 auto;min-width:0}
+.xmas .xmas-count-label{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6b7a70;margin:0 0 2px}
+.xmas .big{font-size:clamp(52px,13vw,72px);font-weight:300;line-height:1.05;margin:0;color:#0f2419}
+.xmas .xmas-sub{font-size:13.5px;line-height:1.55;color:#5c6f63;margin:6px 0 0}
+.xmas .xmas-sub:empty{display:none}
+.xmas .xmas-radio-status{min-height:0}
 .check{text-align:left;max-width:520px;margin:18px auto 0;line-height:1.9;font-size:16px}.check li{margin:8px 0}
 .xmas-panel{margin-top:34px;background:#fff;border:2px solid #14532d;border-radius:20px;box-shadow:var(--shadow);color:#0f2419;overflow:hidden}
 .xp-row{display:flex;align-items:center;gap:16px;padding:24px;border-bottom:1px solid rgba(20,83,45,.25)}
@@ -2815,24 +2816,19 @@ body.on-christmas{color-scheme:light}
 #view-christmas .hero .dateline{color:#fff!important}
 </style>
   <div class="hero"><h1>🎄 Christmas</h1><div class="dateline">Friday, December 25, 2026</div></div>
-  <div class="xmas"><h2>Countdown to Christmas</h2>
-  <div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div>
-  <p id="xLine" style="opacity:.92;margin:0">Counting down to December 25…</p>
-  <p id="xShopLine" style="opacity:.92;margin:6px 0 0"></p></div>
+  <div class="xmas"><div class="xmas-count-row"><div class="xmas-count-main">
+    <p class="xmas-count-label">Countdown to Christmas</p>
+    <div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div>
+    <p class="xmas-sub" id="xLine">Counting down to December 25…</p>
+    <p class="xmas-sub" id="xShopLine"></p>
+    <p class="xmas-sub" id="xTreeLine">Going up today at 5:45 PM…</p>
+    <p class="xmas-sub xmas-radio-status" id="xmasRadioStatus" role="status"></p>
+  </div><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div></div>
   <section class="xmas-panel" aria-label="Christmas">
     <div class="xp-row">
       <div class="xp-ic" aria-hidden="true">🎅</div>
       <div class="xp-main"><h2>Google Santa Tracker</h2><p>Track Santa on Christmas Eve with Google.</p></div>
       <a class="xp-btn" href="https://santatracker.google.com/" target="_blank" rel="noopener">Track Santa &rarr;</a>
-    </div>
-    <div class="xp-row">
-      <div class="xp-ic" aria-hidden="true">🎵</div>
-      <div class="xp-main"><h2>Christmas Radio</h2><p>Christmas hits, live all season. Tap play to listen.</p></div>
-      <div class="xmas-radio"><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="xmas-radio-status" id="xmasRadioStatus" role="status"></p><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div>
-    </div>
-    <div class="xp-row">
-      <div class="xp-ic" aria-hidden="true">🎄</div>
-      <div class="xp-main"><h2>Christmas Tree</h2><p id="xTreeLine">Going up today at 5:45 PM…</p></div>
     </div>
     <div class="xp-row">
       <div class="xp-ic" aria-hidden="true">⛄</div>
@@ -7467,8 +7463,8 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   var a=document.getElementById('xmasRadioAudio'),st=document.getElementById('xmasRadioStatus');
   var btns=Array.prototype.slice.call(document.querySelectorAll('.xmas-radio-btn'));
   if(!a||!btns.length)return;
-  var XP='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg>';
-  var XQ='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 6.5h3.2v11H7.5zM13.3 6.5h3.2v11h-3.2z"/></svg>';
+  var XP='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg>';
+  var XQ='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 6.5h3.2v11H7.5zM13.3 6.5h3.2v11h-3.2z"/></svg>';
   var want=false,timer=null;
   function setBtn(){btns.forEach(function(b){b.innerHTML=want?XQ:XP;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause Christmas Radio':'Play Christmas Radio');});}
   function fail(auto){
@@ -7765,12 +7761,39 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   function fmtUpdated(ts){
     return 'Updated '+new Date(ts).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET';
   }
+  /* Logo-thumb guard (Nov 27, 2026): Bing sometimes serves one generic
+     AP logo image for many unrelated stories — a logo is not a story
+     photo. A thumb URL on 3+ DISTINCT titles (counted across every
+     section cached so far plus the items being rendered, so the same
+     logo can't survive in another section's render — it was on 4
+     titles in top, 3 in nationwide, 1 in global) or containing
+     'logo' is blanked. A real photo shared by 2 stories about the
+     same event survives the threshold. */
+  function badThumbSet(extra){
+    var titles={};
+    function scan(items){(items||[]).forEach(function(a){var t=(a&&a.thumb||'').trim().replace(/^http:\/\//i,'https://');if(!t)return;var k=(a.title||'').trim().toLowerCase();(titles[t]=titles[t]||{})[k]=1;});}
+    Object.keys(cache).forEach(function(k){if(cache[k]&&cache[k].items)scan(cache[k].items);});
+    scan(extra);
+    var bad={};
+    Object.keys(titles).forEach(function(t){if(Object.keys(titles[t]).length>=3||/logo/i.test(t))bad[t]=1;});
+    return bad;
+  }
+  function dropBadThumbs(items){
+    var bad=badThumbSet(items);
+    return (items||[]).map(function(a){
+      if(!a||!a.thumb)return a;
+      var t=(a.thumb||'').trim().replace(/^http:\/\//i,'https://');
+      if(!bad[t])return a;
+      var b={};for(var k in a)b[k]=a[k];b.thumb='';return b;
+    });
+  }
   function feedRow(a){
     if(!a.link)return'';
     var thumb=(a.thumb||'').trim().replace(/^http:\/\//i,'https://');
     /* A story with no usable thumbnail renders no <img> at all — never
-       a blank box. Only a real http(s) image URL gets an element. */
-    var img=/^https?:\/\//i.test(thumb)?'<img class="nfeed-thumb" src="'+esc(thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
+       a blank box. Only a real http(s) image URL gets an element, and
+       never a logo image (see the guard above). */
+    var img=(/^https?:\/\//i.test(thumb)&&!/logo/i.test(thumb))?'<img class="nfeed-thumb" src="'+esc(thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
     return '<a class="nfeed-item" href="'+esc(a.link)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' \u00b7 '+esc(a.when):'')+'</span></span>'+img+'</a>';
   }
   /* Thumbnail sweep: drop any feed image that finished loading with
@@ -7815,7 +7838,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     var items=c.items||[];
     if(statusEl)statusEl.textContent=items.length?(c.error?'Couldn\u2019t refresh right now \u2014 showing the last stories.':''):sec.empty;
     var vis=expanded?items.length:Math.min(10,items.length);
-    listEl.innerHTML=items.slice(0,vis).map(feedRow).join('');
+    listEl.innerHTML=dropBadThumbs(items).slice(0,vis).map(feedRow).join('');
     sweepThumbs(listEl);
     if(moreBtn&&items.length>10){
       moreBtn.hidden=false;
@@ -7916,7 +7939,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     fetchFn().then(function(items){
       if(!items||!items.length){if(st)st.textContent=emptyMsg;list.innerHTML='';if(up)up.textContent='';return;}
       if(st)st.textContent='';
-      list.innerHTML=items.slice(0,10).map(feedRow).join('');
+      list.innerHTML=dropBadThumbs(items).slice(0,10).map(feedRow).join('');
       sweepThumbs(list);
       if(up)up.textContent=fmtUpdated(Date.now());
     }).catch(function(){
