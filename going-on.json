@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-27T05:48:55.208942Z",
+  "updated_at": "2026-11-27T06:50:39.857493Z",
   "tension": {
-    "attacks_7d": 9,
+    "attacks_7d": 8,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Cyberattack prompts AFP to take news platform offline - TRT World",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5EeHFzLVoyWGR5LVNpYnFNYlVWb0xhU2JMb3dnRnY3UXd6MlVqVU9qaXpRMldObGxZbUg1dlJOOUhJTS0wTnFzajkxc1FheFlzYkdLeW9jWFo?oc=5",
+      "date": "2026-11-27T05:54:09Z"
+    },
     {
       "title": "How the Arab Gulf States are Searching for a Way Out of the Iran War - Informed Comment",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xWkh3bkVtQzg0Y0ZqaklNRjBmSFM1N1pVTHZDWXB4WWNKcmI5ajRUV0NxTDBGZVkwM1JJY2VkaVN6cTdtbVlfc3JpcTlkdDdHUWtrRU1mZTJpOElNWGEyRXNUa0RoLUJ1N0lv?oc=5",
@@ -19,6 +24,11 @@
       "title": "Kuwait: Drones Strike Air Defense Site, Killing Two Italian Technicians. Tehran Denies Involvement. - Focus On Africa",
       "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTUJJdDNNMFpSbWg2Zi1NRHZhaGNVQ3NtWnZEbzVrQXdWY01oV0JXckZ2M2VHMHp6WndkTVR6YXltVzltanEtemd2M1pEc2h3XzBLUmdsRG40bC1Pbi1oMlFPYTBDNmFXMmpKVFVXaDk3RUIxM191NlcycW51UXNqdEFCLTkwaVVDMDJORTJqRmk4Um45aUI3S3FtaW51MHJ6cnBFVHlSZjgxclExLVZKbTdBN0M3V2p6SFZUUXdjTEMxNG9Y?oc=5",
       "date": "2026-11-27T04:40:20Z"
+    },
+    {
+      "title": "SEMA Hit by Cyberattack, 210,000 Records Leaked - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSC1rN3p5RHBYc1JNd0VzNFdVUjRDNXpnZENEeWtQN05DR2lQT2NZTU1qMmluSkJLMlJMNTdiSWwyZXU2aFJQbW44b3E2V2t6U01FbDJyN3Q5U2xMZVF5eFNzVTZ2ZVRXQ1NqUGc1SUJ2ZWpWcnFTX290b2dhTkh6aFBrT3JNU1JN?oc=5",
+      "date": "2026-11-27T04:16:57Z"
     },
     {
       "title": "Iran points finger at US and Israel over deadly Kuwait strike - Big News Network.com",
@@ -49,6 +59,11 @@
       "title": "Should Data Breach Require Action From Standard Chartered (LSE:STAN) Investors? - Yahoo Finance",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdVVLVXRzSUFjckstbTJId1owQkd0QVI1Yi1pYzdJZzM4aU1kZWRTUG5fWjcxVEpzN0pMSXpORlJibjN0STVmbVFyOEloQjlRUU43cWp0V3FZTWFVRC1wZmNwSWNPYllCOEhSWlVzTjNmc2pDekRfcXVQZ3RhdWlJX2w2bWxZTkFkSnl2NEx1U1d6Y0M4aWNYVy1nanNlZmhVQmc?oc=5",
       "date": "2026-11-27T02:13:00Z"
+    },
+    {
+      "title": "Airline cancels all flights, stock falls 99pc - News.com.au",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNVE5DeDh3YXFkMjdLelhwSGt5NWpLYkM1WE02VjNRQ3dveEc2RUZWU3ZmTEZ4R2d3WkZVNFhrMGt0TUVsWUg4d3M1N3d6eTFtSFk5SVZMS0R6VENONDBvTU9maVhkMk9aWHQ2ZUtCdUdiRzl3VEctd1VzVURNN3JjbVpodVV0MnRKSHYzOGtPLV9wODh0dzhhM09PMFdoQjZjbFNvWU5MdGNyQzZRNTYwNTJUS21HS3kySHdUTGdkeXJQME1wZVFrZHhsU2w0dnlpOW95NkU5Vlo1LWxNSGUzTlpGX0pWczZCbXNVeGVrNmloOUMw0gH0AUFVX3lxTE1UTkN4OHdhcWQyN0t6WHBIa3k1aktiQzVYTTZWM1FDd294RzZFRlZTdmZMRnhHZ3daRlU0WGswa3RNRWxZSDh3czU3d3p5MW1IWTlJVkxLRHpUQ040MG9NT2ZpWGQyT1pYdDZlS0J1R2JHOXdURy13VXNVRE03cmNtWmh1VXQydEpIdjM4a08tX3A4OHR3OGEzT08wV2hCNmNsU29ZTkx0Y3JDNlE1NjA1MlRLbUdLeTJId1RMZ2R5clAwTXBlUWtkeGxTbDR2eWk5b3k2RTlWWjUtbE1IZTNOWkZfSlZzNkJtc1V4ZWs2aWg5QzA?oc=5",
+      "date": "2026-11-27T02:02:31Z"
     },
     {
       "title": "Bithumb Failed to Detect 15-Day Data Breach - Businesskorea",
@@ -131,6 +146,11 @@
       "date": "2026-11-26T22:16:00Z"
     },
     {
+      "title": "American Airlines flights resume after brief IT outage led to nationwide ground stop - ABC News - Breaking News, Latest News and Videos",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNeVBualA4LWNuZkc4eTZybC1GdlJFbHo5QV9EWDY5MEFUYTVncjFQdElhYVVYNktKdERYeXY5WWxWeWwxS0Y2ZXd0cVFsZnUxYi1QeU50Sm8zbHZVek5URXRHckpEQUhIXzNJUDhZdzN2NkQ5cm84X0t1ZnZWYk81b0d5MUIzM3lhSWdGdGFrSV9RYjdaOS0yeUdzNm1yMEdSRzBDb9IBqgFBVV95cUxOc2JMNVZ2TXN0RVNJcXRMVXgwMWw0bTdGQnFLcDF3eEJtSndBYTRoSjM2RWwxeUJIdXhNX3ZJWlpFUVB3MjZQcWRoZVBPOXMxYUVaVjk4QmRlZDA4Znl3c1lyOV9RdWQ1QW55bUw1dGVDdHJCYzRabk0xc2VxdU1jSktQX2hyQWhkTHdvYzBPcTJXaUdUclVpTHN0ZTFGbUZhblFENEtlSDBwQQ?oc=5",
+      "date": "2026-11-26T22:03:55Z"
+    },
+    {
       "title": "RansomwareHelp just paid off crooks and tacked on a fee - Boing Boing",
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOX3A4Qjg2MXVCbzNsenY1aDV0ZVhxdF9XT3FSYTg3SzZmR0VTblYxY20yS2xWdk4zX3hzaEppY0VOOVczZXpCMjMtcjNiUDBIYTQ4Z1hUcjJWR19ackRMenBvV2FiRzZjQ1luVzNiMWtFMDNIWnZiLUY3cmZway1zRzVYN2xHdXdhdjRxTEZjMWFfdHhYY0wyTzln0gGfAUFVX3lxTE9ST1VkbzN0TWlFZ05qZlR2OXVGMWRqMzZkcWZjX2NYSm5td1Y4Wi0zSFktSlZBMW1XdGNpUjhHQUxvM1o0V1BJbFZNdkhBaVBxcVRJaTRzRFE1anFKMGxpRWlUdURBZVUycG14dk9Ea0RCcUUwb01ZbmpiYThFV3dZQ3RjbGd5WUotNGZBeXVuNThpVDFaVGhaSmc4ZVMtcw?oc=5",
       "date": "2026-11-26T21:55:04Z"
@@ -184,6 +204,11 @@
       "title": "Fifa confirms cyber-attack exposed ‘personal and business information’ - The Guardian",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa1lfUDJyRzBUZDV1UHJ6YVZTemtmZU54VTBzS1VFRFdRNHk5dFZLQUNtaTNmOWpYbDl4TDJOUUpoYnBlMG1SdjJBZVJWbm16LXc3WWMxMk1WVTBTek0wT1ZEYlJUM0VIVE0zclA3dF90djg1LVRBWjMybktqLW5XVGVGSElidFBhcWZmZll6d2VMVTJVWVE?oc=5",
       "date": "2026-11-26T18:45:00Z"
+    },
+    {
+      "title": "Iranian Drone Attack Kills Two Italians in Kuwait - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR0JXYTAzOTNnajlLczdFM0FKUXdjbHlSLUFPRlhHQWpXaV9JRnQzNGRETWR6c1pWM3hQZnptczZaQVZqeExWa1JqdFRDWlJDcUItNEVra09WVEFfSDlSUm1nT3B3SUVZRGZHMTdieHlaSDhBWDdvMUhTVjJ0eTZmbFlfWHM2MUYyYnpHNWtFcTg3Q2JndEw4LTl3MHg?oc=5",
+      "date": "2026-11-26T18:24:00Z"
     },
     {
       "title": "CLARKESVILLE, Ga. - The City of Clarkesville announced Wednesday that a ransomware attack had impacted some city computer systems. The day before thanksgiving, city staff were telling residents that the ransomware incident was detected and steps wer - Instagram",
@@ -634,6 +659,11 @@
       "title": "Standard Chartered-backed Zodia Custody hit by client data breach - Crypto News",
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNlVZcnUyY1dIUjZuMXp4T2ZNRmhRM1Rmdnp0akhCanBueS1CWVF0a2xYRDBmV2c0WVdRajM5ZmRad3doRHdzb1ZMOUpQN0otd3YxMlRCdXZTTVpmZklzcU5CQzdQOENQSmFPZkdGQklmYVNSYkh0M2NoWGQ0NzFuZHRtNUdFZDlDSWQ2OGZCMA?oc=5",
       "date": "2026-11-26T11:00:27Z"
+    },
+    {
+      "title": "Next investigates supplier cyberattack amid data breach concerns - InteriorDaily",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPV2ZYWUVEY0x6dWVneXpFTGZnRk1SV3hmZlRNbUYxMnJ6QW5pVTduempWZUdscXlnT203cmE0TGFra210Nmd5S1dqU0I4dmNkRWh3b1d2Vk9hVjdNTl9yN3JTSFFCay1qeTYyRmVCWGtFeEhjdkhSRzVZWmxhTHpiajlhLXdsRnhDMGtYLTB4RUZnNzY1OVhUQzBFT0ZCaFJFTjZVNWpJOWlBRG5YSVgzaw?oc=5",
+      "date": "2026-11-26T10:50:55Z"
     },
     {
       "title": "FIFA subject of cyberattack, has ‘personal and business information’ stolen - The New York Times",
@@ -6099,41 +6129,6 @@
       "title": "Trump Warns Iran Over Reported Dirty Bomb Plot in Washington - Demokratis.co.id",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8wV2MzM042Wmxpc1JkQWNmeFNSMXg1X25fWG5USXZlZDdfX1FQUVJobnhhNE9NZXBnR0llYWRKQkJEWHZ1azJJTEhwU2hXRjBxczIxTHJsX2I4MXNJZWZlM1VnVFludFdB?oc=5",
       "date": "2026-11-20T07:02:15Z"
-    },
-    {
-      "title": "The U.S. tech outage wave, explained - The Washington Post",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOQzJaQkoxUnRCVXN1d3Q5NmJBQl9GOWNRNi1wVHhwSFhTYXBuY1h3X09ubXFKeVJDTkxYaS16RElFZUU1MjF2V21CRl82Qlh6NkROdHFGc0xmSWRCcWI4NVdzeF9wVElsVXQ4LXY5Q0NfSWFqNVY2UnVYVlg1RWxtekxpV0dQUQ?oc=5",
-      "date": "2026-11-20T06:32:16Z"
-    },
-    {
-      "title": "US-Israel-Iran War Latest Live Updates: Will Trump Launch Another Attack On Iran In 2027? US President Says No Immediate Decision, Leaves Military Options Open - The Sunday Guardian",
-      "link": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQNHVhZnF0OWFjamx1VHVWanlqR01UbkpnYlJKdVAwSzA1dWdqOE82RWpjTWxfSzZ2R0x5UU93NjdFeU5nT25vbG1yemh0T0tTVXNlQ2t1NGVuMEQtckRWdDgtV3F2dzlKQXg4N3I4cVNLWk9lWnU0elFpVVFheW5RTkQwMVlMY2l0SEY3TDdBME9LT042dzN5Qnd5QmxSbW9vQm1MM2J6OXpTMnZvLUxkSXlieElGVHBIUVpTYWFiMWZabFNLaDFwbUwwd3dvcWhKOHJOOGwtQXRqVFdBMFlRTVVEYzNyVG1VVk5abmNPRndtMW40eHNkLWZGYXF1N2FqbGtHZjBfWFQzbmtaWVBxQktEc2lRaC0xOHZOUnRLakF6NFExZTNrRtIBrgJBVV95cUxORWVWOV9hcWxPSjRIR1JqVllYZ1dYOHV2emx4SnlfMmIwMkc5OHdxOXF4Yy1jNXhKalVHY2pPc2FjSGVVaFpDbjFlcDRLeVN1ZDV5cmF4ZW40R2ZSZ2JtYTA5UnJrUkhzUE1mYmNEaW9jSWlzVE1pMloxLXhlTkRlMVF0MnA1UXFhaGFOTnNqdVI3OG9RRHprZWhsMWlZUExJTDFRUURodFJYdHh2dm9mSm1yUWFOVVQyS0NYYlZrSy1aZ0hNOERCdmpPdHFoRzFIR09qZ1pfNUw4T3ZtQWpxeWJGaTZYaGlmY2lfeEU2MEEtc2NjMUxzSEhoZ0tnZjdPaHNJOGRFWVdPY0stcDJHbHoyWVF2SU9Kd2VwTWNzU1ZyT2YxQU9QYzdEWTdPUQ?oc=5",
-      "date": "2026-11-20T06:29:38Z"
-    },
-    {
-      "title": "Alliance aircraft remains grounded for 3 months - The Hitavada",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdWJVWFhWLVBTVC1yS2VCZEF5SHRGaXdoeGR3M3k3dGt5RmxPNnhOTFRreE9jWm8yb2tLcXN2cnIxRW1KX1V2M0VIVFlweDFFNEo2QnBTUjhTS2VOQ0lmN1ZGV1I4LTVSZnFFY3pORkFMRk50bjhuTWxjV25kbW1BY1ByaGY5blBSZXZORjNsRmVEa2RDTk1kanBNRDVXQQ?oc=5",
-      "date": "2026-11-20T06:09:17Z"
-    },
-    {
-      "title": "Is the U.S. Facing a Coordinated Cyberattack? - The Dispatch",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBzV2xFcHY5bk9RS1hsTUNvemdHeVBFNGpIWWpsSVBGYUdVclg4WDZ2ZDE2eVNEZDZLaEx5d2E5UFVIZ3p6Q25SWXVWRl9jUWl5VlZxel8zVF9mTGRocWhvaWFiOF9LQUVxTC1tN01ZVjI?oc=5",
-      "date": "2026-11-20T06:04:47Z"
-    },
-    {
-      "title": "Ransomware attack exposes customer data linked to Visa, Mastercard, JPMorgan Chase: Report - Anadolu Ajansı",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPRTdyUlFlMHlRbEVIUE4xZW54QmM0cGk5OGw1c1M2bm9iZHBZc2FYZEMwcTMxeEMxMWQzY0NwUXg1Vkl6bHA4Znk2TDRVNDR1dEFQVEJ1QkFSWEZLNWQ5RFZWd05ZS1hKS09yTEhWb29qNjZFMThxQUlpeTdUdkhnTE0wM1h4d0FKVTVNYVNoSkxFcGJNQndrWDBFUWt4cVNoTHBteklXNGVUSTU2VzJBdDRya2JZT0tGb05kZ2pCTmR5QQ?oc=5",
-      "date": "2026-11-20T06:02:53Z"
-    },
-    {
-      "title": "Donald Trump pushes Iran strikes decision to new year, downplays Iran dirty bomb threat - The Jerusalem Post",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1FTEhQQjd1cXB2VkVIeGFDaU5Ya1AweDdXbFlyVC1wYXMwTDNNNzJfMWdyMEdPbnVHRjF6NU4xYXQzYXVDeXY2VG5DcEtFR3puT2ZINUlJZ2xyYk15NWdkUnJOLVE?oc=5",
-      "date": "2026-11-20T06:01:30Z"
-    },
-    {
-      "title": "Chase now blames cyberattack for Monday banking outage - KTEN",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSHRPc184TmxfcDdWbkJIODdSQVcxSWVOZlRlNzhkNVpybTJ3eHYtSkxfNVZmMzFFcWlJZWQ0RTVNelg1NEJuTk5jd3JoR0Uwc0VkUTZLWTFiamZ4QWx5eVA1YUkzR2tDamRzeDdUX3dIb2VlM2JNQ2NkWEFpZUZiTXpfS1kwaTBFWmp3Rkk1d3VWbDgtTEdTd3Y0cVd4aDVad0hKdkZtQVZvVzNNRF9hQmZSRmNiNWllT3ZSdUtoVHI4MkxKM3dWd2RB?oc=5",
-      "date": "2026-11-20T05:59:55Z"
     }
   ]
 }
