@@ -1,20 +1,83 @@
 {
-  "updated_at": "2026-11-27T06:36:42.250358Z",
+  "updated_at": "2026-11-27T07:58:48.941677Z",
   "sections": {
     "top": [
       {
-        "title": "Sony’s dog robot can’t do chores but offers companionship",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/robots-aibo-sony-japan-dogs-companionship-ee0dbf69988f0c6c18ccda4756db66f9",
-        "published": "2026-11-26T21:38:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.l4zF5XXAz_HFe89HroG6ig&pid=News"
+        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
+        "published": "2026-11-26T23:41:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
       },
       {
-        "title": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
+        "title": "Chiefs commit too many mistakes in beating themselves in 13-10 loss to Bills",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/france-elections-de-villepin-comeback-3c02741e721db728b18ea70aaa49cbed",
-        "published": "2026-11-26T21:23:00Z",
+        "link": "https://apnews.com/article/chiefs-lose-bills-2136ec712ab00ff2d9d8f3bbe6b700b0",
+        "published": "2026-11-26T23:23:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.oPwgTpyOVyUqYM3asytC6A&pid=News"
+      },
+      {
+        "title": "Sanctioned by China, Taiwanese candidate Puma Shen builds momentum in Taipei mayoral race",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/sanctioned-by-china-taiwanese-candidate-puma-shen-builds-momentum-in-taipei-mayoral-race-e0fc6c8481114741bf8bd2c8a5695d77",
+        "published": "2026-11-26T23:21:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.Z7bO8CIw0kZ7Hy4pfsMTYg&pid=News"
+      },
+      {
+        "title": "No. 5 Texas Tech rallies past Oregon 62-59 in Players Era consolation round",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/texas-tech-oregon-score-d15faf176c52857b52bf12d49b0ae604",
+        "published": "2026-11-26T23:17:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.haSAt04Yo339Y6q--OBJow&pid=News"
+      },
+      {
+        "title": "Houston Dynamo host the San Jose Earthquakes in Western Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/houston-dynamo-san-jose-earthquakes-mls-soccer-soccer-478e31c0572e4d2ea835842b7b5cde1f",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Charlotte FC hosts the Chicago Fire in Eastern Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/charlotte-fc-chicago-fire-soccer-mls-soccer-maren-haile-selassie-b60e117dd4564a8f88d4e000eae8f1ca",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Los Angeles FC hosts Saint Louis City SC in Western Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/los-angeles-fc-soccer-mls-soccer-simon-becher-st-louis-1eabd3b60b044cbea146f9280156d7ed",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Philadelphia Union host the New England Revolution in Eastern Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/philadelphia-union-new-england-revolution-mls-soccer-soccer-517f9104aa06427e8c1135e85924dc94",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Portland Timbers host Dallas in Western Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/portland-timbers-mls-soccer-petar-musa-soccer-fc-dallas-82b77b65eb32439cb6a75405b8b05098",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Trump's new tariffs aim to prise global trade from China's grip",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/trumps-new-tariffs-aim-prise-global-trade-chinas-grip-2026-11-26/",
+        "published": "2026-11-26T23:04:00Z",
         "thumb": ""
+      },
+      {
+        "title": "Wagner and the Magic take on conference foe Washington",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/orlando-magic-franz-wagner-washington-wizards-district-of-columbia-33b8e80020b544ad8079d27e3013ea95",
+        "published": "2026-11-26T23:01:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
         "title": "UN peacekeepers are preparing to leave southern Lebanon. There’s no plan for what comes next",
@@ -24,48 +87,6 @@
         "thumb": "http://www.bing.com/th?id=ONUT.uCHJ12orYAhPpnKrswWwUQ&pid=News"
       },
       {
-        "title": "As Google threatens to cut schools’ search access, Los Angeles blocks AI features",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/google-artificial-intelligence-schools-search-engine-lausd-762a613b11bd316384430112cc223ed1",
-        "published": "2026-11-26T21:01:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.zEJBgF_QmUY48b_Tx6Ke0w&pid=News"
-      },
-      {
-        "title": "Here are the main issues driving Spain’s national election and why they matter for Europe",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/spain-election-pedro-sanchez-europe-migration-2b239780b9c5852829805efbd8925d43",
-        "published": "2026-11-26T20:59:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.BE_Ap3jHxAJiCDWs_9ku7A&pid=News"
-      },
-      {
-        "title": "No. 9 Texas Tech beats TCU 48-27 to secure spot against No. 2 Utah in Big 12 title game",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/texas-tech-tcu-score-c62fc2185ef2d69b1b284eb2815d4b79",
-        "published": "2026-11-26T20:48:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.P4-oqS7v82MTot84S_E3Zw&pid=News"
-      },
-      {
-        "title": "Wooley’s buzzer-beating 3 sends No. 25 Louisville past No. 13 St. John’s and into Players Era final",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/louisville-st-johns-players-era-score-a7bba597b57e47f3a85301cbc3a029db",
-        "published": "2026-11-26T20:46:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.yLQUBx8iVgHpQjDInAwnqw&pid=News"
-      },
-      {
-        "title": "Tyler Bass hits 57-yard field goal as time expires to lift Bills past Chiefs, 13-10",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/chiefs-bills-score-d29a96a87f2fca0917b14c0c4f4aa689",
-        "published": "2026-11-26T20:45:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.CdgWjNOtlQs4vxmrUjPEyA&pid=News"
-      },
-      {
-        "title": "No. 15 Alabama uses balanced scoring to beat Kansas State 104-91 at Players Era 16 tourney",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/alabama-kansas-state-score-e1a0355f5416206a77548f6941a92dfe",
-        "published": "2026-11-26T20:39:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.XF3j6me4hozNf6mkj4f-FA&pid=News"
-      },
-      {
         "title": "What to know about North Korean move to shut down Swiss diplomatic office",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/north-korea-swiss-songdowon-camp-ukraine-russia-c92ed77891d514ac5240ecf1cb82926a",
@@ -73,37 +94,16 @@
         "thumb": "http://www.bing.com/th?id=ONUT.Ct6ZAWRhkYLKTr7SeBNxtg&pid=News"
       },
       {
-        "title": "Pitt gets past DePaul for fifth win over high-major opponent",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/pitt-gets-past-depaul-fifth-win-over-high-major-opponent--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
+        "title": "‘No future here': Why Senegal’s young people risk their lives to reach Europe",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/senegal-youth-migration-europe-93cc418c0323bfe6b4abf009c39d9d0c",
+        "published": "2026-11-26T17:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.HU1BfP7reYkq7T-uqeNJ2Q&pid=News"
       },
       {
-        "title": "Knicks' Mike Brown not concerned with NBA Cup fate with Heat on tap",
+        "title": "Search resumes for missing after illegal gold mine floods in Indonesia",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/knicks-mike-brown-not-concerned-with-nba-cup-fate-with-heat-tap--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Facing first rough patch, Oilers seek remedy against Kraken",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/facing-first-rough-patch-oilers-seek-remedy-against-kraken--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Taiwan candidates campaign for key local elections on final day",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/china/taiwan-candidates-campaign-key-local-elections-final-day-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Hetero close to securing Indian approval for generic Gilead HIV-prevention drug, sources say",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/litigation/hetero-close-securing-indian-approval-generic-gilead-hiv-prevention-drug-sources-2026-11-27/",
+        "link": "https://www.reuters.com/video/watch/idRW166227112026RP1/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       }
@@ -182,55 +182,90 @@
     ],
     "nationwide": [
       {
-        "title": "No. 9 Texas Tech beats TCU 48-27 to secure spot against No. 2 Utah in Big 12 title game",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/texas-tech-tcu-score-c62fc2185ef2d69b1b284eb2815d4b79",
-        "published": "2026-11-26T20:48:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.P4-oqS7v82MTot84S_E3Zw&pid=News"
-      },
-      {
-        "title": "Tyler Bass hits 57-yard field goal as time expires to lift Bills past Chiefs, 13-10",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/chiefs-bills-score-d29a96a87f2fca0917b14c0c4f4aa689",
-        "published": "2026-11-26T20:45:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.CdgWjNOtlQs4vxmrUjPEyA&pid=News"
-      },
-      {
-        "title": "No. 15 Alabama uses balanced scoring to beat Kansas State 104-91 at Players Era 16 tourney",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/alabama-kansas-state-score-e1a0355f5416206a77548f6941a92dfe",
-        "published": "2026-11-26T20:39:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.XF3j6me4hozNf6mkj4f-FA&pid=News"
-      },
-      {
-        "title": "Knicks' Mike Brown not concerned with NBA Cup fate with Heat on tap",
+        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/knicks-mike-brown-not-concerned-with-nba-cup-fate-with-heat-tap--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
+        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
+        "published": "2026-11-26T23:41:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
+      },
+      {
+        "title": "Chiefs commit too many mistakes in beating themselves in 13-10 loss to Bills",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/chiefs-lose-bills-2136ec712ab00ff2d9d8f3bbe6b700b0",
+        "published": "2026-11-26T23:23:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.oPwgTpyOVyUqYM3asytC6A&pid=News"
+      },
+      {
+        "title": "No. 5 Texas Tech rallies past Oregon 62-59 in Players Era consolation round",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/texas-tech-oregon-score-d15faf176c52857b52bf12d49b0ae604",
+        "published": "2026-11-26T23:17:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.haSAt04Yo339Y6q--OBJow&pid=News"
+      },
+      {
+        "title": "Trump's new tariffs aim to prise global trade from China's grip",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/trumps-new-tariffs-aim-prise-global-trade-chinas-grip-2026-11-26/",
+        "published": "2026-11-26T23:04:00Z",
         "thumb": ""
       },
       {
-        "title": "CDC director draws doubts from employees and ire from legislators",
-        "source": "The Associated Press",
-        "link": "https://www.ap.org/news-highlights/spotlights/2026/cdc-director-draws-doubts-from-employees-and-ire-from-legislators/",
-        "published": "2026-11-24T05:27:00Z",
-        "thumb": ""
+        "title": "Wagner and the Magic take on conference foe Washington",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/orlando-magic-franz-wagner-washington-wizards-district-of-columbia-33b8e80020b544ad8079d27e3013ea95",
+        "published": "2026-11-26T23:01:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "'American Doctor' documentary puts spotlight on Gaza health workers",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/video/watch/idRW165027112026RP1/",
+        "published": "2026-11-26T16:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.r9g7hQfWqg7vzIPQJBbsHg&pid=News"
       }
     ],
     "global": [
       {
-        "title": "Sony’s dog robot can’t do chores but offers companionship",
+        "title": "Sanctioned by China, Taiwanese candidate Puma Shen builds momentum in Taipei mayoral race",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/robots-aibo-sony-japan-dogs-companionship-ee0dbf69988f0c6c18ccda4756db66f9",
-        "published": "2026-11-26T21:38:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.l4zF5XXAz_HFe89HroG6ig&pid=News"
+        "link": "https://apnews.com/video/sanctioned-by-china-taiwanese-candidate-puma-shen-builds-momentum-in-taipei-mayoral-race-e0fc6c8481114741bf8bd2c8a5695d77",
+        "published": "2026-11-26T23:21:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.Z7bO8CIw0kZ7Hy4pfsMTYg&pid=News"
       },
       {
-        "title": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
+        "title": "Houston Dynamo host the San Jose Earthquakes in Western Conference semifinals",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/france-elections-de-villepin-comeback-3c02741e721db728b18ea70aaa49cbed",
-        "published": "2026-11-26T21:23:00Z",
-        "thumb": ""
+        "link": "https://apnews.com/article/houston-dynamo-san-jose-earthquakes-mls-soccer-soccer-478e31c0572e4d2ea835842b7b5cde1f",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Charlotte FC hosts the Chicago Fire in Eastern Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/charlotte-fc-chicago-fire-soccer-mls-soccer-maren-haile-selassie-b60e117dd4564a8f88d4e000eae8f1ca",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Los Angeles FC hosts Saint Louis City SC in Western Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/los-angeles-fc-soccer-mls-soccer-simon-becher-st-louis-1eabd3b60b044cbea146f9280156d7ed",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Philadelphia Union host the New England Revolution in Eastern Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/philadelphia-union-new-england-revolution-mls-soccer-soccer-517f9104aa06427e8c1135e85924dc94",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "Portland Timbers host Dallas in Western Conference semifinals",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/portland-timbers-mls-soccer-petar-musa-soccer-fc-dallas-82b77b65eb32439cb6a75405b8b05098",
+        "published": "2026-11-26T23:15:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
         "title": "UN peacekeepers are preparing to leave southern Lebanon. There’s no plan for what comes next",
@@ -240,27 +275,6 @@
         "thumb": "http://www.bing.com/th?id=ONUT.uCHJ12orYAhPpnKrswWwUQ&pid=News"
       },
       {
-        "title": "As Google threatens to cut schools’ search access, Los Angeles blocks AI features",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/google-artificial-intelligence-schools-search-engine-lausd-762a613b11bd316384430112cc223ed1",
-        "published": "2026-11-26T21:01:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.zEJBgF_QmUY48b_Tx6Ke0w&pid=News"
-      },
-      {
-        "title": "Here are the main issues driving Spain’s national election and why they matter for Europe",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/spain-election-pedro-sanchez-europe-migration-2b239780b9c5852829805efbd8925d43",
-        "published": "2026-11-26T20:59:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.BE_Ap3jHxAJiCDWs_9ku7A&pid=News"
-      },
-      {
-        "title": "Wooley’s buzzer-beating 3 sends No. 25 Louisville past No. 13 St. John’s and into Players Era final",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/louisville-st-johns-players-era-score-a7bba597b57e47f3a85301cbc3a029db",
-        "published": "2026-11-26T20:46:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.yLQUBx8iVgHpQjDInAwnqw&pid=News"
-      },
-      {
         "title": "What to know about North Korean move to shut down Swiss diplomatic office",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/north-korea-swiss-songdowon-camp-ukraine-russia-c92ed77891d514ac5240ecf1cb82926a",
@@ -268,23 +282,16 @@
         "thumb": "http://www.bing.com/th?id=ONUT.Ct6ZAWRhkYLKTr7SeBNxtg&pid=News"
       },
       {
-        "title": "Pitt gets past DePaul for fifth win over high-major opponent",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/pitt-gets-past-depaul-fifth-win-over-high-major-opponent--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
+        "title": "‘No future here': Why Senegal’s young people risk their lives to reach Europe",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/senegal-youth-migration-europe-93cc418c0323bfe6b4abf009c39d9d0c",
+        "published": "2026-11-26T17:00:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.HU1BfP7reYkq7T-uqeNJ2Q&pid=News"
       },
       {
-        "title": "Facing first rough patch, Oilers seek remedy against Kraken",
+        "title": "Search resumes for missing after illegal gold mine floods in Indonesia",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/facing-first-rough-patch-oilers-seek-remedy-against-kraken--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Taiwan candidates campaign for key local elections on final day",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/china/taiwan-candidates-campaign-key-local-elections-final-day-2026-11-27/",
+        "link": "https://www.reuters.com/video/watch/idRW166227112026RP1/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       }
