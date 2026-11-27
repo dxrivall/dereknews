@@ -2831,7 +2831,7 @@ body.on-christmas{color-scheme:light}
     <div class="xmas-count-slide">
       <p class="xmas-count-label">Christmas tree</p>
       <div class="big" id="xTreeBig"><span id="xTreeDays">—</span><span id="xTreeSuffix"></span></div>
-      <p class="xmas-sub" id="xTreeSub">Going up today at 5:45 PM</p>
+      <p class="xmas-sub" id="xTreeSub">Going up today at 6:00 PM</p>
     </div>
     <div class="xmas-count-slide">
       <p class="xmas-count-label">School days left</p>
@@ -3677,10 +3677,10 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(hxW){var xRelevant=xIsDay||days<=60;hxW.style.display=xRelevant?'':'none';}
   }
   updateXmasCountdown();
-  // Christmas tree — goes up TODAY, Fri Nov 27, 2026 at 5:45 PM EST.
+  // Christmas tree — goes up TODAY, Fri Nov 27, 2026 at 6:00 PM EST.
   // Live countdown until then; once it passes it flips to
   // "The tree is up!" and stays there.
-  var TREE_TIME=new Date('2026-11-27T17:45:00-05:00');
+  var TREE_TIME=new Date('2026-11-27T18:00:00-05:00');
   function updateTreeCountdown(){
     var daysEl=document.getElementById('xTreeDays');if(!daysEl)return;
     var suffixEl=document.getElementById('xTreeSuffix');
@@ -3690,7 +3690,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(left){
       daysEl.textContent=left;
       if(suffixEl)suffixEl.textContent='';
-      if(subEl)subEl.textContent='Going up today at 5:45 PM';
+      if(subEl)subEl.textContent='Going up today at 6:00 PM';
     }else{
       daysEl.textContent='The tree is up! \uD83C\uDF84';
       if(suffixEl)suffixEl.textContent='';
