@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-27T19:01:50Z",
-  "fetched_at": "2026-11-27T19:01:50.974Z",
+  "updated_at": "2026-11-27T20:01:36Z",
+  "fetched_at": "2026-11-27T20:01:36.192Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -48,7 +48,7 @@
         "role": "coLeader",
         "th": 19,
         "expLevel": 247,
-        "trophies": 277,
+        "trophies": 303,
         "league": "Legend League",
         "leagueTier": "Electro League 33",
         "donations": 122,
@@ -146,7 +146,7 @@
         "role": "admin",
         "th": 11,
         "expLevel": 77,
-        "trophies": 138,
+        "trophies": 151,
         "league": "Unranked",
         "leagueTier": "Wizard League 10",
         "donations": 0,
