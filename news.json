@@ -1,34 +1,41 @@
 {
-  "updated_at": "2026-11-27T02:30:05.682589Z",
+  "updated_at": "2026-11-27T03:33:06.683704Z",
   "sections": {
     "top": [
+      {
+        "title": "A stunning Eagles rally as QB Joe Milton leads 39-38 win over his former Cowboys",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/joe-milton-eagles-cowboys-ab13acf6931baf9d9c226585cb80adf4",
+        "published": "2026-11-26T18:50:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.J_YioYw6LLPhkQNmTZhkRA&pid=News"
+      },
+      {
+        "title": "Ndongo, Sumler help Pittsburgh beat DePaul 71-64 to win Beach Division of Fort Myers Tip-Off",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/depaul-pittsburgh-basketball-score-fort-myers-tip-off-82635df69acca435575f131f7c36e40a",
+        "published": "2026-11-26T18:50:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "German golfer has an albatross to take the early 2nd-round lead at the Australian PGA",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/australian-pga-golf-lakes-a3889870e102fa7137290a8322b4512d",
+        "published": "2026-11-26T18:49:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.ZWDSG_GyxPRTm2e7ecPXKw&pid=News"
+      },
+      {
+        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
+        "published": "2026-11-26T18:21:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
+      },
       {
         "title": "Asian shares mostly rise ahead of Wall Street’s reopening after the Thanksgiving holiday",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/stock-markets-tariffs-ai-profits-energy-c7ef10c1dbc5fa09668bd4fe0729c613",
         "published": "2026-11-26T18:18:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.NXqjuzRD8RxZ-GMo_-p8cA&pid=News"
-      },
-      {
-        "title": "History not on Sharks' side as Golden Knights roll into town",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/history-not-sharks-side-golden-knights-roll-into-town--flm-2026-11-27/",
-        "published": "2026-11-26T18:02:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
-        "published": "2026-11-26T17:59:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
-      },
-      {
-        "title": "Gol de campo de 59 yardas de Jake Elliott a 2 segundos del final da a Eagles triunfo sobre Cowboys",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/eagles-cowboys-elliott-accion-gracias-nfl-d4e6a87bb21f837c21ac05c792809b29",
-        "published": "2026-11-26T17:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.p3BVUj5Dwu2FD0Wr_x9Pqg&pid=News"
       },
       {
         "title": "Mara Braun scores 20 to lead No. 17 Minnesota women over Missouri State 89-54 at Cancun Challenge",
@@ -87,23 +94,16 @@
         "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "Blackhawks return home from 3-0 trip to battle Rangers",
+        "title": "Facing first rough patch, Oilers seek remedy against Kraken",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/blackhawks-return-home-3-0-trip-battle-rangers--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/nhl/facing-first-rough-patch-oilers-seek-remedy-against-kraken--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       },
       {
-        "title": "Creighton reaches Players Era final with narrow win over TCU",
+        "title": "Pitt gets past DePaul for fifth win over high-major opponent",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/creighton-reaches-players-era-final-with-narrow-win-over-tcu--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Wild aim to brush off rare regulation loss when Avalanche arrive",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/wild-aim-brush-off-rare-regulation-loss-when-avalanche-arrive--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/basketball/pitt-gets-past-depaul-fifth-win-over-high-major-opponent--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       }
@@ -182,10 +182,17 @@
     ],
     "nationwide": [
       {
+        "title": "A stunning Eagles rally as QB Joe Milton leads 39-38 win over his former Cowboys",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/joe-milton-eagles-cowboys-ab13acf6931baf9d9c226585cb80adf4",
+        "published": "2026-11-26T18:50:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.J_YioYw6LLPhkQNmTZhkRA&pid=News"
+      },
+      {
         "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
-        "published": "2026-11-26T17:59:00Z",
+        "published": "2026-11-26T18:21:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
       },
       {
@@ -238,41 +245,34 @@
         "thumb": ""
       },
       {
-        "title": "Eagles score 22 in fourth quarter to shock Cowboys",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nfl/eagles-score-22-fourth-quarter-shock-cowboys--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
+        "title": "CDC director draws doubts from employees and ire from legislators",
+        "source": "The Associated Press",
+        "link": "https://www.ap.org/news-highlights/spotlights/2026/cdc-director-draws-doubts-from-employees-and-ire-from-legislators/",
+        "published": "2026-11-24T05:27:00Z",
         "thumb": ""
-      },
-      {
-        "title": "Argentina bans its central bank from printing money for the government",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/javier-milei-central-bank-economy-argentina-peso-primaries-paso-e4598186ef6cbcf05ecc598788c52cec",
-        "published": "2026-11-26T13:34:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       }
     ],
     "global": [
+      {
+        "title": "Ndongo, Sumler help Pittsburgh beat DePaul 71-64 to win Beach Division of Fort Myers Tip-Off",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/depaul-pittsburgh-basketball-score-fort-myers-tip-off-82635df69acca435575f131f7c36e40a",
+        "published": "2026-11-26T18:50:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "German golfer has an albatross to take the early 2nd-round lead at the Australian PGA",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/australian-pga-golf-lakes-a3889870e102fa7137290a8322b4512d",
+        "published": "2026-11-26T18:49:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.ZWDSG_GyxPRTm2e7ecPXKw&pid=News"
+      },
       {
         "title": "Asian shares mostly rise ahead of Wall Street’s reopening after the Thanksgiving holiday",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/stock-markets-tariffs-ai-profits-energy-c7ef10c1dbc5fa09668bd4fe0729c613",
         "published": "2026-11-26T18:18:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.NXqjuzRD8RxZ-GMo_-p8cA&pid=News"
-      },
-      {
-        "title": "History not on Sharks' side as Golden Knights roll into town",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/history-not-sharks-side-golden-knights-roll-into-town--flm-2026-11-27/",
-        "published": "2026-11-26T18:02:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Gol de campo de 59 yardas de Jake Elliott a 2 segundos del final da a Eagles triunfo sobre Cowboys",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/eagles-cowboys-elliott-accion-gracias-nfl-d4e6a87bb21f837c21ac05c792809b29",
-        "published": "2026-11-26T17:56:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.p3BVUj5Dwu2FD0Wr_x9Pqg&pid=News"
       },
       {
         "title": "Wes Enis’ 20 points help Creighton beat TCU 95-87",
@@ -317,9 +317,9 @@
         "thumb": "http://www.bing.com/th?id=ONUT.HU1BfP7reYkq7T-uqeNJ2Q&pid=News"
       },
       {
-        "title": "Creighton reaches Players Era final with narrow win over TCU",
+        "title": "Facing first rough patch, Oilers seek remedy against Kraken",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/creighton-reaches-players-era-final-with-narrow-win-over-tcu--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/nhl/facing-first-rough-patch-oilers-seek-remedy-against-kraken--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       }
