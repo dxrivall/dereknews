@@ -292,6 +292,33 @@ jobs:
                       "thumb": it["thumb"] or ""}
 
 
+          def drop_bad_thumbs(sections):
+              # A thumb URL shared by 3+ DISTINCT story titles is a generic
+              # logo/watermark image, not a story photo (Nov 27, 2026: Bing
+              # served one AP logo thumb for 4 unrelated AP stories, which the
+              # site then showed as a giant featured image and as cropped logo
+              # squares). Blank those thumbs, and any thumb URL containing
+              # 'logo'. A real photo shared by 2 stories about the same event
+              # (same title in two sections) survives the threshold.
+              titles_by_thumb = {}
+              for items in sections.values():
+                  for it in items:
+                      t = (it.get("thumb") or "").strip()
+                      if t:
+                          titles_by_thumb.setdefault(t, set()).add(
+                              (it.get("title") or "").strip().lower())
+              bad = {t for t, titles in titles_by_thumb.items()
+                     if len(titles) >= 3 or "logo" in t.lower()}
+              if not bad:
+                  return 0
+              n = 0
+              for items in sections.values():
+                  for it in items:
+                      if (it.get("thumb") or "").strip() in bad:
+                          it["thumb"] = ""
+                          n += 1
+              return n
+
           def main():
               now = datetime.now(timezone.utc)
               cutoff = now - timedelta(days=7)
@@ -334,6 +361,9 @@ jobs:
                   "nationwide": [to_json_item(it) for it in us[:10]],
                   "global": [to_json_item(it) for it in world[:10]],
               }
+              dropped = drop_bad_thumbs(sections)
+              if dropped:
+                  print(f"dropped {dropped} logo/shared-thumb rows")
               out = {"updated_at": now.isoformat().replace("+00:00", "Z"),
                      "sections": sections}
               OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
