@@ -873,59 +873,6 @@ body>.teams-overlay{z-index:2000}
     <div id="homeNflGames"><p class="hw-status">Loading Football games…</p></div>
     </div>
   </section>
-  <!-- News teaser: the full feed lives on the News tab now; Home
-       (Derek, Nov 24, 2026) shows just the top 3 Top Stories to make
-       people tap through — no politics and no war info. -->
-  <section class="hwidget" id="homeNewsWidget" aria-label="News widget">
-    <div class="hwidget-head"><h2>📰 News</h2><button class="hw-go" data-go="news">See News →</button></div>
-    <div class="nfeed" id="homeNewsList"><p class="hw-status">Loading news…</p></div>
-    <p class="nfeed-updated" id="homeNewsUpdated"></p>
-  </section>
-  <script>(function(){
-    /* Home News teaser (Derek, Nov 24, 2026) — the full feed lives on the
-       News tab now. Home shows just the top 3 Top Stories (politics/war
-       filtered out) to make people tap through: tapping a headline or
-       See News opens the News tab. Refreshes every 4 minutes. */
-    var list=document.getElementById('homeNewsList'),upd=document.getElementById('homeNewsUpdated');
-    if(!list)return;
-    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-    function agoStr(ts){var s=Math.floor((Date.now()-ts)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
-    var SKIP=/trump|biden|vance|harris|obama|clinton|senate|congress|democrat|republican|\bgop\b|white house|capitol|election|midterm|impeachment|speaker|pelosi|schumer|mcconnell|\bwar\b|iran|ukraine|russia|gaza|israel|hamas|missile|airstrike|invasion|military|pentagon|troops|ceasefire|nato/i;
-    var cache=null,updAt=0;
-    function goNews(){var t=document.querySelector('.bottomnav .tab[data-go="news"]');if(t)t.click();}
-    function render(){
-      if(!cache){list.innerHTML='<p class="hw-status">Loading news…</p>';return;}
-      var seen={},items=[];
-      (cache.top||[]).forEach(function(it){
-        if(!it||!it.title||!it.link||seen[it.link])return;
-        var ts=Date.parse(it.published||'');
-        if(isNaN(ts))return;
-        if(SKIP.test(it.title))return;
-        seen[it.link]=1;
-        items.push({title:it.title,source:it.source||'',link:it.link,thumb:it.thumb||'',ts:ts,when:agoStr(ts)});
-      });
-      items.sort(function(a,b){return b.ts-a.ts;});
-      items=items.slice(0,3);
-      if(!items.length){list.innerHTML='<p class="hw-status">No stories right now.</p>';if(upd)upd.textContent='';return;}
-      list.innerHTML=items.map(function(a){
-        var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
-        return '<button type="button" class="nfeed-item"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' · '+esc(a.when):'')+'</span></span>'+img+'</button>';
-      }).join('');
-      list.querySelectorAll('.nfeed-item').forEach(function(b){b.addEventListener('click',goNews);});
-      if(upd)upd.textContent=updAt?('Updated '+new Date(updAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'):'';
-    }
-    function load(){
-      fetch('news.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-        if(!d||!d.sections)throw new Error('bad news.json');
-        cache=d.sections;updAt=Date.now();
-        render();
-      }).catch(function(){
-        if(!cache)list.innerHTML='<p class="hw-status">Couldn\u2019t load news right now.</p>';
-      });
-    }
-    load();
-    setInterval(load,4*60*1000);
-  })();</script>
   <!-- Faith widget: today's verse + this week's Mass — timely every day, always shown -->
   <section class="hwidget faith-widget" aria-label="Faith widget">
     <div class="hwidget-head"><h2>🙏 Faith — Time With God</h2><button class="hw-go" data-go="faith">Go to Faith →</button></div>
@@ -945,7 +892,7 @@ body>.teams-overlay{z-index:2000}
   </section>
   <!-- War risk widget, bottom of Home (Derek, Nov 24, 2026) — percent
        + level only, plus the two market odds with their deadlines. -->
-  <section class="hwidget" id="homeWarRiskWidget" aria-label="Iran war risk">
+  <section class="hwidget" id="homeWarRiskWidget" aria-label="Iran war risk" hidden>
     <div class="hwidget-head"><h2>⚠️ Iran War Risk</h2></div>
     <div class="hw-risk-num" id="homeWarRiskNum">—</div>
     <div class="hw-risk-level" id="homeWarRiskLevel">—</div>
@@ -1402,18 +1349,22 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-news .nfeed-more:active{opacity:.7}
 #view-news .nfeed-updated,#view-sports .nfeed-updated,#view-weather .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
 #view-news .nfeed-updated:empty,#view-sports .nfeed-updated:empty,#view-weather .nfeed-updated:empty{display:none}
+/* ===== Apple News look for the News tab feed (Nov 27, 2026) — system
+   font stack, clean cards, big feature story on top, clear hierarchy.
+   Data source, 4-minute refresh, refresh button and the politics/war
+   title filter are unchanged; News tab only. ===== */
+#view-news #newsFeedCard{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,Arial,sans-serif}
+#view-news #newsFeedCard .nchip{font-family:inherit}
+#view-news .nfeed-item{padding:16px 2px}
+#view-news .nfeed-t{font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+#view-news .nfeed-m{font-size:13px;color:#6e6e73;margin-top:4px}
+#view-news .nfeed-thumb{width:96px;height:96px;border-radius:10px}
+#view-news .nfeed-item:first-child{flex-direction:column;align-items:stretch;padding-top:6px}
+#view-news .nfeed-item:first-child .nfeed-thumb{width:100%;height:190px;order:-1;margin-bottom:12px}
+#view-news .nfeed-item:first-child .nfeed-t{font-size:21px;line-height:1.3}
+#view-news .nfeed-item:first-child .nfeed-m{font-size:13px}
+@media(prefers-color-scheme:dark){#view-news .nfeed-m{color:#98989d}}
 /* Home News widget (Derek, Nov 24, 2026) — same feed rows as the News tab */
-#homeNewsWidget .nfeed{display:flex;flex-direction:column}
-#homeNewsWidget .nfeed-item{display:flex;gap:12px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
-#homeNewsWidget .nfeed-item:last-child{border-bottom:0}
-#homeNewsWidget .nfeed-item:active{opacity:.7}
-#homeNewsWidget .nfeed-main{flex:1 1 auto;min-width:0}
-#homeNewsWidget .nfeed-t{display:block;font-size:15.5px;font-weight:650;line-height:1.4}
-#homeNewsWidget .nfeed-m{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
-#homeNewsWidget .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
-#homeNewsWidget .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
-#homeNewsWidget .nfeed-updated:empty{display:none}
-#homeNewsWidget button.nfeed-item{appearance:none;background:none;border:0;border-bottom:1px solid var(--border);font:inherit;text-align:left;width:100%;cursor:pointer}
 /* Home war risk widget (Derek, Nov 24, 2026) — percent + level only */
 #homeWarRiskWidget .hw-risk-num{font-size:52px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
 #homeWarRiskWidget .hw-risk-num.bd-safe{color:#1e7e34}
@@ -1433,6 +1384,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #homeWarRiskWidget .hw-risk-market:empty{display:none}
 #homeWarRiskWidget .hw-risk-updated{font-size:12.5px;color:var(--soft);margin:4px 0 0}
 #homeWarRiskWidget .hw-risk-updated:empty{display:none}
+#homeWarRiskWidget[hidden],#emergencyTracker[hidden]{display:none!important}
 #view-news .brk-toggle{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:11px 2px 2px;cursor:pointer;min-height:40px}
 #view-news .brk-toggle:active{opacity:.7}
 #view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
@@ -1545,7 +1497,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
     <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
   </section>
-  <section class="ncard" id="emergencyTracker" aria-label="Iran War Risk">
+  <section class="ncard" id="emergencyTracker" aria-label="Iran War Risk" hidden>
     <span class="nkick">News &middot; Iran War Risk</span><h2>⚠️ IRAN WAR RISK</h2>
     <div class="et-risk" id="etRisk">
       <div class="et-risk-num" id="etRiskNum">—</div>
@@ -1668,6 +1620,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
   }
   function fmt1(x){return String(Math.round(x*10)/10);}
   function fail(){
+    /* Unknown risk counts as below the gate — keep both war displays hidden. */
+    var hw0=document.getElementById('homeWarRiskWidget');if(hw0)hw0.hidden=true;
+    var et0=document.getElementById('emergencyTracker');if(et0)et0.hidden=true;
     marketEl.textContent='Polymarket: —';
     var num=document.getElementById('etRiskNum');if(num){num.textContent='—';num.className='et-risk-num';}
     var lv=document.getElementById('etRiskLevel');if(lv){lv.textContent='—';lv.className='et-risk-level';}
@@ -1691,6 +1646,12 @@ svg.wx-fog-ic{vertical-align:-0.14em}
       var attackScore=(attacks===null)?null:Math.min(attacks*10,40);
       var risk=(attackScore===null)?market:(market+attackScore)/2;
       var b=riskBand(risk);
+      /* War displays gate (Nov 27, 2026): hidden while the risk is
+         below the High band (40%). When the risk reaches 40% or above
+         the widgets show again automatically — no code change needed. */
+      var showWar=risk>=40;
+      var hw=document.getElementById('homeWarRiskWidget');if(hw)hw.hidden=!showWar;
+      var et=document.getElementById('emergencyTracker');if(et)et.hidden=!showWar;
       var num=document.getElementById('etRiskNum');
       if(num){num.textContent=fmt1(risk)+'%';num.className='et-risk-num bd-'+b.cls;}
       var lv=document.getElementById('etRiskLevel');
@@ -2555,9 +2516,15 @@ body.on-sports footer{color:#d8b8b2!important}
 /* ===== Faith church background (Nov 13) — static stained-glass /
    warm church treatment, no live photo, no auto-update. Cards keep a
    solid warm panel on top of it so every section stays readable. ===== */
-body.on-home{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(255,170,80,.5),transparent 60%),radial-gradient(ellipse 80% 34% at 18% 30%,rgba(200,110,40,.28),transparent 70%),radial-gradient(ellipse 80% 34% at 85% 55%,rgba(140,70,20,.24),transparent 70%),linear-gradient(180deg,#6b3a14 0%,#8a4a1c 30%,#5e2f12 62%,#3a1e0c 100%);color:#fff3e0}
-body.on-home::before{background:radial-gradient(ellipse 60% 30% at 50% 12%,rgba(255,200,120,.22),transparent 70%)}
-body.on-home .bottomnav{background:rgba(58,30,12,.55);border-color:rgba(255,200,120,.35);box-shadow:0 16px 38px rgba(10,2,0,.5),inset 0 1px 0 rgba(255,220,170,.28)}
+/* ===== Christmas Home background (Nov 27, 2026) — deep green + red,
+   no gold; replaces the brown Thanksgiving gradient. Title colors are
+   brightened on Home so the deep red/green title stays readable. ===== */
+body.on-home{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(180,35,24,.5),transparent 60%),radial-gradient(ellipse 80% 34% at 18% 30%,rgba(74,222,128,.20),transparent 70%),radial-gradient(ellipse 80% 34% at 85% 55%,rgba(180,35,24,.22),transparent 70%),linear-gradient(180deg,#0b2e1a 0%,#14532d 30%,#0d3b22 62%,#071f12 100%);color:#fff}
+body.on-home::before{background:radial-gradient(ellipse 60% 30% at 50% 12%,rgba(74,222,128,.16),transparent 70%)}
+body.on-home .bottomnav{background:rgba(7,31,18,.55);border-color:rgba(74,222,128,.35);box-shadow:0 16px 38px rgba(2,10,5,.5),inset 0 1px 0 rgba(187,247,208,.28)}
+body.on-home #view-home .hero h1 .ht-red{color:#ff867c}
+body.on-home #view-home .hero h1 .ht-green{color:#4ade80}
+body.on-home .garland{filter:drop-shadow(0 0 8px rgba(255,255,255,.28))}
 /* ===== GTA 6 THEME TAKEOVER (Nov 18, 2026) — Vice City sunset.
    Additive override under body.gta6; the Thanksgiving CSS above is
    untouched, so reverting is just removing the gta6 class.
@@ -4574,7 +4541,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   function renderConf(entries,divMode){
     if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
     else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th></tr></thead><tbody>';
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th><th>Playoff %</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var apiLogo=(t.logos&&t.logos.length)?t.logos[0].href:'';
@@ -4585,7 +4552,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(t.id)recMap[String(t.id)]=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'');
       var hl=TEAM_IDS[String(t.id||'')]?' class="hl"':'';
       var stTxt=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'')+' \u00b7 '+fmtPct(m.winPercent)+(gb&&gb!=='-'?' \u00b7 '+gb+' GB':' \u00b7 Leader');
-      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nba" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nba" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td><td class="fpi">'+nbaPlayoffCell(t)+'</td></tr>';
     });
     return h+'</tbody></table>';
   }
@@ -4797,7 +4764,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
     else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
     var seeds=[];
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th></tr></thead><tbody>';
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th><th>Playoff %</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var seed=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
@@ -4806,7 +4773,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(t.id)nflBoard.recMap[String(t.id)]=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'');
       var hl=NFL_FAVS[String(t.id||'')]?' class="hl"':'';
       var stTxt=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'')+' \u00b7 '+fmtPct(m.winPercent);
-      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nfl" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td></tr>';
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nfl" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td class="fpi">'+playoffPctCell(t)+'</td></tr>';
     });
     seeds.sort(function(a,b){return a.seed-b.seed;});
     if(confKey)NFL_SEEDS[confKey]=seeds;
@@ -7665,7 +7632,8 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   function feedRow(a){
     if(!a.link)return'';
-    var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
+    var thumb=(a.thumb||'').replace(/^http:\/\//i,'https://');
+    var img=thumb?'<img class="nfeed-thumb" src="'+esc(thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
     return '<a class="nfeed-item" href="'+esc(a.link)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' \u00b7 '+esc(a.when):'')+'</span></span>'+img+'</a>';
   }
   function renderFeed(){
@@ -8875,12 +8843,13 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   })();
   </script>
 <script>
-/* Thanksgiving launch: turkeys rain down the screen for a couple
+/* Christmas launch: festive emojis rain down the screen for a couple
    seconds, then the layer removes itself. Non-interactive. */
 (function(){
   var n=28,box=document.createElement('div');box.id='turkeyRain';
+  var em=['\uD83C\uDF84','\uD83C\uDF85','\u2744\uFE0F','\u26C4','\uD83C\uDF81','\uD83C\uDD14'];
   for(var i=0;i<n;i++){
-    var s=document.createElement('span');s.className='tk';s.textContent='\uD83E\uDD83';
+    var s=document.createElement('span');s.className='tk';s.textContent=em[Math.floor(Math.random()*em.length)];
     s.style.left=(Math.random()*100).toFixed(1)+'%';
     s.style.fontSize=(22+Math.random()*24).toFixed(0)+'px';
     s.style.animationDuration=(1.6+Math.random()*0.8).toFixed(2)+'s';
@@ -8947,49 +8916,5 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 })();
 </script>
   <div id="gtaPalms" aria-hidden="true"><span class="pl">🌴</span><span class="pr">🌴</span></div>
-
-<!-- Temporary holding overlay until the 4pm Christmas update. Tap 7 times, then enter the code, to unlock. -->
-<style>
-#dnHold{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b2e1a,#14532d,#0d3b22);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-align:center;padding:24px;box-sizing:border-box}
-#dnHold .e{font-size:44px}
-#dnHold h1{font-size:28px;margin:12px 0 8px}
-#dnHold p{font-size:17px;opacity:.85;margin:0}
-#dnHoldCode{display:none;margin-top:18px}
-#dnHoldCode input{font-size:18px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;text-align:center;width:130px;letter-spacing:4px}
-#dnHoldCode button{font-size:16px;padding:10px 16px;border-radius:10px;border:0;background:#fff;color:#14532d;margin-left:8px;font-weight:700}
-#dnHoldCode .err{display:none;color:#ffb4ab;font-size:14px;margin-top:8px}
-</style>
-<div id="dnHold"><div><div class="e">🎄</div><h1>We're working on an update</h1><p>Check back soon.</p><div id="dnHoldCode"><input id="dnHoldInput" type="text" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off"><button id="dnHoldGo" type="button">Unlock</button><div class="err" id="dnHoldErr">Wrong code.</div></div></div></div>
-<script>
-(function(){
-  try{if(localStorage.getItem('dnHoldUnlocked')==='1'){var h=document.getElementById('dnHold');if(h)h.remove();return;}}catch(e){}
-  var taps=0,last=0;
-  var hold=document.getElementById('dnHold');
-  if(!hold)return;
-  hold.addEventListener('click',function(){
-    var now=Date.now();
-    if(now-last>3000)taps=0;
-    last=now;taps++;
-    if(taps>=7){
-      taps=0;
-      var c=document.getElementById('dnHoldCode');
-      if(c){c.style.display='block';var inp=document.getElementById('dnHoldInput');if(inp)inp.focus();}
-    }
-  });
-  function unlock(){
-    var inp=document.getElementById('dnHoldInput');
-    var err=document.getElementById('dnHoldErr');
-    if(inp&&inp.value==='0246'){
-      try{localStorage.setItem('dnHoldUnlocked','1');}catch(e){}
-      hold.remove();
-    }else if(err){err.style.display='block';if(inp){inp.value='';inp.focus();}}
-  }
-  var go=document.getElementById('dnHoldGo');
-  if(go)go.addEventListener('click',unlock);
-  var inp2=document.getElementById('dnHoldInput');
-  if(inp2)inp2.addEventListener('keydown',function(e){if(e.key==='Enter')unlock();});
-})();
-</script>
-
 </body>
 </html>
