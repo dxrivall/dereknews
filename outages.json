@@ -1,66 +1,66 @@
 {
- "updated_at": "2026-11-27T02:08:14.123614+00:00",
+ "updated_at": "2026-11-27T02:59:12.306128+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8386583,
-  "out": 68318,
-  "pct": 0.81,
-  "source_updated": "2026-11-27T02:05:44+00:00",
+  "out": 69565,
+  "pct": 0.83,
+  "source_updated": "2026-11-27T02:55:33+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919410,
-    "out": 27802,
-    "pct": 3.02
+    "out": 29770,
+    "pct": 3.24
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159562,
-    "out": 11824,
-    "pct": 1.02
+    "out": 11234,
+    "pct": 0.97
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 11715,
-    "pct": 0.32
+    "out": 11190,
+    "pct": 0.31
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 6758,
-    "pct": 2.14
+    "out": 6507,
+    "pct": 2.06
    },
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 4902,
-    "pct": 0.29
+    "out": 5535,
+    "pct": 0.33
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 2245,
-    "pct": 0.93
+    "out": 1773,
+    "pct": 0.73
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392267,
-    "out": 1260,
-    "pct": 0.32
+    "out": 1681,
+    "pct": 0.43
    },
    {
     "name": "Otsego Electric Coop",
     "tracked": 5164,
-    "out": 1070,
-    "pct": 20.72
+    "out": 1076,
+    "pct": 20.84
    },
    {
     "name": "Delaware County Electric Coop",
     "tracked": 5357,
-    "out": 523,
-    "pct": 9.76
+    "out": 550,
+    "pct": 10.27
    },
    {
     "name": "Sussex REC",
@@ -71,8 +71,8 @@
    {
     "name": "Steuben Rural Electric Coop",
     "tracked": 6709,
-    "out": 44,
-    "pct": 0.66
+    "out": 74,
+    "pct": 1.1
    },
    {
     "name": "FirstEnergy",
@@ -96,15 +96,15 @@
  },
  "county": {
   "tracked": 213051,
-  "out": 1,
-  "source_updated": "2026-11-27T02:05:43+00:00",
+  "out": 3,
+  "source_updated": "2026-11-27T02:55:31+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204897,
-    "out": 1,
+    "out": 3,
     "pct": 0.0
    },
    {
