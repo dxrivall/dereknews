@@ -1,7 +1,42 @@
 {
-  "updated_at": "2026-11-27T03:33:06.683704Z",
+  "updated_at": "2026-11-27T04:38:42.858539Z",
   "sections": {
     "top": [
+      {
+        "title": "New Mexico authorities search for pregnant woman who escaped during prison transport",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/new-mexico-albuquerque-pregnant-inmate-escaped-fde45d8f1002f566c2348eec5022c52f",
+        "published": "2026-11-26T20:25:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "South Korea lets a North Korean fisherman resettle in South and returns six others",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/north-south-korea-fishermen-boat-return-a3b26cc4a812b0ab0c8bb7ead16be566",
+        "published": "2026-11-26T20:19:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "What to know about North Korean move to shut down Swiss diplomatic office",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/north-korea-swiss-songdowon-camp-ukraine-russia-c92ed77891d514ac5240ecf1cb82926a",
+        "published": "2026-11-26T19:46:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.Ct6ZAWRhkYLKTr7SeBNxtg&pid=News"
+      },
+      {
+        "title": "Mike Tomlin calls the Steelers a ‘dumpster fire’ and says Aaron Rodgers was ‘beloved’ by teammates",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/tomlin-rodgers-mccarthy-steelers-f5fa350a46c3f40db1d9d72086f9d904",
+        "published": "2026-11-26T19:36:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.NAaClA8to7MEjFTEmOi3QA&pid=News"
+      },
+      {
+        "title": "Ylan Esso-Essis scores 16 to help UC Davis slip past Jacksonville State 68-63",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/jacksonville-state-uc-davis-basketball-score-cf96b414c3f073e6cb6f852731fc7a84",
+        "published": "2026-11-26T19:35:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
       {
         "title": "A stunning Eagles rally as QB Joe Milton leads 39-38 win over his former Cowboys",
         "source": "Associated Press News",
@@ -22,13 +57,6 @@
         "link": "https://apnews.com/article/australian-pga-golf-lakes-a3889870e102fa7137290a8322b4512d",
         "published": "2026-11-26T18:49:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.ZWDSG_GyxPRTm2e7ecPXKw&pid=News"
-      },
-      {
-        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
-        "published": "2026-11-26T18:21:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
       },
       {
         "title": "Asian shares mostly rise ahead of Wall Street’s reopening after the Thanksgiving holiday",
@@ -52,58 +80,30 @@
         "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "Final count in New Zealand’s election gives neither right nor left bloc enough seats for a majority",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/new-zealand-election-results-a19a838d8256a0762703ff0572aca3e6",
-        "published": "2026-11-26T17:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.otkxvU4bV97LLNWKzwNHaQ&pid=News"
-      },
-      {
-        "title": "Dent-Smith scores 21 points, leads 3-point spree as Saint Mary’s stuns No. 6 UCLA 85-70",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/ucla-saint-marys-score-968db91a49a1b5ec0e4cc0d58ce7a6a3",
-        "published": "2026-11-26T17:06:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.q9chPNhR9s_o2F__yKeD2w&pid=News"
-      },
-      {
-        "title": "From life on Nairobi’s streets, a Kenyan DJ wows crowds with his wooden deck",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/kenya-nairobi-street-deejay-5abfd2c207e94d79a8a9f44564f1b7bd",
-        "published": "2026-11-26T17:03:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.KP0HluzJMYKRocwlCutRlw&pid=News"
-      },
-      {
-        "title": "Meet the rising mayoral candidate in Taiwan who’s also sanctioned by China",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/taiwan-taipei-mayor-candidate-shen-d2175ba17b2eb6d6302e763952b3da6a",
-        "published": "2026-11-26T17:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "‘No future here': Why Senegal’s young people risk their lives to reach Europe",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/senegal-youth-migration-europe-93cc418c0323bfe6b4abf009c39d9d0c",
-        "published": "2026-11-26T17:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.HU1BfP7reYkq7T-uqeNJ2Q&pid=News"
-      },
-      {
-        "title": "New Mexico authorities search for pregnant woman who escaped during prison transport",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/new-mexico-albuquerque-pregnant-inmate-escaped-fde45d8f1002f566c2348eec5022c52f",
-        "published": "2026-11-26T16:32:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "Facing first rough patch, Oilers seek remedy against Kraken",
+        "title": "Pistons eye NBA Cup knockout berth against struggling Bucks",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/facing-first-rough-patch-oilers-seek-remedy-against-kraken--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/basketball/pistons-eye-nba-cup-knockout-berth-against-struggling-bucks--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       },
       {
-        "title": "Pitt gets past DePaul for fifth win over high-major opponent",
+        "title": "Penn State mindful of Mississippi State's Josh Hubbard",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/pitt-gets-past-depaul-fifth-win-over-high-major-opponent--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/basketball/penn-state-mindful-mississippi-states-josh-hubbard--flm-2026-11-27/",
+        "published": "2026-11-26T16:00:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Northwestern out to send Northeastern home with winless trip",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/northwestern-out-send-northeastern-home-with-winless-trip--flm-2026-11-27/",
+        "published": "2026-11-26T16:00:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Knicks' Mike Brown not concerned with NBA Cup fate with Heat on tap",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/knicks-mike-brown-not-concerned-with-nba-cup-fate-with-heat-tap--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       }
@@ -173,7 +173,7 @@
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2023/10/Syracuse-Crunch-Logo.png?w=750"
       },
       {
-        "title": "Onondaga County victim lost money to $670,000 cryptocurrency scam",
+        "title": "Onondaga County victim lost money to $674,000 cryptocurrency scam",
         "source": "LocalSYR",
         "link": "https://www.localsyr.com/news/local-news/onondaga-county-victim-part-of-670000-cryptocurrency-scam/",
         "published": "2026-11-26T11:15:00Z",
@@ -182,18 +182,18 @@
     ],
     "nationwide": [
       {
+        "title": "New Mexico authorities search for pregnant woman who escaped during prison transport",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/new-mexico-albuquerque-pregnant-inmate-escaped-fde45d8f1002f566c2348eec5022c52f",
+        "published": "2026-11-26T20:25:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
         "title": "A stunning Eagles rally as QB Joe Milton leads 39-38 win over his former Cowboys",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/joe-milton-eagles-cowboys-ab13acf6931baf9d9c226585cb80adf4",
         "published": "2026-11-26T18:50:00Z",
         "thumb": "http://www.bing.com/th?id=ONUT.J_YioYw6LLPhkQNmTZhkRA&pid=News"
-      },
-      {
-        "title": "US officials divided over Chinese spying allegations following Jensen Huang's return",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/us/us-officials-divided-over-chinese-spying-allegations-following-jensen-huangs-2026-11-26/",
-        "published": "2026-11-26T18:21:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.vJMCXZXdAeSHRsVOpzQPCg&pid=News"
       },
       {
         "title": "Mara Braun scores 20 to lead No. 17 Minnesota women over Missouri State 89-54 at Cancun Challenge",
@@ -203,16 +203,16 @@
         "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "New Mexico authorities search for pregnant woman who escaped during prison transport",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/new-mexico-albuquerque-pregnant-inmate-escaped-fde45d8f1002f566c2348eec5022c52f",
-        "published": "2026-11-26T16:32:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+        "title": "Penn State mindful of Mississippi State's Josh Hubbard",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/penn-state-mindful-mississippi-states-josh-hubbard--flm-2026-11-27/",
+        "published": "2026-11-26T16:00:00Z",
+        "thumb": ""
       },
       {
-        "title": "Blackhawks return home from 3-0 trip to battle Rangers",
+        "title": "Knicks' Mike Brown not concerned with NBA Cup fate with Heat on tap",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/blackhawks-return-home-3-0-trip-battle-rangers--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/basketball/knicks-mike-brown-not-concerned-with-nba-cup-fate-with-heat-tap--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       },
@@ -231,6 +231,13 @@
         "thumb": ""
       },
       {
+        "title": "Blackhawks return home from 3-0 trip to battle Rangers",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/blackhawks-return-home-3-0-trip-battle-rangers--flm-2026-11-27/",
+        "published": "2026-11-26T16:00:00Z",
+        "thumb": ""
+      },
+      {
         "title": "Senators, Lightning each look to get back to their strengths",
         "source": "Reuters",
         "link": "https://www.reuters.com/sports/nhl/senators-lightning-each-look-get-back-their-strengths--flm-2026-11-27/",
@@ -238,21 +245,42 @@
         "thumb": ""
       },
       {
-        "title": "No. 11 Michigan State shoots lights-out after halftime to beat Arkansas",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/no-11-michigan-state-shoots-lights-out-after-halftime-beat-arkansas--flm-2026-11-27/",
-        "published": "2026-11-26T16:00:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "CDC director draws doubts from employees and ire from legislators",
-        "source": "The Associated Press",
-        "link": "https://www.ap.org/news-highlights/spotlights/2026/cdc-director-draws-doubts-from-employees-and-ire-from-legislators/",
-        "published": "2026-11-24T05:27:00Z",
-        "thumb": ""
+        "title": "Argentina bans its central bank from printing money for the government",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/javier-milei-central-bank-economy-argentina-peso-primaries-paso-e4598186ef6cbcf05ecc598788c52cec",
+        "published": "2026-11-26T13:34:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       }
     ],
     "global": [
+      {
+        "title": "South Korea lets a North Korean fisherman resettle in South and returns six others",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/north-south-korea-fishermen-boat-return-a3b26cc4a812b0ab0c8bb7ead16be566",
+        "published": "2026-11-26T20:19:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
+      {
+        "title": "What to know about North Korean move to shut down Swiss diplomatic office",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/north-korea-swiss-songdowon-camp-ukraine-russia-c92ed77891d514ac5240ecf1cb82926a",
+        "published": "2026-11-26T19:46:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.Ct6ZAWRhkYLKTr7SeBNxtg&pid=News"
+      },
+      {
+        "title": "Mike Tomlin calls the Steelers a ‘dumpster fire’ and says Aaron Rodgers was ‘beloved’ by teammates",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/tomlin-rodgers-mccarthy-steelers-f5fa350a46c3f40db1d9d72086f9d904",
+        "published": "2026-11-26T19:36:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.NAaClA8to7MEjFTEmOi3QA&pid=News"
+      },
+      {
+        "title": "Ylan Esso-Essis scores 16 to help UC Davis slip past Jacksonville State 68-63",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/jacksonville-state-uc-davis-basketball-score-cf96b414c3f073e6cb6f852731fc7a84",
+        "published": "2026-11-26T19:35:00Z",
+        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
+      },
       {
         "title": "Ndongo, Sumler help Pittsburgh beat DePaul 71-64 to win Beach Division of Fort Myers Tip-Off",
         "source": "Associated Press News",
@@ -282,44 +310,16 @@
         "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "Final count in New Zealand’s election gives neither right nor left bloc enough seats for a majority",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/new-zealand-election-results-a19a838d8256a0762703ff0572aca3e6",
-        "published": "2026-11-26T17:14:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.otkxvU4bV97LLNWKzwNHaQ&pid=News"
-      },
-      {
-        "title": "Dent-Smith scores 21 points, leads 3-point spree as Saint Mary’s stuns No. 6 UCLA 85-70",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/ucla-saint-marys-score-968db91a49a1b5ec0e4cc0d58ce7a6a3",
-        "published": "2026-11-26T17:06:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.q9chPNhR9s_o2F__yKeD2w&pid=News"
-      },
-      {
-        "title": "From life on Nairobi’s streets, a Kenyan DJ wows crowds with his wooden deck",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/kenya-nairobi-street-deejay-5abfd2c207e94d79a8a9f44564f1b7bd",
-        "published": "2026-11-26T17:03:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.KP0HluzJMYKRocwlCutRlw&pid=News"
-      },
-      {
-        "title": "Meet the rising mayoral candidate in Taiwan who’s also sanctioned by China",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/taiwan-taipei-mayor-candidate-shen-d2175ba17b2eb6d6302e763952b3da6a",
-        "published": "2026-11-26T17:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "‘No future here': Why Senegal’s young people risk their lives to reach Europe",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/senegal-youth-migration-europe-93cc418c0323bfe6b4abf009c39d9d0c",
-        "published": "2026-11-26T17:00:00Z",
-        "thumb": "http://www.bing.com/th?id=ONUT.HU1BfP7reYkq7T-uqeNJ2Q&pid=News"
-      },
-      {
-        "title": "Facing first rough patch, Oilers seek remedy against Kraken",
+        "title": "Pistons eye NBA Cup knockout berth against struggling Bucks",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/facing-first-rough-patch-oilers-seek-remedy-against-kraken--flm-2026-11-27/",
+        "link": "https://www.reuters.com/sports/basketball/pistons-eye-nba-cup-knockout-berth-against-struggling-bucks--flm-2026-11-27/",
+        "published": "2026-11-26T16:00:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Northwestern out to send Northeastern home with winless trip",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/northwestern-out-send-northeastern-home-with-winless-trip--flm-2026-11-27/",
         "published": "2026-11-26T16:00:00Z",
         "thumb": ""
       }
