@@ -1,14 +1,104 @@
 {
-  "updated_at": "2026-11-27T12:29:15.187723Z",
+  "updated_at": "2026-11-27T13:52:13.153710Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
     {
+      "title": "U.S. Air Force's Cloud One Computing Platform Faces Cyberattack - Floridian Press",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTzQzN3ZUMVJPQzhHN1ktVjFIVjk2dzljcGZhdWFKclBJTTFkcW52d2ZUdDJ3Z3I3OUhhbG03SEhVTV83WVdzQ3BwRGJHMGZpdUxuN1FraDdnbHJQeEhnZ3hwdkxtQjN3RXd3OGJzSHJGZWRoMUlvbkRHNEhTaGFETng3bXJ5UzNyVVN5cS1ISXVES19Rejk0TnN3TEZCZw?oc=5",
+      "date": "2026-11-27T13:43:43Z"
+    },
+    {
+      "title": "US Air Force system hit by cyberattack - TodayPress.tv",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5aaU1zc19yMWM0RjlibzBmbE5fNllfdmFYRlNmVEdtTlV6Y1hHUms5MU5NNWtRRkZYRTd6MlVwS3ZMZVdzT1hFZjRIYlM4WEp5YzJ5OF9qLV9Pa0JnRjdEUGwzR2huN2lMR0FJeGZFX21Zb1dCV1dfcg?oc=5",
+      "date": "2026-11-27T13:30:30Z"
+    },
+    {
+      "title": "Grounded Since 2004: Brazil Revives 57-Year-Old Boeing 737 As Tourist Attraction - Simple Flying",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1hZVI5VzhjRm81YTBoUGpiTVlGU3RMZDk2UlQzVzlGOHJSY2ZtOUZEX19HdXpucktZTU5QYXY0S3hRNU1fSEVqOVVEQkQ5bTFwZkd5RmFmSW9FNUpiclJVQ2ltZ0VXZVlmNzFvYzI3Ny14bTNSYy12TTlMbG11Zw?oc=5",
+      "date": "2026-11-27T13:03:40Z"
+    },
+    {
+      "title": "Lloyds Bank app outage on Black Friday tests what customers are owed - Startup Fortune",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOeHoxVkdBTW9GMWZKWG5CbV83U1BrU3k3dVV6a0NsZVBEQmFRX2lxeDdUaXVJZUN1cTdON1NxakhXa055UHlvSzMzVHRUVmZ2OEZFQVJkeUlVQ1MtLTlyMmF3X1g2SGQ1WFctQzFDYjJQVjFsakFZb3JEeURZbzFoUjJxaTlmenNkQjZLTDdzSE0yQVpKYmV2NFFnYWE?oc=5",
+      "date": "2026-11-27T12:56:41Z"
+    },
+    {
+      "title": "AFP takes its AFP Forum client platform offline after overnight cyberattack - MLQ.ai",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTVRmTzMxcERtZF9nZl9DdW5Fbi1neGM4M2RwLUxWa0R0WU92bzJPNHdRS0U2ckxOcGNZTnFyVTNna1FBT05zMUlUa2ljWENVM0ZDdzktSjhtay1PcVdNcmRkY1RhNGRRQTJMRzBrTjk5NHk1d3RvbUhLUy04VkE5VUswVE5sTkNsN0lNdjllMWk2endDZ2NMMmtabS0?oc=5",
+      "date": "2026-11-27T12:50:38Z"
+    },
+    {
+      "title": "Lloyds App Not Working as 28 Million Customers Hit by Outage - شبكة تواصل الإخبارية",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFByeU0tZFFDQWNpT1ZUdXpMMl81aE1nWFB5NVR4elh6ZHdLcGpJWC1VVWhUclZFdGkzc29DdjB0d1JiVldKYVJUSU1nVlZoNHZMdXhB?oc=5",
+      "date": "2026-11-27T12:45:48Z"
+    },
+    {
+      "title": "FIFA Data Breach: Social Engineering Exposes Brand Risk - Cyber Magazine",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPaG5qdTMteVVYeUgzdjRDRWJsN2F6eHZNVFVrNGU4SndMcjFpQ3lpQ3RlN2p6eV8tdW9wQ3cwcGhRUFBOYk1HNmwzUGUyTDZ3Q3lORzh3bmtwWmk2YmtMeXFZQUhYZ2JQSDk5MG04SmpCOUhMYXpaNnk3U1FZUTI0ZUxNM09EV2xpMFIyQVhn?oc=5",
+      "date": "2026-11-27T12:45:26Z"
+    },
+    {
+      "title": "Why is Lloyds bank app down? Everything to know about latest outage - Geo News",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPR191WG1PYWVnU2FNOWZDRTZnOUJ5VExuUE9XNXlOQVdISFNTOHczVDR1ZE8tdlE4SmZ4UllKRmVWZlZVQ3NKSjJvdmZLMFBwdzhOSERMd3AyVTBsY1E0azM0UmJoeWdULWdtOVExQXF5WUh0U2V1WFpteHdpQU5Vejc5c1dWZGt1Z196bjhaUEluaXlONmo0OVpLcU1uS2Zl?oc=5",
+      "date": "2026-11-27T12:40:00Z"
+    },
+    {
+      "title": "US Air Force's Cloud One cloud hacked, Cyber Command called in; Air Force says: 'We continuously take pru - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOUTJCS1hRT3ZMeDNVZE5CUGhHbXBtc0lZZzlvVjBKdGFYWFZNZVEtZ3cwY0JqUGJUTWo4WDMyWjhGeEUzZTd4UVRoYkREQjZuMkJ1UmFhR1FFcXlLQW9HVW1LTUczX0tLb2NDT0FKQ1pGVVR2Yk5zVEVQUlk3V1pEc2dvajRETVVMMTU3TzVRRG1EOGlQenlMXy1Lbkc1SmxHMVhCSzhfYmhtbHBCdG1XSmVtb0NYbTRjaEdNLUhKSkYwakFyRXRPRURWZ3l4UDFqUXA3ZVRGcTkwVnBDRGJ6SUxLX2tIM0VHSUJOdUJyTGVOXzI4dTVlN2NBZjBUNXBrak5tRXdOSGIybEpjcjVlbzRxYUtWWi1tcjZhU0xwc1B2bi1ZcnY40gGsAkFVX3lxTE1VX0hWVzU2NUJFV2tyTVpwcXM3WHBKUm5SZUFZXzRaVkJ3akdxLS1RUVBpVzdzZmtlUUR3VHNmUzJNZXFUeGMzYkFKWjk2SXdpNmFpVUF5VWM4WFVGQVVxaFdraU1ab05feGNFcmpVSUJCVlNnZlVFd2Z4a1hDTXlWV2lPUk1aTG9XdFZjZWlsWk1ZOW5yRHB0ZzNycGYwLUk5Q2l4cm9ZU2xTZnBQOHVMM1E5NUwtUlJJbDQ4V1NtWlRMd0diQlNMWFJwczlndUFKcE1Odm5DaUh6NFU5a2ZKanZ3bUE1RldGNVExdWd0dGpuZkphVzBpUFpUYVV5UzFtVmJMSHJDTUNoMEo5UGhyb0dnQ1d0eUlmQ0diQnA4cFlCNUV0WG16ZDhZag?oc=5",
+      "date": "2026-11-27T12:37:00Z"
+    },
+    {
+      "title": "Lloyds app down on Black Friday: what the outage means for customers - Around Prague",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxORTZNbmlwckVTa3ppSEp2T0FhLTM0d3NlbjBSd01rb21QTFNLSHYyVlFWbGVXVkJaaUxaT21yY0Z5b0lfTHBJMVdtWVdsREhPT0N1Qld5M2hCUGNmd3dzM1NleUlvM0tXbVV6VXdseVdzMGtTeUt5NHUtdGZBZXVOTVBFTWJTcEZwQXlrblllVlNmalF5MThJb1VsazVseTFJUHBPWQ?oc=5",
+      "date": "2026-11-27T12:33:47Z"
+    },
+    {
+      "title": "FIFA hit by data breach after suspected account compromise - IT Pro",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYjh1VklmNUw1TFpCU1VjYkh0Z2p3cnJQZlpFVU1vaUlHa2Z4eDliYWxKUEtBdlZhWTdwQXY5RlZkRnNyUzZoSGRCQlE4YTZDZGk4ckFrUF9Jck10OGRDMDNNSUFmZzBFSTJVcjJ5UTBGN3dfbzZmS0huMFpxSkNDM0l2amwwSnptYUdqeTBrYjJlbVBrVDlsYWxCckVlWEVLYjlGeXgzQjNMWTE4ZWhFZQ?oc=5",
+      "date": "2026-11-27T12:33:31Z"
+    },
+    {
+      "title": "Lloyds down live: Black Friday banking app outage hits thousands of customers - Trending Now Infrastructure",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUW1tTkxMTkdpdlRmVzhoT2F3RkdkTnEtOUt5VmJyOEFCc3l6M0lxYnVVNTBzVnRBb1piWjlxdjE3X09rWUNkeVFTQ3lhN2VmQTJyWlpGYWJwWGFta0IyaDZQcjNLQU5QdVhCWEpPMHQ4eFlBUmJadDh2ejByWE80MTdxVlNTQlNYcVlRTlNWcnhsaUFTZzlRcGMtLU1TQlBUbVp1YTJsdV81MUpKQVZnaDdlOC1DUnlCT0ZCenA3YmJyQl9iWFVj?oc=5",
+      "date": "2026-11-27T12:29:53Z"
+    },
+    {
+      "title": "Volksbanken Raiffeisenbanken Outage Today: Is Volksbanken Raiffeisenbanken Down in Germany? Users Report Banking App, Online Banking, Login & Transaction Issues | Latest Downdetector Status - The Sunday Guardian",
+      "link": "https://news.google.com/rss/articles/CBMizgJBVV95cUxOM0hubXR3QmFYUFBTQ2FqUVFJQmxsWkJfVzlvVkRRSVFoVUV4TzZRdEhNN3p5dFJVMlpSS25CVHg3MllReHlyYk9UMmdKNEhKbi12YU1tblo2MnJlc2RneTZHVnNqaERjYkpnc2FFMHFONW1sRXVCZ3o3ZGxoRVMxdjYzVUZ2WUZ4RDk4VUJpTlZhcmRib2VjWEtHSFZiNkZmM3d1RE1TX0xrcmdOejFUYXFkcC1Xa2dTOGZic19PSERHRkhLeVdKaWd1bFNoc0RJY3lyMy1FcHU1eWQ3RV8zMzZvVFQ0LU54WVNVa216OW1kbXktWUV5Q19LS3l3b2JyZGRySEJkbHNZcVhvVkktb1IzUGtRam1jQWM3Z3hBSjB4Tk9jb1NKZEdoWU40dDVlWnctTDlMZml3Rk1fbjc2T1AxWFd1Vm1HZVpkcXFR0gHTAkFVX3lxTE9aUXdGQy1LR2VIal9BOWZ3Rk16ZXV2RUwtNmtoMTJyX3BfSzZLYThsdHFlYU5WQmplRU5Ua2tsSkRZQnBaNk1qazNWRmV1Mlk5b05LMlhURmM4d3JRZWRNVloyeTd1VTdEVlVnX0REX214eE1BTVVldVotY0EwVEtrY1g5VXlyRF95SHVJMUpIbXFGWTJxRE5HeThvODY5UzZyV2JqdnMtdUlHWWlaaHVPZ1NlalhFTTh6bzhSdWtlZEF5Q2V1eDhEdjY4SHRNTkJPcTRkdUFFMEZLaTNfLVB1WF9KbXFsempab0t2Vmpxc3RLSG5BYmRPQk5TUjFnMks0Tl9JLUoySUhGNTlub1NyUDVELVh2WFlyVUczMVJURGtOTTZIWmZZRnhZSUdlMmZXdTVXUUV0NHNGSnRDUFhseU5hbXFpUU9aZndxQXNzc0duTQ?oc=5",
+      "date": "2026-11-27T12:26:46Z"
+    },
+    {
+      "title": "Why does Lloyds keep going down? Friday's app outage follows failures in March, June and October - Nacionale",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQnJ0THE4M3VteGRqZjNnUHR3M2JYM3RTdzhfZlJqdEhwUFIxN3Z0dnBENDdIVmJIOXc1eHUwOHdfd3pvbjdoV1RUYlVBcWRuWjRpYlJvbVg3eWRLWjhOV2pBSkNNeTFmLXVGZi1KRG5uVUdDUFBmZ3J5U0hBR0tEbHV3aVlWVm5IalM5clZxekhsZ1BZTlhMaFpB?oc=5",
+      "date": "2026-11-27T12:24:21Z"
+    },
+    {
+      "title": "No 10 refuses to rule out possibility DWP cyber incident was malicious attack - The Independent",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWjUtbWlnRDl6R3Q5aWhPT0pUQkV4YVpjRF9TVHNMNkdxa21DeEY5MTg0dk90Q0x2VVpmU0cxb25adkRmMm9zMFBPMTZwMGY2QlM1YmJVYUFJcmVxYVdOV2Nqa3VSdzdYVktqdnNzYmtHdzktd3hScFVjX1JRQ3ZEYlJkamhSeGlONElHdkFKM0R0dUtp?oc=5",
+      "date": "2026-11-27T12:18:00Z"
+    },
+    {
+      "title": "US Air Force's cloud computing platform hacked - Sky News",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcE1RU25LenpGRkhydnpwbXZGVDJ1Z2d2YUt5QUxOVDB2Z084Njk0em1yeWd4SkNZV0ZlUXd1V0x1WFFwVm90NEh2SF9wS1BQQ0pBNjN0eWo5aUE4ZmtLbHB4UUswei15OGtKQmV0SUVtN1Z2cTQ2d0VNbHlxSU9CMEVrV1c1UVlP?oc=5",
+      "date": "2026-11-27T12:15:11Z"
+    },
+    {
       "title": "Lloyds Bank and Bank of Scotland app and online banking down in major UK outage - Beinsure",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeldhTmVYNFduZGpYQjRNdjZQSWlfTFRfUlZ4Y2NISVA1RVZicjM5U1M0b21HalJqTmFUOFNqNzZ3SnB0bXhzaG1xSjlyWmd6ZF9lb05weF9zNEpUUkszTWxUTmJUNGl2NjF6eTE4ZzhaaGVQSTgtbE9XbWxmZmpGblhySTdWNEV0?oc=5",
       "date": "2026-11-27T12:04:11Z"
+    },
+    {
+      "title": "SAP investigates cyberattack on GitHub accounts, finds no evidence of customer data access - teiss",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWHQwR3J5MGhLbDhlYUsyX1VkMXp4ekRaUFliYkxHTXkwRl95UzBBeGFVM2lpeUpqRWR3aDk4MVJHVFpIU1FjRDJBd2FJaGRicWZYOExvUDF3elROUGxHT1oxZ0hrNkR0OXBJeTkwOTdjVm52RmxJQmFmaUdPbDNHLWlGTWNsLWZaam9pTVhZWDZTUW5xUlpaR2g0WEtCakxEaVZVTW1kdXlqQ3pMcVBwNHNOUHp4SUw2eWlZLVVVbWVrdw?oc=5",
+      "date": "2026-11-27T12:04:10Z"
+    },
+    {
+      "title": "US Air Force Hacked as Cyberattack Breaches Cloud One Platform - Coinpedia",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeDVncEJmQmZVZzJQUmk2em05Q0VOSVBhcXdDejhZbzU3TElYdGcwQktaZFo2OWhINzBCMF9zVFlodlBNX1V1SWRsamlsa05xVlhmcFdycGJxR0p1cEtOTGVlZXhCdk5uSVFxZ3dMbTZyU2RCblppWXpSc3Jld3RwVjNIVENWUVA0WTc5VWdfVndWZEJUc3oyZTdCZEVvWG5TOERlcNIBqgFBVV95cUxOVWctSGY1X0hDZXFjOGJsNTNTNnBlV1NwUkh0UXpNZFVzenNQcFVKbkJ3X1FaRURBc3dua3ByN3BtVnB5UkhEWW9lTVRPMS1jaW05WmtDWGZZWUtxVzlQY1VnQ3ZzLXlVQUlhNWNFb1NoT0YwcGtvTGRqbHRFOWcwRlB2UmJRcWJFNjAxUU55Smp5dG5MZU1OQklmdXI3eV9XajZqOXdqNWo1Zw?oc=5",
+      "date": "2026-11-27T12:03:04Z"
     },
     {
       "title": "USDA cyberattack knocks out farm loan systems for a week - Farm Progress",
@@ -16,9 +106,24 @@
       "date": "2026-11-27T12:02:12Z"
     },
     {
+      "title": "Is Lloyds bank down? Users report widespread outage - The News International",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZEdCeFl3c1lxSXlkc1BMQ1p4V0d2Z29DcVZHdGdVanRUODJnVkZXNk1ybWZyOTRhaTlNdkRqVmtQRW16MDUwalpjZG1YYTNMQmRBQy1DZ3h0U2F5VEhJTEZZc1VWV2lmSWdvTjI5WS1EX1hMM1hXWGNZcklUVFVQOG5mNWdIM0RPOGs3X0xlLVdfOVXSAZMBQVVfeXFMUGRHQnhZd3NZcUl5ZHNQTENaeFdHdmdvQ3FWR3RnVWp0VDgyZ1ZGVzZNcm1mcjk0YWk5TXZEalZrUEVtejA1MGpaY2RtWGEzTEJkQUMtQ2d4dFNheVRISUxGWXNVVldpZklnb04yOVktRF9YTDNYV1hjWXJJVFRVUDhuZjVnSDNETzhrN19MZS1XXzlV?oc=5",
+      "date": "2026-11-27T12:01:00Z"
+    },
+    {
       "title": "Italians killed in Kuwait: Why is Iran denying responsibility? - Al Jazeera",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM3JrUmVYMExlMzNxaTY5VU1YWXctcThoZUJmU2FBN1lhbElJVGFrcTBnQWZUTVBtVUpaOTlKcUFwcUZkbTR4UHp1aS1mTUtZYUtmZjZFTGdRdzN3RXduVzZLZTJMLVlTc0tKMGRzTUM1UG9sMDF1dEZHZVZXak5HZnd2dFhkY1RxTFQyTVNpVTJnMU5Vd1NBOU9rYzNmbFlWUE1jQ9IBqgFBVV95cUxONkE1UFBtWXZSQnl0eGFwN2FHMFlrNzE5NEVGYW9ESWVoU2d0S3RUQUtBREdVMGxGOFdtd1hhN3FVVWlBaTYzS1RFLW9IcWZtMTIzdXJDZ2cybWkzWWpqemtqTG5QUFR0eU1pcFpnd2RsbkNldEFFNlo3QmFLc2JZZ21PbDZFaVdOanllUEZERk9IdDBHNjVNXzNKTGtmd0VyTHdfYXNFRzd0Zw?oc=5",
       "date": "2026-11-27T11:55:06Z"
+    },
+    {
+      "title": "DWP: Millions lose access to online benefits services after 'cyber incident' - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9kQmlaSUVrUGVEVDd6amNPQS05NExlYWRxaTJSdHVISmVTdDY5OVdGRFJUaFlpdHBfRU1kanl5WXhUQmZHNGZPM0stSWtFOWkyaVJVYlMxWENaMHM?oc=5",
+      "date": "2026-11-27T11:52:29Z"
+    },
+    {
+      "title": "Lloyds and Bank of Scotland apps down - The Telegraph",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbEJSaHhWZU5fRnVDekxTOGRHRmFaaFZnRS1nOWxNRkVKMWZ0R3VKXzF0blY0cy1HTTVWWFM2bWxIa1pMdk1WMGV2dWpOYTAzR295RkVnWG9sbmo1TXNTMFRVeTRwWlhQRFc0c0dvT0xsWk5WQ001MFdUZVRpbEpOYVdkclQ0UkswWGlQa2pDeHFBdDVsYlZnZXk4bGNHQQ?oc=5",
+      "date": "2026-11-27T11:52:00Z"
     },
     {
       "title": "Why Is Lloyds Bank Down Today? Banks Affected and Recovery Update - PopTV Culture",
@@ -36,6 +141,11 @@
       "date": "2026-11-27T11:36:40Z"
     },
     {
+      "title": "Why Norse Atlantic Grounded Flights And What Stranded Flyers Should Do Now - ИФЗ РАН",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5welZMV19Zck5mVVp4NXNpSkRTVERwNEF3UGxFczBlNlE5RnVXaDdweEFZamR1R3VXdzJ3dldBbG1pbF90X25OTjVhZ0FVNVJTU0hnZDdBeTZkS0RuMkxvQS1tTTFpaXBjT0tpT0RkSF9iM0FVT1lRekI1d3U?oc=5",
+      "date": "2026-11-27T11:34:45Z"
+    },
+    {
       "title": "🚨Users have struggled to access online banking - Facebook",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQTJId0V6REo3TVB2Z2xad0NwRzFiVFlHZVNVR3VQNU5qRWNzNHFjVDMwSHY5a19xWWVWOHQ4S1l4X3RGQjFQRUNWX194RmpsbGdBZy1xQjl1Y2VGN3pPNzlVWXhBa1RPNkM3dUpRX3B3OW9YaVppVXVYNTFyd1A2dWZkaHBtcEIyazNnM0o3Rl9PdjZnNHpnRU1NWlVZX0hNdk4takJrdDFmWl9ub2gzTQ?oc=5",
       "date": "2026-11-27T11:33:50Z"
@@ -44,6 +154,11 @@
       "title": "Lloyds down: Online banking app not working in latest major outage - Yahoo Finance UK",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbDdRNFhwbmNoT1c4bUpKOW9hU3JjdzVDX1Q2eUhTMlZYazVubXFsR3hYN2lfcEVIY3AwU3JxNFVMTm1fRFVsWlhZQkpQZGszMlhYTXpMdkVhdDc5OGZSMk12Y1d3bnB4bXFxY1FiX1EyRW41OXlkSi1kd2tad2VraVFBaC04UQ?oc=5",
       "date": "2026-11-27T11:25:54Z"
+    },
+    {
+      "title": "Sparda-Bank Outage: Is Sparda Down Today? Customers Report Online Banking and App Issues Across Regional Banking Services - The Sunday Guardian",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZjF0ZHh6dXNkdzBOWGgwYmItTDZ5dGlyLUpPeDdYTjFWaUVlekVMT2E1UXNpX1VDMlpPVTRGQS11VHJjYURObDFQRF9razNSTHlUenNzZUNBQ0FxUWdib3dfbTlGb1JLRDRSNVliQjBLbHNjemxTMU9qWklJaS04eUwwX3UzNGtPcFFwVEYtRnEtamREdTZOWDhaWGtMM0E2UlJkLUptNmhLVjBoOWo2ZXBrV0Q4Q0JrOGJ4eHhWWGdfY190WG9fUXZEeXNjUTlpOFVOWWgyN2ZnM1pxTkpUVE5SM2x5WF9GLTJkYmpzV2dzVkNDX3E2MVZDZTbSAfwBQVVfeXFMUGYxdGR4enVzZHcwTlhoMGJiLUw2eXRpci1KT3g3WE4xVmlFZXpFTE9hNVFzaV9VQzJaT1U0RkEtdVRyY2FETmwxUERfa2szUkx5VHpzc2VDQUNBcVFnYm93X205Rm9SS0Q0UjVZYkIwS2xzY3psUzFPalpJSWktOHlMMF91MzRrT3BRcFRGLUZxLWpkRHU2Tlg4WlhrTDNBNlJSZC1KbTZoS1YwaDlqNmVwa1dEOENCazhieHh4VlhnX2NfdFhvX1F2RHlzY1E5aThVTlloMjdmZzNacU5KVFROUjNseVhfRi0yZGJqc1dnc1ZDQ19xNjFWQ2U2?oc=5",
+      "date": "2026-11-27T11:20:17Z"
     },
     {
       "title": "Is the Lloyds app down? Yes, Lloyds and Bank of Scotland customers can't log in or move money - Nacionale",
@@ -61,9 +176,19 @@
       "date": "2026-11-27T11:16:11Z"
     },
     {
+      "title": "US Air Force cloud platform said to be hacked - Howl.Link",
+      "link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE1QVm1zQWhDY0Z4TWd4SmZ0NHBZeVhXWVlPbmswZXlRd2ZLMVlhMUV0eTE0eGlPX25Rd3ZJ?oc=5",
+      "date": "2026-11-27T11:15:00Z"
+    },
+    {
       "title": "After US, UK banks facing outage: Thousands of customers of Lloyds Bank and Bank of Scotland affected on B - The Economic Times",
       "link": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxNZ2cwanZPR2oxVWdzQU81a0xualllbFo5YVlxTklCRVJmNFVTWHJOaDNwYmVid3VPdmhNbWhqUzhnX3p0ZHkzQ21CQWRyR2ZTT0Z2ck9CLUM5MTVNX1dDcEc2VUpJUFVOLUhJYzlpbDNkUzJKWjNRRlI1WEljakg3WHZPbklBdnd3ckFjX01iTXhwcWR3U2JyUEpHRzJJUlVSbDk1azBwMnhEMjJoN3hKZ19WZ0EwXzZVTnQ3aUxCOENTNnZxV0xySjJITjR6ajdKSkxacUp6MURDSmI2VFA1WjNWb0hIREFlR0tVV1VHUHpLRHBudXJRMnY0eE5jNGo1MXhqYy1qX294S1RXT29HUmlLSTFLZzZqY1h0aWhqWU4xYUV6NDJxVUtERTNPZERTOXpmNm8xYlnSAb4CQVVfeXFMUFJwQ0IzY3RvejNraDJzSkJHTmw5bTUyTG9DSjZvM1JxYmxoamFJZDNPUVp5c0cwOS1FbjNoZWF2bXdBX1RuY1Q5RV9hNHdmMk8xZk13MkM0TEdIcG9hai1TZzRXblljVTA1blBsR2Zpa3dzZ2JWMzZsSWxGWWxGdGJGdHVxaFhtTllfOXEzRUMwbHdjUlhSS0NUVkpnaUlxR05JcElkMVJkMXJtSEcteUhVTVdfMUMtWmYwTzB2TGwxd2RMbG1zNzhnZVpDVmJqQlFEeW9Zc2Y5MEFSS2h6aWZZdk5nT2swQXJrNVZycHo2VEF4akpmcVp6WWxGSmRVcXhwcEJsTURJS3c1N0RzWERrdG1YakF6LUd0RUZjYkdTUTNYVGlscVhLNEx2WW1FUEVDY3ROMnBnUjhydDlB?oc=5",
       "date": "2026-11-27T11:11:32Z"
+    },
+    {
+      "title": "Passengers left in limbo and thousands out of pocket as major airline cancels ALL flights - The Sun",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVUxXS2dWMWhUNFUtNS1nQ2o0SmVwb2kzVXBlMDFjR3U3R0tzZHlKM3dWTUwyY3h0U0oyd3dsMG1HTjNHQW5salg5a3JvX1EyYWJaYUd3aTM0UDF4U2dLb1RNOTNRaFl5MmFyN0NkSHRUeE1idGE1UWFZOU95bFdfcFNtNUZZWGphc01wUFhYejlwZw?oc=5",
+      "date": "2026-11-27T11:07:00Z"
     },
     {
       "title": "November 16 Outages Hit JPMorgan Chase, Lloyds Bank App Down Claims - شبكة تواصل الإخبارية",
@@ -86,6 +211,11 @@
       "date": "2026-11-27T11:00:00Z"
     },
     {
+      "title": "Cyberattack disrupts Port of Santos IT systems for nearly two weeks - safety4sea",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQW56ZE9DZUFueXJyNWhlTjZfLWF0emp5bjR1X0NYZ1VtbUJ1VTVzOXRvTnJqWVJiT3BFcXpsc3lLcld4WHZGUTRidjRBc3hKMnBOUWNDdHo4ODd5VGlwc1dyRU1oeXZ4MGRDbHg3NGVwamdBN3FjRTRIWHhxU1Y1U2lNaUxKaW8wckhNdmJXb0cyTWZLNWc?oc=5",
+      "date": "2026-11-27T10:56:07Z"
+    },
+    {
       "title": "Lloyds Bank Outage Today: Is Lloyds Bank Down in the UK? Thousands of Customers Report Login Failures, Online Banking Issues, Payment Errors and App Problems | Check Downdetector Status - The Sunday Guardian",
       "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQWnE5c0p0amRxaV9lQkNmR2R6eU83d1BUbGtNTWpCMHkyUktVdjlqRDFGMGtPcDlLMTEwaFdyeVFLR25TQU45UGNmOWZaNHhNLVlCN0JqUmJOaUplaXBMMW5SUWZKeHZBWkx1SWM1NzYzeXdrUXktOHUzZGxsekdjVGRfUGpZWHJweXFnSkZiQ0ZyZnlWWTYtcUtFMGo3Y2dTZ0MxNTlCOVpxUnJJclRyZ2ZjTmh0V3NRODBYM2pGbUw1empoNTFHVWdNeEIzb0pwV2xRYXFyWmE2c3BVUU1DWGxTMC1ua05ROF9EbFVYMmFjNXhMWVE5OV9tZl9kaWpKYTVrOGlyS29raFpXU0dOOHVkZTJNVUZYQ011cU1hWU04OVNQc3MwaVVXeEgyY1Jkckh0aUdxblJMVkVkY3pGak9QQnFreHPSAcwCQVVfeXFMUHZvaE9BR1Rwa2NWamdhenVuOFE1aXJlZEQ1MXFWNFQzMlhDZjlEWjFuMmFVRUJmUzVRVllKNEJUb2NHb3llLVBtUmlPY3NHV1JyNktmTmlLclBWQmVaRnl1bnRCWFJvVWVmLVQ2Mi1HWUF5T1h1YWJzTFlBY2gtWi1NLXVqczRhbWVRWTNtN2R1M0NZLU1OYXFqNi1vRV9HVGRIWTN3RXhLb2EtR0xtNm1SYW1vR3h4TF9odjhSMjBKd29haXAtRVBDWVF4TFRqQWhUaW1WUWphbGJHeE1vcW83YnlzMFlOd2JmRnhOc2VNblBKUWl0NkNwMi1YVVRoc0FXOUgyQkZvNDF6R3pucmVSQXlEVldxMzdJTlNUNkp1X29nZnUwNzFoYmVMU01kdXRkRXFIaU5aOU5rdU9wMFpuV05PTUFHODFyWDQ?oc=5",
       "date": "2026-11-27T10:52:06Z"
@@ -96,9 +226,29 @@
       "date": "2026-11-27T10:52:06Z"
     },
     {
+      "title": "Another blow for major low-cost airline after all flights are cancelled - Daily Express",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUkhVVHhfVjNOMFhpclFySmZodndIcjAtNzl3UTB0dElHU0VldS12bGc2ejZSTVpCNmgwdXJpTGlTZk1FVWJwUlMzMkpZQmU4U1BrV1RUWUFoX0NiMXdFTDlPOVRpWnFoSFlYZzlRSFVpaUZCdFFINU1IeGVJdG9IZ0VmbnM4blk0N0ZkWmpuTkZpb3RHRnpMZmJqdFktWjJ3ZVZfR2dNdnFMRC1DQlo0SmJMc0xtQ1RVWVlEb1Q1NlM3dTYyb2Rz0gHMAUFVX3lxTE5QU00yZmlDY1A3TTdVaHhPYTYxZDRNVG56eHNndTFmOWZCeXJUR0lGSFk0WE1qMWVrQU9Uem5fWno4ZmZmcE94NjUzVVNQYlYxbVZILUdPbnNUTzBTT2cyR19aeWJod09VWld0WERVU0pCQWFjbjNWWVFuc0k1QnJIMkc3ZXRXQl9LT2pKd1ViZWNzNm1lcld0cHM2WFBGWUVoUnFTQzZTRHVCNGtTc1BYeVROVXNuNGhfeFJiNGsyNFE0UElBSnZMYmNHQQ?oc=5",
+      "date": "2026-11-27T10:46:00Z"
+    },
+    {
       "title": "Huge UK online banking app goes down with users left unable to pay bills - The Sun",
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQYmhobFVYRUFhM1l5Z01KazR2S2M0ZUM2Q1dLNkZxSmF6YUhmWW5lSm5MZ2FSM3dIX0t5akl5RTBPTkwzaFpzZTVwamp2TmNSNVFoSGhlYWY1T003U2ZDRHNwd0dKdXhCaE9NcjhWZXk1NzJYWnlmRnVfSVk2RVdXbEVxMnVNcHcwMFlZbU1qWW9BYUNB?oc=5",
       "date": "2026-11-27T10:41:15Z"
+    },
+    {
+      "title": "Norse Atlantic Contests Fleet Lease Terminations After Grounding Flights - streamlinefeed.co.ke",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZmoyclo2MW5OdFRZTk0tdUNrNFJwamxDZWpFcldOYjdoU2JQQTNMS1ZkOHJxZVRuWEFJc000SHJOYUI2NjhVTHNPTDJGWUNtVEk0UTlsUjRIRGFTSWUzWHNWM01keVhtbF9qODlCQkh3b0lneDZVeXdDTE94VkVubi1VN1IxTXk1VENIcllKbTdfVmNZZzJvWGNjWWRUeDE1cUp4dVgxSHRrQQ?oc=5",
+      "date": "2026-11-27T10:39:00Z"
+    },
+    {
+      "title": "Another blow for European airline after all flights are cancelled - The Mirror",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPeG9RQUwxRzFiTjdMcHc3LVM2TVVGRk1mbENUVERIeGhIZEZDSnh4T0QxZ1pjZ3dZZjFwakJWdEpfZmhzbjAwQ2xKYS0yMWFaM1F1QW9Zc3M2aDVPNzBBT0ozY0pSRnR5VHd6ZXozb09HVTBpREFkdGVuVGFOMFAzN3pn0gGHAUFVX3lxTE1xVjJQN0d5Y2ZRNmZwWXNUNjBJRE1TLXBCWDQ4al9fd0dCUUJ2dFg4ZnRUT0tRMUMzSTJQX3kxeElIY1dpQ3JPbVJya1hFQkdFYTBSQU15cFE3WHdEX243OVdnSkVVeUpFMWlYQ0VPVU83NTQzdGJNalRyc2dXRmFrZURJM29aaw?oc=5",
+      "date": "2026-11-27T10:36:00Z"
+    },
+    {
+      "title": "More than half of SpiceJet's flights grounded: Airline narrowly avoided bankruptcy in August due to financi... - Bhaskar English",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTGdSOV9CV3RlQUxxcVlPUGlTclJxSTI2WHlHUUpRNGw5REpuRWZncWlRUHd1bG1TX2VZVUxLMkw1b0Uzc3pGTWlEV3RnbjhsX2tXd1RxUERmSkhKZ05qdzQzVkwyTFRIWHBSTVRNX3VYY0JUemZJY1p6SHFfZ25ZUUczT3FCRDlKUW9uTWpTUUhjVUltcWloRl9TTUtSRGRKbHA4TkFWUVlEVjkxYkJLZ1BoM1BvU3dITFZCTlF3c9IBxAFBVV95cUxPQkZ1d1NabV90VWJTOVQ0VktrM09scG5VNXBIbThLODNDZEt5S3h3N1plc1FaNExoRW9waXNucmJDYkhxQ2JRUlFoYTVVeVNOWDQ4eDFMa0tHalJVbWlpTUtWSTFWenFQZjhacmpHYTZpWjFiNktCZ1V4bmg5N1dXb2ZBLXB3YkFKWGxwV1ExcEtaQnlORVg3ODQwcmw1cFZGeXNqUWZ4dU9NdVdrVEJVQ3VNRWdmZWN5bWY3ekw2TnNxcnUw?oc=5",
+      "date": "2026-11-27T10:28:11Z"
     },
     {
       "title": "Iran denies responsibility for Kuwait strike that killed two Italians - Euronews.com",
@@ -109,6 +259,11 @@
       "title": "Iran denies responsibility for Kuwait drone strike that killed two Italians - Euronews.com",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQemFsZ0h4N0ktTTdoUkdCQjE4TXJoRkVsQTlIRGlLek1nY0FrcGVtT2w1U3Y5bzRyd01OYW1MSmFqR2taV0dXNWhTSXJUeW1CdjZDZm9lQWhlMlRCcFBXOHpuOWpDOGs1M3A4MXN6Rkh5SlctUDZDdjg1LWY2REZfeEdRMlpCcDlnVTFvaE5QSHYxZC1iWmRYWkNQQmR5R2NwaDczWFBjeG5OYTRZbTc3eg?oc=5",
       "date": "2026-11-27T10:20:33Z"
+    },
+    {
+      "title": "What we know about Department for Work and Pensions 'cyber incident' - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9yNVpzeVI4dXZjU2xma0VqMXhKaE12R0hWN1hyclZ0MDVNNm1OWm1CT0J4d0VqcjQ0MHhSeTU2RHB0NlBVSTY2eDNqYkE2bWhuT1RkUFhKV3dGaW9US1E?oc=5",
+      "date": "2026-11-27T10:13:08Z"
     },
     {
       "title": "SAP Hit by Suspected Cyberattack, Hackers Reportedly Steal GitHub Tokens and Source Code - GBHackers News",
@@ -186,7 +341,17 @@
       "date": "2026-11-27T08:40:25Z"
     },
     {
+      "title": "SAP suspicious activity: no customer data breach found - Cybernews",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1IN19wUmI5NTJyd2pNbWZ2N1cyRlpsMm94TnVuQjZCd25TeHdVNXRJRFBheW9BSEhwUXcwT25oNGFZbG9LNGYxLVppWDIyVVhVU0NIRlItVWIwNmxUNWdPdklyUUdSQ0QxOUJucXYwNThwUQ?oc=5",
+      "date": "2026-11-27T08:34:18Z"
+    },
+    {
       "title": "Millions lose access to DWP services after 'cyber incident' - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5qTlc4VnVELTJDUDV4Nlo3aGNCemZHSGpMcTA1aWFfdTRKNTRMRHBxeWd5eVNwRlc0dldoLXMteDlMSEh2cjVOY1A4SHdPYUh2UnM5M3lGdkoyMEx2aGc?oc=5",
+      "date": "2026-11-27T08:34:17Z"
+    },
+    {
+      "title": "DWP: Millions lose access to benefits and pensions services after 'cyber incident' - BBC",
       "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5qTlc4VnVELTJDUDV4Nlo3aGNCemZHSGpMcTA1aWFfdTRKNTRMRHBxeWd5eVNwRlc0dldoLXMteDlMSEh2cjVOY1A4SHdPYUh2UnM5M3lGdkoyMEx2aGc?oc=5",
       "date": "2026-11-27T08:34:17Z"
     },
@@ -194,6 +359,16 @@
       "title": "Denmark arrests teenager over data breach affecting 11,000 people - Euronews.com",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcmI0NEdPSWlNRWZmT3VMSG5fZzRQc3p6QmpDRHRWajVJRENMblZSMV9wN3VGUGYzUGFneE5yY2ZEclgzWkg5NmdIenNfTk4tWm9nTXpiaU9MdVZmdUhHTHktVWtqM2Z1Y0M0aG01N1UwNmJ5blFTcUE3U2hUWFRScklYYjBBZWlNZ0xYeDV0dDJpQTg3d0dGT2cybUNiSmhMSFE?oc=5",
       "date": "2026-11-27T08:18:42Z"
+    },
+    {
+      "title": "Expert: NATO Builds Cyberattack Capabilities Against Russia - Военное дело",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcmp0VVZ4VkNFLTlSYUFxWkV5eUprNFFOaTlyQm1zbG5pa1dHSDY3OThJWFdKd1ZsaHZXdXRfQWpfempoNm9JeVZINTRwdGtTRlB3LTJiMGVuRDIyNjN1SnNHUVNWeGQ5cVlPeklPTmkzcGpUUC1YQ3h2RzBxMk85VE9yb1JlZjhEdEZuamR6TFgtWXhVbjBQZHA2V3ZpUHFh?oc=5",
+      "date": "2026-11-27T08:01:03Z"
+    },
+    {
+      "title": "FIFA Cyberattack: Hackers Reportedly Impersonated Staff as Sport Faces a Wave of Attacks - Sportscape Magazine",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWThCNnNEQk9USmxHQ2dLZVV3d3BZb3NxcFRZVC0tYjBucjVnMERkUHlwN2UzMjFpeHZjQ2w5LVdRNHFScjB6ZnBCaHpid2k1UFhFQlNRVGNVeGlUWmppR0lfT2Z3NkRXdjFLckRoaFpwaHZMU0R2RDhwdUprNlFVZC1MbzRCVzQtMFJRNVVpX0t6SnVnQmZpdTktdE5iNTRNWkZTa2stUTBvMTFLSUtyY0EzSnlaOTdZdVRwc2E3RWhuNUsxeWc?oc=5",
+      "date": "2026-11-27T07:55:08Z"
     },
     {
       "title": "KOFST Data Breach: 210,000 Records, 16 Data Types - shattered.io",
@@ -3786,6 +3961,11 @@
       "date": "2026-11-23T09:34:52Z"
     },
     {
+      "title": "US Embassy Sounds Alarm In Bahrain! Americans Warned Of Iran-Houthi Attack Threat - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxObkFvZkhqd1JFNEZzWVhJWmxOTGlUQjRTMVRJQXN4Xy1aMUZSNlBVUkhIajhocFY0Rmo4Z3RUMVBFZGpiaFYteWRqZnA3bXBFOUthTjRCWE9OUjVKMEZoWmN2dm9zeU5nRlBFY2F5R0N6akkyak50NVR3WGtIQUswY0xFcWJMZnZubzEtSmFIQlNsMXVTeklMdWNFb1VBem5HSXd1QWRLVFhfR29iRjlWVTgySHBLb3NSSWNhQURfeGdKeEhySFVtN3VISGthQ3J2ck1KUFdtV2N0QUFlZlR1enVoNWc0MVVCN1hPQmhoQS0tZlHSAfgBQVVfeXFMUFc4cFVKNDMwY2FSNUxialNncHlQcjFSUXFQc2ZGQndyMTFWUVpCQnZnWFpNRzJWemVZazVNc1k1d0xSQThNS3I2Z00tUXdBZG4wd3dwczhyOUJ0UlRnQ1REd3ZPUW9mV3FKaVFCVTcwdGNRa2pHeEhsd1BjcDR3eHpNSVRfUm1UTnVBck5fbWI3QldLY2dmMGFDWENKdG41LVVqVWlXSDROOEtJYm5saF9sQXdkQnhVOF82bE5zeG05UXktMmZHSXpXdzN0MUtLOW1LSXJWN3dYU0ZWOE95dEFwRDFHcmtUcnJMYmZUTzJGZldVc2VMQWs?oc=5",
+      "date": "2026-11-23T09:07:00Z"
+    },
+    {
       "title": "Rattled by the FAA ground stop and widespread tech outages, will people change their Thanksgiving plans? - Pittsburgh Post-Gazette",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObFJpZkljSmRqRVhoU1ozWkp0bG9EYVJGZ1FoTW9TMG9RdHgwOGtkVUhXc0dLblQ0TjF2X25WVnBuME5jRkJZZ0hFSDM2M2p3VGxXSi1fRG0zdFdfeHlQY01lREtvRGJ2M3NmcWlvV3lxVjdlNmRXcS1BN3FHRjJsNmZNOXBOX3RVSXl1WVM1NFFkckZXVVpOdl94WFMtY0RhUHExQ0NMWVc5SFU?oc=5",
       "date": "2026-11-23T09:00:00Z"
@@ -6116,6 +6296,11 @@
       "date": "2026-11-20T14:43:43Z"
     },
     {
+      "title": "Mamdani Announces Plan To Close Notorious Rikers Island Jail - Newsweek",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbDZFVFM5YWlVYlBJRmtoVXBFc05rNW10ZVhCQmFLeUV2cFlZVkZQMWhTU3dLY1JrNUR2ZmdmTzdsS0dqczlCN0swT2pWVUJvTXhrQy1mOE53SkVhMXZsTllyVnBJcWhUdDVlaUZIZVdfZlFQalpZUkRIV1c5UUVVdlo4T2xwTEJuOS16RHNpOHQtVjRUcEhv?oc=5",
+      "date": "2026-11-20T14:40:58Z"
+    },
+    {
       "title": "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business",
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlg2SHdFdm9BbWczajlmYkFnbU1WbXZzMmdueFpOazRNR1ZaS0kzRDdXU0NMY0VRc2Yya29fVlhTVkVuaEJQZDFvYVVOMjhYaThOZEF6TEhVMDluVkI0ejFkazRISENLSmRUcExmQW5rblNOa0cxaUFyWUdwMGppUFpBRmxvTF9UTzRoeG5DTTNuRlg1MHpENU1XQ1J3aU0zeTlQb2VmbEVxUzN0QW1ZV19hTkJkNFpYcmtZ?oc=5",
       "date": "2026-11-20T14:34:36Z"
@@ -6149,101 +6334,6 @@
       "title": "SLED opens criminal investigation in Charleston County cyberattack - South Carolina Public Radio",
       "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQQW1ZV0phQWQ2WUEwWmlmaC10SnJ1N3FPMFduNC14V21mZ2VjSkVKNHVUMGJWZzFLOEdRTXBDOHhCTnV3bjRPSzZyOG1sV1MwOGJUV0JhaFlVS3YtX2hCNFU4b1Y4SXFJZF9leGxzV1gyTUlOYWo3cjFINU10YlJGeHJYM01DNk5pTWllYmlmVjROVHo2OFNfbFRkZWhtaXRvUzY0LTJ5NzQzZ1dsTnM1cHZYajNZeXRVRUVmeDJuS2dSR0pj?oc=5",
       "date": "2026-11-20T14:02:00Z"
-    },
-    {
-      "title": "Jimmy Kimmel Shocked By Audience’s Reaction To Joke - TV Shows Ace",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRjdiOU9ua0hNYmV6TktvNU1iNzRscUJub2xvVnJKZUZrS3YxMUNWNUN5ZVBUejVqXzg5eDRwakJZd1lNRWsxZUlCblhGQnJuYkttSWZnUHRxOGhHdDA4LURFRDYxSzJIMFp5b1pIRE1jTmc5cUJuT2g2MWtkaGgxQlBUMnFFRm5MckpROW9B?oc=5",
-      "date": "2026-11-20T13:46:49Z"
-    },
-    {
-      "title": "‘Beloved’ Fiona the Hippo Dies After Swallowing Hat - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZU03R3dubXhPTU1PRmhXMloxM3dNTHRNd2RSZTZGUDdkQXBOeDd0ZVczSF9CYnZhLWxYZnhPWWdBeGI4Z2U5czVkZjQ0RWNSOVdTa01PSWtMWm1kR2tkTjdpNUJJcEJNNFRYc0k2RFVUUEQyMTRVc3BjdEVucURtNy1IbnNhZFc2?oc=5",
-      "date": "2026-11-20T13:45:21Z"
-    },
-    {
-      "title": "Regions Bank Outage Today: Is Regions Bank Down in the US? Users Report Online Banking, Mobile App Login, Account Access and Money Transfer Issues - The Sunday Guardian",
-      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQR01ld0E1ZlRFUV84dnphei1Fa0hGMEk1dE00dDlIaktjTFV0WDVxVG5mYjFLeGFvbVlkSzQzQ0pIWXp6QkRIaWxSQ2NqMTFUTmhwNDJtVHlEWi1UYUcyWHpWWUJxbmRzQ1IwMW03ODBNdXd5OUxqTjR2RHgxd0hGeWF0d0FkVE95b0xRMlViRFFOaVBiZkU5TVF3LU1IaEJwQ2U2cjR6TjdqVm05RXlMVEV1NUFSdHloSVZtQVI5cG41SjJ4eEFmV0Q5TFlOb3BZQTZ5eHVXTGRGYVhZSGlEcUdxZTBDbGw3VUJranI5VDcxREVTQW5Bc3ZJNExrU1VGQS1lUE1hM2VrSTBZXzhDU1Z1Z3dvdjc4N3fSAZ8CQVVfeXFMT01HMFVCRzJPNE5lRXJPUEc2TG5DdklHWXZ0UzVaVUR1Um5vSVZmVDNiSEpZNTBxM2M1bTBYVXRiVjdhNHFOUmNTeTI0MV84QXVFZWJTR2FnQURGblFhQkZvMlFnYkZTX0hUSVJtWWhERHloTnBMQnFneWJWYUk4MjBLQVgwSk02Rmhfb2NacHFuRGZnTHB3U25oellkTFE2d2JOTE1KYjYyQUtXOUY3aWhNdEtQeGdiMEpVbVhpSWI5N0J3bHh4WUxHWldhMzlnWnlWRHlSZlpVVlZRcjJuS25xZGNzMWtrRmItLU1DQlVGd2prTzVIeDR5eW83a1NRZzlkZ2hkbXpaeTh5YU8tbTdKLTFYQVpVNVlNNHJ6b3c?oc=5",
-      "date": "2026-11-20T13:43:33Z"
-    },
-    {
-      "title": "JPMorgan Chase confirms data breach affecting thousands of customers - ConsumerAffairs",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZG5DcWdmS3pBNU9OSnRUVm1BOWlVQVItT1VMZlJuM28wMzZFYW81NVM2UzI1NVpUa2pLRFVteE95c0xkazZEWUtGRURKNmFCdkotQUl5V0pBb1k0TFgzZW9yM0pBenF2WENFZGk1NTdza3h4UmEtbE83b2REemhmeWV3bE52cDdyaU5IeHl4YlM2NUNxRzRqaHU4QXpPeUw3MVVnOHc2STZ4ZVlZWmVjc2UzajA4amhm?oc=5",
-      "date": "2026-11-20T13:38:41Z"
-    },
-    {
-      "title": "Belarusian cloud provider hit by ransomware, amid attacks on Russian providers. - Digital Watch Observatory",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9VRlEyVHp4WTBrYlhZdTFqbmNDX2lTanJvcUVnMGNLVnIyWGlndHBCRUZEVUt1cmFEenRvQ3R6cXpEMjhjUVBtN2JqWWVBQ3BZOUJjZUg5R3NDVnl4eVUwV2hidm9NOTJzbzlBTWFzelNMWjVNVDFUWHVYQQ?oc=5",
-      "date": "2026-11-20T13:34:00Z"
-    },
-    {
-      "title": "Major tech outages disrupt banks, airlines, federal agencies — senator warns more could be coming - WSLS",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaTJiNTZhUFVPVGZMN0x4Q0xNSDh3UzNnbVgwYU1DalprWWFLbEotVmFQLVpNbHhwVG5TekhJNlpOMHZPbW9ZWHNDTW9DR2hOQjY1cDEzRHdiVDY5NDIxZXNnZ2VhY0RvbzJYY1ZsZ0NoV2xFWlF5THRqU01YcHZjWVJ2M3V6bzQ2ZEJWQWJxT0ZHU2hEcTEyOU1tZHZES0YwM25PNmkwMkhhMklKZWhsSUFlN050c2tmdlpISkhlYXpMRjlEeFA0d2hNaGlGZEdDMUpn?oc=5",
-      "date": "2026-11-20T13:24:08Z"
-    },
-    {
-      "title": "SBC Medical Group discloses data breach affecting 1.6 million people - SC Media",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNSnFVLUNnWmNUZUZRTk1Td3VUMWMxYXJxeTNaTlhBNXFwd1B6T1hxQWdFU0ZvTnlUT3paNjZMN0gyY3k5bmN3V1IyMEtzbnMtQjRNb2RXRFBaajFBdzNRY0tNOGJ0djVGY2U0UExIclJuRVpSNF9YSktVbmM1SzlIQzZFZHpQdk1UeGdhRlBVMEtBMlFaTWg0UlA3NVk3UjA?oc=5",
-      "date": "2026-11-20T13:22:28Z"
-    },
-    {
-      "title": "N-able says recent security breach led to major service outage - BleepingComputer",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZ0ZVamhoZEJnekhrQmFyQ0ZPWm1wakxVZGF0bXQ3WXlQOXc5MksyWXNMdFdRTExFRXVOZXNUZ3Iyd1BJbTB3by14M091bDM1YUFVbV83VmNfUUdKMW93VU5aSkRaUUxwcTJGRjN2UUZiVC1ZWU5BUy12ZTRsTUZzNjhsWjNJREx0RUxXYkZpckhIRlBtQno2SkpUY3QyVHVObGhoSkdxa2pQZWtndllYTNIBtgFBVV95cUxPRzNidHFtYUdjaU90WUV4RkJmWmtBT0NJODBIcVdhdm9jSnJRamdKUGYwcjJnekNCQTgxOGpmQ3ZPUjJGaUZFUGJGTHZwYXZPWmZYSWpjTzdvM2VsRFQ4X0VFOGMzVFJwYXNpX0tDaVc0ODEycjhGeGdjQ1FPX0pjT0lVTEZxNUxoRk5KeEFzUEhrT1FodUFSWGVFVDk2Z3J1dXMtSnZiZnZCRThHTWg3U1RGQm8wZw?oc=5",
-      "date": "2026-11-20T13:18:36Z"
-    },
-    {
-      "title": "Hackers leak data linked to Visa, Mastercard, and JPMorgan customers - Malwarebytes",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPS1VHdktIeG5YeEgzUFRjc1ZFbHNBS3hMUUZFakNKM21jT1p4MGIyczlrUFJ2X1RNRk9CVGczVDhZdXl4bWYwcVpYNTNYVGx4dTRGNnEyX1hUMzdQRmF4QkRfRV92cUF6dVNIaVRfLUFrUFhtVjlBSlBxcU9WMzBZWGJPTEtUeVRFWlRGRXdldWlKenU0c19ncE9jY3hMcFFJZF9uVFpJSjlIeUpfUGhfbFBpTXdkT0dMTHlYdjlMUQ?oc=5",
-      "date": "2026-11-20T13:11:57Z"
-    },
-    {
-      "title": "SpiceJet's ₹5,500 crore rescue bid runs into DGCA heat as fleet lies grounded - Livemint",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOYksxY3RlQm5kemYzQU9ieEMxM3lfUmFybnNQenFtTW5DOTNrQXE0OERHZkFXcnFuWjNrQ3JtZ2JjUXRDMjJCZnZTN2M4NFJPTXdobkVIQjF0QzdJTG16ZDVtSFdFSUo5MHRsNm5aOG1YdE5IN1p0Q0F4S0lvZXlYSjZGOS1GbVhibEdXaGxyTTJrTm9ROEhxZGZ1TEJQNGJrVHdFdTlZUlZMQU9uU3RHUnl6WTdZY1BaSjlzRjI5dmQ4Y3ctN29KadIBzgFBVV95cUxOQS00TmxnN1ZQdUJoemx3bFFzTndMV2JzalVyZDQ0ekJBd3QtZnpmX3FFcFczWGQ4VzhqZG5qcG9HQkdfTzR1U3VGNU9WNWF5V0VCQVl6SXhZUWE4UGRqb2RMN3FsaEJ0SkhUbFQzS05CSGdIZGFzXzJwQ0VOTVlyNW9MUEt3anIwQjRka2xId3NPYndLcjM3TzRxenNoZ3NFM1dSRWhKajNXTDZ0QUJDQ0x0RDRRTjMyV0VJTzZFZTRZYmVTRW5vWEZMb3RiUQ?oc=5",
-      "date": "2026-11-20T13:08:29Z"
-    },
-    {
-      "title": "My Daughter’s Fevers Kept Coming Back. Tests Revealed Our Worst Nightmare - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTGNwanNfNkY1d3gzblpXamVydmJaTXRiTlprazNxU1VxUzJUQW5Jd19PY0hBM0RvUmJCX29hZXJmdmZtWHNHdG1yMGMxS3pHcVE2VUFHekdrbjhSMGpPR2ZZcUVTbEpuMHZvTGh6NlM5UGc1NndjZlZPLTF5dFdWbnNQQTJIQkduQlJJYWhjZy05dlZ4MW5yMFZjN293cWs5d1AtSll3?oc=5",
-      "date": "2026-11-20T13:07:57Z"
-    },
-    {
-      "title": "The FAA grounded her flight. Airbnb kept her money anyway. - Elliott Report",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORzZTRGZtb1NHWDBGeTR0U1hPZXZvS2loZFg1RVpTYjJ5SmZGOG5MZTNTY1FGVWhkdVJQYTJCUERoWkl4Ym03eXI1QUdtN1dDcFhJTndjb0tKVXBTQ0dHZVRyMi1IR0MzRkt4T3c5bjVTaGMyblkyNFpBMV9LTEQwN1V2NzNOOC1ycF9oVFg2amVwUVdhaENfLUl2NFVhZ3J0TS15dUc4dw?oc=5",
-      "date": "2026-11-20T13:01:47Z"
-    },
-    {
-      "title": "DGCA Issues Notice To SpiceJet, Gives 7 Days To Explain Cancelled Flight, Grounded Aircraft & Financial Crisis - Oneindia",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNeFVrcy05aHBsSHQzeUxld2xsSnZOYjB5dVItZ3oxSTVkR2QxOFl5Zk5DTk5NeThFTUVJN3J3bXBETy1VaGNjS3JqSTdRQWh5aVlUSlZZX3NQWGVpMFowSE5oeUN0eU9WaEhOT0p3RjFuNXB1RmRvS1k1a3BxZDM1a1ZVQjZvdml3M0k3TElQMUtBeDloVEpYa0xIS191d3RkWWRWaFVTQkRSbVF3cG1rVjBWaHlfckhsXzZBWXVxODdUUmRLeTB6bnZ6MzJxeTZ1NUs1a3VGZENhQQ?oc=5",
-      "date": "2026-11-20T13:01:45Z"
-    },
-    {
-      "title": "Equinor thwarts cyberattack as separate intrusion at Skagerak Energi raises concerns across Norway’s energy sector - Industrial Cyber",
-      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQNzdUeVRqcGN5bWo5T2QtTjY1Mk9HV3Y5eWpLUDJXWklRNjdVQlVFLW9PdDdEeVdhWWY2NUtpcVQxRm5rSHhqVVZ1eXlLaU9idWpYNEhCMDBUSmxYbmZpMzZaUm54Z21mRFBrSTlNOGtUb2hGWFdZY09TaTZYRHp6RGxfR3lJckpnT0c0em1BWDdtV0N3d0VPQ0RiZ2FKOFBUajk0VkFDcjQ2SDhKWmwxT3VnTXBaY3lGQVJRaWdLVTZEbm0telZkcmlVcXBJYlM3YW40aENnYWZvZ1lSaEFQbmhzNXVoV3daM3J5VE9mZGtVdXhwM1dTVHZxRk1tY0NFS19ZdEZHQQ?oc=5",
-      "date": "2026-11-20T12:58:27Z"
-    },
-    {
-      "title": "Video New concerns on potential cyberattack over US food supply - ABC News - Breaking News, Latest News and Videos",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE50STdjMEhqZ2o4dGd2UlVyY2ZudXZkQ3FJMUhDdFlqNDB6aGl0cFZMZDJJRmNwSF9NT2p4ZUQtbm1LREhpM0JwTW8yY2Q?oc=5",
-      "date": "2026-11-20T12:40:01Z"
-    },
-    {
-      "title": "CyberFOX partners with Threatmate to offer continuous threat monitoring - Channel Dive",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPajJCVWZqQU5KNkhZZjM3MWhGeVFqdkQ2VTh0MzQ2TVJGeFlDcDc3UHYzdEF2THFtMGZpd05oc1ZwTjJqUXE1M0JNUXZLTXNhUWNhbm5OZ01EWl9vT0RJZ3g5czliTHY1M1hfMUp0SVRITlpaWVQwbFNpVUpXOHI2dFI5WV81ZWM2U1ZmRmNSOThfeGVoakhGaUxCVzJpSDZybmswenVSRHRjMTlIVGpqVlhn?oc=5",
-      "date": "2026-11-20T12:37:01Z"
-    },
-    {
-      "title": "White House National Cyber Director Departs Amid Tech Outages - TODAY.com",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQUtvMmRQMnNfblQ3Um1Pd25BOVJCSDBBb3NxUGpCWXBSaEFxSDZneFdYQnBNR1hrQnZub2x3azF1dy1VcHRzM0djM0NmLS04SEJ2bUZ6ZkttZjd4V2VBNDlyTjI5SUtiWHZ6cjNXYTZkcDVxRTFzSUdyQ3E2QmRpdnd0UzZqUE5qUERXZVhkc2NkTDZYdFlv?oc=5",
-      "date": "2026-11-20T12:35:41Z"
-    },
-    {
-      "title": "JPMorgan, Visa and Mastercard respond to third-party cyberattack claims - Intelligent CISO",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxONl9QY1plOUtxM1FVcFpHcjB5Q1MtOGtHaER2bm9TUUFsMHlwY2tFT2VpNXBGZzY4dXVZall1QzA4Nk0xeWFGS2RVNkJXUC1VTVpRZkVFWEJoSUlHWVRMa2ctNlFZaGNnMnptcFpTS3ZxZ2hKRGJjMHJ0TW5FM1ZoTXdhZ25zaFlVUnFoV2huT181MjNvU1RzZGlRcWdRWGtUQndGMDVWNFFCNVZIZEE5WnV4Rlo?oc=5",
-      "date": "2026-11-20T12:35:05Z"
-    },
-    {
-      "title": "Skagerak Energi back to normal operations after cyberattack - EnergyWatch",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBJRl9HMk5VelhCeDR6aVpWcW4xOThNTnFzbTBXaHFFRE5kMFA5Zm0tUl9aQTdpUFg1WkJHMTBrQUdYRV84QVA3TFhIaU52MV9lYjdvV2ZnZjJMdnBKVU5SMVBaNW54VGdCVDdTMFZqVFQwQms?oc=5",
-      "date": "2026-11-20T12:34:34Z"
     }
   ]
 }
