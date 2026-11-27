@@ -116,9 +116,9 @@ html,body{overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){.pager-track.pg-settling,.pager-viewport.pg-settling,.tab-pill.pg-settling{transition:none}}
 .hero{text-align:center;padding:42px 8px 6px}.hero h1{font-size:clamp(28px,5vw,36px);font-weight:400;margin:0 0 10px}
 #view-home .hero h1{font-family:"Archivo Black","Arial Black",Roboto,Arial,sans-serif;font-size:clamp(44px,10vw,68px);font-weight:400;line-height:.95;letter-spacing:-.03em;text-transform:uppercase;margin:0 0 8px;text-shadow:0 2px 0 rgba(255,255,255,.65),0 6px 18px rgba(20,50,35,.20)}
-#view-home .hero h1 .ht-red{color:#9e1b12}
-#view-home .hero h1 .ht-green{color:#14532d}
-@media(prefers-color-scheme:dark){#view-home .hero h1{text-shadow:0 2px 0 rgba(0,0,0,.28),0 6px 18px rgba(0,0,0,.5)}#view-home .hero h1 .ht-red{color:#ff867c}#view-home .hero h1 .ht-green{color:#4ade80}}
+#view-home .hero h1 .ht-red{background:repeating-linear-gradient(-45deg,#d92f24 0 10px,#ffffff 10px 26px);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}
+#view-home .hero h1 .ht-green{background:repeating-linear-gradient(-45deg,#1e9e4a 0 10px,#ffffff 10px 26px);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}
+@media(prefers-color-scheme:dark){#view-home .hero h1{text-shadow:0 2px 0 rgba(0,0,0,.28),0 6px 18px rgba(0,0,0,.5)}}
 #view-home .hero{padding-top:28px}
 .title-wrap{position:relative;max-width:640px;margin:0 auto}
 .garland{position:relative;display:block;width:min(560px,98%);margin:0 auto -4px;line-height:0;pointer-events:none}
@@ -387,6 +387,20 @@ body>.teams-overlay{z-index:2000}
 .xmas-radio-btn{appearance:none;width:68px;height:68px;min-height:68px;padding:0!important;line-height:0;border-radius:50%;border:1.5px solid #14532d;background:#fff;color:#14532d;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(11,61,32,.22)}
 .xmas-radio-btn svg{display:block;margin:0!important;padding:0!important;transform:none!important}
 .xmas-radio-status{font-size:13.5px;line-height:1.5;color:#3a4a40;margin:0;min-height:20px}
+/* Christmas tab additions (Nov 27, 2026): advent calendar, tappable
+   checklist, Home widget play-button layout, thumbnail guard. */
+.advent-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+.adv-tile{appearance:none;border:2px solid #14532d;background:#e9f5ec;color:#14532d;border-radius:10px;min-height:52px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;padding:6px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.adv-tile.locked{opacity:.38;cursor:default}
+.adv-tile.opened{background:#b42318;border-color:#14532d;color:#fff}
+.adv-tile .adv-day{font-size:16px;font-weight:700;line-height:1}
+.adv-tile .adv-line{font-size:10.5px;font-weight:600;line-height:1.25}
+.xcheck{display:flex;align-items:flex-start;gap:10px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.xcheck input{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:#14532d;cursor:pointer}
+.xcheck input:checked+span{text-decoration:line-through;opacity:.55}
+.xp-advent{align-items:flex-start}
+#homeChristmasWidget .xmas-big{flex:1;min-width:0}
+img.nfeed-thumb[src=""],img.nfeed-thumb:not([src]){display:none}
 #wxBg{overflow:hidden;background:linear-gradient(180deg,#3d5266 0%,#5d7387 55%,#7d93a7 100%)}
 #wxBg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(rgba(8,20,28,.20),rgba(8,20,28,.40));pointer-events:none}
 #wxBgCanvas{position:absolute;inset:0;z-index:3;width:100%;height:100%;display:block}
@@ -802,7 +816,12 @@ body>.teams-overlay{z-index:2000}
   <div class="dateline" id="todayLine">Loading date…</div></div>
   <div class="widget-stack">
 
-  <!-- Thanksgiving widget: moved to the top of Home, above the weather widget -->
+  <!-- Christmas widget: first on Home (Nov 27, 2026) — countdown + play button only -->
+  <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
+    <div class="hwidget-head"><h2>Christmas</h2></div>
+    <div class="xmas-row"><div class="xmas-big" id="homeXBig"><span id="homeXDays">—</span><span id="homeXSuffix"> days until Christmas</span></div><button class="xmas-radio-btn" id="homeXmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button></div>
+  </section>
+  <!-- Thanksgiving widget: above the weather widget -->
   <section class="hwidget" id="homeThanksgivingWidget" aria-label="Thanksgiving widget">
     <div class="hwidget-head"><h2>🦃 Thanksgiving</h2></div>
     <div class="tg-row"><div class="tg-big" id="homeTGBig"><span id="homeTGDays">—</span><span id="homeTGSuffix"> days until Thanksgiving</span></div></div>
@@ -873,59 +892,6 @@ body>.teams-overlay{z-index:2000}
     <div id="homeNflGames"><p class="hw-status">Loading Football games…</p></div>
     </div>
   </section>
-  <!-- News teaser: the full feed lives on the News tab now; Home
-       (Derek, Nov 24, 2026) shows just the top 3 Top Stories to make
-       people tap through — no politics and no war info. -->
-  <section class="hwidget" id="homeNewsWidget" aria-label="News widget">
-    <div class="hwidget-head"><h2>📰 News</h2><button class="hw-go" data-go="news">See News →</button></div>
-    <div class="nfeed" id="homeNewsList"><p class="hw-status">Loading news…</p></div>
-    <p class="nfeed-updated" id="homeNewsUpdated"></p>
-  </section>
-  <script>(function(){
-    /* Home News teaser (Derek, Nov 24, 2026) — the full feed lives on the
-       News tab now. Home shows just the top 3 Top Stories (politics/war
-       filtered out) to make people tap through: tapping a headline or
-       See News opens the News tab. Refreshes every 4 minutes. */
-    var list=document.getElementById('homeNewsList'),upd=document.getElementById('homeNewsUpdated');
-    if(!list)return;
-    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-    function agoStr(ts){var s=Math.floor((Date.now()-ts)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
-    var SKIP=/trump|biden|vance|harris|obama|clinton|senate|congress|democrat|republican|\bgop\b|white house|capitol|election|midterm|impeachment|speaker|pelosi|schumer|mcconnell|\bwar\b|iran|ukraine|russia|gaza|israel|hamas|missile|airstrike|invasion|military|pentagon|troops|ceasefire|nato/i;
-    var cache=null,updAt=0;
-    function goNews(){var t=document.querySelector('.bottomnav .tab[data-go="news"]');if(t)t.click();}
-    function render(){
-      if(!cache){list.innerHTML='<p class="hw-status">Loading news…</p>';return;}
-      var seen={},items=[];
-      (cache.top||[]).forEach(function(it){
-        if(!it||!it.title||!it.link||seen[it.link])return;
-        var ts=Date.parse(it.published||'');
-        if(isNaN(ts))return;
-        if(SKIP.test(it.title))return;
-        seen[it.link]=1;
-        items.push({title:it.title,source:it.source||'',link:it.link,thumb:it.thumb||'',ts:ts,when:agoStr(ts)});
-      });
-      items.sort(function(a,b){return b.ts-a.ts;});
-      items=items.slice(0,3);
-      if(!items.length){list.innerHTML='<p class="hw-status">No stories right now.</p>';if(upd)upd.textContent='';return;}
-      list.innerHTML=items.map(function(a){
-        var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
-        return '<button type="button" class="nfeed-item"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' · '+esc(a.when):'')+'</span></span>'+img+'</button>';
-      }).join('');
-      list.querySelectorAll('.nfeed-item').forEach(function(b){b.addEventListener('click',goNews);});
-      if(upd)upd.textContent=updAt?('Updated '+new Date(updAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'})+' ET'):'';
-    }
-    function load(){
-      fetch('news.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-        if(!d||!d.sections)throw new Error('bad news.json');
-        cache=d.sections;updAt=Date.now();
-        render();
-      }).catch(function(){
-        if(!cache)list.innerHTML='<p class="hw-status">Couldn\u2019t load news right now.</p>';
-      });
-    }
-    load();
-    setInterval(load,4*60*1000);
-  })();</script>
   <!-- Faith widget: today's verse + this week's Mass — timely every day, always shown -->
   <section class="hwidget faith-widget" aria-label="Faith widget">
     <div class="hwidget-head"><h2>🙏 Faith — Time With God</h2><button class="hw-go" data-go="faith">Go to Faith →</button></div>
@@ -938,14 +904,9 @@ body>.teams-overlay{z-index:2000}
       <a class="faith-votd" href="https://www.bible.com/verse-of-the-day" target="_blank" rel="noopener">📖 Today&rsquo;s Verse</a>
     </div>
   </section>
-  <section class="hwidget" id="homeChristmasWidget" aria-label="Christmas widget">
-    <div class="hwidget-head"><h2>Christmas</h2><button class="hw-go" data-go="christmas">Go to Christmas →</button></div>
-    <div class="xmas-row"><div class="xmas-big" id="homeXBig"><span id="homeXDays">—</span><span id="homeXSuffix"> days until Christmas</span></div></div>
-    <a class="santa-link" href="https://santatracker.google.com/" target="_blank" rel="noopener">Track Santa with Google →</a>
-  </section>
   <!-- War risk widget, bottom of Home (Derek, Nov 24, 2026) — percent
        + level only, plus the two market odds with their deadlines. -->
-  <section class="hwidget" id="homeWarRiskWidget" aria-label="Iran war risk">
+  <section class="hwidget" id="homeWarRiskWidget" aria-label="Iran war risk" hidden>
     <div class="hwidget-head"><h2>⚠️ Iran War Risk</h2></div>
     <div class="hw-risk-num" id="homeWarRiskNum">—</div>
     <div class="hw-risk-level" id="homeWarRiskLevel">—</div>
@@ -1402,18 +1363,22 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #view-news .nfeed-more:active{opacity:.7}
 #view-news .nfeed-updated,#view-sports .nfeed-updated,#view-weather .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
 #view-news .nfeed-updated:empty,#view-sports .nfeed-updated:empty,#view-weather .nfeed-updated:empty{display:none}
+/* ===== Apple News look for the News tab feed (Nov 27, 2026) — system
+   font stack, clean cards, big feature story on top, clear hierarchy.
+   Data source, 4-minute refresh, refresh button and the politics/war
+   title filter are unchanged; News tab only. ===== */
+#view-news #newsFeedCard{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,Arial,sans-serif}
+#view-news #newsFeedCard .nchip{font-family:inherit}
+#view-news .nfeed-item{padding:16px 2px}
+#view-news .nfeed-t{font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+#view-news .nfeed-m{font-size:13px;color:#6e6e73;margin-top:4px}
+#view-news .nfeed-thumb{width:96px;height:96px;border-radius:10px}
+#view-news .nfeed-item:first-child{flex-direction:column;align-items:stretch;padding-top:6px}
+#view-news .nfeed-item:first-child .nfeed-thumb{width:100%;height:190px;order:-1;margin-bottom:12px}
+#view-news .nfeed-item:first-child .nfeed-t{font-size:21px;line-height:1.3}
+#view-news .nfeed-item:first-child .nfeed-m{font-size:13px}
+@media(prefers-color-scheme:dark){#view-news .nfeed-m{color:#98989d}}
 /* Home News widget (Derek, Nov 24, 2026) — same feed rows as the News tab */
-#homeNewsWidget .nfeed{display:flex;flex-direction:column}
-#homeNewsWidget .nfeed-item{display:flex;gap:12px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--border);color:var(--ink);text-decoration:none;text-align:left}
-#homeNewsWidget .nfeed-item:last-child{border-bottom:0}
-#homeNewsWidget .nfeed-item:active{opacity:.7}
-#homeNewsWidget .nfeed-main{flex:1 1 auto;min-width:0}
-#homeNewsWidget .nfeed-t{display:block;font-size:15.5px;font-weight:650;line-height:1.4}
-#homeNewsWidget .nfeed-m{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
-#homeNewsWidget .nfeed-thumb{flex:0 0 auto;width:72px;height:72px;object-fit:cover;border-radius:12px}
-#homeNewsWidget .nfeed-updated{font-size:12.5px;color:var(--soft);margin:10px 0 0}
-#homeNewsWidget .nfeed-updated:empty{display:none}
-#homeNewsWidget button.nfeed-item{appearance:none;background:none;border:0;border-bottom:1px solid var(--border);font:inherit;text-align:left;width:100%;cursor:pointer}
 /* Home war risk widget (Derek, Nov 24, 2026) — percent + level only */
 #homeWarRiskWidget .hw-risk-num{font-size:52px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#b42318}
 #homeWarRiskWidget .hw-risk-num.bd-safe{color:#1e7e34}
@@ -1433,6 +1398,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 #homeWarRiskWidget .hw-risk-market:empty{display:none}
 #homeWarRiskWidget .hw-risk-updated{font-size:12.5px;color:var(--soft);margin:4px 0 0}
 #homeWarRiskWidget .hw-risk-updated:empty{display:none}
+#homeWarRiskWidget[hidden],#emergencyTracker[hidden]{display:none!important}
 #view-news .brk-toggle{appearance:none;display:block;width:100%;background:none;border:0;border-top:1px solid var(--border);color:#b42318;font:inherit;font-size:14px;font-weight:700;text-align:left;padding:11px 2px 2px;cursor:pointer;min-height:40px}
 #view-news .brk-toggle:active{opacity:.7}
 #view-news .nkick{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#b42318;margin:0 0 4px}
@@ -1545,7 +1511,7 @@ svg.wx-fog-ic{vertical-align:-0.14em}
     <span class="nkick">News · Breaking</span><h2>🚨 Breaking News</h2>
     <div id="breakingSectionBody"><p class="lstatus">Checking for breaking news…</p></div>
   </section>
-  <section class="ncard" id="emergencyTracker" aria-label="Iran War Risk">
+  <section class="ncard" id="emergencyTracker" aria-label="Iran War Risk" hidden>
     <span class="nkick">News &middot; Iran War Risk</span><h2>⚠️ IRAN WAR RISK</h2>
     <div class="et-risk" id="etRisk">
       <div class="et-risk-num" id="etRiskNum">—</div>
@@ -1668,6 +1634,9 @@ svg.wx-fog-ic{vertical-align:-0.14em}
   }
   function fmt1(x){return String(Math.round(x*10)/10);}
   function fail(){
+    /* Unknown risk counts as below the gate — keep both war displays hidden. */
+    var hw0=document.getElementById('homeWarRiskWidget');if(hw0)hw0.hidden=true;
+    var et0=document.getElementById('emergencyTracker');if(et0)et0.hidden=true;
     marketEl.textContent='Polymarket: —';
     var num=document.getElementById('etRiskNum');if(num){num.textContent='—';num.className='et-risk-num';}
     var lv=document.getElementById('etRiskLevel');if(lv){lv.textContent='—';lv.className='et-risk-level';}
@@ -1691,6 +1660,12 @@ svg.wx-fog-ic{vertical-align:-0.14em}
       var attackScore=(attacks===null)?null:Math.min(attacks*10,40);
       var risk=(attackScore===null)?market:(market+attackScore)/2;
       var b=riskBand(risk);
+      /* War displays gate (Nov 27, 2026): hidden while the risk is
+         below the High band (40%). When the risk reaches 40% or above
+         the widgets show again automatically — no code change needed. */
+      var showWar=risk>=40;
+      var hw=document.getElementById('homeWarRiskWidget');if(hw)hw.hidden=!showWar;
+      var et=document.getElementById('emergencyTracker');if(et)et.hidden=!showWar;
       var num=document.getElementById('etRiskNum');
       if(num){num.textContent=fmt1(risk)+'%';num.className='et-risk-num bd-'+b.cls;}
       var lv=document.getElementById('etRiskLevel');
@@ -2555,9 +2530,13 @@ body.on-sports footer{color:#d8b8b2!important}
 /* ===== Faith church background (Nov 13) — static stained-glass /
    warm church treatment, no live photo, no auto-update. Cards keep a
    solid warm panel on top of it so every section stays readable. ===== */
-body.on-home{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(255,170,80,.5),transparent 60%),radial-gradient(ellipse 80% 34% at 18% 30%,rgba(200,110,40,.28),transparent 70%),radial-gradient(ellipse 80% 34% at 85% 55%,rgba(140,70,20,.24),transparent 70%),linear-gradient(180deg,#6b3a14 0%,#8a4a1c 30%,#5e2f12 62%,#3a1e0c 100%);color:#fff3e0}
-body.on-home::before{background:radial-gradient(ellipse 60% 30% at 50% 12%,rgba(255,200,120,.22),transparent 70%)}
-body.on-home .bottomnav{background:rgba(58,30,12,.55);border-color:rgba(255,200,120,.35);box-shadow:0 16px 38px rgba(10,2,0,.5),inset 0 1px 0 rgba(255,220,170,.28)}
+/* ===== Christmas Home background (Nov 27, 2026) — deep green + red,
+   no gold; replaces the brown Thanksgiving gradient. Title colors are
+   brightened on Home so the deep red/green title stays readable. ===== */
+body.on-home{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(180,35,24,.5),transparent 60%),radial-gradient(ellipse 80% 34% at 18% 30%,rgba(74,222,128,.20),transparent 70%),radial-gradient(ellipse 80% 34% at 85% 55%,rgba(180,35,24,.22),transparent 70%),linear-gradient(180deg,#0b2e1a 0%,#14532d 30%,#0d3b22 62%,#071f12 100%);color:#fff}
+body.on-home::before{background:radial-gradient(ellipse 60% 30% at 50% 12%,rgba(74,222,128,.16),transparent 70%)}
+body.on-home .bottomnav{background:rgba(7,31,18,.55);border-color:rgba(74,222,128,.35);box-shadow:0 16px 38px rgba(2,10,5,.5),inset 0 1px 0 rgba(187,247,208,.28)}
+body.on-home .garland{filter:drop-shadow(0 0 8px rgba(255,255,255,.28))}
 /* ===== GTA 6 THEME TAKEOVER (Nov 18, 2026) — Vice City sunset.
    Additive override under body.gta6; the Thanksgiving CSS above is
    untouched, so reverting is just removing the gta6 class.
@@ -2838,7 +2817,8 @@ body.on-christmas{color-scheme:light}
   <div class="hero"><h1>🎄 Christmas</h1><div class="dateline">Friday, December 25, 2026</div></div>
   <div class="xmas"><h2>Countdown to Christmas</h2>
   <div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div>
-  <p id="xLine" style="opacity:.92;margin:0">Counting down to December 25…</p></div>
+  <p id="xLine" style="opacity:.92;margin:0">Counting down to December 25…</p>
+  <p id="xShopLine" style="opacity:.92;margin:6px 0 0"></p></div>
   <section class="xmas-panel" aria-label="Christmas">
     <div class="xp-row">
       <div class="xp-ic" aria-hidden="true">🎅</div>
@@ -2850,16 +2830,41 @@ body.on-christmas{color-scheme:light}
       <div class="xp-main"><h2>Christmas Radio</h2><p>Christmas hits, live all season. Tap play to listen.</p></div>
       <div class="xmas-radio"><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><p class="xmas-radio-status" id="xmasRadioStatus" role="status"></p><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div>
     </div>
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">🎄</div>
+      <div class="xp-main"><h2>Christmas Tree</h2><p id="xTreeLine">Going up today at 5:45 PM…</p></div>
+    </div>
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">⛄</div>
+      <div class="xp-main"><h2>White Christmas</h2><p id="xWhiteLine">Checking the forecast…</p></div>
+    </div>
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">❄️</div>
+      <div class="xp-main"><h2>Christmas Eve &amp; Christmas Day</h2><p id="xEveDayLine">Checking the forecast…</p></div>
+    </div>
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">💡</div>
+      <div class="xp-main"><h2>Lights on the Lake</h2><p>Two-mile drive-through light show at Onondaga Lake Park, Liverpool. Nov 21 – Jan 4, nightly 5–10pm.</p></div>
+      <a class="xp-btn" href="https://www.lightsonthelake.com/" target="_blank" rel="noopener">See lights →</a>
+    </div>
+    <div class="xp-row">
+      <div class="xp-ic" aria-hidden="true">🎬</div>
+      <div class="xp-main"><h2>Christmas Eve Movie</h2><p>To be decided</p></div>
+    </div>
+    <div class="xp-row xp-advent">
+      <div class="xp-ic" aria-hidden="true">🗓️</div>
+      <div class="xp-main"><h2>Advent Calendar</h2><div class="advent-grid" id="adventGrid"></div></div>
+    </div>
     <div class="xp-row xp-check">
       <div class="xp-ic" aria-hidden="true">🎁</div>
       <div class="xp-main"><h2>Christmas Checklist</h2>
-      <ul class="check">
-        <li>Put up the tree and lights</li>
-        <li>Make the gift list — and check it twice</li>
-        <li>Plan Christmas Mass and family time</li>
-        <li>Stock up on wrapping paper, cards, and cocoa</li>
-        <li>Watch the Weather tab before any holiday travel</li>
-        <li>Check the Google Santa Tracker on Christmas Eve</li>
+      <ul class="check" id="xmasChecklist">
+        <li><label class="xcheck"><input type="checkbox" data-i="0"><span>Put up the tree and lights</span></label></li>
+        <li><label class="xcheck"><input type="checkbox" data-i="1"><span>Make the gift list — and check it twice</span></label></li>
+        <li><label class="xcheck"><input type="checkbox" data-i="2"><span>Plan Christmas Mass and family time</span></label></li>
+        <li><label class="xcheck"><input type="checkbox" data-i="3"><span>Stock up on wrapping paper, cards, and cocoa</span></label></li>
+        <li><label class="xcheck"><input type="checkbox" data-i="4"><span>Watch the Weather tab before any holiday travel</span></label></li>
+        <li><label class="xcheck"><input type="checkbox" data-i="5"><span>Check the Google Santa Tracker on Christmas Eve</span></label></li>
       </ul></div>
     </div>
   </section>
@@ -3644,6 +3649,14 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(hxBig&&xIsDay)hxBig.textContent='Merry Christmas!';
     if(hxBig)hxBig.classList.toggle('detailed',!!xDetailed);
     var hxL=document.getElementById('homeXLine');if(hxL)hxL.textContent=document.getElementById('xLine').textContent;
+    // Shopping days left — days until Christmas Eve (Dec 24).
+    var xShop=document.getElementById('xShopLine');
+    if(xShop){
+      var eve=new Date(now.getFullYear(),11,24);
+      if(now>new Date(now.getFullYear(),11,24,23,59,59))eve=new Date(now.getFullYear()+1,11,24);
+      var sDays=Math.ceil((new Date(eve.getFullYear(),11,24)-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+      xShop.textContent=sDays===0?'Last shopping day!':(sDays===1?'1 shopping day left':sDays+' shopping days left');
+    }
     // Relevance filter: the Home Christmas widget only shows in the run-up to
     // Christmas (within 60 days, or on the day itself). Months away it stays
     // off Home entirely; the full Christmas tab is always there.
@@ -3651,6 +3664,16 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(hxW){var xRelevant=xIsDay||days<=60;hxW.style.display=xRelevant?'':'none';}
   }
   updateXmasCountdown();
+  // Christmas tree — goes up TODAY, Fri Nov 27, 2026 at 5:45 PM EST.
+  // Live countdown until then; once it passes it flips to
+  // "The tree is up!" and stays there.
+  var TREE_TIME=new Date('2026-11-27T17:45:00-05:00');
+  function updateTreeCountdown(){
+    var el=document.getElementById('xTreeLine');if(!el)return;
+    var left=dnCountdownText(TREE_TIME);
+    el.textContent=left?('Going up today at 5:45 PM \u2014 '+left+' to go'):'The tree is up! \uD83C\uDF84';
+  }
+  updateTreeCountdown();
   // Thanksgiving countdown — the fourth Thursday of November, computed
   // in-page (2026: Thu Nov 26) and rolling to next year on its own once
   // the day passes. The Home widget follows the Christmas rule: it only
@@ -3676,7 +3699,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   updateTGCountdown();
   // Countdowns tick live (minutes) while the page is open.
-  setInterval(function(){updateXmasCountdown();updateTGCountdown();},30000);
+  setInterval(function(){updateXmasCountdown();updateTGCountdown();updateTreeCountdown();},30000);
   if(location.hash && tabOrder.indexOf(location.hash.slice(1))>=0) show(location.hash.slice(1));
   // Live weather — Open-Meteo, no API key, Cicero NY (43.1713, -76.1250)
   var codes={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:[wxFogSvg(),'Fog'],48:[wxFogSvg(),'Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],56:['🌦️','Freezing drizzle'],57:['🌦️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Light showers'],81:['🌧️','Showers'],82:['🌧️','Heavy showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Thunderstorm with hail']};
@@ -4574,7 +4597,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   function renderConf(entries,divMode){
     if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
     else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th></tr></thead><tbody>';
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>PCT</th><th>GB</th><th>Playoff %</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var apiLogo=(t.logos&&t.logos.length)?t.logos[0].href:'';
@@ -4585,7 +4608,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(t.id)recMap[String(t.id)]=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'');
       var hl=TEAM_IDS[String(t.id||'')]?' class="hl"':'';
       var stTxt=((m.wins||{}).displayValue||'')+'-'+((m.losses||{}).displayValue||'')+' \u00b7 '+fmtPct(m.winPercent)+(gb&&gb!=='-'?' \u00b7 '+gb+' GB':' \u00b7 Leader');
-      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nba" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td></tr>';
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nba" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoHtml+esc(t.name||t.shortDisplayName||'')+(TEAM_IDS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc((m.wins||{}).displayValue||'')+'</td><td>'+esc((m.losses||{}).displayValue||'')+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td>'+esc(gb)+'</td><td class="fpi">'+nbaPlayoffCell(t)+'</td></tr>';
     });
     return h+'</tbody></table>';
   }
@@ -4797,7 +4820,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(divMode){entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sb.winPercent||{}).value)||0)-(parseFloat((sa.winPercent||{}).value)||0)||(parseFloat((sb.wins||{}).value)||0)-(parseFloat((sa.wins||{}).value)||0);});}
     else{entries.sort(function(a,b){var sa=statMap(a),sb=statMap(b);return (parseFloat((sa.playoffSeed||{}).value)||99)-(parseFloat((sb.playoffSeed||{}).value)||99);});}
     var seeds=[];
-    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th></tr></thead><tbody>';
+    var h='<table class="stable"><thead><tr><th>Team</th><th></th><th>W</th><th>L</th><th>T</th><th>PCT</th><th>Playoff %</th></tr></thead><tbody>';
     entries.forEach(function(e,i){
       var m=statMap(e),t=e.team||{};
       var seed=divMode?String(i+1):(sv(m,'playoffSeed')||String(i+1));
@@ -4806,7 +4829,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(t.id)nflBoard.recMap[String(t.id)]=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'');
       var hl=NFL_FAVS[String(t.id||'')]?' class="hl"':'';
       var stTxt=sv(m,'wins')+'-'+sv(m,'losses')+((sv(m,'ties')&&sv(m,'ties')!=='0')?'-'+sv(m,'ties'):'')+' \u00b7 '+fmtPct(m.winPercent);
-      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nfl" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td></tr>';
+      h+='<tr data-team-id="'+esc(String(t.id||''))+'" data-league="nfl" data-team-name="'+esc(t.name||t.shortDisplayName||'')+'" data-stats="'+esc(stTxt)+'"'+hl+'><td class="rank">'+esc(seed)+'</td><td class="team">'+logoImg('nfl',t.abbreviation,'s')+esc(t.name||t.shortDisplayName||'')+(NFL_FAVS[String(t.id||'')]?' <span class="star">★</span>':'')+'</td><td>'+esc(sv(m,'wins'))+'</td><td>'+esc(sv(m,'losses'))+'</td><td>'+esc(sv(m,'ties'))+'</td><td>'+esc(fmtPct(m.winPercent))+'</td><td class="fpi">'+playoffPctCell(t)+'</td></tr>';
     });
     seeds.sort(function(a,b){return a.seed-b.seed;});
     if(confKey)NFL_SEEDS[confKey]=seeds;
@@ -7441,12 +7464,13 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
    OFF (Derek, Nov 18, 2026): the radio only plays when the visitor
    taps the play button. */
 (function(){
-  var a=document.getElementById('xmasRadioAudio'),b=document.getElementById('xmasRadioBtn'),st=document.getElementById('xmasRadioStatus');
-  if(!a||!b)return;
+  var a=document.getElementById('xmasRadioAudio'),st=document.getElementById('xmasRadioStatus');
+  var btns=Array.prototype.slice.call(document.querySelectorAll('.xmas-radio-btn'));
+  if(!a||!btns.length)return;
   var XP='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg>';
   var XQ='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 6.5h3.2v11H7.5zM13.3 6.5h3.2v11h-3.2z"/></svg>';
   var want=false,timer=null;
-  function setBtn(){b.innerHTML=want?XQ:XP;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause Christmas Radio':'Play Christmas Radio');}
+  function setBtn(){btns.forEach(function(b){b.innerHTML=want?XQ:XP;b.setAttribute('aria-pressed',want?'true':'false');b.setAttribute('aria-label',want?'Pause Christmas Radio':'Play Christmas Radio');});}
   function fail(auto){
     if(!want)return; want=false; if(timer){clearTimeout(timer);timer=null;}
     try{a.pause();}catch(e){} setBtn();
@@ -7461,7 +7485,85 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     var pr=a.play(); if(pr&&pr.catch)pr.catch(function(){fail(auto);});
   }
   function stop(){want=false; if(timer){clearTimeout(timer);timer=null;} try{a.pause();}catch(e){} setBtn(); if(st)st.textContent='Paused.';}
-  b.addEventListener('click',function(){want?stop():start(false);});
+  btns.forEach(function(b){b.addEventListener('click',function(){want?stop():start(false);});});
+})();
+</script>
+
+<script>
+/* Christmas Eve / Christmas Day weather + White Christmas chance
+   (Nov 27, 2026): live Open-Meteo daily forecast for Cicero, NY
+   (43.1713, -76.1250) — same coords as the Weather tab. Dec 24
+   enters the 16-day window Dec 8, Dec 25 on Dec 9; until then the
+   rows say when the forecast opens. Never a guessed number. */
+(function(){
+  var W=document.getElementById('xWhiteLine'),E=document.getElementById('xEveDayLine');
+  if(!W&&!E)return;
+  var SNOW={71:1,73:1,75:1,77:1,85:1,86:1};
+  function fmt(v){return v==null?'\u2014':Math.round(v);}
+  function snowTxt(code,prob){if(!SNOW[code])return '0%';return prob==null?'\u2014':Math.round(prob)+'%';}
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=43.1713&longitude=-76.1250&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,snowfall_sum&temperature_unit=fahrenheit&precipitation_unit=inch&timezone=America%2FNew_York&forecast_days=16')
+  .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+  .then(function(d){
+    var dd=d&&d.daily;if(!dd||!dd.time)return;
+    function day(iso){var i=dd.time.indexOf(iso);if(i<0)return null;return{code:dd.weather_code[i],hi:dd.temperature_2m_max[i],lo:dd.temperature_2m_min[i],prob:dd.precipitation_probability_max[i],snow:dd.snowfall_sum[i]};}
+    var c24=day('2026-12-24'),c25=day('2026-12-25');
+    if(E){
+      if(!c24&&!c25){E.textContent='Forecast opens Dec 9 for Christmas Eve and Dec 10 for Christmas Day.';}
+      else{
+        var parts=[];
+        if(c24)parts.push('Christmas Eve: Hi '+fmt(c24.hi)+'\u00b0 / Lo '+fmt(c24.lo)+'\u00b0 \u00b7 Snow '+snowTxt(c24.code,c24.prob));
+        if(c25)parts.push('Christmas Day: Hi '+fmt(c25.hi)+'\u00b0 / Lo '+fmt(c25.lo)+'\u00b0 \u00b7 Snow '+snowTxt(c25.code,c25.prob));
+        E.textContent=parts.join('  \u00b7  ');
+      }
+    }
+    if(W){
+      if(!c25){W.textContent='Check back Dec 10 \u2014 Christmas Day enters the forecast then.';}
+      else if(SNOW[c25.code]){W.textContent='Chance of snow on Christmas Day: '+fmt(c25.prob)+'% \u00b7 Expected snowfall: '+(c25.snow==null?'\u2014':(Math.round(c25.snow*10)/10)+' in');}
+      else{W.textContent='No snow in the forecast for Christmas Day.';}
+    }
+  }).catch(function(){if(W)W.textContent='White Christmas chance unavailable right now.';if(E)E.textContent='Christmas Eve & Day forecast unavailable right now.';});
+})();
+
+/* Christmas Checklist (Nov 27, 2026): tappable checkboxes, checked
+   state saved per visitor in localStorage. Same 6 items. */
+(function(){
+  var list=document.getElementById('xmasChecklist');if(!list)return;
+  var KEY='dn-xmas-checklist',saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){saved={};}
+  var boxes=list.querySelectorAll('input[type="checkbox"]');
+  boxes.forEach(function(b){
+    var i=b.getAttribute('data-i');if(saved[i])b.checked=true;
+    b.addEventListener('change',function(){saved[i]=b.checked;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}});
+  });
+})();
+
+/* Advent calendar (Nov 27, 2026): 25 tiles, one per day of December.
+   Tiles up to today open on tap to reveal a short festive line;
+   future days are dimmed and locked. Before Dec 1 every tile is
+   locked. Opened tiles are remembered per visitor in localStorage. */
+(function(){
+  var g=document.getElementById('adventGrid');if(!g)return;
+  var LINES=["Jingle bells!","Cocoa time","Deck the halls","Snowflakes!","Candy canes","Trim the tree","Cookies!","Stockings hung","Sleigh bells","Merry and bright","Frosty!","Chestnuts","Silent night","All is calm","Presents!","Reindeer games","North Pole!","Fa la la!","Mistletoe","Twinkle lights","Santa's coming!","Almost there!","Eve eve!","Tonight!","Merry Christmas!"];
+  var opened={};
+  try{opened=JSON.parse(localStorage.getItem('dn-advent-opened')||'{}')||{};}catch(e){opened={};}
+  var now=new Date(),dec=now.getMonth()===11,today=dec?now.getDate():0;
+  for(var d=1;d<=25;d++){
+    var b=document.createElement('button');b.type='button';b.className='adv-tile';
+    if(d<=today){
+      b.classList.add('openable');
+      if(opened[d]){b.classList.add('opened');b.innerHTML='<span class="adv-day">'+d+'</span><span class="adv-line">'+LINES[d-1]+'</span>';}
+      else{b.textContent=d;}
+    }else{b.classList.add('locked');b.disabled=true;b.textContent=d;}
+    (function(day,btn){
+      btn.addEventListener('click',function(){
+        if(btn.classList.contains('opened'))return;
+        btn.classList.add('opened');
+        btn.innerHTML='<span class="adv-day">'+day+'</span><span class="adv-line">'+LINES[day-1]+'</span>';
+        opened[day]=1;try{localStorage.setItem('dn-advent-opened',JSON.stringify(opened));}catch(e){}
+      });
+    })(d,b);
+    g.appendChild(b);
+  }
 })();
 </script>
 
@@ -7665,8 +7767,23 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   function feedRow(a){
     if(!a.link)return'';
-    var img=a.thumb?'<img class="nfeed-thumb" src="'+esc(a.thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
+    var thumb=(a.thumb||'').trim().replace(/^http:\/\//i,'https://');
+    /* A story with no usable thumbnail renders no <img> at all — never
+       a blank box. Only a real http(s) image URL gets an element. */
+    var img=/^https?:\/\//i.test(thumb)?'<img class="nfeed-thumb" src="'+esc(thumb)+'" alt="" loading="lazy" onerror="this.remove()">':'';
     return '<a class="nfeed-item" href="'+esc(a.link)+'" target="_blank" rel="noopener"><span class="nfeed-main"><span class="nfeed-t">'+esc(a.title)+'</span><span class="nfeed-m">'+esc(a.source)+(a.when?' \u00b7 '+esc(a.when):'')+'</span></span>'+img+'</a>';
+  }
+  /* Thumbnail sweep: drop any feed image that finished loading with
+     nothing to show (a failed thumb whose onerror never fired, e.g. a
+     cached broken image), so no story ever keeps a blank reserved box. */
+  function sweepThumbs(root){
+    if(!root)return;
+    var imgs=root.querySelectorAll('img.nfeed-thumb');
+    for(var i=0;i<imgs.length;i++){
+      var im=imgs[i];
+      if(im.complete&&im.naturalWidth===0){im.remove();}
+      else if(!im.complete){im.addEventListener('error',function(){this.remove();});}
+    }
   }
   function renderFeed(){
     if(!listEl)return;
@@ -7699,6 +7816,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(statusEl)statusEl.textContent=items.length?(c.error?'Couldn\u2019t refresh right now \u2014 showing the last stories.':''):sec.empty;
     var vis=expanded?items.length:Math.min(10,items.length);
     listEl.innerHTML=items.slice(0,vis).map(feedRow).join('');
+    sweepThumbs(listEl);
     if(moreBtn&&items.length>10){
       moreBtn.hidden=false;
       moreBtn.textContent=expanded?'Show fewer':'Show more';
@@ -7799,6 +7917,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(!items||!items.length){if(st)st.textContent=emptyMsg;list.innerHTML='';if(up)up.textContent='';return;}
       if(st)st.textContent='';
       list.innerHTML=items.slice(0,10).map(feedRow).join('');
+      sweepThumbs(list);
       if(up)up.textContent=fmtUpdated(Date.now());
     }).catch(function(){
       if(st)st.textContent=errMsg;list.innerHTML='';if(up)up.textContent='';
@@ -8875,12 +8994,13 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   })();
   </script>
 <script>
-/* Thanksgiving launch: turkeys rain down the screen for a couple
+/* Christmas launch: festive emojis rain down the screen for a couple
    seconds, then the layer removes itself. Non-interactive. */
 (function(){
   var n=28,box=document.createElement('div');box.id='turkeyRain';
+  var em=['\uD83C\uDF84','\uD83C\uDF85','\u2744\uFE0F','\u26C4','\uD83C\uDF81','\uD83D\uDD14'];
   for(var i=0;i<n;i++){
-    var s=document.createElement('span');s.className='tk';s.textContent='\uD83E\uDD83';
+    var s=document.createElement('span');s.className='tk';s.textContent=em[Math.floor(Math.random()*em.length)];
     s.style.left=(Math.random()*100).toFixed(1)+'%';
     s.style.fontSize=(22+Math.random()*24).toFixed(0)+'px';
     s.style.animationDuration=(1.6+Math.random()*0.8).toFixed(2)+'s';
@@ -8947,55 +9067,5 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 })();
 </script>
   <div id="gtaPalms" aria-hidden="true"><span class="pl">🌴</span><span class="pr">🌴</span></div>
-
-<!-- Temporary holding overlay until the 4pm Christmas update. Tap 7 times, then enter the code, to unlock. -->
-<style>
-#dnHold{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b2e1a,#14532d,#0d3b22);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-align:center;padding:24px;box-sizing:border-box}
-#dnHold .e{font-size:44px}
-#dnHold h1{font-size:28px;margin:12px 0 8px}
-#dnHold p{font-size:17px;opacity:.85;margin:0}
-#dnHoldProg{width:220px;max-width:70vw;height:10px;border-radius:999px;background:rgba(255,255,255,.25);margin:18px auto 0;overflow:hidden}
-#dnHoldBar{height:100%;width:0%;background:#fff;border-radius:999px}
-#dnHoldWhen{font-size:14px;opacity:.85;margin:10px 0 0}
-#dnHoldCode{display:none;margin-top:18px}
-#dnHoldCode input{font-size:18px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;text-align:center;width:130px;letter-spacing:4px}
-#dnHoldCode button{font-size:16px;padding:10px 16px;border-radius:10px;border:0;background:#fff;color:#14532d;margin-left:8px;font-weight:700}
-#dnHoldCode .err{display:none;color:#ffb4ab;font-size:14px;margin-top:8px}
-</style>
-<div id="dnHold"><div><div class="e">🎄</div><h1>We're working on an update</h1><p>Check back soon.</p><div id="dnHoldProg"><div id="dnHoldBar"></div></div><p id="dnHoldWhen">Back at 4:20 PM</p><div id="dnHoldCode"><input id="dnHoldInput" type="text" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off"><button id="dnHoldGo" type="button">Unlock</button><div class="err" id="dnHoldErr">Wrong code.</div></div></div></div>
-<script>
-(function(){
-  try{if(localStorage.getItem('dnHoldUnlocked')==='1'){var h=document.getElementById('dnHold');if(h)h.remove();return;}}catch(e){}
-  var taps=0,last=0;
-  var hold=document.getElementById('dnHold');
-  if(!hold)return;
-  hold.addEventListener('click',function(){
-    var now=Date.now();
-    if(now-last>3000)taps=0;
-    last=now;taps++;
-    if(taps>=7){
-      taps=0;
-      var c=document.getElementById('dnHoldCode');
-      if(c){c.style.display='block';var inp=document.getElementById('dnHoldInput');if(inp)inp.focus();}
-    }
-  });
-  function unlock(){
-    var inp=document.getElementById('dnHoldInput');
-    var err=document.getElementById('dnHoldErr');
-    if(inp&&inp.value==='0246'){
-      try{localStorage.setItem('dnHoldUnlocked','1');}catch(e){}
-      hold.remove();
-    }else if(err){err.style.display='block';if(inp){inp.value='';inp.focus();}}
-  }
-  var dnStart=new Date('2026-11-27T16:07:00-05:00').getTime(),dnEnd=new Date('2026-11-27T16:20:00-05:00').getTime();
-  function dnTickProg(){var now=Date.now();var p=Math.max(0,Math.min(1,(now-dnStart)/(dnEnd-dnStart)));var bar=document.getElementById('dnHoldBar');if(bar)bar.style.width=(p*100).toFixed(1)+'%';var w=document.getElementById('dnHoldWhen');if(w){if(now>=dnEnd){w.textContent='Almost time \u2014 back any second';}else{var m=Math.ceil((dnEnd-now)/60000);w.textContent='Back at 4:20 PM \u2014 about '+m+' min left';}}}
-  dnTickProg();setInterval(dnTickProg,1000);
-  var go=document.getElementById('dnHoldGo');
-  if(go)go.addEventListener('click',unlock);
-  var inp2=document.getElementById('dnHoldInput');
-  if(inp2)inp2.addEventListener('keydown',function(e){if(e.key==='Enter')unlock();});
-})();
-</script>
-
 </body>
 </html>
