@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T22:32:15.823316Z",
+  "updated_at": "2026-11-27T23:27:25.601922Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
@@ -29,6 +29,11 @@
       "title": "Cyber incident disrupting services for Pacific Blue Cross members - CBC",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWDRzdnppeWFsTXFjNlJ5MGpCT3VMc1FHNmRmcnFlMjVBdG5VNnNabXd3ZzlzZHZjbTJ2QkhsVFllSkxpUzFaSTBlNE40SGdhTjhWMjV6Z0Y3SVlZSHFKS3VkSHlUanZaRFFncWtKZ3pmWU1KUnVfNTliaG5Cd0F0X2ZYWEZIejU2djZFUGxYZWZhOHZqZGc?oc=5",
       "date": "2026-11-27T21:02:25Z"
+    },
+    {
+      "title": "Did the Mid Michigan Medical Billing Service data breach expose your personal information? - Claim Depot",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNSnVwVWVTZ0dTMTFuZTE5MHhjOW4xdUhlVGRSWTVSODI2eDV1N1lGVGVDTHowMkpYLXBRdS1jZjJ5VTI0MGJqQnFQTUV5WWRjWlRkdVgyMWdfbHhMbFV6X0lTMlV2THRRWTYwbEFYRjNiWHJIbjFMZmpMTTFKSTd4Rg?oc=5",
+      "date": "2026-11-27T21:00:01Z"
     },
     {
       "title": "Iran Threatens US Tech Giants in AI Military Warning Video - cwibc.co.id",
@@ -2944,6 +2949,11 @@
       "title": "US CIA, ODNI suffer cybersecurity breach of some unclassified information, NYT reports - Reuters",
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMEY3TVFidy1CMzFaVE9HN09yYWVNX25JZ0hKNkhmVmJYMFhNdDQyd2k5TzFHWkhhUjFrbzBiSkIxWkZZREdEZ2Z2b2QwVFhDVEtEYzNuc19LWGd4SkdaMjRuZFVWVjJjMXR0MGwyNWRvOFZCVjdPYUVCaUJzbEpkVmtNWjJQalR2UlVfVVdEUElpZTR1Z0FnVW51alF3SkppOXdWNThkUU84bEgxalNDeTRkaVR5QQ?oc=5",
       "date": "2026-11-24T20:27:10Z"
+    },
+    {
+      "title": "Andrew Giuliani Compares Trump’s Crime Policies To His Father’s - Newsweek",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZGZpeDFJMnNFbXVjNmZYUC05N2xfWDctUTFIRGNJMUVOSFJzMThYSko3MXgxcG56UVk4NXN0eW5oakhOOHlHdVdGeU92VE5IQ3NNNHRtVWVVNVV0dE1WMzMwZUJDTW15ZXB1d0xueVdJMHFOM25vNzhmSUJoMlpPNUl6UUtxbWZXZzJUbHg5NktHMThCRzVtNg?oc=5",
+      "date": "2026-11-24T20:16:54Z"
     },
     {
       "title": "Scammers love a data breach headline. Here’s how they use it - Digital Journal",
@@ -6401,6 +6411,11 @@
       "date": "2026-11-21T01:40:08Z"
     },
     {
+      "title": "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zX2hQZHU3TmdvZThORDBRUVFaVVYxU2xDd1FQc3RjcWhyUWZVeUFocGdvRkctVldzbUVMZjd2bVI5bzR2YlJxYy1CSFR4VnU2TnBzU1FOSkdSTFE?oc=5",
+      "date": "2026-11-21T01:02:08Z"
+    },
+    {
       "title": "Carnegie Endowment for International Peace reports data breach - SC Media",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNSjYzNUhXUl95NDRRSGdaVnZWakVlWm5BLURlMDZHaDhlbU52MnBXSS12YXBGanl1NGJnazAzWXBNYWgtVy05WVFscXkwZmtNYzR6TWNGZV9oaWhDR1NfbGRIbE1LV0c4alhmQlVGWV9kaDliN2d0TW84dUpkTHdpMklPaXhtRXhFd3VnelY5YVRyUTYwX0o4?oc=5",
       "date": "2026-11-21T00:50:58Z"
@@ -6444,41 +6459,6 @@
       "title": "Araqchi says Iran wants diplomacy to end war; Trump says terms unacceptable - GMA Network",
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNa21zdlMzVWl4TjR1SDZaTENtTnZhRWQ3cU1tVDhFaG9iUnVrM29SWDNmZXRBYVNUejhfdm1zMnEyWV95aGpFR2pYNFBhc1N2SDJ2SExDUDVRYTB1TVZ0UF9VZVVWcjZMakVCd2lSclJIQnJ6MFQ5UWZLbS0xSTN3S2VrRm8yZjlPaURjWVNEYlhGTE5uSnZybFJ3eDFUSmZFWEVzRmxCWXVrT0NuWmtKazlONjV3a1BBTkhEeUpaV3dDOWRKQmk5R3BkWkM5dlhtZlFLNdIB2gFBVV95cUxPcE9CLWloREFHcEZfNUVBOU1ieDMyYi0zM1ZHVmc5anMzOTFhVVJQNVAzTzRfWUhDWERKQUFZT0trcGNxbWIyNC1lRmpndUJnbWlJSzM3bUlSek5qS2FfZE9Hai1ZMTZ4Qi1ZbXM5aVNvb1J5alJhQm1EdHJOMTdYNDQ5WXV3eHlzd0wxaGh0VnJSUjBLaEkyNEZnX2VVX1VOYXZGc0V0alNqWWJTRE83Rk15N2NRS0FxTnNXVDd2U0NDSE10RUNzT0pXZ3VkM1NrXy1hV0RXaE5SUQ?oc=5",
       "date": "2026-11-20T23:28:31Z"
-    },
-    {
-      "title": "USDA hit with cyberattack: Sources - ABC7 Bay Area",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWWFwNHJxM0hOLWZicS1DeTBQeHBqRldxNkJqUG5DRzE1SVEzQVhiWm1hTVBoaXJVRVpCSkV0OUw2bXN4TXhmbTZmcklWNUxvbTVGWFlPTW4wakkxLWEyOWNJbkFVZ0JwMmxITnhyZS13Zk00ZkNGZHY4Vmtvei12RjV2RDlVTm5lRURPam5MMW1mWWlXQmp6TnVPemVXSUVzcW5tUGVfRHM3RGllQURr?oc=5",
-      "date": "2026-11-20T23:25:46Z"
-    },
-    {
-      "title": "Big U.S. Bank Stocks Slide After Cyberattack Fears and AI Trade Reversal - Briefs Finance",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVVlDQWpYVURfVUhXZTlBS1lGRy1LSzFvaHd2Q3g3aGQwYlJQNnZWdHhiY3NyZnFsaDFBOURkZGNzUmN1dHd5VkNRcWtsVzNPbmt3UldOWXJtYnAyMkJNeVZKcnUtaXF5U2xsRS04MExzYWc4T0d5OFZlVjVzRmstcUoyUFhYNjFKdUNfMEN1MVBXZw?oc=5",
-      "date": "2026-11-20T23:16:00Z"
-    },
-    {
-      "title": "Emergency Slide Deploys in ‘Error’ on British Airways Plane Heading to London, Cancels Entire Flight - People.com",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNjFZbE02MTJRek9HYkUwWU0zTlhDekpzbG4wXzFFRkpGeHRNUy1IMUl2RGNOcGgzMXFRUWZHM19mU1VJNFg2MTdfclprUFpKSHNDajQ0LUp5QllQZUhueV82RUtNOUo2S2xfR0VJYlZNc1IycE9jVFdKdTdGdWg3V0dUbFFtZVB1ZGp0bloteGNUNi00UkYwTjNoV21PV2FJUzlMR1h6d3pQQVBiTS1nNGpJYw?oc=5",
-      "date": "2026-11-20T23:15:50Z"
-    },
-    {
-      "title": "Eskenazi Health investigating data breach involving patient information - Fox 59",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUDhkc2tSUGZKX0tubDRnVkxGTWNwenRSNGpoNUdBei1ZVjV6TTk1WWdsMlZSZTJLVXJjMkZFc3J6Z1A0TWZ3OU1SZEgySW9SYUdETFcwemdkdzRHODQxNnVmWlNzS0hwaHd3a1ZJQlNHX2FOOEc3dFRoR1gzOEVQbnlPRmQ3YmtJVGp1VHI5RnJVcG5XNlk3WVhEMNIBoAFBVV95cUxPNnpRUXgtdmlqVTBVX3FrLTM4WHhDSWZxSEhHOEFTMW9LRnphUFBES0owdXpBZV9Sak5DZl9xSnM5eGZseGppM1hCVXE3SVJtSzB2dmxjM3JHdmRsZXY0UEdSSk5PdTNiWENMN0ZCY05yT2VWOVpzb1JYNU1ockEtenNHZmVwMkdCOGxQa2N3UEE2elJwTmtfWUg0V0pqQW1M?oc=5",
-      "date": "2026-11-20T23:12:43Z"
-    },
-    {
-      "title": "Stryker Expects Full Recovery From 2026 Cyberattack by 2027 - Medical Device and Diagnostic industry",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPbUQxR2NuaWJsMVoyR1FmNnRXZUo0Y1BUYVFJTGkzV3FLNUt3dTVLUHZ4cmg2RHRNMkJuZjFLZWkzV0hwdDZaSndYOWY1Y1FxODFQVFVheGN5ZHVRa1dHQm9ROEstY2hMTG9kb3V3UXhDek5VY094Nkx3ZEpqMDctN2JaTkplTzVndnpVNjhJbTJwU3UxLURpNjFFMGxWdw?oc=5",
-      "date": "2026-11-20T23:10:59Z"
-    },
-    {
-      "title": "Wave of Cases Over Ohio Hospital Cyberattack Shows Speed of Modern Data Breach Litigation - Law.com",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQWkZuekh4VHNqU3Q2Vzh6TDNTUFlkRzQxb0xGX3ZpU2NzeU5RbDRtN2F2bFlxWnlqSndjWjdSTE8zV2RJZEJlN0pnOGU3ZlFuSUptUVpSbktmazB4aUZEdkZhYUM1dnhhRE9KdXhZOTZ1YXAyMFQ2TUdwdmVZLUlhN3plSzhwWUNMLVg0TkRtZ0JkbDgwaWtXb0tCNUlQR0lRSDJGYkc5TFA3UV9JWHJLXzI1TkVfTTA3bnp5S0s0dXM3a2tyQk1hQU9uZzZMZw?oc=5",
-      "date": "2026-11-20T22:50:14Z"
-    },
-    {
-      "title": "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9QLXc0RzlSX3JvUXpfdzd4TmVBTVEwektUd21FRFZZdVVWOFE0QkN0LTFRVWt5UDB0eXBtbDJxYlZ0bC1QMjRObW5GZEZmOXZ0emMtVEZmYUVRMURMbEE?oc=5",
-      "date": "2026-11-20T22:47:56Z"
     }
   ]
 }
