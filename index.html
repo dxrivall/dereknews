@@ -2831,7 +2831,7 @@ body.on-christmas{color-scheme:light}
     <div class="xmas-count-slide">
       <p class="xmas-count-label">Christmas tree</p>
       <div class="big" id="xTreeBig"><span id="xTreeDays">—</span><span id="xTreeSuffix"></span></div>
-      <p class="xmas-sub" id="xTreeSub">Going up today at 6:00 PM</p>
+      <p class="xmas-sub" id="xTreeSub">Lights on daily 5:00–9:00 PM</p>
     </div>
     <div class="xmas-count-slide">
       <p class="xmas-count-label">School days left</p>
@@ -3677,29 +3677,31 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(hxW){var xRelevant=xIsDay||days<=60;hxW.style.display=xRelevant?'':'none';}
   }
   updateXmasCountdown();
-  // Christmas tree — goes up TODAY, Fri Nov 27, 2026 at 6:00 PM EST.
-  // Live countdown until then; once it passes it flips to
-  // "The tree is up!" and stays there.
-  var TREE_TIME=new Date('2026-11-27T18:00:00-05:00');
-  var TREE_DONE=new Date('2026-11-27T19:00:00-05:00');
+  // Christmas tree lights — lit daily 5:00–9:00 PM. While lit the slide
+  // says "The tree is up and lit!"; the rest of the day it counts down
+  // to the next 5:00 PM lighting.
+  function nextLightsOn(now){
+    var t=new Date(now.getFullYear(),now.getMonth(),now.getDate(),17,0,0);
+    if(now.getTime()>=t.getTime())t=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,17,0,0);
+    return t;
+  }
   function updateTreeCountdown(){
     var daysEl=document.getElementById('xTreeDays');if(!daysEl)return;
     var suffixEl=document.getElementById('xTreeSuffix');
     var bigEl=document.getElementById('xTreeBig');
     var subEl=document.getElementById('xTreeSub');
-    var left=dnCountdownText(TREE_TIME);
-    if(left){
-      daysEl.textContent=left;
+    var now=new Date();
+    var litStart=new Date(now.getFullYear(),now.getMonth(),now.getDate(),17,0,0);
+    var litEnd=new Date(now.getFullYear(),now.getMonth(),now.getDate(),21,0,0);
+    if(now>=litStart&&now<litEnd){
+      daysEl.textContent='The tree is up and lit! \uD83C\uDF84';
       if(suffixEl)suffixEl.textContent='';
-      if(subEl)subEl.textContent='Going up today at 6:00 PM';
-    }else if(Date.now()<TREE_DONE.getTime()){
-      daysEl.textContent='Going up now! \uD83C\uDF84';
-      if(suffixEl)suffixEl.textContent='';
-      if(subEl)subEl.textContent='';
+      if(subEl)subEl.textContent='Lights on until 9:00 PM';
     }else{
-      daysEl.textContent='The tree is up! \uD83C\uDF84';
+      var target=nextLightsOn(now);
+      daysEl.textContent=dnCountdownText(target)||'';
       if(suffixEl)suffixEl.textContent='';
-      if(subEl)subEl.textContent='';
+      if(subEl)subEl.textContent=target.getDate()===now.getDate()?'Lights on at 5:00 PM':'Lights on tomorrow at 5:00 PM';
     }
     if(bigEl)bigEl.classList.add('detailed');
   }
