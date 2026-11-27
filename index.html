@@ -8954,12 +8954,15 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 #dnHold .e{font-size:44px}
 #dnHold h1{font-size:28px;margin:12px 0 8px}
 #dnHold p{font-size:17px;opacity:.85;margin:0}
+#dnHoldProg{width:220px;max-width:70vw;height:10px;border-radius:999px;background:rgba(255,255,255,.25);margin:18px auto 0;overflow:hidden}
+#dnHoldBar{height:100%;width:0%;background:#fff;border-radius:999px}
+#dnHoldWhen{font-size:14px;opacity:.85;margin:10px 0 0}
 #dnHoldCode{display:none;margin-top:18px}
 #dnHoldCode input{font-size:18px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;text-align:center;width:130px;letter-spacing:4px}
 #dnHoldCode button{font-size:16px;padding:10px 16px;border-radius:10px;border:0;background:#fff;color:#14532d;margin-left:8px;font-weight:700}
 #dnHoldCode .err{display:none;color:#ffb4ab;font-size:14px;margin-top:8px}
 </style>
-<div id="dnHold"><div><div class="e">🎄</div><h1>We're working on an update</h1><p>Check back soon.</p><div id="dnHoldCode"><input id="dnHoldInput" type="text" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off"><button id="dnHoldGo" type="button">Unlock</button><div class="err" id="dnHoldErr">Wrong code.</div></div></div></div>
+<div id="dnHold"><div><div class="e">🎄</div><h1>We're working on an update</h1><p>Check back soon.</p><div id="dnHoldProg"><div id="dnHoldBar"></div></div><p id="dnHoldWhen">Back at 4:20 PM</p><div id="dnHoldCode"><input id="dnHoldInput" type="text" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off"><button id="dnHoldGo" type="button">Unlock</button><div class="err" id="dnHoldErr">Wrong code.</div></div></div></div>
 <script>
 (function(){
   try{if(localStorage.getItem('dnHoldUnlocked')==='1'){var h=document.getElementById('dnHold');if(h)h.remove();return;}}catch(e){}
@@ -8984,6 +8987,9 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       hold.remove();
     }else if(err){err.style.display='block';if(inp){inp.value='';inp.focus();}}
   }
+  var dnStart=new Date('2026-11-27T16:07:00-05:00').getTime(),dnEnd=new Date('2026-11-27T16:20:00-05:00').getTime();
+  function dnTickProg(){var now=Date.now();var p=Math.max(0,Math.min(1,(now-dnStart)/(dnEnd-dnStart)));var bar=document.getElementById('dnHoldBar');if(bar)bar.style.width=(p*100).toFixed(1)+'%';var w=document.getElementById('dnHoldWhen');if(w){if(now>=dnEnd){w.textContent='Almost time \u2014 back any second';}else{var m=Math.ceil((dnEnd-now)/60000);w.textContent='Back at 4:20 PM \u2014 about '+m+' min left';}}}
+  dnTickProg();setInterval(dnTickProg,1000);
   var go=document.getElementById('dnHoldGo');
   if(go)go.addEventListener('click',unlock);
   var inp2=document.getElementById('dnHoldInput');
