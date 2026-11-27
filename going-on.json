@@ -1,14 +1,39 @@
 {
-  "updated_at": "2026-11-27T14:43:24.037550Z",
+  "updated_at": "2026-11-27T15:44:00.485034Z",
   "tension": {
     "attacks_7d": 9,
     "level": "Severe"
   },
   "items": [
     {
+      "title": "100K users’ data accessed in myColorado digital ID app cybersecurity breach - The Denver Post",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOE50NXp4UUQ4UFBpbWtCeklRMVEyZG9sSkFPYmtzQnVrVzVYY094aGxYOHR4NnlUbXAzSVl2NDROX1ZsT3ZYNUJQNFRiX1d6dXRMMkVTcWhqMjVha3V2eDV3Y3dfQ0tjNXZMeFhBMGdiU2VoU1RHZERuY1RqTVlHWWhhOEc1QnRHU0E?oc=5",
+      "date": "2026-11-27T15:35:04Z"
+    },
+    {
+      "title": "After heavy strikes by Iran, U.S. naval base in Bahrain faces uncertain future - The Washington Post",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQY3h4bkptZ0Q1bjBlRXBfSDlIZVRKUWI1c2toUFFJWE53QngyeUVVVGJoY05LSkpvR21IMW8ySlRfUEhBYWlhM2ZTbzlwMGd2dXdPZHJ3bzU1VXJENTl5OTY4ZVozbTZab2VOZTJmMW5tUjQwc19SNXpLRTV0Z0k5QXRsT3ZqUmFlem5vdU1udzhjaC1fdS1XbXlibTNiaU5iQlMxTUhkWE1aNExIZl80dll5LW5RQU5NRFRERDdfNzVjRHh0ZGc?oc=5",
+      "date": "2026-11-27T15:24:27Z"
+    },
+    {
+      "title": "US Air Force’s computer system hit by cyberattack - The Times",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUVdMekZuUnh4SnJLYk5DUEg0SWVsckZxQVNreEJwWmJRMmpETUdCeHZXaXpfRS1rcWF4RE1WaDFpazExcC1hR3VFMUotOFlIR1BQSTB3dWV0UU9teWVkOURRNW8tUEdOVWhaazB2SlVjdk9vMFlXWER0NDBrVHUxRlRNaDVCYklSWEh1dXRJTjd4VFdVaEdwdkE1TnphZnpCRnc?oc=5",
+      "date": "2026-11-27T15:24:00Z"
+    },
+    {
+      "title": "FIFA Data Breach Confirmed as Group Claims 12.2 GB From Its Microsoft Environment - Technology Org",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNR09pU1ctekZfellxaUp2MmVGMkpETTA1U05wbkZDc1hKb0NzVHNOWm5Qd003aWxSVUR3cElzS1I3dFR2REVVc0hFTHRGdHJHSGR4RktNU3M0UkFOMUFxWDMxMEpOS2o0M3NVbTg3dTJxUG9NWF9lRjJQQW5GNDRXbFdZYjdiY2dYOEh1LTMydW9PQ05yVHkteWdUdGJxTUdj?oc=5",
+      "date": "2026-11-27T14:44:00Z"
+    },
+    {
       "title": "FIFA and LaLiga hit by separate cyberattacks within days - Sporting Goods Intelligence Europe",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRFdMeFdwMUFYUkpLcmNQVzVmLVFoSVdTMGJEUU5OTi1XZDhfeDdsSmZKRzBBYXcwRTZ6ZElPR0xBNm0wMUxIZ3ZGeGpFbmJ2cEhja0NrVUdfTm4yam5rSHE4TUtYc3hEVEJ1RkNTSWtPR0NaLVZmWTh0Z29qdUFackV3Wlo0S2R3TGFaNDEtRVF3T0poTDl2Zm5JTVhYT1h3YzZLdmhKVmtjVUU?oc=5",
       "date": "2026-11-27T14:38:42Z"
+    },
+    {
+      "title": "Norse Atlantic Airways files for bankruptcy - Travel Weekly - Home",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUURwMi1WbmNxM1NQWFRVTFZVVlBMdk04ZDZzWklEUFZEZVV4RnVaZlBXSTU1V1dTNG9tdmhkUEtpTVZQZVFVb1NpX3c4M2p0bXU4bXhfNlJEX1lpREE4dkJtalpHUkV5ejM1V0RTZVFlcTB6US1PbktrUEk3SjdOYQ?oc=5",
+      "date": "2026-11-27T14:24:00Z"
     },
     {
       "title": "Ransomware attack cripples a Chinese manufacturer after backup failure - SC Media",
@@ -114,6 +139,11 @@
       "title": "Barclays confirms data breach affecting US credit card applicants - Cybernews",
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBlZENPUWNLaFIwRmdXdVhhUVFTTVV2T3NUMkJCT0VIbElCd3dBOXZrTDlhU0hWVW5CczdiZFBpWG9fN1J2MTd6LWh1OXV1aF83c1BTaExmb1NzN1dJd29QYmg5Zjlmdw?oc=5",
       "date": "2026-11-27T12:22:30Z"
+    },
+    {
+      "title": "US Air Force Cloud One hacked: Breach scope, operational disruptions, and Cyber Command probe - Clarin.com",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcXJMZmFrS2FmTjg4LXJxbXhjd3p1bHdTSjk5T2xxazU3d3lhbTZJbkJJRE4zN0RRUl9YeG1OVldoTURzVXJjRlBzcG53NzZNbG5NMEdIZHdzTGlRdEQtWjQ2OUhGdVNhZUdhQXFFQXRNZ2F2cVdNYXlzVzlDd2RESFlUX0E0eHNURm9xUTJjaVNTaGVWV1VZT29DTi1RR3dxbDRUR3RwUm9NeDV1enM0ald4UFFQYVRya0ZpMnVBbkZXQldqMWZfZUlqLTJhSElPcWc4RFhWOVVrUUnSAdsBQVVfeXFMT3FyTGZha0thZk44OC1ycW14Y3d6dWx3U0o5OU9scWs1N3d5YW02SW5CSUROMzdEUVJfWHhtTlZXaE1Ec1VyY0ZQc3Budzc2TWxuTTBHSGR3c0xpUXRELVo0NjlIRnVTYWVHYUFxRUF0TWdhdnFXTWF5c1c5Q3dkREhZVF9BNHhzVEZvcVEyY2lTU2hlVldVWU9vQ04tUUd3cWw0VEd0cFJvTXg1dXpzNGpXeFBRUGFUcmtGaTJ1QW5GV0JXajFmX2VJai0yYUhJT3FnOERYVjlVa1FJ?oc=5",
+      "date": "2026-11-27T12:18:11Z"
     },
     {
       "title": "No 10 refuses to rule out possibility DWP cyber incident was malicious attack - The Independent",
@@ -474,6 +504,11 @@
       "title": "Ransomware attacks in PHL doubled in November as hackers harness AI - BusinessWorld Online",
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPX2FnV3lQYk4yNVF2cTdNcDZyODFWd1dEQ1Z2NXd1cE14N1NpOWNVUVF2VXlnekg0ckg2V1VFNng1RXYyRjRsQmc1LVhJZ2ZHQnpBSDlTTGF0c2VYMVpnXy1Kbzlrck83WE9CV3dLd2FmNVM1amc3ZU9KTEFNcmt1U01MTkhrZDNDa2tnU001MXg2TVgwRXNOQjJ4WlZRRU9PQ2VIVUtLOWdYRy12WWY4aE04VW95NDE4TktMUkwzZw?oc=5",
       "date": "2026-11-27T07:00:11Z"
+    },
+    {
+      "title": "SAP flags security incident, says no evidence of unauthorized access to customer data - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNN095Q1ozZFFLS1labVpzakhmSEJWeWljRVN2RmxUWlBPOUVvNU5kQVB0NVpOTmhDRjZndEw4RFJwMDd4cWVOWTR1djR1R1BfOEtyVUU3cUQ0a0ZqdTNlZUNJV1V1bXBNSkF2WUNLOUR2ejFqcTJXdlRYd0c3cHlsOUh2cndMWHNOczJjdG0xam9ULUhfU0hPaDJrbUFOWGp1SFJyaWxyNURyaHd1Q2kweGJ2N0trMHRPWVFlM0E1UEJBZWc?oc=5",
+      "date": "2026-11-27T06:30:00Z"
     },
     {
       "title": "Why are American Businesses witnessing a surge in Data Breaches - Cybersecurity Insiders",
@@ -5976,6 +6011,11 @@
       "date": "2026-11-20T22:01:02Z"
     },
     {
+      "title": "USDA suffers outage after reported cybersecurity incident - Syracuse.com",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPX1BMZUpoVVpGVElZWnRCcjFMcUhOMzhnMEVKZVFFYjFjZGxmd3JuNThfN1lkcjIzQ1J5Q25yYXJBLXdHRHhhYlVlMVRFa0VxS2F3WjJLQ3REM19JWTk5dE5uQ0dKMk9GbVlsR2RCYXJzMHEzb2tNbllCYk9qbkRybDlUcEg1dFo5WGRCLVN6RWRDaEVkNGxLMGlnTThxZUZLdGh1cDJ3?oc=5",
+      "date": "2026-11-20T21:56:00Z"
+    },
+    {
       "title": "Bell says it's investigating cyberattack that led to potential theft of business customer data - CBC",
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBRNTJaSHA5TDNKNGNmeXZLd2d6cmJzdXExNjcwZGUwejQtSmVxcXkxN0FJT0VIME1lbGU4Umg2akJMMll2NFFSNHZoRlVvZGtJXzV5M2dlVXpkTmhScjJZZ0E4a3prY05HbXRKNm5Yb1JjdkpiRW1r?oc=5",
       "date": "2026-11-20T21:54:02Z"
@@ -6294,66 +6334,6 @@
       "title": "Trump says Iran wants a deal, Saudi Arabia and Yemen’s Houthis exchange fire and other Mideast news - WDTN.com",
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNal9tZHNfUVpWdTFBRWdzZnU0WGZuX2p5RkZYTGxaYTlzd1lSNXNsME1SUWtCSzMxaWFvNmJHamhlYzVPbGczN0ZBZHRLcXBBVlB0RUwwZTN0dVhLREdfaFU4em5xLXVVWTZCb2dyVVRaR1Zyc042aS1teU90cHUwdW5hcWxPOEJLMFNPdWhqQS1ZOUx2M0RQQ2kzSkNQcEZoX0h2YUNUam1VRVk4U01XbG9nQzFoWlJfOVhjX2R4S19ZVlJDdExiOHN2SnFNdnlOVU1nNkZYbTBGcHUxN1HSAd4BQVVfeXFMTWpfbWRzX1FaVnUxQUVnc2Z1NFhmbl9qeUZGWExsWmE5c3dZUjVzbDBNUlFrQkszMWlhbzZiR2poZWM1T2xnMzdGQWR0S3FwQVZQdEVMMGUzdHVYS0RHX2hVOHpucS11VVk2Qm9nclVUWkdWcnNONmktbXlPdHB1MHVuYXFsTzhCSzBTT3VoakEtWTlMdjNEUENpM0pDUHBGaF9IdmFDVGptVUVZOFNNV2xvZ0MxaFpSXzlYY19keEtfWVZSQ3RMYjhzdkpxTXZ5TlVNZzZGWG0wRnB1MTdR?oc=5",
       "date": "2026-11-20T15:46:59Z"
-    },
-    {
-      "title": "Cyber Attacks…FAA Grounded Flights…Aur Drizzling Rain Subh Jala Kar…HOUSTON DIWALI Aa Gayee! - Indo American News",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeDNNY0RHQnU0NE1uclNkdk9pano2aG1kRk9kNUdzZ0ZqM3lDT2ZNVW93WW9JLTc0MVVOYUxqdzBXcVBNanpydHU1NFpQdzlQMldOZEp2bUZVMmItdmI2QjFzUDRTVkRMdGdfQVVtSlZXQzJGb1B4RG8zM0V1RE9WaWROODllQXVvR3pXbTJLSFhYUHAxV0t5T0poNFpuaXAycW1kSmVqTDQyZFM2amFONXgtbDF2bV9FX2c?oc=5",
-      "date": "2026-11-20T15:42:16Z"
-    },
-    {
-      "title": "Rakuten Securities data breach impacts millions of customers - SC Media",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQNURXMFhnN0F3WXBMU0IwbVA3bkpEVVdmMC1pYzRaQ1VRTTZQVFA4Zmg4V3dhNjQtOEFacXdFXzVjN1RTNURNUEcwNWJaTTROOWRQamZVQzVmd0g4VU1QMURZcUVlMGJXcENaeGEyUVlYbjNPcjFEMEUtM1MzSkxFcndiazFUeGVmZ1JFWGo2REFuYWdr?oc=5",
-      "date": "2026-11-20T15:40:56Z"
-    },
-    {
-      "title": "Check Point Software: Ransomware Hits Record Victims in Q3 - Cyber Magazine",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMm1xVG1KYUNMOHN6Y3VKYUk3NXVWcWdINFdUQUNMUFVEa1J3ZmtxNUtzb0lDTUU1Q05jalVXbG50R0dJRFRpazQ4cndZUDA1NDg5a1dWM2pNWEIzTy1wMHc1eUZ6QjdSZ09Fc1lzM3dLb2JmUG16OGxYQnZZWXVnZXQzd29neGJrZWYzVTlpOXFEdw?oc=5",
-      "date": "2026-11-20T15:36:43Z"
-    },
-    {
-      "title": "The FAA knew 51 of its 138 systems were unsustainable. Then it grounded every flight in America - Fortune",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORGs4a1VwVDRPMzlyUU1wYnZXTFplMEpxVU53b3dZcXpYbXhiOS1YX29zYjRxUi01UWlXTU5NREJSVjByQnhtM1VSWkdPcjZkN0RxOWo3TDhrR3QydGFBaVNGcDhRS2NIci1EQ09qRkpsRlNyZU5QcktwSV9SbDlJMUlUTl9fUHhnaVFCLUpURUMtYnl1aWFveQ?oc=5",
-      "date": "2026-11-20T15:30:00Z"
-    },
-    {
-      "title": "UK Refrigerators saved from major Cyberattack in a Secret Seven Day Operation - Cybersecurity Insiders",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbi16VC1uQ2J1ek44aTRhaDNhTWhuekpuWEZsOGItdnZoTnBWYjN4b1p6bTZscThvSTBvX1BIbXllNm1mMkcwSVBpMWtHcFBGNGQ0dUdYbTkzbHlKd1lqVExiNmhYNU1kYVJJMG0zdjJkbXRHaFZuOXFZeWNPNGNHcjBDcTM1NXlWZ3oydzhlNGExZDBJbi14aG8zRVZvMTZiSkp0OUZNZENjb0xMOXJlN21IQVBkM254?oc=5",
-      "date": "2026-11-20T15:29:55Z"
-    },
-    {
-      "title": "JPMorgan, Visa and Mastercard Report Third-Party Data Breaches After N0n Claims - Security Affairs",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOTNYLVpreUtUSzNyR0ZZTWNSbVJOeEE5cENVV3FrZDIxUHFBQk92SXM2ektPcEhCUzZxWFBrTHhIa0c1NXZjY0JCRmU5SG51c0NoY0ZKNjF5N01TWHhpaEtVZDRCbEdob0lNMFY4R2o2NDVjY3V0bXFSR3NmNzJkdDlKZ0h1YlJyUkRaeFlWY2N3cEJ3ZldZLWNtcEJPMFNEUU5Ta2x0TFRQT0R5WjZqQkpieVJPM2pFSDBqc3NCN2R3dlNhTU1sMFhR0gHPAUFVX3lxTFBva0V0bjV1ckFCZVlVdmFicVFjQjZvUXdzanlGSnZ1QkEwQ0xVa0lVaGNtT1A0YUF0SzNkT2E1VVJyc19kS3NlYU4yZVRvRFlvRVJtd3M3N3N5Q3R3bkdIUWpLZTh0UjY4RUVsSmVDQWdMZXdySkVySldaRE1CSS1pSmFVY0dMaDN0OTJWeEk4R0pxd1E0dTQ0ODhBYU5IVXJIMkc5dVYwM3g2RjRKRnRhWXZoamFUTzRNaFg5aVg0Nlg1TFZCZ1g1RHZnYmF5NA?oc=5",
-      "date": "2026-11-20T15:22:30Z"
-    },
-    {
-      "title": "Paychex faces class-action lawsuit over alleged data breach - NY Daily Record",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPS1p4aE1KVlBFMXVOdGdJV2NBdGJza1ppTFl0dGpLR1FneFhScUY3RXIxQXlhclVEX3dTZFBoclBtSWhVUW9HLWtYWE12T0pVYkkzSllJaGNpWFQtcUdrV1l2SUthSGRvZ0VIaHF1YlpGLXdZSkx6dEliRGkzV3FKVDVfQkZpSjhxTlRLdEUtTjk?oc=5",
-      "date": "2026-11-20T15:14:42Z"
-    },
-    {
-      "title": "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWmtiRW9MYzFST09HZVM5UTFLd1hZN1Y3Wkx1UndGRzhmRW55dWRQZFktSXRiX2tkU190WTVLWVVLZ1NuSE1GWUR6bkt5WnFldDBDMFItQU1FQ1BJR0pqSWc2M0sxWFFEMjRIdGlkU2hJdG9YSzdyRkVSYU02Z2J4ME9UNl9MU2dPSzZiOWgtTExfbGM2Tm1ZU2NzZ3VBdDlQSnl5OTROd1ZnbGxvOUlOaQ?oc=5",
-      "date": "2026-11-20T15:02:00Z"
-    },
-    {
-      "title": "Britain secures commercial fridges from cyberattack in secret operation - upi",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOV1RBNThIM1ZEY21IMlBxUmxQVHpmSmE1UllyeHpxX3J1SjJZMkpudzQyZ2xzbjd5ZURBYkpFUU5jTTNYSzMwUU93SmhJMVpJNHFxZ0Q1VVRGNm05NG5fb2pObjNIUzlydWxkVkNpeUJaR0lyd1BsYW5sVk9Ya0prc0ZiaW5GT1kxNkIxUG9vMzR4T1ZzSkg5NWV1ZXhQQdIBowFBVV95cUxNNXJqN2x6ZEhyQm51SUo1Yk1FenZZZ3hQZXBsUnJRdWpFRllFOWJFelBBM2lmNENnSmZ0V1RwZHFHZmw3eE9rVndNMlpPS1FSUkhKQVlZcGM5UmNsS3d4c3RUR1ZzWGd3WFROdkc0OWVSWEd0MTUtVFU4c1YxeFNXdFJZeTdDd2pLN0dNbVRJeVp6UVkyNlZUa1hfM08zTS1rVHQ0?oc=5",
-      "date": "2026-11-20T14:56:58Z"
-    },
-    {
-      "title": "In Other News: Norwegian Energy Firm Cyberattacks, Supercomputer Hack, New Nightmare Eclipse Exploit - SecurityWeek",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMXIwVlhtN2d5NWNENXJHdW8wb0xTLW5fNTBBdkRUYjkxODBMbWlCZjI2R3NVMWpNOFNqaFdIWENJQ1Y4TnFJN1VIT3JJUXBMYWlDVVIyRlNLV2c2ZUhfbUhWN0thdkJBOWVkR1A3eHdQQVAxc1NMNUNtVHA1VVZFdFluZFFmM0FtQ1RCM3BLcEQ2d0RRSEg5S1V4ZFRsb1laYlI5XzZ2eG9pdUFrTGE3NFN6dE9HVzcwYWFoMVB2eVRKUlRsTUE?oc=5",
-      "date": "2026-11-20T14:56:23Z"
-    },
-    {
-      "title": "European Commission confirms AI-assisted cyberattack on internal systems - Intelligent CISO",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZFM2UjdmUzJlX2pvUTIzcFFGTk11NzFRWUJPTEdhWU5KcWlCclZBUXZlXzNSUF9aYU53ekRnMGhmd2ZpcjZNelZnZmVXWHRseE8zNGpTZmhuazM1Nnprdl90OHlHc1A5LVdDcTVNQXhCNGhMTnBZWVgwWHJzMnB5RUhYVmJvb0E4VDJhdE8wNENtc0NOMHB0SldaNW91eXhkY1NOaUtMNjJwNVZDZHV1LWU5UGN6OTA?oc=5",
-      "date": "2026-11-20T14:48:44Z"
-    },
-    {
-      "title": "Trump says no rush on Iran decision, looks to next year - Free Malaysia Today",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUFBPZHNKN0xNcnZQb1ljTW03RV9XWmhOS3UtdWNqOFpTMHBMdDNBdVdPaWFGQ3pYVFdyc1hwU0h2LWxxMVg3a3lEaUdaNVFKRExna1lsZDdCLWVFN01pMHZvbGJSN1JYc1RVbDl6SVhCZWs1ek0tdTFkdUtacG9GTC12OThNdFpvVm41TmN4UkRXa2tTUk43MEtpbF92WmhmaklfNmJkeWExN3FLQjBiLUlUWmU?oc=5",
-      "date": "2026-11-20T14:43:43Z"
     }
   ]
 }
