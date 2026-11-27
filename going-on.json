@@ -1,10 +1,30 @@
 {
-  "updated_at": "2026-11-27T01:54:01.799004Z",
+  "updated_at": "2026-11-27T02:48:53.998070Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "USA Today Data Breach Claim: n0n Says It Has 166 Million Records - Forbes",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNblpPYThXbzlNTDd3aWg3SlJzRDV4NEQ4ZlJpNnRLWi1PdG5xTlFidGtzQkJDY1g0cmZ4Yi0ybC1yR2xlRDdDdkxMSWk0NjllakRpZzRDVGZPV3A0VTZTQThUa0pndkV2X00zMk8teWtSUU5pWU91dE5DZ2JsQ2dHX1NvUlZ1dlFMeVdfMEtUNmt5ZjdFUThDZzRWTVZIQ2dvUFk2OU1SZkdkMDBtLWhhWnQwR2N1VmdzUUIwRWdR?oc=5",
+      "date": "2026-11-27T02:31:54Z"
+    },
+    {
+      "title": "USA Today Data Breach Claim: Hackers Say They Have 166 Million Records - Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQendXZFFvN2RySDRDWjJiU0RjLThzbFVIdjJjYkc3VUFQcGhYU3NHX0lFMnI4YkJIWGUwUldfWS1KaHhTOTVIVm8xU1Jyd25maFd4eUJ0MDI3TWNhU2lONWJzSFFJQlRWN1ZsQ3l5X08yZWgxVHhlVTk4VlV3S3B5M1FpcWQtYVl0?oc=5",
+      "date": "2026-11-27T02:31:00Z"
+    },
+    {
+      "title": "Two Italians killed in drone strike at Kuwait defence site - Ticker News",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPV09hM3lMSm1FSUc1ODR0MlBwWUNhUWZVMjFkeGlxU2ZLRTdYMENENVZ6QmpWQkw2VEJ0RThUMWFwZWZtdk0zRWlESndCQmRpOXRMaUNuWE5UVmpZUXpvOEpHYkVERWo4c0pFbUdfS0N0ekg0d2g2QlAzQW1pbHg0LTBfSWplVWlJ?oc=5",
+      "date": "2026-11-27T02:27:00Z"
+    },
+    {
+      "title": "Montville Library Warns Patrons After Vendor Data Breach Exposes Personal Information - TAPinto",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZXZsM2s3Y3I2aFRXTm96SHdQdTlHYmtQSHBJT1JHTHZHdUxkVVRSaXZvTm8zM1dvdlhydlk4S2dBd1N0Z3ZOcE1IZG5sNmk0M1UyYUphcklmbVZXZ2VXRVdFU1hIREstaHN4RENoUmxKTmVOdmZWTDgtY0FhWWVPYk1fMmRBYlNndGNMdlBZY1NpcnQwUkdUV21sSFozam5JMy1iVHNrRXdpa29xc0JySExMRjdpa3diUmt5bVJ3V1pkV2wxYk9iNE1FVUxFLUk?oc=5",
+      "date": "2026-11-27T02:18:11Z"
+    },
     {
       "title": "Bithumb Failed to Detect 15-Day Data Breach - Businesskorea",
       "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1oaXB0Q0t6MGJPVXZmZWxMWFZFUFoyTkdGYWpXYXRGSHA0azN6eExtU3M0VGt3eXd4eXJVbzBNQTJxSV9xQkZBVDF5UU0xLWVRWURnTXJ4YUN6ckZXRXljUVM2RURUQWplZlM0R3JnVGZTNzM5?oc=5",
@@ -2534,6 +2554,11 @@
       "title": "Cyberattack on gift card distributor GlobeTopper cost an estimated $2.5 million in lost revenue - teiss",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOcW9yLXNsZmhkM2lYVS1PTkx2U1g5VWhWdUJ4M0ZEY0ZQRXdYUW4wYjR5ejZVMzBRVEJ4dmV1cGdhWnRmWXE2Rk9wSHc5WTdyd1dTc05aVk50R3RKdmF6MTBpUGJPYjJpUkVReF9zb1gtOHN0NTJHWHE1V2VNSGFTWDBEVmdvTTRxOUJKSGV6QzBWTG44M1lWUEl6ZlFlSzN3cV8ybnlVZ1liSUM4cDNDMEt4Z0RlNEp3Y2dmT1VGNlJTbkx3X1kw?oc=5",
       "date": "2026-11-24T00:04:09Z"
+    },
+    {
+      "title": "Bank Indonesia Suffers Ransomware Attack, Suspects Conti Involvement - CISO Mag",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOMTNGVWdLY0dQek1lZEQ1akVpeVlESm55U3NMMFFYZHVOZzlpaU5tOGI1U096LUdLN0EtcG1laWptRTFEcXlTaldiZmZsQ2N5M3VyVmJldDlfNVlNbzdSTkx6Qk9zTk4yOG1LYTdOeWE4WEoyNno3MU5kR0pEQnZEdDJFOFdaZkYyUzlpVVlXSDdJZ9IBkgFBVV95cUxOMTNGVWdLY0dQek1lZEQ1akVpeVlESm55U3NMMFFYZHVOZzlpaU5tOGI1U096LUdLN0EtcG1laWptRTFEcXlTaldiZmZsQ2N5M3VyVmJldDlfNVlNbzdSTkx6Qk9zTk4yOG1LYTdOeWE4WEoyNno3MU5kR0pEQnZEdDJFOFdaZkYyUzlpVVlXSDdJZw?oc=5",
+      "date": "2026-11-24T00:02:28Z"
     },
     {
       "title": "News - Caribbean Airlines becomes latest airline hit by Amadeus data breach - teiss",
@@ -6086,34 +6111,9 @@
       "date": "2026-11-20T03:11:15Z"
     },
     {
-      "title": "Ochsner Health says it experienced a data breach in September - NOLA.com",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdmlLRGhTRi1XbGdwTXJuSjZGTVUyN25XMVlPMU0xb3RYMG40SlJXVTBsZEdXN3Z3TFJ1MW9LNFFmV3JueHFLUWRRV0U3dVVabEVmdkl2TW1KWG44Y193cV81QW1YZVZKZkVidHBOc1JBdGZ6X2FMN2VrbzZOQ0JSWHdIWm1CaHFsLXFtVkhrLTZRZFhEMVdsaFVNYjdxS18wZDJ4cS1zMnI?oc=5",
-      "date": "2026-11-20T02:45:00Z"
-    },
-    {
-      "title": "Ochsner Health, Louisiana's largest health provider, saw data breach in September, officials say - NOLA.com",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdmlLRGhTRi1XbGdwTXJuSjZGTVUyN25XMVlPMU0xb3RYMG40SlJXVTBsZEdXN3Z3TFJ1MW9LNFFmV3JueHFLUWRRV0U3dVVabEVmdkl2TW1KWG44Y193cV81QW1YZVZKZkVidHBOc1JBdGZ6X2FMN2VrbzZOQ0JSWHdIWm1CaHFsLXFtVkhrLTZRZFhEMVdsaFVNYjdxS18wZDJ4cS1zMnI?oc=5",
-      "date": "2026-11-20T02:45:00Z"
-    },
-    {
-      "title": "DonorPerfect cyberattack delays year-end fundraising - DysruptionHub",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1GUENCemQ2N1pKOFNVLXkwVUo0RU55TkxpNmM3alBGQ1h2UklRN09tTXpKdzhPMFY4b2ttaWN5ZWxFX0dZTV9zYnk2d0hoZHFsV01ucm1iOWh3dGwtNTMtUE5lMUZqaU1IZG1ubWQya0k?oc=5",
-      "date": "2026-11-20T02:36:19Z"
-    },
-    {
-      "title": "Huntington Bank Outage Today: Is Huntington Bank Down or Not Working? Users Report App, Login and Online Banking Issues; Check Downdetector Update - The Sunday Guardian",
-      "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxON3VPM1ZMRHFWWExtQkVic3NmQ25FQTlDSEtPZzJySHhxOXQwRjBTSi1HbUZMQ3VVcnduYVJqMElfZC1pS1M1d3hNM2hadmVNXzR2TXdibzRDRGExSHk1LVJkaFdZMGFPUHdyWDVwWXVHNWs2N0JadUZjZV8ySEpXNzlZUG1qTkZZNzhacWl5ZXV0THViTUxjZ0pEOVpkZGZ1NmJ1TjNDbkxOM0Z6S3llYXN3Z29naGQ5MDl0OGstSEVzeTIxRkR0WHNQLW02Y1BCOGpHeDNzUGRoaDEzSjB5R0lQbHN4NG4tWmFlNUMyVFVlVFhvVmlmM2xDOHAzeXNFbXJNLXAzNmZXa0FVSTRwOE5rYXRtQdIBmwJBVV95cUxNWmNZZnJmdDNPOEZkVld5MldHWG9nVFlDTmJrank2VGRnc1NRbmwxbEFtdlktNDVYbkV5ZlVaaVlfc2ZreDllTnFIajh5bVp2LWJaZEtjblJVcGtSUU5rbENtTUo4cE85endoMWNSOWd5ODF0QTZ6aFcwbUtMa1oxZWRfWGxTT2tGQk1GOGE4eFZRR0FsTGwwdGQwMWhhSFdkY2lIQkNEc1dPSlI4aWg4enZ5bjhQbUFLajNFa3RrM0lPVlRQcE9sQ2lWVGtpSHFFLUN5VW1iN0NlY3Z2RzhlRTByczFWZmZRMnJQWS11eXRSWHNUSnY5b0lBc1hPSzNnSVc3OFBLUi0zWlRNUjZmaHgwN3lHdXZaMlBB?oc=5",
-      "date": "2026-11-20T02:04:29Z"
-    },
-    {
-      "title": "DGCA issues 7-day notice to SpiceJet over 8 lapses, says majority of fleet grounded - Moneycontrol.com",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSGt2YVktWHZkV3ZFU0c5LUw4X09UY1dRdGUwNGpMRzFncnZGRVJxaE1xWXJQdktIU0FOM21KSFJMTnNlZi1nSXZQNVB2M1hSWVA4YmVzcjVMb05LN1Zpamo0Si04V2oyRjNxQUM5aGNBekxNbURMN2EtbmpEUWlOOHk5Y1k1am1QNVhoV2xTR0hjcHdqSExEV2N5aFByY2RrWThpMlVUbEZTWG40UGtPeFNwRmJpOUd0Rm5OeXdobTRmYlB0NHBRVGRkc2NldmpCak02Ry1R0gHbAUFVX3lxTFBWMUY0eWxQS3ItNUtJek9BMDJxZ1pYM2EzV3JtYlhwUkJGVUFUcGVrS2xDN3RuaWNmdWZJYkhPdzFFS2RsZmNmb3FpZGp4NHJvYjF2UEdsam1zVUU1cXhDbUkwSXZjdERZM2pWY21YLV9qcFVfanFwMzZxS3hBUWlqY1YtdUdnaG9XWk5lclBIdVRwTUFzWkpBYndJVVJiX1F4eTJpLUFTYThoZ2FSZ2ZRQzNEOGNfaVcyVkxJdnBDVkJVVmNuemNXWElGdGl3a3dvRjRLME55UlF6MA?oc=5",
-      "date": "2026-11-20T02:01:48Z"
-    },
-    {
-      "title": "Enerflo Data Breach Impacts Thousands: SSNs Exposed - Claim Depot",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE83TWtBemZqMTBqVk5XdE84U0NORkZTQkh1MnN0UFJrVmRXRGI2dHpIMGRFNlRFZXh5LTFKSlB5M091bmlBTTNUTmtVMnJ5V19USWRkRHhWX1ZxVG0tRWFaMGNsaGw?oc=5",
-      "date": "2026-11-20T01:59:09Z"
+      "title": "Trump eyes 2027 to ‘see what happens’ with Iran - NewsCord",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9GbVE5VEppUXpqYkJIUkxxTUNKUFZNYi1NVWROMDlOWE9CTFlpdVRuQmNhMUFXM0Q0OFZpbEktblVZM0E4QU1jb2d2RlBQa0JCenVZckxlaTJwcmdTREtWeUlRR0JfRlRrZ3VKOW1aUVhIaWhwY3ZWaExZQkhjQXc?oc=5",
+      "date": "2026-11-20T02:58:51Z"
     }
   ]
 }
