@@ -2784,12 +2784,17 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 #view-christmas .card{background:rgba(255,255,255,.96);border-color:#14532d}
 .xmas{background:#fff;border:1px solid rgba(20,83,45,.25);border-radius:20px;padding:26px 22px 22px;margin-top:34px;color:#0f2419;text-align:center;box-shadow:var(--shadow)}
 .xmas .xmas-count-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
-.xmas .xmas-count-main{flex:0 1 auto;min-width:0}
 .xmas .xmas-count-label{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6b7a70;margin:0 0 2px}
 .xmas .big{font-size:clamp(52px,13vw,72px);font-weight:300;line-height:1.05;margin:0;color:#0f2419}
 .xmas .xmas-sub{font-size:13.5px;line-height:1.55;color:#5c6f63;margin:6px 0 0}
 .xmas .xmas-sub:empty{display:none}
 .xmas .xmas-radio-status{min-height:0}
+.xmas .xmas-count-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.xmas .xmas-count-track::-webkit-scrollbar{display:none}
+.xmas .xmas-count-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+.xmas .xmas-count-dots{display:flex;justify-content:center;gap:8px;padding:14px 0 0}
+.xmas .xmas-dot{appearance:none;width:8px;height:8px;min-height:0;padding:0;border:0;border-radius:50%;background:rgba(20,83,45,.25);cursor:pointer;transition:width .25s,background .25s}
+.xmas .xmas-dot.on{width:22px;border-radius:5px;background:#14532d}
 .check{text-align:left;max-width:520px;margin:18px auto 0;line-height:1.9;font-size:16px}.check li{margin:8px 0}
 .xmas-panel{margin-top:34px;background:#fff;border:2px solid #14532d;border-radius:20px;box-shadow:var(--shadow);color:#0f2419;overflow:hidden}
 .xp-row{display:flex;align-items:center;gap:16px;padding:24px;border-bottom:1px solid rgba(20,83,45,.25)}
@@ -2816,14 +2821,34 @@ body.on-christmas{color-scheme:light}
 #view-christmas .hero .dateline{color:#fff!important}
 </style>
   <div class="hero"><h1>🎄 Christmas</h1><div class="dateline">Friday, December 25, 2026</div></div>
-  <div class="xmas"><div class="xmas-count-row"><div class="xmas-count-main">
-    <p class="xmas-count-label">Countdown to Christmas</p>
-    <div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div>
-    <p class="xmas-sub" id="xLine">Counting down to December 25…</p>
-    <p class="xmas-sub" id="xTreeLine">Christmas tree going up today at 5:45 PM…</p>
-    <p class="xmas-sub" id="xSchoolLine"></p>
-    <p class="xmas-sub xmas-radio-status" id="xmasRadioStatus" role="status"></p>
-  </div><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div></div>
+  <div class="xmas"><div class="xmas-count-track" id="xCountTrack">
+    <div class="xmas-count-slide">
+      <p class="xmas-count-label">Countdown to Christmas</p>
+      <div class="xmas-count-row"><div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button></div>
+      <p class="xmas-sub" id="xLine">Counting down to December 25…</p>
+      <p class="xmas-sub xmas-radio-status" id="xmasRadioStatus" role="status"></p>
+    </div>
+    <div class="xmas-count-slide">
+      <p class="xmas-count-label">Christmas tree</p>
+      <div class="big" id="xTreeBig"><span id="xTreeDays">—</span><span id="xTreeSuffix"></span></div>
+      <p class="xmas-sub" id="xTreeSub">Going up today at 5:45 PM</p>
+    </div>
+    <div class="xmas-count-slide">
+      <p class="xmas-count-label">School days left</p>
+      <div class="big" id="xSchoolBig"><span id="xSchoolDays">—</span><span id="xSchoolSuffix"> days</span></div>
+      <p class="xmas-sub" id="xSchoolSub">until winter break · NSCSD</p>
+    </div>
+    <div class="xmas-count-slide">
+      <p class="xmas-count-label">Countdown to Christmas Eve</p>
+      <div class="big" id="xEveBig"><span id="xEveDays">—</span><span id="xEveSuffix"> days</span></div>
+      <p class="xmas-sub" id="xEveSub">Thursday, December 24, 2026</p>
+    </div>
+  </div><div class="xmas-count-dots" id="xCountDots" role="tablist" aria-label="Countdowns">
+    <button class="xmas-dot on" type="button" data-i="0" aria-label="Christmas countdown"></button>
+    <button class="xmas-dot" type="button" data-i="1" aria-label="Christmas tree countdown"></button>
+    <button class="xmas-dot" type="button" data-i="2" aria-label="School days countdown"></button>
+    <button class="xmas-dot" type="button" data-i="3" aria-label="Christmas Eve countdown"></button>
+  </div><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div>
   <section class="xmas-panel" aria-label="Christmas">
     <div class="xp-row">
       <div class="xp-ic" aria-hidden="true">🎅</div>
@@ -3657,9 +3682,21 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   // "The tree is up!" and stays there.
   var TREE_TIME=new Date('2026-11-27T17:45:00-05:00');
   function updateTreeCountdown(){
-    var el=document.getElementById('xTreeLine');if(!el)return;
+    var daysEl=document.getElementById('xTreeDays');if(!daysEl)return;
+    var suffixEl=document.getElementById('xTreeSuffix');
+    var bigEl=document.getElementById('xTreeBig');
+    var subEl=document.getElementById('xTreeSub');
     var left=dnCountdownText(TREE_TIME);
-    el.textContent=left?('Christmas tree going up today at 5:45 PM \u2014 '+left+' to go'):'The tree is up! \uD83C\uDF84';
+    if(left){
+      daysEl.textContent=left;
+      if(suffixEl)suffixEl.textContent='';
+      if(subEl)subEl.textContent='Going up today at 5:45 PM';
+    }else{
+      daysEl.textContent='The tree is up! \uD83C\uDF84';
+      if(suffixEl)suffixEl.textContent='';
+      if(subEl)subEl.textContent='';
+    }
+    if(bigEl)bigEl.classList.add('detailed');
   }
   updateTreeCountdown();
   // School days left \u2014 NSCSD calendar (nscsd.org, 2026-27).
@@ -3668,11 +3705,26 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   // no-school dates don't count.
   var NSCSD_OFF=['2026-10-12','2026-11-03','2026-11-11','2026-11-25','2026-11-26','2026-11-27','2026-12-24','2026-12-25','2026-12-28','2026-12-29','2026-12-30','2026-12-31','2027-01-01','2027-01-18','2027-02-15','2027-02-16','2027-02-17','2027-02-18','2027-02-19','2027-03-09','2027-03-26','2027-04-12','2027-04-13','2027-04-14','2027-04-15','2027-04-16','2027-05-31','2027-06-18'];
   function updateSchoolDays(){
-    var el=document.getElementById('xSchoolLine');if(!el)return;
+    var daysEl=document.getElementById('xSchoolDays');if(!daysEl)return;
+    var suffixEl=document.getElementById('xSchoolSuffix');
+    var bigEl=document.getElementById('xSchoolBig');
+    var subEl=document.getElementById('xSchoolSub');
     var now=new Date();var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
     var last=new Date(2026,11,23);var resume=new Date(2027,0,4);
-    if(today>last&&today<resume){el.textContent='Winter break \u2014 back Jan 4!';return;}
-    if(today>=resume){el.textContent='';return;}
+    if(today>last&&today<resume){
+      daysEl.textContent='Winter break';
+      if(suffixEl)suffixEl.textContent='';
+      if(subEl)subEl.textContent='back Jan 4!';
+      if(bigEl)bigEl.classList.add('detailed');
+      return;
+    }
+    if(today>=resume){
+      daysEl.textContent='School\u2019s back!';
+      if(suffixEl)suffixEl.textContent='';
+      if(subEl)subEl.textContent='Winter break is over';
+      if(bigEl)bigEl.classList.add('detailed');
+      return;
+    }
     var n=0;
     for(var d=new Date(today);d<=last;d.setDate(d.getDate()+1)){
       var wd=d.getDay();if(wd===0||wd===6)continue;
@@ -3680,9 +3732,61 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       if(NSCSD_OFF.indexOf(k)>=0)continue;
       n++;
     }
-    el.textContent=n===1?'1 school day left':n+' school days left';
+    daysEl.textContent=n;
+    if(suffixEl)suffixEl.textContent=n===1?' day':' days';
+    if(subEl)subEl.textContent='until winter break \u00B7 NSCSD';
+    if(bigEl)bigEl.classList.remove('detailed');
   }
   updateSchoolDays();
+  // Christmas Eve countdown \u2014 Dec 24, rolls to next year after the day
+  // passes. On the day itself it says so; a week or less out it shows
+  // the exact time left, like the Christmas countdown.
+  function updateEveCountdown(){
+    var daysEl=document.getElementById('xEveDays');if(!daysEl)return;
+    var suffixEl=document.getElementById('xEveSuffix');
+    var bigEl=document.getElementById('xEveBig');
+    var subEl=document.getElementById('xEveSub');
+    var now=new Date();
+    var year=now.getFullYear();var eve=new Date(year,11,24);
+    if(now>eve&&now.toDateString()!==eve.toDateString()){year+=1;eve=new Date(year,11,24);}
+    var isEveDay=(now.toDateString()===eve.toDateString());
+    if(isEveDay){
+      daysEl.textContent='It\u2019s Christmas Eve! \uD83C\uDF84';
+      if(suffixEl)suffixEl.textContent='';
+      if(subEl)subEl.textContent='Merry Christmas Eve';
+      if(bigEl)bigEl.classList.add('detailed');
+      return;
+    }
+    var days=Math.ceil((new Date(eve.getFullYear(),11,24)-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+    var detailed=days<=7?dnCountdownText(eve):null;
+    daysEl.textContent=detailed||days;
+    if(suffixEl)suffixEl.textContent=detailed?'':' days';
+    if(subEl)subEl.textContent=eve.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+    if(bigEl)bigEl.classList.toggle('detailed',!!detailed);
+  }
+  updateEveCountdown();
+  // Swipeable countdown carousel \u2014 4 slides, dots below. The track is
+  // a native scroll-snap scroller, so the tab pager yields to it
+  // (inHorizontalScroller) and a swipe here never changes tabs.
+  (function(){
+    var track=document.getElementById('xCountTrack');
+    var dotsEl=document.getElementById('xCountDots');
+    if(!track||!dotsEl)return;
+    var dots=Array.prototype.slice.call(dotsEl.querySelectorAll('.xmas-dot'));
+    function setDot(i){dots.forEach(function(d,j){d.classList.toggle('on',j===i);});}
+    function curIdx(){
+      var w=track.clientWidth||1;
+      return Math.max(0,Math.min(dots.length-1,Math.round(track.scrollLeft/w)));
+    }
+    track.addEventListener('scroll',function(){setDot(curIdx());},{passive:true});
+    dots.forEach(function(d,i){
+      d.addEventListener('click',function(){
+        track.scrollTo({left:i*(track.clientWidth||0),behavior:'smooth'});
+        setDot(i);
+      });
+    });
+    setDot(0);
+  })();
   // Thanksgiving countdown — the fourth Thursday of November, computed
   // in-page (2026: Thu Nov 26) and rolling to next year on its own once
   // the day passes. The Home widget follows the Christmas rule: it only
@@ -3708,7 +3812,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   updateTGCountdown();
   // Countdowns tick live (minutes) while the page is open.
-  setInterval(function(){updateXmasCountdown();updateTGCountdown();updateTreeCountdown();updateSchoolDays();},30000);
+  setInterval(function(){updateXmasCountdown();updateTGCountdown();updateTreeCountdown();updateSchoolDays();updateEveCountdown();},30000);
   if(location.hash && tabOrder.indexOf(location.hash.slice(1))>=0) show(location.hash.slice(1));
   // Live weather — Open-Meteo, no API key, Cicero NY (43.1713, -76.1250)
   var codes={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:[wxFogSvg(),'Fog'],48:[wxFogSvg(),'Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],56:['🌦️','Freezing drizzle'],57:['🌦️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Light showers'],81:['🌧️','Showers'],82:['🌧️','Heavy showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Thunderstorm with hail']};
