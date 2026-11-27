@@ -3681,6 +3681,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   // Live countdown until then; once it passes it flips to
   // "The tree is up!" and stays there.
   var TREE_TIME=new Date('2026-11-27T18:00:00-05:00');
+  var TREE_DONE=new Date('2026-11-27T19:00:00-05:00');
   function updateTreeCountdown(){
     var daysEl=document.getElementById('xTreeDays');if(!daysEl)return;
     var suffixEl=document.getElementById('xTreeSuffix');
@@ -3691,6 +3692,10 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
       daysEl.textContent=left;
       if(suffixEl)suffixEl.textContent='';
       if(subEl)subEl.textContent='Going up today at 6:00 PM';
+    }else if(Date.now()<TREE_DONE.getTime()){
+      daysEl.textContent='Going up now! \uD83C\uDF84';
+      if(suffixEl)suffixEl.textContent='';
+      if(subEl)subEl.textContent='';
     }else{
       daysEl.textContent='The tree is up! \uD83C\uDF84';
       if(suffixEl)suffixEl.textContent='';
