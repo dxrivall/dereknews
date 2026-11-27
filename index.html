@@ -2821,6 +2821,7 @@ body.on-christmas{color-scheme:light}
     <div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div>
     <p class="xmas-sub" id="xLine">Counting down to December 25…</p>
     <p class="xmas-sub" id="xTreeLine">Christmas tree going up today at 5:45 PM…</p>
+    <p class="xmas-sub" id="xSchoolLine"></p>
     <p class="xmas-sub xmas-radio-status" id="xmasRadioStatus" role="status"></p>
   </div><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div></div>
   <section class="xmas-panel" aria-label="Christmas">
@@ -3661,6 +3662,27 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     el.textContent=left?('Christmas tree going up today at 5:45 PM \u2014 '+left+' to go'):'The tree is up! \uD83C\uDF84';
   }
   updateTreeCountdown();
+  // School days left \u2014 NSCSD calendar (nscsd.org, 2026-27).
+  // Counts school days from today through Wed Dec 23, 2026, the last
+  // day before Holiday Recess (Dec 24-Jan 1). Weekends and NSCSD
+  // no-school dates don't count.
+  var NSCSD_OFF=['2026-10-12','2026-11-03','2026-11-11','2026-11-25','2026-11-26','2026-11-27','2026-12-24','2026-12-25','2026-12-28','2026-12-29','2026-12-30','2026-12-31','2027-01-01','2027-01-18','2027-02-15','2027-02-16','2027-02-17','2027-02-18','2027-02-19','2027-03-09','2027-03-26','2027-04-12','2027-04-13','2027-04-14','2027-04-15','2027-04-16','2027-05-31','2027-06-18'];
+  function updateSchoolDays(){
+    var el=document.getElementById('xSchoolLine');if(!el)return;
+    var now=new Date();var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var last=new Date(2026,11,23);var resume=new Date(2027,0,4);
+    if(today>last&&today<resume){el.textContent='Winter break \u2014 back Jan 4!';return;}
+    if(today>=resume){el.textContent='';return;}
+    var n=0;
+    for(var d=new Date(today);d<=last;d.setDate(d.getDate()+1)){
+      var wd=d.getDay();if(wd===0||wd===6)continue;
+      var k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      if(NSCSD_OFF.indexOf(k)>=0)continue;
+      n++;
+    }
+    el.textContent=n===1?'1 school day left':n+' school days left';
+  }
+  updateSchoolDays();
   // Thanksgiving countdown — the fourth Thursday of November, computed
   // in-page (2026: Thu Nov 26) and rolling to next year on its own once
   // the day passes. The Home widget follows the Christmas rule: it only
@@ -3686,7 +3708,7 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
   }
   updateTGCountdown();
   // Countdowns tick live (minutes) while the page is open.
-  setInterval(function(){updateXmasCountdown();updateTGCountdown();updateTreeCountdown();},30000);
+  setInterval(function(){updateXmasCountdown();updateTGCountdown();updateTreeCountdown();updateSchoolDays();},30000);
   if(location.hash && tabOrder.indexOf(location.hash.slice(1))>=0) show(location.hash.slice(1));
   // Live weather — Open-Meteo, no API key, Cicero NY (43.1713, -76.1250)
   var codes={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:[wxFogSvg(),'Fog'],48:[wxFogSvg(),'Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],56:['🌦️','Freezing drizzle'],57:['🌦️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Light showers'],81:['🌧️','Showers'],82:['🌧️','Heavy showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Thunderstorm with hail']};
