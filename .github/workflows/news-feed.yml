@@ -152,9 +152,20 @@ jobs:
                           thumb = (el.text or "").strip()
                           break
                   if not thumb:
+                      # media:thumbnail (standard RSS media element) fallback.
+                      for el in it:
+                          if el.tag.endswith("}thumbnail"):
+                              thumb = (el.get("url") or "").strip()
+                              break
+                  if not thumb:
                       enc = it.find("enclosure")
                       if enc is not None and enc.get("url"):
                           thumb = enc.get("url")
+                  # Thumbnails must be https: the site is served over https and
+                  # iOS Safari blocks http images as mixed content, so http
+                  # thumbs silently failed to load on phones (Nov 27, 2026).
+                  if thumb.startswith("http://"):
+                      thumb = "https://" + thumb[len("http://"):]
                   try:
                       when = parsedate_to_datetime(pub)
                   except (TypeError, ValueError):
