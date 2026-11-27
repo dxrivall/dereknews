@@ -1,60 +1,54 @@
 {
- "updated_at": "2026-11-27T21:56:27.544316+00:00",
+ "updated_at": "2026-11-27T22:44:22.347161+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8377973,
-  "out": 30415,
-  "pct": 0.36,
-  "source_updated": "2026-11-27T21:45:41+00:00",
+  "out": 27192,
+  "pct": 0.32,
+  "source_updated": "2026-11-27T22:35:45+00:00",
   "name": "New York",
   "utilities": [
    {
     "name": "New York State Electric & Gas",
     "tracked": 919410,
-    "out": 19448,
-    "pct": 2.12
+    "out": 17527,
+    "pct": 1.91
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159648,
-    "out": 3508,
-    "pct": 0.3
+    "out": 3373,
+    "pct": 0.29
    },
    {
     "name": "National Grid",
     "tracked": 1700744,
-    "out": 2435,
+    "out": 2299,
     "pct": 0.14
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 1670,
-    "pct": 0.05
+    "out": 1307,
+    "pct": 0.04
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392267,
-    "out": 1602,
-    "pct": 0.41
+    "out": 1222,
+    "pct": 0.31
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 1239,
-    "pct": 0.39
+    "out": 1010,
+    "pct": 0.32
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 489,
-    "pct": 0.2
-   },
-   {
-    "name": "Sussex REC",
-    "tracked": 202,
-    "out": 15,
-    "pct": 7.43
+    "out": 445,
+    "pct": 0.18
    },
    {
     "name": "Otsego Electric Coop",
@@ -81,6 +75,12 @@
     "pct": 0.0
    },
    {
+    "name": "Sussex REC",
+    "tracked": 202,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Tri-County Rural Electric Coop",
     "tracked": 59,
     "out": 0,
@@ -90,16 +90,16 @@
  },
  "county": {
   "tracked": 213051,
-  "out": 12,
-  "source_updated": "2026-11-27T21:45:40+00:00",
-  "pct": 0.01,
+  "out": 1,
+  "source_updated": "2026-11-27T22:35:44+00:00",
+  "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
    {
     "name": "National Grid",
     "tracked": 204897,
-    "out": 12,
-    "pct": 0.01
+    "out": 1,
+    "pct": 0.0
    },
    {
     "name": "New York State Electric & Gas",
