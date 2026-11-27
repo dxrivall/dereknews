@@ -1,20 +1,83 @@
 {
-  "updated_at": "2026-11-27T23:06:05.241269Z",
+  "updated_at": "2026-11-27T23:54:57.493668Z",
   "sections": {
     "top": [
       {
-        "title": "Taiwan holds elections to choose mayors and other local leaders",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/taiwan-local-elections-a7e3622548f69a41da3e1ec6ce9c9f19",
-        "published": "2026-11-27T15:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.0owQTRYwFEgEEkIGjSS6bA&pid=News"
+        "title": "Missouri stays perfect at home, keeps Arkansas-Pine Bluff winless",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/basketball/missouri-stays-perfect-home-keeps-arkansas-pine-bluff-winless--flm-2026-11-27/",
+        "published": "2026-11-27T15:39:00Z",
+        "thumb": ""
       },
       {
-        "title": "Füllkrug’s injury-time strike saves Werder Bremen in wild draw with Gladbach",
+        "title": "QB Brock Purdy to miss the 49ers’ game vs. the Seahawks. Mac Jones will start in his place",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/werderbremen-santander-brest-forest-bundesliga-ligue1-laliga-a6e28e1c6b8e5d1c6247f69e40c4d79a",
-        "published": "2026-11-27T14:57:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.gUnrRM58kI_xTMFR5ECIWQ&pid=News"
+        "link": "https://apnews.com/article/49ers-brock-purdy-injury-mac-jones-seahawks-2c07c9219b8036ec4f493e4a538ffe4a",
+        "published": "2026-11-27T15:38:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.EKzsiZ9ut2guOo29-ekizw&pid=News"
+      },
+      {
+        "title": "Jeremy Elyzee’s double-double sends UAB to 102-62 victory over D-II’s Auburn Montgomery",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/auburn-montgomery-uab-basketball-score-0a9d34b8d0335be7f8ffe60320c70fb5",
+        "published": "2026-11-27T15:35:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Sam Bennett scores 200th career goal with 24 seconds left as Panthers beat Capitals 3-2",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/panthers-capitals-score-f2cc0fde75bfd4d8a0d6aa3fcf7e6abd",
+        "published": "2026-11-27T15:29:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.w3QhManiiNB18cIgZc7FLw&pid=News"
+      },
+      {
+        "title": "Flyers strike three times on power play while beating Canucks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/flyers-strike-three-times-power-play-while-beating-canucks--flm-2026-11-27/",
+        "published": "2026-11-27T15:16:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Phillips’s 7-yard rushing TD with 1:46 left helps South Alabama beat App State 20-13",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/appalachian-state-south-alabama-football-score-64b34e314646cb695ba33e410b5048b5",
+        "published": "2026-11-27T15:16:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Lions have long break and hope to get healthy after falling out of division lead with loss to Bears",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/lions-analysis-thanksgiving-bye-c6258a6456814c9087fe296ee713f268",
+        "published": "2026-11-27T15:14:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.APgN6UNWpNoSCp6v978jaw&pid=News"
+      },
+      {
+        "title": "Sam Bennett's last-minute goal lifts Panthers past Capitals",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/sam-bennetts-last-minute-goal-lifts-panthers-past-capitals--flm-2026-11-27/",
+        "published": "2026-11-27T15:13:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Tiller scores 22 points, Crowe 21 and Tigers block 13 shots in 97-61 win over Arkansas-Pine Bluff",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/arkansas-pine-bluff-missouri-score-c06a5567a6d443563bc20699067233da",
+        "published": "2026-11-27T15:13:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Inspired Steelers move on from Rodgers’ exit with cathartic 27-5 win over sloppy Broncos",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/broncos-steelers-score-0798ca83a27cbacdca131e026de8165a",
+        "published": "2026-11-27T15:05:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.G4D1fjkQDn5mqKpIPqiMiw&pid=News"
+      },
+      {
+        "title": "Senators bounce back with blowout win over Lightning",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/senators-bounce-back-with-blowout-win-over-lightning--flm-2026-11-27/",
+        "published": "2026-11-27T15:00:00Z",
+        "thumb": ""
       },
       {
         "title": "Senators top Lightning 6-2 in historic win for Linus Ullmark",
@@ -24,6 +87,13 @@
         "thumb": "https://www.bing.com/th?id=ONUT.KKkJaqF5gqisqi-NrQbqvw&pid=News"
       },
       {
+        "title": "Füllkrug’s injury-time strike saves Werder Bremen in wild draw with Gladbach",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/werderbremen-santander-brest-forest-bundesliga-ligue1-laliga-a6e28e1c6b8e5d1c6247f69e40c4d79a",
+        "published": "2026-11-27T14:57:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.gUnrRM58kI_xTMFR5ECIWQ&pid=News"
+      },
+      {
         "title": "Andrew Alekseyenko scores 18, Colgate takes down Hofstra 75-49",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/colgate-hofstra-basketball-score-320cac7f7132f46088cae70be3c15ccf",
@@ -31,84 +101,21 @@
         "thumb": ""
       },
       {
-        "title": "John Gibson, Red Wings blank Blue Jackets",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/john-gibson-red-wings-blank-blue-jackets--flm-2026-11-27/",
-        "published": "2026-11-27T14:54:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Gibson records 29th career shutout as Red Wings beat the Blue Jackets 2-0",
+        "title": "Kenya cult leader found guilty of manslaughter of over 100 followers asked to starve to meet Jesus",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/red-wings-blue-jackets-score-1bf83051e1a3d6a8edfa277408abff6e",
-        "published": "2026-11-27T14:48:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.-C_nDGvPWZCpqTt7vUWgBw&pid=News"
-      },
-      {
-        "title": "Pernell scores 25 as Texas State knocks off Louisiana Tech 78-70",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/texas-state-louisiana-tech-score-d6feaa222099f8160f8322832f7445db",
-        "published": "2026-11-27T14:44:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Warriors tasked with slowing much-improved Trail Blazers",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/warriors-tasked-with-slowing-much-improved-trail-blazers--flm-2026-11-27/",
-        "published": "2026-11-27T14:43:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "US government bars bandwidth provider RETN from American networks",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/media-telecom/us-government-bars-bandwidth-provider-retn-american-networks-2026-11-27/",
-        "published": "2026-11-27T14:41:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "TCU handles Big 12 rival Baylor for Players Era third place",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/tcu-handles-big-12-rival-baylor-players-era-third-place--flm-2026-11-27/",
+        "link": "https://apnews.com/article/kenya-cult-paul-mackenzie-manslaughter-conviction-6f37fe64e35fc34ed5117809a4dea4d3",
         "published": "2026-11-27T14:39:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "ACLU seeks court order blocking Trump administration’s efforts to unmask ICE critics on social media",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-aclu-anonymous-ice-critics-social-media-5f2b57cdfd67d92b8eb6b810ca2607a0",
-        "published": "2026-11-27T14:29:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Wessler, Pettway lead UNC Wilmington over Princeton, 68-66",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/princeton-wilmington-basketball-score-3efcdc79789864dfa4162b51bf1ecbd1",
-        "published": "2026-11-27T14:29:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Robinson scores career-high 23 points to lift No. 6 UCLA over Georgetown, 75-63",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/georgetown-ucla-score-988896f1a29aa71a6451503b58f2a854",
-        "published": "2026-11-27T14:22:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.FHF79j00VHwMOS_6Zl9U4Q&pid=News"
-      },
-      {
-        "title": "Blues score last three goals for 5-3 win over Stars",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/blues-score-last-three-goals-5-3-win-over-stars--flm-2026-11-27/",
-        "published": "2026-11-27T14:19:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Glass Lewis backs Vail Resorts board in proxy fight with activist Oasis",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/transactional/glass-lewis-backs-vail-resorts-board-proxy-fight-with-activist-oasis-2026-11-27/",
-        "published": "2026-11-27T14:04:00Z",
-        "thumb": ""
+        "thumb": "https://www.bing.com/th?id=ONUT.IadcpGM14sJs0bUj_d_q6A&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "Keep rain gear/umbrella handy into Saturday",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/weather/cold-sunshine-developing-this-afternoon/",
+        "published": "2026-11-27T23:15:00Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/raindrops-3.jpg?w=900"
+      },
       {
         "title": "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year",
         "source": "LocalSYR",
@@ -171,42 +178,42 @@
         "link": "https://www.localsyr.com/news/local-news/winter-weather-advisory-issued-for-part-of-st-lawrence-county/",
         "published": "2026-11-26T21:41:21Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/GettyImages-1289449088-e1727734735270.jpg?w=800"
-      },
-      {
-        "title": "Syracuse Rescue Mission volunteers serve thousands of hot Thanksgiving meals",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/local-news/rescue-mission-thanksgiving-2026/",
-        "published": "2026-11-26T20:03:35Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/food.png?w=800"
       }
     ],
     "nationwide": [
       {
-        "title": "Pernell scores 25 as Texas State knocks off Louisiana Tech 78-70",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/texas-state-louisiana-tech-score-d6feaa222099f8160f8322832f7445db",
-        "published": "2026-11-27T14:44:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "US government bars bandwidth provider RETN from American networks",
+        "title": "Missouri stays perfect at home, keeps Arkansas-Pine Bluff winless",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/media-telecom/us-government-bars-bandwidth-provider-retn-american-networks-2026-11-27/",
-        "published": "2026-11-27T14:41:00Z",
+        "link": "https://www.reuters.com/sports/basketball/missouri-stays-perfect-home-keeps-arkansas-pine-bluff-winless--flm-2026-11-27/",
+        "published": "2026-11-27T15:39:00Z",
         "thumb": ""
       },
       {
-        "title": "USC marching band benched for UCLA game after vandalism prank, officials say",
+        "title": "Sam Bennett scores 200th career goal with 24 seconds left as Panthers beat Capitals 3-2",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/usc-ucla-marching-band-prank-3dce362283693f54d2ab2c803e235c53",
-        "published": "2026-11-27T12:08:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.PFZ022DBuaF4nvDy7LMn8g&pid=News"
+        "link": "https://apnews.com/article/panthers-capitals-score-f2cc0fde75bfd4d8a0d6aa3fcf7e6abd",
+        "published": "2026-11-27T15:29:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.w3QhManiiNB18cIgZc7FLw&pid=News"
       },
       {
-        "title": "Canada’s Supreme Court largely upholds a Quebec ban on religious symbols for public servants",
+        "title": "Phillips’s 7-yard rushing TD with 1:46 left helps South Alabama beat App State 20-13",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/canada-quebec-religious-symbols-supreme-court-8fa520067e80483a7e0c5d1c01fb4189",
-        "published": "2026-11-27T07:59:00Z",
+        "link": "https://apnews.com/article/appalachian-state-south-alabama-football-score-64b34e314646cb695ba33e410b5048b5",
+        "published": "2026-11-27T15:16:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Tiller scores 22 points, Crowe 21 and Tigers block 13 shots in 97-61 win over Arkansas-Pine Bluff",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/arkansas-pine-bluff-missouri-score-c06a5567a6d443563bc20699067233da",
+        "published": "2026-11-27T15:13:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Senators bounce back with blowout win over Lightning",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/senators-bounce-back-with-blowout-win-over-lightning--flm-2026-11-27/",
+        "published": "2026-11-27T15:00:00Z",
         "thumb": ""
       },
       {
@@ -240,18 +247,46 @@
     ],
     "global": [
       {
-        "title": "Taiwan holds elections to choose mayors and other local leaders",
+        "title": "QB Brock Purdy to miss the 49ers’ game vs. the Seahawks. Mac Jones will start in his place",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/taiwan-local-elections-a7e3622548f69a41da3e1ec6ce9c9f19",
-        "published": "2026-11-27T15:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.0owQTRYwFEgEEkIGjSS6bA&pid=News"
+        "link": "https://apnews.com/article/49ers-brock-purdy-injury-mac-jones-seahawks-2c07c9219b8036ec4f493e4a538ffe4a",
+        "published": "2026-11-27T15:38:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.EKzsiZ9ut2guOo29-ekizw&pid=News"
       },
       {
-        "title": "Füllkrug’s injury-time strike saves Werder Bremen in wild draw with Gladbach",
+        "title": "Jeremy Elyzee’s double-double sends UAB to 102-62 victory over D-II’s Auburn Montgomery",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/werderbremen-santander-brest-forest-bundesliga-ligue1-laliga-a6e28e1c6b8e5d1c6247f69e40c4d79a",
-        "published": "2026-11-27T14:57:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.gUnrRM58kI_xTMFR5ECIWQ&pid=News"
+        "link": "https://apnews.com/article/auburn-montgomery-uab-basketball-score-0a9d34b8d0335be7f8ffe60320c70fb5",
+        "published": "2026-11-27T15:35:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Flyers strike three times on power play while beating Canucks",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/flyers-strike-three-times-power-play-while-beating-canucks--flm-2026-11-27/",
+        "published": "2026-11-27T15:16:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Lions have long break and hope to get healthy after falling out of division lead with loss to Bears",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/lions-analysis-thanksgiving-bye-c6258a6456814c9087fe296ee713f268",
+        "published": "2026-11-27T15:14:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.APgN6UNWpNoSCp6v978jaw&pid=News"
+      },
+      {
+        "title": "Sam Bennett's last-minute goal lifts Panthers past Capitals",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/sam-bennetts-last-minute-goal-lifts-panthers-past-capitals--flm-2026-11-27/",
+        "published": "2026-11-27T15:13:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Inspired Steelers move on from Rodgers’ exit with cathartic 27-5 win over sloppy Broncos",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/broncos-steelers-score-0798ca83a27cbacdca131e026de8165a",
+        "published": "2026-11-27T15:05:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.G4D1fjkQDn5mqKpIPqiMiw&pid=News"
       },
       {
         "title": "Senators top Lightning 6-2 in historic win for Linus Ullmark",
@@ -261,6 +296,13 @@
         "thumb": "https://www.bing.com/th?id=ONUT.KKkJaqF5gqisqi-NrQbqvw&pid=News"
       },
       {
+        "title": "Füllkrug’s injury-time strike saves Werder Bremen in wild draw with Gladbach",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/werderbremen-santander-brest-forest-bundesliga-ligue1-laliga-a6e28e1c6b8e5d1c6247f69e40c4d79a",
+        "published": "2026-11-27T14:57:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.gUnrRM58kI_xTMFR5ECIWQ&pid=News"
+      },
+      {
         "title": "Andrew Alekseyenko scores 18, Colgate takes down Hofstra 75-49",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/colgate-hofstra-basketball-score-320cac7f7132f46088cae70be3c15ccf",
@@ -268,46 +310,11 @@
         "thumb": ""
       },
       {
-        "title": "John Gibson, Red Wings blank Blue Jackets",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/john-gibson-red-wings-blank-blue-jackets--flm-2026-11-27/",
-        "published": "2026-11-27T14:54:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Gibson records 29th career shutout as Red Wings beat the Blue Jackets 2-0",
+        "title": "Kenya cult leader found guilty of manslaughter of over 100 followers asked to starve to meet Jesus",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/red-wings-blue-jackets-score-1bf83051e1a3d6a8edfa277408abff6e",
-        "published": "2026-11-27T14:48:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.-C_nDGvPWZCpqTt7vUWgBw&pid=News"
-      },
-      {
-        "title": "Warriors tasked with slowing much-improved Trail Blazers",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/warriors-tasked-with-slowing-much-improved-trail-blazers--flm-2026-11-27/",
-        "published": "2026-11-27T14:43:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "TCU handles Big 12 rival Baylor for Players Era third place",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/tcu-handles-big-12-rival-baylor-players-era-third-place--flm-2026-11-27/",
+        "link": "https://apnews.com/article/kenya-cult-paul-mackenzie-manslaughter-conviction-6f37fe64e35fc34ed5117809a4dea4d3",
         "published": "2026-11-27T14:39:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "ACLU seeks court order blocking Trump administration’s efforts to unmask ICE critics on social media",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-aclu-anonymous-ice-critics-social-media-5f2b57cdfd67d92b8eb6b810ca2607a0",
-        "published": "2026-11-27T14:29:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Wessler, Pettway lead UNC Wilmington over Princeton, 68-66",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/princeton-wilmington-basketball-score-3efcdc79789864dfa4162b51bf1ecbd1",
-        "published": "2026-11-27T14:29:00Z",
-        "thumb": ""
+        "thumb": "https://www.bing.com/th?id=ONUT.IadcpGM14sJs0bUj_d_q6A&pid=News"
       }
     ]
   }
