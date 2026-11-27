@@ -2783,7 +2783,7 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 #view-christmas .dateline{color:#fff;background:#14532d;display:inline-block;padding:6px 14px;border-radius:999px;border:2px solid #fff;font-weight:700}
 #view-christmas .card{background:rgba(255,255,255,.96);border-color:#14532d}
 .xmas{background:#fff;border:1px solid rgba(20,83,45,.25);border-radius:20px;padding:26px 22px 22px;margin-top:34px;color:#0f2419;text-align:center;box-shadow:var(--shadow)}
-.xmas .xmas-count-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.xmas .xmas-count-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:nowrap}
 .xmas .xmas-count-main{flex:0 1 auto;min-width:0}
 .xmas .xmas-count-label{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6b7a70;margin:0 0 2px}
 .xmas .big{font-size:clamp(52px,13vw,72px);font-weight:300;line-height:1.05;margin:0;color:#0f2419}
@@ -2820,7 +2820,6 @@ body.on-christmas{color-scheme:light}
     <p class="xmas-count-label">Countdown to Christmas</p>
     <div class="big" id="xBig"><span id="xDays">—</span><span id="xSuffix"> days</span></div>
     <p class="xmas-sub" id="xLine">Counting down to December 25…</p>
-    <p class="xmas-sub" id="xShopLine"></p>
     <p class="xmas-sub" id="xTreeLine">Going up today at 5:45 PM…</p>
     <p class="xmas-sub xmas-radio-status" id="xmasRadioStatus" role="status"></p>
   </div><button class="xmas-radio-btn" id="xmasRadioBtn" type="button" aria-pressed="false" aria-label="Play Christmas Radio"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.5 7v10l9-5z"/></svg></button><audio id="xmasRadioAudio" preload="none" src="https://stream.revma.ihrhls.com/zc4596"></audio></div></div>
@@ -3638,21 +3637,13 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
     if(xDaysEl)xDaysEl.textContent=xIsDay?'0':(xDetailed||days);
     var xSuffix=document.getElementById('xSuffix');if(xSuffix)xSuffix.textContent=xDetailed?'':' days';
     var xBig=document.getElementById('xBig');if(xBig)xBig.classList.toggle('detailed',!!xDetailed);
-    document.getElementById('xLine').textContent=xIsDay?'Merry Christmas! 🎄 Today is the day.':'Until Christmas Day — '+xmas.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+'.';
+    document.getElementById('xLine').textContent=xIsDay?'Merry Christmas! 🎄 Today is the day.':'';
     var hxD=document.getElementById('homeXDays');if(hxD)hxD.textContent=xDetailed||days;
     var hxSuffix=document.getElementById('homeXSuffix');if(hxSuffix)hxSuffix.textContent=xDetailed?' until Christmas':' days until Christmas';
     var hxBig=document.getElementById('homeXBig');
     if(hxBig&&xIsDay)hxBig.textContent='Merry Christmas!';
     if(hxBig)hxBig.classList.toggle('detailed',!!xDetailed);
     var hxL=document.getElementById('homeXLine');if(hxL)hxL.textContent=document.getElementById('xLine').textContent;
-    // Shopping days left — days until Christmas Eve (Dec 24).
-    var xShop=document.getElementById('xShopLine');
-    if(xShop){
-      var eve=new Date(now.getFullYear(),11,24);
-      if(now>new Date(now.getFullYear(),11,24,23,59,59))eve=new Date(now.getFullYear()+1,11,24);
-      var sDays=Math.ceil((new Date(eve.getFullYear(),11,24)-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
-      xShop.textContent=sDays===0?'Last shopping day!':(sDays===1?'1 shopping day left':sDays+' shopping days left');
-    }
     // Relevance filter: the Home Christmas widget only shows in the run-up to
     // Christmas (within 60 days, or on the day itself). Months away it stays
     // off Home entirely; the full Christmas tab is always there.
