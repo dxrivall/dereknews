@@ -1,54 +1,48 @@
 {
- "updated_at": "2026-11-27T09:12:05.001508+00:00",
+ "updated_at": "2026-11-27T10:18:21.746712+00:00",
  "source": "PowerOutage (poweroutage.com), fetched server-side",
  "state": {
   "tracked": 8377973,
-  "out": 58560,
-  "pct": 0.7,
-  "source_updated": "2026-11-27T09:05:37+00:00",
+  "out": 26216,
+  "pct": 0.31,
+  "source_updated": "2026-11-27T10:15:35+00:00",
   "name": "New York",
   "utilities": [
    {
-    "name": "New York State Electric & Gas",
-    "tracked": 919410,
-    "out": 29637,
-    "pct": 3.22
+    "name": "National Grid",
+    "tracked": 1700744,
+    "out": 6178,
+    "pct": 0.36
    },
    {
     "name": "PSEG Long Island",
     "tracked": 1159648,
-    "out": 7693,
-    "pct": 0.66
-   },
-   {
-    "name": "National Grid",
-    "tracked": 1700744,
-    "out": 6994,
-    "pct": 0.41
+    "out": 5856,
+    "pct": 0.5
    },
    {
     "name": "Central Hudson Gas & Electric Corp",
     "tracked": 315545,
-    "out": 5144,
-    "pct": 1.63
+    "out": 5168,
+    "pct": 1.64
    },
    {
     "name": "Con Edison",
     "tracked": 3626606,
-    "out": 4512,
+    "out": 4371,
     "pct": 0.12
    },
    {
     "name": "Rochester Gas & Electric Corp",
     "tracked": 392267,
-    "out": 3141,
+    "out": 3119,
     "pct": 0.8
    },
    {
     "name": "Orange & Rockland Utilities Inc",
     "tracked": 242447,
-    "out": 1050,
-    "pct": 0.43
+    "out": 1228,
+    "pct": 0.51
    },
    {
     "name": "Delaware County Electric Coop",
@@ -57,16 +51,16 @@
     "pct": 3.75
    },
    {
-    "name": "Sussex REC",
-    "tracked": 202,
-    "out": 112,
-    "pct": 55.45
-   },
-   {
     "name": "Otsego Electric Coop",
     "tracked": 5164,
     "out": 75,
     "pct": 1.45
+   },
+   {
+    "name": "Sussex REC",
+    "tracked": 202,
+    "out": 19,
+    "pct": 9.41
    },
    {
     "name": "Steuben Rural Electric Coop",
@@ -81,6 +75,12 @@
     "pct": 0.0
    },
    {
+    "name": "New York State Electric & Gas",
+    "tracked": 919410,
+    "out": 0,
+    "pct": 0.0
+   },
+   {
     "name": "Tri-County Rural Electric Coop",
     "tracked": 59,
     "out": 0,
@@ -91,7 +91,7 @@
  "county": {
   "tracked": 213051,
   "out": 3,
-  "source_updated": "2026-11-27T09:05:35+00:00",
+  "source_updated": "2026-11-27T10:15:33+00:00",
   "pct": 0.0,
   "name": "Onondaga County",
   "utilities": [
