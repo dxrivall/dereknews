@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-27T07:00:13Z",
-  "fetched_at": "2026-11-27T07:00:13.132Z",
+  "updated_at": "2026-11-27T08:31:33Z",
+  "fetched_at": "2026-11-27T08:31:33.865Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -62,7 +62,7 @@
         "role": "leader",
         "th": 18,
         "expLevel": 210,
-        "trophies": 104,
+        "trophies": 131,
         "league": "Unranked",
         "leagueTier": "Titan League 27",
         "donations": 500,
