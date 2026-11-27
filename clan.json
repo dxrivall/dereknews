@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-27T20:58:56Z",
-  "fetched_at": "2026-11-27T20:58:56.182Z",
+  "updated_at": "2026-11-27T21:56:09Z",
+  "fetched_at": "2026-11-27T21:56:09.419Z",
   "source": "clashboard.gg/clan/2JQVGQRC9",
   "clan": {
     "name": "WAR II",
@@ -146,7 +146,7 @@
         "role": "admin",
         "th": 11,
         "expLevel": 77,
-        "trophies": 151,
+        "trophies": 205,
         "league": "Unranked",
         "leagueTier": "Wizard League 10",
         "donations": 0,
