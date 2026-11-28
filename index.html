@@ -2806,7 +2806,7 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 .xp-btn{flex:none;background:#b42318;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:13px 18px;border-radius:999px;border:2px solid #14532d;box-shadow:0 2px 8px rgba(0,0,0,.2);white-space:nowrap}
 .xp-btn:hover{background:#14532d}
 .xp-split{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
-.xp-half{padding:24px;text-align:left;min-width:0}
+.xp-half{padding:24px 16px;text-align:center;min-width:0}
 .xp-half:first-child{border-right:1px solid rgba(20,83,45,.25)}
 .xp-half .xp-ic{font-size:32px;margin-bottom:6px}
 .xp-half h2{color:#8f1d14;margin:0 0 2px;font-size:clamp(19px,4.2vw,24px)}
@@ -2814,9 +2814,7 @@ body.on-christmas::before{background:radial-gradient(circle at 12% 18%,rgba(255,
 .xp-half p{line-height:1.6;color:#24382d;margin:0}
 .xp-wc{font-size:clamp(36px,9vw,48px);font-weight:300;line-height:1.05;color:#14532d}
 .xp-wc-note{font-size:15px}
-.xp-basis{font-size:13px;color:#5a6b60;margin-top:4px}
-.xp-basis:empty{display:none}
-@media(max-width:560px){.xp-half{padding:18px 16px}}
+@media(max-width:560px){.xp-half{padding:18px 12px}}
 .xp-check{align-items:flex-start}
 .xp-check .check{margin:6px 0 0}
 .xmas-panel .xmas-radio{margin-top:0;flex:none}
@@ -2872,6 +2870,8 @@ body.on-christmas{color-scheme:light}
         <div class="xp-ic" aria-hidden="true">❄️</div>
         <h2>Christmas Eve</h2>
         <p class="xp-date">Thu, Dec 24</p>
+        <p class="xp-wc" id="xEvePct">—</p>
+        <p class="xp-wc-note" id="xEveNote">chance of snow</p>
         <p id="xEveHalf">Checking the forecast…</p>
       </div>
       <div class="xp-half">
@@ -2879,8 +2879,7 @@ body.on-christmas{color-scheme:light}
         <h2>Christmas Day</h2>
         <p class="xp-date">Fri, Dec 25</p>
         <p class="xp-wc" id="xWhitePct">—</p>
-        <p class="xp-wc-note" id="xWhiteNote">Checking the forecast…</p>
-        <p class="xp-basis" id="xWhiteBasis"></p>
+        <p class="xp-wc-note" id="xWhiteNote">chance of a White Christmas</p>
         <p id="xDayHalf">Checking the forecast…</p>
       </div>
     </div>
@@ -7632,62 +7631,69 @@ body.on-coc .tab[aria-selected="true"]{background:transparent!important;color:#e
 
 <script>
 /* Christmas Eve / Christmas Day split widget + White Christmas chance
-   (Nov 27, 2026): one widget, two halves — Dec 24 on the left, Dec 25
-   on the right. Live Open-Meteo daily forecast for Cicero, NY
-   (43.1713, -76.1250). Dec 24 enters the 16-day window Dec 9, Dec 25
-   on Dec 10. Until then the White Christmas percent is the long-range
-   estimate: 26 of the last 30 Christmas Days (1995-2024, ERA5) had at
-   least 1 inch of snow on the ground in Cicero — 87%. No daily model
-   reaches Dec 25 before Dec 10 (16-day max), so the estimate stands
-   until the live forecast takes over. */
+   (Nov 27, 2026): one widget, two matching halves — Dec 24 on the
+   left, Dec 25 on the right. Each half shows one big percent, one
+   short label, and hi/lo. Live Open-Meteo daily forecast for Cicero,
+   NY (43.1713, -76.1250). Dec 24 enters the 16-day window Dec 9,
+   Dec 25 on Dec 10. Until then both percents are long-range
+   estimates from ERA5 (1995-2024): Dec 24 had >=1 inch of snow on
+   the ground 27 of 30 years (90%), Dec 25 26 of 30 (87%). No daily
+   model reaches these dates before the 16-day window, so the
+   estimates stand until the live forecast takes over. */
 (function(){
   var E=document.getElementById('xEveHalf'),D=document.getElementById('xDayHalf'),
-      P=document.getElementById('xWhitePct'),N=document.getElementById('xWhiteNote'),
-      B=document.getElementById('xWhiteBasis');
-  if(!E&&!D&&!P)return;
+      EP=document.getElementById('xEvePct'),EN=document.getElementById('xEveNote'),
+      P=document.getElementById('xWhitePct'),N=document.getElementById('xWhiteNote');
+  if(!E&&!D&&!EP&&!P)return;
   var now=new Date();
   if(now>new Date(2026,11,25,23,59,59)){
-    if(E)E.textContent='Christmas Eve has passed.';
+    if(EP)EP.textContent='\uD83C\uDF84';
+    if(EN)EN.textContent='Merry Christmas!';
+    if(E)E.textContent='See you next Christmas.';
     if(P)P.textContent='\uD83C\uDF84';
     if(N)N.textContent='Merry Christmas!';
-    if(B)B.textContent='';
     if(D)D.textContent='See you next Christmas.';
     return;
   }
   var SNOW={71:1,73:1,75:1,77:1,85:1,86:1};
   function fmt(v){return v==null?'\u2014':Math.round(v);}
   function snowTxt(code,prob){if(!SNOW[code])return '0%';return prob==null?'\u2014':Math.round(prob)+'%';}
-  function showLongRange(dayLine){
+  function eveLongRange(){
+    if(EP)EP.textContent='90%';
+    if(EN)EN.textContent='chance of snow \u00b7 long-range';
+    if(E)E.textContent='Forecast opens Dec 9';
+  }
+  function dayLongRange(){
     if(P)P.textContent='87%';
-    if(N)N.textContent='chance of a White Christmas';
-    if(B)B.textContent='Long-range estimate \u00b7 26 of the last 30 Christmas Days had snow on the ground (ERA5, 1995\u20132024).';
-    if(D)D.textContent=dayLine;
+    if(N)N.textContent='chance of a White Christmas \u00b7 long-range';
+    if(D)D.textContent='Forecast opens Dec 10';
   }
   fetch('https://api.open-meteo.com/v1/forecast?latitude=43.1713&longitude=-76.1250&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,snowfall_sum&temperature_unit=fahrenheit&precipitation_unit=inch&timezone=America%2FNew_York&forecast_days=16')
   .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
   .then(function(d){
     var dd=d&&d.daily;
-    if(!dd||!dd.time){if(E)E.textContent='Christmas Eve forecast unavailable right now.';showLongRange('Forecast unavailable right now.');return;}
+    if(!dd||!dd.time){eveLongRange();dayLongRange();if(E)E.textContent='Forecast unavailable right now.';if(D)D.textContent='Forecast unavailable right now.';return;}
     function day(iso){var i=dd.time.indexOf(iso);if(i<0)return null;return{code:dd.weather_code[i],hi:dd.temperature_2m_max[i],lo:dd.temperature_2m_min[i],prob:dd.precipitation_probability_max[i],snow:dd.snowfall_sum[i]};}
     var c24=day('2026-12-24'),c25=day('2026-12-25');
-    if(E)E.textContent=c24?('Hi '+fmt(c24.hi)+'\u00b0 / Lo '+fmt(c24.lo)+'\u00b0 \u00b7 Snow '+snowTxt(c24.code,c24.prob)):'Forecast opens Dec 9.';
+    if(c24){
+      if(EP)EP.textContent=snowTxt(c24.code,c24.prob);
+      if(EN)EN.textContent='chance of snow';
+      if(E)E.textContent='Hi '+fmt(c24.hi)+'\u00b0 / Lo '+fmt(c24.lo)+'\u00b0';
+    }else{eveLongRange();}
     if(c25){
-      if(B)B.textContent='';
       if(SNOW[c25.code]){
         if(P)P.textContent=fmt(c25.prob)+'%';
         if(N)N.textContent='chance of snow on Christmas Day';
-        if(D)D.textContent='Hi '+fmt(c25.hi)+'\u00b0 / Lo '+fmt(c25.lo)+'\u00b0 \u00b7 Expected snowfall: '+(c25.snow==null?'\u2014':(Math.round(c25.snow*10)/10)+' in');
       }else{
         if(P)P.textContent='0%';
         if(N)N.textContent='chance of snow on Christmas Day';
-        if(D)D.textContent='Hi '+fmt(c25.hi)+'\u00b0 / Lo '+fmt(c25.lo)+'\u00b0 \u00b7 No snow in the forecast.';
       }
-    }else{
-      showLongRange('Forecast opens Dec 10.');
-    }
+      if(D)D.textContent='Hi '+fmt(c25.hi)+'\u00b0 / Lo '+fmt(c25.lo)+'\u00b0';
+    }else{dayLongRange();}
   }).catch(function(){
-    if(E)E.textContent='Christmas Eve forecast unavailable right now.';
-    showLongRange('Forecast unavailable right now.');
+    eveLongRange();dayLongRange();
+    if(E)E.textContent='Forecast unavailable right now.';
+    if(D)D.textContent='Forecast unavailable right now.';
   });
 })();
 
