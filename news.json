@@ -1,13 +1,34 @@
 {
-  "updated_at": "2026-11-28T13:45:55.453777Z",
+  "updated_at": "2026-11-28T14:28:56.551440Z",
   "sections": {
     "top": [
+      {
+        "title": "China's premium puffer jacket push meets consumer resistance",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/retail-consumer/chinas-premium-puffer-jacket-push-meets-consumer-resistance-2026-11-28/",
+        "published": "2026-11-28T06:07:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.OuBIWCQr55xSqRGhkoJU0A&pid=News"
+      },
+      {
+        "title": "Canadiens hope time spent in Las Vegas will power them past Golden Knights",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/canadiens-hope-time-spent-las-vegas-will-power-them-past-golden-knights--flm-2026-11-28/",
+        "published": "2026-11-28T06:01:00Z",
+        "thumb": ""
+      },
       {
         "title": "Ruling party makes gains in Taiwan local elections watched by China",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
+        "published": "2026-11-28T05:50:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
+      },
+      {
+        "title": "Student-led protest against government turns violent in Albania",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/student-led-protest-albania-turns-violent-2026-11-28/",
         "published": "2026-11-28T05:14:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.py5FK3Dm86mp3GUEgAw1IQ&pid=News"
+        "thumb": ""
       },
       {
         "title": "EPA says no rise in contamination after Army detonates lead azide stockpile in Iowa",
@@ -17,11 +38,11 @@
         "thumb": "https://www.bing.com/th?id=ONUT.MQj3e0j7H-IO51m3DwYqZw&pid=News"
       },
       {
-        "title": "Thailand to issue ban on exports of chemicals used in Myanmar rare earth mining on Monday",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/legal/litigation/thailand-issue-ban-exports-chemicals-used-myanmar-rare-earth-mining-monday-2026-11-28/",
-        "published": "2026-11-28T05:00:00Z",
-        "thumb": ""
+        "title": "Voters delivered a rebuke. But Trump is sticking to his agenda",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/trump-huang-nvidia-midterms-tariffs-unpopular-billionaires-89678e61440def22506dff48bcdee301",
+        "published": "2026-11-28T04:51:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT._AODVi5j2jUqydxDIfma5g&pid=News"
       },
       {
         "title": "Clashes erupt in Tirana as protesters call for Prime Minister Edi Rama to resign",
@@ -29,13 +50,6 @@
         "link": "https://apnews.com/article/albania-antigovernment-protest-rama-6f9308aae6e5919cdd8b921c1e1287e3",
         "published": "2026-11-28T04:30:00Z",
         "thumb": "https://www.bing.com/th?id=ONUT.hwJIdSQjihJGsnQCpjgsHg&pid=News"
-      },
-      {
-        "title": "Argentina's bid to stop UK oil activity near Falklands rejected by international court",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/energy/international-court-rejects-argentinas-request-stop-uk-oil-activity-near-2026-11-28/",
-        "published": "2026-11-28T04:23:00Z",
-        "thumb": ""
       },
       {
         "title": "Argentina loses bid to halt oil drilling at nearby UK-held Falkland Islands",
@@ -52,13 +66,6 @@
         "thumb": "https://www.bing.com/th?id=ONUT.QLvklCqMnuZcTNTXgF0hMQ&pid=News"
       },
       {
-        "title": "South Korean teen Jia Shin upstages Mone Chiba to win NHK Trophy",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/jia-shin-nhk-trophy-figure-skating-c62ee9b2d852bca3eaf922d6b9981cec",
-        "published": "2026-11-28T02:58:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.5qrCaNLsV98mXXjAQGfWxQ&pid=News"
-      },
-      {
         "title": "Australia's conservatives oust Labor, see off One Nation in Victoria state",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/asia-pacific/conservatives-set-win-government-australias-second-most-populous-state-2026-11-28/",
@@ -73,16 +80,16 @@
         "thumb": ""
       },
       {
-        "title": "East Texas A&M visits Marshall following Slay’s 33-point game",
+        "title": "UNC Asheville Bulldogs take on the Georgia Southern Eagles on 4-game slide",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-bryce-slay-college-basketball-texas-a-m-aggies-texas-a9913a6658d745d8a8a8933a43124bd5",
+        "link": "https://apnews.com/article/georgia-southern-college-basketball-georgia-southern-eagles-georgia-college-sports-da515fb1e7854e468db0899373b6c677",
         "published": "2026-11-28T01:42:00Z",
         "thumb": ""
       },
       {
-        "title": "New Mexico State faces Denver after Dudley’s 20-point game",
+        "title": "Northern Colorado visits San Diego following Hammond’s 34-point outing",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-denver-college-basketball-new-mexico-state-aggies-college-sports-422bf49257c640288c816fae2ef860be",
+        "link": "https://apnews.com/article/mens-college-basketball-jeremiah-hammond-college-basketball-colorado-san-diego-toreros-0e6db9071ea44dec88401b323020b4e3",
         "published": "2026-11-28T01:42:00Z",
         "thumb": ""
       },
@@ -94,16 +101,9 @@
         "thumb": ""
       },
       {
-        "title": "Portland visits Stanford after Price’s 31-point game",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/portland-pilots-mens-college-basketball-julius-price-stanford-cardinal-college-basketball-145806f7c8e54677bdab20f07bd79951",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "China's premium puffer jacket push meets consumer resistance",
+        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/retail-consumer/chinas-premium-puffer-jacket-push-meets-consumer-resistance-2026-11-28/",
+        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
         "published": "2026-11-28T01:17:00Z",
         "thumb": ""
       }
@@ -189,6 +189,13 @@
         "thumb": "https://www.bing.com/th?id=ONUT.MQj3e0j7H-IO51m3DwYqZw&pid=News"
       },
       {
+        "title": "Voters delivered a rebuke. But Trump is sticking to his agenda",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/trump-huang-nvidia-midterms-tariffs-unpopular-billionaires-89678e61440def22506dff48bcdee301",
+        "published": "2026-11-28T04:51:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT._AODVi5j2jUqydxDIfma5g&pid=News"
+      },
+      {
         "title": "Thomas leads Alcorn State against Georgia Tech after 24-point performance",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/georgia-tech-college-basketball-georgia-tech-yellow-jackets-college-sports-texas-state-bobcats-211544302de44efe832b3412ce851c70",
@@ -196,16 +203,16 @@
         "thumb": ""
       },
       {
-        "title": "East Texas A&M visits Marshall following Slay’s 33-point game",
+        "title": "UNC Asheville Bulldogs take on the Georgia Southern Eagles on 4-game slide",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-bryce-slay-college-basketball-texas-a-m-aggies-texas-a9913a6658d745d8a8a8933a43124bd5",
+        "link": "https://apnews.com/article/georgia-southern-college-basketball-georgia-southern-eagles-georgia-college-sports-da515fb1e7854e468db0899373b6c677",
         "published": "2026-11-28T01:42:00Z",
         "thumb": ""
       },
       {
-        "title": "New Mexico State faces Denver after Dudley’s 20-point game",
+        "title": "Northern Colorado visits San Diego following Hammond’s 34-point outing",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-denver-college-basketball-new-mexico-state-aggies-college-sports-422bf49257c640288c816fae2ef860be",
+        "link": "https://apnews.com/article/mens-college-basketball-jeremiah-hammond-college-basketball-colorado-san-diego-toreros-0e6db9071ea44dec88401b323020b4e3",
         "published": "2026-11-28T01:42:00Z",
         "thumb": ""
       },
@@ -219,17 +226,31 @@
     ],
     "global": [
       {
+        "title": "China's premium puffer jacket push meets consumer resistance",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/retail-consumer/chinas-premium-puffer-jacket-push-meets-consumer-resistance-2026-11-28/",
+        "published": "2026-11-28T06:07:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.OuBIWCQr55xSqRGhkoJU0A&pid=News"
+      },
+      {
+        "title": "Canadiens hope time spent in Las Vegas will power them past Golden Knights",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/canadiens-hope-time-spent-las-vegas-will-power-them-past-golden-knights--flm-2026-11-28/",
+        "published": "2026-11-28T06:01:00Z",
+        "thumb": ""
+      },
+      {
         "title": "Ruling party makes gains in Taiwan local elections watched by China",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
-        "published": "2026-11-28T05:14:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.py5FK3Dm86mp3GUEgAw1IQ&pid=News"
+        "published": "2026-11-28T05:50:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
       },
       {
-        "title": "Thailand to issue ban on exports of chemicals used in Myanmar rare earth mining on Monday",
+        "title": "Student-led protest against government turns violent in Albania",
         "source": "Reuters",
-        "link": "https://www.reuters.com/legal/litigation/thailand-issue-ban-exports-chemicals-used-myanmar-rare-earth-mining-monday-2026-11-28/",
-        "published": "2026-11-28T05:00:00Z",
+        "link": "https://www.reuters.com/world/student-led-protest-albania-turns-violent-2026-11-28/",
+        "published": "2026-11-28T05:14:00Z",
         "thumb": ""
       },
       {
@@ -238,13 +259,6 @@
         "link": "https://apnews.com/article/albania-antigovernment-protest-rama-6f9308aae6e5919cdd8b921c1e1287e3",
         "published": "2026-11-28T04:30:00Z",
         "thumb": "https://www.bing.com/th?id=ONUT.hwJIdSQjihJGsnQCpjgsHg&pid=News"
-      },
-      {
-        "title": "Argentina's bid to stop UK oil activity near Falklands rejected by international court",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/energy/international-court-rejects-argentinas-request-stop-uk-oil-activity-near-2026-11-28/",
-        "published": "2026-11-28T04:23:00Z",
-        "thumb": ""
       },
       {
         "title": "Argentina loses bid to halt oil drilling at nearby UK-held Falkland Islands",
@@ -261,13 +275,6 @@
         "thumb": "https://www.bing.com/th?id=ONUT.QLvklCqMnuZcTNTXgF0hMQ&pid=News"
       },
       {
-        "title": "South Korean teen Jia Shin upstages Mone Chiba to win NHK Trophy",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/jia-shin-nhk-trophy-figure-skating-c62ee9b2d852bca3eaf922d6b9981cec",
-        "published": "2026-11-28T02:58:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.5qrCaNLsV98mXXjAQGfWxQ&pid=News"
-      },
-      {
         "title": "Australia's conservatives oust Labor, see off One Nation in Victoria state",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/asia-pacific/conservatives-set-win-government-australias-second-most-populous-state-2026-11-28/",
@@ -282,10 +289,10 @@
         "thumb": ""
       },
       {
-        "title": "Portland visits Stanford after Price’s 31-point game",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/portland-pilots-mens-college-basketball-julius-price-stanford-cardinal-college-basketball-145806f7c8e54677bdab20f07bd79951",
-        "published": "2026-11-28T01:42:00Z",
+        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
+        "published": "2026-11-28T01:17:00Z",
         "thumb": ""
       }
     ]
