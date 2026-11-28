@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T11:31:33.959705+00:00",
+  "updated_at": "2026-11-28T12:26:08.634960+00:00",
   "games": [
     {
       "series": "KXNHLGAME",
@@ -87,8 +87,8 @@
       "event": "nhl-nsh-det-2026-11-28",
       "title": "Predators vs. Red Wings",
       "teams": {
-        "Predators": 50,
-        "Red Wings": 50
+        "Predators": 48,
+        "Red Wings": 52
       }
     },
     {
@@ -294,8 +294,8 @@
       "event": "nba-mia-cle-2026-11-29",
       "title": "Heat vs. Cavaliers",
       "teams": {
-        "Heat": 47,
-        "Cavaliers": 53
+        "Heat": 48,
+        "Cavaliers": 52
       }
     },
     {
@@ -303,8 +303,8 @@
       "event": "nba-orl-det-2026-11-29",
       "title": "Magic vs. Pistons",
       "teams": {
-        "Magic": 30,
-        "Pistons": 70
+        "Magic": 28,
+        "Pistons": 72
       }
     },
     {
@@ -348,8 +348,8 @@
       "event": "nba-lac-gsw-2026-11-29",
       "title": "Clippers vs. Warriors",
       "teams": {
-        "Clippers": 36,
-        "Warriors": 64
+        "Clippers": 38,
+        "Warriors": 62
       }
     },
     {
@@ -366,7 +366,7 @@
       "event": "nhl-ott-nsh-2026-11-30",
       "title": "Senators vs. Predators",
       "teams": {
-        "Senators": 55,
+        "Senators": 54,
         "Predators": 46
       }
     },
@@ -375,8 +375,8 @@
       "event": "nba-was-cha-2026-11-30",
       "title": "Wizards vs. Hornets",
       "teams": {
-        "Wizards": 41,
-        "Hornets": 59
+        "Wizards": 40,
+        "Hornets": 60
       }
     },
     {
@@ -447,8 +447,8 @@
       "event": "nba-bos-dal-2026-11-30",
       "title": "Celtics vs. Mavericks",
       "teams": {
-        "Celtics": 60,
-        "Mavericks": 40
+        "Celtics": 61,
+        "Mavericks": 39
       }
     },
     {
@@ -501,8 +501,8 @@
       "event": "nba-mem-phi-2026-12-01",
       "title": "Grizzlies vs. 76ers",
       "teams": {
-        "Grizzlies": 36,
-        "76ers": 64
+        "Grizzlies": 34,
+        "76ers": 66
       }
     },
     {
@@ -537,8 +537,8 @@
       "event": "nba-atl-mia-2026-12-01",
       "title": "Hawks vs. Heat",
       "teams": {
-        "Hawks": 39,
-        "Heat": 61
+        "Hawks": 38,
+        "Heat": 62
       }
     },
     {
@@ -591,8 +591,8 @@
       "event": "nba-lac-phx-2026-12-01",
       "title": "Clippers vs. Suns",
       "teams": {
-        "Clippers": 31,
-        "Suns": 69
+        "Clippers": 30,
+        "Suns": 70
       }
     },
     {
@@ -780,8 +780,8 @@
       "event": "nhl-nj-ott-2026-12-03",
       "title": "Devils vs. Senators",
       "teams": {
-        "Devils": 48,
-        "Senators": 52
+        "Devils": 50,
+        "Senators": 50
       }
     },
     {
@@ -808,7 +808,7 @@
       "title": "Avalanche vs. Red Wings",
       "teams": {
         "Avalanche": 57,
-        "Red Wings": 43
+        "Red Wings": 42
       }
     },
     {
@@ -879,8 +879,8 @@
       "event": "nhl-utah-las-2026-12-03",
       "title": "Utah vs. Golden Knights",
       "teams": {
-        "Utah": 36,
-        "Golden Knights": 64
+        "Utah": 38,
+        "Golden Knights": 62
       }
     },
     {
@@ -897,8 +897,8 @@
       "event": "nba-phi-atl-2026-12-04",
       "title": "76ers vs. Hawks",
       "teams": {
-        "76ers": 50,
-        "Hawks": 50
+        "76ers": 51,
+        "Hawks": 49
       }
     },
     {
@@ -933,8 +933,8 @@
       "event": "nba-sas-dal-2026-12-04",
       "title": "Spurs vs. Mavericks",
       "teams": {
-        "Spurs": 74,
-        "Mavericks": 26
+        "Spurs": 72,
+        "Mavericks": 28
       }
     },
     {
@@ -969,8 +969,8 @@
       "event": "nhl-det-bos-2026-12-05",
       "title": "Red Wings vs. Bruins",
       "teams": {
-        "Red Wings": 40,
-        "Bruins": 60
+        "Red Wings": 38,
+        "Bruins": 62
       }
     },
     {
@@ -978,8 +978,8 @@
       "event": "nhl-cbj-nsh-2026-12-05",
       "title": "Blue Jackets vs. Predators",
       "teams": {
-        "Blue Jackets": 40,
-        "Predators": 60
+        "Blue Jackets": 42,
+        "Predators": 58
       }
     },
     {
