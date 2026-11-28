@@ -1132,24 +1132,16 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 /* ---- Weather tab: Christmas skin (Nov 28, 2026). Re-skin only — same
    layout, structure, data, sources and logic. Deep Christmas-green page,
    red/green accents, garland + snowflakes on the header. The live-condition
-   sky (#wxBg mode gradients + animated canvas) stays and is tinted green;
-   the condition still drives it. Red/green only, no gold. */
+   sky (#wxBg mode gradients + animated canvas) is the full tab background
+   again — the condition drives it; only a light green wash sits over it.
+   Red/green only, no gold. */
 body.on-weather{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(180,35,24,.45),transparent 60%),linear-gradient(180deg,#0b2e1a 0%,#14532d 30%,#0d3b22 62%,#071f12 100%)}
 body.on-weather .bottomnav{background:rgba(7,31,18,.55);border-color:rgba(74,222,128,.35);box-shadow:0 16px 38px rgba(2,10,5,.5),inset 0 1px 0 rgba(187,247,208,.28)}
-/* Live-condition sky, Christmas-green tints (mode distinctions kept). */
-body.on-weather #wxBg{background:linear-gradient(180deg,#0b2e1a 0%,#14532d 55%,#0d3b22 100%)}
-body.on-weather #wxBg::after{background:linear-gradient(rgba(11,46,26,.30),rgba(7,31,18,.50))}
-body.on-weather #wxBg[data-mode="clear-day"]{background:linear-gradient(180deg,#0b3d20 0%,#14532d 55%,#1e7a44 100%)}
-body.on-weather #wxBg[data-mode="clear-night"]{background:linear-gradient(180deg,#04160c 0%,#0a2e1a 55%,#123f27 100%)}
-body.on-weather #wxBg[data-mode="partly-day"]{background:linear-gradient(180deg,#0d3d22 0%,#175c33 55%,#1f7a45 100%)}
-body.on-weather #wxBg[data-mode="partly-night"]{background:linear-gradient(180deg,#061a0e 0%,#0f3520 55%,#17452c 100%)}
-body.on-weather #wxBg[data-mode="cloudy"]{background:linear-gradient(180deg,#0d2b1a 0%,#17452c 55%,#1f5c3a 100%)}
-body.on-weather #wxBg[data-mode="fog"]{background:linear-gradient(180deg,#12291c 0%,#1c4030 55%,#2a5540 100%)}
-body.on-weather #wxBg[data-mode="drizzle"],body.on-weather #wxBg[data-mode="rain"]{background:linear-gradient(180deg,#0a2418 0%,#143d29 55%,#1d5238 100%)}
-body.on-weather #wxBg[data-mode="snow"]{background:linear-gradient(180deg,#143d29 0%,#1f5c3a 55%,#2c7a4e 100%)}
-body.on-weather #wxBg[data-mode="storm"]{background:linear-gradient(180deg,#071a10 0%,#123324 55%,#1d4a32 100%)}
-body.on-weather #wxBg[data-phase="dawn"]{background:linear-gradient(180deg,#2e1a2e 0%,#7a2e35 52%,#c23b2a 100%)}
-body.on-weather #wxBg[data-phase="dusk"]{background:linear-gradient(180deg,#1c2a1e 0%,#5c2e35 52%,#a83226 100%)}
+/* Live-condition sky, restored (Nov 28, 2026): the original mode gradients
+   show the real condition again — blue clear-day sky, pale snow sky, dark
+   storm sky, red dawn/dusk — so the whole tab background IS the live weather.
+   Only a light Christmas-green wash sits over it, keeping the sky readable. */
+body.on-weather #wxBg::after{background:linear-gradient(180deg,rgba(8,20,28,.20),rgba(8,20,28,.40)),linear-gradient(180deg,rgba(11,46,26,.14),rgba(7,31,18,.26))}
 /* Cards: deep-green glass, Christmas-green borders. White text stays — it
    is the readable scheme on the dark sky, same as before. */
 body.on-weather #view-weather .day,body.on-weather #view-weather .hour,body.on-weather #view-weather .wdet{background:linear-gradient(180deg,rgba(11,46,26,.62),rgba(7,31,18,.50));border-color:rgba(74,222,128,.45)}
