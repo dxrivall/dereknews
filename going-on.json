@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T15:13:10.384341Z",
+  "updated_at": "2026-11-28T16:01:54.466909Z",
   "tension": {
     "attacks_7d": 10,
     "level": "Severe"
@@ -84,6 +84,11 @@
       "title": "National outages and emergency alerts become fodder for doomsday conspiracy theories - PhillyVoice",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOdEo1LUhQYnhLY1YyYmtOZmhacHVZbm1SX0RuUmktXzBvZHFudDllM2xsNTNtdXRnM2JwUEI4T2t1TDZYS3VPaWdNUEFReWxYV21zclA4aGZiUmRyT2paVUhGZFVhYnJ6QW1mTDgxb0ZWRzVGMDUwbTNXRThxLUlRNktEWXJrWnBPRTNTbzItMnUwMHNsbHc?oc=5",
       "date": "2026-11-28T10:01:00Z"
+    },
+    {
+      "title": "We worked at the White House, and we’ve seen these cyber crises before - Fortune",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOd0IySjBCMHpfYVJUTHRhNHV0MHI2MXpPZ0hnbkJzOF9sZ01WdXlYSGpDUTkySVlZZEVrSUV3VjU3RmFKa1pHOHM2T0tJM3dtZi1KbU5QTHB2UDAtbHdYclFMWWNWSlc0Z1BPX3hoR0lWWGRQbUxkWnFMeTdjU2lvR0x3N21JMjdSR1FLUS1CaVg4U19QalI5QzB3bXE5VTV4NFZ5aTUtaw?oc=5",
+      "date": "2026-11-28T10:00:00Z"
     },
     {
       "title": "Armed assailants hijack cargo ship off Yemen coast - The Eastleigh Voice",
@@ -484,6 +489,11 @@
       "title": "AI Compresses Cyberattack Windows From Days to Hours, Exposing Legacy Systems - OODA Loop",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLUFiM2M1a0dvNG1TcUZRdHNtbVpMZER6VFBDUFVMbklPY3ZvNG1wVXdsUWxWdUdCRjNmTm91TVBSaUpVVW1jd2owNUdHUXppWGtFU1Q1OXhnTmFjcjY0QmlRaVZJQm5HWlhPak1FX2dWRmRKY3g0cm9uNm1sQlZDNUtnUm91NUw4UjVyd1ZCMXpWd0lrMV9kNFdkbHRjU09RSGxuT2hUalNWMXZxODYwVUFxUzlTdW8?oc=5",
       "date": "2026-11-27T16:14:08Z"
+    },
+    {
+      "title": "Kuwait drone attack kills 2 Italians; Iran denies role - JournalArta",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZ29pSXJTbjlSbURYQVJQQk5oRzA0UGVWS3NSSm5aVDV0LXBTRE03aWVCZVJoU2FYU3FFMEFpcnYtZEIzS1VIUDI3QVB2VzJlOHJYVVU5UGEtSm45SVZUOWdGTFZvMWRTQTFja2Y5VGlaejdrTUNMNGo1MmpZU1Q1elBlajdsNlV4ZmszcVlKTF93WUQ4MmZfVmxGODAyd21pYzE5OU93?oc=5",
+      "date": "2026-11-27T16:12:11Z"
     },
     {
       "title": "Walgreens class action lawsuit alleges data breach exposed protected information - Top Class Actions",
@@ -6404,41 +6414,6 @@
       "title": "FBI Investigates Suspected Cyberattack on Sensitive US Criminal Database - GreekReporter.com",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1YZnJkYWg3LVNla2pYTVhxemhGdENDVmhIS2RrVHUyUEplWk9NMmFzVVZ4N2hWVkMzMHh2YllYSWtsaXhmbzgwc1RTcEtjd0dKaVNndmpjZFBVREY1WTVEbHZ0N0VjUnlVV3lnQktzSzN6dC1zeWtLaUVyTQ?oc=5",
       "date": "2026-11-21T16:11:03Z"
-    },
-    {
-      "title": "Endurance athlete swims in Hormuz Strait - France 24",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1NTUI2MDdSa09YWkU0RTdKUklTbG8xTDI4eTlTVUo0WVI5di1DOGFhZFU4ZC1wdjV3R2dORXVzSWc3THFWakthbWVqOVFlWDJvRWE4NVVvUExiam5ZZGdETVVaRExwVFVoaXVaMW1helFNQnVzTzZZ?oc=5",
-      "date": "2026-11-21T15:48:39Z"
-    },
-    {
-      "title": "A 14-Minute AI Attack Shows Fast Response Doesn’t Help When the Attack Is Faster - Morphisec",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPR0pMamhPSDJtd2xGZV8wY2ZQY1FVeFZNZ0xXeXV0RHI1YkJJSVNfSHJ5VGV5RUE5NUNKTFp4NWI0d1l5SnJCdlJGNXhYQzZOZHVMcVRObjBRcVR5Y0U0aUNxNmN4bzhlalpyTWVTTURZZHB6cGJMX2E5VnJtQ1NUSzNzbHNzRl9ITDhSWE5zWmtmZHFnQnVjX21yTUxKaTdZM19yYVdPY2gxYlU4TDVFdw?oc=5",
-      "date": "2026-11-21T15:47:02Z"
-    },
-    {
-      "title": "Federal, state agencies investigating apparent cyberattack attempt on Algonquin Dam on Fox River - Lake and McHenry County Scanner",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPMXBnUEdFQU5IMHFKZ2hMZGRWV1FpM2ZUbWN5Z2lJT3piZUVrZzhTWjBKa2hGVUp0V3RqSFV2WHYxVUVSdVNYY1B5Q1Rkb2ppQTVhc0l5Y1JBYzU5QXVHMlZ5d0N4Q055Ujd3bUpnSW9FSWpUeTVVYjhwOXRKTEFkc2xfbjZIMElzc01xdUJJSTVuU3ZEVE55RlExY0JqaGJ3Qkc5a2wzaXR0eWJBZnVBMXR0T050TklpXzVCX0dvakxMdjRWWlI0RkVQRy15X18yNk9SX2JxSUFRQQ?oc=5",
-      "date": "2026-11-21T15:45:13Z"
-    },
-    {
-      "title": "Inside the FAA router failure that grounded US flights nationwide - USA Today",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFoyZzdPSmNtT19JNGc4bUcxU0pidnlQU0drR0FULURjYkRsbmlldUh3RDBwQlRWWUlPOTdoSGk4NkpVV0lxcnBQNlFjMWZvRDNXU1FRVDYyOG1qOU8tNWJRaHlUVEpESVFPZ0UxTDdrd3VRekpsMHNMZlNES1lFVC1zTEgweHhVa1haTk02QnBlRVZaMHB4eFhfb19xX2sybDhNZg?oc=5",
-      "date": "2026-11-21T15:44:00Z"
-    },
-    {
-      "title": "FBI probes second cyberattack in months as hackers breach key crime database, sources say - Fox News",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaVd2TVRPSXBwT200ZXA5N0lxU1kzSEdOMG5QVE1qWmtKSkpPUWZid2trV0dKM3NVdnF0SnR4dkR0SllOdDBIS096Z3lKWXo1YmtGaGZUdF8zN0s3OXN2TnVOcFBqd2o0MXR6VDlHVlVfdDZYbEF3VjB3NXFhenc2cDlEdEgzXzBmbkdWcklTUzU4OFJvZWxIU2lKUl8xVTdkRk1MeVM5Rko1bVMxci1XQ3dSWU1PUdIBuwFBVV95cUxNUnRiLU10NWFJS3hQdlBjZVZzUjdGQTVWRWdfcTE0Y1NqMElhbDJOcHZjTUlHSV8zZ25ZX2N3T3pyMENqZkNaUUdfem1GZkU1Z1Z4Nmk4SFNESHQ1WkNKVWpmTEY1dDR6b1liQzQ4OUNpTmdLYkRZYU02bjZjVUltb1lLQzZOVEM5bW1fQWp1Smh4NHpkQnVZSTRKOTNzVExJQ0ZJbS1DUHcxNVotUWZ5ZGN0V0gtZ0pHbU5n?oc=5",
-      "date": "2026-11-21T15:40:12Z"
-    },
-    {
-      "title": "Trump Puts ‘Positive Spin’ on Suspected FBI Hack - Newsweek",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOcTJjanhISmJMQ1FGSElfSDFqT1NsVUZDaEtFNEJ1MlhrTEZ4UVM2a1VZV2N3d1pWUUVUcXhzWXBGYXYyQTZlYzFUYko1NktJYWMtTThGV1lGUGc1THhLUzM2R0RBOUc1cmJRWUQ4MTU3QUREUmxkdkR4RnpteHhmZTQzdDhaZw?oc=5",
-      "date": "2026-11-21T15:26:00Z"
-    },
-    {
-      "title": "Qatar Leads Mediation as US Weighs Military Action Against Iran - Peradaban.id",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1hUXVZaFk5NjV2UXRjYnRpQXpZSFVBRTZvYm4xamdhT1RTODhDdTBHUUtwYldlejBWV3JTTVUzOF9jWGdyb1BnNkRMMWZSall6N2c5MkhTZHRhdWhSdnFsT2xNcDBsQQ?oc=5",
-      "date": "2026-11-21T15:20:47Z"
     }
   ]
 }
