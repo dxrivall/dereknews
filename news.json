@@ -1,34 +1,41 @@
 {
-  "updated_at": "2026-11-28T14:28:56.551440Z",
+  "updated_at": "2026-11-28T15:15:57.535865Z",
   "sections": {
     "top": [
-      {
-        "title": "China's premium puffer jacket push meets consumer resistance",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/retail-consumer/chinas-premium-puffer-jacket-push-meets-consumer-resistance-2026-11-28/",
-        "published": "2026-11-28T06:07:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.OuBIWCQr55xSqRGhkoJU0A&pid=News"
-      },
-      {
-        "title": "Canadiens hope time spent in Las Vegas will power them past Golden Knights",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/canadiens-hope-time-spent-las-vegas-will-power-them-past-golden-knights--flm-2026-11-28/",
-        "published": "2026-11-28T06:01:00Z",
-        "thumb": ""
-      },
       {
         "title": "Ruling party makes gains in Taiwan local elections watched by China",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
-        "published": "2026-11-28T05:50:00Z",
+        "published": "2026-11-28T06:37:00Z",
         "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
       },
       {
-        "title": "Student-led protest against government turns violent in Albania",
+        "title": "Iran's flogging of singer was warning from anxious hardliners, insiders say",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/student-led-protest-albania-turns-violent-2026-11-28/",
-        "published": "2026-11-28T05:14:00Z",
+        "link": "https://www.reuters.com/world/middle-east/irans-flogging-singer-was-warning-anxious-hardliners-insiders-say-2026-11-28/",
+        "published": "2026-11-28T06:37:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
+      },
+      {
+        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
+        "published": "2026-11-28T06:37:00Z",
         "thumb": ""
+      },
+      {
+        "title": "Maple Leafs, Penguins bid to pick up steam at other's expense",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/maple-leafs-penguins-bid-pick-up-steam-others-expense--flm-2026-11-28/",
+        "published": "2026-11-28T06:37:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Doncic shoved by fan, security intervenes following wristband toss after Spurs-Lakers game",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/luka-doncic-fan-shove-85d597f007b9cd086dcc34ddf381332a",
+        "published": "2026-11-28T06:07:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.Ft17vrueu7P62MTGSVvdlQ&pid=News"
       },
       {
         "title": "EPA says no rise in contamination after Army detonates lead azide stockpile in Iowa",
@@ -66,6 +73,13 @@
         "thumb": "https://www.bing.com/th?id=ONUT.QLvklCqMnuZcTNTXgF0hMQ&pid=News"
       },
       {
+        "title": "South Korean teen Jia Shin upstages Mone Chiba to win NHK Trophy",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/jia-shin-nhk-trophy-figure-skating-c62ee9b2d852bca3eaf922d6b9981cec",
+        "published": "2026-11-28T02:58:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.5qrCaNLsV98mXXjAQGfWxQ&pid=News"
+      },
+      {
         "title": "Australia's conservatives oust Labor, see off One Nation in Victoria state",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/asia-pacific/conservatives-set-win-government-australias-second-most-populous-state-2026-11-28/",
@@ -73,42 +87,35 @@
         "thumb": ""
       },
       {
-        "title": "Thomas leads Alcorn State against Georgia Tech after 24-point performance",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/georgia-tech-college-basketball-georgia-tech-yellow-jackets-college-sports-texas-state-bobcats-211544302de44efe832b3412ce851c70",
-        "published": "2026-11-28T01:43:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "UNC Asheville Bulldogs take on the Georgia Southern Eagles on 4-game slide",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/georgia-southern-college-basketball-georgia-southern-eagles-georgia-college-sports-da515fb1e7854e468db0899373b6c677",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
-      },
-      {
         "title": "Northern Colorado visits San Diego following Hammond’s 34-point outing",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/mens-college-basketball-jeremiah-hammond-college-basketball-colorado-san-diego-toreros-0e6db9071ea44dec88401b323020b4e3",
         "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
+        "thumb": "https://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
-        "title": "High Point Panthers play the Citadel Bulldogs on 7-game win streak",
+        "title": "Postponed Macy’s 100th Thanksgiving Day parade gets a do-over with 100 balloons and 1,000 clowns",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-college-basketball-high-point-college-sports-d172487f878d44e6aaae0e0b784c26f5",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
+        "link": "https://apnews.com/article/macys-thanksgiving-parade-saturday-3462aace9e773eca60dcf527afdf4a39",
+        "published": "2026-11-28T00:00:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.FemBHtY76c0SM8sedwrzPA&pid=News"
       },
       {
-        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
+        "title": "Spain election results",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
-        "published": "2026-11-28T01:17:00Z",
-        "thumb": ""
+        "link": "https://www.reuters.com/graphics/SPAIN-ELECTION/RESULTS/gkplygylbvb/",
+        "published": "2026-11-27T23:32:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.l5xSLVZo7bl6XiyoX7eDhw&pid=News"
       }
     ],
     "local": [
+      {
+        "title": "State Senate succession, Westchester special election after Andrea Stewart-Cousins' death",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/news/state-news/state-senate-succession-westchester-special-election-after-andrea-stewart-cousins-death/",
+        "published": "2026-11-28T15:02:17Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/Web_Extra__Full_interview_with_Andrea_St_8_65590299_ver1.0.jpg?w=900"
+      },
       {
         "title": "Keep rain gear/umbrella handy Saturday",
         "source": "LocalSYR",
@@ -143,13 +150,6 @@
         "link": "https://www.localsyr.com/news/business/ap-business/ap-asian-shares-mostly-rise-ahead-of-wall-streets-reopening-after-the-thanksgiving-holiday/",
         "published": "2026-11-27T19:59:51Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b09c6fd250389.39310096.jpeg?w=900"
-      },
-      {
-        "title": "NYS Senate Majority Leader Andrea Stewart-Cousins dies at 76",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/news/state-news/nys-senate-majority-leader-andrea-stewart-cousins-dies-at-76/",
-        "published": "2026-11-27T19:24:12Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/PXL_20260505_151820068.MP_.jpg?w=900"
       },
       {
         "title": "Dome sellout: What you need to know about parking Saturday",
@@ -196,25 +196,11 @@
         "thumb": "https://www.bing.com/th?id=ONUT._AODVi5j2jUqydxDIfma5g&pid=News"
       },
       {
-        "title": "Thomas leads Alcorn State against Georgia Tech after 24-point performance",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/georgia-tech-college-basketball-georgia-tech-yellow-jackets-college-sports-texas-state-bobcats-211544302de44efe832b3412ce851c70",
-        "published": "2026-11-28T01:43:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "UNC Asheville Bulldogs take on the Georgia Southern Eagles on 4-game slide",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/georgia-southern-college-basketball-georgia-southern-eagles-georgia-college-sports-da515fb1e7854e468db0899373b6c677",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
-      },
-      {
         "title": "Northern Colorado visits San Diego following Hammond’s 34-point outing",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/mens-college-basketball-jeremiah-hammond-college-basketball-colorado-san-diego-toreros-0e6db9071ea44dec88401b323020b4e3",
         "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
+        "thumb": "https://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
         "title": "A father, a son, and a remarkable 70-season Michigan football streak that has come to an end",
@@ -226,32 +212,39 @@
     ],
     "global": [
       {
-        "title": "China's premium puffer jacket push meets consumer resistance",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/retail-consumer/chinas-premium-puffer-jacket-push-meets-consumer-resistance-2026-11-28/",
-        "published": "2026-11-28T06:07:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.OuBIWCQr55xSqRGhkoJU0A&pid=News"
-      },
-      {
-        "title": "Canadiens hope time spent in Las Vegas will power them past Golden Knights",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/canadiens-hope-time-spent-las-vegas-will-power-them-past-golden-knights--flm-2026-11-28/",
-        "published": "2026-11-28T06:01:00Z",
-        "thumb": ""
-      },
-      {
         "title": "Ruling party makes gains in Taiwan local elections watched by China",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
-        "published": "2026-11-28T05:50:00Z",
+        "published": "2026-11-28T06:37:00Z",
         "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
       },
       {
-        "title": "Student-led protest against government turns violent in Albania",
+        "title": "Iran's flogging of singer was warning from anxious hardliners, insiders say",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/student-led-protest-albania-turns-violent-2026-11-28/",
-        "published": "2026-11-28T05:14:00Z",
+        "link": "https://www.reuters.com/world/middle-east/irans-flogging-singer-was-warning-anxious-hardliners-insiders-say-2026-11-28/",
+        "published": "2026-11-28T06:37:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
+      },
+      {
+        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
+        "published": "2026-11-28T06:37:00Z",
         "thumb": ""
+      },
+      {
+        "title": "Maple Leafs, Penguins bid to pick up steam at other's expense",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/maple-leafs-penguins-bid-pick-up-steam-others-expense--flm-2026-11-28/",
+        "published": "2026-11-28T06:37:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Doncic shoved by fan, security intervenes following wristband toss after Spurs-Lakers game",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/luka-doncic-fan-shove-85d597f007b9cd086dcc34ddf381332a",
+        "published": "2026-11-28T06:07:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.Ft17vrueu7P62MTGSVvdlQ&pid=News"
       },
       {
         "title": "Clashes erupt in Tirana as protesters call for Prime Minister Edi Rama to resign",
@@ -275,24 +268,17 @@
         "thumb": "https://www.bing.com/th?id=ONUT.QLvklCqMnuZcTNTXgF0hMQ&pid=News"
       },
       {
+        "title": "South Korean teen Jia Shin upstages Mone Chiba to win NHK Trophy",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/jia-shin-nhk-trophy-figure-skating-c62ee9b2d852bca3eaf922d6b9981cec",
+        "published": "2026-11-28T02:58:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.5qrCaNLsV98mXXjAQGfWxQ&pid=News"
+      },
+      {
         "title": "Australia's conservatives oust Labor, see off One Nation in Victoria state",
         "source": "Reuters",
         "link": "https://www.reuters.com/world/asia-pacific/conservatives-set-win-government-australias-second-most-populous-state-2026-11-28/",
         "published": "2026-11-28T02:38:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "High Point Panthers play the Citadel Bulldogs on 7-game win streak",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-college-basketball-high-point-college-sports-d172487f878d44e6aaae0e0b784c26f5",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
-        "published": "2026-11-28T01:17:00Z",
         "thumb": ""
       }
     ]
