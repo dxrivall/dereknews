@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-11-28T08:46:12.564307Z",
+  "updated_at": "2026-11-28T09:38:28.731838Z",
   "tension": {
-    "attacks_7d": 9,
+    "attacks_7d": 10,
     "level": "Severe"
   },
   "items": [
+    {
+      "title": "Iran Strikes Damage US Naval Base in Bahrain - Wisevoter",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaE12dnNNRE1wTWpPTjRrd0dnZ0tGZm9XaTI1OFNWZUFaUDFkMy1zOTI4MUxwS0o5RnZUSFh6bTY2TDI2bC10dmRVcERCV1lXZ3JYS3YxYzNDNWhXRzBCeWFKVXQta21oVW1jdGRqUlhPNjFEdDAtWl9ldi1rNy02NFlfeTl3SVk?oc=5",
+      "date": "2026-11-28T07:38:37Z"
+    },
     {
       "title": "US Regulator Shuts Down Indiana Bank With $5.9 Billion in Assets - Tempo.co English",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOblNUREd5ZDZlNWVobzYwOVJnRUFoMml5NTk1TmVyeGRFVmMyR0UwWGJwdVotUE5GeU1ISzZnd3hYcUg5ZDZSNk9DUWF2bU5wZVhObUJVdDJKcTZQVk44STcyNEpyMVpTdXFkRTd6dWNqOVBvUTl6dnh4TmIyRWRRdlFtOUJ3Wm9FZTRfb2JSZHZvTUV0aUJXNnh6Yw?oc=5",
@@ -6404,21 +6409,6 @@
       "title": "Mideast conflicts continue; US claims Iran wants a deal - The Arkansas Democrat-Gazette",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdzNwcUltM2p0YjVHd2ZLRldpVHRmaTNtT2lpbXlyMDZKQ3NLM2JxSF9zVUEzeXJLN1NvZ1RSX0V0VWVvWjJpUEUtamM5a0tDRndCcXd6QjJOQlEtQTZzRGlzMlZyd1FUbTUwZDBhWGVjMk9SYzFHaUxMZ2ZERUpCWWhNeHUwaGMxQzVPNFJ3eXl0RUN6VHdCM0R6RHR5RGc?oc=5",
       "date": "2026-11-21T09:44:00Z"
-    },
-    {
-      "title": "Houthis launch strikes on Saudi Arabia - France 24",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1mUmVmcDhLZFlILWJKS1dhWm9JM0ZtT0xselpHTUl6T1JIcFVwejczUDk5SHk3UUZ6Zk9FRm1tcXlNUnNRTWZnRHJ2LWcxcnJxQldGUm5lVWZNUkJ1aEIwZjFmbWtoWF9XbjE1c0tmUWpqdlFT?oc=5",
-      "date": "2026-11-21T09:32:36Z"
-    },
-    {
-      "title": "‘Risk of Renewed Conflict’: US-Iran Nuclear Talks Stall Over Uranium Enrichment Dispute, Mediators Warn: Report - Republic World",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOLVkxR0xkdS05dEhYeDA0eFhnYkxhTkJ6ZWxjVnJ4cUZOcFc5RGsxbjhQWmx5emtVb3IzWGJCdGxxdGJ3eGNaUnl5NUFxbi1zLURoa2NncHdvZTZEUXhMOHFQbXV1aWlzZGNfeXJtdW01ZGtYcUs4RkZMME5KVklPU1lYbEpRVm9UZ0VQbnBSRzhpNjhzd3dwd3NwLWtmTEtLSFViSHNpMlFjYkZZWXpnaVNlY0g5WFhDaHhKbF9KcU0teW9kNWx4aGlNMExMNFgxSVQwZDVZdjdmWkhqNXBXbm5iWDc4cEp2a1pYa2I0b1bSAfYBQVVfeXFMTjRxNnVTcVJFWkR0Q1NkWDlvRDdJbzdIem1oZDByWHVWeWJXUnRodmlza080a3FhcHVJOWRrbXV4SUJORGYyZU1GZ2VSVUNGLUlPWjg3djRwTUsxOVdsNkdvZ0w2R3RRbDVjWGhpci1GajQwX2MteUtEbzJLOENWNHptUWpzQUhaQ0tQTXJRT1hGNkI5a3VTd0d6TXdDN1lJOUpwUldwSXpuUUNENHVKbXhmb0R4cDh4NEVfY2N3SnE5UklSel9WMjJyTGNrYUV2QUlqSjNyVEw5WXJLRzZzX19pSWJWN0tTUW1UN0RzdzRSYzJqSXZR?oc=5",
-      "date": "2026-11-21T09:32:31Z"
-    },
-    {
-      "title": "Trump Threatens Iran Over Alleged Dirty Bomb Plot in DC - Menafn",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVmRwOWJmc2N3clZjbl9FcmV1SXRKdHpMZDFnbUh3OFlka0NlcWdvbW9IcGFYaE4ySnM3LTNoSkFQQ0hfWkdZeV9xTm0xUlFlMmwzR0hONUl4dXNKNEJxNDBGMnRUY215WW1LRUJvdlNFOHZiWldyVDVGVlRUbXNfeHdXM2RfdFpMbk9Tc0VB?oc=5",
-      "date": "2026-11-21T08:56:28Z"
     }
   ]
 }
