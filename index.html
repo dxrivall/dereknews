@@ -1154,6 +1154,7 @@ body.on-weather #view-weather .wx-locpop{background:rgba(7,31,18,.95);border-col
 body.on-weather #view-weather .wxloc-btn,body.on-weather #view-weather .wxradio-mini-btn,body.on-weather #view-weather .wxd-locbtn{background:rgba(7,31,18,.55);border-color:rgba(74,222,128,.55)}
 body.on-weather #view-weather .wx-locmanual input{background:rgba(7,31,18,.5);border-color:rgba(74,222,128,.55)}
 body.on-weather #view-weather .radar{border-color:rgba(74,222,128,.45)}
+body.on-weather #view-weather .radar-tint{position:absolute;inset:0;z-index:1;border-radius:18px;pointer-events:none;background:linear-gradient(180deg,rgba(11,46,26,.18),rgba(7,31,18,.28))}
 body.on-weather #view-weather .wx-herolabel,body.on-weather #view-weather .wxsec{color:#eafff0}
 /* Header snowflakes (inline SVG, not emoji — the Weather tab stays
    emoji-free for its weather data). */
@@ -1242,6 +1243,7 @@ body.on-weather #view-weather .wx-herolabel,body.on-weather #view-weather .wxsec
   </script>
     <div class="radar seamless">
     <iframe id="wxRadar" title="Live weather map" src="https://embed.windy.com/embed2.html?lat=43.17&amp;lon=-76.12&amp;zoom=7&amp;level=surface&amp;overlay=radar&amp;product=ecmwf" loading="lazy" allowfullscreen></iframe>
+    <div class="radar-tint" aria-hidden="true"></div>
     <button type="button" class="radar-cover" id="radarCover" aria-label="Radar map — tap once to confirm, then tap again to move the map"></button>
     <span class="radar-confirm" id="radarConfirm" hidden>Tap again to move the map</span>
   </div>
