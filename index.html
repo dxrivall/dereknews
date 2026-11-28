@@ -1128,7 +1128,60 @@ svg.wx-fog-ic{vertical-align:-0.14em}
 .wx-precip-t{font-size:11px;font-weight:600;opacity:.85;margin-top:5px;white-space:nowrap}
 .wx-precip-cap{font-size:14px;font-weight:600;text-align:center;margin-top:8px;line-height:1.4}
 </style>
+<style>
+/* ---- Weather tab: Christmas skin (Nov 28, 2026). Re-skin only — same
+   layout, structure, data, sources and logic. Deep Christmas-green page,
+   red/green accents, garland + snowflakes on the header. The live-condition
+   sky (#wxBg mode gradients + animated canvas) stays and is tinted green;
+   the condition still drives it. Red/green only, no gold. */
+body.on-weather{background:radial-gradient(ellipse 110% 46% at 50% -8%,rgba(180,35,24,.45),transparent 60%),linear-gradient(180deg,#0b2e1a 0%,#14532d 30%,#0d3b22 62%,#071f12 100%)}
+body.on-weather .bottomnav{background:rgba(7,31,18,.55);border-color:rgba(74,222,128,.35);box-shadow:0 16px 38px rgba(2,10,5,.5),inset 0 1px 0 rgba(187,247,208,.28)}
+/* Live-condition sky, Christmas-green tints (mode distinctions kept). */
+body.on-weather #wxBg{background:linear-gradient(180deg,#0b2e1a 0%,#14532d 55%,#0d3b22 100%)}
+body.on-weather #wxBg::after{background:linear-gradient(rgba(11,46,26,.30),rgba(7,31,18,.50))}
+body.on-weather #wxBg[data-mode="clear-day"]{background:linear-gradient(180deg,#0b3d20 0%,#14532d 55%,#1e7a44 100%)}
+body.on-weather #wxBg[data-mode="clear-night"]{background:linear-gradient(180deg,#04160c 0%,#0a2e1a 55%,#123f27 100%)}
+body.on-weather #wxBg[data-mode="partly-day"]{background:linear-gradient(180deg,#0d3d22 0%,#175c33 55%,#1f7a45 100%)}
+body.on-weather #wxBg[data-mode="partly-night"]{background:linear-gradient(180deg,#061a0e 0%,#0f3520 55%,#17452c 100%)}
+body.on-weather #wxBg[data-mode="cloudy"]{background:linear-gradient(180deg,#0d2b1a 0%,#17452c 55%,#1f5c3a 100%)}
+body.on-weather #wxBg[data-mode="fog"]{background:linear-gradient(180deg,#12291c 0%,#1c4030 55%,#2a5540 100%)}
+body.on-weather #wxBg[data-mode="drizzle"],body.on-weather #wxBg[data-mode="rain"]{background:linear-gradient(180deg,#0a2418 0%,#143d29 55%,#1d5238 100%)}
+body.on-weather #wxBg[data-mode="snow"]{background:linear-gradient(180deg,#143d29 0%,#1f5c3a 55%,#2c7a4e 100%)}
+body.on-weather #wxBg[data-mode="storm"]{background:linear-gradient(180deg,#071a10 0%,#123324 55%,#1d4a32 100%)}
+body.on-weather #wxBg[data-phase="dawn"]{background:linear-gradient(180deg,#2e1a2e 0%,#7a2e35 52%,#c23b2a 100%)}
+body.on-weather #wxBg[data-phase="dusk"]{background:linear-gradient(180deg,#1c2a1e 0%,#5c2e35 52%,#a83226 100%)}
+/* Cards: deep-green glass, Christmas-green borders. White text stays — it
+   is the readable scheme on the dark sky, same as before. */
+body.on-weather #view-weather .day,body.on-weather #view-weather .hour,body.on-weather #view-weather .wdet{background:linear-gradient(180deg,rgba(11,46,26,.62),rgba(7,31,18,.50));border-color:rgba(74,222,128,.45)}
+body.on-weather #view-weather .wxtrend,body.on-weather #view-weather .outage,body.on-weather #view-weather .wxday-detail,body.on-weather #view-weather .snowday,body.on-weather #view-weather .wx-precip60{background:linear-gradient(180deg,rgba(11,46,26,.66),rgba(7,31,18,.55));border-color:rgba(74,222,128,.45)}
+body.on-weather #view-weather .wdd-tile,body.on-weather #view-weather .wdd-hour,body.on-weather #view-weather .wxtrend-stat{background:rgba(11,46,26,.55);border-color:rgba(74,222,128,.35)}
+body.on-weather #view-weather .day.today{outline-color:#4ade80}
+body.on-weather #view-weather .wx-hero-hourly .hour.sun{background:rgba(180,35,24,.30);border-color:rgba(255,122,112,.65)}
+body.on-weather #view-weather .wx-locbar{background:rgba(7,31,18,.62);border-color:rgba(74,222,128,.55)}
+body.on-weather #view-weather .wx-locpop{background:rgba(7,31,18,.95);border-color:rgba(74,222,128,.45)}
+body.on-weather #view-weather .wxloc-btn,body.on-weather #view-weather .wxradio-mini-btn,body.on-weather #view-weather .wxd-locbtn{background:rgba(7,31,18,.55);border-color:rgba(74,222,128,.55)}
+body.on-weather #view-weather .wx-locmanual input{background:rgba(7,31,18,.5);border-color:rgba(74,222,128,.55)}
+body.on-weather #view-weather .radar{border-color:rgba(74,222,128,.45)}
+body.on-weather #view-weather .wx-herolabel,body.on-weather #view-weather .wxsec{color:#eafff0}
+/* Header snowflakes (inline SVG, not emoji — the Weather tab stays
+   emoji-free for its weather data). */
+.wx-xmas-snow{position:absolute;top:0;left:0;right:0;height:360px;overflow:hidden;pointer-events:none;z-index:1}
+.wx-flake{position:absolute;top:-26px;display:block;line-height:0;opacity:0}
+.wx-flake svg{display:block;width:100%;height:auto}
+.wx-flake.f1{left:4%;width:15px;animation:wxflake-fall 11s linear infinite}
+.wx-flake.f2{left:16%;width:20px;animation:wxflake-fall 13s linear infinite;animation-delay:2s}
+.wx-flake.f3{left:30%;width:13px;animation:wxflake-fall 10s linear infinite;animation-delay:4s}
+.wx-flake.f4{left:44%;width:18px;animation:wxflake-fall 12s linear infinite;animation-delay:1s}
+.wx-flake.f5{left:58%;width:14px;animation:wxflake-fall 11s linear infinite;animation-delay:3s}
+.wx-flake.f6{left:71%;width:21px;animation:wxflake-fall 14s linear infinite;animation-delay:5s}
+.wx-flake.f7{left:84%;width:15px;animation:wxflake-fall 10.5s linear infinite;animation-delay:2.5s}
+.wx-flake.f8{left:93%;width:18px;animation:wxflake-fall 12.5s linear infinite;animation-delay:6s}
+@keyframes wxflake-fall{0%{transform:translateY(0) rotate(0deg);opacity:0}10%{opacity:.55}85%{opacity:.5}100%{transform:translateY(390px) rotate(260deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.wx-flake{animation:none}}
+</style>
   <div class="wxhero" id="wxHero">
+  <div class="garland" aria-hidden="true"><svg viewBox="0 0 600 78" role="presentation" focusable="false"><defs><g id="ptw"><path d="M0 0 L-10 11 M0 0 L-3 14 M0 0 L4 14 M0 0 L11 10" stroke="#1e6b3d" stroke-width="3" stroke-linecap="round" fill="none"/><circle r="6.5" fill="#175233"/><circle cx="-4" cy="-3" r="4.5" fill="#1d6540"/><circle cx="5" cy="-2" r="4" fill="#123f27"/></g><g id="brw"><circle r="3.4" fill="#c1271d"/><circle cx="7.5" cy="2" r="3" fill="#d92f24"/><circle cx="3" cy="6.5" r="2.8" fill="#a91e15"/><circle cx="-1" cy="-1" r="1" fill="#fff" opacity=".55"/></g><g id="ltw"><circle r="7.5" fill="#ffd98a" opacity=".38"/><circle r="3.2" fill="#fff3b0" stroke="#ffb454" stroke-width=".8"/><circle cx="-1" cy="-1" r="1" fill="#fff"/></g><g id="ornw"><path d="M0 0 V7" stroke="#3a3a3a" stroke-width="1.4"/><circle cy="14" r="6.8" fill="#b91f16" stroke="#7f130e"/><circle cx="-2.2" cy="11" r="2" fill="#fff" opacity=".65"/></g><g id="wxflake"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="12" cy="12" r="2.4" fill="#fff"/></g></defs><path d="M12 12 Q300 74 588 12" fill="none" stroke="#123b24" stroke-width="11" stroke-linecap="round"/><path d="M12 9 Q300 71 588 9" fill="none" stroke="#1c5a35" stroke-width="6" stroke-linecap="round" opacity=".9"/><use href="#ptw" transform="translate(12 10)"/><use href="#ptw" transform="translate(41 16)"/><use href="#ptw" transform="translate(70 21)"/><use href="#ptw" transform="translate(99 25)"/><use href="#ptw" transform="translate(128 29)"/><use href="#ptw" transform="translate(157 33)"/><use href="#ptw" transform="translate(186 35)"/><use href="#ptw" transform="translate(215 37)"/><use href="#ptw" transform="translate(244 39)"/><use href="#ptw" transform="translate(272 40)"/><use href="#ptw" transform="translate(300 40)"/><use href="#ptw" transform="translate(328 40)"/><use href="#ptw" transform="translate(356 39)"/><use href="#ptw" transform="translate(385 37)"/><use href="#ptw" transform="translate(414 35)"/><use href="#ptw" transform="translate(443 33)"/><use href="#ptw" transform="translate(472 29)"/><use href="#ptw" transform="translate(501 25)"/><use href="#ptw" transform="translate(530 21)"/><use href="#ptw" transform="translate(559 16)"/><use href="#ptw" transform="translate(588 10)"/><use href="#ptw" transform="translate(12 16) rotate(24)"/><use href="#ptw" transform="translate(588 16) rotate(-24)"/><use href="#ornw" transform="translate(150 32)"/><use href="#ornw" transform="translate(300 40)"/><use href="#ornw" transform="translate(450 32)"/><use href="#brw" transform="translate(72 19)"/><use href="#brw" transform="translate(182 31)"/><use href="#brw" transform="translate(262 36)"/><use href="#brw" transform="translate(378 34)"/><use href="#brw" transform="translate(498 21)"/><use href="#ltw" class="tw" transform="translate(40 13)"/><use href="#ltw" class="tw d1" transform="translate(120 26)"/><use href="#ltw" class="tw d2" transform="translate(210 34)"/><use href="#ltw" class="tw" transform="translate(285 37)"/><use href="#ltw" class="tw d1" transform="translate(362 36)"/><use href="#ltw" class="tw d2" transform="translate(468 26)"/><use href="#ltw" class="tw" transform="translate(545 13)"/></svg><div class="garland-snow" aria-hidden="true"><svg viewBox="0 0 48 48" role="presentation" focusable="false"><path d="M24 9 V1.5" stroke="#dceefb" stroke-width="1.6" stroke-linecap="round" fill="none"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#8db8d6" stroke-width="5.4"/><path d="M24 9 V39 M11 16.5 L37 31.5 M37 16.5 L11 31.5 M24 16.5 L20.5 13 M24 16.5 L27.5 13 M24 31.5 L20.5 35 M24 31.5 L27.5 35 M17.5 20.2 L16.2 15.5 M17.5 20.2 L12.7 21.5 M30.5 27.8 L32.3 32.5 M30.5 27.8 L35.3 26.5 M30.5 20.2 L35.3 21.5 M30.5 20.2 L31.8 15.5 M17.5 27.8 L12.7 26.5 M17.5 27.8 L16.2 32.5" stroke="#ffffff" stroke-width="2.7"/></g><circle cx="24" cy="24" r="2.5" fill="#ffffff" stroke="#8db8d6" stroke-width="1"/></svg></div></div>
+  <div class="wx-xmas-snow" aria-hidden="true"><span class="wx-flake f1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f2"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f3"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f4"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f5"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f6"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f7"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span><span class="wx-flake f8"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wxflake"/></svg></span></div>
   <div class="wx-locbar-wrap">
   <button type="button" class="wx-locbar" id="wxLocBar" aria-label="Location — tap to change it" aria-expanded="false" aria-controls="wxLocPop" title="Location"><svg class="dn-loc-ic" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><g transform="rotate(45 12 12)"><path d="M12 3l5 18-5-4-5 4 5-18z"/></g></svg><span class="wxloc" id="wxLocLabel">Cicero, NY</span><span class="wx-locbar-chev" aria-hidden="true">▾</span></button>
   <div class="wx-locpop" id="wxLocPop" hidden>
@@ -2629,16 +2682,18 @@ body.on-faith footer{color:#e8cf9f!important}
     <p class="faith-note">Verse of the Day image: YouVersion &middot; Updates daily at 12:00 AM Eastern</p>
     </section>
     <script>
-    /* Daily Bible Verse — the live YouVersion Verse of the Day image,
-       shown in-page. The day's image is discovered live from
-       bible.com/verse-of-the-day (its og:image IS today's YouVersion
-       verse image; the image id changes daily, so it is never
-       hard-coded). The image URL gets a date cache-buster for the
-       Eastern date, and the loader re-runs when the Eastern date
-       rolls over (checked every 30 seconds and on refocus), so a new
-       day at 12:00 AM Eastern shows the new verse. If the image
-       cannot be loaded, an honest message shows instead — never a
-       stale or made-up verse. */
+    /* Daily Bible Verse — served from verse.json, built server-side every
+       30 minutes by the "Verse of the day" workflow (.src/fetch_verse.py):
+       it discovers today's YouVersion image + text from bible.com, which a
+       browser cannot fetch directly (bible.com sends no CORS headers) and
+       the allorigins.win proxy fails ~90% of the time — that was the bug
+       (reported Nov 28, 2026). The page reads same-origin verse.json
+       first; if it is missing or stale, it falls back to the labs.bible.org
+       Verse of the Day API (CORS-friendly, returns JSON). If that fails
+       too, an honest message shows instead — never a stale or made-up
+       verse. The loader re-runs when the Eastern date rolls over (checked
+       every 30 seconds and on refocus), so a new day at 12:00 AM Eastern
+       shows the new verse. */
     (function(){
       var img=document.getElementById('votdImg'),fig=document.getElementById('votdFig'),
           refEl=document.getElementById('votdRef'),txt=document.getElementById('votdText'),
@@ -2648,39 +2703,44 @@ body.on-faith footer{color:#e8cf9f!important}
       function etToday(){return fmt.format(new Date());}
       var curDay='';
       function failMsg(){if(st)st.textContent="Today's verse image couldn't load — tap below to open it in the YouVersion App.";}
-      function parsePage(html){
-        var doc=new DOMParser().parseFromString(html,'text/html');
-        function meta(k){var m=doc.querySelector('meta[property="'+k+'"]')||doc.querySelector('meta[name="'+k+'"]');return m?(m.getAttribute('content')||''):'';}
-        var ogImg=meta('og:image');
-        if(!ogImg)return null;
-        return{img:ogImg,desc:meta('og:description')||''};
+      function showVerse(v){
+        // v = {img?, ref, text}. The YouVersion image only exists on the
+        // verse.json path; the labs.bible.org path is text-only, but it is
+        // still a real verse with its reference.
+        if(v.img){
+          img.onload=function(){if(fig)fig.hidden=false;if(st)st.textContent='';};
+          img.onerror=function(){if(fig)fig.hidden=true;if(st)st.textContent='';};
+          img.alt='YouVersion Verse of the Day'+(v.ref?' — '+v.ref:'');
+          img.src=v.img;
+        }else{
+          if(fig)fig.hidden=true;
+          if(st)st.textContent='';
+        }
+        if(refEl)refEl.textContent=v.ref||'';
+        if(txt)txt.textContent=v.text||'';
       }
-      function fetchText(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.text();});}
+      function fetchJson(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});}
+      function loadFromLabs(){
+        return fetchJson('https://labs.bible.org/api/?passage=votd&type=json').then(function(arr){
+          if(!arr||!arr.length||!arr[0].text)throw new Error('empty votd');
+          var first=arr[0],ref=first.bookname+' '+first.chapter+':'+first.verse,last=first.verse,text=first.text;
+          for(var i=1;i<arr.length;i++){
+            if(arr[i].bookname===first.bookname&&arr[i].chapter===first.chapter){text+=arr[i].text;last=arr[i].verse;}
+            else break;
+          }
+          if(last!==first.verse)ref=first.bookname+' '+first.chapter+':'+first.verse+'-'+last;
+          return{ref:ref,text:text.replace(/\s+/g,' ').trim()};
+        });
+      }
       function load(){
         var day=etToday();curDay=day;
         if(st)st.textContent='Loading today\u2019s verse\u2026';
-        var page='https://www.bible.com/verse-of-the-day';
-        var attempts=[
-          function(){return fetchText(page);},
-          function(){return fetchText('https://api.allorigins.win/raw?url='+encodeURIComponent(page));}
-        ];
-        var i=0;
-        (function next(){
-          if(i>=attempts.length){failMsg();return;}
-          attempts[i++]().then(function(html){
-            var v=parsePage(html);
-            if(!v||!v.img){next();return;}
-            var ref='',verseText='';
-            var m=v.desc.match(/^((?:[1-3]\s)?[A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)?\s\d+:\d+(?:\s?-\s?\d+)?)/);
-            if(m){ref=m[1];verseText=v.desc.slice(m[1].length).trim();}
-            img.onload=function(){if(fig)fig.hidden=false;if(st)st.textContent='';};
-            img.onerror=function(){failMsg();};
-            img.alt='YouVersion Verse of the Day'+(ref?' — '+ref:'');
-            img.src=v.img+(v.img.indexOf('?')>-1?'&':'?')+'dn='+day;
-            if(refEl)refEl.textContent=ref;
-            if(txt)txt.textContent=verseText;
-          }).catch(next);
-        })();
+        fetchJson('verse.json?dn='+day).then(function(v){
+          if(!v||v.date!==day||!v.text)throw new Error('stale verse.json');
+          showVerse({img:v.img||'',ref:v.ref||'',text:v.text});
+        }).catch(function(){
+          loadFromLabs().then(function(v){showVerse(v);}).catch(failMsg);
+        });
       }
       setInterval(function(){if(etToday()!==curDay)load();},30000);
       document.addEventListener('visibilitychange',function(){if(!document.hidden&&etToday()!==curDay)load();});
@@ -2829,6 +2889,22 @@ body.on-christmas .tab[aria-selected="true"]{background:#14532d!important;color:
 #view-christmas .card p,#view-christmas .card li,#view-christmas .check,#view-christmas .check li{color:#0f2419!important}
 body.on-christmas{color-scheme:light}
 #view-christmas .hero .dateline{color:#fff!important}
+/* ---- Our Family Tree (Nov 28, 2026): the family Christmas tree photo
+   starts dark (unlit); the slider wipes the dark layer away left-to-right
+   to reveal the lit colour version, and the button animates the same
+   reveal over ~2.5s (and back to dim). Red/green only, no gold. */
+.xp-tree{flex-direction:column;align-items:stretch}
+.famtree-cap{margin:0 0 14px}
+.famtree-wrap{position:relative;max-width:420px;margin:0 auto;border-radius:16px;overflow:hidden;border:2px solid #14532d;box-shadow:0 4px 16px rgba(11,61,32,.25)}
+.famtree-img{display:block;width:100%;height:auto}
+.famtree-dark{position:absolute;inset:0;filter:brightness(.13) saturate(.3);clip-path:inset(0 0 0 0)}
+.famtree-slider{appearance:none;-webkit-appearance:none;width:100%;max-width:420px;margin:14px auto 0;display:block;height:26px;background:transparent;cursor:pointer;touch-action:pan-y}
+.famtree-slider::-webkit-slider-runnable-track{height:8px;border-radius:999px;background:linear-gradient(90deg,#b42318,#14532d)}
+.famtree-slider::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;background:#fff;border:3px solid #14532d;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.famtree-slider::-moz-range-track{height:8px;border-radius:999px;background:linear-gradient(90deg,#b42318,#14532d)}
+.famtree-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid #14532d;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.famtree-btn{margin-top:14px}
+.famtree-hint{font-size:13px;color:#5a6b60;margin:8px 0 0}
 </style>
   <div class="hero"><h1>🎄 Christmas</h1><div class="dateline">Friday, December 25, 2026</div></div>
   <div class="xmas"><div class="xmas-count-track" id="xCountTrack">
@@ -2908,6 +2984,61 @@ body.on-christmas{color-scheme:light}
         <li><label class="xcheck"><input type="checkbox" data-i="5"><span>Check the Google Santa Tracker on Christmas Eve</span></label></li>
       </ul></div>
     </div>
+    <div class="xp-row xp-tree" id="famTreeRow">
+      <div class="xp-main"><h2>Our Family Tree 🎄</h2>
+      <p class="famtree-cap">Our family tree — drag to light it, or tap the button and watch it glow.</p>
+      <div class="famtree-wrap">
+        <img class="famtree-img" src="images/family-tree.jpg" alt="Our family Christmas tree lit up with colourful lights" loading="lazy">
+        <img class="famtree-img famtree-dark" id="famTreeDark" src="images/family-tree.jpg" alt="" aria-hidden="true">
+      </div>
+      <input type="range" class="famtree-slider" id="famTreeSlider" min="0" max="100" value="0" step="1" aria-label="Light the tree — drag to reveal the lights">
+      <button class="xp-btn famtree-btn" id="famTreeBtn" type="button">✨ Light the tree</button>
+      <p class="famtree-hint">Our tree, at home — lights on every night 5:00–9:00 PM.</p></div>
+    </div>
+    <script>
+    /* Our Family Tree — light-the-tree reveal (Nov 28, 2026). The photo
+       starts dark (unlit layer on top); the slider wipes the dark layer
+       away left-to-right to reveal the lit photo underneath, and the
+       button animates the same reveal over ~2.5s (and back to dim).
+       Pager defence: the slider stops pointerdown/touchstart from reaching
+       the tab pager's Pointer Events listener, and touch-action:pan-y keeps
+       vertical page scroll working — a horizontal drag on the slider never
+       changes tabs. */
+    (function(){
+      var slider=document.getElementById('famTreeSlider'),
+          dark=document.getElementById('famTreeDark'),
+          btn=document.getElementById('famTreeBtn');
+      if(!slider||!dark||!btn)return;
+      var anim=null;
+      function setP(p){
+        p=Math.max(0,Math.min(100,Math.round(p)));
+        slider.value=String(p);
+        dark.style.clipPath='inset(0 0 0 '+p+'%)';
+        btn.textContent=p>=100?'Dim the lights':'✨ Light the tree';
+      }
+      function animateTo(target){
+        if(anim)cancelAnimationFrame(anim);
+        var from=parseFloat(slider.value)||0,start=null,dur=2500;
+        function step(ts){
+          if(start===null)start=ts;
+          var k=Math.min(1,(ts-start)/dur);
+          setP(from+(target-from)*k);
+          if(k<1)anim=requestAnimationFrame(step);else anim=null;
+        }
+        anim=requestAnimationFrame(step);
+      }
+      slider.addEventListener('input',function(){
+        if(anim){cancelAnimationFrame(anim);anim=null;}
+        setP(parseFloat(slider.value)||0);
+      });
+      slider.addEventListener('pointerdown',function(e){e.stopPropagation();});
+      slider.addEventListener('touchstart',function(e){e.stopPropagation();},{passive:true});
+      btn.addEventListener('click',function(){
+        animateTo((parseFloat(slider.value)||0)>50?0:100);
+      });
+      setP(0);
+    })();
+    </script>
   </section>
   </main>
 <main class="wrap view" id="view-coc" hidden>
