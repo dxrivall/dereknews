@@ -5,42 +5,49 @@
       "file": "archives/2026-11-18-thanksgiving.html",
       "id": "2026-11-18-thanksgiving",
       "name": "Thanksgiving 2026",
-      "notes": "The home page as it looked in November 2026 \u2014 warm Thanksgiving background, Christmas-red and green cursive title with a pine garland, Thanksgiving countdown widget on top."
+      "notes": "The home page as it looked in November 2026 — warm Thanksgiving background, Christmas-red and green cursive title with a pine garland, Thanksgiving countdown widget on top."
     },
     {
       "date": "Nov 21, 2026",
       "file": "archives/2026-11-21-gta6-vice-city.html",
       "id": "2026-11-21-gta6-vice-city",
       "name": "GTA 6 Vice City 2026",
-      "notes": "The GTA 6 takeover \u2014 Vice City sunset background, Archivo Black uppercase pink-to-orange gradient title with neon glow, GTA VI \u2014 VICE CITY tagline, dark widgets with neon pink borders, palm trees on every tab except Faith, Leonida Forecast card on Weather. Reverted Nov 21, 2026 to bring back Thanksgiving."
+      "notes": "The GTA 6 takeover — Vice City sunset background, Archivo Black uppercase pink-to-orange gradient title with neon glow, GTA VI — VICE CITY tagline, dark widgets with neon pink borders, palm trees on every tab except Faith, Leonida Forecast card on Weather. Reverted Nov 21, 2026 to bring back Thanksgiving."
     },
     {
       "id": "2026-11-24-news-tab",
       "name": "News Tab 2026",
       "date": "Nov 24, 2026",
       "file": "archives/2026-11-24-news-tab.html",
-      "notes": "The News tab as it was in November 2026 \u2014 Apple-style feed with section chips (Top Stories, Local, Nationwide, Global), breaking-news detector, Iran war risk tracker and Polymarket 2028 outlook. Deactivated Nov 24, 2026; the feed moved to a widget on Home with no politics and no war info."
+      "notes": "The News tab as it was in November 2026 — Apple-style feed with section chips (Top Stories, Local, Nationwide, Global), breaking-news detector, Iran war risk tracker and Polymarket 2028 outlook. Deactivated Nov 24, 2026; the feed moved to a widget on Home with no politics and no war info."
     },
     {
       "id": "2026-11-24-coc-tab",
       "name": "CoC Tab 2026",
       "date": "Nov 24, 2026",
       "file": "archives/2026-11-24-coc-tab.html",
-      "notes": "The Clash of Clans tab as it was in November 2026 \u2014 WAR II clan card, live war scoreboard with star bars and war events, war log, CWL records and the Town Hall 19 card. Deactivated Nov 24, 2026; the live war scoreboard moved to a widget on Home matching the CoC one."
+      "notes": "The Clash of Clans tab as it was in November 2026 — WAR II clan card, live war scoreboard with star bars and war events, war log, CWL records and the Town Hall 19 card. Deactivated Nov 24, 2026; the live war scoreboard moved to a widget on Home matching the CoC one."
     },
     {
       "id": "2026-11-24-no-news-tab",
       "name": "No News Tab 2026",
       "date": "Nov 24, 2026",
       "file": "archives/2026-11-24-no-news-tab.html",
-      "notes": "The site with the News tab deactivated \u2014 5 tabs (Home, Weather, Sports, Faith, Christmas), the news feed living on Home as a widget with section chips. Saved before restoring the News tab after users noticed it gone."
+      "notes": "The site with the News tab deactivated — 5 tabs (Home, Weather, Sports, Faith, Christmas), the news feed living on Home as a widget with section chips. Saved before restoring the News tab after users noticed it gone."
     },
     {
       "id": "2026-11-27-thanksgiving-2026",
       "name": "Thanksgiving 2026",
       "date": "Nov 27, 2026",
       "file": "archives/2026-11-27-thanksgiving-2026.html",
-      "notes": "The final Thanksgiving state of the home page before the Christmas theme \u2014 warm Thanksgiving background, Christmas-red and green cursive title with pine garland, Thanksgiving widget, turkey rain, and the Home News teaser and Iran war risk widget still in place. Saved Nov 27, 2026 before switching the background to Christmas."
+      "notes": "The final Thanksgiving state of the home page before the Christmas theme — warm Thanksgiving background, Christmas-red and green cursive title with pine garland, Thanksgiving widget, turkey rain, and the Home News teaser and Iran war risk widget still in place. Saved Nov 27, 2026 before switching the background to Christmas."
+    },
+    {
+      "id": "2026-11-28-weather",
+      "name": "Weather 2026",
+      "date": "Nov 28, 2026",
+      "file": "archives/2026-11-28-weather.html",
+      "notes": "The Weather tab as it was in November 2026 — live-condition sky with animated snow/rain/stars, frosted-glass cards, Apple-style hero and 7-day outlook. Saved Nov 28, 2026 before the Christmas skin (deep-green background, red/green accents, garland and snowflakes)."
     }
   ]
 }
