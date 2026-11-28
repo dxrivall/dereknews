@@ -1,7 +1,84 @@
 {
-  "updated_at": "2026-11-28T15:15:57.535865Z",
+  "updated_at": "2026-11-28T16:00:29.855627Z",
   "sections": {
     "top": [
+      {
+        "title": "More than 1,100 migrants reach the Greek islands of Crete and Gavdos in 2 days, with 2 reported dead",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/greece-migration-libya-north-africa-return-hubs-4a9adfe8ab9757039b04f0f530476fa0",
+        "published": "2026-11-28T07:57:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Capitals out to shake off third-period blues in St. Louis",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/capitals-out-shake-off-third-period-blues-st-louis--flm-2026-11-28/",
+        "published": "2026-11-28T07:48:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Bayern captain Kimmich sent off for retaliating with hair-pull",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/bayern-kimmich-hair-pull-3f394a28b26657981871526d9b160235",
+        "published": "2026-11-28T07:31:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.G7ypsbrUhXeevFBATchYgQ&pid=News"
+      },
+      {
+        "title": "Clashes erupt in Albania’s capital as protesters call for Prime Minister Edi Rama to resign",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/clashes-erupt-in-albanias-capital-as-protesters-call-for-prime-minister-edi-rama-to-resign-3151dba94e6b4ce9be628da2bd50b205",
+        "published": "2026-11-28T07:28:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.VjrETL-CW1Ox3rkwlzqeuw&pid=News"
+      },
+      {
+        "title": "Controlled explosion destroys part of a decommissioned coal-fired power station in Germany",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/controlled-explosion-destroys-part-of-a-decommissioned-coal-fired-power-station-in-germany-340c8c6eb26444c29a095c85700c9f3b",
+        "published": "2026-11-28T07:24:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.ydVgbmncYPpXPmRyYaVY2Q&pid=News"
+      },
+      {
+        "title": "Wales routs Japan 40-10 in Nations Championship rugby to cap historic month",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/wales-japan-nations-rugby-6631e51b70197e75e8c049abe2547f0a",
+        "published": "2026-11-28T07:22:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.HP4XKYGDaArzJSRfxO17cQ&pid=News"
+      },
+      {
+        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
+        "published": "2026-11-28T07:20:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "India markets regulator considering platform for trading pre-IPO shares",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/legal/government/india-markets-regulator-considering-platform-trading-pre-ipo-shares-2026-11-28/",
+        "published": "2026-11-28T07:20:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Adams leads scoring Wales spree as Japan swept aside",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/adams-leads-scoring-wales-spree-japan-swept-aside-2026-11-28/",
+        "published": "2026-11-28T07:14:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Today in Sports - Dan Marino becomes first player in NFL history to throw 400 career TD passes",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/dan-marino-derek-carr-drew-brees-18918e160dbea44dd2372a81947ce219",
+        "published": "2026-11-28T07:10:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Wales 40, Japan 10",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/japan-general-news-wales-e73430ed659da48c8748f577ef6efb28",
+        "published": "2026-11-28T07:02:00Z",
+        "thumb": ""
+      },
       {
         "title": "Ruling party makes gains in Taiwan local elections watched by China",
         "source": "Reuters",
@@ -17,25 +94,11 @@
         "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
       },
       {
-        "title": "US Black Friday online sales to cross $13 billion, Adobe says",
+        "title": "US Black Friday online spend rises 11% to a new high of $13.1 billion",
         "source": "Reuters",
-        "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
-        "published": "2026-11-28T06:37:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Maple Leafs, Penguins bid to pick up steam at other's expense",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/maple-leafs-penguins-bid-pick-up-steam-others-expense--flm-2026-11-28/",
-        "published": "2026-11-28T06:37:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Doncic shoved by fan, security intervenes following wristband toss after Spurs-Lakers game",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/luka-doncic-fan-shove-85d597f007b9cd086dcc34ddf381332a",
+        "link": "https://www.reuters.com/business/retail-consumer/black-friday-online-shopping-rises-131-billion-us-adobe-analytics-data-shows-2026-11-28/",
         "published": "2026-11-28T06:07:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Ft17vrueu7P62MTGSVvdlQ&pid=News"
+        "thumb": ""
       },
       {
         "title": "EPA says no rise in contamination after Army detonates lead azide stockpile in Iowa",
@@ -43,69 +106,6 @@
         "link": "https://apnews.com/article/iowa-lead-detonation-epa-5a6f4ba4bfe9fe792a948db90cd299fb",
         "published": "2026-11-28T05:12:00Z",
         "thumb": "https://www.bing.com/th?id=ONUT.MQj3e0j7H-IO51m3DwYqZw&pid=News"
-      },
-      {
-        "title": "Voters delivered a rebuke. But Trump is sticking to his agenda",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-huang-nvidia-midterms-tariffs-unpopular-billionaires-89678e61440def22506dff48bcdee301",
-        "published": "2026-11-28T04:51:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT._AODVi5j2jUqydxDIfma5g&pid=News"
-      },
-      {
-        "title": "Clashes erupt in Tirana as protesters call for Prime Minister Edi Rama to resign",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/albania-antigovernment-protest-rama-6f9308aae6e5919cdd8b921c1e1287e3",
-        "published": "2026-11-28T04:30:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.hwJIdSQjihJGsnQCpjgsHg&pid=News"
-      },
-      {
-        "title": "Argentina loses bid to halt oil drilling at nearby UK-held Falkland Islands",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/britain-argentina-falklands-drilling-oil-0ebac77a05fb8933c371b7c898e80155",
-        "published": "2026-11-28T04:13:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.oqa7lthQ1hQoSXZUq_SvHg&pid=News"
-      },
-      {
-        "title": "Final spots in conference championship games will be locked up as regular season winds down",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/college-football-today-82b6c889477a3cd57705dfdc45334a85",
-        "published": "2026-11-28T03:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.QLvklCqMnuZcTNTXgF0hMQ&pid=News"
-      },
-      {
-        "title": "South Korean teen Jia Shin upstages Mone Chiba to win NHK Trophy",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/jia-shin-nhk-trophy-figure-skating-c62ee9b2d852bca3eaf922d6b9981cec",
-        "published": "2026-11-28T02:58:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.5qrCaNLsV98mXXjAQGfWxQ&pid=News"
-      },
-      {
-        "title": "Australia's conservatives oust Labor, see off One Nation in Victoria state",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/asia-pacific/conservatives-set-win-government-australias-second-most-populous-state-2026-11-28/",
-        "published": "2026-11-28T02:38:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Northern Colorado visits San Diego following Hammond’s 34-point outing",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-jeremiah-hammond-college-basketball-colorado-san-diego-toreros-0e6db9071ea44dec88401b323020b4e3",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
-      },
-      {
-        "title": "Postponed Macy’s 100th Thanksgiving Day parade gets a do-over with 100 balloons and 1,000 clowns",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/macys-thanksgiving-parade-saturday-3462aace9e773eca60dcf527afdf4a39",
-        "published": "2026-11-28T00:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.FemBHtY76c0SM8sedwrzPA&pid=News"
-      },
-      {
-        "title": "Spain election results",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/graphics/SPAIN-ELECTION/RESULTS/gkplygylbvb/",
-        "published": "2026-11-27T23:32:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.l5xSLVZo7bl6XiyoX7eDhw&pid=News"
       }
     ],
     "local": [
@@ -115,6 +115,13 @@
         "link": "https://www.localsyr.com/news/state-news/state-senate-succession-westchester-special-election-after-andrea-stewart-cousins-death/",
         "published": "2026-11-28T15:02:17Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/Web_Extra__Full_interview_with_Andrea_St_8_65590299_ver1.0.jpg?w=900"
+      },
+      {
+        "title": "Postponed Macy's 100th Thanksgiving Day parade gets a do-over with 100 balloons and 1,000 clowns",
+        "source": "LocalSYR",
+        "link": "https://www.localsyr.com/entertainment-news/ap-postponed-macys-100th-thanksgiving-day-parade-gets-a-do-over-with-100-balloons-and-1000-clowns/",
+        "published": "2026-11-28T14:40:31Z",
+        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b0ae85c9b8640.82807429.jpeg?w=900"
       },
       {
         "title": "Keep rain gear/umbrella handy Saturday",
@@ -131,7 +138,7 @@
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/6b09e95d2f7200.68038994.jpeg?w=900"
       },
       {
-        "title": "Cicero Police arrest man accused of breaking into Lakeshore Road Elementary School",
+        "title": "Cicero police arrest man accused of breaking into Lakeshore Road Elementary School",
         "source": "LocalSYR",
         "link": "https://www.localsyr.com/news/local-news/cicero-police-arrest-man-accused-of-breaking-into-lakeshore-road-elementary-school/",
         "published": "2026-11-28T07:19:14Z",
@@ -171,36 +178,22 @@
         "link": "https://www.localsyr.com/news/local-news/lewis-county-man-pleads-guilty-to-burglary-and-drugs/",
         "published": "2026-11-27T11:30:00Z",
         "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/GettyImages-949187118-2-e1713547094720.jpg?w=900"
-      },
-      {
-        "title": "Syracuse knocks off Wisconsin",
-        "source": "LocalSYR",
-        "link": "https://www.localsyr.com/orange-nation/syracuse-knocks-off-wisconsin/",
-        "published": "2026-11-27T03:28:35Z",
-        "thumb": "https://www.localsyr.com/wp-content/uploads/sites/63/2026/11/SU-defeats-Wisconsin.jpg?w=576"
       }
     ],
     "nationwide": [
+      {
+        "title": "Capitals out to shake off third-period blues in St. Louis",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/nhl/capitals-out-shake-off-third-period-blues-st-louis--flm-2026-11-28/",
+        "published": "2026-11-28T07:48:00Z",
+        "thumb": ""
+      },
       {
         "title": "EPA says no rise in contamination after Army detonates lead azide stockpile in Iowa",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/iowa-lead-detonation-epa-5a6f4ba4bfe9fe792a948db90cd299fb",
         "published": "2026-11-28T05:12:00Z",
         "thumb": "https://www.bing.com/th?id=ONUT.MQj3e0j7H-IO51m3DwYqZw&pid=News"
-      },
-      {
-        "title": "Voters delivered a rebuke. But Trump is sticking to his agenda",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trump-huang-nvidia-midterms-tariffs-unpopular-billionaires-89678e61440def22506dff48bcdee301",
-        "published": "2026-11-28T04:51:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT._AODVi5j2jUqydxDIfma5g&pid=News"
-      },
-      {
-        "title": "Northern Colorado visits San Diego following Hammond’s 34-point outing",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/mens-college-basketball-jeremiah-hammond-college-basketball-colorado-san-diego-toreros-0e6db9071ea44dec88401b323020b4e3",
-        "published": "2026-11-28T01:42:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.0bGOZYxTzUn0DaByHyjQLA&pid=News"
       },
       {
         "title": "A father, a son, and a remarkable 70-season Michigan football streak that has come to an end",
@@ -212,73 +205,73 @@
     ],
     "global": [
       {
-        "title": "Ruling party makes gains in Taiwan local elections watched by China",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
-        "published": "2026-11-28T06:37:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
+        "title": "More than 1,100 migrants reach the Greek islands of Crete and Gavdos in 2 days, with 2 reported dead",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/greece-migration-libya-north-africa-return-hubs-4a9adfe8ab9757039b04f0f530476fa0",
+        "published": "2026-11-28T07:57:00Z",
+        "thumb": ""
       },
       {
-        "title": "Iran's flogging of singer was warning from anxious hardliners, insiders say",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/middle-east/irans-flogging-singer-was-warning-anxious-hardliners-insiders-say-2026-11-28/",
-        "published": "2026-11-28T06:37:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
+        "title": "Bayern captain Kimmich sent off for retaliating with hair-pull",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/bayern-kimmich-hair-pull-3f394a28b26657981871526d9b160235",
+        "published": "2026-11-28T07:31:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.G7ypsbrUhXeevFBATchYgQ&pid=News"
+      },
+      {
+        "title": "Clashes erupt in Albania’s capital as protesters call for Prime Minister Edi Rama to resign",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/clashes-erupt-in-albanias-capital-as-protesters-call-for-prime-minister-edi-rama-to-resign-3151dba94e6b4ce9be628da2bd50b205",
+        "published": "2026-11-28T07:28:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.VjrETL-CW1Ox3rkwlzqeuw&pid=News"
+      },
+      {
+        "title": "Controlled explosion destroys part of a decommissioned coal-fired power station in Germany",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/video/controlled-explosion-destroys-part-of-a-decommissioned-coal-fired-power-station-in-germany-340c8c6eb26444c29a095c85700c9f3b",
+        "published": "2026-11-28T07:24:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.ydVgbmncYPpXPmRyYaVY2Q&pid=News"
+      },
+      {
+        "title": "Wales routs Japan 40-10 in Nations Championship rugby to cap historic month",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/wales-japan-nations-rugby-6631e51b70197e75e8c049abe2547f0a",
+        "published": "2026-11-28T07:22:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.HP4XKYGDaArzJSRfxO17cQ&pid=News"
       },
       {
         "title": "US Black Friday online sales to cross $13 billion, Adobe says",
         "source": "Reuters",
         "link": "https://www.reuters.com/business/retail-consumer/us-black-friday-online-sales-cross-13-billion-adobe-says-2026-11-28/",
-        "published": "2026-11-28T06:37:00Z",
+        "published": "2026-11-28T07:20:00Z",
         "thumb": ""
       },
       {
-        "title": "Maple Leafs, Penguins bid to pick up steam at other's expense",
+        "title": "India markets regulator considering platform for trading pre-IPO shares",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/nhl/maple-leafs-penguins-bid-pick-up-steam-others-expense--flm-2026-11-28/",
-        "published": "2026-11-28T06:37:00Z",
+        "link": "https://www.reuters.com/legal/government/india-markets-regulator-considering-platform-trading-pre-ipo-shares-2026-11-28/",
+        "published": "2026-11-28T07:20:00Z",
         "thumb": ""
       },
       {
-        "title": "Doncic shoved by fan, security intervenes following wristband toss after Spurs-Lakers game",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/luka-doncic-fan-shove-85d597f007b9cd086dcc34ddf381332a",
-        "published": "2026-11-28T06:07:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Ft17vrueu7P62MTGSVvdlQ&pid=News"
-      },
-      {
-        "title": "Clashes erupt in Tirana as protesters call for Prime Minister Edi Rama to resign",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/albania-antigovernment-protest-rama-6f9308aae6e5919cdd8b921c1e1287e3",
-        "published": "2026-11-28T04:30:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.hwJIdSQjihJGsnQCpjgsHg&pid=News"
-      },
-      {
-        "title": "Argentina loses bid to halt oil drilling at nearby UK-held Falkland Islands",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/britain-argentina-falklands-drilling-oil-0ebac77a05fb8933c371b7c898e80155",
-        "published": "2026-11-28T04:13:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.oqa7lthQ1hQoSXZUq_SvHg&pid=News"
-      },
-      {
-        "title": "Final spots in conference championship games will be locked up as regular season winds down",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/college-football-today-82b6c889477a3cd57705dfdc45334a85",
-        "published": "2026-11-28T03:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.QLvklCqMnuZcTNTXgF0hMQ&pid=News"
-      },
-      {
-        "title": "South Korean teen Jia Shin upstages Mone Chiba to win NHK Trophy",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/jia-shin-nhk-trophy-figure-skating-c62ee9b2d852bca3eaf922d6b9981cec",
-        "published": "2026-11-28T02:58:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.5qrCaNLsV98mXXjAQGfWxQ&pid=News"
-      },
-      {
-        "title": "Australia's conservatives oust Labor, see off One Nation in Victoria state",
+        "title": "Adams leads scoring Wales spree as Japan swept aside",
         "source": "Reuters",
-        "link": "https://www.reuters.com/world/asia-pacific/conservatives-set-win-government-australias-second-most-populous-state-2026-11-28/",
-        "published": "2026-11-28T02:38:00Z",
+        "link": "https://www.reuters.com/sports/adams-leads-scoring-wales-spree-japan-swept-aside-2026-11-28/",
+        "published": "2026-11-28T07:14:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Today in Sports - Dan Marino becomes first player in NFL history to throw 400 career TD passes",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/dan-marino-derek-carr-drew-brees-18918e160dbea44dd2372a81947ce219",
+        "published": "2026-11-28T07:10:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Wales 40, Japan 10",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/japan-general-news-wales-e73430ed659da48c8748f577ef6efb28",
+        "published": "2026-11-28T07:02:00Z",
         "thumb": ""
       }
     ]
