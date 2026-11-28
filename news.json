@@ -1,7 +1,63 @@
 {
-  "updated_at": "2026-11-28T07:49:50.633846Z",
+  "updated_at": "2026-11-28T08:38:21.599871Z",
   "sections": {
     "top": [
+      {
+        "title": "Houthis report airstrikes in Yemen, Israeli strike kills 2 near Gaza clinic, and other Mideast news",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/mideast-israel-gaza-ukraine-libya-israel-houthis-november-28-2026-088cd858cd7def5c2c2296882e6e5be4",
+        "published": "2026-11-28T00:30:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.PtocEDlA0d6_0jTUFJEYxA&pid=News"
+      },
+      {
+        "title": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
+        "published": "2026-11-28T00:05:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
+      },
+      {
+        "title": "Explosion reported at school in Afghanistan, official says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/asia-pacific/explosion-reported-school-afghanistan-official-says-2026-11-28/",
+        "published": "2026-11-28T00:05:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "No. 5 Texas Tech holds off San Diego State 78-75 for fifth in Players Era bracket",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/san-diego-state-texas-tech-score-1d023f2b3bb56ab3d9c91de74f1e5a90",
+        "published": "2026-11-28T00:05:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.rn-qGDbgxk1nBTMEY9md8A&pid=News"
+      },
+      {
+        "title": "India fumble chances as New Zealand finish day two on top in Christchurch",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/cricket/india-fumble-chances-new-zealand-finish-day-two-top-christchurch-2026-11-28/",
+        "published": "2026-11-28T00:03:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Postponed Macy’s 100th Thanksgiving Day parade gets a do-over with 100 balloons and 1,000 clowns",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/macys-thanksgiving-parade-saturday-3462aace9e773eca60dcf527afdf4a39",
+        "published": "2026-11-28T00:00:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.FemBHtY76c0SM8sedwrzPA&pid=News"
+      },
+      {
+        "title": "Russia says it downed 1,246 Ukrainian drones overnight",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/aerospace-defense/russia-says-it-downed-1246-ukrainian-drones-overnight-2026-11-28/",
+        "published": "2026-11-27T23:25:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Iran's flogging of singer was warning from anxious hardliners, insiders say",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/middle-east/irans-flogging-singer-was-warning-anxious-hardliners-insiders-say-2026-11-28/",
+        "published": "2026-11-27T23:14:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
+      },
       {
         "title": "Denver plays Toronto, aims for 5th straight road win",
         "source": "Associated Press News",
@@ -24,16 +80,16 @@
         "thumb": ""
       },
       {
-        "title": "Milwaukee hosts Oklahoma City on home slide",
+        "title": "Mitchell, Cavaliers to host Antetokounmpo and the Heat",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/jaime-jaquez-milwaukee-bucks-oklahoma-city-thunder-oklahoma-city-milwaukee-9d56fe30f6cf4bb89c0859f2de547a15",
+        "link": "https://apnews.com/article/giannis-antetokounmpo-donovan-mitchell-miami-heat-cleveland-cavaliers-9d82ce125d0941ab9e87afedb27f0632",
         "published": "2026-11-27T23:02:00Z",
         "thumb": ""
       },
       {
-        "title": "Mitchell, Cavaliers to host Antetokounmpo and the Heat",
+        "title": "Milwaukee hosts Oklahoma City on home slide",
         "source": "Associated Press News",
-        "link": "https://apnews.com/article/giannis-antetokounmpo-donovan-mitchell-miami-heat-cleveland-cavaliers-9d82ce125d0941ab9e87afedb27f0632",
+        "link": "https://apnews.com/article/jaime-jaquez-milwaukee-bucks-oklahoma-city-thunder-oklahoma-city-milwaukee-9d56fe30f6cf4bb89c0859f2de547a15",
         "published": "2026-11-27T23:02:00Z",
         "thumb": ""
       },
@@ -50,62 +106,6 @@
         "link": "https://apnews.com/article/houston-rockets-philadelphia-76ers-philadelphia-2002c0c3da294b0da7ed6604894eb227",
         "published": "2026-11-27T23:02:00Z",
         "thumb": ""
-      },
-      {
-        "title": "Deke Thompson totals 20 points, 10 rebounds to lead Omaha over Jacksonville State 78-69",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/jacksonville-state-omaha-basketball-score-396beacafe8b3093fda0b512d4027adf",
-        "published": "2026-11-27T21:54:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Dampier throws for 5 TDs, 393 yards as No. 2 Utah routs West Virginia to reach 12-0",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/west-virginia-utah-score-dampier-5454e5b12a6e9f858fd9340a7882d941",
-        "published": "2026-11-27T21:49:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.TKgC3wfKMOx7NnhIBw2iSg&pid=News"
-      },
-      {
-        "title": "Trail Blazers vencen a Warriors 116-94 y avanzan a cuartos de la Copa NBA",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trail-blazers-warriors-copa-nba-avdija-97e5929d76a5b324a9f61973ee780c20",
-        "published": "2026-11-27T21:38:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.9oia9pDPZ7CRmTOin9BnXQ&pid=News"
-      },
-      {
-        "title": "Zapatistas begin a ‘Tour for Life’ from Chiapas to Mexico City to meet with families of disappeared",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/zapatistas-families-disappeared-tour-chiapas-mexico-city-4344300b57c9dea85af1c983ba1b8a48",
-        "published": "2026-11-27T21:34:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.CzAbBL-rtozr-q79NwQTZQ&pid=News"
-      },
-      {
-        "title": "4 teams have a shot as Big Ten race nears an end. The other Power Four title games are already set",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/conference-race-reset-tiebreakers-9a340607b7a7dc0dcfe7c6069a6fefad",
-        "published": "2026-11-27T20:54:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Iy8FyngQ1PjaGwbbSBsKvQ&pid=News"
-      },
-      {
-        "title": "Tiny bee hotels open a hidden world of city pollinators in South Africa",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/south-africa-citizen-scientist-solitary-bee-hotel-38f522b7aa40c16aea3269ccef1178a0",
-        "published": "2026-11-27T18:53:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.RJef8fommupchFW6RYdnyw&pid=News"
-      },
-      {
-        "title": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
-        "published": "2026-11-27T16:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
-      },
-      {
-        "title": "Iran's flogging of singer was warning from anxious hardliners, insiders say",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/middle-east/irans-flogging-singer-was-warning-anxious-hardliners-insiders-say-2026-11-28/",
-        "published": "2026-11-27T16:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
       }
     ],
     "local": [
@@ -182,6 +182,13 @@
     ],
     "nationwide": [
       {
+        "title": "No. 5 Texas Tech holds off San Diego State 78-75 for fifth in Players Era bracket",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/san-diego-state-texas-tech-score-1d023f2b3bb56ab3d9c91de74f1e5a90",
+        "published": "2026-11-28T00:05:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.rn-qGDbgxk1nBTMEY9md8A&pid=News"
+      },
+      {
         "title": "Indiana plays Chicago, looks to end road skid",
         "source": "Associated Press News",
         "link": "https://apnews.com/article/indiana-pacers-josh-giddey-chicago-bulls-indiana-a821e089855e4087a3985e8ac4bd14d8",
@@ -203,17 +210,10 @@
         "thumb": ""
       },
       {
-        "title": "Dampier throws for 5 TDs, 393 yards as No. 2 Utah routs West Virginia to reach 12-0",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/west-virginia-utah-score-dampier-5454e5b12a6e9f858fd9340a7882d941",
-        "published": "2026-11-27T21:49:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.TKgC3wfKMOx7NnhIBw2iSg&pid=News"
-      },
-      {
-        "title": "No. 5 Texas Tech hangs on to top SDSU in fifth-place game at Las Vegas",
+        "title": "US government bars bandwidth provider RETN from American networks",
         "source": "Reuters",
-        "link": "https://www.reuters.com/sports/basketball/no-5-texas-tech-hangs-top-sdsu-fifth-place-game-las-vegas--flm-2026-11-28/",
-        "published": "2026-11-27T16:00:00Z",
+        "link": "https://www.reuters.com/business/media-telecom/us-government-bars-bandwidth-provider-retn-american-networks-2026-11-27/",
+        "published": "2026-11-27T14:41:00Z",
         "thumb": ""
       },
       {
@@ -232,6 +232,55 @@
       }
     ],
     "global": [
+      {
+        "title": "Houthis report airstrikes in Yemen, Israeli strike kills 2 near Gaza clinic, and other Mideast news",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/mideast-israel-gaza-ukraine-libya-israel-houthis-november-28-2026-088cd858cd7def5c2c2296882e6e5be4",
+        "published": "2026-11-28T00:30:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.PtocEDlA0d6_0jTUFJEYxA&pid=News"
+      },
+      {
+        "title": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
+        "published": "2026-11-28T00:05:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
+      },
+      {
+        "title": "Explosion reported at school in Afghanistan, official says",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/asia-pacific/explosion-reported-school-afghanistan-official-says-2026-11-28/",
+        "published": "2026-11-28T00:05:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "India fumble chances as New Zealand finish day two on top in Christchurch",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/sports/cricket/india-fumble-chances-new-zealand-finish-day-two-top-christchurch-2026-11-28/",
+        "published": "2026-11-28T00:03:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Postponed Macy’s 100th Thanksgiving Day parade gets a do-over with 100 balloons and 1,000 clowns",
+        "source": "Associated Press News",
+        "link": "https://apnews.com/article/macys-thanksgiving-parade-saturday-3462aace9e773eca60dcf527afdf4a39",
+        "published": "2026-11-28T00:00:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.FemBHtY76c0SM8sedwrzPA&pid=News"
+      },
+      {
+        "title": "Russia says it downed 1,246 Ukrainian drones overnight",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/business/aerospace-defense/russia-says-it-downed-1246-ukrainian-drones-overnight-2026-11-28/",
+        "published": "2026-11-27T23:25:00Z",
+        "thumb": ""
+      },
+      {
+        "title": "Iran's flogging of singer was warning from anxious hardliners, insiders say",
+        "source": "Reuters",
+        "link": "https://www.reuters.com/world/middle-east/irans-flogging-singer-was-warning-anxious-hardliners-insiders-say-2026-11-28/",
+        "published": "2026-11-27T23:14:00Z",
+        "thumb": "https://www.bing.com/th?id=ONUT.PsbvxXDRwLPKPtnc9SMnmg&pid=News"
+      },
       {
         "title": "Denver plays Toronto, aims for 5th straight road win",
         "source": "Associated Press News",
@@ -252,55 +301,6 @@
         "link": "https://apnews.com/article/giannis-antetokounmpo-donovan-mitchell-miami-heat-cleveland-cavaliers-9d82ce125d0941ab9e87afedb27f0632",
         "published": "2026-11-27T23:02:00Z",
         "thumb": ""
-      },
-      {
-        "title": "Philadelphia takes road win streak into matchup with Houston",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/houston-rockets-philadelphia-76ers-philadelphia-2002c0c3da294b0da7ed6604894eb227",
-        "published": "2026-11-27T23:02:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Deke Thompson totals 20 points, 10 rebounds to lead Omaha over Jacksonville State 78-69",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/jacksonville-state-omaha-basketball-score-396beacafe8b3093fda0b512d4027adf",
-        "published": "2026-11-27T21:54:00Z",
-        "thumb": ""
-      },
-      {
-        "title": "Trail Blazers vencen a Warriors 116-94 y avanzan a cuartos de la Copa NBA",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/trail-blazers-warriors-copa-nba-avdija-97e5929d76a5b324a9f61973ee780c20",
-        "published": "2026-11-27T21:38:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.9oia9pDPZ7CRmTOin9BnXQ&pid=News"
-      },
-      {
-        "title": "Zapatistas begin a ‘Tour for Life’ from Chiapas to Mexico City to meet with families of disappeared",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/zapatistas-families-disappeared-tour-chiapas-mexico-city-4344300b57c9dea85af1c983ba1b8a48",
-        "published": "2026-11-27T21:34:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.CzAbBL-rtozr-q79NwQTZQ&pid=News"
-      },
-      {
-        "title": "4 teams have a shot as Big Ten race nears an end. The other Power Four title games are already set",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/conference-race-reset-tiebreakers-9a340607b7a7dc0dcfe7c6069a6fefad",
-        "published": "2026-11-27T20:54:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Iy8FyngQ1PjaGwbbSBsKvQ&pid=News"
-      },
-      {
-        "title": "Tiny bee hotels open a hidden world of city pollinators in South Africa",
-        "source": "Associated Press News",
-        "link": "https://apnews.com/article/south-africa-citizen-scientist-solitary-bee-hotel-38f522b7aa40c16aea3269ccef1178a0",
-        "published": "2026-11-27T18:53:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.RJef8fommupchFW6RYdnyw&pid=News"
-      },
-      {
-        "title": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
-        "source": "Reuters",
-        "link": "https://www.reuters.com/world/china/taiwan-votes-key-local-elections-china-looks-2026-11-28/",
-        "published": "2026-11-27T16:00:00Z",
-        "thumb": "https://www.bing.com/th?id=ONUT.Ak7lByymRrsRQikvNx8kxw&pid=News"
       }
     ]
   }
